@@ -39,11 +39,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,6 +53,7 @@ import java.lang.reflect.InvocationTargetException;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getIx <em>Ix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getDAI <em>DAI</em>}</li>
@@ -65,6 +66,16 @@ import java.lang.reflect.InvocationTargetException;
  * @generated
  */
 public class DOIImpl extends UnNamingImpl implements DOI {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -599,44 +610,107 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public String getNamespace() {
         //@formatter:off
-        List< DAI > ldNsDai =
+        
+        // The attribute dataNs shall be a DataAttribute of the data.
+        // 
+        // 1.  DOI.DAI["dataNs"].value                              if present
+        // 2.  DOI.DAI["dataNs"].DA.value                           if present
+        // 3.  DOI.DO.DOType.DA["dataNs"].value                     if present
+        // 4.  DOI.AnyLN.DOI["NamPlt"].DAI["dataNs"].value          if present
+        // 5.  DOI.AnyLN.DOI["NamPlt"].DAI["dataNs"].DA.value       if present
+        // 6.  DOI.AnyLN.DOI["NamPlt"].DO.DOType.namespace          if not null
+        // 7.  DOI.AnyLN.LNodeType.DO["NamPlt"].DOType.namespace    if not null
+        // 8.  DOI.AnyLN.namespace                                  otherwise
+
+
+
+        List< DAI > dataNsDai =
                  getDAI()
                 .stream()
                 .filter( dai -> "dataNs".equals( dai.getName() ))
                 .collect( Collectors.toList() );
-        if( ldNsDai.size() == 1 ) {
-            if((         ldNsDai.get( 0 ).getVal().size() == 1 )
-                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                return   ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
+        if( dataNsDai.size() == 1 ) {
+            if((       dataNsDai.get( 0 ).getVal().size() == 1 )
+                  && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                  && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                return dataNsDai.get( 0 ).getVal().get( 0 ).getValue();
             }
-            if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                return   ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+            if((       dataNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                  && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                  && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                  && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                return dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
             }
         }
-        
-        if( getRefersToDO() != null ) {
-            List< DA > lnNsDa =
+
+        if(( getRefersToDO() != null ) && ( getRefersToDO().getRefersToDOType() != null )) {
+            List< DA > dataNsDa =
                      getRefersToDO()
                     .getRefersToDOType()
                     .getDA()
                     .stream()
                     .filter( da -> "dataNs".equals( da.getName() ))
                     .collect( Collectors.toList() );
-            if( lnNsDa.size() == 1 ) {
-                if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                        && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return   lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+            
+            if( dataNsDa.size() == 1 ) {
+                if((       dataNsDa.get( 0 ).getVal().size() == 1 )
+                      && ( dataNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( dataNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return dataNsDa.get( 0 ).getVal().get( 0 ).getValue();
                 }
             }
         }
         
-        if( getParentAnyLN() == null ) return null;
-        return getParentAnyLN().getNamespace();
+        if( getParentAnyLN() != null ) {
+            List< DOI > namPltDoi =
+                    getParentAnyLN()
+                   .getDOI()
+                   .stream()
+                   .filter( doi -> "NamPlt".equals( doi.getName() ))
+                   .collect( Collectors.toList() );
+            if( namPltDoi.size() == 1 ) {
+                dataNsDai =
+                     namPltDoi.get( 0  )
+                    .getDAI()
+                    .stream()
+                    .filter( dai -> "dataNs".equals( dai.getName() ))
+                    .collect( Collectors.toList() );
+                if( dataNsDai.size() == 1 ) {
+                    if((       dataNsDai.get( 0 ).getVal().size() == 1 )
+                          && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                          && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                        return dataNsDai.get( 0 ).getVal().get( 0 ).getValue();
+                    }
+                    if((       dataNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                          && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                          && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                          && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                        return dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                    }
+                }
+                if(( namPltDoi.get( 0 ).getRefersToDO() != null ) && ( namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType() != null )) {
+                    String ns = namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType().getNamespace();
+                    if( ns != null ) return ns;
+                }
+            }
+            if( getParentAnyLN().getRefersToLNodeType() != null ) {
+                List< DO > namPltDo =
+                        getParentAnyLN()
+                        .getRefersToLNodeType()
+                       .getDO()
+                       .stream()
+                       .filter( do_ -> "NamPlt".equals( do_.getName() ))
+                       .collect( Collectors.toList() );
+                if( namPltDo.size() == 1 ) {
+                    String ns = namPltDo.get( 0 ).getRefersToDOType().getNamespace();
+                    if( ns != null ) return ns;
+                }
+                
+            }
+            return getParentAnyLN().getNamespace();
+        }
+        return null;
+
         //@formatter:on
     }
 
@@ -708,6 +782,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.DOI__NAMESPACE:
+            return getNamespace();
         case SclPackage.DOI__IX:
             return getIx();
         case SclPackage.DOI__PARENT_ANY_LN:
@@ -803,6 +879,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.DOI__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.DOI__IX:
             return isSetIx();
         case SclPackage.DOI__PARENT_ANY_LN:
@@ -827,12 +905,34 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
-        switch( operationID ) {
-        case SclPackage.DOI___GET_NAMESPACE:
-            return getNamespace();
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.DOI__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
         }
-        return super.eInvoke( operationID, arguments );
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.DOI__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

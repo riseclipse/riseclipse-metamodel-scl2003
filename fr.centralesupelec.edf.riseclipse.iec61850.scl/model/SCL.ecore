@@ -152,6 +152,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBaseElement" ordered="false"
         eType="#//BaseElement" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//BaseElement/Private"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//GeneralEquipmentContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -238,6 +240,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSCL" ordered="false"
         eType="#//SCL" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/Communication"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlBlock" abstract="true" eSuperTypes="#//UnNaming">
+    <eOperations name="getParentConnectedAP" eType="#//ConnectedAP"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cbName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Address" ordered="false"
+        eType="#//Address" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Address/ParentControlBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToControlWithIEDName"
+        ordered="false" eType="#//ControlWithIEDName" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ControlWithIEDName/ReferredByControlBlock"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectedAP" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
@@ -263,19 +278,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="SMV" ordered="false" upperBound="-1"
         eType="#//SMV" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//SMV/ParentConnectedAP"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlBlock" abstract="true" eSuperTypes="#//UnNaming">
-    <eOperations name="getParentConnectedAP" eType="#//ConnectedAP"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cbName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Address" ordered="false"
-        eType="#//Address" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//Address/ParentControlBlock"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToControlWithIEDName"
-        ordered="false" eType="#//ControlWithIEDName" transient="true" unsettable="true"
-        resolveProxies="false" eOpposite="#//ControlWithIEDName/ReferredByControlBlock"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSE" eSuperTypes="#//ControlBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MinTime" eType="#//MinTime"
@@ -406,7 +408,7 @@
         upperBound="-1" eType="#//ProtNs" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//ProtNs/ParentDAType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DO" eSuperTypes="#//AbstractDataObject">
+  <eClassifiers xsi:type="ecore:EClass" name="DO" eSuperTypes="#//AbstractDataObject #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLNodeType" ordered="false"
@@ -418,7 +420,7 @@
         upperBound="-1" eType="#//DOI" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DOI/RefersToDO"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DOType" eSuperTypes="#//IDNaming">
+  <eClassifiers xsi:type="ecore:EClass" name="DOType" eSuperTypes="#//IDNaming #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -479,7 +481,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LNodeType" eSuperTypes="#//IDNaming">
+  <eClassifiers xsi:type="ecore:EClass" name="LNodeType" eSuperTypes="#//IDNaming #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -585,9 +587,8 @@
         upperBound="-1" eType="#//KDC" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//KDC/RefersToAccessPoint"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnyLN" abstract="true" eSuperTypes="#//UnNaming">
+  <eClassifiers xsi:type="ecore:EClass" name="AnyLN" abstract="true" eSuperTypes="#//UnNaming #//INamespaceGetter">
     <eOperations name="getParentLDevice" eType="#//LDevice"/>
-    <eOperations name="getNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -813,8 +814,7 @@
         ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
         resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByDAI"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DOI" eSuperTypes="#//UnNaming">
-    <eOperations name="getNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DOI" eSuperTypes="#//UnNaming #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAnyLN" ordered="false"
@@ -1112,8 +1112,7 @@
         eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//AccessPoint/ReferredByKDC"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LDevice" eSuperTypes="#//UnNaming">
-    <eOperations name="getNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LDevice" eSuperTypes="#//UnNaming #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2105,7 +2104,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceConfReportControl" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufMode" eType="#//bufModeEnum"
-        unsettable="true"/>
+        defaultValueLiteral="both" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBuf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
@@ -2327,4 +2326,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IRiseClipseConsole" instanceClassName="fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole"
       abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="INamespaceGetter" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" Copyright (c) 2019 CentraleSupélec &amp; EDF.&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License v2.0&#xA; which accompanies this distribution, and is available at&#xA; https://www.eclipse.org/legal/epl-v20.html&#xA;&#xA; This file is part of the RiseClipse tool&#xA; &#xA; Contributors:&#xA;     Computer Science Department, CentraleSupélec&#xA;     EDF R&amp;D&#xA; Contacts:&#xA;     dominique.marcadet@centralesupelec.fr&#xA;     aurelie.dehouck-neveu@edf.fr&#xA; Web site:&#xA;     http://wdi.supelec.fr/software/RiseClipse/&#xA;"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=" Copyright (c) 2016-2021 CentraleSupélec &amp; EDF.&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License v2.0&#xA; which accompanies this distribution, and is available at&#xA; https://www.eclipse.org/legal/epl-v20.html&#xA;&#xA; This file is part of the RiseClipse tool&#xA; &#xA; Contributors:&#xA;     Computer Science Department, CentraleSupélec&#xA;     EDF R&amp;D&#xA; Contacts:&#xA;     dominique.marcadet@centralesupelec.fr&#xA;     aurelie.dehouck-neveu@edf.fr&#xA; Web site:&#xA;     https://riseclipse.github.io/&#xA;"
     modelDirectory="/fr.centralesupelec.edf.riseclipse.iec61850.scl/src" editDirectory="/fr.centralesupelec.edf.riseclipse.iec61850.scl.edit/src"
     editorDirectory="/fr.centralesupelec.edf.riseclipse.iec61850.scl.editor/src" modelPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl"
     modelName="SCL" editPluginClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.provider.SCLEditPlugin"
@@ -167,6 +167,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Private/ParentBaseElement"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Process/type"/>
@@ -204,6 +205,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Communication/SubNetwork"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Communication/ParentSCL"/>
     </genClasses>
+    <genClasses ecoreClass="SCL.ecore#//ControlBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/cbName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/ldInst"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/Address"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToControlWithIEDName"/>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/getParentConnectedAP"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConnectedAP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/apName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/iedName"/>
@@ -214,13 +222,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/PhysConn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/GSE"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/SMV"/>
-    </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//ControlBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/cbName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/ldInst"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/Address"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToControlWithIEDName"/>
-      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/getParentConnectedAP"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSE">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSE/MinTime"/>
@@ -374,7 +375,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByIEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLNode"/>
       <genOperations ecoreOperation="SCL.ecore#//AnyLN/getParentLDevice"/>
-      <genOperations ecoreOperation="SCL.ecore#//AnyLN/getNamespace"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Association">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Association/associationID"/>
@@ -479,7 +479,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/accessControl"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/RefersToDO"/>
-      <genOperations ecoreOperation="SCL.ecore#//DOI/getNamespace"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataObjectDirectory">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataObjectDirectory/ParentServices"/>
@@ -633,7 +632,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/ReferredByIEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/RefersToHigherLevelLDevice"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/RefersToLowerLevelLDevices"/>
-      <genOperations ecoreOperation="SCL.ecore#//LDevice/getNamespace"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN/prefix"/>
@@ -1147,5 +1145,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgVirtual/virtual"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//IRiseClipseConsole"/>
+    <genClasses image="false" ecoreClass="SCL.ecore#//INamespaceGetter">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//INamespaceGetter/namespace"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -24,18 +24,25 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
 public class SCLXMLHandler extends SAXXMLHandler {
 
-    private Stack< Integer > lineNumbers;
+    private Stack< Integer > lineNumbers = new Stack< Integer >();
+    private boolean inPrivate = false;
+    private String lastElement;
+    
     // This is needed to avoid NullPointerException when an unknown feature is seen
     // AND OPTION_USE_DEPRECATED_METHODS is unchanged (stay true) in SclResourceFactoryImpl
     // This must not be used is OPTION_USE_DEPRECATED_METHODS is set to false
@@ -43,18 +50,122 @@ public class SCLXMLHandler extends SAXXMLHandler {
 
     public SCLXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
         super( xmiResource, helper, options );
-        lineNumbers = new Stack< Integer >();
     }
 
     @Override
-    public void startElement( String uri, String localName, String name ) {
+    public void startElement( String uri, String localName, String qName, Attributes attributes ) throws SAXException {
         lineNumbers.push( this.locator.getLineNumber() );
         // see above
         //unknownFeatureSeen = false;
-        super.startElement( uri, localName, name );
+        
+        if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri )) {
+            inPrivate = true;
+        }
+        else if( inPrivate ) {
+            if( text == null ) text = new StringBuffer();
+            else if( lastElement != null ) {
+                text.append( ">" );
+            }
+            text.append( "<" + qName );
+            lastElement = qName;
+            
+            for( int i = 0; i < attributes.getLength(); ++i ) {
+                text.append( " " + attributes.getQName( i ) + "=\"" + attributes.getValue( i ) + "\"" );
+            }
+            return;
+        }
+        super.startElement( uri, localName, qName, attributes );
+    }
+
+    @Override
+    public void characters( char[] ch, int start, int length ) {
+        if(( inPrivate ) && ( lastElement != null )) {
+            text.append( ">" );
+            lastElement = null;
+            text.append( ch, start, length );
+        }
+        else {
+            super.characters( ch, start, length );
+        }
+    }
+
+    @Override
+    public void startCDATA() {
+        if( inPrivate ) {
+            if( lastElement != null ) {
+                text.append( ">" );
+                lastElement = null;
+            }
+            else if( text == null ) text = new StringBuffer();
+            text.append( "<![CDATA[" );
+        }
+        else {
+            super.startCDATA();
+        }
+    }
+
+    @Override
+    public void endCDATA() {
+        if( inPrivate ) {
+            text.append( "]]>" );
+        }
+        else {
+            super.startCDATA();
+        }
+    }
+
+    @Override
+    public void endElement( String uri, String localName, String name ) {
+        if( lineNumbers.empty() ) {
+            AbstractRiseClipseConsole.getConsole().warning( "linenumber stack empty !" );
+        }
+        else {
+            lineNumbers.pop();
+        }
+        
+        if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri )) {
+            inPrivate = false;
+        }
+        else if( inPrivate ) {
+            if( name.equals( lastElement )) {
+                text.append( "/>" );
+                lastElement = null;
+            }
+            else {
+                text.append( "</" + name + ">" );
+            }
+            return;
+        }
+        super.endElement( uri, localName, name );
     }
 
 	@Override
+    protected EStructuralFeature getFeature( EObject object, String prefix, String name, boolean isElement ) {
+        // XMLHelperImpl.getFeature(EClass eClass, String namespaceURI, String name)
+	    // ignore the namespace to find a feature using XMLHelperImpl.getFeatureWithoutMap(EClass eClass, String name)
+	    // (checked version in Eclipse 2019-06)
+	    //
+	    // This lead to the creation of SCL objects if elements from another namespace use existing SCL element names.
+	    //
+	    // To avoid extending XMLHelper class, the namespace is checked here
+	    // And we give back the any attribute to store the element
+	    
+	    if(( isElement ) && ( prefix != null ) && ( ! SclPackage.eNS_URI.equals( helper.getURI( prefix )))) {
+	        return super.getFeature( object, prefix, "any", isElement );
+	    }
+        return super.getFeature( object, prefix, name, isElement );
+    }
+
+    @Override
+    protected EPackage getPackageForURI( String uriString ) {
+        if( ! SclPackage.eNS_URI.equals( uriString )) {
+//            AbstractRiseClipseConsole.getConsole().info( "ignoring namespace " + uriString );
+            return null;
+        }
+        return super.getPackageForURI( uriString );
+    }
+
+    @Override
     protected void processObject( EObject object ) {
         if( lineNumbers.empty() ) {
             AbstractRiseClipseConsole.getConsole().warning( "linenumber stack empty !" );
@@ -84,6 +195,11 @@ public class SCLXMLHandler extends SAXXMLHandler {
 	    // feature may be null on invalid attribute/tag
 	    if( feature == null ) return;
 	    
+	    if(( inPrivate ) && ( lastElement != null )) {
+	        text.append( " " + feature.getName() + "=\"" + value + "\"" );
+	        return;
+	    }
+	    
 	    if(( feature.getUpperBound() == 1 ) && object.eIsSet( feature )) {
 	        AbstractRiseClipseConsole.getConsole().error( "there shall not be more than 1 "
 	                + feature.getName() + " in " + object.eClass().getName() + " (line "
@@ -108,21 +224,6 @@ public class SCLXMLHandler extends SAXXMLHandler {
 	    super.setFeatureValue( object, feature, value, position );
 	}
 
-    @Override
-	public void endElement( String uri, String localName, String name ) {
-        if( lineNumbers.empty() ) {
-            AbstractRiseClipseConsole.getConsole().warning( "linenumber stack empty !" );
-        }
-        else {
-            lineNumbers.pop();
-        }
-    	
-        // See above
-        //if( ! unknownFeatureSeen ) {
-            super.endElement( uri, localName, name );
-        //}
-	}
-
 	@Override
     public void endDocument() {
         super.endDocument();
@@ -142,7 +243,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
     }
 
     @Override
-    public void handleUnknownFeature( java.lang.String prefix, java.lang.String name, boolean isElement, EObject peekObject, java.lang.String value ) {
+    public void handleUnknownFeature( String prefix, String name, boolean isElement, EObject peekObject, String value ) {
         String mess = "unknown feature " + name;
         mess += " in object " + peekObject.eClass().getName();
         if( ! lineNumbers.empty() ) {

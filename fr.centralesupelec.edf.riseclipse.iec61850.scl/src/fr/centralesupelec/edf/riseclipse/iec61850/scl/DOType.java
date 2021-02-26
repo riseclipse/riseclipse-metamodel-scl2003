@@ -43,7 +43,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DOType extends IDNaming {
+public interface DOType extends IDNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Cdc</b></em>' attribute.
      * <!-- begin-user-doc -->

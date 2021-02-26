@@ -22,6 +22,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -36,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -47,6 +51,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getCdc <em>Cdc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getDA <em>DA</em>}</li>
@@ -58,6 +63,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * @generated
  */
 public class DOTypeImpl extends IDNamingImpl implements DOType {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getCdc() <em>Cdc</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -490,6 +505,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.DO_TYPE__NAMESPACE:
+            return getNamespace();
         case SclPackage.DO_TYPE__CDC:
             return getCdc();
         case SclPackage.DO_TYPE__IED_TYPE:
@@ -578,6 +595,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.DO_TYPE__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.DO_TYPE__CDC:
             return isSetCdc();
         case SclPackage.DO_TYPE__IED_TYPE:
@@ -592,6 +611,42 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             return isSetSDO();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.DO_TYPE__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.DO_TYPE__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -616,6 +671,30 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             result.append( "<unset>" );
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getNamespace() {
+        //@formatter:off
+        
+        // 1.  DOType.DA["dataNs"].value                   if present
+        // 2.  null                                        otherwise
+        
+        List< DA > lnNsDa =
+                 getDA()
+                .stream()
+                .filter( da -> "dataNs".equals( da.getName() ) )
+                .collect( Collectors.toList() );
+        if( lnNsDa.size() == 1 ) {
+            if((       lnNsDa.get( 0 ).getVal().size() == 1 )
+                  && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                  && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
+                return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+            }
+        }
+        return null;
+
+        //@formatter:on
     }
 
 } //DOTypeImpl

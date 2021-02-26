@@ -44,7 +44,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DOI extends UnNaming {
+public interface DOI extends UnNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -352,13 +352,5 @@ public interface DOI extends UnNaming {
      * @generated
      */
     boolean isSetRefersToDO();
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @model kind="operation"
-     * @generated
-     */
-    String getNamespace();
 
 } // DOI

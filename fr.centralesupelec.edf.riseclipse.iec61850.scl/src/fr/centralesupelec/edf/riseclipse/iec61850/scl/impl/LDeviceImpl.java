@@ -42,14 +42,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,6 +58,7 @@ import java.lang.reflect.InvocationTargetException;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAccessControl <em>Access Control</em>}</li>
@@ -73,6 +73,16 @@ import java.lang.reflect.InvocationTargetException;
  * @generated
  */
 public class LDeviceImpl extends UnNamingImpl implements LDevice {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -820,46 +830,75 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public String getNamespace() {
+        String ns = getNamespace( "lnNs" );
+        if( ns == null ) {
+            ns = getNamespace( "ldNs" );
+        }
+        return ns;
+    }
+    
+    private String getNamespace( String kind ) {
+        //@formatter:off
+
+        // The attribute ldNs shall be a DataAttribute of the name plate NamPlt of the LOGICAL- NODE-ZERO (LLN0).
+        //
+        // LDevice.ldNs
+        // 1.  LDevice.LN0.DOI["NamPlt"].DAI["ldNs"].value                 if present
+        // 2.  LDevice.LN0.DOI["NamPlt"].DAI["ldNs"].DA.value              if present
+        // 3.  LDevice.LN0.DOI["NamPlt"].DO.DOType.DA["ldNs"].value        If present
+        // 4.  LDevice.LN0.LNodeType.DO["NamPlt"].DOType.DA["ldNs"].value  if present
+        // 5.  null (should not occur in a valid SCL file)                 otherwise
+        
+        // LDevice.lnNs
+        // 1.  LDevice.LN0.DOI["NamPlt"].DAI["lnNs"].value                 if present
+        // 2.  LDevice.LN0.DOI["NamPlt"].DAI["lnNs"].DA.value              if present
+        // 3.  LDevice.LN0.DOI["NamPlt"].DO.DOType.DA["lnNs"].value        If present
+        // 4.  LDevice.LN0.LNodeType.DO["NamPlt"].DOType.DA["lnNs"].value  if present
+        // 5.  LDevice.ldNs                                    otherwise
+        
+
         if( getLN0() == null ) return null;
-        List< DOI > namPltDoi = getLN0()
+        List< DOI > namPltDoi =
+                 getLN0()
                 .getDOI()
                 .stream()
                 .filter( doi -> "NamPlt".equals( doi.getName() ) )
                 .collect( Collectors.toList() );
         if( namPltDoi.size() == 1 ) {
-            List< DAI > ldNsDai = namPltDoi
+            List< DAI > ldNsDai =
+                     namPltDoi
                     .get( 0 )
                     .getDAI()
                     .stream()
-                    .filter( dai -> "ldNs".equals( dai.getName() ) )
+                    .filter( dai -> kind.equals( dai.getName() ) )
                     .collect( Collectors.toList() );
             if( ldNsDai.size() == 1 ) {
-                if( ( ldNsDai.get( 0 ).getVal().size() == 1 )
-                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
+                if( (      ldNsDai.get( 0 ).getVal().size() == 1 )
+                 && (      ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                 && (      ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
                     return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
                 }
-                if( ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue()
-                                .length() != 0 ) ) {
+                if( (      ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                      && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                      && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                      && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 ) ) {
                     return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
                 }
             }
-            if( namPltDoi.get( 0 ).getRefersToDO() != null ) {
-                List< DA > lnNsDa = namPltDoi
+            if(( namPltDoi.get( 0 ).getRefersToDO() != null ) && ( namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType() != null )) {
+                List< DA > lnNsDa =
+                         namPltDoi
                         .get( 0 )
                         .getRefersToDO()
                         .getRefersToDOType()
                         .getDA()
                         .stream()
-                        .filter( da -> "ldNs".equals( da.getName() ) )
+                        .filter( da -> kind.equals( da.getName() ) )
                         .collect( Collectors.toList() );
                 if( lnNsDa.size() == 1 ) {
-                    if( ( lnNsDa.get( 0 ).getVal().size() == 1 )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
+                    if( (      lnNsDa.get( 0 ).getVal().size() == 1 )
+                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
                         return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
                     }
                 }
@@ -867,7 +906,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         }
 
         if( getLN0().getRefersToLNodeType() == null ) return null;
-        List< DO > namPltDo = getLN0()
+        List< DO > namPltDo =
+                 getLN0()
                 .getRefersToLNodeType()
                 .getDO()
                 .stream()
@@ -875,23 +915,26 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .collect( Collectors.toList() );
         if( namPltDo.size() == 1 ) {
             if( namPltDo.get( 0 ).getRefersToDOType() == null ) return null;
-            List< DA > ldNsDa = namPltDo
+            List< DA > ldNsDa =
+                     namPltDo
                     .get( 0 )
                     .getRefersToDOType()
                     .getDA()
                     .stream()
-                    .filter( da -> "ldNs".equals( da.getName() ) )
+                    .filter( da -> kind.equals( da.getName() ) )
                     .collect( Collectors.toList() );
             if( ldNsDa.size() == 1 ) {
-                if( ( ldNsDa.get( 0 ).getVal().size() == 1 )
-                        && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
+                if((       ldNsDa.get( 0 ).getVal().size() == 1 )
+                      && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
                     return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
                 }
             }
         }
 
         return null;
+        
+        //@formatter:on
     }
 
     /**
@@ -1095,6 +1138,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__NAMESPACE:
+            return getNamespace();
         case SclPackage.LDEVICE__INST:
             return getInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1206,6 +1251,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.LDEVICE__INST:
             return isSetInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1234,12 +1281,34 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @generated
      */
     @Override
-    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
-        switch( operationID ) {
-        case SclPackage.LDEVICE___GET_NAMESPACE:
-            return getNamespace();
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.LDEVICE__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
         }
-        return super.eInvoke( operationID, arguments );
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.LDEVICE__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

@@ -428,6 +428,13 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass iNamespaceGetterEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass durationInMilliSecEClass = null;
 
     /**
@@ -1906,6 +1913,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getPrivate_Value() {
+        return ( EAttribute ) getPrivate().getEStructuralFeatures().get( 3 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getProcess() {
         if( processEClass == null ) {
             processEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()
@@ -2239,7 +2256,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     public EClass getConnectedAP() {
         if( connectedAPEClass == null ) {
             connectedAPEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
-                    .getEClassifiers().get( 14 );
+                    .getEClassifiers().get( 15 );
         }
         return connectedAPEClass;
     }
@@ -2343,7 +2360,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     public EClass getControlBlock() {
         if( controlBlockEClass == null ) {
             controlBlockEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
-                    .getEClassifiers().get( 15 );
+                    .getEClassifiers().get( 14 );
         }
         return controlBlockEClass;
     }
@@ -4152,6 +4169,30 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EClass getINamespaceGetter() {
+        if( iNamespaceGetterEClass == null ) {
+            iNamespaceGetterEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
+                    .getEClassifiers().get( 183 );
+        }
+        return iNamespaceGetterEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getINamespaceGetter_Namespace() {
+        return ( EAttribute ) getINamespaceGetter().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getDurationInMilliSec() {
         if( durationInMilliSecEClass == null ) {
             durationInMilliSecEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
@@ -4540,16 +4581,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EOperation getAnyLN__GetParentLDevice() {
         return getAnyLN().getEOperations().get( 0 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EOperation getAnyLN__GetNamespace() {
-        return getAnyLN().getEOperations().get( 1 );
     }
 
     /**
@@ -5482,16 +5513,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getDOI_RefersToDO() {
         return ( EReference ) getDOI().getEStructuralFeatures().get( 6 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EOperation getDOI__GetNamespace() {
-        return getDOI().getEOperations().get( 0 );
     }
 
     /**
@@ -6868,16 +6889,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLDevice_RefersToLowerLevelLDevices() {
         return ( EReference ) getLDevice().getEStructuralFeatures().get( 8 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EOperation getLDevice__GetNamespace() {
-        return getLDevice().getEOperations().get( 0 );
     }
 
     /**

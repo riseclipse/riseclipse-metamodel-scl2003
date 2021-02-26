@@ -115,8 +115,9 @@ public class LN0ItemProvider extends AnyLNItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        LN0 ln0 = ( LN0 ) object;
-        return getString( "_UI_LN0_type" ) + " " + ln0.getLineNumber();
+        String label = ( ( LN0 ) object ).getNamespace();
+        return label == null || label.length() == 0 ? getString( "_UI_LN0_type" )
+                : getString( "_UI_LN0_type" ) + " " + label;
     }
 
     /**

@@ -41,6 +41,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ServiceConfReportControl extends ServiceWithMax {
     /**
      * Returns the value of the '<em><b>Buf Mode</b></em>' attribute.
+     * The default value is <code>"both"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -54,7 +55,7 @@ public interface ServiceConfReportControl extends ServiceWithMax {
      * @see #unsetBufMode()
      * @see #setBufMode(bufModeEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceConfReportControl_BufMode()
-     * @model unsettable="true"
+     * @model default="both" unsettable="true"
      * @generated
      */
     bufModeEnum getBufMode();

@@ -41,7 +41,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DO extends AbstractDataObject {
+public interface DO extends AbstractDataObject, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Transient</b></em>' attribute.
      * The default value is <code>"false"</code>.

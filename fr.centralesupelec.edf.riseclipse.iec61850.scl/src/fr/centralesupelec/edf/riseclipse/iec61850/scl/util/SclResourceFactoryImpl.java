@@ -54,6 +54,7 @@ public class SclResourceFactoryImpl extends ResourceFactoryImpl implements IRise
     @Override
     public SclResourceImpl createResource( URI uri ) {
         SclResourceImpl result = new SclResourceImpl( uri );
+
         result.getDefaultSaveOptions().put( XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE );
         result.getDefaultLoadOptions().put( XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE );
 
@@ -63,6 +64,9 @@ public class SclResourceFactoryImpl extends ResourceFactoryImpl implements IRise
         result.getDefaultSaveOptions().put( XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE );
 
         result.getDefaultLoadOptions().put( XMLResource.OPTION_USE_LEXICAL_HANDLER, Boolean.TRUE );
+
+        result.getDefaultLoadOptions().put( XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE );
+
         return result;
     }
 

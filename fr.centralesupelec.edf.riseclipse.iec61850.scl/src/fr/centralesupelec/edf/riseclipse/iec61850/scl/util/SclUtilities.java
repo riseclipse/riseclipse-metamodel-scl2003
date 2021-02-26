@@ -157,6 +157,27 @@ public class SclUtilities {
         return Pair.of( res.get( 0 ), 1 );
     }
 
+    public static Pair< AnyLN, Integer > getAnyLN( @NonNull AccessPoint accessPoint, @NonNull String lnClass, @NonNull String lnInst, String prefix ) {
+        if( "LLN0".equals( lnClass )) {
+            return Pair.of( null, 0 );
+        }
+        
+        // Null checks must be done as annotation-based null analysis is not enabled (issue #64)
+        if( lnClass == null ) return Pair.of( null, 0 );
+        if( lnInst == null )  return Pair.of( null, 0 );
+        
+        List< LN > res =
+                accessPoint
+                .getLN()
+                .stream()
+                .filter( ln -> lnClass.equals( ln.getLnClass() ) && lnInst.equals( ln.getInst() ) && Objects.equals( prefix, ln.getPrefix() ))
+                .collect( Collectors.toList() );
+        if( res.size() != 1 ) {
+            return Pair.of( null, res.size() );
+        }
+        return Pair.of( res.get( 0 ), 1 );
+    }
+
     public static void displayNotFoundWarning( IRiseClipseConsole console, String prefix, String suffix, int nb ) {
         console.warning( prefix, (( nb == 0 ) ? "cannot find " : "found several " ), suffix );
     }

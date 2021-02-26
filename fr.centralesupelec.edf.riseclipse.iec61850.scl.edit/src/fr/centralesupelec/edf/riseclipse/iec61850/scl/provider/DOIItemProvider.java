@@ -62,12 +62,35 @@ public class DOIItemProvider extends UnNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addNamespacePropertyDescriptor( object );
             addIxPropertyDescriptor( object );
             addAccessControlPropertyDescriptor( object );
             addNamePropertyDescriptor( object );
             addRefersToDOPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Namespace feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamespacePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_INamespaceGetter_namespace_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_INamespaceGetter_namespace_feature",
+                                "_UI_INamespaceGetter_type" ),
+                        SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -222,6 +245,7 @@ public class DOIItemProvider extends UnNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( DOI.class ) ) {
+        case SclPackage.DOI__NAMESPACE:
         case SclPackage.DOI__IX:
         case SclPackage.DOI__ACCESS_CONTROL:
         case SclPackage.DOI__NAME:

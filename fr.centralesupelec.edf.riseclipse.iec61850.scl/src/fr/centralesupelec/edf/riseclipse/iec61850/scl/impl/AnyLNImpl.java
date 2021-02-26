@@ -25,11 +25,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
@@ -65,6 +65,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLnType <em>Ln Type</em>}</li>
@@ -85,6 +86,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1068,35 +1079,45 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public String getNamespace() {
         //@formatter:off
+        
+        // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
+        //
+        // 1.  AnyLN.DOI["NamPlt"].DAI["lnNs"].value                   if present
+        // 2.  AnyLN.DOI["NamPlt"].DAI["lnNs"].DA.value                if present
+        // 3.  AnyLN.DOI["NamPlt"].DO.DOType.DA["lnNs"].value          if present
+        // 4.  AnyLN.LNodeType.namespace                               if not null
+        // 5.  AnyLN.ParentLDevice.lnNs                                otherwise
+
+        
         List< DOI > namPltDoi =
-                getDOI()
+                 getDOI()
                 .stream()
                 .filter( doi -> "NamPlt".equals( doi.getName() ))
                 .collect( Collectors.toList() );
         if( namPltDoi.size() == 1 ) {
             List< DAI > lnNsDai =
-                    namPltDoi
+                     namPltDoi
                     .get( 0 )
                     .getDAI()
                     .stream()
                     .filter( dai -> "lnNs".equals(  dai.getName() ))
                     .collect( Collectors.toList() );
             if( lnNsDai.size() == 1 ) {
-                if((         lnNsDai.get( 0 ).getVal().size() == 1 )
-                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                if((       lnNsDai.get( 0 ).getVal().size() == 1 )
+                      && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                     return lnNsDai.get( 0 ).getVal().get( 0 ).getValue();
                 }
                 if((         lnNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
                         && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
                         && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
                         && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                    return lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                    return   lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
                 }
             }
-            if( namPltDoi.get( 0 ).getRefersToDO() != null ) {
+            if(( namPltDoi.get( 0 ).getRefersToDO() != null ) && ( namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType() != null )) {
                 List< DA > lnNsDa =
-                        namPltDoi
+                         namPltDoi
                         .get( 0 )
                         .getRefersToDO()
                         .getRefersToDOType()
@@ -1105,45 +1126,25 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                         .filter( da -> "lnNs".equals(  da.getName() ))
                         .collect( Collectors.toList() );
                 if( lnNsDa.size() == 1 ) {
-                    if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    if((       lnNsDa.get( 0 ).getVal().size() == 1 )
+                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                         return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
                     }
                 }
             }
         }
 
+        String ns = null;
         if( getRefersToLNodeType() != null ) {
-            List< DO > namPltDo =
-                    getRefersToLNodeType()
-                    .getDO()
-                    .stream()
-                    .filter( doi -> "NamPlt".equals( doi.getName() ))
-                    .collect( Collectors.toList() );
-            if( namPltDo.size() == 1 ) {
-                if( namPltDo.get( 0 ).getRefersToDOType() != null ) {
-                    List< DA > lnNsDa =
-                            namPltDo
-                            .get( 0 )
-                            .getRefersToDOType()
-                            .getDA()
-                            .stream()
-                            .filter( da -> "lnNs".equals(  da.getName() ))
-                            .collect( Collectors.toList() );
-                    if( lnNsDa.size() == 1 ) {
-                        if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                            return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                        }
-                    }
-                }
-            }
+            ns = getRefersToLNodeType().getNamespace();
         }
 
-        if( getParentLDevice() == null ) return null;
-        return getParentLDevice().getNamespace();
+        if(( ns == null ) && ( getParentLDevice() != null )) {
+            ns = getParentLDevice().getNamespace();
+        }
+        return ns;
+
         //@formatter:on
     }
 
@@ -1242,6 +1243,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.ANY_LN__NAMESPACE:
+            return getNamespace();
         case SclPackage.ANY_LN__INST:
             return getInst();
         case SclPackage.ANY_LN__LN_CLASS:
@@ -1409,6 +1412,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.ANY_LN__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.ANY_LN__INST:
             return isSetInst();
         case SclPackage.ANY_LN__LN_CLASS:
@@ -1449,12 +1454,46 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.ANY_LN__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.ANY_LN__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
         switch( operationID ) {
         case SclPackage.ANY_LN___GET_PARENT_LDEVICE:
             return getParentLDevice();
-        case SclPackage.ANY_LN___GET_NAMESPACE:
-            return getNamespace();
         }
         return super.eInvoke( operationID, arguments );
     }

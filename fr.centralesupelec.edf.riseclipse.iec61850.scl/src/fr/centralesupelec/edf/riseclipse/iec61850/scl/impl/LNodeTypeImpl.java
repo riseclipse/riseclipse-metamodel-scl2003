@@ -21,6 +21,9 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -33,8 +36,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -47,6 +52,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getDO <em>DO</em>}</li>
@@ -58,6 +64,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * @generated
  */
 public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getIedType() <em>Ied Type</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -163,6 +179,47 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getLNodeType();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public String getNamespace() {
+        //@formatter:off
+        
+        // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
+        //
+        // 1. LNodeType.DO["NamPlt"].DOType.DA["lnNs"].value        if present
+        // 2. null                                                  otherwise
+        
+        List< DO > namPltDo =
+                 getDO()
+                .stream()
+                .filter( do_ -> "NamPlt".equals( do_.getName() ))
+                .collect( Collectors.toList() );
+        if(( namPltDo.size() == 1 ) && ( namPltDo.get( 0 ).getRefersToDOType() != null )) {
+            List< DA > lnNsDa =
+                     namPltDo
+                    .get( 0 )
+                    .getRefersToDOType()
+                    .getDA()
+                    .stream()
+                    .filter( dai -> "lnNs".equals(  dai.getName() ))
+                    .collect( Collectors.toList() );
+            if( lnNsDa.size() == 1 ) {
+                if((       lnNsDa.get( 0 ).getVal().size() == 1 )
+                      && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                }
+            }
+        }
+        return null;
+
+        //@formatter:on
     }
 
     /**
@@ -488,6 +545,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.LNODE_TYPE__NAMESPACE:
+            return getNamespace();
         case SclPackage.LNODE_TYPE__IED_TYPE:
             return getIedType();
         case SclPackage.LNODE_TYPE__LN_CLASS:
@@ -576,6 +635,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LNODE_TYPE__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.LNODE_TYPE__IED_TYPE:
             return isSetIedType();
         case SclPackage.LNODE_TYPE__LN_CLASS:
@@ -590,6 +651,42 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             return isSetReferredByLNode();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.LNODE_TYPE__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.LNODE_TYPE__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

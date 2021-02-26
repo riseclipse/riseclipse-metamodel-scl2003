@@ -46,7 +46,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LDevice extends UnNaming {
+public interface LDevice extends UnNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Inst</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -411,14 +411,6 @@ public interface LDevice extends UnNaming {
      * @generated
      */
     boolean isSetRefersToLowerLevelLDevices();
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @model kind="operation"
-     * @generated
-     */
-    String getNamespace();
 
     /**
      * Returns the value of the '<em><b>LN0</b></em>' containment reference.

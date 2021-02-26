@@ -23,16 +23,19 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -51,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getTransient <em>Transient</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getParentLNodeType <em>Parent LNode Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getAccessControl <em>Access Control</em>}</li>
@@ -60,6 +64,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class DOImpl extends AbstractDataObjectImpl implements DO {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getTransient() <em>Transient</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -389,6 +403,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.DO__NAMESPACE:
+            return getNamespace();
         case SclPackage.DO__TRANSIENT:
             return getTransient();
         case SclPackage.DO__PARENT_LNODE_TYPE:
@@ -459,6 +475,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.DO__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.DO__TRANSIENT:
             return isSetTransient();
         case SclPackage.DO__PARENT_LNODE_TYPE:
@@ -469,6 +487,42 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
             return isSetReferredByDOI();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.DO__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.DO__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -530,6 +584,41 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         setRefersToDOType( res.get( 0 ) );
         console.info( "[SCL links] DO on line ", getLineNumber(), " refers to ", mess, " on line ",
                 getRefersToDOType().getLineNumber() );
+    }
+
+    @Override
+    public String getNamespace() {
+        //@formatter:off
+        
+        // The attribute dataNs shall be a DataAttribute of the data.
+        //
+        // 1.  DO.DOType.namespace                                  if not null
+        // 2.  DO.ParentLNodeType.DO["NamPlt"].DOType.namespace     if not null
+        // 3.  DO.ParentLNodeType.namespace                         otherwise
+
+        if( getRefersToDOType() != null ) {
+            String ns = getRefersToDOType().getNamespace();
+            if( ns != null ) return ns;
+        }
+        
+        if( getParentLNodeType() != null ) {
+            
+            List< DO > namPltDo =
+                    getParentLNodeType()
+                   .getDO()
+                   .stream()
+                   .filter( do_ -> "NamPlt".equals( do_.getName() ))
+                   .collect( Collectors.toList() );
+            // Avoid infinite recursion
+            if(( namPltDo.size() == 1 ) && ( namPltDo.get( 0 ) != this )) {
+                String ns = namPltDo.get( 0 ).getNamespace();
+                if( ns != null ) return ns;
+            }
+            return getParentLNodeType().getNamespace();
+        }
+        return null;
+
+        //@formatter:on
     }
 
 } //DOImpl

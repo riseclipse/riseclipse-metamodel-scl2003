@@ -1521,13 +1521,22 @@ public interface SclPackage extends EPackage {
     int PRIVATE__PARENT_BASE_ELEMENT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE__VALUE = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Private</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PRIVATE_FEATURE_COUNT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 3;
+    int PRIVATE_FEATURE_COUNT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -2118,7 +2127,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getConnectedAP()
      * @generated
      */
-    int CONNECTED_AP = 14;
+    int CONNECTED_AP = 15;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl <em>Control Block</em>}' class.
@@ -2128,7 +2137,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getControlBlock()
      * @generated
      */
-    int CONTROL_BLOCK = 15;
+    int CONTROL_BLOCK = 14;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEImpl <em>GSE</em>}' class.
@@ -3565,6 +3574,141 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
+    int CONTROL_BLOCK__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__PRIVATE = UN_NAMING__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__TEXT = UN_NAMING__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__ANY = UN_NAMING__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__ANY_ATTRIBUTE = UN_NAMING__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__DESC = UN_NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Cb Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__CB_NAME = UN_NAMING_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__LD_INST = UN_NAMING_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Address</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__ADDRESS = UN_NAMING_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Refers To Control With IED Name</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME = UN_NAMING_FEATURE_COUNT + 3;
+
+    /**
+     * The number of structural features of the '<em>Control Block</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Parent Connected AP</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK___GET_PARENT_CONNECTED_AP = UN_NAMING_OPERATION_COUNT + 0;
+
+    /**
+     * The number of operations of the '<em>Control Block</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Line Number</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
     int CONNECTED_AP__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
 
     /**
@@ -3728,141 +3872,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTED_AP_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Line Number</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
-
-    /**
-     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
-
-    /**
-     * The feature id for the '<em><b>Private</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__PRIVATE = UN_NAMING__PRIVATE;
-
-    /**
-     * The feature id for the '<em><b>Text</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__TEXT = UN_NAMING__TEXT;
-
-    /**
-     * The feature id for the '<em><b>Any</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__ANY = UN_NAMING__ANY;
-
-    /**
-     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__ANY_ATTRIBUTE = UN_NAMING__ANY_ATTRIBUTE;
-
-    /**
-     * The feature id for the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__DESC = UN_NAMING__DESC;
-
-    /**
-     * The feature id for the '<em><b>Cb Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__CB_NAME = UN_NAMING_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__LD_INST = UN_NAMING_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Address</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__ADDRESS = UN_NAMING_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Refers To Control With IED Name</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME = UN_NAMING_FEATURE_COUNT + 3;
-
-    /**
-     * The number of structural features of the '<em>Control Block</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
-
-    /**
-     * The operation id for the '<em>Build Explicit Links</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
-
-    /**
-     * The operation id for the '<em>Get Parent Connected AP</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK___GET_PARENT_CONNECTED_AP = UN_NAMING_OPERATION_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Control Block</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_BLOCK_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -5720,13 +5729,22 @@ public interface SclPackage extends EPackage {
     int DO__REFERRED_BY_EXT_REF = ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO__NAMESPACE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Transient</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DO__TRANSIENT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 0;
+    int DO__TRANSIENT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Parent LNode Type</b></em>' container reference.
@@ -5735,7 +5753,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO__PARENT_LNODE_TYPE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 1;
+    int DO__PARENT_LNODE_TYPE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Access Control</b></em>' attribute.
@@ -5744,7 +5762,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO__ACCESS_CONTROL = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
+    int DO__ACCESS_CONTROL = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Referred By DOI</b></em>' reference list.
@@ -5753,7 +5771,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO__REFERRED_BY_DOI = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
+    int DO__REFERRED_BY_DOI = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>DO</em>' class.
@@ -5762,7 +5780,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 4;
+    int DO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -5855,13 +5873,22 @@ public interface SclPackage extends EPackage {
     int DO_TYPE__ID = ID_NAMING__ID;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE__NAMESPACE = ID_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Cdc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DO_TYPE__CDC = ID_NAMING_FEATURE_COUNT + 0;
+    int DO_TYPE__CDC = ID_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ied Type</b></em>' attribute.
@@ -5870,7 +5897,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_TYPE__IED_TYPE = ID_NAMING_FEATURE_COUNT + 1;
+    int DO_TYPE__IED_TYPE = ID_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>DA</b></em>' containment reference list.
@@ -5879,7 +5906,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_TYPE__DA = ID_NAMING_FEATURE_COUNT + 2;
+    int DO_TYPE__DA = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Referred By Abstract Data Object</b></em>' reference list.
@@ -5888,7 +5915,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT = ID_NAMING_FEATURE_COUNT + 3;
+    int DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT = ID_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
@@ -5897,7 +5924,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 4;
+    int DO_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>SDO</b></em>' containment reference list.
@@ -5906,7 +5933,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_TYPE__SDO = ID_NAMING_FEATURE_COUNT + 5;
+    int DO_TYPE__SDO = ID_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>DO Type</em>' class.
@@ -5915,7 +5942,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DO_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 6;
+    int DO_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -6305,13 +6332,22 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE__ID = ID_NAMING__ID;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__NAMESPACE = ID_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Ied Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__IED_TYPE = ID_NAMING_FEATURE_COUNT + 0;
+    int LNODE_TYPE__IED_TYPE = ID_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -6320,7 +6356,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__LN_CLASS = ID_NAMING_FEATURE_COUNT + 1;
+    int LNODE_TYPE__LN_CLASS = ID_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>DO</b></em>' containment reference list.
@@ -6329,7 +6365,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__DO = ID_NAMING_FEATURE_COUNT + 2;
+    int LNODE_TYPE__DO = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
@@ -6338,7 +6374,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 3;
+    int LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Referred By Any LN</b></em>' reference list.
@@ -6347,7 +6383,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__REFERRED_BY_ANY_LN = ID_NAMING_FEATURE_COUNT + 4;
+    int LNODE_TYPE__REFERRED_BY_ANY_LN = ID_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
@@ -6356,7 +6392,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__REFERRED_BY_LNODE = ID_NAMING_FEATURE_COUNT + 5;
+    int LNODE_TYPE__REFERRED_BY_LNODE = ID_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>LNode Type</em>' class.
@@ -6365,7 +6401,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 6;
+    int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -7054,13 +7090,22 @@ public interface SclPackage extends EPackage {
     int ANY_LN__DESC = UN_NAMING__DESC;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN__NAMESPACE = UN_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Inst</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN__INST = UN_NAMING_FEATURE_COUNT + 0;
+    int ANY_LN__INST = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -7069,7 +7114,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__LN_CLASS = UN_NAMING_FEATURE_COUNT + 1;
+    int ANY_LN__LN_CLASS = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Ln Type</b></em>' attribute.
@@ -7078,7 +7123,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__LN_TYPE = UN_NAMING_FEATURE_COUNT + 2;
+    int ANY_LN__LN_TYPE = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Refers To LNode Type</b></em>' reference.
@@ -7087,7 +7132,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERS_TO_LNODE_TYPE = UN_NAMING_FEATURE_COUNT + 3;
+    int ANY_LN__REFERS_TO_LNODE_TYPE = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Inputs</b></em>' containment reference.
@@ -7096,7 +7141,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__INPUTS = UN_NAMING_FEATURE_COUNT + 4;
+    int ANY_LN__INPUTS = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Log</b></em>' containment reference list.
@@ -7105,7 +7150,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__LOG = UN_NAMING_FEATURE_COUNT + 5;
+    int ANY_LN__LOG = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>DOI</b></em>' containment reference list.
@@ -7114,7 +7159,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__DOI = UN_NAMING_FEATURE_COUNT + 6;
+    int ANY_LN__DOI = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Report Control</b></em>' containment reference list.
@@ -7123,7 +7168,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REPORT_CONTROL = UN_NAMING_FEATURE_COUNT + 7;
+    int ANY_LN__REPORT_CONTROL = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Log Control</b></em>' containment reference list.
@@ -7132,7 +7177,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 8;
+    int ANY_LN__LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The feature id for the '<em><b>Data Set</b></em>' containment reference list.
@@ -7141,7 +7186,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__DATA_SET = UN_NAMING_FEATURE_COUNT + 9;
+    int ANY_LN__DATA_SET = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Referred By Client LN</b></em>' reference list.
@@ -7150,7 +7195,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 10;
+    int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
@@ -7159,7 +7204,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 11;
+    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 12;
 
     /**
      * The feature id for the '<em><b>Referred By Association</b></em>' reference list.
@@ -7168,7 +7213,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 12;
+    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 13;
 
     /**
      * The feature id for the '<em><b>Referred By IED Name</b></em>' reference list.
@@ -7177,7 +7222,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 13;
+    int ANY_LN__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
      * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
@@ -7186,7 +7231,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 14;
+    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
      * The number of structural features of the '<em>Any LN</em>' class.
@@ -7195,7 +7240,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 15;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -7216,22 +7261,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN___GET_PARENT_LDEVICE = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
-     * The operation id for the '<em>Get Namespace</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 1;
-
-    /**
      * The number of operations of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 2;
+    int ANY_LN_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -9624,13 +9660,22 @@ public interface SclPackage extends EPackage {
     int DOI__DESC = UN_NAMING__DESC;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI__NAMESPACE = UN_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOI__IX = UN_NAMING_FEATURE_COUNT + 0;
+    int DOI__IX = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
@@ -9639,7 +9684,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI__PARENT_ANY_LN = UN_NAMING_FEATURE_COUNT + 1;
+    int DOI__PARENT_ANY_LN = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>DAI</b></em>' containment reference list.
@@ -9648,7 +9693,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI__DAI = UN_NAMING_FEATURE_COUNT + 2;
+    int DOI__DAI = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>SDI</b></em>' containment reference list.
@@ -9657,7 +9702,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI__SDI = UN_NAMING_FEATURE_COUNT + 3;
+    int DOI__SDI = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Access Control</b></em>' attribute.
@@ -9666,7 +9711,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI__ACCESS_CONTROL = UN_NAMING_FEATURE_COUNT + 4;
+    int DOI__ACCESS_CONTROL = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9675,7 +9720,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI__NAME = UN_NAMING_FEATURE_COUNT + 5;
+    int DOI__NAME = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Refers To DO</b></em>' reference.
@@ -9684,7 +9729,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI__REFERS_TO_DO = UN_NAMING_FEATURE_COUNT + 6;
+    int DOI__REFERS_TO_DO = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>DOI</em>' class.
@@ -9693,7 +9738,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 7;
+    int DOI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -9705,22 +9750,13 @@ public interface SclPackage extends EPackage {
     int DOI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The operation id for the '<em>Get Namespace</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DOI___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 0;
-
-    /**
      * The number of operations of the '<em>DOI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOI_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
+    int DOI_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -12362,13 +12398,22 @@ public interface SclPackage extends EPackage {
     int LDEVICE__DESC = UN_NAMING__DESC;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__NAMESPACE = UN_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Inst</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE__INST = UN_NAMING_FEATURE_COUNT + 0;
+    int LDEVICE__INST = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ld Name</b></em>' attribute.
@@ -12377,7 +12422,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__LD_NAME = UN_NAMING_FEATURE_COUNT + 1;
+    int LDEVICE__LD_NAME = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Access Control</b></em>' containment reference.
@@ -12386,7 +12431,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__ACCESS_CONTROL = UN_NAMING_FEATURE_COUNT + 2;
+    int LDEVICE__ACCESS_CONTROL = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Parent Server</b></em>' container reference.
@@ -12395,7 +12440,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__PARENT_SERVER = UN_NAMING_FEATURE_COUNT + 3;
+    int LDEVICE__PARENT_SERVER = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>LN0</b></em>' containment reference.
@@ -12404,7 +12449,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 4;
+    int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>LN</b></em>' containment reference list.
@@ -12413,7 +12458,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 5;
+    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Referred By IED Name</b></em>' reference.
@@ -12422,7 +12467,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 6;
+    int LDEVICE__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To Higher Level LDevice</b></em>' reference.
@@ -12431,7 +12476,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE = UN_NAMING_FEATURE_COUNT + 7;
+    int LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Lower Level LDevices</b></em>' reference list.
@@ -12440,7 +12485,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES = UN_NAMING_FEATURE_COUNT + 8;
+    int LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>LDevice</em>' class.
@@ -12449,7 +12494,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
+    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12461,22 +12506,13 @@ public interface SclPackage extends EPackage {
     int LDEVICE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The operation id for the '<em>Get Namespace</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LDEVICE___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 0;
-
-    /**
      * The number of operations of the '<em>LDevice</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
+    int LDEVICE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -12540,6 +12576,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN__DESC = ANY_LN__DESC;
+
+    /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__NAMESPACE = ANY_LN__NAMESPACE;
 
     /**
      * The feature id for the '<em><b>Inst</b></em>' attribute.
@@ -12731,15 +12776,6 @@ public interface SclPackage extends EPackage {
     int LN___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
 
     /**
-     * The operation id for the '<em>Get Namespace</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN___GET_NAMESPACE = ANY_LN___GET_NAMESPACE;
-
-    /**
      * The number of operations of the '<em>LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12810,6 +12846,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__DESC = ANY_LN__DESC;
+
+    /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0__NAMESPACE = ANY_LN__NAMESPACE;
 
     /**
      * The feature id for the '<em><b>Inst</b></em>' attribute.
@@ -13008,15 +13053,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
-
-    /**
-     * The operation id for the '<em>Get Namespace</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0___GET_NAMESPACE = ANY_LN___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>LN0</em>' class.
@@ -21676,6 +21712,43 @@ public interface SclPackage extends EPackage {
     int IRISE_CLIPSE_CONSOLE_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter <em>INamespace Getter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getINamespaceGetter()
+     * @generated
+     */
+    int INAMESPACE_GETTER = 170;
+
+    /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INAMESPACE_GETTER__NAMESPACE = 0;
+
+    /**
+     * The number of structural features of the '<em>INamespace Getter</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INAMESPACE_GETTER_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>INamespace Getter</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INAMESPACE_GETTER_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum <em>Association Kind Enum</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21683,7 +21756,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAssociationKindEnum()
      * @generated
      */
-    int ASSOCIATION_KIND_ENUM = 170;
+    int ASSOCIATION_KIND_ENUM = 171;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum <em>FC Enum</em>}' enum.
@@ -21693,7 +21766,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getFCEnum()
      * @generated
      */
-    int FC_ENUM = 171;
+    int FC_ENUM = 172;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum <em>GSE Control Type Enum</em>}' enum.
@@ -21703,7 +21776,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getGSEControlTypeEnum()
      * @generated
      */
-    int GSE_CONTROL_TYPE_ENUM = 172;
+    int GSE_CONTROL_TYPE_ENUM = 173;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhaseEnum <em>Phase Enum</em>}' enum.
@@ -21713,7 +21786,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPhaseEnum()
      * @generated
      */
-    int PHASE_ENUM = 173;
+    int PHASE_ENUM = 174;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum <em>Predefined Type Of Security Enum</em>}' enum.
@@ -21723,7 +21796,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPredefinedTypeOfSecurityEnum()
      * @generated
      */
-    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 174;
+    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 175;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum <em>SMV Delivery Enum</em>}' enum.
@@ -21733,7 +21806,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSMVDeliveryEnum()
      * @generated
      */
-    int SMV_DELIVERY_ENUM = 175;
+    int SMV_DELIVERY_ENUM = 176;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum <em>Service Settings Enum</em>}' enum.
@@ -21743,7 +21816,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_ENUM = 176;
+    int SERVICE_SETTINGS_ENUM = 177;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum <em>Service Settings No Dyn Enum</em>}' enum.
@@ -21753,7 +21826,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsNoDynEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_NO_DYN_ENUM = 177;
+    int SERVICE_SETTINGS_NO_DYN_ENUM = 178;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType <em>Service Type</em>}' enum.
@@ -21763,7 +21836,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceType()
      * @generated
      */
-    int SERVICE_TYPE = 178;
+    int SERVICE_TYPE = 179;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpMod <em>Smp Mod</em>}' enum.
@@ -21773,7 +21846,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSmpMod()
      * @generated
      */
-    int SMP_MOD = 179;
+    int SMP_MOD = 180;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum <em>Unit Multiplier Enum</em>}' enum.
@@ -21783,7 +21856,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getUnitMultiplierEnum()
      * @generated
      */
-    int UNIT_MULTIPLIER_ENUM = 180;
+    int UNIT_MULTIPLIER_ENUM = 181;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum <em>Val Kind Enum</em>}' enum.
@@ -21793,7 +21866,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getValKindEnum()
      * @generated
      */
-    int VAL_KIND_ENUM = 181;
+    int VAL_KIND_ENUM = 182;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum <em>buf Mode Enum</em>}' enum.
@@ -21803,7 +21876,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getbufModeEnum()
      * @generated
      */
-    int BUF_MODE_ENUM = 182;
+    int BUF_MODE_ENUM = 183;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace <em>Any Content From Other Namespace</em>}'.
@@ -22312,6 +22385,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getPrivate_ParentBaseElement();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getValue()
+     * @see #getPrivate()
+     * @generated
+     */
+    EAttribute getPrivate_Value();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process <em>Process</em>}'.
@@ -24547,6 +24631,27 @@ public interface SclPackage extends EPackage {
     EClass getIRiseClipseConsole();
 
     /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter <em>INamespace Getter</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>INamespace Getter</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter
+     * @generated
+     */
+    EClass getINamespaceGetter();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter#getNamespace <em>Namespace</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Namespace</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter#getNamespace()
+     * @see #getINamespaceGetter()
+     * @generated
+     */
+    EAttribute getINamespaceGetter_Namespace();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec <em>Duration In Milli Sec</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -24958,16 +25063,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EOperation getAnyLN__GetParentLDevice();
-
-    /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getNamespace() <em>Get Namespace</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Namespace</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getNamespace()
-     * @generated
-     */
-    EOperation getAnyLN__GetNamespace();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association <em>Association</em>}'.
@@ -25895,16 +25990,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getDOI_RefersToDO();
-
-    /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getNamespace() <em>Get Namespace</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Namespace</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getNamespace()
-     * @generated
-     */
-    EOperation getDOI__GetNamespace();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory <em>Data Object Directory</em>}'.
@@ -27289,16 +27374,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLDevice_RefersToLowerLevelLDevices();
-
-    /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace() <em>Get Namespace</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Namespace</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace()
-     * @generated
-     */
-    EOperation getLDevice__GetNamespace();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}'.
