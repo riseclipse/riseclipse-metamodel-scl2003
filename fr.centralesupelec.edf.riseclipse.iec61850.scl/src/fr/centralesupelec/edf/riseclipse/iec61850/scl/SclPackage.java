@@ -6602,13 +6602,22 @@ public interface SclPackage extends EPackage {
     int SDO__REFERRED_BY_EXT_REF = ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO__NAMESPACE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Count</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SDO__COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 0;
+    int SDO__COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Parent DO Type</b></em>' container reference.
@@ -6617,7 +6626,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDO__PARENT_DO_TYPE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 1;
+    int SDO__PARENT_DO_TYPE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Referred By SDI</b></em>' reference list.
@@ -6626,7 +6635,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDO__REFERRED_BY_SDI = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
+    int SDO__REFERRED_BY_SDI = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>SDO</em>' class.
@@ -6635,7 +6644,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
+    int SDO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -14405,13 +14414,22 @@ public interface SclPackage extends EPackage {
     int SDI__DESC = UN_NAMING__DESC;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI__NAMESPACE = UN_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SDI__IX = UN_NAMING_FEATURE_COUNT + 0;
+    int SDI__IX = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>SAddr</b></em>' attribute.
@@ -14420,7 +14438,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__SADDR = UN_NAMING_FEATURE_COUNT + 1;
+    int SDI__SADDR = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>DAI</b></em>' containment reference list.
@@ -14429,7 +14447,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__DAI = UN_NAMING_FEATURE_COUNT + 2;
+    int SDI__DAI = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Parent DOI</b></em>' container reference.
@@ -14438,7 +14456,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__PARENT_DOI = UN_NAMING_FEATURE_COUNT + 3;
+    int SDI__PARENT_DOI = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Sub SDI</b></em>' containment reference list.
@@ -14447,7 +14465,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__SUB_SDI = UN_NAMING_FEATURE_COUNT + 4;
+    int SDI__SUB_SDI = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Parent SDI</b></em>' container reference.
@@ -14456,7 +14474,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__PARENT_SDI = UN_NAMING_FEATURE_COUNT + 5;
+    int SDI__PARENT_SDI = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14465,7 +14483,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__NAME = UN_NAMING_FEATURE_COUNT + 6;
+    int SDI__NAME = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To SDO</b></em>' reference.
@@ -14474,7 +14492,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__REFERS_TO_SDO = UN_NAMING_FEATURE_COUNT + 7;
+    int SDI__REFERS_TO_SDO = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
@@ -14483,7 +14501,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = UN_NAMING_FEATURE_COUNT + 8;
+    int SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>SDI</em>' class.
@@ -14492,7 +14510,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SDI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
+    int SDI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.

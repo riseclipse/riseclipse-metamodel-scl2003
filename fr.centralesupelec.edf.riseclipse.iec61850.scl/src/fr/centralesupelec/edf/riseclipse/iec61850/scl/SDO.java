@@ -40,7 +40,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SDO extends AbstractDataObject {
+public interface SDO extends AbstractDataObject, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Count</b></em>' attribute.
      * <!-- begin-user-doc -->

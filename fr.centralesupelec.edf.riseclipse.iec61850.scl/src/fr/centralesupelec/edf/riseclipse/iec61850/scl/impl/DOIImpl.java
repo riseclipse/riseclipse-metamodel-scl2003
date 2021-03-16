@@ -614,13 +614,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         // The attribute dataNs shall be a DataAttribute of the data.
         // 
         // 1.  DOI.DAI["dataNs"].value                              if present
-        // 2.  DOI.DAI["dataNs"].DA.value                           if present
-        // 3.  DOI.DO.DOType.DA["dataNs"].value                     if present
-        // 4.  DOI.AnyLN.DOI["NamPlt"].DAI["dataNs"].value          if present
-        // 5.  DOI.AnyLN.DOI["NamPlt"].DAI["dataNs"].DA.value       if present
-        // 6.  DOI.AnyLN.DOI["NamPlt"].DO.DOType.namespace          if not null
-        // 7.  DOI.AnyLN.LNodeType.DO["NamPlt"].DOType.namespace    if not null
-        // 8.  DOI.AnyLN.namespace                                  otherwise
+        // 2.  DOI.DO.DOType.DA["dataNs"].value                     if present
+        // 3.  DOI.AnyLN.namespace                                  otherwise
 
 
 
@@ -634,12 +629,6 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                   && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
                   && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                 return dataNsDai.get( 0 ).getVal().get( 0 ).getValue();
-            }
-            if((       dataNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                  && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                  && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                  && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                return dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
             }
         }
 
@@ -662,51 +651,6 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         }
         
         if( getParentAnyLN() != null ) {
-            List< DOI > namPltDoi =
-                    getParentAnyLN()
-                   .getDOI()
-                   .stream()
-                   .filter( doi -> "NamPlt".equals( doi.getName() ))
-                   .collect( Collectors.toList() );
-            if( namPltDoi.size() == 1 ) {
-                dataNsDai =
-                     namPltDoi.get( 0  )
-                    .getDAI()
-                    .stream()
-                    .filter( dai -> "dataNs".equals( dai.getName() ))
-                    .collect( Collectors.toList() );
-                if( dataNsDai.size() == 1 ) {
-                    if((       dataNsDai.get( 0 ).getVal().size() == 1 )
-                          && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                          && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                        return dataNsDai.get( 0 ).getVal().get( 0 ).getValue();
-                    }
-                    if((       dataNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                          && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                          && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                          && ( dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                        return dataNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
-                    }
-                }
-                if(( namPltDoi.get( 0 ).getRefersToDO() != null ) && ( namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType() != null )) {
-                    String ns = namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType().getNamespace();
-                    if( ns != null ) return ns;
-                }
-            }
-            if( getParentAnyLN().getRefersToLNodeType() != null ) {
-                List< DO > namPltDo =
-                        getParentAnyLN()
-                        .getRefersToLNodeType()
-                       .getDO()
-                       .stream()
-                       .filter( do_ -> "NamPlt".equals( do_.getName() ))
-                       .collect( Collectors.toList() );
-                if( namPltDo.size() == 1 ) {
-                    String ns = namPltDo.get( 0 ).getRefersToDOType().getNamespace();
-                    if( ns != null ) return ns;
-                }
-                
-            }
             return getParentAnyLN().getNamespace();
         }
         return null;

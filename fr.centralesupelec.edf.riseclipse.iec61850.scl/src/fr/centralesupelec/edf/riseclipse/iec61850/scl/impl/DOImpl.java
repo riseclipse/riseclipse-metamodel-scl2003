@@ -22,8 +22,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
@@ -593,8 +591,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         // The attribute dataNs shall be a DataAttribute of the data.
         //
         // 1.  DO.DOType.namespace                                  if not null
-        // 2.  DO.ParentLNodeType.DO["NamPlt"].DOType.namespace     if not null
-        // 3.  DO.ParentLNodeType.namespace                         otherwise
+        // 2.  DO.ParentLNodeType.namespace                         otherwise
 
         if( getRefersToDOType() != null ) {
             String ns = getRefersToDOType().getNamespace();
@@ -602,18 +599,6 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         }
         
         if( getParentLNodeType() != null ) {
-            
-            List< DO > namPltDo =
-                    getParentLNodeType()
-                   .getDO()
-                   .stream()
-                   .filter( do_ -> "NamPlt".equals( do_.getName() ))
-                   .collect( Collectors.toList() );
-            // Avoid infinite recursion
-            if(( namPltDo.size() == 1 ) && ( namPltDo.get( 0 ) != this )) {
-                String ns = namPltDo.get( 0 ).getNamespace();
-                if( ns != null ) return ns;
-            }
             return getParentLNodeType().getNamespace();
         }
         return null;

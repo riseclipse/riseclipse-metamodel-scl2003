@@ -42,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -56,6 +57,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getIx <em>Ix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getSAddr <em>SAddr</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getDAI <em>DAI</em>}</li>
@@ -70,6 +72,16 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * @generated
  */
 public class SDIImpl extends UnNamingImpl implements SDI {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -233,6 +245,84 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getSDI();
     }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public String getNamespace() {        //@formatter:off
+        
+        // The attribute dataNs shall be a DataAttribute of the data.
+        // 
+        // 1.  SDI.DAI["dataNs"].value                              if present
+        // 2.  SDI.SDO.DOType.DA["dataNs"].value                    if present
+        // 3.  SDI(.ParentSDI)+.DAI["dataNs"].value                 if present
+        // 4.  SDI(.ParentSDI)*.ParentDOI.namespace                 otherwise
+
+
+        List< DAI > dataNsDai =
+                 getDAI()
+                .stream()
+                .filter( dai -> "dataNs".equals( dai.getName() ))
+                .collect( Collectors.toList() );
+        if( dataNsDai.size() == 1 ) {
+            if((       dataNsDai.get( 0 ).getVal().size() == 1 )
+                  && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                  && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                return dataNsDai.get( 0 ).getVal().get( 0 ).getValue();
+            }
+        }
+
+        if(( getRefersToSDO() != null ) && ( getRefersToSDO().getRefersToDOType() != null )) {
+            List< DA > dataNsDa =
+                     getRefersToSDO()
+                    .getRefersToDOType()
+                    .getDA()
+                    .stream()
+                    .filter( da -> "dataNs".equals( da.getName() ))
+                    .collect( Collectors.toList() );
+            
+            if( dataNsDa.size() == 1 ) {
+                if((       dataNsDa.get( 0 ).getVal().size() == 1 )
+                      && ( dataNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( dataNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return dataNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                }
+            }
+        }
+        
+        SDI sdi = getParentSDI();
+        while( sdi != null ) {
+            dataNsDai =
+                    sdi
+                   .getDAI()
+                   .stream()
+                   .filter( dai -> "dataNs".equals( dai.getName() ))
+                   .collect( Collectors.toList() );
+           if( dataNsDai.size() == 1 ) {
+               if((       dataNsDai.get( 0 ).getVal().size() == 1 )
+                     && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                     && ( dataNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                   return dataNsDai.get( 0 ).getVal().get( 0 ).getValue();
+               }
+           }
+           sdi = sdi.getParentSDI();
+        }
+        
+        sdi = this;
+        while( sdi != null ) {
+            if( sdi.getParentDOI() != null ) {
+                return sdi.getParentDOI().getNamespace();
+            }
+            sdi = sdi.getParentSDI();
+        }
+
+        return null;
+
+        //@formatter:on
+}
 
     /**
      * <!-- begin-user-doc -->
@@ -861,6 +951,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.SDI__NAMESPACE:
+            return getNamespace();
         case SclPackage.SDI__IX:
             return getIx();
         case SclPackage.SDI__SADDR:
@@ -972,6 +1064,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.SDI__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.SDI__IX:
             return isSetIx();
         case SclPackage.SDI__SADDR:
@@ -992,6 +1086,42 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             return isSetRefersToAbstractDataAttribute();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.SDI__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.SDI__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

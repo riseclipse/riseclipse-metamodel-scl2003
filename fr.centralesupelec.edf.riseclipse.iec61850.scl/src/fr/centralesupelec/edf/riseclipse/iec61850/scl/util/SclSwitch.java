@@ -571,6 +571,7 @@ public class SclSwitch< T > extends Switch< T > {
             SDO sdo = ( SDO ) theEObject;
             T result = caseSDO( sdo );
             if( result == null ) result = caseAbstractDataObject( sdo );
+            if( result == null ) result = caseINamespaceGetter( sdo );
             if( result == null ) result = caseUnNaming( sdo );
             if( result == null ) result = caseBaseElement( sdo );
             if( result == null ) result = caseAgDesc( sdo );
@@ -1100,6 +1101,7 @@ public class SclSwitch< T > extends Switch< T > {
             SDI sdi = ( SDI ) theEObject;
             T result = caseSDI( sdi );
             if( result == null ) result = caseUnNaming( sdi );
+            if( result == null ) result = caseINamespaceGetter( sdi );
             if( result == null ) result = caseBaseElement( sdi );
             if( result == null ) result = caseAgDesc( sdi );
             if( result == null ) result = caseSclObject( sdi );

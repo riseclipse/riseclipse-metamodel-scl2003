@@ -516,7 +516,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDO" eSuperTypes="#//AbstractDataObject">
+  <eClassifiers xsi:type="ecore:EClass" name="SDO" eSuperTypes="#//AbstractDataObject #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOType" ordered="false"
@@ -1287,7 +1287,7 @@
         eType="#//ReportControl" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ReportControl/RptEnabled"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDI" eSuperTypes="#//UnNaming">
+  <eClassifiers xsi:type="ecore:EClass" name="SDI" eSuperTypes="#//UnNaming #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

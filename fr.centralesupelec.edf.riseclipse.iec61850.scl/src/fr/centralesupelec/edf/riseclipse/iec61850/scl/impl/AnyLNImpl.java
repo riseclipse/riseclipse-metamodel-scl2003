@@ -23,7 +23,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
@@ -1083,10 +1082,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
         //
         // 1.  AnyLN.DOI["NamPlt"].DAI["lnNs"].value                   if present
-        // 2.  AnyLN.DOI["NamPlt"].DAI["lnNs"].DA.value                if present
-        // 3.  AnyLN.DOI["NamPlt"].DO.DOType.DA["lnNs"].value          if present
-        // 4.  AnyLN.LNodeType.namespace                               if not null
-        // 5.  AnyLN.ParentLDevice.lnNs                                otherwise
+        // 2.  AnyLN.LNodeType.namespace                               if not null
+        // 3.  AnyLN.ParentLDevice.ldNs                                otherwise
 
         
         List< DOI > namPltDoi =
@@ -1107,30 +1104,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                       && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
                       && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                     return lnNsDai.get( 0 ).getVal().get( 0 ).getValue();
-                }
-                if((         lnNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                    return   lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
-                }
-            }
-            if(( namPltDoi.get( 0 ).getRefersToDO() != null ) && ( namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType() != null )) {
-                List< DA > lnNsDa =
-                         namPltDoi
-                        .get( 0 )
-                        .getRefersToDO()
-                        .getRefersToDOType()
-                        .getDA()
-                        .stream()
-                        .filter( da -> "lnNs".equals(  da.getName() ))
-                        .collect( Collectors.toList() );
-                if( lnNsDa.size() == 1 ) {
-                    if((       lnNsDa.get( 0 ).getVal().size() == 1 )
-                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                        return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                    }
                 }
             }
         }
