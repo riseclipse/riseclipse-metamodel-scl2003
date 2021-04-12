@@ -63,9 +63,13 @@ public class SclResourceFactoryImpl extends ResourceFactoryImpl implements IRise
         result.getDefaultLoadOptions().put( XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE );
         result.getDefaultSaveOptions().put( XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE );
 
+        // Determines whether comments and CDATA will be preserved in any mixed text processing.
         result.getDefaultLoadOptions().put( XMLResource.OPTION_USE_LEXICAL_HANDLER, Boolean.TRUE );
 
         result.getDefaultLoadOptions().put( XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE );
+
+        // Default is true, turn to false to improve deserialization performance.
+        result.getDefaultLoadOptions().put( XMLResource.OPTION_USE_DEPRECATED_METHODS, Boolean.FALSE );
 
         return result;
     }

@@ -43,11 +43,6 @@ public class SCLXMLHandler extends SAXXMLHandler {
     private boolean inPrivate = false;
     private String lastElement;
     
-    // This is needed to avoid NullPointerException when an unknown feature is seen
-    // AND OPTION_USE_DEPRECATED_METHODS is unchanged (stay true) in SclResourceFactoryImpl
-    // This must not be used is OPTION_USE_DEPRECATED_METHODS is set to false
-    //private boolean unknownFeatureSeen;
-
     public SCLXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
         super( xmiResource, helper, options );
     }
@@ -55,8 +50,6 @@ public class SCLXMLHandler extends SAXXMLHandler {
     @Override
     public void startElement( String uri, String localName, String qName, Attributes attributes ) throws SAXException {
         lineNumbers.push( this.locator.getLineNumber() );
-        // see above
-        //unknownFeatureSeen = false;
         
         if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri )) {
             inPrivate = true;
@@ -250,8 +243,6 @@ public class SCLXMLHandler extends SAXXMLHandler {
             mess += " (defined at line " + lineNumbers.peek() + ")";
         }
         AbstractRiseClipseConsole.getConsole().error( mess );
-        // do nothing in endElement (but see above)
-        //unknownFeatureSeen = true;
     }
 
 }
