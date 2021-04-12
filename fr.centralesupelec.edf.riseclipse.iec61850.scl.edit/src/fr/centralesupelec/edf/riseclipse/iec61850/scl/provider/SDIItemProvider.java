@@ -62,6 +62,7 @@ public class SDIItemProvider extends UnNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addNamespacePropertyDescriptor( object );
             addIxPropertyDescriptor( object );
             addSAddrPropertyDescriptor( object );
             addNamePropertyDescriptor( object );
@@ -69,6 +70,28 @@ public class SDIItemProvider extends UnNamingItemProvider {
             addRefersToAbstractDataAttributePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Namespace feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamespacePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_INamespaceGetter_namespace_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_INamespaceGetter_namespace_feature",
+                                "_UI_INamespaceGetter_type" ),
+                        SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -245,6 +268,7 @@ public class SDIItemProvider extends UnNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( SDI.class ) ) {
+        case SclPackage.SDI__NAMESPACE:
         case SclPackage.SDI__IX:
         case SclPackage.SDI__SADDR:
         case SclPackage.SDI__NAME:

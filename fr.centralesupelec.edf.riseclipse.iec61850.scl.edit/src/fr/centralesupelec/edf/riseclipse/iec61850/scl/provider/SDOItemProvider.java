@@ -60,10 +60,33 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addNamespacePropertyDescriptor( object );
             addCountPropertyDescriptor( object );
             addReferredBySDIPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Namespace feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamespacePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_INamespaceGetter_namespace_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_INamespaceGetter_namespace_feature",
+                                "_UI_INamespaceGetter_type" ),
+                        SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -145,6 +168,7 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( SDO.class ) ) {
+        case SclPackage.SDO__NAMESPACE:
         case SclPackage.SDO__COUNT:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;

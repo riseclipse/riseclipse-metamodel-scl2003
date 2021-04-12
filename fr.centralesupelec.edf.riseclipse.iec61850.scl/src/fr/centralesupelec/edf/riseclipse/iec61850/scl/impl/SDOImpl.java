@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -50,6 +51,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getCount <em>Count</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getParentDOType <em>Parent DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getReferredBySDI <em>Referred By SDI</em>}</li>
@@ -58,6 +60,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class SDOImpl extends AbstractDataObjectImpl implements SDO {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -114,6 +126,30 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getSDO();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public String getNamespace() {
+        //@formatter:off
+        
+        // The attribute dataNs shall be a DataAttribute of the data.
+        //
+        // 1.  SDO.DOType.namespace                        If not null
+        // 2.  null                                        otherwise
+
+
+        if( getRefersToDOType() != null ) {
+            return getRefersToDOType().getNamespace();
+        }
+        
+        return null;
+
+        //@formatter:on
     }
 
     /**
@@ -306,6 +342,8 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.SDO__NAMESPACE:
+            return getNamespace();
         case SclPackage.SDO__COUNT:
             return getCount();
         case SclPackage.SDO__PARENT_DO_TYPE:
@@ -368,6 +406,8 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.SDO__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.SDO__COUNT:
             return isSetCount();
         case SclPackage.SDO__PARENT_DO_TYPE:
@@ -376,6 +416,42 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
             return isSetReferredBySDI();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.SDO__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.SDO__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
