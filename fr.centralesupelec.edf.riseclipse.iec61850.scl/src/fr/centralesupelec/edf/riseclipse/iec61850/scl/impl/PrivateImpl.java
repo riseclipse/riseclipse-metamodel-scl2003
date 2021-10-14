@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -295,7 +295,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     @Override
     public String getValue() {
         String mixed_ = getMixed().toString();
-        if( mixed_.startsWith( "[ecore.xml.type:text=" )) {
+        if( mixed_.startsWith( "[ecore.xml.type:text=" ) ) {
             return mixed_.substring( "[ecore.xml.type:text=".length(), mixed_.length() - 1 );
         }
         return "";
