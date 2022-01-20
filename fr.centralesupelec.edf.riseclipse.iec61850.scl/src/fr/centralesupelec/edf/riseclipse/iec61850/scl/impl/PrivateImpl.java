@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@
 **      dominique.marcadet@centralesupelec.fr
 **      aurelie.dehouck-neveu@edf.fr
 **  Web site:
-**      http://wdi.supelec.fr/software/RiseClipse/
+**      https://riseclipse.github.io/
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
@@ -295,7 +295,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     @Override
     public String getValue() {
         String mixed_ = getMixed().toString();
-        if( mixed_.startsWith( "[ecore.xml.type:text=" )) {
+        if( mixed_.startsWith( "[ecore.xml.type:text=" ) ) {
             return mixed_.substring( "[ecore.xml.type:text=".length(), mixed_.length() - 1 );
         }
         return "";

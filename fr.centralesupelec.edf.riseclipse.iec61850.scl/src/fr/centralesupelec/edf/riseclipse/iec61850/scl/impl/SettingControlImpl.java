@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@
 **      dominique.marcadet@centralesupelec.fr
 **      aurelie.dehouck-neveu@edf.fr
 **  Web site:
-**      http://wdi.supelec.fr/software/RiseClipse/
+**      https://riseclipse.github.io/
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
@@ -56,7 +56,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * @generated
      * @ordered
      */
-    protected static final Integer ACT_SG_EDEFAULT = new Integer( 1 );
+    protected static final Integer ACT_SG_EDEFAULT = Integer.valueOf( 1 );
 
     /**
      * The cached value of the '{@link #getActSG() <em>Act SG</em>}' attribute.

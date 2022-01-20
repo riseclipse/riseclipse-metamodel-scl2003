@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -15,34 +15,16 @@
 **      dominique.marcadet@centralesupelec.fr
 **      aurelie.dehouck-neveu@edf.fr
 **  Web site:
-**      http://wdi.supelec.fr/software/RiseClipse/
+**      https://riseclipse.github.io/
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
-
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import java.util.Collection;
-import java.util.HashSet;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
@@ -55,6 +37,22 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -808,7 +806,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
     @Override
     public EList< AbstractDataAttribute > getRefersToAbstractDataAttribute() {
         if( refersToAbstractDataAttribute == null ) {
-            refersToAbstractDataAttribute = new EObjectWithInverseEList.Unsettable.ManyInverse< AbstractDataAttribute >(
+            refersToAbstractDataAttribute = new EObjectWithInverseEList.Unsettable.ManyInverse< >(
                     AbstractDataAttribute.class, this, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA );
         }
@@ -1200,7 +1198,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         for( int i = 1; i < doNames.length; ++i ) {
             String name = doNames[i];
-            List< SDO > res3b = 
+            List< SDO > res3b =
                      doType
                     .getSDO()
                     .stream()
@@ -1227,11 +1225,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             // The first daName gives us the DA or SDO inside the DOType
             // If daName is structured, find the DAType/DOType and its SDO/DA/BDA using remaining daName
 
-            for( int i = 0; i < daNames.length; ++i ) {
-                String name = daNames[i];
-
+            for( String name : daNames ) {
                 if( doType != null ) {
-                    List< SDO > res4a = 
+                    List< SDO > res4a =
                              doType
                             .getSDO()
                             .stream()
@@ -1247,14 +1243,14 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                         console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
                         continue;
                     }
-                    
-                    List< DA > res4b = 
+
+                    List< DA > res4b =
                             doType
                            .getDA()
                            .stream()
                            .filter( da -> da.getName().equals( name ) )
                            .collect( Collectors.toList() );
-       
+
                     if( res4b.size() == 1 ) {
                         attributeLookedFor = res4b.get( 0 );
                         String mess4b = "DA ( name = " + name + " ) in DOType";
@@ -1267,11 +1263,11 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                     SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4b, res4b.size() );
                     return;
                 }
-                
+
                 if( attributeLookedFor != null ) {
                     attributeLookedFor.buildExplicitLinks( console, false );
-                    
-                    List< BDA > res4c = 
+
+                    List< BDA > res4c =
                             attributeLookedFor
                            .getRefersToDAType()
                            .getBDA()
@@ -1300,7 +1296,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             console.fatal( "Unexpected state in FCDA.doBuildExplicitLinks()" );
             return;
         }
-        
+
         if( attributeLookedFor != null ) {
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
@@ -1313,7 +1309,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         // All attributes with functional characteristic given by fc are selected.
         if( getFc() == null ) return;
-        
+
         getRefersToAbstractDataAttribute().addAll( getAllDAInDOTypeWithFC( doType, getFc(), console ));
 
         if( getRefersToAbstractDataAttribute().size() > 0 ) {
@@ -1330,23 +1326,23 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         //@formatter:on
     }
-    
+
     private Set< DA > getAllDAInDOTypeWithFC( DOType doType, FCEnum fc, IRiseClipseConsole console ) {
         //@formatter:off
 
         Set< DA > das = new HashSet<>();
-        
+
         doType
                 .getDA()
                 .stream()
                 .filter( da -> fc.equals( da.getFc() ))
                 .collect( Collectors.toCollection( () -> das ));
-        
+
         doType
                 .getSDO()
                 .stream()
                 .forEach( sdo -> sdo.buildExplicitLinks( console, false ));
-        
+
         doType
                 .getSDO()
                 .stream()
@@ -1359,7 +1355,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                 });
 
         return das;
-        
+
         //@formatter:on
     }
 

@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -15,14 +15,10 @@
 **      dominique.marcadet@centralesupelec.fr
 **      aurelie.dehouck-neveu@edf.fr
 **  Web site:
-**      http://wdi.supelec.fr/software/RiseClipse/
+**      https://riseclipse.github.io/
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 
 import java.util.Collection;
 import java.util.List;
@@ -37,6 +33,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
@@ -252,10 +252,10 @@ public class SDIImpl extends UnNamingImpl implements SDI {
      * @generated NOT
      */
     @Override
-    public String getNamespace() {        //@formatter:off
-        
+    public String getNamespace() { //@formatter:off
+
         // The attribute dataNs shall be a DataAttribute of the data.
-        // 
+        //
         // 1.  SDI.DAI["dataNs"].value                              if present
         // 2.  SDI.SDO.DOType.DA["dataNs"].value                    if present
         // 3.  SDI(.ParentSDI)+.DAI["dataNs"].value                 if present
@@ -283,7 +283,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                     .stream()
                     .filter( da -> "dataNs".equals( da.getName() ))
                     .collect( Collectors.toList() );
-            
+
             if( dataNsDa.size() == 1 ) {
                 if((       dataNsDa.get( 0 ).getVal().size() == 1 )
                       && ( dataNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
@@ -292,7 +292,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 }
             }
         }
-        
+
         SDI sdi = getParentSDI();
         while( sdi != null ) {
             dataNsDai =
@@ -310,7 +310,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
            }
            sdi = sdi.getParentSDI();
         }
-        
+
         sdi = this;
         while( sdi != null ) {
             if( sdi.getParentDOI() != null ) {
@@ -322,7 +322,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         return null;
 
         //@formatter:on
-}
+    }
 
     /**
      * <!-- begin-user-doc -->
@@ -435,7 +435,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     @Override
     public EList< DAI > getDAI() {
         if( dai == null ) {
-            dai = new EObjectContainmentWithInverseEList.Unsettable< DAI >( DAI.class, this, SclPackage.SDI__DAI,
+            dai = new EObjectContainmentWithInverseEList.Unsettable< >( DAI.class, this, SclPackage.SDI__DAI,
                     SclPackage.DAI__PARENT_SDI );
         }
         return dai;
@@ -514,7 +514,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     @Override
     public EList< SDI > getSubSDI() {
         if( subSDI == null ) {
-            subSDI = new EObjectContainmentWithInverseEList.Unsettable< SDI >( SDI.class, this, SclPackage.SDI__SUB_SDI,
+            subSDI = new EObjectContainmentWithInverseEList.Unsettable< >( SDI.class, this, SclPackage.SDI__SUB_SDI,
                     SclPackage.SDI__PARENT_SDI );
         }
         return subSDI;

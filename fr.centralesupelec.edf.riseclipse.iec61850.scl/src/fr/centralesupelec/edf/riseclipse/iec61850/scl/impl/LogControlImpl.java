@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -15,10 +15,18 @@
 **      dominique.marcadet@centralesupelec.fr
 **      aurelie.dehouck-neveu@edf.fr
 **  Web site:
-**      http://wdi.supelec.fr/software/RiseClipse/
+**      https://riseclipse.github.io/
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+
+import org.apache.commons.lang3.tuple.Pair;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -28,14 +36,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Integer BUF_TIME_EDEFAULT = new Integer( 0 );
+    protected static final Integer BUF_TIME_EDEFAULT = Integer.valueOf( 0 );
 
     /**
      * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
@@ -1334,8 +1334,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
         // No error or warning messages here: if this happens, error should have been detected before
         IED ied = SclUtilities.getMyIED( this );
-        if( ied == null ) return;
-        if( getParentAnyLN() == null ) return;
+        if( ( ied == null ) || ( getParentAnyLN() == null ) ) return;
         LDevice lDevice = getParentAnyLN().getParentLDevice();
         if( lDevice == null ) return;
 
