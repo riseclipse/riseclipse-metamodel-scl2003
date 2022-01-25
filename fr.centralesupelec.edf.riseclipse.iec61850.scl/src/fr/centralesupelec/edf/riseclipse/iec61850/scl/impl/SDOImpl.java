@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -474,7 +475,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -484,15 +485,17 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         // count    The number or reference to an attribute defining the number of array elements,
         //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
 
-        String messagePrefix = "[SCL links] while resolving link from SDO on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from SDO: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( messagePrefix, "type is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "type is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( messagePrefix, "DataTypeTemplates is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -502,14 +505,16 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
                 .filter( sdo -> getType().equals( sdo.getId() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "DOType( id = " + getType() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( "[SCL links] SDO on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToDOType().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "SDO refers to DOType( id = ", getType(), " ) on line ",
+                      getRefersToDOType().getLineNumber() );
     }
 
 } //SDOImpl

@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -49,6 +50,9 @@ import java.lang.reflect.InvocationTargetException;
  * @generated
  */
 public abstract class SclObjectImpl extends MinimalEObjectImpl.Container implements SclObject {
+    
+    protected static final String EXPLICIT_LINK_CATEGORY = "SCL/ExplicitLinks";
+    
     /**
      * The default value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -162,7 +166,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * @generated NOT
      */
     @Override
-    public boolean buildExplicitLinks( IRiseClipseConsole console, Boolean forceUpdate ) {
+    public boolean buildExplicitLinks( @NonNull IRiseClipseConsole console, Boolean forceUpdate ) {
         if( ( !forceUpdate ) && isExplicitLinksBuilt() ) return true;
 
         // Parent's links must be built before children's one
@@ -183,7 +187,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
         return false;
     }
 
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
         // Default do nothing
     }
 

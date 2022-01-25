@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -1173,11 +1174,11 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "[SCL links] while resolving link from Terminal on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from Terminal: ";
 
         if( getSubstationName() != null ) {
             doBuildExplicitLinkWithSubstation( console, messagePrefix );
@@ -1190,7 +1191,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         }
     }
 
-    private void doBuildExplicitLinkWithSubstation( IRiseClipseConsole console, String messagePrefix ) {
+    private void doBuildExplicitLinkWithSubstation( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
 
         // name             The optional relative name of the terminal at this Equipment. The default is the empty string, which means that the name
         //                  of the ConnectivityNode is also the terminal identification.
@@ -1204,15 +1205,18 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
         if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-            console.warning( messagePrefix, "cNodeName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "cNodeName is missing" );
             return;
         }
         if( ( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
-            console.warning( messagePrefix, "voltageLevelName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "voltageLevelName is missing" );
             return;
         }
         if( ( getBayName() == null ) || getBayName().isEmpty() ) {
-            console.warning( messagePrefix, "bayName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "bayName is missing" );
             return;
         }
 
@@ -1225,13 +1229,16 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .filter( s -> getSubstationName().equals( s.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess1 = "Substation( name = " + getSubstationName() + " )";
         if( res1.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, res1.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res1.size() == 0 ) ? "cannot find" : "found several" ),
+                             " Substation( name = ", getSubstationName(), " )" );
             return;
         }
         Substation substation = res1.get( 0 );
-        console.verbose( messagePrefix, "found ", mess1, " on line ", substation.getLineNumber() );
+        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found Substation( name = ", getSubstationName(), " ) on line ",
+                         substation.getLineNumber() );
 
         // find a VoltageLevel with
         //   VoltageLevel.name == Terminal.voltageLevelName
@@ -1241,13 +1248,16 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .filter( vl -> getVoltageLevelName().equals( vl.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " )";
         if( res2.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                             " VoltageLevel( name = ", getVoltageLevelName(), " )" );
             return;
         }
         VoltageLevel voltageLevel = res2.get( 0 );
-        console.verbose( messagePrefix, "found ", mess2, " on line ", voltageLevel.getLineNumber() );
+        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found VoltageLevel( name = ", getVoltageLevelName(), " ) on line ",
+                         voltageLevel.getLineNumber() );
 
         // find a Bay with
         //   Bay.name == Terminal.bayName
@@ -1257,13 +1267,16 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .filter( b -> getBayName().equals( b.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess3 = "Bay( name = " + getBayName() + " )";
         if( res3.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, res3.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res3.size() == 0 ) ? "cannot find" : "found several" ),
+                             " Bay( name = ", getBayName(), " )" );
             return;
         }
         Bay bay = res3.get( 0 );
-        console.verbose( messagePrefix, "found ", mess3, " on line ", voltageLevel.getLineNumber() );
+        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found Bay( name = ", getBayName(), " ) on line ",
+                         voltageLevel.getLineNumber() );
 
         // find a ConnectivityNode with
         //   ConnectivityNode.name == Terminal.bayName
@@ -1273,19 +1286,22 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .filter( cn -> getCNodeName().equals( cn.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess4 = "ConnectivityNode( name = " + getCNodeName() + " )";
         if( res4.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4, res4.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res4.size() == 0 ) ? "cannot find" : "found several" ),
+                             " ConnectivityNode( name = ", getCNodeName(), " )" );
             return;
         }
         setRefersToConnectivityNode( res4.get( 0 ) );
-        console.info( "[SCL links] Terminal on line ", getLineNumber(), " refers to ", mess4, " on line ",
-                getRefersToConnectivityNode().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " ) on line ",
+                      getRefersToConnectivityNode().getLineNumber() );
     }
 
-    private void doBuildExplicitLinkWithLine( IRiseClipseConsole console, String messagePrefix ) {
+    private void doBuildExplicitLinkWithLine( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-            console.warning( messagePrefix, "cNodeName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "cNodeName is missing" );
             return;
         }
 
@@ -1298,13 +1314,16 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .filter( l -> getLineName().equals( l.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess1 = "Line( name = " + getLineName() + " )";
         if( res1.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, res1.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res1.size() == 0 ) ? "cannot find" : "found several" ),
+                             " Line( name = ", getLineName(), " )" );
             return;
         }
         Line line = res1.get( 0 );
-        console.verbose( messagePrefix, "found ", mess1, " on line ", line.getLineNumber() );
+        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found Line( name = ", getLineName(), " ) on line ",
+                         line.getLineNumber() );
 
         // find a ConnectivityNode with
         //   ConnectivityNode.name == Terminal.bayName
@@ -1313,14 +1332,16 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .filter( cn -> getCNodeName().equals( cn.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess2 = "ConnectivityNode( name = " + getCNodeName() + " )";
         if( res2.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                             " ConnectivityNode( name = ", getCNodeName(), " )" );
             return;
         }
         setRefersToConnectivityNode( res2.get( 0 ) );
-        console.info( "[SCL links] Terminal on line ", getLineNumber(), " refers to ", mess2 + " on line ",
-                getRefersToConnectivityNode().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " )", " on line ",
+                      getRefersToConnectivityNode().getLineNumber() );
     }
 
 } //TerminalImpl

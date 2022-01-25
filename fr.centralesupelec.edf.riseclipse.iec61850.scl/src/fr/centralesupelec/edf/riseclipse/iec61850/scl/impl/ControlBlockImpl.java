@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -44,6 +44,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -685,7 +686,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -698,14 +699,16 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         // Assumption : we need both an ied name and a ld instance to uniquely identify a LDevice.
         //              We will use the iedName provided by the enclosing connectedAP.
 
-        String messagePrefix = "[SCL links] while resolving link from ControlBlock on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from ControlBlock: ";
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( messagePrefix, "ldInst is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "ldInst is missing" );
             return;
         }
         if( ( getCbName() == null ) || getCbName().isEmpty() ) {
-            console.warning( messagePrefix, "cbName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "cbName is missing" );
             return;
         }
 
@@ -718,17 +721,21 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         // find an LDevice with
         //   LDevice.inst == ControlBlock.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied, getLdInst() );
-        String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLeft().getLineNumber() );
+        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                         lDevice.getLeft().getLineNumber() );
 
         // Find a ControlWithIEDName inside LN0 of LDevice with
         //   ControlWithIEDName.name == ControlBlock.bName
         if( lDevice.getLeft().getLN0() == null ) {
-            console.warning( messagePrefix, "LN0 is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "LN0 is missing" );
             return;
         }
 
@@ -741,14 +748,16 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 .filter( c -> getCbName().equals( c.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess2 = "ControlWithIEDName( name = " + getCbName() + " )";
         if( res2.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                             " ControlWithIEDName( name = ", getCbName(), " )" );
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ) );
-        console.info( "[SCL links] ControlBlock on line ", getLineNumber(), " refers to ", mess2, " on line ",
-                getRefersToControlWithIEDName().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "ControlBlock refers to ControlWithIEDName( name = ", getCbName(), " ) on line ",
+                      getRefersToControlWithIEDName().getLineNumber() );
     }
 
 } //ControlBlockImpl

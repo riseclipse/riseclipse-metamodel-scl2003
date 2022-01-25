@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
@@ -42,7 +43,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -909,22 +909,24 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "[SCL links] while resolving link from DOI on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from DOI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-            console.warning( messagePrefix, "name is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "name is missing" );
             return;
         }
 
         // No error or warning message here: if this happens, error should have been detected before
         if( getParentAnyLN() == null ) return;
         if( getParentAnyLN().getRefersToLNodeType() == null ) return;
-        console.verbose( messagePrefix, "found LNodeType on line ",
-                getParentAnyLN().getRefersToLNodeType().getLineNumber() );
+        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found LNodeType on line ",
+                         getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
         List< DO > res = getParentAnyLN()
                 .getRefersToLNodeType()
@@ -933,14 +935,15 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 .filter( d -> getName().equals( d.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "DO( name = " + getName() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " DO( name = ", getName(), " )" );
             return;
         }
         setRefersToDO( res.get( 0 ) );
-        console.info( "[SCL links] DOI on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToDO().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                     "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
     }
 
 } //DOIImpl
