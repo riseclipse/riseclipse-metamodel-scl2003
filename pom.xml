@@ -51,4 +51,9 @@
     <module>fr.centralesupelec.edf.riseclipse.iec61850.scl.utilities</module>
   </modules>
 
+  <properties>
+    <sonar.organization>riseclipse</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  </properties>
+
 </project>
