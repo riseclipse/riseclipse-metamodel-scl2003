@@ -1244,6 +1244,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AssociationImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1282,7 +1284,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                              " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                          ied.getLeft().getLineNumber() );
 
@@ -1295,7 +1297,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                              " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found ", "LDevice( inst = ", getLdInst(), " )", " on line ",
                          lDevice.getLeft().getLineNumber() );
 
@@ -1313,7 +1315,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "Association on line ", getLineNumber(), " refers to ", mess, " on line ",
                       getRefersToAnyLN().getLineNumber() );
     }

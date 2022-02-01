@@ -32,8 +32,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -518,7 +518,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        throw new RiseClipseFatalException( "ControlBlock.getParentConnectedAP() called", null );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlBlock.getParentConnectedAP() called" );
+        return null;
     }
 
     /**
@@ -687,6 +688,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlBlockImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -727,7 +730,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                              " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                          lDevice.getLeft().getLineNumber() );
 
@@ -755,7 +758,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "ControlBlock refers to ControlWithIEDName( name = ", getCbName(), " ) on line ",
                       getRefersToControlWithIEDName().getLineNumber() );
     }

@@ -1011,6 +1011,8 @@ public class DAIImpl extends UnNamingImpl implements DAI {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DAIImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1037,14 +1039,14 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         // No error or warning messages here: if this happens, error should have been detected before
         DO do_ = getParentDOI().getRefersToDO();
         if( do_ == null ) return;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dot == null ) return;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
         List< DA > res = dot
@@ -1060,7 +1062,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "DAI refers to DA( name = " + getName(), " ) on line ",
                       getRefersToAbstractDataAttribute().getLineNumber() );
     }
@@ -1073,12 +1075,12 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             SDO sdo = getParentSDI().getRefersToSDO();
             if( sdo == null ) return;
             sdo.buildExplicitLinks( console, false );
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found SDO on line ", sdo.getLineNumber() );
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
             if( dot == null ) return;
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
             List< DA > res = dot
@@ -1094,19 +1096,19 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 return;
             }
             setRefersToAbstractDataAttribute( res.get( 0 ) );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "DAI refers to DA( name = ", getName(), " ) on line ",
                           getRefersToAbstractDataAttribute().getLineNumber() );
             return;
         }
         att.buildExplicitLinks( console, false );
-        console.verbose(  EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info(  EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
 
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dat == null ) return;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DAType on line ", dat.getLineNumber() );
 
         List< BDA > res = dat
@@ -1122,7 +1124,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "DAI refers to ", "BDA( name = " + getName() + " )", " on line ",
                       getRefersToAbstractDataAttribute().getLineNumber() );
     }

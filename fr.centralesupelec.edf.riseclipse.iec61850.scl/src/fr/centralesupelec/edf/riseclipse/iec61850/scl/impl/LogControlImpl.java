@@ -1310,6 +1310,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LogControlImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1349,7 +1351,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 return;
             }
             lDevice = lDevice1.getLeft();
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                              lDevice.getLineNumber() );
         }
@@ -1368,7 +1370,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "LogControl refers to ", mess, " on line ",
                       getRefersToAnyLN().getLineNumber() );
 

@@ -28,8 +28,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -424,7 +424,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        throw new RiseClipseFatalException( "Control.getParentAnyLN() called", null );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "Control.getParentAnyLN() called" );
+        return null;
     }
 
     /**
@@ -594,6 +595,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -628,7 +631,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
             return;
         }
         setRefersToDataSet( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                      "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
                      getRefersToDataSet().getLineNumber() );
     }

@@ -35,7 +35,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
 public class SclUtilities {
 
@@ -45,7 +45,7 @@ public class SclUtilities {
             scl = scl.eContainer();
         }
         if( scl == null ) {
-            throw new RiseClipseFatalException( "root container is not SCL", null );
+            AbstractRiseClipseConsole.getConsole().emergency( "SCL/Utility", 0, "root container is not SCL" );
         }
         return ( SCL ) scl;
     }

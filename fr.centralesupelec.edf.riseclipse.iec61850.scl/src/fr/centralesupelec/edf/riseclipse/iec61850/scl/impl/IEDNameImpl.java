@@ -1270,6 +1270,8 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "IEDNameImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1301,13 +1303,13 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             setRefersToIED( ied.getLeft() );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "IEDName to IED( name = ", getValue(), " ) on line ",
                           ied.getLeft().getLineNumber() );
             return;
         }
 
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED( name = ", getValue(), " ) on line ",
                          ied.getLeft().getLineNumber() );
 
@@ -1334,7 +1336,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
                                  " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found AccessPoint( name = ", getApRef(), " ) on line ",
                              ap.getLeft().getLineNumber() );
         }
@@ -1347,12 +1349,12 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             setRefersToLDevice( lDevice.getLeft() );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "IEDName refers to LDevice( inst = ", getLdInst(), " ) on line ",
                           getRefersToLDevice().getLineNumber() );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                          lDevice.getLeft().getLineNumber() );
 
@@ -1371,7 +1373,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "ClientLN refers to", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 

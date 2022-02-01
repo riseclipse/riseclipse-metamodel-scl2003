@@ -1125,6 +1125,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LNodeImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1148,7 +1150,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // Resolve only if attribute is not None
         // Default value is None
         if( ( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() ) ) {
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "link to AnyLN not resolved because iedName is absent or None" );
             return;
         }
@@ -1168,7 +1170,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                              " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                          ied.getLeft().getLineNumber() );
 
@@ -1181,7 +1183,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                              " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                          lDevice.getLeft().getLineNumber() );
 
@@ -1204,7 +1206,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "LNode refers to ", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
@@ -1215,7 +1217,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) {
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "link not resolved because lnType is missing" );
             return;
         }
@@ -1239,7 +1241,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToLNodeType( res.get( 0 ));
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "AnyLN refers to LNodeType( id = ", getLnType(), " ) on line ",
                       getRefersToLNodeType().getLineNumber() );
 

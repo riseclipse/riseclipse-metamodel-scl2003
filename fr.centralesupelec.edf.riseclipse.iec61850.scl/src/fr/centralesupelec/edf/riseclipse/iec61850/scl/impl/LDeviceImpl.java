@@ -1301,6 +1301,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LDeviceImpl.doBuildExplicitLinks()" );
+
         //@formatter:off
 
         // see Issue #13
@@ -1399,7 +1401,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;            
         }
         
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "LDevice ", getInst(), " has ", lDevices.get( 0 ).getInst(), " for higher level LDevice" );
         setRefersToHigherLevelLDevice( lDevices.get( 0 ));
         

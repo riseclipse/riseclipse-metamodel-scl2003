@@ -38,8 +38,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -1068,7 +1068,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public LDevice getParentLDevice() {
-        throw new RiseClipseFatalException( "AnyLN.getParentLDevice() called", null );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AnyLNImpl.getParentLDevice() called" );
+        return null;
     }
 
     /**
@@ -1503,6 +1504,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AnyLNImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1537,7 +1540,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "AnyLN on line ", getLineNumber(), " refers to LNodeType( id = ", getLnType(),
                       " ) on line ", getRefersToLNodeType().getLineNumber() );
 

@@ -2586,6 +2586,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ExtRefImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -2614,14 +2616,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
             // no warning if no iedName
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "do not look for DA because iedName is missing" );
             return Pair.of( null, null );
         }
 
         if( ( getDoName() == null ) || getDoName().isEmpty() ) {
             // No link if no doName
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "doName is absent" );
             return Pair.of( null, null );
         }
@@ -2639,7 +2641,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     " IED( name = ", getIedName(), " )" );
             return Pair.of( null, null );
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED ( name = ", ied.getLeft().getName(), " ) on line ",
                          ied.getLeft().getLineNumber() );
 
@@ -2662,7 +2664,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     " LDevice( inst = ", getLdInst(), " )" );
             return Pair.of( ied.getLeft(), null );
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                          lDevice.getLeft().getLineNumber() );
 
@@ -2682,14 +2684,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     mess );
             return finalRes;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found ", mess, " on line ",
                          anyLN.getLeft().getLineNumber() );
         anyLN.getLeft().buildExplicitLinks( console, false );
 
         // No error or warning message here: if this happens, error should have been detected before
         if( anyLN.getLeft().getRefersToLNodeType() == null ) return finalRes;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found LNodeType on line ",
                          anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
 
@@ -2717,14 +2719,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
 
         AbstractDataObject ado = res1.get( 0 );
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found ", "DO ( name = ", doNames[0], " )", " on line ", ado.getLineNumber() );
         ado.buildExplicitLinks( console, false );
 
         for( int i = 1; i < doNames.length; ++i ) {
             DOType doType = ado.getRefersToDOType();
             if( doType == null ) return finalRes;
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found DOType on line ", doType.getLineNumber() );
             String name = doNames[i];
             List< SDO > res2 = doType
@@ -2740,7 +2742,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return finalRes;
             }
             ado = res2.get( 0 );
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found SDO ( name = ", name, " ) in DOType on line ",
                              doType.getLineNumber(), " on line ", ado.getLineNumber() );
 
@@ -2749,7 +2751,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // Set link to DO/SDO only if no daName
         if( getDaName() == null ) {
             setRefersToAbstractDataObject( ado );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "ExtRef refers to AbstractDataObject ( name = ",
                           ado.getName(), " ) on line ", ado.getLineNumber() );
             return finalRes;
@@ -2758,7 +2760,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         DOType doType = ado.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( doType == null ) return finalRes;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DOType on line ", doType.getLineNumber() );
 
         // The first daName gives us the DA inside the DOType
@@ -2778,7 +2780,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             return finalRes;
         }
         AbstractDataAttribute da = res3.get( 0 );
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DA ( name = ", daNames[0], " ) in DOType on line ",
                          da.getLineNumber() );
 
@@ -2800,13 +2802,13 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                                  da.getRefersToDAType().getLineNumber() );
                 return finalRes;
             }
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found BDA ( name = ", name, " ) in DAType on line ",
                              da.getRefersToDAType().getLineNumber(), " on line ", res4.get( 0 ).getLineNumber() );
             da = res4.get( 0 );
         }
 
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "ExtRef refers to AbstractDataAttribute ( name = ",
                       da.getName(), " ) on line ", da.getLineNumber() );
         setRefersToAbstractDataAttribute( da );
@@ -2830,7 +2832,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( ied == null ) return;
 
         if( ( getSrcCBName() == null ) || getSrcCBName().isEmpty() ) {
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "srcCBName is absent" );
             return;
         }
@@ -2844,7 +2846,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return;
             }
             lDevice = lDevice1.getLeft();
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found LDevice( inst = ", getSrcLDInst(), " ) on line ",
                              lDevice.getLineNumber() );
         }
@@ -2867,7 +2869,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                              mess );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found", mess, " on line ", anyLN.getLeft().getLineNumber() );
 
         List< Control > listControls = new ArrayList< Control >();
@@ -2895,7 +2897,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             return;
         }
         setRefersToControl( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "ExtRef refers to Control( name = ", getSrcCBName(), " ) on line ",
                       getRefersToControl().getLineNumber() );
     }

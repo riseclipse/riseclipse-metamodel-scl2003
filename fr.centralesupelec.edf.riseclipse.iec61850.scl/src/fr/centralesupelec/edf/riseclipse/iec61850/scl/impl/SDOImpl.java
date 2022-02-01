@@ -476,6 +476,8 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "SDOImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -512,7 +514,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "SDO refers to DOType( id = ", getType(), " ) on line ",
                       getRefersToDOType().getLineNumber() );
     }

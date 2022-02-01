@@ -576,6 +576,8 @@ public class KDCImpl extends SclObjectImpl implements KDC {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "KDCImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -601,7 +603,7 @@ public class KDCImpl extends SclObjectImpl implements KDC {
                              "IED( name = ", getIedName(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                          ied.getLeft().getLineNumber() );
 
@@ -613,7 +615,7 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "KDC refers to AccessPoint( name = ", getApName(), " ) on line ",
                       getRefersToAccessPoint().getLineNumber() );
     }

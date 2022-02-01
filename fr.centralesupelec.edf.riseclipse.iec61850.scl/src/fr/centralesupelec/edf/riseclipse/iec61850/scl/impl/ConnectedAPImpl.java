@@ -1019,6 +1019,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ConnectedAPImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1048,7 +1050,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
                              " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                          ied.getLeft().getLineNumber() );
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
@@ -1059,7 +1061,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "ConnectedAP on line refers to AccessPoint( name = ", getApName(), " ) on line ",
                       getRefersToAccessPoint().getLineNumber() );
     }

@@ -1467,6 +1467,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AbstractDataAttributeImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1516,7 +1518,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
                           getRefersToEnumType().getLineNumber() );
         }
@@ -1537,7 +1539,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(), 
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(), 
                           "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
                           getRefersToDAType().getLineNumber() );
         }

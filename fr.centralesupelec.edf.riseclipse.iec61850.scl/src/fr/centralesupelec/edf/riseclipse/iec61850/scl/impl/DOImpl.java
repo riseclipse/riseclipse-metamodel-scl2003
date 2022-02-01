@@ -550,6 +550,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DOImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -583,7 +585,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "DO refers to DOType( id = ", getType(), " ) on line ", getRefersToDOType().getLineNumber() );
     }
 

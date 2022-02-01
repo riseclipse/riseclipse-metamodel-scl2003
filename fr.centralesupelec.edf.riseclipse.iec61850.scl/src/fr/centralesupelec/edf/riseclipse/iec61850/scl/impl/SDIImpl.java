@@ -1155,6 +1155,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "SDIImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1181,14 +1183,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         DO do_ = getParentDOI().getRefersToDO();
         // No error or warning message here: if this happens, error should have been detected before
         if( do_ == null ) return;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dot == null ) return;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
         List< SDO > res1 = dot
@@ -1206,7 +1208,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         }
         if( res1.size() == 1 ) {
             setRefersToSDO( res1.get( 0 ) );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "SDI refers to SDO( name = ", getName(), " ) on line ",
                           getRefersToSDO().getLineNumber() );
             return;
@@ -1231,7 +1233,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             return;
         }
         setRefersToAbstractDataAttribute( res2.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "SDI refers to DA( name = ", getName(), " ) on line ",
                       getRefersToAbstractDataAttribute().getLineNumber() );
     }
@@ -1239,14 +1241,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     private void doResolveLinkWithParentSDI( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         SDO sdo = getParentSDI().getRefersToSDO();
         if( sdo != null ) {
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found SDO on line ", sdo.getLineNumber() );
             sdo.buildExplicitLinks( console, false );
 
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
             if( dot == null ) return;
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
             List< SDO > res1 = dot
@@ -1263,7 +1265,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             }
             if( res1.size() == 1 ) {
                 setRefersToSDO( res1.get( 0 ) );
-                console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                               "SDI refers to SDO( name = ", getName(), " ) on line ",
                               getRefersToSDO().getLineNumber() );
                 return;
@@ -1287,7 +1289,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 return;
             }
             setRefersToAbstractDataAttribute( res2.get( 0 ) );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                           "SDI refers to DA( name = ", getName(), " ) on line ",
                           getRefersToAbstractDataAttribute().getLineNumber() );
             return;
@@ -1301,14 +1303,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                              messagePrefix, "cannot find SDO or AbstractDataAttribute using ParentSDI" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
 
         att.buildExplicitLinks( console, false );
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dat == null ) return;
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found DAType on line ", dat.getLineNumber() );
 
         List< BDA > res = dat
@@ -1324,7 +1326,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "SDI refers to BDA( name = ", getName(), " ) on line ",
                       getRefersToAbstractDataAttribute().getLineNumber() );
     }

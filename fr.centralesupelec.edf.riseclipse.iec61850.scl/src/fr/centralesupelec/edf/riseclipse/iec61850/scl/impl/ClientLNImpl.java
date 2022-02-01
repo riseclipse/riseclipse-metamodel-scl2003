@@ -1150,6 +1150,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ClientLNImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1188,7 +1190,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                              "IED( name = ", getIedName(), " )" );
             return;
         }
-        console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                          messagePrefix, "found IED( name = ", getIedName(), " ) on line ", ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = null;
@@ -1214,7 +1216,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                                  " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found ", "AccessPoint( name = ", getApRef(), " ) on line ",
                              ap.getLeft().getLineNumber() );
         }
@@ -1233,7 +1235,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                                  " LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
-            console.verbose( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                              messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                              lDevice.getLeft().getLineNumber() );
 
@@ -1251,7 +1253,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                       "ClientLN on line ", getLineNumber(), " refers to ", mess, " on line ",
                       getRefersToAnyLN().getLineNumber() );
     }
