@@ -45,6 +45,20 @@
     <tag>HEAD</tag>
   </scm>
  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>${maven-group-id}</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven-javadoc-plugin-version}</version>
+        <configuration>
+          <!-- Errors in EMF generated code: don't know how to avoid them. -->
+          <failOnError>false</failOnError>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <modules>
     <module>fr.centralesupelec.edf.riseclipse.iec61850.scl</module>
     <module>fr.centralesupelec.edf.riseclipse.iec61850.scl.edit</module>
