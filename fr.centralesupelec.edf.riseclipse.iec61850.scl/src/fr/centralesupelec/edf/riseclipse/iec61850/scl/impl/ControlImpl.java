@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -28,9 +28,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -42,6 +41,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -424,7 +424,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        throw new RiseClipseFatalException( "Control.getParentAnyLN() called", null );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "Control.getParentAnyLN() called" );
+        return null;
     }
 
     /**
@@ -593,7 +594,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -602,10 +605,11 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         // datSet  The name of the data set to be sent by the report control block; datSet should only be missing within an ICD-File,
         //         or to indicate an unused control block. The referenced data set must be in the same LN as the control block.
 
-        String messagePrefix = "[SCL links] while resolving link from Control on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from Control: ";
 
         if( ( getDatSet() == null ) || getDatSet().isEmpty() ) {
-            console.warning( messagePrefix, "datSet is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "datSet is missing" );
             return;
         }
 
@@ -620,14 +624,16 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 .filter( d -> getDatSet().equals( d.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "DataSet( name = " + getDatSet() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " DataSet( name = ", getDatSet(), " )" );
             return;
         }
         setRefersToDataSet( res.get( 0 ) );
-        console.info( "[SCL links] Control on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToDataSet().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                     "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
+                     getRefersToDataSet().getLineNumber() );
     }
 
 } //ControlImpl

@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
@@ -1465,7 +1466,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AbstractDataAttributeImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1483,17 +1486,18 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         if( !( "Enum".equals( getBType() ) || "Struct".equals( getBType() ) ) ) {
             return;
         }
-        String messagePrefix = "[SCL links] while resolving link from AbstractDataAttribute on line " + getLineNumber()
-                + ": ";
+        String messagePrefix = "while resolving link from AbstractDataAttribute: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( messagePrefix, "type is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "type is missing" );
             return;
         }
 
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( messagePrefix, "DataTypeTemplates is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1507,14 +1511,16 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .filter( et -> getType().equals( et.getId() ) )
                     .collect( Collectors.toList() );
 
-            String mess = "EnumType( id = " + getType() + " )";
             if( res.size() != 1 ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                                 " EnumType( id = ", getType(), " )" );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
-            console.info( "[SCL links] AbstractDataAttribute on line ", getLineNumber(), " refers to ", mess,
-                    " on line ", getRefersToEnumType().getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
+                          getRefersToEnumType().getLineNumber() );
         }
         else if( "Struct".equals( getBType() ) ) {
 
@@ -1526,14 +1532,16 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .filter( et -> getType().equals( et.getId() ) )
                     .collect( Collectors.toList() );
 
-            String mess = "DAType( id = " + getType() + " )";
             if( res.size() != 1 ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                                 " DAType( id = ", getType(), " )" );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            console.info( "[SCL links] AbstractDataAttribute on line ", getLineNumber(), " refers to ", mess,
-                    " on line ", getRefersToDAType().getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(), 
+                          "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
+                          getRefersToDAType().getLineNumber() );
         }
     }
 

@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -574,40 +575,49 @@ public class KDCImpl extends SclObjectImpl implements KDC {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "KDCImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "[SCL links] while resolving link from KDC on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from KDC: ";
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( messagePrefix, "iedName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( messagePrefix, "apName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "apName is missing" );
             return;
         }
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
-        String mess1 = "IED( name = " + getIedName() + " )";
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             "IED( name = ", getIedName(), " )" );
             return;
         }
-        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
+                         ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
-        String mess2 = "AccessPoint( name = " + getApName() + " )";
         if( ap.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, ap.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             "AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "[SCL links] KDC on line ", getLineNumber(), " refers to ", mess2, " on line ",
-                getRefersToAccessPoint().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "KDC refers to AccessPoint( name = ", getApName(), " ) on line ",
+                      getRefersToAccessPoint().getLineNumber() );
     }
 
 } //KDCImpl

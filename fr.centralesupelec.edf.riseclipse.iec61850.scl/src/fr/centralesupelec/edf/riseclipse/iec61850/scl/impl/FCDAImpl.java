@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
@@ -1090,7 +1091,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "FCDAImpl.doBuildExplicitLinks()" );
+
         //@formatter:off
 
         // see Issue #13
@@ -1112,18 +1115,21 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         // ix       An index to select an array element in case that one of the data elements is an array. The ix value shall be identical to the
         //          ArrayElementNumber value in the doName or daName part.
 
-        String messagePrefix = "[SCL links] while resolving link from FCDA on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from FCDA: ";
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( messagePrefix, "ldInst is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "ldInst is missing" );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( messagePrefix, "lnClass is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "lnClass is missing" );
             return;
         }
         if( ( getDoName() == null ) || getDoName().isEmpty() ) {
-            console.warning( messagePrefix, "doName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "doName is missing" );
             return;
         }
 
@@ -1133,38 +1139,47 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             object = object.eContainer();
         }
         if( object == null ) {
-            console.warning( messagePrefix, "AccessPoint not found" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "AccessPoint not found" );
             return;
         }
         AccessPoint ap = ( AccessPoint ) object;
-        console.verbose( messagePrefix, "found Server on line ", ap.getServer().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found Server on line ", ap.getServer().getLineNumber() );
 
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap, getLdInst() );
-        String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                    messagePrefix, (( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLeft().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                         lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
                 getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass();
+        String mess = " LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
-            mess2 += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+            mess += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
         }
-        mess2 += " )";
+        mess += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                    messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    mess );
             return;
         }
-        console.verbose( messagePrefix, "found ", mess2, " on line ", anyLN.getLeft().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found ", mess, " on line ", anyLN.getLeft().getLineNumber() );
         anyLN.getLeft().buildExplicitLinks( console, false );
 
         if( anyLN.getLeft().getRefersToLNodeType() == null ) return;
-        console.verbose( messagePrefix, "found LNodeType on line ",
-                anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found LNodeType on line ",
+                         anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
 
         // doName and daName are structured using . as separator
         // The first doName let us find the DO inside the LNodeType
@@ -1174,7 +1189,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         // If doName is structured, find the SDO and its DOType using remaining doName
 
         final String[] doNames = getDoName().split( "\\.", -1 );
-        List< DO > res3a =
+        List< DO > res1 =
                  anyLN
                 .getLeft()
                 .getRefersToLNodeType()
@@ -1183,39 +1198,47 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                 .filter( do2 -> doNames[0].equals( do2.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess3a = "DO ( name = " + doNames[0] + " )";
-        if( res3a.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3a, res3a.size() );
+        if( res1.size() != 1 ) {
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res1.size() == 0 ) ? "cannot find" : "found several" ),
+                             " DO ( name = ", doNames[0], " )" );
             return;
         }
-        console.verbose( messagePrefix, "found ", mess3a, " on line ", res3a.get( 0 ).getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found DO ( name = ", doNames[0], " ) on line ",
+                         res1.get( 0 ).getLineNumber() );
 
-        res3a.get( 0 ).buildExplicitLinks( console, false );
-        DOType doType = res3a.get( 0 ).getRefersToDOType();
+        res1.get( 0 ).buildExplicitLinks( console, false );
+        DOType doType = res1.get( 0 ).getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( doType == null ) return;
-        console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found DOType on line ", doType.getLineNumber() );
 
         for( int i = 1; i < doNames.length; ++i ) {
             String name = doNames[i];
-            List< SDO > res3b =
+            List< SDO > res2 =
                      doType
                     .getSDO()
                     .stream()
                     .filter( sdo -> name.equals( sdo.getName() ) )
                     .collect( Collectors.toList() );
 
-            String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
-            if( res3b.size() != 1 ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3b, res3b.size() );
+            if( res2.size() != 1 ) {
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                        messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                        "SDO ( name = ", name, " ) in DOType on line ", doType.getLineNumber() );
                 return;
             }
-            console.verbose( messagePrefix, "found ", mess3b, " on line ", res3b.get( 0 ).getLineNumber() );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found SDO ( name = ", name, " ) in DOType (on line ",
+                             doType.getLineNumber(), ") on line ", res2.get( 0 ).getLineNumber() );
 
-            res3b.get( 0 ).buildExplicitLinks( console, false );
-            doType = res3b.get( 0 ).getRefersToDOType();
+            res2.get( 0 ).buildExplicitLinks( console, false );
+            doType = res2.get( 0 ).getRefersToDOType();
             if( doType == null ) return;
-            console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found DOType on line ", doType.getLineNumber() );
         }
 
         AbstractDataAttribute attributeLookedFor = null;
@@ -1227,47 +1250,51 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
             for( String name : daNames ) {
                 if( doType != null ) {
-                    List< SDO > res4a =
+                    List< SDO > res3 =
                              doType
                             .getSDO()
                             .stream()
                             .filter( sdo -> sdo.getName().equals( name ) )
                             .collect( Collectors.toList() );
 
-                    if( res4a.size() == 1 ) {
-                        res4a.get( 0 ).buildExplicitLinks( console, false );
-                        String mess4a = "SDO ( name = " + name + " ) in DOType";
-                        console.verbose( messagePrefix, "found ", mess4a, " on line ", res4a.get( 0 ).getLineNumber() );
-                        doType = res4a.get( 0 ).getRefersToDOType();
+                    if( res3.size() == 1 ) {
+                        res3.get( 0 ).buildExplicitLinks( console, false );
+                        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                         messagePrefix, "found SDO ( name = ", name, " ) in DOType on line ",
+                                         res3.get( 0 ).getLineNumber() );
+                        doType = res3.get( 0 ).getRefersToDOType();
                         if( doType == null ) return;
-                        console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
+                        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                         messagePrefix, "found DOType on line ", doType.getLineNumber() );
                         continue;
                     }
 
-                    List< DA > res4b =
+                    List< DA > res4 =
                             doType
                            .getDA()
                            .stream()
                            .filter( da -> da.getName().equals( name ) )
                            .collect( Collectors.toList() );
 
-                    if( res4b.size() == 1 ) {
-                        attributeLookedFor = res4b.get( 0 );
-                        String mess4b = "DA ( name = " + name + " ) in DOType";
-                        console.verbose( messagePrefix, "found ", mess4b, " on line ", attributeLookedFor.getLineNumber() );
+                    if( res4.size() == 1 ) {
+                        attributeLookedFor = res4.get( 0 );
+                        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                         messagePrefix, "found DA ( name = ", name, " ) in DOType on line ",
+                                         attributeLookedFor.getLineNumber() );
                         doType = null;
                         continue;
                     }
 
-                    String mess4b = "DA or SDO ( name = " + name + " ) in DOType";
-                    SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4b, res4b.size() );
+                    console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                     messagePrefix, (( res4.size() == 0 ) ? "cannot find" : "found several" ),
+                                     " DA or SDO ( name = ", name, " ) in DOType" );
                     return;
                 }
 
                 if( attributeLookedFor != null ) {
                     attributeLookedFor.buildExplicitLinks( console, false );
-
-                    List< BDA > res4c =
+                    
+                    List< BDA > res5 =
                             attributeLookedFor
                            .getRefersToDAType()
                            .getBDA()
@@ -1275,25 +1302,31 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                            .filter( bda -> name.equals( bda.getName() ) )
                            .collect( Collectors.toList() );
 
-                   String mess4c = "BDA ( name = " + name + " ) in DAType on line "
-                           + attributeLookedFor.getRefersToDAType().getLineNumber();
-                   if( res4c.size() != 1 ) {
-                       SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4c, res4c.size() );
+                   if( res5.size() != 1 ) {
+                       console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                        messagePrefix, (( res5.size() == 0 ) ? "cannot find" : "found several" ),
+                                        "BDA ( name = ", name, " ) in DAType on line ",
+                                        attributeLookedFor.getRefersToDAType().getLineNumber() );
                        return;
                    }
-                   attributeLookedFor = res4c.get( 0 );
-                   console.verbose( messagePrefix, "found ", mess4c, " on line ", attributeLookedFor.getLineNumber() );
+                   console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                    messagePrefix, "found BDA ( name = ", name, " ) in DAType (on line ",
+                                            attributeLookedFor.getRefersToDAType().getLineNumber(),
+                                            ") on line ", res5.get( 0 ).getLineNumber() );
+                   attributeLookedFor = res5.get( 0 );
                    continue;
                 }
 
                 // We should never get there
-                console.fatal( "Unexpected error in FCDA.doBuildExplicitLinks()" );
+                console.emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                               "Unexpected error in FCDA.doBuildExplicitLinks()" );
                 return;
             }
         }
 
         if((( doType == null ) && ( attributeLookedFor == null )) || (( doType != null ) && ( attributeLookedFor != null ))) {
-            console.fatal( "Unexpected state in FCDA.doBuildExplicitLinks()" );
+            console.emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                           "Unexpected state in FCDA.doBuildExplicitLinks()" );
             return;
         }
 
@@ -1301,8 +1334,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
 
-            console.info( "[SCL links] FCDA on line ", getLineNumber(), " refers to AbstractDataAttribute ( name = ",
-                    attributeLookedFor.getName(), " ) on line ", attributeLookedFor.getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          "FCDA refers to AbstractDataAttribute ( name = ",
+                          attributeLookedFor.getName(), " ) on line ", attributeLookedFor.getLineNumber() );
             getRefersToAbstractDataAttribute().add( attributeLookedFor );
             return;
         }
@@ -1314,20 +1348,20 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         if( getRefersToAbstractDataAttribute().size() > 0 ) {
             for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
-                console.info( "[SCL links] FCDA on line ", getLineNumber(),
-                        " refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ",
-                        a.getLineNumber() );
+                console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                              "FCDA refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ",
+                              a.getLineNumber() );
             }
         }
         else {
-            console.warning( "[SCL links] FCDA (line ", getLineNumber(),
-                    ") does not refer to any AbstractDataAttribute" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             "FCDA does not refer to any AbstractDataAttribute" );
         }
 
         //@formatter:on
     }
 
-    private Set< DA > getAllDAInDOTypeWithFC( DOType doType, FCEnum fc, IRiseClipseConsole console ) {
+    private Set< DA > getAllDAInDOTypeWithFC( @NonNull DOType doType, @NonNull FCEnum fc, @NonNull IRiseClipseConsole console ) {
         //@formatter:off
 
         Set< DA > das = new HashSet<>();

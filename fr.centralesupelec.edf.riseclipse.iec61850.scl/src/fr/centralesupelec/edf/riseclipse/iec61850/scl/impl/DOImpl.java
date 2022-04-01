@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -548,7 +549,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DOImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -558,10 +561,11 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         //                  access control definition applies
         // transient        If set to true, it indicates that the Transient definition from IEC 61850-7-4 applies
 
-        String messagePrefix = "[SCL links] while resolving link from DO on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from DO: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( messagePrefix, "type is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "type is missing" );
             return;
         }
         // No error or warning message here: if this happens, error should have been detected before
@@ -574,14 +578,15 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 .filter( d -> getType().equals( d.getId() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "DOType( id = " + getType() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( "[SCL links] DO on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToDOType().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "DO refers to DOType( id = ", getType(), " ) on line ", getRefersToDOType().getLineNumber() );
     }
 
     @Override

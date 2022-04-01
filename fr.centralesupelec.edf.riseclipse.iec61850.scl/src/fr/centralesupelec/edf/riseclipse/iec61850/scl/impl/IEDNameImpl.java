@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -1268,7 +1269,9 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "IEDNameImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1280,83 +1283,98 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
 
         // We only set the most precise RefersTo (IED / LDevice / AnyLN)
 
-        String messagePrefix = "[SCL links] while resolving link from IEDName on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from IEDName: ";
 
         if( ( getValue() == null ) || getValue().isEmpty() ) {
-            console.warning( messagePrefix, "value is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "value is missing" );
             return;
         }
 
         // find an IED with
         //   IED.name == value
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getValue() );
-        String mess1 = "IED( name = " + getValue() + " )";
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             " IED( name = ", getValue(), " )" );
             return;
         }
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             setRefersToIED( ied.getLeft() );
-            console.info( "IEDName on line ", getLineNumber(), " refers to ", mess1, " on line ",
-                    ied.getLeft().getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          "IEDName to IED( name = ", getValue(), " ) on line ",
+                          ied.getLeft().getLineNumber() );
             return;
         }
 
-        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found IED( name = ", getValue(), " ) on line ",
+                         ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = null;
         if( ( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.warning( messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(),
-                        " )" );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.warning( messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
-                        " ) but apRef not specified" );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
+                                 " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
         }
         else {
             ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
-            String mess2 = "AccessPoint( name = " + getApRef() + " )";
             if( ap.getLeft() == null ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, ap.getRight() );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                                 " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
-            console.verbose( messagePrefix, "found ", mess2, " on line ", ap.getLeft().getLineNumber() );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found AccessPoint( name = ", getApRef(), " ) on line ",
+                             ap.getLeft().getLineNumber() );
         }
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
-        String mess3 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, lDevice.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             setRefersToLDevice( lDevice.getLeft() );
-            console.info( "IEDName on line ", getLineNumber(), " refers to ", mess3, " on line ",
-                    getRefersToLDevice().getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          "IEDName refers to LDevice( inst = ", getLdInst(), " ) on line ",
+                          getRefersToLDevice().getLineNumber() );
             return;
         }
-        console.verbose( messagePrefix, "found ", mess3, " on line ", lDevice.getLeft().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                         lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
                 getPrefix() );
-        String mess4 = "LN( lnClass = " + getLnClass();
+        String mess = " LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
-            mess4 += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess4 += ", prefix = " + getPrefix();
+            mess += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
         }
-        mess4 += " )";
+        mess += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4, anyLN.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] ClientLN on line ", getLineNumber(), " refers to ", mess4, " on line ",
-                getRefersToAnyLN().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "ClientLN refers to", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
 } //IEDNameImpl

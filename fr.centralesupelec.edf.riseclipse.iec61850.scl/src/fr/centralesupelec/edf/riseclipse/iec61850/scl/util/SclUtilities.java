@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -35,8 +35,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
 public class SclUtilities {
 
@@ -46,7 +45,7 @@ public class SclUtilities {
             scl = scl.eContainer();
         }
         if( scl == null ) {
-            throw new RiseClipseFatalException( "root container is not SCL", null );
+            AbstractRiseClipseConsole.getConsole().emergency( "SCL/Utility", 0, "root container is not SCL" );
         }
         return ( SCL ) scl;
     }
@@ -178,8 +177,4 @@ public class SclUtilities {
         return Pair.of( res.get( 0 ), 1 );
     }
 
-    public static void displayNotFoundWarning( IRiseClipseConsole console, String prefix, String suffix, int nb ) {
-        console.warning( prefix, (( nb == 0 ) ? "cannot find " : "found several " ), suffix );
-    }
-    
 }

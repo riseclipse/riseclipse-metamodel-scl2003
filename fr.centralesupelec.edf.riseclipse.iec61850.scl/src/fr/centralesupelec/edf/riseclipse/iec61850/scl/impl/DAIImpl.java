@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
@@ -48,7 +49,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -1010,14 +1010,17 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DAIImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "[SCL links] while resolving link from DAI on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from DAI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-            console.warning( messagePrefix, "name is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "name is missing" );
             return;
         }
 
@@ -1032,17 +1035,19 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         }
     }
 
-    private void doBuildExplicitLinkWithParentDOI( IRiseClipseConsole console, String messagePrefix ) {
+    private void doBuildExplicitLinkWithParentDOI( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         // No error or warning messages here: if this happens, error should have been detected before
         DO do_ = getParentDOI().getRefersToDO();
         if( do_ == null ) return;
-        console.verbose( messagePrefix, "found DO on line ", do_.getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dot == null ) return;
-        console.verbose( messagePrefix, "found DOType on line ", dot.getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
         List< DA > res = dot
                 .getDA()
@@ -1050,17 +1055,19 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .filter( d -> getName().equals( d.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "DA( name = " + getName() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " DA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( "[SCL links] DAI on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToAbstractDataAttribute().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "DAI refers to DA( name = " + getName(), " ) on line ",
+                      getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
-    private void doBuildExplicitLinkWithParentSDI( IRiseClipseConsole console, String messagePrefix ) {
+    private void doBuildExplicitLinkWithParentSDI( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         // No error or warning messages here: if this happens, error should have been detected before
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
         if( att == null ) {
@@ -1068,11 +1075,13 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             SDO sdo = getParentSDI().getRefersToSDO();
             if( sdo == null ) return;
             sdo.buildExplicitLinks( console, false );
-            console.verbose( messagePrefix, "found SDO on line ", sdo.getLineNumber() );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found SDO on line ", sdo.getLineNumber() );
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
             if( dot == null ) return;
-            console.verbose( messagePrefix, "found DOType on line ", dot.getLineNumber() );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
             List< DA > res = dot
                     .getDA()
@@ -1080,23 +1089,27 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                     .filter( d -> getName().equals( d.getName() ) )
                     .collect( Collectors.toList() );
 
-            String mess = "DA( name = " + getName() + " )";
             if( res.size() != 1 ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                                 " DA( name = ", getName(), " )" );
                 return;
             }
             setRefersToAbstractDataAttribute( res.get( 0 ) );
-            console.info( "[SCL links] DAI on line ", getLineNumber(), " refers to ", mess, " on line ",
-                    getRefersToAbstractDataAttribute().getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          "DAI refers to DA( name = ", getName(), " ) on line ",
+                          getRefersToAbstractDataAttribute().getLineNumber() );
             return;
         }
         att.buildExplicitLinks( console, false );
-        console.verbose( messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
+        console.info(  EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
 
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dat == null ) return;
-        console.verbose( messagePrefix, "found DAType on line ", dat.getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                         messagePrefix, "found DAType on line ", dat.getLineNumber() );
 
         List< BDA > res = dat
                 .getBDA()
@@ -1104,14 +1117,16 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .filter( b -> getName().equals( b.getName() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "BDA( name = " + getName() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " BDA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( "[SCL links] DAI on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToAbstractDataAttribute().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "DAI refers to ", "BDA( name = " + getName() + " )", " on line ",
+                      getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
 } //DAIImpl

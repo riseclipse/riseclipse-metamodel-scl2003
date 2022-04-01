@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -482,14 +483,17 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ServerAtImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "[SCL links] while resolving link from ServerAt on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from ServerAt: ";
 
         if( ( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( messagePrefix, "apName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "apName is missing" );
             return;
         }
 
@@ -498,14 +502,16 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         if( ied == null ) return;
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied, getApName() );
-        String mess = "AccessPoint( name = " + getApName() + " )";
         if( ap.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, ap.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             " AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "[SCL links] ServerAt on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToAccessPoint().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "ServerAt refers to AccessPoint( name = ", getApName(), " ) on line ",
+                      getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ServerAtImpl

@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -1308,7 +1309,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LogControlImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1325,10 +1328,11 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         // logEna       TRUE enables immediate logging; FALSE prohibits logging until enabled online
         // reasonCode   If true, the reason code for the event trigger is also stored into the log – see IEC 61850-7-2
 
-        String messagePrefix = "[SCL links] while resolving link from LogControl on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from LogControl: ";
 
         if( ( getLogName() == null ) || getLogName().isEmpty() ) {
-            console.warning( messagePrefix, "logName is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "logName is missing" );
             return;
         }
 
@@ -1340,29 +1344,35 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
         if( ( getLdInst() != null ) && ( !getLdInst().isEmpty() ) ) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
-            String mess1 = "LDevice( inst = " + getLdInst() + " )";
             if( lDevice1.getLeft() == null ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice1.getRight() );
+                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                                 messagePrefix, (( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
+                                 "LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             lDevice = lDevice1.getLeft();
-            console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLineNumber() );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                             lDevice.getLineNumber() );
         }
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass();
+        String mess = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
-            mess2 += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+            mess += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
         }
-        mess2 += " )";
+        mess += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+                             mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] LogControl on line ", getLineNumber(), " refers to ", mess2, " on line ",
-                getRefersToAnyLN().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "LogControl refers to ", mess, " on line ",
+                      getRefersToAnyLN().getLineNumber() );
 
     }
 

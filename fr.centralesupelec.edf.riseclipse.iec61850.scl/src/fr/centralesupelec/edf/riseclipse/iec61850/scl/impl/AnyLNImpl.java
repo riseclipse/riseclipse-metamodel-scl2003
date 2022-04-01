@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -38,8 +38,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -55,6 +55,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -1067,7 +1068,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public LDevice getParentLDevice() {
-        throw new RiseClipseFatalException( "AnyLN.getParentLDevice() called", null );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AnyLNImpl.getParentLDevice() called" );
+        return null;
     }
 
     /**
@@ -1501,7 +1503,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AnyLNImpl.doBuildExplicitLinks()" );
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1509,15 +1513,17 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
-        String messagePrefix = "[SCL links] while resolving link from AnyLN on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from AnyLN on line: ";
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) {
-            console.warning( messagePrefix, "lnType is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( messagePrefix, "DataTypeTemplates is missing" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1527,18 +1533,21 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 .filter( lnt -> getLnType().equals( lnt.getId() ) )
                 .collect( Collectors.toList() );
 
-        String mess = "LNodeType( id = " + getLnType() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
+                             " LNodeType( id = ", getLnType(), " )" );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( "[SCL links] AnyLN on line ", getLineNumber(), " refers to ", mess, " on line ",
-                getRefersToLNodeType().getLineNumber() );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "AnyLN on line ", getLineNumber(), " refers to LNodeType( id = ", getLnType(),
+                      " ) on line ", getRefersToLNodeType().getLineNumber() );
 
-        if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() ) ) {
-            console.warning( messagePrefix, "lnClass in ", mess, "(", getRefersToLNodeType().getLnClass(), ") is not ",
-                    getLnClass() );
+        if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
+                             getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
         }
     }
 

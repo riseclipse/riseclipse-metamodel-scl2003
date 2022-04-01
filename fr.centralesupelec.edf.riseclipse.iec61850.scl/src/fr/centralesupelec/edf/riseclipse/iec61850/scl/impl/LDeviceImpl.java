@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
@@ -1299,13 +1300,15 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     }
 
     @Override
-    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LDeviceImpl.doBuildExplicitLinks()" );
+
         //@formatter:off
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "[SCL links] while resolving link from LDevice on line " + getLineNumber() + ": ";
+        String messagePrefix = "while resolving link from LDevice: ";
         
         // TODO: warning message ?
         if( getLN0() == null ) return;
@@ -1319,12 +1322,14 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .collect( Collectors.toList() );
 
         if( grRef.size() > 1 ) {
-            console.warning( messagePrefix, "found several DOI named GrRef in LN0" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found several DOI named GrRef in LN0" );
             return;            
         }
 
         if( grRef.size() == 0 ) {
-            console.info( "[SCL links] LDevice " + getInst() + " on line " + getLineNumber() + " is a root LDevice" );
+            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                          "LDevice ", getInst(), " is a root LDevice" );
             return;            
         }
         // Look for DAI name="setSrcRef" in GrRef
@@ -1333,36 +1338,43 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .get( 0 )
                 .getDAI()
                 .stream()
-                .filter( dai -> "setSrcRef".equals(  dai.getName() ))
+                .filter( dai -> "setSrcRef".equals( dai.getName() ))
                 .collect( Collectors.toList() );
         
         if( setSrcRef.size() == 0 ) {
-            console.warning( messagePrefix, "found no DAI named setSrcRef in GrRef on line " + grRef.get( 0 ).getLineNumber() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found no DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
             return;            
         }
         if( setSrcRef.size() > 1 ) {
-            console.warning( messagePrefix, "found several DAI named setSrcRef in GrRef on line " + grRef.get( 0 ).getLineNumber() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found several DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
             return;            
         }
         
         if( setSrcRef.get( 0 ).getVal().size() == 0 ) {
-            console.warning( messagePrefix, "found no Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found no Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;            
         }
         if( setSrcRef.get( 0 ).getVal().size() > 1 ) {
-            console.warning( messagePrefix, "found several Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found several Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;            
         }
         
         String higherLevelLDeviceName = setSrcRef.get( 0 ).getVal().get( 0 ).getValue();
         if(( higherLevelLDeviceName == null ) || ( higherLevelLDeviceName.length() <= 1 )) {
-            console.warning( messagePrefix, "found no Val or empty Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found no Val or empty Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;            
         }
         
         // TODO: higherLevelLDeviceName may or must be prefixed by @ ?
         if( ! higherLevelLDeviceName.startsWith( "@" )) {
-            console.warning( messagePrefix, "Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() + " does not start with @" );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
+                             " does not start with @" );
         }
         else {
             higherLevelLDeviceName = higherLevelLDeviceName.substring( 1 );
@@ -1379,15 +1391,18 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .collect( Collectors.toList() );
         
         if( lDevices.size() == 0 ) {
-            console.warning( messagePrefix, "found no LDevice named " + higherLevelLDeviceName );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found no LDevice named ", higherLevelLDeviceName );
             return;            
         }
         if( lDevices.size() > 1 ) {
-            console.warning( messagePrefix, "found several LDevice " + higherLevelLDeviceName );
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, "found several LDevice ", higherLevelLDeviceName );
             return;            
         }
         
-        console.info( "[SCL links] LDevice " + getInst() + " on line " + getLineNumber() + " has " + lDevices.get( 0 ).getInst() + " for higher level LDevice" );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "LDevice ", getInst(), " has ", lDevices.get( 0 ).getInst(), " for higher level LDevice" );
         setRefersToHigherLevelLDevice( lDevices.get( 0 ));
         
         //@formatter:on
