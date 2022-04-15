@@ -476,7 +476,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "SDOImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "SDOImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -490,13 +490,13 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         String messagePrefix = "while resolving link from SDO: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "type is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
@@ -508,13 +508,13 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "SDO refers to DOType( id = ", getType(), " ) on line ",
                 getRefersToDOType().getLineNumber() );
     }

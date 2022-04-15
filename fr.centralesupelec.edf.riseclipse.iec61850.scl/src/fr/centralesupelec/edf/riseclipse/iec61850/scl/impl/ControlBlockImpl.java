@@ -517,7 +517,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ControlBlock.getParentConnectedAP() called" );
         return null;
     }
@@ -688,7 +688,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlBlockImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "ControlBlockImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -705,12 +705,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         String messagePrefix = "while resolving link from ControlBlock: ";
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "ldInst is missing" );
             return;
         }
         if( ( getCbName() == null ) || getCbName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "cbName is missing" );
             return;
         }
@@ -724,19 +724,19 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         //   LDevice.inst == ControlBlock.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied, getLdInst() );
         if( lDevice.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                 lDevice.getLeft().getLineNumber() );
 
         // Find a ControlWithIEDName inside LN0 of LDevice with
         //   ControlWithIEDName.name == ControlBlock.bName
         if( lDevice.getLeft().getLN0() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "LN0 is missing" );
             return;
         }
@@ -751,13 +751,13 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 .collect( Collectors.toList() );
 
         if( res2.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
                     " ControlWithIEDName( name = ", getCbName(), " )" );
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ControlBlock refers to ControlWithIEDName( name = ", getCbName(), " ) on line ",
                 getRefersToControlWithIEDName().getLineNumber() );
     }

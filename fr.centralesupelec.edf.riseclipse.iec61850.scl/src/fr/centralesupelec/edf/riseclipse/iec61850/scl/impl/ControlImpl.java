@@ -424,7 +424,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Control.getParentAnyLN() called" );
         return null;
     }
@@ -596,7 +596,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "ControlImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -609,7 +609,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         String messagePrefix = "while resolving link from Control: ";
 
         if( ( getDatSet() == null ) || getDatSet().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "datSet is missing" );
             return;
         }
@@ -626,13 +626,13 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " DataSet( name = ", getDatSet(), " )" );
             return;
         }
         setRefersToDataSet( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
                 getRefersToDataSet().getLineNumber() );
     }

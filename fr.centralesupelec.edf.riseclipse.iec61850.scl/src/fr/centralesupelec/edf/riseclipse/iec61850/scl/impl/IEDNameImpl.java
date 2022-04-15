@@ -1270,7 +1270,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "IEDNameImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "IEDNameImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1286,7 +1286,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         String messagePrefix = "while resolving link from IEDName: ";
 
         if( ( getValue() == null ) || getValue().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "value is missing" );
             return;
         }
@@ -1295,7 +1295,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         //   IED.name == value
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getValue() );
         if( ied.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " IED( name = ", getValue(), " )" );
             return;
@@ -1303,25 +1303,25 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             setRefersToIED( ied.getLeft() );
-            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     "IEDName to IED( name = ", getValue(), " ) on line ",
                     ied.getLeft().getLineNumber() );
             return;
         }
 
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getValue(), " ) on line ",
                 ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = null;
         if( ( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                         messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                         messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
                         " ) but apRef not specified" );
                 return;
@@ -1331,30 +1331,30 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         else {
             ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
             if( ap.getLeft() == null ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                         messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
                         " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found AccessPoint( name = ", getApRef(), " ) on line ",
                     ap.getLeft().getLineNumber() );
         }
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             setRefersToLDevice( lDevice.getLeft() );
-            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     "IEDName refers to LDevice( inst = ", getLdInst(), " ) on line ",
                     getRefersToLDevice().getLineNumber() );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                 lDevice.getLeft().getLineNumber() );
 
@@ -1367,13 +1367,13 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
                     mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ClientLN refers to", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 

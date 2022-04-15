@@ -910,7 +910,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DOIImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "DOIImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -918,14 +918,14 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         String messagePrefix = "while resolving link from DOI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "name is missing" );
             return;
         }
 
         // No error or warning message here: if this happens, error should have been detected before
         if( ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) return;
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LNodeType on line ",
                 getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
@@ -937,13 +937,13 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " DO( name = ", getName(), " )" );
             return;
         }
         setRefersToDO( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
     }
 

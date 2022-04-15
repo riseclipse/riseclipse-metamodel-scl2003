@@ -113,7 +113,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
     public void endElement( String uri, String localName, String name ) {
         if( lineNumbers.empty() ) {
             AbstractRiseClipseConsole.getConsole().warning(
-                XML_HANDLER_CATEGORY, 0, "linenumber stack empty !" );
+                XML_HANDLER_CATEGORY, resourceURI.lastSegment(), 0, "linenumber stack empty !" );
         }
         else {
             lineNumbers.pop();
@@ -165,7 +165,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
     protected void processObject( EObject object ) {
         if( lineNumbers.empty() ) {
             AbstractRiseClipseConsole.getConsole().warning(
-                XML_HANDLER_CATEGORY, 0, "linenumber stack empty !" );
+                XML_HANDLER_CATEGORY, resourceURI.lastSegment(), 0, "linenumber stack empty !" );
         }
         else {
         	// Will pop in endElement, because some attributes in the model
@@ -173,6 +173,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
             int lineNumber = lineNumbers.peek();
             if( object instanceof SclObject ) {
                 (( SclObject ) object ).setLineNumber( lineNumber );
+                (( SclObject ) object ).setFilename( resourceURI.lastSegment() );
             }
         }
         // TODO: error message
@@ -199,7 +200,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
 	    
 	    if(( feature.getUpperBound() == 1 ) && object.eIsSet( feature )) {
 	        AbstractRiseClipseConsole.getConsole().error(
-	                  XML_HANDLER_CATEGORY, (( SclObject ) object ).getLineNumber(),
+	                  XML_HANDLER_CATEGORY, resourceURI.lastSegment(), (( SclObject ) object ).getLineNumber(),
                       "there shall not be more than 1 ",
 	                  feature.getName(), " in ", object.eClass().getName() );
 	        return;
@@ -228,10 +229,10 @@ public class SCLXMLHandler extends SAXXMLHandler {
         
         if( ! lineNumbers.empty() ) {
             AbstractRiseClipseConsole.getConsole().warning(
-                XML_HANDLER_CATEGORY, 0, "linenumber stack not empty !" );
+                XML_HANDLER_CATEGORY, resourceURI.lastSegment(), 0, "linenumber stack not empty !" );
             while( ! lineNumbers.empty() ) {
                 AbstractRiseClipseConsole.getConsole().warning(
-                    XML_HANDLER_CATEGORY, lineNumbers.pop(), "popping " );
+                    XML_HANDLER_CATEGORY, resourceURI.lastSegment(), lineNumbers.pop(), "popping " );
             }
         }
     }
@@ -248,7 +249,8 @@ public class SCLXMLHandler extends SAXXMLHandler {
         if( ! lineNumbers.empty() ) {
             ln = lineNumbers.peek();
         }
-        AbstractRiseClipseConsole.getConsole().error( XML_HANDLER_CATEGORY, ln, "unknown feature \"", name, "\" in object ", peekObject.eClass().getName() );
+        AbstractRiseClipseConsole.getConsole().error( XML_HANDLER_CATEGORY, resourceURI.lastSegment(),
+                ln, "unknown feature \"", name, "\" in object ", peekObject.eClass().getName() );
     }
 
 }

@@ -1244,7 +1244,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AssociationImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "AssociationImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1260,17 +1260,17 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         String messagePrefix = "while resolving link from Association: ";
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "iedName is missing " );
             return;
         }
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "ldInst is missing " );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "lnClass is missing " );
             return;
         }
@@ -1279,12 +1279,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         //   IED.name == Association.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                 ied.getLeft().getLineNumber() );
 
@@ -1292,12 +1292,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         //   LDevice.name == Association.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found ", "LDevice( inst = ", getLdInst(), " )", " on line ",
                 lDevice.getLeft().getLineNumber() );
 
@@ -1310,13 +1310,13 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                "Association on line ", getLineNumber(), " refers to ", mess, " on line ",
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                "Association refers to ", mess, " on line ",
                 getRefersToAnyLN().getLineNumber() );
     }
 

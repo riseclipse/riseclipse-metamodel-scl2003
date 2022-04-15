@@ -212,7 +212,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public boolean buildExplicitLinks( @NonNull IRiseClipseConsole console, Boolean forceUpdate ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "SclObjectImpl.buildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "SclObjectImpl.buildExplicitLinks()" );
 
         if( ( !forceUpdate ) && isExplicitLinksBuilt() ) return true;
 
@@ -235,7 +235,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     }
 
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "SclObjectImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "SclObjectImpl.doBuildExplicitLinks()" );
 
         // Default do nothing
     }
