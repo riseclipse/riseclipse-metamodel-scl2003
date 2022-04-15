@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,13 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -35,6 +28,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.annotation.NonNull;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -585,12 +585,12 @@ public class KDCImpl extends SclObjectImpl implements KDC {
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "iedName is missing" );
+                    messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getApName() == null ) || getApName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "apName is missing" );
+                    messagePrefix, "apName is missing" );
             return;
         }
 
@@ -599,25 +599,25 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             "IED( name = ", getIedName(), " )" );
+                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    "IED( name = ", getIedName(), " )" );
             return;
         }
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
-                         ied.getLeft().getLineNumber() );
+                messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
+                ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         if( ap.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             "AccessPoint( name = ", getApName(), " )" );
+                    messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    "AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "KDC refers to AccessPoint( name = ", getApName(), " ) on line ",
-                      getRefersToAccessPoint().getLineNumber() );
+                "KDC refers to AccessPoint( name = ", getApName(), " ) on line ",
+                getRefersToAccessPoint().getLineNumber() );
     }
 
 } //KDCImpl

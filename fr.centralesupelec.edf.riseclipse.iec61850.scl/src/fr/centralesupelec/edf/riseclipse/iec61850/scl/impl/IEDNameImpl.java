@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,6 +20,15 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.apache.commons.lang3.tuple.Pair;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
@@ -29,15 +38,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -1287,7 +1287,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
 
         if( ( getValue() == null ) || getValue().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "value is missing" );
+                    messagePrefix, "value is missing" );
             return;
         }
 
@@ -1296,34 +1296,34 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getValue() );
         if( ied.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             " IED( name = ", getValue(), " )" );
+                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    " IED( name = ", getValue(), " )" );
             return;
         }
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             setRefersToIED( ied.getLeft() );
             console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                          "IEDName to IED( name = ", getValue(), " ) on line ",
-                          ied.getLeft().getLineNumber() );
+                    "IEDName to IED( name = ", getValue(), " ) on line ",
+                    ied.getLeft().getLineNumber() );
             return;
         }
 
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found IED( name = ", getValue(), " ) on line ",
-                         ied.getLeft().getLineNumber() );
+                messagePrefix, "found IED( name = ", getValue(), " ) on line ",
+                ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = null;
         if( ( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
+                        messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
-                                 " ) but apRef not specified" );
+                        messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
+                        " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1332,31 +1332,31 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
             if( ap.getLeft() == null ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                                 " AccessPoint( name = ", getApRef(), " )" );
+                        messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                        " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found AccessPoint( name = ", getApRef(), " ) on line ",
-                             ap.getLeft().getLineNumber() );
+                    messagePrefix, "found AccessPoint( name = ", getApRef(), " ) on line ",
+                    ap.getLeft().getLineNumber() );
         }
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             " LDevice( inst = ", getLdInst(), " )" );
+                    messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             setRefersToLDevice( lDevice.getLeft() );
             console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                          "IEDName refers to LDevice( inst = ", getLdInst(), " ) on line ",
-                          getRefersToLDevice().getLineNumber() );
+                    "IEDName refers to LDevice( inst = ", getLdInst(), " ) on line ",
+                    getRefersToLDevice().getLineNumber() );
             return;
         }
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
-                         lDevice.getLeft().getLineNumber() );
+                messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
                 getPrefix() );
@@ -1368,13 +1368,13 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         mess += " )";
         if( anyLN.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             mess );
+                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "ClientLN refers to", mess, " on line ", getRefersToAnyLN().getLineNumber() );
+                "ClientLN refers to", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
 } //IEDNameImpl

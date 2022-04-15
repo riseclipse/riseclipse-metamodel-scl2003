@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -1332,7 +1332,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
         if( ( getLogName() == null ) || getLogName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "logName is missing" );
+                    messagePrefix, "logName is missing" );
             return;
         }
 
@@ -1346,14 +1346,14 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             if( lDevice1.getLeft() == null ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
-                                 "LDevice( inst = ", getLdInst(), " )" );
+                        messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
+                        "LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             lDevice = lDevice1.getLeft();
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
-                             lDevice.getLineNumber() );
+                    messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                    lDevice.getLineNumber() );
         }
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
@@ -1365,14 +1365,14 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         mess += " )";
         if( anyLN.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             mess );
+                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "LogControl refers to ", mess, " on line ",
-                      getRefersToAnyLN().getLineNumber() );
+                "LogControl refers to ", mess, " on line ",
+                getRefersToAnyLN().getLineNumber() );
 
     }
 

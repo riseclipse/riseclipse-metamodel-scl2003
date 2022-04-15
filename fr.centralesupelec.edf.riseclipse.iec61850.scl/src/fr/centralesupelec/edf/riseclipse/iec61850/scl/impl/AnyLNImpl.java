@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -19,6 +19,22 @@
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
@@ -40,22 +56,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -729,7 +729,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< Log > getLog() {
         if( log == null ) {
-            log = new EObjectContainmentWithInverseEList.Unsettable< Log >( Log.class, this, SclPackage.ANY_LN__LOG,
+            log = new EObjectContainmentWithInverseEList.Unsettable< >( Log.class, this, SclPackage.ANY_LN__LOG,
                     SclPackage.LOG__PARENT_ANY_LN );
         }
         return log;
@@ -763,7 +763,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< DOI > getDOI() {
         if( doi == null ) {
-            doi = new EObjectContainmentWithInverseEList.Unsettable< DOI >( DOI.class, this, SclPackage.ANY_LN__DOI,
+            doi = new EObjectContainmentWithInverseEList.Unsettable< >( DOI.class, this, SclPackage.ANY_LN__DOI,
                     SclPackage.DOI__PARENT_ANY_LN );
         }
         return doi;
@@ -797,7 +797,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< ReportControl > getReportControl() {
         if( reportControl == null ) {
-            reportControl = new EObjectContainmentWithInverseEList.Unsettable< ReportControl >( ReportControl.class,
+            reportControl = new EObjectContainmentWithInverseEList.Unsettable< >( ReportControl.class,
                     this, SclPackage.ANY_LN__REPORT_CONTROL, SclPackage.REPORT_CONTROL__PARENT_ANY_LN );
         }
         return reportControl;
@@ -831,7 +831,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< LogControl > getLogControl() {
         if( logControl == null ) {
-            logControl = new EObjectContainmentWithInverseEList.Unsettable< LogControl >( LogControl.class, this,
+            logControl = new EObjectContainmentWithInverseEList.Unsettable< >( LogControl.class, this,
                     SclPackage.ANY_LN__LOG_CONTROL, SclPackage.LOG_CONTROL__PARENT_ANY_LN );
         }
         return logControl;
@@ -865,7 +865,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< DataSet > getDataSet() {
         if( dataSet == null ) {
-            dataSet = new EObjectContainmentWithInverseEList.Unsettable< DataSet >( DataSet.class, this,
+            dataSet = new EObjectContainmentWithInverseEList.Unsettable< >( DataSet.class, this,
                     SclPackage.ANY_LN__DATA_SET, SclPackage.DATA_SET__PARENT_ANY_LN );
         }
         return dataSet;
@@ -899,7 +899,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< ClientLN > getReferredByClientLN() {
         if( referredByClientLN == null ) {
-            referredByClientLN = new EObjectWithInverseEList.Unsettable< ClientLN >( ClientLN.class, this,
+            referredByClientLN = new EObjectWithInverseEList.Unsettable< >( ClientLN.class, this,
                     SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN );
         }
         return referredByClientLN;
@@ -933,7 +933,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< LogControl > getReferredByLogControl() {
         if( referredByLogControl == null ) {
-            referredByLogControl = new EObjectWithInverseEList.Unsettable< LogControl >( LogControl.class, this,
+            referredByLogControl = new EObjectWithInverseEList.Unsettable< >( LogControl.class, this,
                     SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN );
         }
         return referredByLogControl;
@@ -967,7 +967,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< Association > getReferredByAssociation() {
         if( referredByAssociation == null ) {
-            referredByAssociation = new EObjectWithInverseEList.Unsettable< Association >( Association.class, this,
+            referredByAssociation = new EObjectWithInverseEList.Unsettable< >( Association.class, this,
                     SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN );
         }
         return referredByAssociation;
@@ -1001,7 +1001,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< IEDName > getReferredByIEDName() {
         if( referredByIEDName == null ) {
-            referredByIEDName = new EObjectWithInverseEList.Unsettable< IEDName >( IEDName.class, this,
+            referredByIEDName = new EObjectWithInverseEList.Unsettable< >( IEDName.class, this,
                     SclPackage.ANY_LN__REFERRED_BY_IED_NAME, SclPackage.IED_NAME__REFERS_TO_ANY_LN );
         }
         return referredByIEDName;
@@ -1035,7 +1035,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList< LNode > getReferredByLNode() {
         if( referredByLNode == null ) {
-            referredByLNode = new EObjectWithInverseEList.Unsettable< LNode >( LNode.class, this,
+            referredByLNode = new EObjectWithInverseEList.Unsettable< >( LNode.class, this,
                     SclPackage.ANY_LN__REFERRED_BY_LNODE, SclPackage.LNODE__REFERS_TO_ANY_LN );
         }
         return referredByLNode;
@@ -1068,7 +1068,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public LDevice getParentLDevice() {
-        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AnyLNImpl.getParentLDevice() called" );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                "AnyLNImpl.getParentLDevice() called" );
         return null;
     }
 
@@ -1080,14 +1081,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public String getNamespace() {
         //@formatter:off
-        
+
         // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
         //
         // 1.  AnyLN.DOI["NamPlt"].DAI["lnNs"].value                   if present
         // 2.  AnyLN.LNodeType.namespace                               if not null
         // 3.  AnyLN.ParentLDevice.ldNs                                otherwise
 
-        
+
         List< DOI > namPltDoi =
                  getDOI()
                 .stream()
@@ -1517,13 +1518,13 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "lnType is missing" );
+                    messagePrefix, "lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "DataTypeTemplates is missing" );
+                    messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1535,19 +1536,19 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                             " LNodeType( id = ", getLnType(), " )" );
+                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    " LNodeType( id = ", getLnType(), " )" );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "AnyLN on line ", getLineNumber(), " refers to LNodeType( id = ", getLnType(),
-                      " ) on line ", getRefersToLNodeType().getLineNumber() );
+                "AnyLN on line ", getLineNumber(), " refers to LNodeType( id = ", getLnType(),
+                " ) on line ", getRefersToLNodeType().getLineNumber() );
 
-        if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
+        if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() ) ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
-                             getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
+                    messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
+                    getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
         }
     }
 

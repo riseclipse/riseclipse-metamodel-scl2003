@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -326,7 +326,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public EList< DAI > getDAI() {
         if( dai == null ) {
-            dai = new EObjectContainmentWithInverseEList.Unsettable< DAI >( DAI.class, this, SclPackage.DOI__DAI,
+            dai = new EObjectContainmentWithInverseEList.Unsettable< >( DAI.class, this, SclPackage.DOI__DAI,
                     SclPackage.DAI__PARENT_DOI );
         }
         return dai;
@@ -360,7 +360,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public EList< SDI > getSDI() {
         if( sdi == null ) {
-            sdi = new EObjectContainmentWithInverseEList.Unsettable< SDI >( SDI.class, this, SclPackage.DOI__SDI,
+            sdi = new EObjectContainmentWithInverseEList.Unsettable< >( SDI.class, this, SclPackage.DOI__SDI,
                     SclPackage.SDI__PARENT_DOI );
         }
         return sdi;
@@ -610,9 +610,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public String getNamespace() {
         //@formatter:off
-        
+
         // The attribute dataNs shall be a DataAttribute of the data.
-        // 
+        //
         // 1.  DOI.DAI["dataNs"].value                              if present
         // 2.  DOI.DO.DOType.DA["dataNs"].value                     if present
         // 3.  DOI.AnyLN.namespace                                  otherwise
@@ -640,7 +640,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                     .stream()
                     .filter( da -> "dataNs".equals( da.getName() ))
                     .collect( Collectors.toList() );
-            
+
             if( dataNsDa.size() == 1 ) {
                 if((       dataNsDa.get( 0 ).getVal().size() == 1 )
                       && ( dataNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
@@ -649,7 +649,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 }
             }
         }
-        
+
         if( getParentAnyLN() != null ) {
             return getParentAnyLN().getNamespace();
         }
@@ -919,16 +919,15 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
         if( ( getName() == null ) || getName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "name is missing" );
+                    messagePrefix, "name is missing" );
             return;
         }
 
         // No error or warning message here: if this happens, error should have been detected before
-        if( getParentAnyLN() == null ) return;
-        if( getParentAnyLN().getRefersToLNodeType() == null ) return;
+        if( ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) return;
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found LNodeType on line ",
-                         getParentAnyLN().getRefersToLNodeType().getLineNumber() );
+                messagePrefix, "found LNodeType on line ",
+                getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
         List< DO > res = getParentAnyLN()
                 .getRefersToLNodeType()
@@ -939,13 +938,13 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                             " DO( name = ", getName(), " )" );
+                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    " DO( name = ", getName(), " )" );
             return;
         }
         setRefersToDO( res.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                     "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
+                "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
     }
 
 } //DOIImpl
