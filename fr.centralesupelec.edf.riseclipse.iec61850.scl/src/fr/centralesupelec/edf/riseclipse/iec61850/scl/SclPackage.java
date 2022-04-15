@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -105,13 +105,22 @@ public interface SclPackage extends EPackage {
     int SCL_OBJECT__EXPLICIT_LINKS_BUILT = 1;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_OBJECT__FILENAME = 2;
+
+    /**
      * The number of structural features of the '<em>Object</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_OBJECT_FEATURE_COUNT = 2;
+    int SCL_OBJECT_FEATURE_COUNT = 3;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -158,6 +167,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_CONTENT_FROM_OTHER_NAMESPACE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_CONTENT_FROM_OTHER_NAMESPACE__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -251,6 +269,15 @@ public interface SclPackage extends EPackage {
     int BASE_ELEMENT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_ELEMENT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -340,6 +367,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HEADER__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HEADER__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -469,6 +505,15 @@ public interface SclPackage extends EPackage {
     int HISTORY__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HISTORY__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Header</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -540,6 +585,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HITEM__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HITEM__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -660,6 +714,15 @@ public interface SclPackage extends EPackage {
     int ID_NAMING__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ID_NAMING__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -769,6 +832,15 @@ public interface SclPackage extends EPackage {
     int NAMING__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -876,6 +948,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_CONTAINER__EXPLICIT_LINKS_BUILT = NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER__FILENAME = NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -996,6 +1077,15 @@ public interface SclPackage extends EPackage {
     int POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT = LNODE_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE__FILENAME = LNODE_CONTAINER__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1112,6 +1202,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1248,6 +1347,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LINE__EXPLICIT_LINKS_BUILT = GENERAL_EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__FILENAME = GENERAL_EQUIPMENT_CONTAINER__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1458,6 +1566,15 @@ public interface SclPackage extends EPackage {
     int PRIVATE__EXPLICIT_LINKS_BUILT = ANY_CONTENT_FROM_OTHER_NAMESPACE__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE__FILENAME = ANY_CONTENT_FROM_OTHER_NAMESPACE__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Mixed</b></em>' attribute list.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1583,6 +1700,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROCESS__EXPLICIT_LINKS_BUILT = GENERAL_EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__FILENAME = GENERAL_EQUIPMENT_CONTAINER__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1784,6 +1910,15 @@ public interface SclPackage extends EPackage {
     int SCL__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1965,6 +2100,15 @@ public interface SclPackage extends EPackage {
     int TEXT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Source</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2054,6 +2198,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ADDRESS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ADDRESS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
@@ -3388,6 +3541,15 @@ public interface SclPackage extends EPackage {
     int UN_NAMING__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UN_NAMING__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3476,6 +3638,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int COMMUNICATION__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMUNICATION__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3584,6 +3755,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_BLOCK__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3719,6 +3899,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTED_AP__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTED_AP__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3892,6 +4081,15 @@ public interface SclPackage extends EPackage {
     int GSE__EXPLICIT_LINKS_BUILT = CONTROL_BLOCK__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE__FILENAME = CONTROL_BLOCK__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4054,6 +4252,15 @@ public interface SclPackage extends EPackage {
     int PADDR__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PADDR__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -4115,6 +4322,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int P__EXPLICIT_LINKS_BUILT = PADDR__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int P__FILENAME = PADDR__FILENAME;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -4189,6 +4405,15 @@ public interface SclPackage extends EPackage {
     int PPHYS_CONN__EXPLICIT_LINKS_BUILT = PADDR__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PPHYS_CONN__FILENAME = PADDR__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -4259,6 +4484,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PHYS_CONN__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PHYS_CONN__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4376,6 +4610,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV__EXPLICIT_LINKS_BUILT = CONTROL_BLOCK__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV__FILENAME = CONTROL_BLOCK__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4522,6 +4765,15 @@ public interface SclPackage extends EPackage {
     int SUB_NETWORK__EXPLICIT_LINKS_BUILT = NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK__FILENAME = NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4655,6 +4907,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_ATTRIBUTE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4871,6 +5132,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_ATTRIBUTE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__FILENAME = ABSTRACT_DATA_ATTRIBUTE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5096,6 +5366,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_ATTRIBUTE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__FILENAME = ABSTRACT_DATA_ATTRIBUTE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5368,6 +5647,15 @@ public interface SclPackage extends EPackage {
     int DA_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA_TYPE__FILENAME = ID_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5522,6 +5810,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_OBJECT__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_OBJECT__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5646,6 +5943,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO__FILENAME = ABSTRACT_DATA_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5819,6 +6125,15 @@ public interface SclPackage extends EPackage {
     int DO_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE__FILENAME = ID_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5981,6 +6296,15 @@ public interface SclPackage extends EPackage {
     int DATA_TYPE_TEMPLATES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_TYPE_TEMPLATES__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>DA Type</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6069,6 +6393,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ENUM_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_TYPE__FILENAME = ID_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6197,6 +6530,15 @@ public interface SclPackage extends EPackage {
     int ENUM_VAL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_VAL__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6276,6 +6618,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__FILENAME = ID_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6440,6 +6791,15 @@ public interface SclPackage extends EPackage {
     int PROT_NS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROT_NS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6519,6 +6879,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDO__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO__FILENAME = ABSTRACT_DATA_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6683,6 +7052,15 @@ public interface SclPackage extends EPackage {
     int VAL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAL__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>SGroup</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6784,6 +7162,15 @@ public interface SclPackage extends EPackage {
     int ACCESS_CONTROL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_CONTROL__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent LDevice</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6836,6 +7223,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ACCESS_POINT__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_POINT__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7052,6 +7448,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_LN__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7297,6 +7702,15 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7468,6 +7882,15 @@ public interface SclPackage extends EPackage {
     int AUTHENTICATION__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AUTHENTICATION__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Certificate</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7565,6 +7988,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CERTIFICATE__EXPLICIT_LINKS_BUILT = NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE__FILENAME = NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7702,6 +8134,15 @@ public interface SclPackage extends EPackage {
     int CLIENT_LN__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_LN__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7826,6 +8267,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CLIENT_SERVICES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Buf Report</b></em>' attribute.
@@ -8026,6 +8476,15 @@ public interface SclPackage extends EPackage {
     int COMM_PROT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_PROT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Ipv6</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8087,6 +8546,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8151,6 +8619,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__FILENAME = SERVICE_WITH_MAX__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8226,6 +8703,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_FOR_CONF_DATA_SET__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_FOR_CONF_DATA_SET__FILENAME = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8296,6 +8782,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_DATA_SET__EXPLICIT_LINKS_BUILT = SERVICE_FOR_CONF_DATA_SET__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_DATA_SET__FILENAME = SERVICE_FOR_CONF_DATA_SET__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8377,6 +8872,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LNS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LNS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Fix Ln Inst</b></em>' attribute.
@@ -8461,6 +8965,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_YES_NO__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_YES_NO__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The number of structural features of the '<em>Service Yes No</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8504,6 +9017,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LD_NAME__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LD_NAME__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -8570,6 +9092,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_NON_ZERO__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_NON_ZERO__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8622,6 +9153,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LOG_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_NON_ZERO__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LOG_CONTROL__FILENAME = SERVICE_WITH_MAX_NON_ZERO__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8695,6 +9235,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_CONF_REPORT_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_CONF_REPORT_CONTROL__FILENAME = SERVICE_WITH_MAX__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8776,6 +9325,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_REPORT_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_CONF_REPORT_CONTROL__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_REPORT_CONTROL__FILENAME = SERVICE_CONF_REPORT_CONTROL__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8868,6 +9426,15 @@ public interface SclPackage extends EPackage {
     int CONF_SG__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SG__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Resv Tms</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8931,6 +9498,15 @@ public interface SclPackage extends EPackage {
     int CONF_SIG_REF__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_NON_ZERO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SIG_REF__FILENAME = SERVICE_WITH_MAX_NON_ZERO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8992,6 +9568,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9127,6 +9712,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_WITH_IED_NAME__EXPLICIT_LINKS_BUILT = CONTROL__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME__FILENAME = CONTROL__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9300,6 +9894,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_TRIGGER_OPT__EXPLICIT_LINKS_BUILT = CONTROL__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_TRIGGER_OPT__FILENAME = CONTROL__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9451,6 +10054,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DAI__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAI__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9624,6 +10236,15 @@ public interface SclPackage extends EPackage {
     int DOI__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9786,6 +10407,15 @@ public interface SclPackage extends EPackage {
     int DATA_OBJECT_DIRECTORY__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_OBJECT_DIRECTORY__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9838,6 +10468,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_SET__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9966,6 +10605,15 @@ public interface SclPackage extends EPackage {
     int DATA_SET_DIRECTORY__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET_DIRECTORY__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10030,6 +10678,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_OPTIONAL_MAX__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_OPTIONAL_MAX__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10082,6 +10739,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_ASSOCIATION__EXPLICIT_LINKS_BUILT = SERVICE_WITH_OPTIONAL_MAX__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_ASSOCIATION__FILENAME = SERVICE_WITH_OPTIONAL_MAX__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -10145,6 +10811,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_DATA_SET__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_DATA_SET__FILENAME = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -10217,6 +10892,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EXT_REF__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10507,6 +11191,15 @@ public interface SclPackage extends EPackage {
     int FCDA__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FCDA__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -10642,6 +11335,15 @@ public interface SclPackage extends EPackage {
     int FILE_HANDLING__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FILE_HANDLING__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Ftp</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -10721,6 +11423,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE__FILENAME = SERVICE_WITH_MAX__FILENAME;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -10811,6 +11522,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE_SECURITY__EXPLICIT_LINKS_BUILT = CERTIFICATE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY__FILENAME = CERTIFICATE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10955,6 +11675,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_IED_NAME__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__FILENAME = CONTROL_WITH_IED_NAME__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11173,6 +11902,15 @@ public interface SclPackage extends EPackage {
     int GSE_DIR__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_DIR__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11225,6 +11963,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_SETTINGS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -11288,6 +12035,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -11398,6 +12154,15 @@ public interface SclPackage extends EPackage {
     int GSSE__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSSE__FILENAME = SERVICE_WITH_MAX__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -11461,6 +12226,15 @@ public interface SclPackage extends EPackage {
     int GET_CB_VALUES__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_CB_VALUES__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11513,6 +12287,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_DATA_OBJECT_DEFINITION__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_OBJECT_DEFINITION__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -11569,6 +12352,15 @@ public interface SclPackage extends EPackage {
     int GET_DATA_SET_VALUE__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_SET_VALUE__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11623,6 +12415,15 @@ public interface SclPackage extends EPackage {
     int GET_DIRECTORY__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DIRECTORY__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11675,6 +12476,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int IED__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11893,6 +12703,15 @@ public interface SclPackage extends EPackage {
     int IED_NAME__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED_NAME__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Ap Ref</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -12028,6 +12847,15 @@ public interface SclPackage extends EPackage {
     int INPUTS__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUTS__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12146,6 +12974,15 @@ public interface SclPackage extends EPackage {
     int CERT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12207,6 +13044,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ISSUER_NAME__EXPLICIT_LINKS_BUILT = CERT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ISSUER_NAME__FILENAME = CERT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
@@ -12279,6 +13125,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int KDC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDC__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Ap Name</b></em>' attribute.
@@ -12360,6 +13215,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LDEVICE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12540,6 +13404,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN__EXPLICIT_LINKS_BUILT = ANY_LN__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__FILENAME = ANY_LN__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12810,6 +13683,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__EXPLICIT_LINKS_BUILT = ANY_LN__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0__FILENAME = ANY_LN__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13091,6 +13973,15 @@ public interface SclPackage extends EPackage {
     int LOG__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13206,6 +14097,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_TRIGGER_OPT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL__FILENAME = CONTROL_WITH_TRIGGER_OPT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13460,6 +14360,15 @@ public interface SclPackage extends EPackage {
     int LOG_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -13557,6 +14466,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int OPT_FIELDS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPT_FIELDS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Buf Ovfl</b></em>' attribute.
@@ -13694,6 +14612,15 @@ public interface SclPackage extends EPackage {
     int PROTOCOL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROTOCOL__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Must Understand</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -13757,6 +14684,15 @@ public interface SclPackage extends EPackage {
     int READ_WRITE__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int READ_WRITE__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13809,6 +14745,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int RED_PROT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RED_PROT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Hsr</b></em>' attribute.
@@ -13890,6 +14835,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int REPORT_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_TRIGGER_OPT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_CONTROL__FILENAME = CONTROL_WITH_TRIGGER_OPT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14117,6 +15071,15 @@ public interface SclPackage extends EPackage {
     int REPORT_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14252,6 +15215,15 @@ public interface SclPackage extends EPackage {
     int RPT_ENABLED__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RPT_ENABLED__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14367,6 +15339,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDI__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14549,6 +15530,15 @@ public interface SclPackage extends EPackage {
     int SG_EDIT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SG_EDIT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Resv Tms</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14610,6 +15600,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SECURITY__EXPLICIT_LINKS_BUILT = CERTIFICATE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY__FILENAME = CERTIFICATE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14754,6 +15753,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -14936,6 +15944,15 @@ public interface SclPackage extends EPackage {
     int SM_VSC__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC__FILENAME = SERVICE_WITH_MAX__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15033,6 +16050,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLED_VALUE_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_IED_NAME__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL__FILENAME = CONTROL_WITH_IED_NAME__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15278,6 +16304,15 @@ public interface SclPackage extends EPackage {
     int SERVER__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15413,6 +16448,15 @@ public interface SclPackage extends EPackage {
     int SERVER_AT__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER_AT__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15528,6 +16572,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICES__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Name Length</b></em>' attribute.
@@ -15899,6 +16952,15 @@ public interface SclPackage extends EPackage {
     int SET_DATA_SET_VALUE__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SET_DATA_SET_VALUE__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15951,6 +17013,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SETTING_CONTROL__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_CONTROL__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16079,6 +17150,15 @@ public interface SclPackage extends EPackage {
     int SETTING_GROUPS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_GROUPS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Conf SG</b></em>' containment reference.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16149,6 +17229,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_OPTS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Data Set</b></em>' attribute.
@@ -16277,6 +17366,15 @@ public interface SclPackage extends EPackage {
     int SUBJECT__EXPLICIT_LINKS_BUILT = CERT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBJECT__FILENAME = CERT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16349,6 +17447,15 @@ public interface SclPackage extends EPackage {
     int SUP_SUBSCRIPTION__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUP_SUBSCRIPTION__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max Go</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16419,6 +17526,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TIME_SYNC_PROT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIME_SYNC_PROT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>C37 238</b></em>' attribute.
@@ -16520,6 +17636,15 @@ public interface SclPackage extends EPackage {
     int TIMER_ACTIVATED_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIMER_ACTIVATED_CONTROL__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16572,6 +17697,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRG_OPS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRG_OPS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -16673,6 +17807,15 @@ public interface SclPackage extends EPackage {
     int VALUE_HANDLING__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_HANDLING__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Set To RO</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16734,6 +17877,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16851,6 +18003,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT = EQUIPMENT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT__FILENAME = EQUIPMENT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16988,6 +18149,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_EQ_FUNC_SUB_FUNC__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17123,6 +18293,15 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17247,6 +18426,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BAY__EXPLICIT_LINKS_BUILT = EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY__FILENAME = EQUIPMENT_CONTAINER__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17409,6 +18597,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT = ABSTRACT_CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT__FILENAME = ABSTRACT_CONDUCTING_EQUIPMENT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17609,6 +18806,15 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__EXPLICIT_LINKS_BUILT = LNODE_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE__FILENAME = LNODE_CONTAINER__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17751,6 +18957,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_FUNCTION__EXPLICIT_LINKS_BUILT = ABSTRACT_EQ_FUNC_SUB_FUNC__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION__FILENAME = ABSTRACT_EQ_FUNC_SUB_FUNC__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17942,6 +19157,15 @@ public interface SclPackage extends EPackage {
     int EQ_SUB_FUNCTION__EXPLICIT_LINKS_BUILT = ABSTRACT_EQ_FUNC_SUB_FUNC__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION__FILENAME = ABSTRACT_EQ_FUNC_SUB_FUNC__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18084,6 +19308,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FUNCTION__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -18266,6 +19499,15 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT__EXPLICIT_LINKS_BUILT = EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT__FILENAME = EQUIPMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18446,6 +19688,15 @@ public interface SclPackage extends EPackage {
     int LNODE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE__FILENAME = UN_NAMING__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18615,6 +19866,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TERMINAL__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TERMINAL__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -18795,6 +20055,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NEUTRAL_POINT__EXPLICIT_LINKS_BUILT = TERMINAL__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEUTRAL_POINT__FILENAME = TERMINAL__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -18986,6 +20255,15 @@ public interface SclPackage extends EPackage {
     int POWER_TRANSFORMER__EXPLICIT_LINKS_BUILT = EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER__FILENAME = EQUIPMENT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19146,6 +20424,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_EQUIPMENT__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -19310,6 +20597,15 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19470,6 +20766,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUBSTATION__EXPLICIT_LINKS_BUILT = EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION__FILENAME = EQUIPMENT_CONTAINER__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -19634,6 +20939,15 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19785,6 +21099,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRANSFORMER_WINDING__EXPLICIT_LINKS_BUILT = ABSTRACT_CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING__FILENAME = ABSTRACT_CONDUCTING_EQUIPMENT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -19977,6 +21300,15 @@ public interface SclPackage extends EPackage {
     int VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_WITH_UNIT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20047,6 +21379,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE__EXPLICIT_LINKS_BUILT = VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE__FILENAME = VALUE_WITH_UNIT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -20137,6 +21478,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE_LEVEL__EXPLICIT_LINKS_BUILT = EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL__FILENAME = EQUIPMENT_CONTAINER__FILENAME;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -20329,6 +21679,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_AND_MODIFY__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MODIFY__FILENAME = SERVICE_WITH_MAX__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20400,6 +21759,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DURATION_IN_SEC__EXPLICIT_LINKS_BUILT = VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_SEC__FILENAME = VALUE_WITH_UNIT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -20474,6 +21842,15 @@ public interface SclPackage extends EPackage {
     int DURATION_IN_MILLI_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_MILLI_SEC__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20544,6 +21921,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BIT_RATE_IN_MB_PER_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE_IN_MB_PER_SEC__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -20618,6 +22004,15 @@ public interface SclPackage extends EPackage {
     int MIN_TIME__EXPLICIT_LINKS_BUILT = DURATION_IN_MILLI_SEC__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_TIME__FILENAME = DURATION_IN_MILLI_SEC__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20688,6 +22083,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MAX_TIME__EXPLICIT_LINKS_BUILT = DURATION_IN_MILLI_SEC__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MAX_TIME__FILENAME = DURATION_IN_MILLI_SEC__FILENAME;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -20770,6 +22174,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BIT_RATE__EXPLICIT_LINKS_BUILT = BIT_RATE_IN_MB_PER_SEC__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE__FILENAME = BIT_RATE_IN_MB_PER_SEC__FILENAME;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -20863,6 +22276,15 @@ public interface SclPackage extends EPackage {
     int SMP_RATE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMP_RATE__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20934,6 +22356,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLES_PER_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLES_PER_SEC__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -21009,6 +22440,15 @@ public interface SclPackage extends EPackage {
     int SEC_PER_SAMPLES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SEC_PER_SAMPLES__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21080,6 +22520,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MC_SECURITY__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Parent Client Services</b></em>' container reference.
@@ -31028,6 +32477,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getSclObject_ExplicitLinksBuilt();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getFilename <em>Filename</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Filename</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getFilename()
+     * @see #getSclObject()
+     * @generated
+     */
+    EAttribute getSclObject_Filename();
 
     /**
      * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, java.lang.Boolean) <em>Build Explicit Links</em>}' operation.

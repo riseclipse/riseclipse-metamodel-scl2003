@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -129,7 +130,7 @@ public class ServerAtItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( ServerAt ) object ).getApName();
+        String label = ( ( ServerAt ) object ).getFilename();
         return label == null || label.length() == 0 ? getString( "_UI_ServerAt_type" )
                 : getString( "_UI_ServerAt_type" ) + " " + label;
     }

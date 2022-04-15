@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -31,7 +32,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings} object.
@@ -153,8 +153,7 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        ServiceSettingsNoDynEnum labelValue = ( ( LogSettings ) object ).getCbName();
-        String label = labelValue == null ? null : labelValue.toString();
+        String label = ( ( LogSettings ) object ).getFilename();
         return label == null || label.length() == 0 ? getString( "_UI_LogSettings_type" )
                 : getString( "_UI_LogSettings_type" ) + " " + label;
     }

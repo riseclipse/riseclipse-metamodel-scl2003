@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -25,7 +25,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -154,8 +153,9 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      */
     @Override
     public String getText( Object object ) {
-        ServiceConfReportControl serviceConfReportControl = ( ServiceConfReportControl ) object;
-        return getString( "_UI_ServiceConfReportControl_type" ) + " " + serviceConfReportControl.getLineNumber();
+        String label = ( ( ServiceConfReportControl ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_ServiceConfReportControl_type" )
+                : getString( "_UI_ServiceConfReportControl_type" ) + " " + label;
     }
 
     /**

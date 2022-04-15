@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -81,7 +81,7 @@ public class IssuerNameItemProvider
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( IssuerName ) object ).getCommonName();
+        String label = ( ( IssuerName ) object ).getFilename();
         return label == null || label.length() == 0 ? getString( "_UI_IssuerName_type" )
                 : getString( "_UI_IssuerName_type" ) + " " + label;
     }

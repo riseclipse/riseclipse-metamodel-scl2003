@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,8 +20,9 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import org.eclipse.emf.ecore.EObject;
+
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getLineNumber <em>Line Number</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getFilename <em>Filename</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclObject()
@@ -90,6 +92,29 @@ public interface SclObject extends EObject {
      * @generated
      */
     void setExplicitLinksBuilt( boolean value );
+
+    /**
+     * Returns the value of the '<em><b>Filename</b></em>' attribute.
+     * The default value is <code>""</code>.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Filename</em>' attribute.
+     * @see #setFilename(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclObject_Filename()
+     * @model default="" required="true" transient="true"
+     * @generated
+     */
+    String getFilename();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getFilename <em>Filename</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Filename</em>' attribute.
+     * @see #getFilename()
+     * @generated
+     */
+    void setFilename( String value );
 
     /**
      * <!-- begin-user-doc -->

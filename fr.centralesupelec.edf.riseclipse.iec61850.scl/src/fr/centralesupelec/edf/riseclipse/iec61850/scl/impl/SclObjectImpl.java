@@ -45,6 +45,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#getLineNumber <em>Line Number</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#getFilename <em>Filename</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,6 +93,26 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * @ordered
      */
     protected boolean explicitLinksBuilt = EXPLICIT_LINKS_BUILT_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFilename()
+     * @generated
+     * @ordered
+     */
+    protected static final String FILENAME_EDEFAULT = "";
+
+    /**
+     * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFilename()
+     * @generated
+     * @ordered
+     */
+    protected String filename = FILENAME_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -163,6 +184,30 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getFilename() {
+        return filename;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setFilename( String newFilename ) {
+        String oldFilename = filename;
+        filename = newFilename;
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_OBJECT__FILENAME, oldFilename,
+                    filename ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -207,6 +252,8 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
             return getLineNumber();
         case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
             return isExplicitLinksBuilt();
+        case SclPackage.SCL_OBJECT__FILENAME:
+            return getFilename();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -224,6 +271,9 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
             return;
         case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
             setExplicitLinksBuilt( ( Boolean ) newValue );
+            return;
+        case SclPackage.SCL_OBJECT__FILENAME:
+            setFilename( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -243,6 +293,9 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
         case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
             setExplicitLinksBuilt( EXPLICIT_LINKS_BUILT_EDEFAULT );
             return;
+        case SclPackage.SCL_OBJECT__FILENAME:
+            setFilename( FILENAME_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -259,6 +312,8 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
             return lineNumber != LINE_NUMBER_EDEFAULT;
         case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
             return explicitLinksBuilt != EXPLICIT_LINKS_BUILT_EDEFAULT;
+        case SclPackage.SCL_OBJECT__FILENAME:
+            return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals( filename );
         }
         return super.eIsSet( featureID );
     }
@@ -291,6 +346,8 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
         result.append( lineNumber );
         result.append( ", explicitLinksBuilt: " );
         result.append( explicitLinksBuilt );
+        result.append( ", filename: " );
+        result.append( filename );
         result.append( ')' );
         return result.toString();
     }
