@@ -27,6 +27,6 @@ on:
 jobs:
   call-verify-workflow:
     name: Verify Project
-    uses: riseclipse/riseclipse-developer/.github/workflows/Shared-Verify-Components.yml@master
-    secrets:
-      SONAR_TOKEN: ${{ secrets.RISECLIPSE_SONAR_TOKEN }}
+    uses: riseclipse/riseclipse-developer/.github/workflows/Shared-Verify-Components.yml@make-sonarqube-optional
+    with:
+      run_sonarqube: false
