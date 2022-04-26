@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -32,7 +32,15 @@ import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseModelLoader;
 public class SclModelLoader extends AbstractRiseClipseModelLoader {
 
     public SclModelLoader() {
-        reset();
+        super( new SclResourceSetImpl( false ));
+
+        // Register the appropriate resource factory to handle all file
+        // extensions.
+        getResourceSet().getResourceFactoryRegistry().getExtensionToFactoryMap()
+                .put( Resource.Factory.Registry.DEFAULT_EXTENSION, new SclResourceFactoryImpl() );
+
+        // Register the package to ensure it is available during loading.
+        getResourceSet().getPackageRegistry().put( SclPackage.eNS_URI, SclPackage.eINSTANCE );
     }
 
     public void reset() {
