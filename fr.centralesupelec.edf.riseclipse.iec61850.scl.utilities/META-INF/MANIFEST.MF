@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: fr.centralesupelec.edf.riseclipse.iec61850.scl.utilities
-Bundle-Version: 1.2.2.qualifier
+Bundle-Version: 1.2.3.qualifier
 Automatic-Module-Name: fr.centralesupelec.edf.riseclipse.iec61850.scl.utilities
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.emf.ecore,
- fr.centralesupelec.edf.riseclipse.iec61850.scl;bundle-version="1.2.2",
- fr.centralesupelec.edf.riseclipse.main;bundle-version="1.2.2"
+ fr.centralesupelec.edf.riseclipse.iec61850.scl;bundle-version="1.2.3",
+ fr.centralesupelec.edf.riseclipse.main;bundle-version="1.2.3"
 Export-Package: fr.centralesupelec.edf.riseclipse.iec61850.scl.utilities
