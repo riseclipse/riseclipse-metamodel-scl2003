@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -19,6 +19,9 @@
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
@@ -55,7 +58,6 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getRefersToLog <em>Refers To Log</em>}</li>
  * </ul>
  *
@@ -293,25 +295,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @ordered
      */
     protected boolean reasonCodeESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
-    protected AnyLN refersToAnyLN;
-
-    /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToAnyLNESet;
 
     /**
      * The cached value of the '{@link #getRefersToLog() <em>Refers To Log</em>}' reference.
@@ -819,119 +802,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      */
     @Override
-    public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToAnyLN( AnyLN newRefersToAnyLN, NotificationChain msgs ) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if( eNotificationRequired() ) {
-            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
-                    SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN,
-                    !oldRefersToAnyLNESet );
-            if( msgs == null )
-                msgs = notification;
-            else
-                msgs.add( notification );
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
-        if( newRefersToAnyLN != refersToAnyLN ) {
-            NotificationChain msgs = null;
-            if( refersToAnyLN != null )
-                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
-                        SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
-            if( newRefersToAnyLN != null )
-                msgs = ( ( InternalEObject ) newRefersToAnyLN ).eInverseAdd( this,
-                        SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
-            msgs = basicSetRefersToAnyLN( newRefersToAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if( eNotificationRequired() )
-                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN,
-                        newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToAnyLN( NotificationChain msgs ) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if( eNotificationRequired() ) {
-            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
-                    SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet );
-            if( msgs == null )
-                msgs = notification;
-            else
-                msgs.add( notification );
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToAnyLN() {
-        if( refersToAnyLN != null ) {
-            NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
-                    SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
-            msgs = basicUnsetRefersToAnyLN( msgs );
-            if( msgs != null ) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if( eNotificationRequired() )
-                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN,
-                        null, null, oldRefersToAnyLNESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public Log getRefersToLog() {
         return refersToLog;
     }
@@ -1050,11 +920,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             if( eInternalContainer() != null )
                 msgs = eBasicRemoveFromContainer( msgs );
             return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
-        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-            if( refersToAnyLN != null )
-                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
-                        SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
-            return basicSetRefersToAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
             if( refersToLog != null )
                 msgs = ( ( InternalEObject ) refersToLog ).eInverseRemove( this,
@@ -1074,8 +939,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         switch( featureID ) {
         case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
             return basicSetParentAnyLN( null, msgs );
-        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-            return basicUnsetRefersToAnyLN( msgs );
         case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
             return basicUnsetRefersToLog( msgs );
         }
@@ -1122,8 +985,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return getReasonCode();
         case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
             return getParentAnyLN();
-        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-            return getRefersToAnyLN();
         case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
             return getRefersToLog();
         }
@@ -1164,9 +1025,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return;
         case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
             setParentAnyLN( ( AnyLN ) newValue );
-            return;
-        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-            setRefersToAnyLN( ( AnyLN ) newValue );
             return;
         case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
             setRefersToLog( ( Log ) newValue );
@@ -1210,9 +1068,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
             setParentAnyLN( ( AnyLN ) null );
             return;
-        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-            unsetRefersToAnyLN();
-            return;
         case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
             unsetRefersToLog();
             return;
@@ -1246,8 +1101,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return isSetReasonCode();
         case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
             return getParentAnyLN() != null;
-        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-            return isSetRefersToAnyLN();
         case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
             return isSetRefersToLog();
         }
@@ -1332,7 +1185,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
         if( ( getLogName() == null ) || getLogName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "logName is missing" );
+                    messagePrefix, "logName is missing" );
             return;
         }
 
@@ -1346,34 +1199,49 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             if( lDevice1.getLeft() == null ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
-                                 "LDevice( inst = ", getLdInst(), " )" );
+                        messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
+                        "LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             lDevice = lDevice1.getLeft();
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
-                             lDevice.getLineNumber() );
+                    messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                    lDevice.getLineNumber() );
         }
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
-        String mess = "LN( lnClass = " + getLnClass();
+        String mess = "AnyLN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
+            if( !"".equals( getPrefix() ) ) mess += ", prefix = " + getPrefix();
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             mess );
+                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    mess );
             return;
         }
-        setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "LogControl refers to ", mess, " on line ",
-                      getRefersToAnyLN().getLineNumber() );
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                messagePrefix, "found ", mess, " ) on line ",
+                anyLN.getLeft().getLineNumber() );
 
+        List< Log > res =
+                anyLN.getLeft()
+                .getLog()
+                .stream()
+                .filter( log -> getLogName().equals( log.getName() ) )
+                .collect( Collectors.toList() );
+        if( res.size() != 1 ) {
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
+                    " Log( name = ", getLogName(), " )" );
+            return;
+        }
+        setRefersToLog( res.get( 0 ) );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                "LogControl refers to Log( name = ", getLogName(), " ) on line ",
+                getRefersToLog().getLineNumber() );
     }
 
 } //LogControlImpl

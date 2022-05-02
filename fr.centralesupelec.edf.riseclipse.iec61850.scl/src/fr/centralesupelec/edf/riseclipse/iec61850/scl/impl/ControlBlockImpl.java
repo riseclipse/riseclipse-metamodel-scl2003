@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,9 +20,19 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.tuple.Pair;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
@@ -34,17 +44,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import java.lang.reflect.InvocationTargetException;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -518,7 +517,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ControlBlock.getParentConnectedAP() called" );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                "ControlBlock.getParentConnectedAP() called" );
         return null;
     }
 
@@ -706,18 +706,17 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "ldInst is missing" );
+                    messagePrefix, "ldInst is missing" );
             return;
         }
         if( ( getCbName() == null ) || getCbName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "cbName is missing" );
+                    messagePrefix, "cbName is missing" );
             return;
         }
 
         // No error or warning messages here: if this happens, error should have been detected before
-        if( getParentConnectedAP() == null ) return;
-        if( getParentConnectedAP().getRefersToAccessPoint() == null ) return;
+        if( ( getParentConnectedAP() == null ) || ( getParentConnectedAP().getRefersToAccessPoint() == null ) ) return;
         IED ied = getParentConnectedAP().getRefersToAccessPoint().getParentIED();
         if( ied == null ) return;
 
@@ -726,23 +725,23 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied, getLdInst() );
         if( lDevice.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             " LDevice( inst = ", getLdInst(), " )" );
+                    messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
-                         lDevice.getLeft().getLineNumber() );
+                messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                lDevice.getLeft().getLineNumber() );
 
         // Find a ControlWithIEDName inside LN0 of LDevice with
         //   ControlWithIEDName.name == ControlBlock.bName
         if( lDevice.getLeft().getLN0() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "LN0 is missing" );
+                    messagePrefix, "LN0 is missing" );
             return;
         }
 
-        List< ControlWithIEDName > l2 = new ArrayList< ControlWithIEDName >();
+        List< ControlWithIEDName > l2 = new ArrayList<>();
         l2.addAll( lDevice.getLeft().getLN0().getGSEControl() );
         l2.addAll( lDevice.getLeft().getLN0().getSampledValueControl() );
 
@@ -753,14 +752,14 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
         if( res2.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
-                             " ControlWithIEDName( name = ", getCbName(), " )" );
+                    messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                    " ControlWithIEDName( name = ", getCbName(), " )" );
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "ControlBlock refers to ControlWithIEDName( name = ", getCbName(), " ) on line ",
-                      getRefersToControlWithIEDName().getLineNumber() );
+                "ControlBlock refers to ControlWithIEDName( name = ", getCbName(), " ) on line ",
+                getRefersToControlWithIEDName().getLineNumber() );
     }
 
 } //ControlBlockImpl

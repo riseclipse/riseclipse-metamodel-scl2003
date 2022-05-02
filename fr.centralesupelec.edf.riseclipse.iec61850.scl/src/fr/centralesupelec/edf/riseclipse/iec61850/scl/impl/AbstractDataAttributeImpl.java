@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -26,14 +26,10 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -826,7 +822,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @Override
     public EList< Val > getVal() {
         if( val == null ) {
-            val = new EObjectContainmentWithInverseEList.Unsettable< Val >( Val.class, this,
+            val = new EObjectContainmentWithInverseEList.Unsettable< >( Val.class, this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE );
         }
         return val;
@@ -975,7 +971,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @Override
     public EList< FCDA > getReferredByFCDA() {
         if( referredByFCDA == null ) {
-            referredByFCDA = new EObjectWithInverseEList.Unsettable.ManyInverse< FCDA >( FCDA.class, this,
+            referredByFCDA = new EObjectWithInverseEList.Unsettable.ManyInverse< >( FCDA.class, this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA,
                     SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
@@ -1010,7 +1006,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @Override
     public EList< ExtRef > getReferredByExtRef() {
         if( referredByExtRef == null ) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable< ExtRef >( ExtRef.class, this,
+            referredByExtRef = new EObjectWithInverseEList.Unsettable< >( ExtRef.class, this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF,
                     SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
@@ -1097,7 +1093,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @Override
     public EList< DAI > getReferredByDAI() {
         if( referredByDAI == null ) {
-            referredByDAI = new EObjectWithInverseEList.Unsettable< DAI >( DAI.class, this,
+            referredByDAI = new EObjectWithInverseEList.Unsettable< >( DAI.class, this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI,
                     SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
@@ -1132,7 +1128,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @Override
     public EList< SDI > getReferredBySDI() {
         if( referredBySDI == null ) {
-            referredBySDI = new EObjectWithInverseEList.Unsettable< SDI >( SDI.class, this,
+            referredBySDI = new EObjectWithInverseEList.Unsettable< >( SDI.class, this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI,
                     SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
@@ -1490,14 +1486,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
 
         if( ( getType() == null ) || getType().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "type is missing" );
+                    messagePrefix, "type is missing" );
             return;
         }
 
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "DataTypeTemplates is missing" );
+                    messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1513,14 +1509,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
 
             if( res.size() != 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                                 " EnumType( id = ", getType(), " )" );
+                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                        " EnumType( id = ", getType(), " )" );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
             console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                          "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
-                          getRefersToEnumType().getLineNumber() );
+                    "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
+                    getRefersToEnumType().getLineNumber() );
         }
         else if( "Struct".equals( getBType() ) ) {
 
@@ -1534,14 +1530,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
 
             if( res.size() != 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                                 " DAType( id = ", getType(), " )" );
+                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                        " DAType( id = ", getType(), " )" );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(), 
-                          "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
-                          getRefersToDAType().getLineNumber() );
+            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                    "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
+                    getRefersToDAType().getLineNumber() );
         }
     }
 

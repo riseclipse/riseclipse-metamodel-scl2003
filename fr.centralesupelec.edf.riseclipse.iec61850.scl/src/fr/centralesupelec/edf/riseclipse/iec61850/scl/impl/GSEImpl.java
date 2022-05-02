@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -147,11 +147,11 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
         if( newMaxTime != maxTime ) {
             NotificationChain msgs = null;
             if( maxTime != null )
-                msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this,
-                        EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs );
+                msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this, SclPackage.MAX_TIME__PARENT_GSE,
+                        MaxTime.class, msgs );
             if( newMaxTime != null )
-                msgs = ( ( InternalEObject ) newMaxTime ).eInverseAdd( this,
-                        EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs );
+                msgs = ( ( InternalEObject ) newMaxTime ).eInverseAdd( this, SclPackage.MAX_TIME__PARENT_GSE,
+                        MaxTime.class, msgs );
             msgs = basicSetMaxTime( newMaxTime, msgs );
             if( msgs != null ) msgs.dispatch();
         }
@@ -194,8 +194,8 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     public void unsetMaxTime() {
         if( maxTime != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this,
-                    EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs );
+            msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this, SclPackage.MAX_TIME__PARENT_GSE, MaxTime.class,
+                    msgs );
             msgs = basicUnsetMaxTime( msgs );
             if( msgs != null ) msgs.dispatch();
         }
@@ -306,11 +306,11 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
         if( newMinTime != minTime ) {
             NotificationChain msgs = null;
             if( minTime != null )
-                msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this,
-                        EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs );
+                msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this, SclPackage.MIN_TIME__PARENT_GSE,
+                        MinTime.class, msgs );
             if( newMinTime != null )
-                msgs = ( ( InternalEObject ) newMinTime ).eInverseAdd( this,
-                        EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs );
+                msgs = ( ( InternalEObject ) newMinTime ).eInverseAdd( this, SclPackage.MIN_TIME__PARENT_GSE,
+                        MinTime.class, msgs );
             msgs = basicSetMinTime( newMinTime, msgs );
             if( msgs != null ) msgs.dispatch();
         }
@@ -353,8 +353,8 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     public void unsetMinTime() {
         if( minTime != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this,
-                    EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs );
+            msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this, SclPackage.MIN_TIME__PARENT_GSE, MinTime.class,
+                    msgs );
             msgs = basicUnsetMinTime( msgs );
             if( msgs != null ) msgs.dispatch();
         }
@@ -385,6 +385,16 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
+        case SclPackage.GSE__MIN_TIME:
+            if( minTime != null )
+                msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs );
+            return basicSetMinTime( ( MinTime ) otherEnd, msgs );
+        case SclPackage.GSE__MAX_TIME:
+            if( maxTime != null )
+                msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs );
+            return basicSetMaxTime( ( MaxTime ) otherEnd, msgs );
         case SclPackage.GSE__PARENT_CONNECTED_AP:
             if( eInternalContainer() != null )
                 msgs = eBasicRemoveFromContainer( msgs );

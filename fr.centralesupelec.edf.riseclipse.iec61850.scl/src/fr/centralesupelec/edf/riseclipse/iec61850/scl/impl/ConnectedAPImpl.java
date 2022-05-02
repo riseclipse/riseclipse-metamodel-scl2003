@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,19 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
 import java.util.Collection;
+
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -44,6 +33,18 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -679,7 +680,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     @Override
     public EList< PhysConn > getPhysConn() {
         if( physConn == null ) {
-            physConn = new EObjectContainmentWithInverseEList.Unsettable< PhysConn >( PhysConn.class, this,
+            physConn = new EObjectContainmentWithInverseEList.Unsettable< >( PhysConn.class, this,
                     SclPackage.CONNECTED_AP__PHYS_CONN, SclPackage.PHYS_CONN__PARENT_CONNECTED_AP );
         }
         return physConn;
@@ -713,7 +714,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     @Override
     public EList< GSE > getGSE() {
         if( gse == null ) {
-            gse = new EObjectContainmentWithInverseEList.Unsettable< GSE >( GSE.class, this,
+            gse = new EObjectContainmentWithInverseEList.Unsettable< >( GSE.class, this,
                     SclPackage.CONNECTED_AP__GSE, SclPackage.GSE__PARENT_CONNECTED_AP );
         }
         return gse;
@@ -747,7 +748,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     @Override
     public EList< SMV > getSMV() {
         if( smv == null ) {
-            smv = new EObjectContainmentWithInverseEList.Unsettable< SMV >( SMV.class, this,
+            smv = new EObjectContainmentWithInverseEList.Unsettable< >( SMV.class, this,
                     SclPackage.CONNECTED_AP__SMV, SclPackage.SMV__PARENT_CONNECTED_AP );
         }
         return smv;
@@ -1032,12 +1033,12 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "iedName is missing" );
+                    messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getApName() == null ) || getApName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "apName is missing" );
+                    messagePrefix, "apName is missing" );
             return;
         }
 
@@ -1046,24 +1047,24 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             " IED( name = ", getIedName(), " )" );
+                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    " IED( name = ", getIedName(), " )" );
             return;
         }
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
-                         ied.getLeft().getLineNumber() );
+                messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
+                ied.getLeft().getLineNumber() );
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         if( ap.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                             " AccessPoint( name = ", getApName(), " )" );
+                    messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                    " AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "ConnectedAP on line refers to AccessPoint( name = ", getApName(), " ) on line ",
-                      getRefersToAccessPoint().getLineNumber() );
+                "ConnectedAP on line refers to AccessPoint( name = ", getApName(), " ) on line ",
+                getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ConnectedAPImpl

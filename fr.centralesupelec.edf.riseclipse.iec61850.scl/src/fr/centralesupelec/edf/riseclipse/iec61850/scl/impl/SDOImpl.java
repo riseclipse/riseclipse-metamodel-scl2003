@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,19 +20,10 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -43,6 +34,15 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -137,7 +137,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     @Override
     public String getNamespace() {
         //@formatter:off
-        
+
         // The attribute dataNs shall be a DataAttribute of the data.
         //
         // 1.  SDO.DOType.namespace                        If not null
@@ -147,7 +147,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         if( getRefersToDOType() != null ) {
             return getRefersToDOType().getNamespace();
         }
-        
+
         return null;
 
         //@formatter:on
@@ -259,7 +259,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     @Override
     public EList< SDI > getReferredBySDI() {
         if( referredBySDI == null ) {
-            referredBySDI = new EObjectWithInverseEList.Unsettable< SDI >( SDI.class, this,
+            referredBySDI = new EObjectWithInverseEList.Unsettable< >( SDI.class, this,
                     SclPackage.SDO__REFERRED_BY_SDI, SclPackage.SDI__REFERS_TO_SDO );
         }
         return referredBySDI;
@@ -491,13 +491,13 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
 
         if( ( getType() == null ) || getType().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "type is missing" );
+                    messagePrefix, "type is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "DataTypeTemplates is missing" );
+                    messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -509,14 +509,14 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                             " DOType( id = ", getType(), " )" );
+                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "SDO refers to DOType( id = ", getType(), " ) on line ",
-                      getRefersToDOType().getLineNumber() );
+                "SDO refers to DOType( id = ", getType(), " ) on line ",
+                getRefersToDOType().getLineNumber() );
     }
 
 } //SDOImpl

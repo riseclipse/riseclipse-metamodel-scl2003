@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -7207,22 +7207,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
-     * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 12;
-
-    /**
      * The feature id for the '<em><b>Referred By Association</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 13;
+    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 12;
 
     /**
      * The feature id for the '<em><b>Referred By IED Name</b></em>' reference list.
@@ -7231,7 +7222,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 14;
+    int ANY_LN__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 13;
 
     /**
      * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
@@ -7240,7 +7231,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 15;
+    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
      * The number of structural features of the '<em>Any LN</em>' class.
@@ -7249,7 +7240,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12695,15 +12686,6 @@ public interface SclPackage extends EPackage {
     int LN__REFERRED_BY_CLIENT_LN = ANY_LN__REFERRED_BY_CLIENT_LN;
 
     /**
-     * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__REFERRED_BY_LOG_CONTROL = ANY_LN__REFERRED_BY_LOG_CONTROL;
-
-    /**
      * The feature id for the '<em><b>Referred By Association</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12963,15 +12945,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__REFERRED_BY_CLIENT_LN = ANY_LN__REFERRED_BY_CLIENT_LN;
-
-    /**
-     * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__REFERRED_BY_LOG_CONTROL = ANY_LN__REFERRED_BY_LOG_CONTROL;
 
     /**
      * The feature id for the '<em><b>Referred By Association</b></em>' reference list.
@@ -13388,22 +13361,13 @@ public interface SclPackage extends EPackage {
     int LOG_CONTROL__PARENT_ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 8;
 
     /**
-     * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LOG_CONTROL__REFERS_TO_ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 9;
-
-    /**
      * The feature id for the '<em><b>Refers To Log</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG_CONTROL__REFERS_TO_LOG = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 10;
+    int LOG_CONTROL__REFERS_TO_LOG = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>Log Control</em>' class.
@@ -13412,7 +13376,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LOG_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 11;
+    int LOG_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 10;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -20645,13 +20609,22 @@ public interface SclPackage extends EPackage {
     int MIN_TIME__UNIT = DURATION_IN_MILLI_SEC__UNIT;
 
     /**
+     * The feature id for the '<em><b>Parent GSE</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_TIME__PARENT_GSE = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Min Time</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MIN_TIME_FEATURE_COUNT = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 0;
+    int MIN_TIME_FEATURE_COUNT = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 1;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -20717,13 +20690,22 @@ public interface SclPackage extends EPackage {
     int MAX_TIME__UNIT = DURATION_IN_MILLI_SEC__UNIT;
 
     /**
+     * The feature id for the '<em><b>Parent GSE</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MAX_TIME__PARENT_GSE = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Max Time</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MAX_TIME_FEATURE_COUNT = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 0;
+    int MAX_TIME_FEATURE_COUNT = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 1;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -24014,6 +23996,17 @@ public interface SclPackage extends EPackage {
     EClass getMinTime();
 
     /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime#getParentGSE <em>Parent GSE</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent GSE</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime#getParentGSE()
+     * @see #getMinTime()
+     * @generated
+     */
+    EReference getMinTime_ParentGSE();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime <em>Max Time</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -24022,6 +24015,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getMaxTime();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime#getParentGSE <em>Parent GSE</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent GSE</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime#getParentGSE()
+     * @see #getMaxTime()
+     * @generated
+     */
+    EReference getMaxTime_ParentGSE();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate <em>Bit Rate</em>}'.
@@ -25027,17 +25031,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getAnyLN_ReferredByClientLN();
-
-    /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl <em>Referred By Log Control</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By Log Control</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl()
-     * @see #getAnyLN()
-     * @generated
-     */
-    EReference getAnyLN_ReferredByLogControl();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByAssociation <em>Referred By Association</em>}'.
@@ -27652,17 +27645,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLogControl_ParentAnyLN();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN()
-     * @see #getLogControl()
-     * @generated
-     */
-    EReference getLogControl_RefersToAnyLN();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}'.

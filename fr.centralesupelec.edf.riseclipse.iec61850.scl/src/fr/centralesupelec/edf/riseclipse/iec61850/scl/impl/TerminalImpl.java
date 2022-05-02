@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,17 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,6 +30,17 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.annotation.NonNull;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -1193,7 +1193,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         }
     }
 
-    private void doBuildExplicitLinkWithSubstation( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
+    private void doBuildExplicitLinkWithSubstation( @NonNull IRiseClipseConsole console,
+            @NonNull String messagePrefix ) {
 
         // name             The optional relative name of the terminal at this Equipment. The default is the empty string, which means that the name
         //                  of the ConnectivityNode is also the terminal identification.
@@ -1208,17 +1209,17 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "cNodeName is missing" );
+                    messagePrefix, "cNodeName is missing" );
             return;
         }
         if( ( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "voltageLevelName is missing" );
+                    messagePrefix, "voltageLevelName is missing" );
             return;
         }
         if( ( getBayName() == null ) || getBayName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "bayName is missing" );
+                    messagePrefix, "bayName is missing" );
             return;
         }
 
@@ -1233,14 +1234,14 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( res1.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res1.size() == 0 ) ? "cannot find" : "found several" ),
-                             " Substation( name = ", getSubstationName(), " )" );
+                    messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
+                    " Substation( name = ", getSubstationName(), " )" );
             return;
         }
         Substation substation = res1.get( 0 );
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found Substation( name = ", getSubstationName(), " ) on line ",
-                         substation.getLineNumber() );
+                messagePrefix, "found Substation( name = ", getSubstationName(), " ) on line ",
+                substation.getLineNumber() );
 
         // find a VoltageLevel with
         //   VoltageLevel.name == Terminal.voltageLevelName
@@ -1252,14 +1253,14 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( res2.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
-                             " VoltageLevel( name = ", getVoltageLevelName(), " )" );
+                    messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                    " VoltageLevel( name = ", getVoltageLevelName(), " )" );
             return;
         }
         VoltageLevel voltageLevel = res2.get( 0 );
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found VoltageLevel( name = ", getVoltageLevelName(), " ) on line ",
-                         voltageLevel.getLineNumber() );
+                messagePrefix, "found VoltageLevel( name = ", getVoltageLevelName(), " ) on line ",
+                voltageLevel.getLineNumber() );
 
         // find a Bay with
         //   Bay.name == Terminal.bayName
@@ -1271,14 +1272,14 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( res3.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res3.size() == 0 ) ? "cannot find" : "found several" ),
-                             " Bay( name = ", getBayName(), " )" );
+                    messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
+                    " Bay( name = ", getBayName(), " )" );
             return;
         }
         Bay bay = res3.get( 0 );
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found Bay( name = ", getBayName(), " ) on line ",
-                         voltageLevel.getLineNumber() );
+                messagePrefix, "found Bay( name = ", getBayName(), " ) on line ",
+                voltageLevel.getLineNumber() );
 
         // find a ConnectivityNode with
         //   ConnectivityNode.name == Terminal.bayName
@@ -1290,20 +1291,20 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( res4.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res4.size() == 0 ) ? "cannot find" : "found several" ),
-                             " ConnectivityNode( name = ", getCNodeName(), " )" );
+                    messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
+                    " ConnectivityNode( name = ", getCNodeName(), " )" );
             return;
         }
         setRefersToConnectivityNode( res4.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " ) on line ",
-                      getRefersToConnectivityNode().getLineNumber() );
+                "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " ) on line ",
+                getRefersToConnectivityNode().getLineNumber() );
     }
 
     private void doBuildExplicitLinkWithLine( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "cNodeName is missing" );
+                    messagePrefix, "cNodeName is missing" );
             return;
         }
 
@@ -1318,14 +1319,14 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( res1.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res1.size() == 0 ) ? "cannot find" : "found several" ),
-                             " Line( name = ", getLineName(), " )" );
+                    messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
+                    " Line( name = ", getLineName(), " )" );
             return;
         }
         Line line = res1.get( 0 );
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found Line( name = ", getLineName(), " ) on line ",
-                         line.getLineNumber() );
+                messagePrefix, "found Line( name = ", getLineName(), " ) on line ",
+                line.getLineNumber() );
 
         // find a ConnectivityNode with
         //   ConnectivityNode.name == Terminal.bayName
@@ -1336,14 +1337,14 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( res2.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res2.size() == 0 ) ? "cannot find" : "found several" ),
-                             " ConnectivityNode( name = ", getCNodeName(), " )" );
+                    messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                    " ConnectivityNode( name = ", getCNodeName(), " )" );
             return;
         }
         setRefersToConnectivityNode( res2.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " )", " on line ",
-                      getRefersToConnectivityNode().getLineNumber() );
+                "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " )", " on line ",
+                getRefersToConnectivityNode().getLineNumber() );
     }
 
 } //TerminalImpl

@@ -9,7 +9,8 @@
     testSuiteClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.tests.SCLAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="11.0" copyrightFields="false"
     editPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.edit" editorPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.editor"
-    operationReflection="true" importOrganizing="true" cleanup="true">
+    runtimeVersion="2.26" operationReflection="true" importOrganizing="true" cleanup="true"
+    eclipsePlatformVersion="2021-12">
   <genPackages prefix="Scl" basePackage="fr.centralesupelec.edf.riseclipse.iec61850"
       resource="XML" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
       fileExtensions="scl,scd,xml" ecorePackage="SCL.ecore#/">
@@ -369,7 +370,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/LogControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/DataSet"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByClientLN"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLogControl"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByAssociation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByIEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLNode"/>
@@ -658,7 +658,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/prefix"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/reasonCode"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/ParentAnyLN"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToAnyLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToLog"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LogSettings">
@@ -1071,8 +1070,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/multiplier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/unit"/>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//MinTime"/>
-    <genClasses ecoreClass="SCL.ecore#//MaxTime"/>
+    <genClasses ecoreClass="SCL.ecore#//MinTime">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//MinTime/ParentGSE"/>
+    </genClasses>
+    <genClasses ecoreClass="SCL.ecore#//MaxTime">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//MaxTime/ParentGSE"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BitRate">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BitRate/ParentSubNetwork"/>
     </genClasses>

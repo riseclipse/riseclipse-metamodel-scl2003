@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -38,7 +38,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN <em>Parent Any LN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}</li>
  * </ul>
  *
@@ -500,61 +499,6 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @generated
      */
     void setParentAnyLN( AnyLN value );
-
-    /**
-     * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl <em>Referred By Log Control</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Any LN</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_RefersToAnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl
-     * @model opposite="ReferredByLogControl" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    AnyLN getRefersToAnyLN();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @generated
-     */
-    void setRefersToAnyLN( AnyLN value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
-    void unsetRefersToAnyLN();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
-    boolean isSetRefersToAnyLN();
 
     /**
      * Returns the value of the '<em><b>Refers To Log</b></em>' reference.
