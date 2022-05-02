@@ -20,6 +20,9 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -1360,7 +1363,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         String mess = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
+            if( !"".equals( getPrefix() )) mess += ", prefix = " + getPrefix();
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
@@ -1374,6 +1377,23 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                       "LogControl refers to ", mess, " on line ",
                       getRefersToAnyLN().getLineNumber() );
 
+        List< Log > res =
+                anyLN.
+                getLeft()
+                .getLog()
+                .stream()
+                .filter( log -> getLogName().equals( log.getName() ))
+                .collect( Collectors.toList() );
+        if( res.size() != 1 ) {
+            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                             messagePrefix, (( res.isEmpty() ) ? "cannot find" : "found several" ),
+                             " Log( name = ", getLogName(), " )" );
+            return;
+        }
+        setRefersToLog( res.get( 0 ) );
+        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                      "LogControl refers to Log( name = ", getLogName(), " ) on line ",
+                      getRefersToLog().getLineNumber() );
     }
 
 } //LogControlImpl
