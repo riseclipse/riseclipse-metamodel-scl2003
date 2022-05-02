@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -41,6 +41,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface GSE extends ControlBlock {
     /**
      * Returns the value of the '<em><b>Max Time</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime#getParentGSE <em>Parent GSE</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Max Time</em>' reference isn't clear,
@@ -52,7 +53,8 @@ public interface GSE extends ControlBlock {
      * @see #unsetMaxTime()
      * @see #setMaxTime(MaxTime)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSE_MaxTime()
-     * @model containment="true" unsettable="true"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime#getParentGSE
+     * @model opposite="ParentGSE" containment="true" unsettable="true"
      * @generated
      */
     MaxTime getMaxTime();
@@ -119,6 +121,7 @@ public interface GSE extends ControlBlock {
 
     /**
      * Returns the value of the '<em><b>Min Time</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime#getParentGSE <em>Parent GSE</em>}'.
      * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Min Time</em>' reference isn't clear,
@@ -130,7 +133,8 @@ public interface GSE extends ControlBlock {
      * @see #unsetMinTime()
      * @see #setMinTime(MinTime)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSE_MinTime()
-     * @model containment="true" unsettable="true"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime#getParentGSE
+     * @model opposite="ParentGSE" containment="true" unsettable="true"
      * @generated
      */
     MinTime getMinTime();

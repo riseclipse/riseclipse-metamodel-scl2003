@@ -1071,8 +1071,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/multiplier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/unit"/>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//MinTime"/>
-    <genClasses ecoreClass="SCL.ecore#//MaxTime"/>
+    <genClasses ecoreClass="SCL.ecore#//MinTime">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//MinTime/ParentGSE"/>
+    </genClasses>
+    <genClasses ecoreClass="SCL.ecore#//MaxTime">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//MaxTime/ParentGSE"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BitRate">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BitRate/ParentSubNetwork"/>
     </genClasses>

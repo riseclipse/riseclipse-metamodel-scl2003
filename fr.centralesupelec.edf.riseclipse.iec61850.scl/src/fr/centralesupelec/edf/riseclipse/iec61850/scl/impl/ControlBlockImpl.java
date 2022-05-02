@@ -741,7 +741,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return;
         }
 
-        List< ControlWithIEDName > l2 = new ArrayList< >();
+        List< ControlWithIEDName > l2 = new ArrayList<>();
         l2.addAll( lDevice.getLeft().getLN0().getGSEControl() );
         l2.addAll( lDevice.getLeft().getLN0().getSampledValueControl() );
 

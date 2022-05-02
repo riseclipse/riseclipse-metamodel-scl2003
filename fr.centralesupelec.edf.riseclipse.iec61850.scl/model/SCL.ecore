@@ -281,9 +281,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSE" eSuperTypes="#//ControlBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MinTime" eType="#//MinTime"
-        unsettable="true" containment="true"/>
+        unsettable="true" containment="true" eOpposite="#//MinTime/ParentGSE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="MaxTime" eType="#//MaxTime"
-        unsettable="true" containment="true"/>
+        unsettable="true" containment="true" eOpposite="#//MaxTime/ParentGSE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentConnectedAP" ordered="false"
         eType="#//ConnectedAP" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ConnectedAP/GSE"/>
@@ -2182,11 +2182,15 @@
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="simple"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGSE" ordered="false"
+        eType="#//GSE" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//GSE/MinTime"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaxTime" eSuperTypes="#//DurationInMilliSec">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="simple"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGSE" ordered="false"
+        eType="#//GSE" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//GSE/MaxTime"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BitRate" eSuperTypes="#//BitRateInMbPerSec">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

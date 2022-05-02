@@ -2874,7 +2874,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                 messagePrefix, "found", mess, " on line ", anyLN.getLeft().getLineNumber() );
 
-        List< Control > listControls = new ArrayList< >();
+        List< Control > listControls = new ArrayList<>();
         listControls.addAll( anyLN.getLeft().getLogControl() );
         listControls.addAll( anyLN.getLeft().getReportControl() );
         if( "LLN0".equals( cbLNClass ) ) {
