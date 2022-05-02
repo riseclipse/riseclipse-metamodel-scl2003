@@ -622,9 +622,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByClientLN" ordered="false"
         upperBound="-1" eType="#//ClientLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ClientLN/RefersToAnyLN"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLogControl" ordered="false"
-        upperBound="-1" eType="#//LogControl" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//LogControl/RefersToAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAssociation"
         ordered="false" upperBound="-1" eType="#//Association" transient="true" unsettable="true"
         resolveProxies="false" eOpposite="#//Association/RefersToAnyLN"/>
@@ -1195,9 +1192,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAnyLN" ordered="false"
         eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//AnyLN/LogControl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
-        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//AnyLN/ReferredByLogControl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLog" ordered="false"
         eType="#//Log" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Log/ReferredByLogControl"/>
   </eClassifiers>
