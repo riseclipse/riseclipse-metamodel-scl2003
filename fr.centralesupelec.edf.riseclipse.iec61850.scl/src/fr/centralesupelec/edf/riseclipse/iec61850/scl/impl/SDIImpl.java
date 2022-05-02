@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -1164,7 +1164,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
         if( ( getName() == null ) || getName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "name is missing" );
+                    messagePrefix, "name is missing" );
             return;
         }
 
@@ -1184,14 +1184,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         // No error or warning message here: if this happens, error should have been detected before
         if( do_ == null ) return;
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found DO on line ", do_.getLineNumber() );
+                messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dot == null ) return;
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found DOType on line ", dot.getLineNumber() );
+                messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
         List< SDO > res1 = dot
                 .getSDO()
@@ -1202,15 +1202,15 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         // Not an error if res1.size() == 0: will look for a DA
         if( res1.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found several SDO( name = ", getName(),
-                             " ) using ParentDOI" );
+                    messagePrefix, "found several SDO( name = ", getName(),
+                    " ) using ParentDOI" );
             return;
         }
         if( res1.size() == 1 ) {
             setRefersToSDO( res1.get( 0 ) );
             console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                          "SDI refers to SDO( name = ", getName(), " ) on line ",
-                          getRefersToSDO().getLineNumber() );
+                    "SDI refers to SDO( name = ", getName(), " ) on line ",
+                    getRefersToSDO().getLineNumber() );
             return;
         }
 
@@ -1223,33 +1223,33 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         // Specific message if res2.size() == 0
         if( res2.size() == 0 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "no SDO or DA found using ParentDOI" );
+                    messagePrefix, "no SDO or DA found using ParentDOI" );
             return;
         }
         if( res2.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found several DA( name = ", getName(),
-                             " ) using ParentDOI" );
+                    messagePrefix, "found several DA( name = ", getName(),
+                    " ) using ParentDOI" );
             return;
         }
         setRefersToAbstractDataAttribute( res2.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "SDI refers to DA( name = ", getName(), " ) on line ",
-                      getRefersToAbstractDataAttribute().getLineNumber() );
+                "SDI refers to DA( name = ", getName(), " ) on line ",
+                getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
     private void doResolveLinkWithParentSDI( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         SDO sdo = getParentSDI().getRefersToSDO();
         if( sdo != null ) {
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found SDO on line ", sdo.getLineNumber() );
+                    messagePrefix, "found SDO on line ", sdo.getLineNumber() );
             sdo.buildExplicitLinks( console, false );
 
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
             if( dot == null ) return;
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found DOType on line ", dot.getLineNumber() );
+                    messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
             List< SDO > res1 = dot
                     .getSDO()
@@ -1260,14 +1260,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             // Not an error if res1.size() == 0: will look for a DA
             if( res1.size() > 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, "found several SDO( name = ", getName(), " ) using ParentSDI" );
+                        messagePrefix, "found several SDO( name = ", getName(), " ) using ParentSDI" );
                 return;
             }
             if( res1.size() == 1 ) {
                 setRefersToSDO( res1.get( 0 ) );
                 console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                              "SDI refers to SDO( name = ", getName(), " ) on line ",
-                              getRefersToSDO().getLineNumber() );
+                        "SDI refers to SDO( name = ", getName(), " ) on line ",
+                        getRefersToSDO().getLineNumber() );
                 return;
             }
 
@@ -1280,18 +1280,18 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             // Specific message if res2.size() == 0
             if( res2.size() == 0 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(), messagePrefix,
-                                 "no SDO or DA found using ParentSDI" );
+                        "no SDO or DA found using ParentSDI" );
                 return;
             }
             if( res2.size() > 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, "found several DA( name = ", getName(), " ) using ParentSDI" );
+                        messagePrefix, "found several DA( name = ", getName(), " ) using ParentSDI" );
                 return;
             }
             setRefersToAbstractDataAttribute( res2.get( 0 ) );
             console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                          "SDI refers to DA( name = ", getName(), " ) on line ",
-                          getRefersToAbstractDataAttribute().getLineNumber() );
+                    "SDI refers to DA( name = ", getName(), " ) on line ",
+                    getRefersToAbstractDataAttribute().getLineNumber() );
             return;
 
         }
@@ -1300,18 +1300,18 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
         if( att == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "cannot find SDO or AbstractDataAttribute using ParentSDI" );
+                    messagePrefix, "cannot find SDO or AbstractDataAttribute using ParentSDI" );
             return;
         }
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
+                messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
 
         att.buildExplicitLinks( console, false );
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dat == null ) return;
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found DAType on line ", dat.getLineNumber() );
+                messagePrefix, "found DAType on line ", dat.getLineNumber() );
 
         List< BDA > res = dat
                 .getBDA()
@@ -1321,14 +1321,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                             " BDA( name = ", getName(), " )" );
+                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    " BDA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "SDI refers to BDA( name = ", getName(), " ) on line ",
-                      getRefersToAbstractDataAttribute().getLineNumber() );
+                "SDI refers to BDA( name = ", getName(), " ) on line ",
+                getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
 } //SDIImpl

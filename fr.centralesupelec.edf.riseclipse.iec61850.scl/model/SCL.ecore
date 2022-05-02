@@ -310,6 +310,9 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="P_PhysConn" eSuperTypes="#//PAddr">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentPhysConn" ordered="false"
         eType="#//PhysConn" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//PhysConn/P"/>

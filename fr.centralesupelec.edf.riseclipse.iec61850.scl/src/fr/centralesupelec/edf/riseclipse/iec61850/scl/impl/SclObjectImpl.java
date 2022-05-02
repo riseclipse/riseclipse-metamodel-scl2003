@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,8 +20,9 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.lang.reflect.InvocationTargetException;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
@@ -33,7 +34,6 @@ import org.eclipse.jdt.annotation.NonNull;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,9 +50,9 @@ import java.lang.reflect.InvocationTargetException;
  * @generated
  */
 public abstract class SclObjectImpl extends MinimalEObjectImpl.Container implements SclObject {
-    
+
     protected static final String EXPLICIT_LINK_CATEGORY = "SCL/ExplicitLinks";
-    
+
     /**
      * The default value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
      * <!-- begin-user-doc -->

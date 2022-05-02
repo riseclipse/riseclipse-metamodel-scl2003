@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,19 +20,11 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -42,6 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -391,7 +391,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     @Override
     public EList< ExtRef > getReferredByExtRef() {
         if( referredByExtRef == null ) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable< ExtRef >( ExtRef.class, this,
+            referredByExtRef = new EObjectWithInverseEList.Unsettable< >( ExtRef.class, this,
                     SclPackage.CONTROL__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_CONTROL );
         }
         return referredByExtRef;
@@ -424,7 +424,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(), "Control.getParentAnyLN() called" );
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                "Control.getParentAnyLN() called" );
         return null;
     }
 
@@ -601,7 +602,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         super.doBuildExplicitLinks( console );
 
         // name    Name of the report control block. This name is relative to the LN hosting the RCB, and shall be unique within the LN
-        // desc    The description text 
+        // desc    The description text
         // datSet  The name of the data set to be sent by the report control block; datSet should only be missing within an ICD-File,
         //         or to indicate an unused control block. The referenced data set must be in the same LN as the control block.
 
@@ -609,7 +610,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
         if( ( getDatSet() == null ) || getDatSet().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "datSet is missing" );
+                    messagePrefix, "datSet is missing" );
             return;
         }
 
@@ -626,14 +627,14 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( res.size() == 0 ) ? "cannot find" : "found several" ),
-                             " DataSet( name = ", getDatSet(), " )" );
+                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    " DataSet( name = ", getDatSet(), " )" );
             return;
         }
         setRefersToDataSet( res.get( 0 ) );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                     "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
-                     getRefersToDataSet().getLineNumber() );
+                "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
+                getRefersToDataSet().getLineNumber() );
     }
 
 } //ControlImpl

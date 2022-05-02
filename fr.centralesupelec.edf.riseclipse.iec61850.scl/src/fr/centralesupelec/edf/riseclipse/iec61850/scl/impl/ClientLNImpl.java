@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -1167,17 +1167,17 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "iedName is missing" );
+                    messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "ldInst is missing" );
+                    messagePrefix, "ldInst is missing" );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "lnClass is missing" );
+                    messagePrefix, "lnClass is missing" );
             return;
         }
 
@@ -1186,24 +1186,24 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( ied.getRight() == 0 ) ? "cannot find " : "found several " ),
-                             "IED( name = ", getIedName(), " )" );
+                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find " : "found several " ),
+                    "IED( name = ", getIedName(), " )" );
             return;
         }
         console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                         messagePrefix, "found IED( name = ", getIedName(), " ) on line ", ied.getLeft().getLineNumber() );
+                messagePrefix, "found IED( name = ", getIedName(), " ) on line ", ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = null;
         if( ( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
+                        messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
-                                 " ) but apRef not specified" );
+                        messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
+                        " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1212,13 +1212,13 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
             if( ap.getLeft() == null ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                                 " AccessPoint( name = ", getApRef(), " )" );
+                        messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+                        " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found ", "AccessPoint( name = ", getApRef(), " ) on line ",
-                             ap.getLeft().getLineNumber() );
+                    messagePrefix, "found ", "AccessPoint( name = ", getApRef(), " ) on line ",
+                    ap.getLeft().getLineNumber() );
         }
 
         Pair< AnyLN, Integer > anyLN = null;
@@ -1231,13 +1231,13 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap.getLeft(), getLdInst() );
             if( lDevice.getLeft() == null ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                                 messagePrefix, (( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-                                 " LDevice( inst = ", getLdInst(), " )" );
+                        messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+                        " LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
-                             lDevice.getLeft().getLineNumber() );
+                    messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
+                    lDevice.getLeft().getLineNumber() );
 
             anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
         }
@@ -1249,13 +1249,13 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         mess += " )";
         if( anyLN.getLeft() == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                             messagePrefix, (( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
+                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
         console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                      "ClientLN on line ", getLineNumber(), " refers to ", mess, " on line ",
-                      getRefersToAnyLN().getLineNumber() );
+                "ClientLN on line ", getLineNumber(), " refers to ", mess, " on line ",
+                getRefersToAnyLN().getLineNumber() );
     }
 
 } //ClientLNImpl
