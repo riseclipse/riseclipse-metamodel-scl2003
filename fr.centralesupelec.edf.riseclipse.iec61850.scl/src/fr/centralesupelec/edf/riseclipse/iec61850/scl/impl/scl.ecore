@@ -281,9 +281,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSE" eSuperTypes="#//ControlBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MinTime" eType="#//MinTime"
-        unsettable="true" containment="true"/>
+        unsettable="true" containment="true" eOpposite="#//MinTime/ParentGSE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="MaxTime" eType="#//MaxTime"
-        unsettable="true" containment="true"/>
+        unsettable="true" containment="true" eOpposite="#//MaxTime/ParentGSE"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentConnectedAP" ordered="false"
         eType="#//ConnectedAP" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ConnectedAP/GSE"/>
@@ -310,6 +310,9 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="P_PhysConn" eSuperTypes="#//PAddr">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentPhysConn" ordered="false"
         eType="#//PhysConn" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//PhysConn/P"/>
@@ -619,9 +622,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByClientLN" ordered="false"
         upperBound="-1" eType="#//ClientLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ClientLN/RefersToAnyLN"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLogControl" ordered="false"
-        upperBound="-1" eType="#//LogControl" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//LogControl/RefersToAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAssociation"
         ordered="false" upperBound="-1" eType="#//Association" transient="true" unsettable="true"
         resolveProxies="false" eOpposite="#//Association/RefersToAnyLN"/>
@@ -1192,9 +1192,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAnyLN" ordered="false"
         eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//AnyLN/LogControl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
-        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//AnyLN/ReferredByLogControl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLog" ordered="false"
         eType="#//Log" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Log/ReferredByLogControl"/>
   </eClassifiers>
@@ -2182,11 +2179,15 @@
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="simple"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGSE" ordered="false"
+        eType="#//GSE" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//GSE/MinTime"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaxTime" eSuperTypes="#//DurationInMilliSec">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="simple"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGSE" ordered="false"
+        eType="#//GSE" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//GSE/MaxTime"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BitRate" eSuperTypes="#//BitRateInMbPerSec">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

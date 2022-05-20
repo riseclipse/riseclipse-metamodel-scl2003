@@ -27,6 +27,9 @@ import java.util.Optional;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
+import org.eclipse.emf.ecore.xmi.IllegalValueException;
+import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -41,6 +44,8 @@ import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseResourceSet;
 @SuppressWarnings( "unused" )
 public class SclResourceSetImpl extends AbstractRiseClipseResourceSet {
     
+    private static final String SCL_SETUP_CATEGORY = "SCL/Setup";
+
     private SclResourceFactoryImpl resourceFactory;
 
     public SclResourceSetImpl( boolean strictContent ) {
@@ -56,6 +61,29 @@ public class SclResourceSetImpl extends AbstractRiseClipseResourceSet {
             return resourceFactory.createResource( uri );
         }
         return null;
+    }
+
+    @Override
+    protected void demandLoad( Resource resource ) throws IOException {
+        super.demandLoad( resource );
+
+        // Handle errors ignored in AbstractRiseClipseResourceSet.handleErrors()
+        @NonNull
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+
+        for( Diagnostic error : resource.getErrors() ) {
+            if( error instanceof IllegalValueException ) {
+                IllegalValueException e = ( IllegalValueException ) error;
+                console.error( SCL_SETUP_CATEGORY, resource.getURI().lastSegment(), e.getLine(),
+                        ( e.getValue().toString().isEmpty() ? "empty value" : "value \"" + e.getValue() + "\"" ),
+                        " is not legal for feature \"", e.getFeature().getName(), "\", it should be a value of ",
+                        e.getFeature().getEType().getName() );
+            }
+            else {
+                console.error( SCL_SETUP_CATEGORY, resource.getURI().lastSegment(), error.getLine(),
+                           error.getMessage() );
+            }
+        }
     }
 
     /* (non-Javadoc)

@@ -69,7 +69,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addLnTypePropertyDescriptor( object );
             addRefersToLNodeTypePropertyDescriptor( object );
             addReferredByClientLNPropertyDescriptor( object );
-            addReferredByLogControlPropertyDescriptor( object );
             addReferredByAssociationPropertyDescriptor( object );
             addReferredByIEDNamePropertyDescriptor( object );
             addReferredByLNodePropertyDescriptor( object );
@@ -199,28 +198,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
                         getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByClientLN_feature",
                                 "_UI_AnyLN_type" ),
                         SclPackage.eINSTANCE.getAnyLN_ReferredByClientLN(),
-                        true,
-                        false,
-                        true,
-                        null,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By Log Control feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByLogControlPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_AnyLN_ReferredByLogControl_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByLogControl_feature",
-                                "_UI_AnyLN_type" ),
-                        SclPackage.eINSTANCE.getAnyLN_ReferredByLogControl(),
                         true,
                         false,
                         true,

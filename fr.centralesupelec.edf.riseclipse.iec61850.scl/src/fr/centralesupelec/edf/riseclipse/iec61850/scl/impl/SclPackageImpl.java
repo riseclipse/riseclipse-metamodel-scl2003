@@ -3520,12 +3520,32 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getMinTime_ParentGSE() {
+        return ( EReference ) getMinTime().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getMaxTime() {
         if( maxTimeEClass == null ) {
             maxTimeEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()
                     .get( 168 );
         }
         return maxTimeEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getMaxTime_ParentGSE() {
+        return ( EReference ) getMaxTime().getEStructuralFeatures().get( 0 );
     }
 
     /**
@@ -4540,7 +4560,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByLogControl() {
+    public EReference getAnyLN_ReferredByAssociation() {
         return ( EReference ) getAnyLN().getEStructuralFeatures().get( 11 );
     }
 
@@ -4550,7 +4570,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByAssociation() {
+    public EReference getAnyLN_ReferredByIEDName() {
         return ( EReference ) getAnyLN().getEStructuralFeatures().get( 12 );
     }
 
@@ -4560,18 +4580,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByIEDName() {
-        return ( EReference ) getAnyLN().getEStructuralFeatures().get( 13 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getAnyLN_ReferredByLNode() {
-        return ( EReference ) getAnyLN().getEStructuralFeatures().get( 14 );
+        return ( EReference ) getAnyLN().getEStructuralFeatures().get( 13 );
     }
 
     /**
@@ -7154,18 +7164,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLogControl_RefersToAnyLN() {
-        return ( EReference ) getLogControl().getEStructuralFeatures().get( 9 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getLogControl_RefersToLog() {
-        return ( EReference ) getLogControl().getEStructuralFeatures().get( 10 );
+        return ( EReference ) getLogControl().getEStructuralFeatures().get( 9 );
     }
 
     /**

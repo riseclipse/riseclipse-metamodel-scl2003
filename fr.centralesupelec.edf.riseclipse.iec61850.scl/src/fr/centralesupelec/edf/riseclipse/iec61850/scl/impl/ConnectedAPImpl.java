@@ -1046,6 +1046,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         //   IED.name == ConnectedAP.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
+
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " IED( name = ", getIedName(), " )" );
