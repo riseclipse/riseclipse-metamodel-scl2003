@@ -1125,7 +1125,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LNodeImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "LNodeImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1150,13 +1150,13 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // Resolve only if attribute is not None
         // Default value is None
         if( ( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() ) ) {
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "link to AnyLN not resolved because iedName is absent or None" );
             return;
         }
 
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "lnClass is missing" );
             return;
         }
@@ -1165,12 +1165,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //   IED.name == LNode.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                 ied.getLeft().getLineNumber() );
 
@@ -1178,12 +1178,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //   LDevice.name == LNode.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                 lDevice.getLeft().getLineNumber() );
 
@@ -1200,13 +1200,13 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
                     mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "LNode refers to ", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
@@ -1217,13 +1217,13 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) {
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "link not resolved because lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
@@ -1235,18 +1235,18 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " LNodeType( id = ", getLnType(), " )" );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "AnyLN refers to LNodeType( id = ", getLnType(), " ) on line ",
                 getRefersToLNodeType().getLineNumber() );
 
         if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() ) ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
                     getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
         }

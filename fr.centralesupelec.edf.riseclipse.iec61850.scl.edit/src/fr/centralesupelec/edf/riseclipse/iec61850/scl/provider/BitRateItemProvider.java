@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -80,8 +80,9 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        BitRate bitRate = ( BitRate ) object;
-        return getString( "_UI_BitRate_type" ) + " " + bitRate.getLineNumber();
+        String label = ( ( BitRate ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_BitRate_type" )
+                : getString( "_UI_BitRate_type" ) + " " + label;
     }
 
     /**

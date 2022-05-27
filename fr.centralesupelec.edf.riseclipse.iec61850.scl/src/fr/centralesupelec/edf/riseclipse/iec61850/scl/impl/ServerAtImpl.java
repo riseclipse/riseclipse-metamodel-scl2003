@@ -484,7 +484,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ServerAtImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "ServerAtImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -492,7 +492,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         String messagePrefix = "while resolving link from ServerAt: ";
 
         if( ( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "apName is missing" );
             return;
         }
@@ -503,13 +503,13 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied, getApName() );
         if( ap.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ServerAt refers to AccessPoint( name = ", getApName(), " ) on line ",
                 getRefersToAccessPoint().getLineNumber() );
     }

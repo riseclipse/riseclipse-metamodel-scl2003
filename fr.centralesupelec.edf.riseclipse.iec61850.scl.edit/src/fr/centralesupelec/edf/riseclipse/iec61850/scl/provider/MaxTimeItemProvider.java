@@ -80,8 +80,9 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        MaxTime maxTime = ( MaxTime ) object;
-        return getString( "_UI_MaxTime_type" ) + " " + maxTime.getLineNumber();
+        String label = ( ( MaxTime ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_MaxTime_type" )
+                : getString( "_UI_MaxTime_type" ) + " " + label;
     }
 
     /**

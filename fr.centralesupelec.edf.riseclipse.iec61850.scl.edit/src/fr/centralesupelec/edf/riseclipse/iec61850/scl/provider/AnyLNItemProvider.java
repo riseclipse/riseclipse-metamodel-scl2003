@@ -326,7 +326,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( AnyLN ) object ).getNamespace();
+        String label = ( ( AnyLN ) object ).getFilename();
         return label == null || label.length() == 0 ? getString( "_UI_AnyLN_type" )
                 : getString( "_UI_AnyLN_type" ) + " " + label;
     }

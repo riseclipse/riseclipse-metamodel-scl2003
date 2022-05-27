@@ -1020,7 +1020,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "ConnectedAPImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "ConnectedAPImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1032,12 +1032,12 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         String messagePrefix = "while resolving link from ConnectedAP: ";
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "apName is missing" );
             return;
         }
@@ -1046,23 +1046,24 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         //   IED.name == ConnectedAP.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                 ied.getLeft().getLineNumber() );
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         if( ap.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
                     " AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ConnectedAP on line refers to AccessPoint( name = ", getApName(), " ) on line ",
                 getRefersToAccessPoint().getLineNumber() );
     }

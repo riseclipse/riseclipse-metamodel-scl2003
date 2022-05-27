@@ -550,7 +550,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DOImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "DOImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -564,7 +564,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         String messagePrefix = "while resolving link from DO: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "type is missing" );
             return;
         }
@@ -579,13 +579,13 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DO refers to DOType( id = ", getType(), " ) on line ", getRefersToDOType().getLineNumber() );
     }
 

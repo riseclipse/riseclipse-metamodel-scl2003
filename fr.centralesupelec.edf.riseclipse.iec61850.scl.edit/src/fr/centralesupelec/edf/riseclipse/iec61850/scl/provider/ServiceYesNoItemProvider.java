@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -80,8 +80,9 @@ public class ServiceYesNoItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        ServiceYesNo serviceYesNo = ( ServiceYesNo ) object;
-        return getString( "_UI_ServiceYesNo_type" ) + " " + serviceYesNo.getLineNumber();
+        String label = ( ( ServiceYesNo ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_ServiceYesNo_type" )
+                : getString( "_UI_ServiceYesNo_type" ) + " " + label;
     }
 
     /**

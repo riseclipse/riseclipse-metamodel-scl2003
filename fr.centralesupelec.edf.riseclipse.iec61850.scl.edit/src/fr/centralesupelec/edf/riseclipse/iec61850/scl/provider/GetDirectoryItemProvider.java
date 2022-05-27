@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -81,8 +81,9 @@ public class GetDirectoryItemProvider
      */
     @Override
     public String getText( Object object ) {
-        GetDirectory getDirectory = ( GetDirectory ) object;
-        return getString( "_UI_GetDirectory_type" ) + " " + getDirectory.getLineNumber();
+        String label = ( ( GetDirectory ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_GetDirectory_type" )
+                : getString( "_UI_GetDirectory_type" ) + " " + label;
     }
 
     /**

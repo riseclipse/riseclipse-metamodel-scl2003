@@ -1023,7 +1023,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public LDevice getParentLDevice() {
-        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        AbstractRiseClipseConsole.getConsole().emergency( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "AnyLNImpl.getParentLDevice() called" );
         return null;
     }
@@ -1444,7 +1444,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "AnyLNImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "AnyLNImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1456,13 +1456,13 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         String messagePrefix = "while resolving link from AnyLN on line: ";
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
@@ -1474,18 +1474,18 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " LNodeType( id = ", getLnType(), " )" );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                "AnyLN on line ", getLineNumber(), " refers to LNodeType( id = ", getLnType(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                "AnyLN refers to LNodeType( id = ", getLnType(),
                 " ) on line ", getRefersToLNodeType().getLineNumber() );
 
         if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() ) ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
                     getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
         }

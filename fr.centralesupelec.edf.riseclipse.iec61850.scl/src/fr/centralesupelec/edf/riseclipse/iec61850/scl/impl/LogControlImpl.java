@@ -1163,7 +1163,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "LogControlImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "LogControlImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1184,7 +1184,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         String messagePrefix = "while resolving link from LogControl: ";
 
         if( ( getLogName() == null ) || getLogName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "logName is missing" );
             return;
         }
@@ -1198,13 +1198,13 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         if( ( getLdInst() != null ) && ( !getLdInst().isEmpty() ) ) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             if( lDevice1.getLeft() == null ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                         messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
                         "LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             lDevice = lDevice1.getLeft();
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                     lDevice.getLineNumber() );
         }
@@ -1217,13 +1217,13 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
                     mess );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
-                messagePrefix, "found ", mess, " ) on line ",
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                "LogControl refers to ", mess, " on line ",
                 anyLN.getLeft().getLineNumber() );
 
         List< Log > res =

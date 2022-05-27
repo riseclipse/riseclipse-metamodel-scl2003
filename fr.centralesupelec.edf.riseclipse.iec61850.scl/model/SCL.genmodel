@@ -1023,6 +1023,7 @@
     <genClasses image="false" ecoreClass="SCL.ecore#//SclObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/lineNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/explicitLinksBuilt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/filename"/>
       <genOperations ecoreOperation="SCL.ecore#//SclObject/buildExplicitLinks">
         <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/console"/>
         <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/forceUpdate"/>

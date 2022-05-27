@@ -1010,7 +1010,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getLineNumber(), "DAIImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "DAIImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -1018,7 +1018,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         String messagePrefix = "while resolving link from DAI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "name is missing" );
             return;
         }
@@ -1039,14 +1039,14 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         // No error or warning messages here: if this happens, error should have been detected before
         DO do_ = getParentDOI().getRefersToDO();
         if( do_ == null ) return;
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dot == null ) return;
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
         List< DA > res = dot
@@ -1056,13 +1056,13 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " DA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DAI refers to DA( name = " + getName(), " ) on line ",
                 getRefersToAbstractDataAttribute().getLineNumber() );
     }
@@ -1076,12 +1076,12 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             SDO sdo = getParentSDI().getRefersToSDO();
             if( sdo == null ) return;
             sdo.buildExplicitLinks( console, false );
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found SDO on line ", sdo.getLineNumber() );
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
             if( dot == null ) return;
-            console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
             List< DA > res = dot
@@ -1091,25 +1091,25 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                     .collect( Collectors.toList() );
 
             if( res.size() != 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                         " DA( name = ", getName(), " )" );
                 return;
             }
             setRefersToAbstractDataAttribute( res.get( 0 ) );
-            console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     "DAI refers to DA( name = ", getName(), " ) on line ",
                     getRefersToAbstractDataAttribute().getLineNumber() );
             return;
         }
         att.buildExplicitLinks( console, false );
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
 
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dat == null ) return;
-        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DAType on line ", dat.getLineNumber() );
 
         List< BDA > res = dat
@@ -1119,13 +1119,13 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
                     " BDA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DAI refers to ", "BDA( name = " + getName() + " )", " on line ",
                 getRefersToAbstractDataAttribute().getLineNumber() );
     }
