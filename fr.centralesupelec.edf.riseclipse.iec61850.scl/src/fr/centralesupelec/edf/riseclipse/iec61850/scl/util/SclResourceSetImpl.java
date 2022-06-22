@@ -98,7 +98,14 @@ public class SclResourceSetImpl extends AbstractRiseClipseResourceSet {
         for( Resource resource : getResources() ) {
             if( resource.getContents().size() == 0 ) continue;
             if( resource instanceof SclResourceImpl ) {
-                SCL scl = ( SCL ) resource.getContents().get( 0 );
+                SCL scl = null;
+                try {
+                    scl = ( SCL ) resource.getContents().get( 0 );
+                }
+                catch( ClassCastException ex ) {
+                    console.critical( SCL_SETUP_CATEGORY, 0, resource.getURI(), " is not an SCL file" );
+                    continue;
+                }
                 scl.buildExplicitLinks( console, false );
             }
         }
