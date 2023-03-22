@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.annotation.NonNull;
 
@@ -35,7 +36,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.Pair;
 
 public class SclUtilities {
 
