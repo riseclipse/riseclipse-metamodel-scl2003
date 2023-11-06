@@ -7,7 +7,7 @@ Automatic-Module-Name: fr.centralesupelec.edf.riseclipse.iec61850.scl
 Bundle-Version: 1.2.6
 Bundle-ClassPath: .
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: fr.centralesupelec.edf.riseclipse.iec61850.scl,
  fr.centralesupelec.edf.riseclipse.iec61850.scl.impl,
  fr.centralesupelec.edf.riseclipse.iec61850.scl.util
