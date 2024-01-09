@@ -135,20 +135,28 @@ public class SCLXMLHandler extends SAXXMLHandler {
         super.endElement( uri, localName, name );
     }
 
-	@Override
+    @Override
     protected EStructuralFeature getFeature( EObject object, String prefix, String name, boolean isElement ) {
         // XMLHelperImpl.getFeature(EClass eClass, String namespaceURI, String name)
-	    // ignore the namespace to find a feature using XMLHelperImpl.getFeatureWithoutMap(EClass eClass, String name)
-	    // (checked version in Eclipse 2019-06)
-	    //
-	    // This lead to the creation of SCL objects if elements from another namespace use existing SCL element names.
-	    //
-	    // To avoid extending XMLHelper class, the namespace is checked here
-	    // And we give back the any attribute to store the element
-	    
-	    if(( isElement ) && ( prefix != null ) && ( ! SclPackage.eNS_URI.equals( helper.getURI( prefix )))) {
-	        return super.getFeature( object, prefix, "any", isElement );
-	    }
+        // ignore the namespace to find a feature using XMLHelperImpl.getFeatureWithoutMap(EClass eClass, String name)
+        // (checked version in Eclipse 2023-09)
+        //
+        // This lead to the creation of SCL objects if elements from another namespace use existing SCL names.
+        //
+        // To avoid extending XMLHelper class, the namespace is checked here
+        //
+        // See issue https://github.com/riseclipse/riseclipse-metamodel-scl2003/issues/35:
+        // The problem can also arise for attributes
+        //
+        // Before: we give back the any element to store the value
+        // Now: we give back null because there may be several elements/attributes with the same name in different namespaces but
+        //      any/anyAttribute can have only one value.
+        //      The unknown feature message is not emitted in this case (see handleUnknownFeature() below)
+        
+        if(( prefix != null ) && ( ! SclPackage.eNS_URI.equals( helper.getURI( prefix )))) {
+            //return super.getFeature( object, prefix, isElement ? "any" : "anyAttribute", isElement );
+            return null;
+        }
         return super.getFeature( object, prefix, name, isElement );
     }
 
@@ -168,8 +176,8 @@ public class SCLXMLHandler extends SAXXMLHandler {
                 XML_HANDLER_CATEGORY, resourceURI.lastSegment(), 0, "linenumber stack empty !" );
         }
         else {
-        	// Will pop in endElement, because some attributes in the model
-        	// are sub-elements in XML, therefore they are not process here
+            // Will pop in endElement, because some attributes in the model
+            // are sub-elements in XML, therefore they are not process here
             int lineNumber = lineNumbers.peek();
             if( object instanceof SclObject ) {
                 (( SclObject ) object ).setLineNumber( lineNumber );
@@ -179,51 +187,51 @@ public class SCLXMLHandler extends SAXXMLHandler {
         // TODO: error message
         super.processObject( object );
     }
-	
-	protected void setFeatureValue( EObject object, EStructuralFeature feature, Object value, int position ) {
-	    // When an object a owns an object b1, a may replace it by another object b2 of the same kind
-	    // It seems OK.
-	    // However, when an XSD says an element A contains 0 or 1 element B (and not several), and when
-	    // there are in XML 2 elements B in A, EMF just replace the first by the second, therefore
-	    // accept the XML file even if it is invalid according to the XSD.
-	    // We intercept here this behavior
-	    // TODO: check if it has undesirable effect
-	    // TODO: check if there is another way for this
-	    
-	    // feature may be null on invalid attribute/tag
-	    if( feature == null ) return;
-	    
-	    if(( inPrivate ) && ( lastElement != null )) {
-	        text.append( " " + feature.getName() + "=\"" + value + "\"" );
-	        return;
-	    }
-	    
-	    if(( feature.getUpperBound() == 1 ) && object.eIsSet( feature )) {
-	        AbstractRiseClipseConsole.getConsole().error(
-	                  XML_HANDLER_CATEGORY, resourceURI.lastSegment(), (( SclObject ) object ).getLineNumber(),
+    
+    protected void setFeatureValue( EObject object, EStructuralFeature feature, Object value, int position ) {
+        // When an object a owns an object b1, a may replace it by another object b2 of the same kind
+        // It seems OK.
+        // However, when an XSD says an element A contains 0 or 1 element B (and not several), and when
+        // there are in XML 2 elements B in A, EMF just replace the first by the second, therefore
+        // accept the XML file even if it is invalid according to the XSD.
+        // We intercept here this behavior
+        // TODO: check if it has undesirable effect
+        // TODO: check if there is another way for this
+        
+        // feature may be null on invalid attribute/tag
+        if( feature == null ) return;
+        
+        if(( inPrivate ) && ( lastElement != null )) {
+            text.append( " " + feature.getName() + "=\"" + value + "\"" );
+            return;
+        }
+        
+        if(( feature.getUpperBound() == 1 ) && object.eIsSet( feature )) {
+            AbstractRiseClipseConsole.getConsole().error(
+                      XML_HANDLER_CATEGORY, resourceURI.lastSegment(), (( SclObject ) object ).getLineNumber(),
                       "there shall not be more than 1 ",
-	                  feature.getName(), " in ", object.eClass().getName() );
-	        return;
-	    }
-	    
-	    // 0 or 1 are allowed as boolean values
-	    if( feature.getEType() == EcorePackage.Literals.EBOOLEAN_OBJECT ) {
-	        if(( value != null ) && ( value.getClass() == String.class )) {
-	            switch(( String ) value ) {
-	            case "0" :
-	                super.setFeatureValue( object, feature, "false", position );
-	                return;
-	            case "1" :
-	                super.setFeatureValue( object, feature, "true", position );
-	                return;
-	            }
-	        }
-	    }
-	    
-	    super.setFeatureValue( object, feature, value, position );
-	}
+                      feature.getName(), " in ", object.eClass().getName() );
+            return;
+        }
+        
+        // 0 or 1 are allowed as boolean values
+        if( feature.getEType() == EcorePackage.Literals.EBOOLEAN_OBJECT ) {
+            if(( value != null ) && ( value.getClass() == String.class )) {
+                switch(( String ) value ) {
+                case "0" :
+                    super.setFeatureValue( object, feature, "false", position );
+                    return;
+                case "1" :
+                    super.setFeatureValue( object, feature, "true", position );
+                    return;
+                }
+            }
+        }
+        
+        super.setFeatureValue( object, feature, value, position );
+    }
 
-	@Override
+    @Override
     public void endDocument() {
         super.endDocument();
         
@@ -249,6 +257,8 @@ public class SCLXMLHandler extends SAXXMLHandler {
         if( ! lineNumbers.empty() ) {
             ln = lineNumbers.peek();
         }
+        // A feature from another namespace is ignored, so this is not an error
+        if( prefix != null ) return;
         AbstractRiseClipseConsole.getConsole().error( XML_HANDLER_CATEGORY, resourceURI.lastSegment(),
                 ln, "unknown feature \"", name, "\" in object ", peekObject.eClass().getName() );
     }
