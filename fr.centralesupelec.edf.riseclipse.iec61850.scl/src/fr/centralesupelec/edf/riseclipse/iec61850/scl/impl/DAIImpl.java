@@ -286,8 +286,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         ix = newIx;
         boolean oldIxESet = ixESet;
         ixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__IX, oldIx, ix, !oldIxESet ) );
+        }
     }
 
     /**
@@ -301,9 +302,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         boolean oldIxESet = ixESet;
         ix = IX_EDEFAULT;
         ixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__IX, oldIx, IX_EDEFAULT,
                     oldIxESet ) );
+        }
     }
 
     /**
@@ -337,9 +339,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         sAddr = newSAddr;
         boolean oldSAddrESet = sAddrESet;
         sAddrESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__SADDR, oldSAddr, sAddr,
                     !oldSAddrESet ) );
+        }
     }
 
     /**
@@ -353,9 +356,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         boolean oldSAddrESet = sAddrESet;
         sAddr = SADDR_EDEFAULT;
         sAddrESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__SADDR, oldSAddr, SADDR_EDEFAULT,
                     oldSAddrESet ) );
+        }
     }
 
     /**
@@ -389,9 +393,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         valImport = newValImport;
         boolean oldValImportESet = valImportESet;
         valImportESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__VAL_IMPORT, oldValImport, valImport,
                     !oldValImportESet ) );
+        }
     }
 
     /**
@@ -405,9 +410,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         boolean oldValImportESet = valImportESet;
         valImport = VAL_IMPORT_EDEFAULT;
         valImportESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__VAL_IMPORT, oldValImport,
                     VAL_IMPORT_EDEFAULT, oldValImportESet ) );
+        }
     }
 
     /**
@@ -441,9 +447,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
         boolean oldValKindESet = valKindESet;
         valKindESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__VAL_KIND, oldValKind, valKind,
                     !oldValKindESet ) );
+        }
     }
 
     /**
@@ -457,9 +464,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         boolean oldValKindESet = valKindESet;
         valKind = VAL_KIND_EDEFAULT;
         valKindESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__VAL_KIND, oldValKind,
                     VAL_KIND_EDEFAULT, oldValKindESet ) );
+        }
     }
 
     /**
@@ -493,7 +501,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
      */
     @Override
     public void unsetVal() {
-        if( val != null ) ( ( InternalEList.Unsettable< ? > ) val ).unset();
+        if( val != null ) {
+            ( ( InternalEList.Unsettable< ? > ) val ).unset();
+        }
     }
 
     /**
@@ -513,7 +523,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
      */
     @Override
     public DOI getParentDOI() {
-        if( eContainerFeatureID() != SclPackage.DAI__PARENT_DOI ) return null;
+        if( eContainerFeatureID() != SclPackage.DAI__PARENT_DOI ) {
+            return null;
+        }
         return ( DOI ) eInternalContainer();
     }
 
@@ -536,19 +548,25 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     public void setParentDOI( DOI newParentDOI ) {
         if( newParentDOI != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DAI__PARENT_DOI && newParentDOI != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDOI ) )
+            if( EcoreUtil.isAncestor( this, newParentDOI ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDOI != null )
+            }
+            if( newParentDOI != null ) {
                 msgs = ( ( InternalEObject ) newParentDOI ).eInverseAdd( this, SclPackage.DOI__DAI, DOI.class, msgs );
+            }
             msgs = basicSetParentDOI( newParentDOI, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__PARENT_DOI, newParentDOI,
                     newParentDOI ) );
+        }
     }
 
     /**
@@ -558,7 +576,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
      */
     @Override
     public SDI getParentSDI() {
-        if( eContainerFeatureID() != SclPackage.DAI__PARENT_SDI ) return null;
+        if( eContainerFeatureID() != SclPackage.DAI__PARENT_SDI ) {
+            return null;
+        }
         return ( SDI ) eInternalContainer();
     }
 
@@ -581,19 +601,25 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     public void setParentSDI( SDI newParentSDI ) {
         if( newParentSDI != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DAI__PARENT_SDI && newParentSDI != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSDI ) )
+            if( EcoreUtil.isAncestor( this, newParentSDI ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSDI != null )
+            }
+            if( newParentSDI != null ) {
                 msgs = ( ( InternalEObject ) newParentSDI ).eInverseAdd( this, SclPackage.SDI__DAI, SDI.class, msgs );
+            }
             msgs = basicSetParentSDI( newParentSDI, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__PARENT_SDI, newParentSDI,
                     newParentSDI ) );
+        }
     }
 
     /**
@@ -617,9 +643,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -633,9 +660,10 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -673,10 +701,12 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, oldRefersToAbstractDataAttribute,
                     newRefersToAbstractDataAttribute, !oldRefersToAbstractDataAttributeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -690,22 +720,27 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     public void setRefersToAbstractDataAttribute( AbstractDataAttribute newRefersToAbstractDataAttribute ) {
         if( newRefersToAbstractDataAttribute != refersToAbstractDataAttribute ) {
             NotificationChain msgs = null;
-            if( refersToAbstractDataAttribute != null )
+            if( refersToAbstractDataAttribute != null ) {
                 msgs = ( ( InternalEObject ) refersToAbstractDataAttribute ).eInverseRemove( this,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, AbstractDataAttribute.class, msgs );
-            if( newRefersToAbstractDataAttribute != null )
+            }
+            if( newRefersToAbstractDataAttribute != null ) {
                 msgs = ( ( InternalEObject ) newRefersToAbstractDataAttribute ).eInverseAdd( this,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, AbstractDataAttribute.class, msgs );
+            }
             msgs = basicSetRefersToAbstractDataAttribute( newRefersToAbstractDataAttribute, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
             refersToAbstractDataAttributeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, newRefersToAbstractDataAttribute,
                         newRefersToAbstractDataAttribute, !oldRefersToAbstractDataAttributeESet ) );
+            }
         }
     }
 
@@ -723,10 +758,12 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, oldRefersToAbstractDataAttribute, null,
                     oldRefersToAbstractDataAttributeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -743,15 +780,18 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             msgs = ( ( InternalEObject ) refersToAbstractDataAttribute ).eInverseRemove( this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, AbstractDataAttribute.class, msgs );
             msgs = basicUnsetRefersToAbstractDataAttribute( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
             refersToAbstractDataAttributeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, null, null,
                         oldRefersToAbstractDataAttributeESet ) );
+            }
         }
     }
 
@@ -777,17 +817,20 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         case SclPackage.DAI__VAL:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getVal() ).basicAdd( otherEnd, msgs );
         case SclPackage.DAI__PARENT_DOI:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDOI( ( DOI ) otherEnd, msgs );
         case SclPackage.DAI__PARENT_SDI:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSDI( ( SDI ) otherEnd, msgs );
         case SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-            if( refersToAbstractDataAttribute != null )
+            if( refersToAbstractDataAttribute != null ) {
                 msgs = ( ( InternalEObject ) refersToAbstractDataAttribute ).eInverseRemove( this,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, AbstractDataAttribute.class, msgs );
+            }
             return basicSetRefersToAbstractDataAttribute( ( AbstractDataAttribute ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -976,34 +1019,46 @@ public class DAIImpl extends UnNamingImpl implements DAI {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (ix: " );
-        if( ixESet )
+        if( ixESet ) {
             result.append( ix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", sAddr: " );
-        if( sAddrESet )
+        if( sAddrESet ) {
             result.append( sAddr );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", valImport: " );
-        if( valImportESet )
+        if( valImportESet ) {
             result.append( valImport );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", valKind: " );
-        if( valKindESet )
+        if( valKindESet ) {
             result.append( valKind );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -1038,14 +1093,18 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             @NonNull String messagePrefix ) {
         // No error or warning messages here: if this happens, error should have been detected before
         DO do_ = getParentDOI().getRefersToDO();
-        if( do_ == null ) return;
+        if( do_ == null ) {
+            return;
+        }
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
-        if( dot == null ) return;
+        if( dot == null ) {
+            return;
+        }
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
@@ -1074,13 +1133,17 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         if( att == null ) {
             // SDI may refers also to an SDO
             SDO sdo = getParentSDI().getRefersToSDO();
-            if( sdo == null ) return;
+            if( sdo == null ) {
+                return;
+            }
             sdo.buildExplicitLinks( console, false );
             console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found SDO on line ", sdo.getLineNumber() );
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
-            if( dot == null ) return;
+            if( dot == null ) {
+                return;
+            }
             console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found DOType on line ", dot.getLineNumber() );
 
@@ -1108,7 +1171,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
 
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
-        if( dat == null ) return;
+        if( dat == null ) {
+            return;
+        }
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DAType on line ", dat.getLineNumber() );
 

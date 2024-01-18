@@ -174,9 +174,10 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         count = newCount;
         boolean oldCountESet = countESet;
         countESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SDO__COUNT, oldCount, count,
                     !oldCountESet ) );
+        }
     }
 
     /**
@@ -190,9 +191,10 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         boolean oldCountESet = countESet;
         count = COUNT_EDEFAULT;
         countESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SDO__COUNT, oldCount, COUNT_EDEFAULT,
                     oldCountESet ) );
+        }
     }
 
     /**
@@ -212,7 +214,9 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public DOType getParentDOType() {
-        if( eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE ) return null;
+        if( eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE ) {
+            return null;
+        }
         return ( DOType ) eInternalContainer();
     }
 
@@ -235,20 +239,26 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     public void setParentDOType( DOType newParentDOType ) {
         if( newParentDOType != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE && newParentDOType != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDOType ) )
+            if( EcoreUtil.isAncestor( this, newParentDOType ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDOType != null )
+            }
+            if( newParentDOType != null ) {
                 msgs = ( ( InternalEObject ) newParentDOType ).eInverseAdd( this, SclPackage.DO_TYPE__SDO, DOType.class,
                         msgs );
+            }
             msgs = basicSetParentDOType( newParentDOType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SDO__PARENT_DO_TYPE, newParentDOType,
                     newParentDOType ) );
+        }
     }
 
     /**
@@ -272,7 +282,9 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public void unsetReferredBySDI() {
-        if( referredBySDI != null ) ( ( InternalEList.Unsettable< ? > ) referredBySDI ).unset();
+        if( referredBySDI != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredBySDI ).unset();
+        }
     }
 
     /**
@@ -295,8 +307,9 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SDO__PARENT_DO_TYPE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDOType( ( DOType ) otherEnd, msgs );
         case SclPackage.SDO__REFERRED_BY_SDI:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredBySDI() )
@@ -462,14 +475,18 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (count: " );
-        if( countESet )
+        if( countESet ) {
             result.append( count );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

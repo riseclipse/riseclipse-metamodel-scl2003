@@ -407,9 +407,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         bType = newBType;
         boolean oldBTypeESet = bTypeESet;
         bTypeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE, oldBType,
                     bType, !oldBTypeESet ) );
+        }
     }
 
     /**
@@ -423,9 +424,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldBTypeESet = bTypeESet;
         bType = BTYPE_EDEFAULT;
         bTypeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE,
                     oldBType, BTYPE_EDEFAULT, oldBTypeESet ) );
+        }
     }
 
     /**
@@ -459,9 +461,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         count = newCount;
         boolean oldCountESet = countESet;
         countESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT, oldCount,
                     count, !oldCountESet ) );
+        }
     }
 
     /**
@@ -475,9 +478,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldCountESet = countESet;
         count = COUNT_EDEFAULT;
         countESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT,
                     oldCount, COUNT_EDEFAULT, oldCountESet ) );
+        }
     }
 
     /**
@@ -511,9 +515,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         sAddr = newSAddr;
         boolean oldSAddrESet = sAddrESet;
         sAddrESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR, oldSAddr,
                     sAddr, !oldSAddrESet ) );
+        }
     }
 
     /**
@@ -527,9 +532,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldSAddrESet = sAddrESet;
         sAddr = SADDR_EDEFAULT;
         sAddrESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR,
                     oldSAddr, SADDR_EDEFAULT, oldSAddrESet ) );
+        }
     }
 
     /**
@@ -563,9 +569,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE, oldType,
                     type, !oldTypeESet ) );
+        }
     }
 
     /**
@@ -579,9 +586,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE, oldType,
                     TYPE_EDEFAULT, oldTypeESet ) );
+        }
     }
 
     /**
@@ -615,9 +623,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         valImport = newValImport;
         boolean oldValImportESet = valImportESet;
         valImportESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT,
                     oldValImport, valImport, !oldValImportESet ) );
+        }
     }
 
     /**
@@ -631,9 +640,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldValImportESet = valImportESet;
         valImport = VAL_IMPORT_EDEFAULT;
         valImportESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT,
                     oldValImport, VAL_IMPORT_EDEFAULT, oldValImportESet ) );
+        }
     }
 
     /**
@@ -667,9 +677,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
         boolean oldValKindESet = valKindESet;
         valKindESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND,
                     oldValKind, valKind, !oldValKindESet ) );
+        }
     }
 
     /**
@@ -683,9 +694,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldValKindESet = valKindESet;
         valKind = VAL_KIND_EDEFAULT;
         valKindESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND,
                     oldValKind, VAL_KIND_EDEFAULT, oldValKindESet ) );
+        }
     }
 
     /**
@@ -722,10 +734,12 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, oldRefersToEnumType, newRefersToEnumType,
                     !oldRefersToEnumTypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -739,22 +753,27 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     public void setRefersToEnumType( EnumType newRefersToEnumType ) {
         if( newRefersToEnumType != refersToEnumType ) {
             NotificationChain msgs = null;
-            if( refersToEnumType != null )
+            if( refersToEnumType != null ) {
                 msgs = ( ( InternalEObject ) refersToEnumType ).eInverseRemove( this,
                         SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
-            if( newRefersToEnumType != null )
+            }
+            if( newRefersToEnumType != null ) {
                 msgs = ( ( InternalEObject ) newRefersToEnumType ).eInverseAdd( this,
                         SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
+            }
             msgs = basicSetRefersToEnumType( newRefersToEnumType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToEnumTypeESet = refersToEnumTypeESet;
             refersToEnumTypeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, newRefersToEnumType,
                         newRefersToEnumType, !oldRefersToEnumTypeESet ) );
+            }
         }
     }
 
@@ -772,10 +791,12 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, oldRefersToEnumType, null,
                     oldRefersToEnumTypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -792,15 +813,18 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             msgs = ( ( InternalEObject ) refersToEnumType ).eInverseRemove( this,
                     SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
             msgs = basicUnsetRefersToEnumType( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToEnumTypeESet = refersToEnumTypeESet;
             refersToEnumTypeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, null, null,
                         oldRefersToEnumTypeESet ) );
+            }
         }
     }
 
@@ -835,7 +859,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetVal() {
-        if( val != null ) ( ( InternalEList.Unsettable< ? > ) val ).unset();
+        if( val != null ) {
+            ( ( InternalEList.Unsettable< ? > ) val ).unset();
+        }
     }
 
     /**
@@ -872,10 +898,12 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, oldRefersToDAType, newRefersToDAType,
                     !oldRefersToDATypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -889,22 +917,27 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     public void setRefersToDAType( DAType newRefersToDAType ) {
         if( newRefersToDAType != refersToDAType ) {
             NotificationChain msgs = null;
-            if( refersToDAType != null )
+            if( refersToDAType != null ) {
                 msgs = ( ( InternalEObject ) refersToDAType ).eInverseRemove( this,
                         SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
-            if( newRefersToDAType != null )
+            }
+            if( newRefersToDAType != null ) {
                 msgs = ( ( InternalEObject ) newRefersToDAType ).eInverseAdd( this,
                         SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
+            }
             msgs = basicSetRefersToDAType( newRefersToDAType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToDATypeESet = refersToDATypeESet;
             refersToDATypeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, newRefersToDAType, newRefersToDAType,
                         !oldRefersToDATypeESet ) );
+            }
         }
     }
 
@@ -922,10 +955,12 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, oldRefersToDAType, null,
                     oldRefersToDATypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -942,14 +977,17 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             msgs = ( ( InternalEObject ) refersToDAType ).eInverseRemove( this,
                     SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
             msgs = basicUnsetRefersToDAType( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToDATypeESet = refersToDATypeESet;
             refersToDATypeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, null, null, oldRefersToDATypeESet ) );
+            }
         }
     }
 
@@ -985,7 +1023,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredByFCDA() {
-        if( referredByFCDA != null ) ( ( InternalEList.Unsettable< ? > ) referredByFCDA ).unset();
+        if( referredByFCDA != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByFCDA ).unset();
+        }
     }
 
     /**
@@ -1020,7 +1060,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredByExtRef() {
-        if( referredByExtRef != null ) ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).unset();
+        if( referredByExtRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).unset();
+        }
     }
 
     /**
@@ -1054,9 +1096,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME, oldName,
                     name, !oldNameESet ) );
+        }
     }
 
     /**
@@ -1070,9 +1113,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME, oldName,
                     NAME_EDEFAULT, oldNameESet ) );
+        }
     }
 
     /**
@@ -1107,7 +1151,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredByDAI() {
-        if( referredByDAI != null ) ( ( InternalEList.Unsettable< ? > ) referredByDAI ).unset();
+        if( referredByDAI != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByDAI ).unset();
+        }
     }
 
     /**
@@ -1142,7 +1188,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredBySDI() {
-        if( referredBySDI != null ) ( ( InternalEList.Unsettable< ? > ) referredBySDI ).unset();
+        if( referredBySDI != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredBySDI ).unset();
+        }
     }
 
     /**
@@ -1165,16 +1213,18 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-            if( refersToEnumType != null )
+            if( refersToEnumType != null ) {
                 msgs = ( ( InternalEObject ) refersToEnumType ).eInverseRemove( this,
                         SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
+            }
             return basicSetRefersToEnumType( ( EnumType ) otherEnd, msgs );
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getVal() ).basicAdd( otherEnd, msgs );
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-            if( refersToDAType != null )
+            if( refersToDAType != null ) {
                 msgs = ( ( InternalEObject ) refersToDAType ).eInverseRemove( this,
                         SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
+            }
             return basicSetRefersToDAType( ( DAType ) otherEnd, msgs );
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByFCDA() )
@@ -1419,51 +1469,68 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (bType: " );
-        if( bTypeESet )
+        if( bTypeESet ) {
             result.append( bType );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", count: " );
-        if( countESet )
+        if( countESet ) {
             result.append( count );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", sAddr: " );
-        if( sAddrESet )
+        if( sAddrESet ) {
             result.append( sAddr );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", valImport: " );
-        if( valImportESet )
+        if( valImportESet ) {
             result.append( valImport );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", valKind: " );
-        if( valKindESet )
+        if( valKindESet ) {
             result.append( valKind );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "AbstractDataAttributeImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                "AbstractDataAttributeImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );

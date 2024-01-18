@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -199,9 +198,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         cbName = newCbName;
         boolean oldCbNameESet = cbNameESet;
         cbNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_BLOCK__CB_NAME, oldCbName,
                     cbName, !oldCbNameESet ) );
+        }
     }
 
     /**
@@ -215,9 +215,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         boolean oldCbNameESet = cbNameESet;
         cbName = CB_NAME_EDEFAULT;
         cbNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_BLOCK__CB_NAME, oldCbName,
                     CB_NAME_EDEFAULT, oldCbNameESet ) );
+        }
     }
 
     /**
@@ -251,9 +252,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_BLOCK__LD_INST, oldLdInst,
                     ldInst, !oldLdInstESet ) );
+        }
     }
 
     /**
@@ -267,9 +269,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_BLOCK__LD_INST, oldLdInst,
                     LD_INST_EDEFAULT, oldLdInstESet ) );
+        }
     }
 
     /**
@@ -305,10 +308,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.CONTROL_BLOCK__ADDRESS, oldAddress, newAddress, !oldAddressESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -322,21 +327,26 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     public void setAddress( Address newAddress ) {
         if( newAddress != address ) {
             NotificationChain msgs = null;
-            if( address != null )
+            if( address != null ) {
                 msgs = ( ( InternalEObject ) address ).eInverseRemove( this, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK,
                         Address.class, msgs );
-            if( newAddress != null )
+            }
+            if( newAddress != null ) {
                 msgs = ( ( InternalEObject ) newAddress ).eInverseAdd( this, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK,
                         Address.class, msgs );
+            }
             msgs = basicSetAddress( newAddress, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldAddressESet = addressESet;
             addressESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_BLOCK__ADDRESS, newAddress,
                         newAddress, !oldAddressESet ) );
+            }
         }
     }
 
@@ -353,10 +363,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.CONTROL_BLOCK__ADDRESS, oldAddress, null, oldAddressESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -373,14 +385,17 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             msgs = ( ( InternalEObject ) address ).eInverseRemove( this, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK,
                     Address.class, msgs );
             msgs = basicUnsetAddress( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldAddressESet = addressESet;
             addressESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_BLOCK__ADDRESS, null, null,
                         oldAddressESet ) );
+            }
         }
     }
 
@@ -419,10 +434,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME, oldRefersToControlWithIEDName,
                     newRefersToControlWithIEDName, !oldRefersToControlWithIEDNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -436,22 +453,27 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     public void setRefersToControlWithIEDName( ControlWithIEDName newRefersToControlWithIEDName ) {
         if( newRefersToControlWithIEDName != refersToControlWithIEDName ) {
             NotificationChain msgs = null;
-            if( refersToControlWithIEDName != null )
+            if( refersToControlWithIEDName != null ) {
                 msgs = ( ( InternalEObject ) refersToControlWithIEDName ).eInverseRemove( this,
                         SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, ControlWithIEDName.class, msgs );
-            if( newRefersToControlWithIEDName != null )
+            }
+            if( newRefersToControlWithIEDName != null ) {
                 msgs = ( ( InternalEObject ) newRefersToControlWithIEDName ).eInverseAdd( this,
                         SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, ControlWithIEDName.class, msgs );
+            }
             msgs = basicSetRefersToControlWithIEDName( newRefersToControlWithIEDName, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToControlWithIEDNameESet = refersToControlWithIEDNameESet;
             refersToControlWithIEDNameESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME, newRefersToControlWithIEDName,
                         newRefersToControlWithIEDName, !oldRefersToControlWithIEDNameESet ) );
+            }
         }
     }
 
@@ -469,10 +491,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME, oldRefersToControlWithIEDName, null,
                     oldRefersToControlWithIEDNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -489,15 +513,18 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             msgs = ( ( InternalEObject ) refersToControlWithIEDName ).eInverseRemove( this,
                     SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, ControlWithIEDName.class, msgs );
             msgs = basicUnsetRefersToControlWithIEDName( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToControlWithIEDNameESet = refersToControlWithIEDNameESet;
             refersToControlWithIEDNameESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME, null, null,
                         oldRefersToControlWithIEDNameESet ) );
+            }
         }
     }
 
@@ -532,14 +559,16 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.CONTROL_BLOCK__ADDRESS:
-            if( address != null )
+            if( address != null ) {
                 msgs = ( ( InternalEObject ) address ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_BLOCK__ADDRESS, null, msgs );
+            }
             return basicSetAddress( ( Address ) otherEnd, msgs );
         case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
-            if( refersToControlWithIEDName != null )
+            if( refersToControlWithIEDName != null ) {
                 msgs = ( ( InternalEObject ) refersToControlWithIEDName ).eInverseRemove( this,
                         SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, ControlWithIEDName.class, msgs );
+            }
             return basicSetRefersToControlWithIEDName( ( ControlWithIEDName ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -670,26 +699,33 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (cbName: " );
-        if( cbNameESet )
+        if( cbNameESet ) {
             result.append( cbName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldInst: " );
-        if( ldInstESet )
+        if( ldInstESet ) {
             result.append( ldInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
-        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "ControlBlockImpl.doBuildExplicitLinks()" );
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                "ControlBlockImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
@@ -717,9 +753,13 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         }
 
         // No error or warning messages here: if this happens, error should have been detected before
-        if( ( getParentConnectedAP() == null ) || ( getParentConnectedAP().getRefersToAccessPoint() == null ) ) return;
+        if( ( getParentConnectedAP() == null ) || ( getParentConnectedAP().getRefersToAccessPoint() == null ) ) {
+            return;
+        }
         IED ied = getParentConnectedAP().getRefersToAccessPoint().getParentIED();
-        if( ied == null ) return;
+        if( ied == null ) {
+            return;
+        }
 
         // find an LDevice with
         //   LDevice.inst == ControlBlock.ldInst

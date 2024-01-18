@@ -181,9 +181,10 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         transient_ = newTransient;
         boolean oldTransientESet = transientESet;
         transientESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO__TRANSIENT, oldTransient, transient_,
                     !oldTransientESet ) );
+        }
     }
 
     /**
@@ -197,9 +198,10 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         boolean oldTransientESet = transientESet;
         transient_ = TRANSIENT_EDEFAULT;
         transientESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO__TRANSIENT, oldTransient,
                     TRANSIENT_EDEFAULT, oldTransientESet ) );
+        }
     }
 
     /**
@@ -219,7 +221,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public LNodeType getParentLNodeType() {
-        if( eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE ) return null;
+        if( eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE ) {
+            return null;
+        }
         return ( LNodeType ) eInternalContainer();
     }
 
@@ -242,20 +246,26 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
     public void setParentLNodeType( LNodeType newParentLNodeType ) {
         if( newParentLNodeType != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE && newParentLNodeType != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLNodeType ) )
+            if( EcoreUtil.isAncestor( this, newParentLNodeType ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLNodeType != null )
+            }
+            if( newParentLNodeType != null ) {
                 msgs = ( ( InternalEObject ) newParentLNodeType ).eInverseAdd( this, SclPackage.LNODE_TYPE__DO,
                         LNodeType.class, msgs );
+            }
             msgs = basicSetParentLNodeType( newParentLNodeType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO__PARENT_LNODE_TYPE,
                     newParentLNodeType, newParentLNodeType ) );
+        }
     }
 
     /**
@@ -279,9 +289,10 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         accessControl = newAccessControl;
         boolean oldAccessControlESet = accessControlESet;
         accessControlESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO__ACCESS_CONTROL, oldAccessControl,
                     accessControl, !oldAccessControlESet ) );
+        }
     }
 
     /**
@@ -295,9 +306,10 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         boolean oldAccessControlESet = accessControlESet;
         accessControl = ACCESS_CONTROL_EDEFAULT;
         accessControlESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO__ACCESS_CONTROL, oldAccessControl,
                     ACCESS_CONTROL_EDEFAULT, oldAccessControlESet ) );
+        }
     }
 
     /**
@@ -331,7 +343,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public void unsetReferredByDOI() {
-        if( referredByDOI != null ) ( ( InternalEList.Unsettable< ? > ) referredByDOI ).unset();
+        if( referredByDOI != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByDOI ).unset();
+        }
     }
 
     /**
@@ -354,8 +368,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.DO__PARENT_LNODE_TYPE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLNodeType( ( LNodeType ) otherEnd, msgs );
         case SclPackage.DO__REFERRED_BY_DOI:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByDOI() )
@@ -531,19 +546,25 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (transient: " );
-        if( transientESet )
+        if( transientESet ) {
             result.append( transient_ );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", accessControl: " );
-        if( accessControlESet )
+        if( accessControlESet ) {
             result.append( accessControl );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -570,7 +591,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         }
         // No error or warning message here: if this happens, error should have been detected before
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
-        if( dtt == null ) return;
+        if( dtt == null ) {
+            return;
+        }
 
         List< DOType > res = dtt
                 .getDOType()
@@ -600,7 +623,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
 
         if( getRefersToDOType() != null ) {
             String ns = getRefersToDOType().getNamespace();
-            if( ns != null ) return ns;
+            if( ns != null ) {
+                return ns;
+            }
         }
 
         if( getParentLNodeType() != null ) {

@@ -350,9 +350,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         inst = newInst;
         boolean oldInstESet = instESet;
         instESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__INST, oldInst, inst,
                     !oldInstESet ) );
+        }
     }
 
     /**
@@ -366,9 +367,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         boolean oldInstESet = instESet;
         inst = INST_EDEFAULT;
         instESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__INST, oldInst, INST_EDEFAULT,
                     oldInstESet ) );
+        }
     }
 
     /**
@@ -402,9 +404,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -418,9 +421,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -454,9 +458,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         lnType = newLnType;
         boolean oldLnTypeESet = lnTypeESet;
         lnTypeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__LN_TYPE, oldLnType, lnType,
                     !oldLnTypeESet ) );
+        }
     }
 
     /**
@@ -470,9 +475,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         boolean oldLnTypeESet = lnTypeESet;
         lnType = LN_TYPE_EDEFAULT;
         lnTypeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__LN_TYPE, oldLnType,
                     LN_TYPE_EDEFAULT, oldLnTypeESet ) );
+        }
     }
 
     /**
@@ -509,10 +515,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, newRefersToLNodeType,
                     !oldRefersToLNodeTypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -526,21 +534,26 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     public void setRefersToLNodeType( LNodeType newRefersToLNodeType ) {
         if( newRefersToLNodeType != refersToLNodeType ) {
             NotificationChain msgs = null;
-            if( refersToLNodeType != null )
+            if( refersToLNodeType != null ) {
                 msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
                         SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
-            if( newRefersToLNodeType != null )
+            }
+            if( newRefersToLNodeType != null ) {
                 msgs = ( ( InternalEObject ) newRefersToLNodeType ).eInverseAdd( this,
                         SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
+            }
             msgs = basicSetRefersToLNodeType( newRefersToLNodeType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
             refersToLNodeTypeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE,
                         newRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet ) );
+            }
         }
     }
 
@@ -557,10 +570,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, null, oldRefersToLNodeTypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -577,14 +592,17 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
                     SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
             msgs = basicUnsetRefersToLNodeType( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
             refersToLNodeTypeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, null,
                         null, oldRefersToLNodeTypeESet ) );
+            }
         }
     }
 
@@ -621,10 +639,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__INPUTS,
                     oldInputs, newInputs, !oldInputsESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -638,21 +658,26 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     public void setInputs( Inputs newInputs ) {
         if( newInputs != inputs ) {
             NotificationChain msgs = null;
-            if( inputs != null )
+            if( inputs != null ) {
                 msgs = ( ( InternalEObject ) inputs ).eInverseRemove( this, SclPackage.INPUTS__PARENT_ANY_LN,
                         Inputs.class, msgs );
-            if( newInputs != null )
+            }
+            if( newInputs != null ) {
                 msgs = ( ( InternalEObject ) newInputs ).eInverseAdd( this, SclPackage.INPUTS__PARENT_ANY_LN,
                         Inputs.class, msgs );
+            }
             msgs = basicSetInputs( newInputs, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldInputsESet = inputsESet;
             inputsESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__INPUTS, newInputs, newInputs,
                         !oldInputsESet ) );
+            }
         }
     }
 
@@ -669,10 +694,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__INPUTS,
                     oldInputs, null, oldInputsESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -689,14 +716,17 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             msgs = ( ( InternalEObject ) inputs ).eInverseRemove( this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class,
                     msgs );
             msgs = basicUnsetInputs( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldInputsESet = inputsESet;
             inputsESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__INPUTS, null, null,
                         oldInputsESet ) );
+            }
         }
     }
 
@@ -731,7 +761,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetLog() {
-        if( log != null ) ( ( InternalEList.Unsettable< ? > ) log ).unset();
+        if( log != null ) {
+            ( ( InternalEList.Unsettable< ? > ) log ).unset();
+        }
     }
 
     /**
@@ -765,7 +797,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetDOI() {
-        if( doi != null ) ( ( InternalEList.Unsettable< ? > ) doi ).unset();
+        if( doi != null ) {
+            ( ( InternalEList.Unsettable< ? > ) doi ).unset();
+        }
     }
 
     /**
@@ -799,7 +833,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReportControl() {
-        if( reportControl != null ) ( ( InternalEList.Unsettable< ? > ) reportControl ).unset();
+        if( reportControl != null ) {
+            ( ( InternalEList.Unsettable< ? > ) reportControl ).unset();
+        }
     }
 
     /**
@@ -833,7 +869,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetLogControl() {
-        if( logControl != null ) ( ( InternalEList.Unsettable< ? > ) logControl ).unset();
+        if( logControl != null ) {
+            ( ( InternalEList.Unsettable< ? > ) logControl ).unset();
+        }
     }
 
     /**
@@ -867,7 +905,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetDataSet() {
-        if( dataSet != null ) ( ( InternalEList.Unsettable< ? > ) dataSet ).unset();
+        if( dataSet != null ) {
+            ( ( InternalEList.Unsettable< ? > ) dataSet ).unset();
+        }
     }
 
     /**
@@ -901,7 +941,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByClientLN() {
-        if( referredByClientLN != null ) ( ( InternalEList.Unsettable< ? > ) referredByClientLN ).unset();
+        if( referredByClientLN != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByClientLN ).unset();
+        }
     }
 
     /**
@@ -935,7 +977,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByAssociation() {
-        if( referredByAssociation != null ) ( ( InternalEList.Unsettable< ? > ) referredByAssociation ).unset();
+        if( referredByAssociation != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByAssociation ).unset();
+        }
     }
 
     /**
@@ -969,7 +1013,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByIEDName() {
-        if( referredByIEDName != null ) ( ( InternalEList.Unsettable< ? > ) referredByIEDName ).unset();
+        if( referredByIEDName != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByIEDName ).unset();
+        }
     }
 
     /**
@@ -1003,7 +1049,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByLNode() {
-        if( referredByLNode != null ) ( ( InternalEList.Unsettable< ? > ) referredByLNode ).unset();
+        if( referredByLNode != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByLNode ).unset();
+        }
     }
 
     /**
@@ -1089,14 +1137,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-            if( refersToLNodeType != null )
+            if( refersToLNodeType != null ) {
                 msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
                         SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
+            }
             return basicSetRefersToLNodeType( ( LNodeType ) otherEnd, msgs );
         case SclPackage.ANY_LN__INPUTS:
-            if( inputs != null )
+            if( inputs != null ) {
                 msgs = ( ( InternalEObject ) inputs ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.ANY_LN__INPUTS, null, msgs );
+            }
             return basicSetInputs( ( Inputs ) otherEnd, msgs );
         case SclPackage.ANY_LN__LOG:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLog() ).basicAdd( otherEnd, msgs );
@@ -1420,24 +1470,32 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (inst: " );
-        if( instESet )
+        if( instESet ) {
             result.append( inst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnType: " );
-        if( lnTypeESet )
+        if( lnTypeESet ) {
             result.append( lnType );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

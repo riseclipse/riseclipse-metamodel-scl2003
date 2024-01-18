@@ -27,7 +27,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -361,9 +360,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         daName = newDaName;
         boolean oldDaNameESet = daNameESet;
         daNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__DA_NAME, oldDaName, daName,
                     !oldDaNameESet ) );
+        }
     }
 
     /**
@@ -377,9 +377,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldDaNameESet = daNameESet;
         daName = DA_NAME_EDEFAULT;
         daNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__DA_NAME, oldDaName,
                     DA_NAME_EDEFAULT, oldDaNameESet ) );
+        }
     }
 
     /**
@@ -413,9 +414,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         doName = newDoName;
         boolean oldDoNameESet = doNameESet;
         doNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__DO_NAME, oldDoName, doName,
                     !oldDoNameESet ) );
+        }
     }
 
     /**
@@ -429,9 +431,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldDoNameESet = doNameESet;
         doName = DO_NAME_EDEFAULT;
         doNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__DO_NAME, oldDoName,
                     DO_NAME_EDEFAULT, oldDoNameESet ) );
+        }
     }
 
     /**
@@ -465,8 +468,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         fc = newFc == null ? FC_EDEFAULT : newFc;
         boolean oldFcESet = fcESet;
         fcESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__FC, oldFc, fc, !oldFcESet ) );
+        }
     }
 
     /**
@@ -480,9 +484,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldFcESet = fcESet;
         fc = FC_EDEFAULT;
         fcESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__FC, oldFc, FC_EDEFAULT,
                     oldFcESet ) );
+        }
     }
 
     /**
@@ -516,8 +521,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         ix = newIx;
         boolean oldIxESet = ixESet;
         ixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__IX, oldIx, ix, !oldIxESet ) );
+        }
     }
 
     /**
@@ -531,9 +537,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldIxESet = ixESet;
         ix = IX_EDEFAULT;
         ixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__IX, oldIx, IX_EDEFAULT,
                     oldIxESet ) );
+        }
     }
 
     /**
@@ -567,9 +574,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LD_INST, oldLdInst, ldInst,
                     !oldLdInstESet ) );
+        }
     }
 
     /**
@@ -583,9 +591,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__LD_INST, oldLdInst,
                     LD_INST_EDEFAULT, oldLdInstESet ) );
+        }
     }
 
     /**
@@ -619,9 +628,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -635,9 +645,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -671,9 +682,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LN_INST, oldLnInst, lnInst,
                     !oldLnInstESet ) );
+        }
     }
 
     /**
@@ -687,9 +699,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__LN_INST, oldLnInst,
                     LN_INST_EDEFAULT, oldLnInstESet ) );
+        }
     }
 
     /**
@@ -723,9 +736,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__PREFIX, oldPrefix, prefix,
                     !oldPrefixESet ) );
+        }
     }
 
     /**
@@ -739,9 +753,10 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__PREFIX, oldPrefix,
                     PREFIX_EDEFAULT, oldPrefixESet ) );
+        }
     }
 
     /**
@@ -761,7 +776,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public DataSet getParentDataSet() {
-        if( eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET ) return null;
+        if( eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET ) {
+            return null;
+        }
         return ( DataSet ) eInternalContainer();
     }
 
@@ -784,20 +801,26 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
     public void setParentDataSet( DataSet newParentDataSet ) {
         if( newParentDataSet != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET && newParentDataSet != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDataSet ) )
+            if( EcoreUtil.isAncestor( this, newParentDataSet ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDataSet != null )
+            }
+            if( newParentDataSet != null ) {
                 msgs = ( ( InternalEObject ) newParentDataSet ).eInverseAdd( this, SclPackage.DATA_SET__FCDA,
                         DataSet.class, msgs );
+            }
             msgs = basicSetParentDataSet( newParentDataSet, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__PARENT_DATA_SET, newParentDataSet,
                     newParentDataSet ) );
+        }
     }
 
     /**
@@ -822,8 +845,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public void unsetRefersToAbstractDataAttribute() {
-        if( refersToAbstractDataAttribute != null )
+        if( refersToAbstractDataAttribute != null ) {
             ( ( InternalEList.Unsettable< ? > ) refersToAbstractDataAttribute ).unset();
+        }
     }
 
     /**
@@ -847,8 +871,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.FCDA__PARENT_DATA_SET:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDataSet( ( DataSet ) otherEnd, msgs );
         case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getRefersToAbstractDataAttribute() )
@@ -1044,49 +1069,67 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (daName: " );
-        if( daNameESet )
+        if( daNameESet ) {
             result.append( daName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", doName: " );
-        if( doNameESet )
+        if( doNameESet ) {
             result.append( doName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", fc: " );
-        if( fcESet )
+        if( fcESet ) {
             result.append( fc );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ix: " );
-        if( ixESet )
+        if( ixESet ) {
             result.append( ix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldInst: " );
-        if( ldInstESet )
+        if( ldInstESet ) {
             result.append( ldInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnInst: " );
-        if( lnInstESet )
+        if( lnInstESet ) {
             result.append( lnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prefix: " );
-        if( prefixESet )
+        if( prefixESet ) {
             result.append( prefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -1164,7 +1207,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         String mess = " LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
+            if( getPrefix() != "" ) {
+                mess += ", prefix = " + getPrefix();
+            }
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
@@ -1177,7 +1222,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                          messagePrefix, "found ", mess, " on line ", anyLN.getLeft().getLineNumber() );
         anyLN.getLeft().buildExplicitLinks( console, false );
 
-        if( anyLN.getLeft().getRefersToLNodeType() == null ) return;
+        if( anyLN.getLeft().getRefersToLNodeType() == null ) {
+            return;
+        }
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found LNodeType on line ",
                          anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
@@ -1212,7 +1259,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         res1.get( 0 ).buildExplicitLinks( console, false );
         DOType doType = res1.get( 0 ).getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
-        if( doType == null ) return;
+        if( doType == null ) {
+            return;
+        }
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found DOType on line ", doType.getLineNumber() );
 
@@ -1237,7 +1286,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
             res2.get( 0 ).buildExplicitLinks( console, false );
             doType = res2.get( 0 ).getRefersToDOType();
-            if( doType == null ) return;
+            if( doType == null ) {
+                return;
+            }
             console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found DOType on line ", doType.getLineNumber() );
         }
@@ -1264,7 +1315,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                                          messagePrefix, "found SDO ( name = ", name, " ) in DOType on line ",
                                          res3.get( 0 ).getLineNumber() );
                         doType = res3.get( 0 ).getRefersToDOType();
-                        if( doType == null ) return;
+                        if( doType == null ) {
+                            return;
+                        }
                         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                                          messagePrefix, "found DOType on line ", doType.getLineNumber() );
                         continue;
@@ -1343,7 +1396,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         }
 
         // All attributes with functional characteristic given by fc are selected.
-        if( getFc() == null ) return;
+        if( getFc() == null ) {
+            return;
+        }
 
         getRefersToAbstractDataAttribute().addAll( getAllDAInDOTypeWithFC( doType, getFc(), console ));
 
