@@ -159,13 +159,25 @@ public class DATypeItemProvider extends IDNamingItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( DAType ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_DAType_type" )
-                : getString( "_UI_DAType_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_DAType_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_IDNaming_id_feature" ));
+        s.append( "=\"" );
+        s.append((( DAType ) object ).getId());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( DAType ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**

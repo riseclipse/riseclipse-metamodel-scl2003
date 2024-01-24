@@ -125,13 +125,13 @@ public class ValItemProvider
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( Val ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_Val_type" )
-                : getString( "_UI_Val_type" ) + " " + label;
+        String value = ( ( Val ) object ).getValue();
+        return value == null || value.length() == 0 ? getString( "_UI_Val_type" )
+                : getString( "_UI_Val_type" ) + " " + value;
     }
 
     /**
