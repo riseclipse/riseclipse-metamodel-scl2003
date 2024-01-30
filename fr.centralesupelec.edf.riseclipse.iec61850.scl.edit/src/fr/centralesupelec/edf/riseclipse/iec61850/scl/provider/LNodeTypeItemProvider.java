@@ -227,13 +227,25 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( LNodeType ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_LNodeType_type" )
-                : getString( "_UI_LNodeType_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_LNodeType_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_IDNaming_id_feature" ));
+        s.append( "=\"" );
+        s.append((( LNodeType ) object ).getId());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( LNodeType ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**

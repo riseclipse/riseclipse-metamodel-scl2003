@@ -1378,7 +1378,9 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     public static SclPackage init() {
-        if( isInited ) return ( SclPackage ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI );
+        if( isInited ) {
+            return ( SclPackage ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI );
+        }
 
         // Obtain or create and register package
         Object registeredSclPackage = EPackage.Registry.INSTANCE.get( eNS_URI );
@@ -10996,13 +10998,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     private boolean isLoaded = false;
 
     /**
-     * Laods the package and any sub-packages from their serialized form.
+     * Loads the package and any sub-packages from their serialized form.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     public void loadPackage() {
-        if( isLoaded ) return;
+        if( isLoaded ) {
+            return;
+        }
         isLoaded = true;
 
         URL url = getClass().getResource( packageFilename );
@@ -11035,7 +11039,9 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     public void fixPackageContents() {
-        if( isFixed ) return;
+        if( isFixed ) {
+            return;
+        }
         isFixed = true;
         fixEClassifiers();
     }

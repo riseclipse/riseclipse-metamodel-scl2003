@@ -242,8 +242,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         ix = newIx;
         boolean oldIxESet = ixESet;
         ixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__IX, oldIx, ix, !oldIxESet ) );
+        }
     }
 
     /**
@@ -257,9 +258,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         boolean oldIxESet = ixESet;
         ix = IX_EDEFAULT;
         ixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__IX, oldIx, IX_EDEFAULT,
                     oldIxESet ) );
+        }
     }
 
     /**
@@ -279,7 +281,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if( eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN ) return null;
+        if( eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN ) {
+            return null;
+        }
         return ( AnyLN ) eInternalContainer();
     }
 
@@ -302,20 +306,26 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     public void setParentAnyLN( AnyLN newParentAnyLN ) {
         if( newParentAnyLN != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN && newParentAnyLN != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAnyLN != null )
+            }
+            if( newParentAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__DOI, AnyLN.class,
                         msgs );
+            }
             msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__PARENT_ANY_LN, newParentAnyLN,
                     newParentAnyLN ) );
+        }
     }
 
     /**
@@ -339,7 +349,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public void unsetDAI() {
-        if( dai != null ) ( ( InternalEList.Unsettable< ? > ) dai ).unset();
+        if( dai != null ) {
+            ( ( InternalEList.Unsettable< ? > ) dai ).unset();
+        }
     }
 
     /**
@@ -373,7 +385,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public void unsetSDI() {
-        if( sdi != null ) ( ( InternalEList.Unsettable< ? > ) sdi ).unset();
+        if( sdi != null ) {
+            ( ( InternalEList.Unsettable< ? > ) sdi ).unset();
+        }
     }
 
     /**
@@ -407,9 +421,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         accessControl = newAccessControl;
         boolean oldAccessControlESet = accessControlESet;
         accessControlESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl,
                     accessControl, !oldAccessControlESet ) );
+        }
     }
 
     /**
@@ -423,9 +438,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         boolean oldAccessControlESet = accessControlESet;
         accessControl = ACCESS_CONTROL_EDEFAULT;
         accessControlESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl,
                     ACCESS_CONTROL_EDEFAULT, oldAccessControlESet ) );
+        }
     }
 
     /**
@@ -459,9 +475,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -475,9 +492,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -513,10 +531,12 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, newRefersToDO, !oldRefersToDOESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -530,21 +550,26 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     public void setRefersToDO( DO newRefersToDO ) {
         if( newRefersToDO != refersToDO ) {
             NotificationChain msgs = null;
-            if( refersToDO != null )
+            if( refersToDO != null ) {
                 msgs = ( ( InternalEObject ) refersToDO ).eInverseRemove( this, SclPackage.DO__REFERRED_BY_DOI,
                         DO.class, msgs );
-            if( newRefersToDO != null )
+            }
+            if( newRefersToDO != null ) {
                 msgs = ( ( InternalEObject ) newRefersToDO ).eInverseAdd( this, SclPackage.DO__REFERRED_BY_DOI,
                         DO.class, msgs );
+            }
             msgs = basicSetRefersToDO( newRefersToDO, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToDOESet = refersToDOESet;
             refersToDOESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__REFERS_TO_DO, newRefersToDO,
                         newRefersToDO, !oldRefersToDOESet ) );
+            }
         }
     }
 
@@ -561,10 +586,12 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, null, oldRefersToDOESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -581,14 +608,17 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             msgs = ( ( InternalEObject ) refersToDO ).eInverseRemove( this, SclPackage.DO__REFERRED_BY_DOI, DO.class,
                     msgs );
             msgs = basicUnsetRefersToDO( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToDOESet = refersToDOESet;
             refersToDOESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__REFERS_TO_DO, null, null,
                         oldRefersToDOESet ) );
+            }
         }
     }
 
@@ -668,17 +698,19 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.DOI__PARENT_ANY_LN:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.DOI__DAI:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getDAI() ).basicAdd( otherEnd, msgs );
         case SclPackage.DOI__SDI:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSDI() ).basicAdd( otherEnd, msgs );
         case SclPackage.DOI__REFERS_TO_DO:
-            if( refersToDO != null )
+            if( refersToDO != null ) {
                 msgs = ( ( InternalEObject ) refersToDO ).eInverseRemove( this, SclPackage.DO__REFERRED_BY_DOI,
                         DO.class, msgs );
+            }
             return basicSetRefersToDO( ( DO ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -886,24 +918,32 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (ix: " );
-        if( ixESet )
+        if( ixESet ) {
             result.append( ix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", accessControl: " );
-        if( accessControlESet )
+        if( accessControlESet ) {
             result.append( accessControl );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -924,7 +964,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         }
 
         // No error or warning message here: if this happens, error should have been detected before
-        if( ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) return;
+        if( ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) {
+            return;
+        }
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LNodeType on line ",
                 getParentAnyLN().getRefersToLNodeType().getLineNumber() );

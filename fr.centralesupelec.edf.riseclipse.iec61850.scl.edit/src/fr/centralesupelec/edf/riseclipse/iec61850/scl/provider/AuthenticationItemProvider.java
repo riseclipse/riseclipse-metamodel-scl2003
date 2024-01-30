@@ -196,13 +196,11 @@ public class AuthenticationItemProvider
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( Authentication ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_Authentication_type" )
-                : getString( "_UI_Authentication_type" ) + " " + label;
+        return getString( "_UI_Authentication_type" );
     }
 
     /**

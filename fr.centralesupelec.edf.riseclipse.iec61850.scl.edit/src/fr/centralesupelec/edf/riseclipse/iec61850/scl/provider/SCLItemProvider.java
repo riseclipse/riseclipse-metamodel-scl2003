@@ -184,13 +184,11 @@ public class SCLItemProvider extends BaseElementItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( SCL ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_SCL_type" )
-                : getString( "_UI_SCL_type" ) + " " + label;
+        return getString( "_UI_SCL_type" );
     }
 
     /**

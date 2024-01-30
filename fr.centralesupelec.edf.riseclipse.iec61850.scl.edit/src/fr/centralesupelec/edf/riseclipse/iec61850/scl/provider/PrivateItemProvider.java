@@ -150,13 +150,25 @@ public class PrivateItemProvider
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( Private ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_Private_type" )
-                : getString( "_UI_Private_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_Private_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_Private_type_feature" ));
+        s.append( "=\"" );
+        s.append((( Private ) object ).getType());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( Private ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**

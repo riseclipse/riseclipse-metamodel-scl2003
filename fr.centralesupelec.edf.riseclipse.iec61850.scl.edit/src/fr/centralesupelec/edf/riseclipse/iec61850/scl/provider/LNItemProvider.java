@@ -102,13 +102,30 @@ public class LNItemProvider extends AnyLNItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( LN ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_LN_type" )
-                : getString( "_UI_LN_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_LN_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_AnyLN_lnClass_feature" ));
+        s.append( "=\"" );
+        s.append((( LN ) object ).getLnClass());
+        s.append( "\" ");
+        
+        s.append( getString( "_UI_AnyLN_lnType_feature" ));
+        s.append( "=\"" );
+        s.append((( LN ) object ).getLnType());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( LN ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**

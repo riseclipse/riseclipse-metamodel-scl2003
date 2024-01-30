@@ -339,13 +339,30 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( IED ) object ).getName();
-        return label == null || label.length() == 0 ? getString( "_UI_IED_type" )
-                : getString( "_UI_IED_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_IED_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_IED_name_feature" ));
+        s.append( "=\"" );
+        s.append((( IED ) object ).getName());
+        s.append( "\" ");
+        
+        s.append( getString( "_UI_IED_type_feature" ));
+        s.append( "=\"" );
+        s.append((( IED ) object ).getType());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( IED ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**

@@ -187,9 +187,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         datSet = newDatSet;
         boolean oldDatSetESet = datSetESet;
         datSetESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL__DAT_SET, oldDatSet, datSet,
                     !oldDatSetESet ) );
+        }
     }
 
     /**
@@ -203,9 +204,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         boolean oldDatSetESet = datSetESet;
         datSet = DAT_SET_EDEFAULT;
         datSetESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL__DAT_SET, oldDatSet,
                     DAT_SET_EDEFAULT, oldDatSetESet ) );
+        }
     }
 
     /**
@@ -242,10 +244,12 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.CONTROL__REFERS_TO_DATA_SET, oldRefersToDataSet, newRefersToDataSet,
                     !oldRefersToDataSetESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -259,21 +263,26 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     public void setRefersToDataSet( DataSet newRefersToDataSet ) {
         if( newRefersToDataSet != refersToDataSet ) {
             NotificationChain msgs = null;
-            if( refersToDataSet != null )
+            if( refersToDataSet != null ) {
                 msgs = ( ( InternalEObject ) refersToDataSet ).eInverseRemove( this,
                         SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs );
-            if( newRefersToDataSet != null )
+            }
+            if( newRefersToDataSet != null ) {
                 msgs = ( ( InternalEObject ) newRefersToDataSet ).eInverseAdd( this,
                         SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs );
+            }
             msgs = basicSetRefersToDataSet( newRefersToDataSet, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToDataSetESet = refersToDataSetESet;
             refersToDataSetESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL__REFERS_TO_DATA_SET,
                         newRefersToDataSet, newRefersToDataSet, !oldRefersToDataSetESet ) );
+            }
         }
     }
 
@@ -290,10 +299,12 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.CONTROL__REFERS_TO_DATA_SET, oldRefersToDataSet, null, oldRefersToDataSetESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -310,14 +321,17 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
             msgs = ( ( InternalEObject ) refersToDataSet ).eInverseRemove( this,
                     SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs );
             msgs = basicUnsetRefersToDataSet( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToDataSetESet = refersToDataSetESet;
             refersToDataSetESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL__REFERS_TO_DATA_SET, null,
                         null, oldRefersToDataSetESet ) );
+            }
         }
     }
 
@@ -352,9 +366,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -368,9 +383,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -404,7 +420,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      */
     @Override
     public void unsetReferredByExtRef() {
-        if( referredByExtRef != null ) ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).unset();
+        if( referredByExtRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).unset();
+        }
     }
 
     /**
@@ -439,9 +457,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-            if( refersToDataSet != null )
+            if( refersToDataSet != null ) {
                 msgs = ( ( InternalEObject ) refersToDataSet ).eInverseRemove( this,
                         SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs );
+            }
             return basicSetRefersToDataSet( ( DataSet ) otherEnd, msgs );
         case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByExtRef() )
@@ -577,19 +596,25 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (datSet: " );
-        if( datSetESet )
+        if( datSetESet ) {
             result.append( datSet );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -615,7 +640,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         }
 
         // No error or warning message here: if this happens, error should have been detected before
-        if( getParentAnyLN() == null ) return;
+        if( getParentAnyLN() == null ) {
+            return;
+        }
 
         // find an DataSet with
         //   DataSet.name == Control.datSet

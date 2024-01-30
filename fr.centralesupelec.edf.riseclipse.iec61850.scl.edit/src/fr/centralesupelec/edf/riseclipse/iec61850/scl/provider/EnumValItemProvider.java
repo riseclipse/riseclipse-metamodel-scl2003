@@ -148,13 +148,25 @@ public class EnumValItemProvider extends SclObjectItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( EnumVal ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_EnumVal_type" )
-                : getString( "_UI_EnumVal_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_EnumVal_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_EnumVal_value_feature" ));
+        s.append( "=\"" );
+        s.append((( EnumVal ) object ).getValue());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( EnumVal ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**

@@ -252,13 +252,25 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( LDevice ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_LDevice_type" )
-                : getString( "_UI_LDevice_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_LDevice_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_LDevice_inst_feature" ));
+        s.append( "=\"" );
+        s.append((( LDevice ) object ).getInst());
+        s.append( "\" ");
+        
+        s.append( "(");
+        s.append((( LDevice ) object ).getLineNumber());
+        s.append( ")");
+        
+        return s.toString();
     }
 
     /**
