@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -263,12 +263,12 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
         
         s.append( getString( "_UI_LDevice_inst_feature" ));
         s.append( "=\"" );
-        s.append((( LDevice ) object ).getInst());
-        s.append( "\" ");
+        s.append((( LDevice ) object ).getInst() );
+        s.append( "\" " );
         
-        s.append( "(");
-        s.append((( LDevice ) object ).getLineNumber());
-        s.append( ")");
+        s.append( "(" );
+        s.append((( LDevice ) object ).getLineNumber() );
+        s.append( ")" );
         
         return s.toString();
     }

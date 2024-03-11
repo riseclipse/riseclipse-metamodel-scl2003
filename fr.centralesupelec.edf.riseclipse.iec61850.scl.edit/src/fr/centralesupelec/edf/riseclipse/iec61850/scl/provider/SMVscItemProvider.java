@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -170,13 +170,25 @@ public class SMVscItemProvider extends ServiceWithMaxItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( SMVsc ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_SMVsc_type" )
-                : getString( "_UI_SMVsc_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_SMVsc_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_SMVsc_delivery_feature" ));
+        s.append( "=\"" );
+        s.append((( SMVsc ) object ).getDelivery() );
+        s.append( "\" " );
+        
+        s.append( "(" );
+        s.append((( SMVsc ) object ).getLineNumber() );
+        s.append( ")" );
+        
+        return s.toString();
     }
 
     /**

@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -91,13 +91,11 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( UnNaming ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_UnNaming_type" )
-                : getString( "_UI_UnNaming_type" ) + " " + label;
+        return getText( object, getString( "_UI_UnNaming_type" ));
     }
 
     /**

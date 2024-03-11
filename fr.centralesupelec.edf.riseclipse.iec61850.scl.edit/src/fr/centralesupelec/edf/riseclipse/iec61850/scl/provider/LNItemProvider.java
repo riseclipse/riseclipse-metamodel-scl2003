@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -111,19 +111,24 @@ public class LNItemProvider extends AnyLNItemProvider {
         s.append( getString( "_UI_LN_type" ));
         s.append( ": " );
         
+        s.append( getString( "_UI_LN_prefix_feature" ));
+        s.append( "=\"" );
+        s.append((( LN ) object ).getPrefix() );
+        s.append( "\" " );
+        
         s.append( getString( "_UI_AnyLN_lnClass_feature" ));
         s.append( "=\"" );
-        s.append((( LN ) object ).getLnClass());
-        s.append( "\" ");
+        s.append((( LN ) object ).getLnClass() );
+        s.append( "\" " );
         
-        s.append( getString( "_UI_AnyLN_lnType_feature" ));
+        s.append( getString( "_UI_AnyLN_inst_feature" ));
         s.append( "=\"" );
-        s.append((( LN ) object ).getLnType());
-        s.append( "\" ");
+        s.append((( LN ) object ).getInst() );
+        s.append( "\" " );
         
-        s.append( "(");
-        s.append((( LN ) object ).getLineNumber());
-        s.append( ")");
+        s.append( "(" );
+        s.append((( LN ) object ).getLineNumber() );
+        s.append( ")" );
         
         return s.toString();
     }

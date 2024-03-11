@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -157,14 +157,19 @@ public class EnumValItemProvider extends SclObjectItemProvider {
         s.append( getString( "_UI_EnumVal_type" ));
         s.append( ": " );
         
+        s.append( getString( "_UI_EnumVal_ord_feature" ));
+        s.append( "=\"" );
+        s.append((( EnumVal ) object ).getOrd() );
+        s.append( "\" " );
+        
         s.append( getString( "_UI_EnumVal_value_feature" ));
         s.append( "=\"" );
-        s.append((( EnumVal ) object ).getValue());
-        s.append( "\" ");
+        s.append((( EnumVal ) object ).getValue() );
+        s.append( "\" " );
         
-        s.append( "(");
-        s.append((( EnumVal ) object ).getLineNumber());
-        s.append( ")");
+        s.append( "(" );
+        s.append((( EnumVal ) object ).getLineNumber() );
+        s.append( ")" );
         
         return s.toString();
     }

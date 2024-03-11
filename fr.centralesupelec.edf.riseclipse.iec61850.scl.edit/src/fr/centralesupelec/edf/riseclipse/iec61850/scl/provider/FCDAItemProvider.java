@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -284,7 +284,26 @@ public class FCDAItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getString( "_UI_FCDA_type" );
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_FCDA_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_FCDA_doName_feature" ));
+        s.append( "=\"" );
+        s.append((( FCDA ) object ).getDoName() );
+        s.append( "\" " );
+        
+        s.append( getString( "_UI_FCDA_daName_feature" ));
+        s.append( "=\"" );
+        s.append((( FCDA ) object ).getDaName() );
+        s.append( "\" " );
+        
+        s.append( "(" );
+        s.append((( FCDA ) object ).getLineNumber() );
+        s.append( ")" );
+        
+        return s.toString();
     }
 
     /**

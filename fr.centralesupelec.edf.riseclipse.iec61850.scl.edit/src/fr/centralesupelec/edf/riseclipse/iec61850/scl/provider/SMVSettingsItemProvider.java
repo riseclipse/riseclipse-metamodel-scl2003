@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -299,13 +299,25 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( SMVSettings ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_SMVSettings_type" )
-                : getString( "_UI_SMVSettings_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+        
+        s.append( getString( "_UI_SMVSettings_type" ));
+        s.append( ": " );
+        
+        s.append( getString( "_UI_ServiceSettings_cbName_feature" ));
+        s.append( "=\"" );
+        s.append((( SMVSettings ) object ).getCbName() );
+        s.append( "\" " );
+        
+        s.append( "(" );
+        s.append((( SMVSettings ) object ).getLineNumber() );
+        s.append( ")" );
+        
+        return s.toString();
     }
 
     /**
