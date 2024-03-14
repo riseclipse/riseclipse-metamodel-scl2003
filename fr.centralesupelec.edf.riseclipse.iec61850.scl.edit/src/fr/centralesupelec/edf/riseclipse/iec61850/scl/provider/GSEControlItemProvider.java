@@ -175,7 +175,9 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_GSEControl_type" ));
+        String label = (( GSEControl ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_GSEControl_type" )
+                : getString( "_UI_GSEControl_type" ) + " " + label;
     }
 
     /**
