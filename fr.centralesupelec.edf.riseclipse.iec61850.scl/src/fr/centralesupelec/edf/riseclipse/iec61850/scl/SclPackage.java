@@ -11839,13 +11839,22 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL__PARENT_LN0 = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 4;
 
     /**
+     * The feature id for the '<em><b>Referred By LSVS</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__REFERRED_BY_LSVS = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
+
+    /**
      * The number of structural features of the '<em>GSE Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
+    int GSE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 6;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -13613,13 +13622,22 @@ public interface SclPackage extends EPackage {
     int LN__PARENT_LDEVICE = ANY_LN_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Refers To GSE Control</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__REFERS_TO_GSE_CONTROL = ANY_LN_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 3;
+    int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -28156,6 +28174,17 @@ public interface SclPackage extends EPackage {
     EReference getGSEControl_ParentLN0();
 
     /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Referred By LSVS</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS()
+     * @see #getGSEControl()
+     * @generated
+     */
+    EReference getGSEControl_ReferredByLSVS();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir <em>GSE Dir</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -28888,6 +28917,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLN_ParentLDevice();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To GSE Control</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl()
+     * @see #getLN()
+     * @generated
+     */
+    EReference getLN_RefersToGSEControl();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0 <em>LN0</em>}'.

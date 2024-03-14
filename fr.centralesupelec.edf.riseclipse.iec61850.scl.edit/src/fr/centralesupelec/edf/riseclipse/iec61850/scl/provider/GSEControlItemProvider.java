@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -64,6 +65,7 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
             addFixedOffsPropertyDescriptor( object );
             addSecurityEnablePropertyDescriptor( object );
             addTypePropertyDescriptor( object );
+            addReferredByLSVSPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -157,6 +159,28 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Referred By LSVS feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByLSVSPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSEControl_ReferredByLSVS_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSEControl_ReferredByLSVS_feature",
+                                "_UI_GSEControl_type" ),
+                        SclPackage.eINSTANCE.getGSEControl_ReferredByLSVS(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns GSEControl.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -175,7 +199,7 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        String label = (( GSEControl ) object ).getName();
+        String label = ( ( GSEControl ) object ).getName();
         return label == null || label.length() == 0 ? getString( "_UI_GSEControl_type" )
                 : getString( "_UI_GSEControl_type" ) + " " + label;
     }

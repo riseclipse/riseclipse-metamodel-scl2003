@@ -554,6 +554,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/securityEnable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEControl/ParentLN0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//GSEControl/ReferredByLSVS"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSEDir">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEDir/ParentServices"/>
@@ -636,6 +637,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN/prefix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/ParentAccessPoint"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/ParentLDevice"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LN/RefersToGSEControl"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN0">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/GSEControl"/>

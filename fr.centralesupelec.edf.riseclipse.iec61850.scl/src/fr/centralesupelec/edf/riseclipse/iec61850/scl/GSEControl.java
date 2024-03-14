@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -34,6 +34,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getSecurityEnable <em>Security Enable</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0 <em>Parent LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSEControl()
@@ -285,5 +286,56 @@ public interface GSEControl extends ControlWithIEDName {
      * @generated
      */
     void setParentLN0( LN0 value );
+
+    /**
+     * Returns the value of the '<em><b>Referred By LSVS</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By LSVS</em>' reference.
+     * @see #isSetReferredByLSVS()
+     * @see #unsetReferredByLSVS()
+     * @see #setReferredByLSVS(LN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSEControl_ReferredByLSVS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl
+     * @model opposite="RefersToGSEControl" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    LN getReferredByLSVS();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Referred By LSVS</em>' reference.
+     * @see #isSetReferredByLSVS()
+     * @see #unsetReferredByLSVS()
+     * @see #getReferredByLSVS()
+     * @generated
+     */
+    void setReferredByLSVS( LN value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByLSVS()
+     * @see #getReferredByLSVS()
+     * @see #setReferredByLSVS(LN)
+     * @generated
+     */
+    void unsetReferredByLSVS();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By LSVS</em>' reference is set.
+     * @see #unsetReferredByLSVS()
+     * @see #getReferredByLSVS()
+     * @see #setReferredByLSVS(LN)
+     * @generated
+     */
+    boolean isSetReferredByLSVS();
 
 } // GSEControl

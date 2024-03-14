@@ -6228,6 +6228,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getGSEControl_ReferredByLSVS() {
+        return ( EReference ) getGSEControl().getEStructuralFeatures().get( 5 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getGSEDir() {
         if( gseDirEClass == null ) {
             gseDirEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()
@@ -6956,6 +6966,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLN_ParentLDevice() {
         return ( EReference ) getLN().getEStructuralFeatures().get( 2 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getLN_RefersToGSEControl() {
+        return ( EReference ) getLN().getEStructuralFeatures().get( 3 );
     }
 
     /**

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -47,6 +48,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getSecurityEnable <em>Security Enable</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getParentLN0 <em>Parent LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getReferredByLSVS <em>Referred By LSVS</em>}</li>
  * </ul>
  *
  * @generated
@@ -169,6 +171,25 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     protected boolean typeESet;
 
     /**
+     * The cached value of the '{@link #getReferredByLSVS() <em>Referred By LSVS</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByLSVS()
+     * @generated
+     * @ordered
+     */
+    protected LN referredByLSVS;
+
+    /**
+     * This is true if the Referred By LSVS reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean referredByLSVSESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -208,9 +229,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         appID = newAppID;
         boolean oldAppIDESet = appIDESet;
         appIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__APP_ID, oldAppID, appID,
                     !oldAppIDESet ) );
+        }
     }
 
     /**
@@ -224,9 +246,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldAppIDESet = appIDESet;
         appID = APP_ID_EDEFAULT;
         appIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__APP_ID, oldAppID,
                     APP_ID_EDEFAULT, oldAppIDESet ) );
+        }
     }
 
     /**
@@ -260,9 +283,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         fixedOffs = newFixedOffs;
         boolean oldFixedOffsESet = fixedOffsESet;
         fixedOffsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__FIXED_OFFS, oldFixedOffs,
                     fixedOffs, !oldFixedOffsESet ) );
+        }
     }
 
     /**
@@ -276,9 +300,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldFixedOffsESet = fixedOffsESet;
         fixedOffs = FIXED_OFFS_EDEFAULT;
         fixedOffsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__FIXED_OFFS, oldFixedOffs,
                     FIXED_OFFS_EDEFAULT, oldFixedOffsESet ) );
+        }
     }
 
     /**
@@ -312,9 +337,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         securityEnable = newSecurityEnable == null ? SECURITY_ENABLE_EDEFAULT : newSecurityEnable;
         boolean oldSecurityEnableESet = securityEnableESet;
         securityEnableESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__SECURITY_ENABLE,
                     oldSecurityEnable, securityEnable, !oldSecurityEnableESet ) );
+        }
     }
 
     /**
@@ -328,9 +354,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldSecurityEnableESet = securityEnableESet;
         securityEnable = SECURITY_ENABLE_EDEFAULT;
         securityEnableESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__SECURITY_ENABLE,
                     oldSecurityEnable, SECURITY_ENABLE_EDEFAULT, oldSecurityEnableESet ) );
+        }
     }
 
     /**
@@ -364,9 +391,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         type = newType == null ? TYPE_EDEFAULT : newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -380,9 +408,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__TYPE, oldType,
                     TYPE_EDEFAULT, oldTypeESet ) );
+        }
     }
 
     /**
@@ -402,7 +431,9 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      */
     @Override
     public LN0 getParentLN0() {
-        if( eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 ) return null;
+        if( eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 ) {
+            return null;
+        }
         return ( LN0 ) eInternalContainer();
     }
 
@@ -425,20 +456,151 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     public void setParentLN0( LN0 newParentLN0 ) {
         if( newParentLN0 != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 && newParentLN0 != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLN0 ) )
+            if( EcoreUtil.isAncestor( this, newParentLN0 ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLN0 != null )
+            }
+            if( newParentLN0 != null ) {
                 msgs = ( ( InternalEObject ) newParentLN0 ).eInverseAdd( this, SclPackage.LN0__GSE_CONTROL, LN0.class,
                         msgs );
+            }
             msgs = basicSetParentLN0( newParentLN0, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__PARENT_LN0, newParentLN0,
                     newParentLN0 ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public LN getReferredByLSVS() {
+        return referredByLSVS;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetReferredByLSVS( LN newReferredByLSVS, NotificationChain msgs ) {
+        LN oldReferredByLSVS = referredByLSVS;
+        referredByLSVS = newReferredByLSVS;
+        boolean oldReferredByLSVSESet = referredByLSVSESet;
+        referredByLSVSESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, oldReferredByLSVS, newReferredByLSVS,
+                    !oldReferredByLSVSESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setReferredByLSVS( LN newReferredByLSVS ) {
+        if( newReferredByLSVS != referredByLSVS ) {
+            NotificationChain msgs = null;
+            if( referredByLSVS != null ) {
+                msgs = ( ( InternalEObject ) referredByLSVS ).eInverseRemove( this,
+                        SclPackage.LN__REFERS_TO_GSE_CONTROL, LN.class, msgs );
+            }
+            if( newReferredByLSVS != null ) {
+                msgs = ( ( InternalEObject ) newReferredByLSVS ).eInverseAdd( this,
+                        SclPackage.LN__REFERS_TO_GSE_CONTROL, LN.class, msgs );
+            }
+            msgs = basicSetReferredByLSVS( newReferredByLSVS, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldReferredByLSVSESet = referredByLSVSESet;
+            referredByLSVSESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__REFERRED_BY_LSVS,
+                        newReferredByLSVS, newReferredByLSVS, !oldReferredByLSVSESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetReferredByLSVS( NotificationChain msgs ) {
+        LN oldReferredByLSVS = referredByLSVS;
+        referredByLSVS = null;
+        boolean oldReferredByLSVSESet = referredByLSVSESet;
+        referredByLSVSESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, oldReferredByLSVS, null, oldReferredByLSVSESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByLSVS() {
+        if( referredByLSVS != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) referredByLSVS ).eInverseRemove( this, SclPackage.LN__REFERS_TO_GSE_CONTROL,
+                    LN.class, msgs );
+            msgs = basicUnsetReferredByLSVS( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldReferredByLSVSESet = referredByLSVSESet;
+            referredByLSVSESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__REFERRED_BY_LSVS,
+                        null, null, oldReferredByLSVSESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByLSVS() {
+        return referredByLSVSESet;
     }
 
     /**
@@ -450,9 +612,16 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GSE_CONTROL__PARENT_LN0:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLN0( ( LN0 ) otherEnd, msgs );
+        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
+            if( referredByLSVS != null ) {
+                msgs = ( ( InternalEObject ) referredByLSVS ).eInverseRemove( this,
+                        SclPackage.LN__REFERS_TO_GSE_CONTROL, LN.class, msgs );
+            }
+            return basicSetReferredByLSVS( ( LN ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -467,6 +636,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         switch( featureID ) {
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             return basicSetParentLN0( null, msgs );
+        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
+            return basicUnsetReferredByLSVS( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -503,6 +674,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             return getType();
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             return getParentLN0();
+        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
+            return getReferredByLSVS();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -529,6 +702,9 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             return;
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             setParentLN0( ( LN0 ) newValue );
+            return;
+        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
+            setReferredByLSVS( ( LN ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -557,6 +733,9 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             setParentLN0( ( LN0 ) null );
             return;
+        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
+            unsetReferredByLSVS();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -579,6 +758,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             return isSetType();
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             return getParentLN0() != null;
+        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
+            return isSetReferredByLSVS();
         }
         return super.eIsSet( featureID );
     }
@@ -590,29 +771,39 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (appID: " );
-        if( appIDESet )
+        if( appIDESet ) {
             result.append( appID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", fixedOffs: " );
-        if( fixedOffsESet )
+        if( fixedOffsESet ) {
             result.append( fixedOffs );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", securityEnable: " );
-        if( securityEnableESet )
+        if( securityEnableESet ) {
             result.append( securityEnable );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
