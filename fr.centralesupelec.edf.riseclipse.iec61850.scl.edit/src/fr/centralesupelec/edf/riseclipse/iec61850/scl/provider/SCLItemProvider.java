@@ -188,7 +188,7 @@ public class SCLItemProvider extends BaseElementItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_SCL_type" ));
+        return getText( object, getString( "_UI_SCL_type" ) );
     }
 
     /**

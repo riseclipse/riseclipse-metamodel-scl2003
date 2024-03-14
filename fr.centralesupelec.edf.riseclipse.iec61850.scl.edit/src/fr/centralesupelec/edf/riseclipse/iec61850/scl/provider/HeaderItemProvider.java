@@ -233,19 +233,19 @@ public class HeaderItemProvider
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_Header_type" ));
+
+        s.append( getString( "_UI_Header_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_Header_id_feature" ));
+
+        s.append( getString( "_UI_Header_id_feature" ) );
         s.append( "=\"" );
-        s.append((( Header ) object ).getId() );
+        s.append( ( ( Header ) object ).getId() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( Header ) object ).getLineNumber() );
+        s.append( ( ( Header ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

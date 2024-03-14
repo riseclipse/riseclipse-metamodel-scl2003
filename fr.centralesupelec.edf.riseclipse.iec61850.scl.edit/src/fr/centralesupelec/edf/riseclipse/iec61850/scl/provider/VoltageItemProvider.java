@@ -82,22 +82,22 @@ public class VoltageItemProvider
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_Voltage_type" ));
+
+        s.append( getString( "_UI_Voltage_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ValueWithUnit_value_feature" ));
+
+        s.append( getString( "_UI_ValueWithUnit_value_feature" ) );
         s.append( "=\"" );
-        s.append((( Voltage ) object ).getValue() );
+        s.append( ( ( Voltage ) object ).getValue() );
         s.append( " " );
-        s.append((( Voltage ) object ).getMultiplier() );
-        s.append((( Voltage ) object ).getUnit() );
+        s.append( ( ( Voltage ) object ).getMultiplier() );
+        s.append( ( ( Voltage ) object ).getUnit() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( Voltage ) object ).getLineNumber() );
+        s.append( ( ( Voltage ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

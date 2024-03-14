@@ -130,7 +130,7 @@ public class CertItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Cert_type" ));
+        return getText( object, getString( "_UI_Cert_type" ) );
     }
 
     /**

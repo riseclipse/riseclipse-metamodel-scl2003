@@ -200,7 +200,7 @@ public class AuthenticationItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Authentication_type" ));
+        return getText( object, getString( "_UI_Authentication_type" ) );
     }
 
     /**

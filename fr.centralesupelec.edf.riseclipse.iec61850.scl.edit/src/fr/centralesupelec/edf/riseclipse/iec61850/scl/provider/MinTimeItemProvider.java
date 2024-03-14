@@ -81,22 +81,22 @@ public class MinTimeItemProvider extends DurationInMilliSecItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_MinTime_type" ));
+
+        s.append( getString( "_UI_MinTime_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_DurationInMilliSec_value_feature" ));
+
+        s.append( getString( "_UI_DurationInMilliSec_value_feature" ) );
         s.append( "=\"" );
-        s.append((( MinTime ) object ).getValue() );
+        s.append( ( ( MinTime ) object ).getValue() );
         s.append( " " );
-        s.append((( MinTime ) object ).getMultiplier() );
-        s.append((( MinTime ) object ).getUnit() );
+        s.append( ( ( MinTime ) object ).getMultiplier() );
+        s.append( ( ( MinTime ) object ).getUnit() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( MinTime ) object ).getLineNumber() );
+        s.append( ( ( MinTime ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

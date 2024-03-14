@@ -81,22 +81,22 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_MaxTime_type" ));
+
+        s.append( getString( "_UI_MaxTime_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_DurationInMilliSec_value_feature" ));
+
+        s.append( getString( "_UI_DurationInMilliSec_value_feature" ) );
         s.append( "=\"" );
-        s.append((( MaxTime ) object ).getValue() );
+        s.append( ( ( MaxTime ) object ).getValue() );
         s.append( " " );
-        s.append((( MaxTime ) object ).getMultiplier() );
-        s.append((( MaxTime ) object ).getUnit() );
+        s.append( ( ( MaxTime ) object ).getMultiplier() );
+        s.append( ( ( MaxTime ) object ).getUnit() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( MaxTime ) object ).getLineNumber() );
+        s.append( ( ( MaxTime ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

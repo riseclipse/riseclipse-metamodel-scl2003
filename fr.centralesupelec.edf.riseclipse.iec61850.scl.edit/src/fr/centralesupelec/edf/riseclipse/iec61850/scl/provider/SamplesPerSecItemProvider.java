@@ -108,19 +108,19 @@ public class SamplesPerSecItemProvider extends SclObjectItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_SamplesPerSec_type" ));
+
+        s.append( getString( "_UI_SamplesPerSec_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_SamplesPerSec_value_feature" ));
+
+        s.append( getString( "_UI_SamplesPerSec_value_feature" ) );
         s.append( "=\"" );
-        s.append((( SamplesPerSec ) object ).getValue() );
+        s.append( ( ( SamplesPerSec ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( SamplesPerSec ) object ).getLineNumber() );
+        s.append( ( ( SamplesPerSec ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

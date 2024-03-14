@@ -292,7 +292,7 @@ public class OptFieldsItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_OptFields_type" ));
+        return getText( object, getString( "_UI_OptFields_type" ) );
     }
 
     /**

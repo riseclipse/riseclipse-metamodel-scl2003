@@ -257,19 +257,19 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_LDevice_type" ));
+
+        s.append( getString( "_UI_LDevice_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_LDevice_inst_feature" ));
+
+        s.append( getString( "_UI_LDevice_inst_feature" ) );
         s.append( "=\"" );
-        s.append((( LDevice ) object ).getInst() );
+        s.append( ( ( LDevice ) object ).getInst() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( LDevice ) object ).getLineNumber() );
+        s.append( ( ( LDevice ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

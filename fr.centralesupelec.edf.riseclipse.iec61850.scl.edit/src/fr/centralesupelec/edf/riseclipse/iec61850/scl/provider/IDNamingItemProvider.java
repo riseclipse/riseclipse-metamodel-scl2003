@@ -129,7 +129,7 @@ public class IDNamingItemProvider extends BaseElementItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_IDNaming_type" ));
+        return getText( object, getString( "_UI_IDNaming_type" ) );
     }
 
     /**

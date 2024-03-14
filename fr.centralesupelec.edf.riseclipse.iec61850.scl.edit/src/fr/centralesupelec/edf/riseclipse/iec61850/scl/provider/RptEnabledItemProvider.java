@@ -139,7 +139,7 @@ public class RptEnabledItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_RptEnabled_type" ));
+        return getText( object, getString( "_UI_RptEnabled_type" ) );
     }
 
     /**

@@ -108,7 +108,7 @@ public class ProtocolItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Protocol_type" ));
+        return getText( object, getString( "_UI_Protocol_type" ) );
     }
 
     /**

@@ -265,29 +265,29 @@ public class LNodeItemProvider extends UnNamingItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_LNode_type" ));
+
+        s.append( getString( "_UI_LNode_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_LNode_prefix_feature" ));
+
+        s.append( getString( "_UI_LNode_prefix_feature" ) );
         s.append( "=\"" );
-        s.append((( LNode ) object ).getPrefix() );
+        s.append( ( ( LNode ) object ).getPrefix() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_LNode_lnClass_feature" ));
+
+        s.append( getString( "_UI_LNode_lnClass_feature" ) );
         s.append( "=\"" );
-        s.append((( LNode ) object ).getLnClass() );
+        s.append( ( ( LNode ) object ).getLnClass() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_LNode_lnInst_feature" ));
+
+        s.append( getString( "_UI_LNode_lnInst_feature" ) );
         s.append( "=\"" );
-        s.append((( LNode ) object ).getLnInst() );
+        s.append( ( ( LNode ) object ).getLnInst() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( LNode ) object ).getLineNumber() );
+        s.append( ( ( LNode ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

@@ -108,7 +108,7 @@ public class ValueHandlingItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ValueHandling_type" ));
+        return getText( object, getString( "_UI_ValueHandling_type" ) );
     }
 
     /**

@@ -129,7 +129,7 @@ public class PAddrItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_PAddr_type" ));
+        return getText( object, getString( "_UI_PAddr_type" ) );
     }
 
     /**

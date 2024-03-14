@@ -151,7 +151,7 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_GOOSE_type" ));
+        return getText( object, getString( "_UI_GOOSE_type" ) );
     }
 
     /**

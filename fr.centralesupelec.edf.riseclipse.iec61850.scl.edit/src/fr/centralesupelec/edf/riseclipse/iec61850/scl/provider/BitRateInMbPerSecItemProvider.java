@@ -154,7 +154,7 @@ public class BitRateInMbPerSecItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_BitRateInMbPerSec_type" ));
+        return getText( object, getString( "_UI_BitRateInMbPerSec_type" ) );
     }
 
     /**

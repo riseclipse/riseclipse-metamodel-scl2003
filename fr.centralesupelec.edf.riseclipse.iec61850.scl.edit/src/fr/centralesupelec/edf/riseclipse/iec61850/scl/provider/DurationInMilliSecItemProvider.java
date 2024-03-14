@@ -154,7 +154,7 @@ public class DurationInMilliSecItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_DurationInMilliSec_type" ));
+        return getText( object, getString( "_UI_DurationInMilliSec_type" ) );
     }
 
     /**

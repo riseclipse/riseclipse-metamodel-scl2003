@@ -107,7 +107,7 @@ public class ServiceForConfDataSetItemProvider extends ServiceWithMaxAndMaxAttri
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceForConfDataSet_type" ));
+        return getText( object, getString( "_UI_ServiceForConfDataSet_type" ) );
     }
 
     /**

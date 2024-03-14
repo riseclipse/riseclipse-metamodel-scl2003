@@ -107,7 +107,7 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceWithMaxAndModify_type" ));
+        return getText( object, getString( "_UI_ServiceWithMaxAndModify_type" ) );
     }
 
     /**

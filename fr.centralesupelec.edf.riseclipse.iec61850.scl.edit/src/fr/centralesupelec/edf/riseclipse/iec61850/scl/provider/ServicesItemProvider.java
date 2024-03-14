@@ -172,7 +172,7 @@ public class ServicesItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Services_type" ));
+        return getText( object, getString( "_UI_Services_type" ) );
     }
 
     /**

@@ -326,7 +326,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_AnyLN_type" ));
+        return getText( object, getString( "_UI_AnyLN_type" ) );
     }
 
     /**

@@ -108,19 +108,19 @@ public class SecPerSamplesItemProvider extends SclObjectItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_SecPerSamples_type" ));
+
+        s.append( getString( "_UI_SecPerSamples_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_SecPerSamples_value_feature" ));
+
+        s.append( getString( "_UI_SecPerSamples_value_feature" ) );
         s.append( "=\"" );
-        s.append((( SecPerSamples ) object ).getValue() );
+        s.append( ( ( SecPerSamples ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( SecPerSamples ) object ).getLineNumber() );
+        s.append( ( ( SecPerSamples ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

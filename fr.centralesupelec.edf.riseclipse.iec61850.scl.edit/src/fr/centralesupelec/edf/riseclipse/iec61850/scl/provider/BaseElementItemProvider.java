@@ -118,7 +118,7 @@ public class BaseElementItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_BaseElement_type" ));
+        return getText( object, getString( "_UI_BaseElement_type" ) );
     }
 
     /**

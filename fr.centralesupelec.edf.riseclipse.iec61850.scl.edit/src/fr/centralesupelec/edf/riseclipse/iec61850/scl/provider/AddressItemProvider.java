@@ -115,7 +115,7 @@ public class AddressItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Address_type" ));
+        return getText( object, getString( "_UI_Address_type" ) );
     }
 
     /**

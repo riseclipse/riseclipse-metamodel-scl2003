@@ -131,7 +131,7 @@ public class SupSubscriptionItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_SupSubscription_type" ));
+        return getText( object, getString( "_UI_SupSubscription_type" ) );
     }
 
     /**

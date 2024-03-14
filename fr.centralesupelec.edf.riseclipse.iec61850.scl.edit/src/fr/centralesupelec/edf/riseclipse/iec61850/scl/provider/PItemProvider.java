@@ -81,24 +81,24 @@ public class PItemProvider extends PAddrItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_P_type" ));
+
+        s.append( getString( "_UI_P_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_PAddr_type_feature" ));
+
+        s.append( getString( "_UI_PAddr_type_feature" ) );
         s.append( "=\"" );
-        s.append((( P ) object ).getType() );
+        s.append( ( ( P ) object ).getType() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_PAddr_value_feature" ));
+
+        s.append( getString( "_UI_PAddr_value_feature" ) );
         s.append( "=\"" );
-        s.append((( P ) object ).getValue() );
+        s.append( ( ( P ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( P ) object ).getLineNumber() );
+        s.append( ( ( P ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

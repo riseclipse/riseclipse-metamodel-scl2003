@@ -108,7 +108,7 @@ public class ConfSGItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ConfSG_type" ));
+        return getText( object, getString( "_UI_ConfSG_type" ) );
     }
 
     /**

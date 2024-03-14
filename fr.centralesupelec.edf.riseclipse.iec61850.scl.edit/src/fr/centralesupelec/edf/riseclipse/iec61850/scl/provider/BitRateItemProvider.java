@@ -81,22 +81,22 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_BitRate_type" ));
+
+        s.append( getString( "_UI_BitRate_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_BitRateInMbPerSec_value_feature" ));
+
+        s.append( getString( "_UI_BitRateInMbPerSec_value_feature" ) );
         s.append( "=\"" );
-        s.append((( BitRate ) object ).getValue() );
+        s.append( ( ( BitRate ) object ).getValue() );
         s.append( " " );
-        s.append((( BitRate ) object ).getMultiplier() );
-        s.append((( BitRate ) object ).getUnit() );
+        s.append( ( ( BitRate ) object ).getMultiplier() );
+        s.append( ( ( BitRate ) object ).getUnit() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( BitRate ) object ).getLineNumber() );
+        s.append( ( ( BitRate ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

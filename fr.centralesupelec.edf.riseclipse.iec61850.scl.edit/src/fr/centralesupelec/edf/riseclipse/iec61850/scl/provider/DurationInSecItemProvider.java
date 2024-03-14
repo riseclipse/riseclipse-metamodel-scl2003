@@ -27,7 +27,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec} object.
  * <!-- begin-user-doc -->
@@ -79,7 +78,7 @@ public class DurationInSecItemProvider extends ValueWithUnitItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_DurationInSec_type" ));
+        return getText( object, getString( "_UI_DurationInSec_type" ) );
     }
 
     /**

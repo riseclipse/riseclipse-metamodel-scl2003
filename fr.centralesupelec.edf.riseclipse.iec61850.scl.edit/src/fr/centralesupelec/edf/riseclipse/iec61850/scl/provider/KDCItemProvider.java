@@ -152,7 +152,7 @@ public class KDCItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_KDC_type" ));
+        return getText( object, getString( "_UI_KDC_type" ) );
     }
 
     /**

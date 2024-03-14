@@ -177,7 +177,7 @@ public class TimeSyncProtItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_TimeSyncProt_type" ));
+        return getText( object, getString( "_UI_TimeSyncProt_type" ) );
     }
 
     /**

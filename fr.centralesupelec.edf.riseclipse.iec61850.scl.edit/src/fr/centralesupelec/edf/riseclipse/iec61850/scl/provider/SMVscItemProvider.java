@@ -175,19 +175,19 @@ public class SMVscItemProvider extends ServiceWithMaxItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_SMVsc_type" ));
+
+        s.append( getString( "_UI_SMVsc_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_SMVsc_delivery_feature" ));
+
+        s.append( getString( "_UI_SMVsc_delivery_feature" ) );
         s.append( "=\"" );
-        s.append((( SMVsc ) object ).getDelivery() );
+        s.append( ( ( SMVsc ) object ).getDelivery() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( SMVsc ) object ).getLineNumber() );
+        s.append( ( ( SMVsc ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

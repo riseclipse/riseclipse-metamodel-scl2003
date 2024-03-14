@@ -246,19 +246,19 @@ public class ReportSettingsItemProvider extends ServiceSettingsItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_ReportSettings_type" ));
+
+        s.append( getString( "_UI_ReportSettings_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ServiceSettings_cbName_feature" ));
+
+        s.append( getString( "_UI_ServiceSettings_cbName_feature" ) );
         s.append( "=\"" );
-        s.append((( ReportSettings ) object ).getCbName() );
+        s.append( ( ( ReportSettings ) object ).getCbName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( ReportSettings ) object ).getLineNumber() );
+        s.append( ( ( ReportSettings ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

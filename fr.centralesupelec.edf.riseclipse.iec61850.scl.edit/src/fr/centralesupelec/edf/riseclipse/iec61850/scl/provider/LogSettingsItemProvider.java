@@ -154,19 +154,19 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_LogSettings_type" ));
+
+        s.append( getString( "_UI_LogSettings_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ServiceSettings_cbName_feature" ));
+
+        s.append( getString( "_UI_ServiceSettings_cbName_feature" ) );
         s.append( "=\"" );
-        s.append((( LogSettings ) object ).getCbName() );
+        s.append( ( ( LogSettings ) object ).getCbName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( LogSettings ) object ).getLineNumber() );
+        s.append( ( ( LogSettings ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

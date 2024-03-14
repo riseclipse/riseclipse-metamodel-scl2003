@@ -440,7 +440,7 @@ public class ClientServicesItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ClientServices_type" ));
+        return getText( object, getString( "_UI_ClientServices_type" ) );
     }
 
     /**

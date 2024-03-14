@@ -587,24 +587,24 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_ExtRef_type" ));
+
+        s.append( getString( "_UI_ExtRef_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ExtRef_doName_feature" ));
+
+        s.append( getString( "_UI_ExtRef_doName_feature" ) );
         s.append( "=\"" );
-        s.append((( ExtRef ) object ).getDoName() );
+        s.append( ( ( ExtRef ) object ).getDoName() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_ExtRef_daName_feature" ));
+
+        s.append( getString( "_UI_ExtRef_daName_feature" ) );
         s.append( "=\"" );
-        s.append((( ExtRef ) object ).getDaName() );
+        s.append( ( ( ExtRef ) object ).getDaName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( ExtRef ) object ).getLineNumber() );
+        s.append( ( ( ExtRef ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

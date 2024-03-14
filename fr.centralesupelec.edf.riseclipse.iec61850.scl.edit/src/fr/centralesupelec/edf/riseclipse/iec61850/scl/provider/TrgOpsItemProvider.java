@@ -196,7 +196,7 @@ public class TrgOpsItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_TrgOps_type" ));
+        return getText( object, getString( "_UI_TrgOps_type" ) );
     }
 
     /**

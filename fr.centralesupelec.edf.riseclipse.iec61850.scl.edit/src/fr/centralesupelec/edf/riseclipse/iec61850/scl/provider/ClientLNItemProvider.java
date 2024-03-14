@@ -267,7 +267,7 @@ public class ClientLNItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ClientLN_type" ));
+        return getText( object, getString( "_UI_ClientLN_type" ) );
     }
 
     /**

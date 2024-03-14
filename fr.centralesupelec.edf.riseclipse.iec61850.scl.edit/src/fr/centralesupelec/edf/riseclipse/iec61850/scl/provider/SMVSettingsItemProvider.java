@@ -304,19 +304,19 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_SMVSettings_type" ));
+
+        s.append( getString( "_UI_SMVSettings_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ServiceSettings_cbName_feature" ));
+
+        s.append( getString( "_UI_ServiceSettings_cbName_feature" ) );
         s.append( "=\"" );
-        s.append((( SMVSettings ) object ).getCbName() );
+        s.append( ( ( SMVSettings ) object ).getCbName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( SMVSettings ) object ).getLineNumber() );
+        s.append( ( ( SMVSettings ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

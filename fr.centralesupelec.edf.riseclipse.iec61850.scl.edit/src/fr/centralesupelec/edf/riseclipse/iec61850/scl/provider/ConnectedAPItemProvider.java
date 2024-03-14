@@ -212,19 +212,19 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_ConnectedAP_type" ));
+
+        s.append( getString( "_UI_ConnectedAP_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ConnectedAP_apName_feature" ));
+
+        s.append( getString( "_UI_ConnectedAP_apName_feature" ) );
         s.append( "=\"" );
-        s.append((( ConnectedAP ) object ).getApName() );
+        s.append( ( ( ConnectedAP ) object ).getApName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( ConnectedAP ) object ).getLineNumber() );
+        s.append( ( ( ConnectedAP ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

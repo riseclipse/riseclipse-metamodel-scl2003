@@ -292,7 +292,7 @@ public class IEDNameItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_IEDName_type" ));
+        return getText( object, getString( "_UI_IEDName_type" ) );
     }
 
     /**

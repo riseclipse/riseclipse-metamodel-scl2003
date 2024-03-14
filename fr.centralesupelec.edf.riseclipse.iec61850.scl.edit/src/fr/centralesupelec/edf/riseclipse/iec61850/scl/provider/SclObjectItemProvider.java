@@ -156,18 +156,18 @@ public class SclObjectItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_SclObject_type" ));
+        return getText( object, getString( "_UI_SclObject_type" ) );
     }
 
     public String getText( Object object, String type ) {
         StringBuilder s = new StringBuilder();
-        
+
         s.append( type );
-        
+
         s.append( " (" );
-        s.append((( SclObject ) object ).getLineNumber() );
+        s.append( ( ( SclObject ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

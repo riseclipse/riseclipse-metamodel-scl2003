@@ -115,7 +115,7 @@ public class HistoryItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_History_type" ));
+        return getText( object, getString( "_UI_History_type" ) );
     }
 
     /**

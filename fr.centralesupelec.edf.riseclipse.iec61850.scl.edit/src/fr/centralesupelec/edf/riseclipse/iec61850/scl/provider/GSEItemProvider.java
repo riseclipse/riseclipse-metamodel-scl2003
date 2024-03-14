@@ -116,19 +116,19 @@ public class GSEItemProvider extends ControlBlockItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_GSE_type" ));
+
+        s.append( getString( "_UI_GSE_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ControlBlock_cbName_feature" ));
+
+        s.append( getString( "_UI_ControlBlock_cbName_feature" ) );
         s.append( "=\"" );
-        s.append((( GSE ) object ).getCbName() );
+        s.append( ( ( GSE ) object ).getCbName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( GSE ) object ).getLineNumber() );
+        s.append( ( ( GSE ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

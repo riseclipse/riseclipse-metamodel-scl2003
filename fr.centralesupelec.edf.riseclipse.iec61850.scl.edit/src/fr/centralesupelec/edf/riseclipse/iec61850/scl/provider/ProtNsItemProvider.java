@@ -130,7 +130,7 @@ public class ProtNsItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ProtNs_type" ));
+        return getText( object, getString( "_UI_ProtNs_type" ) );
     }
 
     /**

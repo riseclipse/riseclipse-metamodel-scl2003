@@ -107,7 +107,7 @@ public class ServiceWithOptionalMaxItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceWithOptionalMax_type" ));
+        return getText( object, getString( "_UI_ServiceWithOptionalMax_type" ) );
     }
 
     /**

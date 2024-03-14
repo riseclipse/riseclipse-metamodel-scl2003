@@ -117,24 +117,24 @@ public class LN0ItemProvider extends AnyLNItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_LN0_type" ));
+
+        s.append( getString( "_UI_LN0_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_AnyLN_lnClass_feature" ));
+
+        s.append( getString( "_UI_AnyLN_lnClass_feature" ) );
         s.append( "=\"" );
-        s.append((( LN0 ) object ).getLnClass() );
+        s.append( ( ( LN0 ) object ).getLnClass() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_AnyLN_inst_feature" ));
+
+        s.append( getString( "_UI_AnyLN_inst_feature" ) );
         s.append( "=\"" );
-        s.append((( LN0 ) object ).getInst() );
+        s.append( ( ( LN0 ) object ).getInst() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( LN0 ) object ).getLineNumber() );
+        s.append( ( ( LN0 ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

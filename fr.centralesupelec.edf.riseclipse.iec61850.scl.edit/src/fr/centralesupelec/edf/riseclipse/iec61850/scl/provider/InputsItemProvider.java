@@ -114,7 +114,7 @@ public class InputsItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Inputs_type" ));
+        return getText( object, getString( "_UI_Inputs_type" ) );
     }
 
     /**

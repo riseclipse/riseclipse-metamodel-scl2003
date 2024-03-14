@@ -27,7 +27,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject} object.
  * <!-- begin-user-doc -->
@@ -80,7 +79,7 @@ public class SubjectItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Subject_type" ));
+        return getText( object, getString( "_UI_Subject_type" ) );
     }
 
     /**

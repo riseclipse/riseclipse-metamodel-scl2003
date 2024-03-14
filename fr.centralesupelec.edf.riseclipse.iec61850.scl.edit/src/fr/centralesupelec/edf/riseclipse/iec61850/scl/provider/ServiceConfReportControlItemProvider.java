@@ -153,7 +153,7 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceConfReportControl_type" ));
+        return getText( object, getString( "_UI_ServiceConfReportControl_type" ) );
     }
 
     /**

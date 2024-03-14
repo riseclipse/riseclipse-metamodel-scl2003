@@ -108,7 +108,7 @@ public class CommProtItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_CommProt_type" ));
+        return getText( object, getString( "_UI_CommProt_type" ) );
     }
 
     /**

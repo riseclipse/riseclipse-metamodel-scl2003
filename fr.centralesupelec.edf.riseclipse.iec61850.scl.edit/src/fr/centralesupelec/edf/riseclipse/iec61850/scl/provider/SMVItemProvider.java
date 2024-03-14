@@ -81,19 +81,19 @@ public class SMVItemProvider extends ControlBlockItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_SMV_type" ));
+
+        s.append( getString( "_UI_SMV_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_ControlBlock_cbName_feature" ));
+
+        s.append( getString( "_UI_ControlBlock_cbName_feature" ) );
         s.append( "=\"" );
-        s.append((( SMV ) object ).getCbName() );
+        s.append( ( ( SMV ) object ).getCbName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( SMV ) object ).getLineNumber() );
+        s.append( ( ( SMV ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

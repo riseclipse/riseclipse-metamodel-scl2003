@@ -107,7 +107,7 @@ public class AnyContentFromOtherNamespaceItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_AnyContentFromOtherNamespace_type" ));
+        return getText( object, getString( "_UI_AnyContentFromOtherNamespace_type" ) );
     }
 
     /**

@@ -153,7 +153,7 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ValueWithUnit_type" ));
+        return getText( object, getString( "_UI_ValueWithUnit_type" ) );
     }
 
     /**

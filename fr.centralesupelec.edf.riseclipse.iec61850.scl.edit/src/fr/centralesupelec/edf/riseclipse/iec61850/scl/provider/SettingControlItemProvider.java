@@ -153,7 +153,7 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_SettingControl_type" ));
+        return getText( object, getString( "_UI_SettingControl_type" ) );
     }
 
     /**

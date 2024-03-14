@@ -108,7 +108,7 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceWithMaxAndMaxAttributes_type" ));
+        return getText( object, getString( "_UI_ServiceWithMaxAndMaxAttributes_type" ) );
     }
 
     /**

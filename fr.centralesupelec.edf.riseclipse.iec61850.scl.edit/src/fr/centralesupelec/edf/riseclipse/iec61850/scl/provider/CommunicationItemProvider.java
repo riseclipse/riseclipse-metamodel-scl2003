@@ -114,7 +114,7 @@ public class CommunicationItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_Communication_type" ));
+        return getText( object, getString( "_UI_Communication_type" ) );
     }
 
     /**

@@ -154,7 +154,7 @@ public class FileHandlingItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_FileHandling_type" ));
+        return getText( object, getString( "_UI_FileHandling_type" ) );
     }
 
     /**

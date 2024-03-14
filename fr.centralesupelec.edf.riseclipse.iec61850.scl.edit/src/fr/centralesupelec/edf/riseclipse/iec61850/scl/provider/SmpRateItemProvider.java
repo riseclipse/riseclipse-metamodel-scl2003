@@ -108,19 +108,19 @@ public class SmpRateItemProvider extends SclObjectItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_SmpRate_type" ));
+
+        s.append( getString( "_UI_SmpRate_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_SmpRate_value_feature" ));
+
+        s.append( getString( "_UI_SmpRate_value_feature" ) );
         s.append( "=\"" );
-        s.append((( SmpRate ) object ).getValue() );
+        s.append( ( ( SmpRate ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( SmpRate ) object ).getLineNumber() );
+        s.append( ( ( SmpRate ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

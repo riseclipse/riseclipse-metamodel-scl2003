@@ -285,24 +285,24 @@ public class FCDAItemProvider
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_FCDA_type" ));
+
+        s.append( getString( "_UI_FCDA_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_FCDA_doName_feature" ));
+
+        s.append( getString( "_UI_FCDA_doName_feature" ) );
         s.append( "=\"" );
-        s.append((( FCDA ) object ).getDoName() );
+        s.append( ( ( FCDA ) object ).getDoName() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_FCDA_daName_feature" ));
+
+        s.append( getString( "_UI_FCDA_daName_feature" ) );
         s.append( "=\"" );
-        s.append((( FCDA ) object ).getDaName() );
+        s.append( ( ( FCDA ) object ).getDaName() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( FCDA ) object ).getLineNumber() );
+        s.append( ( ( FCDA ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

@@ -108,7 +108,7 @@ public class ServiceWithMaxItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceWithMax_type" ));
+        return getText( object, getString( "_UI_ServiceWithMax_type" ) );
     }
 
     /**

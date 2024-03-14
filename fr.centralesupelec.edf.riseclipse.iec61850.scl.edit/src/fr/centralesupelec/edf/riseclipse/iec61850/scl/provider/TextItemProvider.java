@@ -130,19 +130,19 @@ public class TextItemProvider
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_Text_type" ));
+
+        s.append( getString( "_UI_Text_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_Text_value_feature" ));
+
+        s.append( getString( "_UI_Text_value_feature" ) );
         s.append( "=\"" );
-        s.append((( Text ) object ).getValue() );
+        s.append( ( ( Text ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( Text ) object ).getLineNumber() );
+        s.append( ( ( Text ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

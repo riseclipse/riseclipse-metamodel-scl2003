@@ -140,19 +140,19 @@ public class PhysConnItemProvider extends UnNamingItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_PhysConn_type" ));
+
+        s.append( getString( "_UI_PhysConn_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_PhysConn_type_feature" ));
+
+        s.append( getString( "_UI_PhysConn_type_feature" ) );
         s.append( "=\"" );
-        s.append((( PhysConn ) object ).getType() );
+        s.append( ( ( PhysConn ) object ).getType() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( PhysConn ) object ).getLineNumber() );
+        s.append( ( ( PhysConn ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

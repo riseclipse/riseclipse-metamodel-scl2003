@@ -107,7 +107,7 @@ public class ServiceWithMaxNonZeroItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ServiceWithMaxNonZero_type" ));
+        return getText( object, getString( "_UI_ServiceWithMaxNonZero_type" ) );
     }
 
     /**

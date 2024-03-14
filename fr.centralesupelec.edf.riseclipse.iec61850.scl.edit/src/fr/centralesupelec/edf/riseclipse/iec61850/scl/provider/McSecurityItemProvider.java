@@ -130,7 +130,7 @@ public class McSecurityItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_McSecurity_type" ));
+        return getText( object, getString( "_UI_McSecurity_type" ) );
     }
 
     /**

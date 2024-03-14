@@ -81,24 +81,24 @@ public class P_PhysConnItemProvider extends PAddrItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_P_PhysConn_type" ));
+
+        s.append( getString( "_UI_P_PhysConn_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_PAddr_type_feature" ));
+
+        s.append( getString( "_UI_PAddr_type_feature" ) );
         s.append( "=\"" );
-        s.append((( P_PhysConn ) object ).getType() );
+        s.append( ( ( P_PhysConn ) object ).getType() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_PAddr_value_feature" ));
+
+        s.append( getString( "_UI_PAddr_value_feature" ) );
         s.append( "=\"" );
-        s.append((( P_PhysConn ) object ).getValue() );
+        s.append( ( ( P_PhysConn ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( P_PhysConn ) object ).getLineNumber() );
+        s.append( ( ( P_PhysConn ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

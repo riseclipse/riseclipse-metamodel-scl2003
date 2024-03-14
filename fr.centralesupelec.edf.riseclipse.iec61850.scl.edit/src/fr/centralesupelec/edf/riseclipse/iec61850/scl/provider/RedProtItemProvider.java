@@ -154,7 +154,7 @@ public class RedProtItemProvider
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_RedProt_type" ));
+        return getText( object, getString( "_UI_RedProt_type" ) );
     }
 
     /**

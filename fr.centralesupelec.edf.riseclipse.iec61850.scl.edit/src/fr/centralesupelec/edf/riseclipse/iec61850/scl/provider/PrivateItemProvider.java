@@ -155,19 +155,19 @@ public class PrivateItemProvider
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_Private_type" ));
+
+        s.append( getString( "_UI_Private_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_Private_type_feature" ));
+
+        s.append( getString( "_UI_Private_type_feature" ) );
         s.append( "=\"" );
-        s.append((( Private ) object ).getType() );
+        s.append( ( ( Private ) object ).getType() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( Private ) object ).getLineNumber() );
+        s.append( ( ( Private ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

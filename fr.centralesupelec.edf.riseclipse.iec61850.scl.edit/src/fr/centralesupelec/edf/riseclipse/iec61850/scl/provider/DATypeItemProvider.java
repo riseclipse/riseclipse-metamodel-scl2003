@@ -164,19 +164,19 @@ public class DATypeItemProvider extends IDNamingItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_DAType_type" ));
+
+        s.append( getString( "_UI_DAType_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_IDNaming_id_feature" ));
+
+        s.append( getString( "_UI_IDNaming_id_feature" ) );
         s.append( "=\"" );
-        s.append((( DAType ) object ).getId() );
+        s.append( ( ( DAType ) object ).getId() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( DAType ) object ).getLineNumber() );
+        s.append( ( ( DAType ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

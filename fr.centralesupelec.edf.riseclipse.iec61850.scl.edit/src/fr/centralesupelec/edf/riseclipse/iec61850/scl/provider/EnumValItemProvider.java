@@ -153,24 +153,24 @@ public class EnumValItemProvider extends SclObjectItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_EnumVal_type" ));
+
+        s.append( getString( "_UI_EnumVal_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_EnumVal_ord_feature" ));
+
+        s.append( getString( "_UI_EnumVal_ord_feature" ) );
         s.append( "=\"" );
-        s.append((( EnumVal ) object ).getOrd() );
+        s.append( ( ( EnumVal ) object ).getOrd() );
         s.append( "\" " );
-        
-        s.append( getString( "_UI_EnumVal_value_feature" ));
+
+        s.append( getString( "_UI_EnumVal_value_feature" ) );
         s.append( "=\"" );
-        s.append((( EnumVal ) object ).getValue() );
+        s.append( ( ( EnumVal ) object ).getValue() );
         s.append( "\" " );
-        
+
         s.append( "(" );
-        s.append((( EnumVal ) object ).getLineNumber() );
+        s.append( ( ( EnumVal ) object ).getLineNumber() );
         s.append( ")" );
-        
+
         return s.toString();
     }
 

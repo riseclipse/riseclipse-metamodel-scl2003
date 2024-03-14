@@ -185,7 +185,7 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        return getText( object, getString( "_UI_ControlBlock_type" ));
+        return getText( object, getString( "_UI_ControlBlock_type" ) );
     }
 
     /**
