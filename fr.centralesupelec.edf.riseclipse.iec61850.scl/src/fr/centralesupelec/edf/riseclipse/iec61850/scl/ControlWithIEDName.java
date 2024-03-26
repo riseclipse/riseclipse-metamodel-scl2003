@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -35,6 +35,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName <em>IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByControlBlock <em>Referred By Control Block</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN <em>Referred By LN</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithIEDName()
@@ -231,5 +232,42 @@ public interface ControlWithIEDName extends Control {
      * @generated
      */
     boolean isSetProtocol();
+
+    /**
+     * Returns the value of the '<em><b>Referred By LN</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By LN</em>' reference list.
+     * @see #isSetReferredByLN()
+     * @see #unsetReferredByLN()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithIEDName_ReferredByLN()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName
+     * @model opposite="RefersToControlWithIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< LN > getReferredByLN();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN <em>Referred By LN</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByLN()
+     * @see #getReferredByLN()
+     * @generated
+     */
+    void unsetReferredByLN();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN <em>Referred By LN</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By LN</em>' reference list is set.
+     * @see #unsetReferredByLN()
+     * @see #getReferredByLN()
+     * @generated
+     */
+    boolean isSetReferredByLN();
 
 } // ControlWithIEDName

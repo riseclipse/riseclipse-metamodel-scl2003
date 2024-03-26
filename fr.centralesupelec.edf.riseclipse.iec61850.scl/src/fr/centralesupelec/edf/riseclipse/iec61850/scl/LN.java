@@ -32,7 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice <em>Parent LDevice</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN()
@@ -144,54 +144,54 @@ public interface LN extends AnyLN {
     void setParentLDevice( LDevice value );
 
     /**
-     * Returns the value of the '<em><b>Refers To GSE Control</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}'.
+     * Returns the value of the '<em><b>Refers To Control With IED Name</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN <em>Referred By LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To GSE Control</em>' reference.
-     * @see #isSetRefersToGSEControl()
-     * @see #unsetRefersToGSEControl()
-     * @see #setRefersToGSEControl(GSEControl)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN_RefersToGSEControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS
-     * @model opposite="ReferredByLSVS" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @return the value of the '<em>Refers To Control With IED Name</em>' reference.
+     * @see #isSetRefersToControlWithIEDName()
+     * @see #unsetRefersToControlWithIEDName()
+     * @see #setRefersToControlWithIEDName(ControlWithIEDName)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN_RefersToControlWithIEDName()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN
+     * @model opposite="ReferredByLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    GSEControl getRefersToGSEControl();
+    ControlWithIEDName getRefersToControlWithIEDName();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To GSE Control</em>' reference.
-     * @see #isSetRefersToGSEControl()
-     * @see #unsetRefersToGSEControl()
-     * @see #getRefersToGSEControl()
+     * @param value the new value of the '<em>Refers To Control With IED Name</em>' reference.
+     * @see #isSetRefersToControlWithIEDName()
+     * @see #unsetRefersToControlWithIEDName()
+     * @see #getRefersToControlWithIEDName()
      * @generated
      */
-    void setRefersToGSEControl( GSEControl value );
+    void setRefersToControlWithIEDName( ControlWithIEDName value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToGSEControl()
-     * @see #getRefersToGSEControl()
-     * @see #setRefersToGSEControl(GSEControl)
+     * @see #isSetRefersToControlWithIEDName()
+     * @see #getRefersToControlWithIEDName()
+     * @see #setRefersToControlWithIEDName(ControlWithIEDName)
      * @generated
      */
-    void unsetRefersToGSEControl();
+    void unsetRefersToControlWithIEDName();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}' reference is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To GSE Control</em>' reference is set.
-     * @see #unsetRefersToGSEControl()
-     * @see #getRefersToGSEControl()
-     * @see #setRefersToGSEControl(GSEControl)
+     * @return whether the value of the '<em>Refers To Control With IED Name</em>' reference is set.
+     * @see #unsetRefersToControlWithIEDName()
+     * @see #getRefersToControlWithIEDName()
+     * @see #setRefersToControlWithIEDName(ControlWithIEDName)
      * @generated
      */
-    boolean isSetRefersToGSEControl();
+    boolean isSetRefersToControlWithIEDName();
 
 } // LN

@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -48,7 +47,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getSecurityEnable <em>Security Enable</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getParentLN0 <em>Parent LN0</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getReferredByLSVS <em>Referred By LSVS</em>}</li>
  * </ul>
  *
  * @generated
@@ -169,25 +167,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * @ordered
      */
     protected boolean typeESet;
-
-    /**
-     * The cached value of the '{@link #getReferredByLSVS() <em>Referred By LSVS</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByLSVS()
-     * @generated
-     * @ordered
-     */
-    protected LN referredByLSVS;
-
-    /**
-     * This is true if the Referred By LSVS reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean referredByLSVSESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -484,131 +463,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * @generated
      */
     @Override
-    public LN getReferredByLSVS() {
-        return referredByLSVS;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetReferredByLSVS( LN newReferredByLSVS, NotificationChain msgs ) {
-        LN oldReferredByLSVS = referredByLSVS;
-        referredByLSVS = newReferredByLSVS;
-        boolean oldReferredByLSVSESet = referredByLSVSESet;
-        referredByLSVSESet = true;
-        if( eNotificationRequired() ) {
-            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
-                    SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, oldReferredByLSVS, newReferredByLSVS,
-                    !oldReferredByLSVSESet );
-            if( msgs == null ) {
-                msgs = notification;
-            }
-            else {
-                msgs.add( notification );
-            }
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setReferredByLSVS( LN newReferredByLSVS ) {
-        if( newReferredByLSVS != referredByLSVS ) {
-            NotificationChain msgs = null;
-            if( referredByLSVS != null ) {
-                msgs = ( ( InternalEObject ) referredByLSVS ).eInverseRemove( this,
-                        SclPackage.LN__REFERS_TO_GSE_CONTROL, LN.class, msgs );
-            }
-            if( newReferredByLSVS != null ) {
-                msgs = ( ( InternalEObject ) newReferredByLSVS ).eInverseAdd( this,
-                        SclPackage.LN__REFERS_TO_GSE_CONTROL, LN.class, msgs );
-            }
-            msgs = basicSetReferredByLSVS( newReferredByLSVS, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
-        }
-        else {
-            boolean oldReferredByLSVSESet = referredByLSVSESet;
-            referredByLSVSESet = true;
-            if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__REFERRED_BY_LSVS,
-                        newReferredByLSVS, newReferredByLSVS, !oldReferredByLSVSESet ) );
-            }
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetReferredByLSVS( NotificationChain msgs ) {
-        LN oldReferredByLSVS = referredByLSVS;
-        referredByLSVS = null;
-        boolean oldReferredByLSVSESet = referredByLSVSESet;
-        referredByLSVSESet = false;
-        if( eNotificationRequired() ) {
-            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
-                    SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, oldReferredByLSVS, null, oldReferredByLSVSESet );
-            if( msgs == null ) {
-                msgs = notification;
-            }
-            else {
-                msgs.add( notification );
-            }
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByLSVS() {
-        if( referredByLSVS != null ) {
-            NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) referredByLSVS ).eInverseRemove( this, SclPackage.LN__REFERS_TO_GSE_CONTROL,
-                    LN.class, msgs );
-            msgs = basicUnsetReferredByLSVS( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
-        }
-        else {
-            boolean oldReferredByLSVSESet = referredByLSVSESet;
-            referredByLSVSESet = false;
-            if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__REFERRED_BY_LSVS,
-                        null, null, oldReferredByLSVSESet ) );
-            }
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByLSVS() {
-        return referredByLSVSESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GSE_CONTROL__PARENT_LN0:
@@ -616,12 +470,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentLN0( ( LN0 ) otherEnd, msgs );
-        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
-            if( referredByLSVS != null ) {
-                msgs = ( ( InternalEObject ) referredByLSVS ).eInverseRemove( this,
-                        SclPackage.LN__REFERS_TO_GSE_CONTROL, LN.class, msgs );
-            }
-            return basicSetReferredByLSVS( ( LN ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -636,8 +484,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         switch( featureID ) {
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             return basicSetParentLN0( null, msgs );
-        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
-            return basicUnsetReferredByLSVS( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -674,8 +520,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             return getType();
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             return getParentLN0();
-        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
-            return getReferredByLSVS();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -702,9 +546,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             return;
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             setParentLN0( ( LN0 ) newValue );
-            return;
-        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
-            setReferredByLSVS( ( LN ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -733,9 +574,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             setParentLN0( ( LN0 ) null );
             return;
-        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
-            unsetReferredByLSVS();
-            return;
         }
         super.eUnset( featureID );
     }
@@ -758,8 +596,6 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             return isSetType();
         case SclPackage.GSE_CONTROL__PARENT_LN0:
             return getParentLN0() != null;
-        case SclPackage.GSE_CONTROL__REFERRED_BY_LSVS:
-            return isSetReferredByLSVS();
         }
         return super.eIsSet( featureID );
     }

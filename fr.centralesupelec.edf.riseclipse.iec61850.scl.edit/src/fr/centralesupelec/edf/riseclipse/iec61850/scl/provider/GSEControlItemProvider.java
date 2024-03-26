@@ -65,7 +65,6 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
             addFixedOffsPropertyDescriptor( object );
             addSecurityEnablePropertyDescriptor( object );
             addTypePropertyDescriptor( object );
-            addReferredByLSVSPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -154,28 +153,6 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
                         false,
                         false,
                         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By LSVS feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByLSVSPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_GSEControl_ReferredByLSVS_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_GSEControl_ReferredByLSVS_feature",
-                                "_UI_GSEControl_type" ),
-                        SclPackage.eINSTANCE.getGSEControl_ReferredByLSVS(),
-                        true,
-                        false,
-                        true,
-                        null,
                         null,
                         null ) );
     }

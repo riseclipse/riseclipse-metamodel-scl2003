@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -64,6 +65,7 @@ public class ControlWithIEDNameItemProvider extends ControlItemProvider {
 
             addConfRevPropertyDescriptor( object );
             addReferredByControlBlockPropertyDescriptor( object );
+            addReferredByLNPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -110,6 +112,28 @@ public class ControlWithIEDNameItemProvider extends ControlItemProvider {
                 null,
                 null,
                 null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By LN feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByLNPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ControlWithIEDName_ReferredByLN_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ControlWithIEDName_ReferredByLN_feature",
+                                "_UI_ControlWithIEDName_type" ),
+                        SclPackage.eINSTANCE.getControlWithIEDName_ReferredByLN(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**

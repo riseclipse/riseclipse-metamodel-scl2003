@@ -20,8 +20,10 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -31,9 +33,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
@@ -54,7 +56,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getParentLDevice <em>Parent LDevice</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getRefersToGSEControl <em>Refers To GSE Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,23 +92,23 @@ public class LNImpl extends AnyLNImpl implements LN {
     protected boolean prefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToGSEControl() <em>Refers To GSE Control</em>}' reference.
+     * The cached value of the '{@link #getRefersToControlWithIEDName() <em>Refers To Control With IED Name</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToGSEControl()
+     * @see #getRefersToControlWithIEDName()
      * @generated
      * @ordered
      */
-    protected GSEControl refersToGSEControl;
+    protected ControlWithIEDName refersToControlWithIEDName;
 
     /**
-     * This is true if the Refers To GSE Control reference has been set.
+     * This is true if the Refers To Control With IED Name reference has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean refersToGSEControlESet;
+    protected boolean refersToControlWithIEDNameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -295,8 +297,8 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public GSEControl getRefersToGSEControl() {
-        return refersToGSEControl;
+    public ControlWithIEDName getRefersToControlWithIEDName() {
+        return refersToControlWithIEDName;
     }
 
     /**
@@ -304,15 +306,16 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToGSEControl( GSEControl newRefersToGSEControl, NotificationChain msgs ) {
-        GSEControl oldRefersToGSEControl = refersToGSEControl;
-        refersToGSEControl = newRefersToGSEControl;
-        boolean oldRefersToGSEControlESet = refersToGSEControlESet;
-        refersToGSEControlESet = true;
+    public NotificationChain basicSetRefersToControlWithIEDName( ControlWithIEDName newRefersToControlWithIEDName,
+            NotificationChain msgs ) {
+        ControlWithIEDName oldRefersToControlWithIEDName = refersToControlWithIEDName;
+        refersToControlWithIEDName = newRefersToControlWithIEDName;
+        boolean oldRefersToControlWithIEDNameESet = refersToControlWithIEDNameESet;
+        refersToControlWithIEDNameESet = true;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
-                    SclPackage.LN__REFERS_TO_GSE_CONTROL, oldRefersToGSEControl, newRefersToGSEControl,
-                    !oldRefersToGSEControlESet );
+                    SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME, oldRefersToControlWithIEDName,
+                    newRefersToControlWithIEDName, !oldRefersToControlWithIEDNameESet );
             if( msgs == null ) {
                 msgs = notification;
             }
@@ -329,28 +332,29 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public void setRefersToGSEControl( GSEControl newRefersToGSEControl ) {
-        if( newRefersToGSEControl != refersToGSEControl ) {
+    public void setRefersToControlWithIEDName( ControlWithIEDName newRefersToControlWithIEDName ) {
+        if( newRefersToControlWithIEDName != refersToControlWithIEDName ) {
             NotificationChain msgs = null;
-            if( refersToGSEControl != null ) {
-                msgs = ( ( InternalEObject ) refersToGSEControl ).eInverseRemove( this,
-                        SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, GSEControl.class, msgs );
+            if( refersToControlWithIEDName != null ) {
+                msgs = ( ( InternalEObject ) refersToControlWithIEDName ).eInverseRemove( this,
+                        SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_LN, ControlWithIEDName.class, msgs );
             }
-            if( newRefersToGSEControl != null ) {
-                msgs = ( ( InternalEObject ) newRefersToGSEControl ).eInverseAdd( this,
-                        SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, GSEControl.class, msgs );
+            if( newRefersToControlWithIEDName != null ) {
+                msgs = ( ( InternalEObject ) newRefersToControlWithIEDName ).eInverseAdd( this,
+                        SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_LN, ControlWithIEDName.class, msgs );
             }
-            msgs = basicSetRefersToGSEControl( newRefersToGSEControl, msgs );
+            msgs = basicSetRefersToControlWithIEDName( newRefersToControlWithIEDName, msgs );
             if( msgs != null ) {
                 msgs.dispatch();
             }
         }
         else {
-            boolean oldRefersToGSEControlESet = refersToGSEControlESet;
-            refersToGSEControlESet = true;
+            boolean oldRefersToControlWithIEDNameESet = refersToControlWithIEDNameESet;
+            refersToControlWithIEDNameESet = true;
             if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LN__REFERS_TO_GSE_CONTROL,
-                        newRefersToGSEControl, newRefersToGSEControl, !oldRefersToGSEControlESet ) );
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME,
+                        newRefersToControlWithIEDName, newRefersToControlWithIEDName,
+                        !oldRefersToControlWithIEDNameESet ) );
             }
         }
     }
@@ -360,14 +364,15 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToGSEControl( NotificationChain msgs ) {
-        GSEControl oldRefersToGSEControl = refersToGSEControl;
-        refersToGSEControl = null;
-        boolean oldRefersToGSEControlESet = refersToGSEControlESet;
-        refersToGSEControlESet = false;
+    public NotificationChain basicUnsetRefersToControlWithIEDName( NotificationChain msgs ) {
+        ControlWithIEDName oldRefersToControlWithIEDName = refersToControlWithIEDName;
+        refersToControlWithIEDName = null;
+        boolean oldRefersToControlWithIEDNameESet = refersToControlWithIEDNameESet;
+        refersToControlWithIEDNameESet = false;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
-                    SclPackage.LN__REFERS_TO_GSE_CONTROL, oldRefersToGSEControl, null, oldRefersToGSEControlESet );
+                    SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME, oldRefersToControlWithIEDName, null,
+                    oldRefersToControlWithIEDNameESet );
             if( msgs == null ) {
                 msgs = notification;
             }
@@ -384,22 +389,23 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public void unsetRefersToGSEControl() {
-        if( refersToGSEControl != null ) {
+    public void unsetRefersToControlWithIEDName() {
+        if( refersToControlWithIEDName != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) refersToGSEControl ).eInverseRemove( this,
-                    SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, GSEControl.class, msgs );
-            msgs = basicUnsetRefersToGSEControl( msgs );
+            msgs = ( ( InternalEObject ) refersToControlWithIEDName ).eInverseRemove( this,
+                    SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_LN, ControlWithIEDName.class, msgs );
+            msgs = basicUnsetRefersToControlWithIEDName( msgs );
             if( msgs != null ) {
                 msgs.dispatch();
             }
         }
         else {
-            boolean oldRefersToGSEControlESet = refersToGSEControlESet;
-            refersToGSEControlESet = false;
+            boolean oldRefersToControlWithIEDNameESet = refersToControlWithIEDNameESet;
+            refersToControlWithIEDNameESet = false;
             if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LN__REFERS_TO_GSE_CONTROL, null,
-                        null, oldRefersToGSEControlESet ) );
+                eNotify( new ENotificationImpl( this, Notification.UNSET,
+                        SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME, null, null,
+                        oldRefersToControlWithIEDNameESet ) );
             }
         }
     }
@@ -410,8 +416,8 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public boolean isSetRefersToGSEControl() {
-        return refersToGSEControlESet;
+    public boolean isSetRefersToControlWithIEDName() {
+        return refersToControlWithIEDNameESet;
     }
 
     /**
@@ -432,12 +438,12 @@ public class LNImpl extends AnyLNImpl implements LN {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentLDevice( ( LDevice ) otherEnd, msgs );
-        case SclPackage.LN__REFERS_TO_GSE_CONTROL:
-            if( refersToGSEControl != null ) {
-                msgs = ( ( InternalEObject ) refersToGSEControl ).eInverseRemove( this,
-                        SclPackage.GSE_CONTROL__REFERRED_BY_LSVS, GSEControl.class, msgs );
+        case SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME:
+            if( refersToControlWithIEDName != null ) {
+                msgs = ( ( InternalEObject ) refersToControlWithIEDName ).eInverseRemove( this,
+                        SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_LN, ControlWithIEDName.class, msgs );
             }
-            return basicSetRefersToGSEControl( ( GSEControl ) otherEnd, msgs );
+            return basicSetRefersToControlWithIEDName( ( ControlWithIEDName ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -454,8 +460,8 @@ public class LNImpl extends AnyLNImpl implements LN {
             return basicSetParentAccessPoint( null, msgs );
         case SclPackage.LN__PARENT_LDEVICE:
             return basicSetParentLDevice( null, msgs );
-        case SclPackage.LN__REFERS_TO_GSE_CONTROL:
-            return basicUnsetRefersToGSEControl( msgs );
+        case SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME:
+            return basicUnsetRefersToControlWithIEDName( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -490,8 +496,8 @@ public class LNImpl extends AnyLNImpl implements LN {
             return getParentAccessPoint();
         case SclPackage.LN__PARENT_LDEVICE:
             return getParentLDevice();
-        case SclPackage.LN__REFERS_TO_GSE_CONTROL:
-            return getRefersToGSEControl();
+        case SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME:
+            return getRefersToControlWithIEDName();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -513,8 +519,8 @@ public class LNImpl extends AnyLNImpl implements LN {
         case SclPackage.LN__PARENT_LDEVICE:
             setParentLDevice( ( LDevice ) newValue );
             return;
-        case SclPackage.LN__REFERS_TO_GSE_CONTROL:
-            setRefersToGSEControl( ( GSEControl ) newValue );
+        case SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME:
+            setRefersToControlWithIEDName( ( ControlWithIEDName ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -537,8 +543,8 @@ public class LNImpl extends AnyLNImpl implements LN {
         case SclPackage.LN__PARENT_LDEVICE:
             setParentLDevice( ( LDevice ) null );
             return;
-        case SclPackage.LN__REFERS_TO_GSE_CONTROL:
-            unsetRefersToGSEControl();
+        case SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME:
+            unsetRefersToControlWithIEDName();
             return;
         }
         super.eUnset( featureID );
@@ -558,8 +564,8 @@ public class LNImpl extends AnyLNImpl implements LN {
             return getParentAccessPoint() != null;
         case SclPackage.LN__PARENT_LDEVICE:
             return getParentLDevice() != null;
-        case SclPackage.LN__REFERS_TO_GSE_CONTROL:
-            return isSetRefersToGSEControl();
+        case SclPackage.LN__REFERS_TO_CONTROL_WITH_IED_NAME:
+            return isSetRefersToControlWithIEDName();
         }
         return super.eIsSet( featureID );
     }
@@ -595,30 +601,39 @@ public class LNImpl extends AnyLNImpl implements LN {
 
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
-        if( ! "LGOS".equals( getLnClass() )) return;
 
-        String messagePrefix = "while resolving link to GSEControl from LN lnClass=\"LGOS\":";
-        
-        List< DOI > goCBRef =
+        String doiName;
+        if( "LGOS".equals( getLnClass() )) {
+            doiName = "GoCBRef";
+        }
+        else if( "LSVS".equals( getLnClass() )) {
+            doiName = "SvCBRef";
+        }
+        else {
+            return;
+        }
+
+        String messagePrefix = "while resolving link to ControlWithIEDName from LN lnClass=\"" + getLnClass() + "\": ";
+
+        List< DOI > cBRef =
              getDOI()
             .stream()
-            .filter( doi -> "GoCBRef".equals( doi.getName() ))
+            .filter( doi -> doiName.equals( doi.getName() ))
             .collect( Collectors.toList() );
-        if( goCBRef.size() > 1 ) {
+        if( cBRef.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found several DOI named GoCBRef" );
-            return;            
+                             messagePrefix, "found several DOI named ", doiName );
+            return;
         }
-        if( goCBRef.size() == 0 ) {
+        if( cBRef.size() == 0 ) {
             console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found no DOI named GoCBRef" );
-            return;            
+                    messagePrefix, "found no DOI named ", doiName );
+            return;
         }
-        
+
         // Look for DAI name="setSrcRef" in GrRef
         List< DAI > setSrcRef =
-                 goCBRef
+                 cBRef
                 .get( 0 )
                 .getDAI()
                 .stream()
@@ -626,67 +641,75 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .toList();
         if( setSrcRef.size() == 0 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found no DAI named setSrcRef in GoCBRef on line ", goCBRef.get( 0 ).getLineNumber() );
+                             messagePrefix, "found no DAI named setSrcRef in ", doiName,
+                             " on line ", cBRef.get( 0 ).getLineNumber() );
             return;
         }
         if( setSrcRef.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found several DAI named setSrcRef in GoCBRef on line ", goCBRef.get( 0 ).getLineNumber() );
+                             messagePrefix, "found several DAI named setSrcRef in ",
+                             doiName, " on line ", cBRef.get( 0 ).getLineNumber() );
             return;
         }
-        
+
         if( setSrcRef.get( 0 ).getVal().size() == 0 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found no Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
+            // Do not display as warning, too many of them
+            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                            messagePrefix, "found no Val in setSrcRef on line ",
+                            setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
         if( setSrcRef.get( 0 ).getVal().size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found several Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
-            return;            
+                             messagePrefix, "found several Val in setSrcRef on line ",
+                             setSrcRef.get( 0 ).getLineNumber() );
+            return;
         }
-        
+
         Val val = setSrcRef.get( 0 ).getVal().get( 0 );
-        String gSEControlName = val.getValue();
-        if(( gSEControlName == null ) || ( gSEControlName.length() <= 1 )) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found no Val or empty Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
-            return;            
-        }
-        if( gSEControlName.indexOf( '/' ) == -1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(), " is illformed, it should contain \"/\"" );
+        String controlWithIEDName = val.getValue();
+        if(( controlWithIEDName == null ) || ( controlWithIEDName.length() <= 1 )) {
+            // Do not display as warning, too many of them
+            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                            messagePrefix, "found no Val or empty Val in setSrcRef on line ", 
+                            setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
-        if(( gSEControlName.indexOf( '.' ) == -1 ) || ( gSEControlName.indexOf( '.' ) != gSEControlName.indexOf( '/' ) + 5 )) {
+        if( controlWithIEDName.indexOf( '/' ) == -1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(), " is illformed, it should contain \"/LLN0.\"" );
+                             messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
+                             " is illformed, it should contain \"/\"" );
             return;
         }
-        if( ! "/LLN0.".equals( gSEControlName.subSequence( gSEControlName.indexOf( '/' ), gSEControlName.indexOf( '.' ) + 1 ))) {
+        if( ( controlWithIEDName.indexOf( '.' ) == -1 )
+         || ( controlWithIEDName.indexOf( '.' ) != controlWithIEDName.indexOf( '/' ) + 5 )
+         || ! "/LLN0.".equals( controlWithIEDName.subSequence( controlWithIEDName.indexOf( '/' ), controlWithIEDName.indexOf( '.' ) + 1 ))) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(), " is illformed, it should contain \"/LLN0.\"" );
+                             messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
+                             " is illformed, it should contain \"/LLN0.\"" );
             return;
         }
-        
+
         SCL scl = getParentLDevice().getParentServer().getParentAccessPoint().getParentIED().getParentSCL();
         List< IED > ieds =
                  scl
                 .getIED()
                 .stream()
-                .filter( ied -> gSEControlName.startsWith( ied.getName() ))
+                .filter( ied -> controlWithIEDName.startsWith( ied.getName() ))
                 .toList();
         if( ieds.size() == 0 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                             messagePrefix, "found no IED whose name is the start of ", gSEControlName, " on line ", val.getLineNumber() );
+                             messagePrefix, "found no IED whose name is the start of ",
+                             controlWithIEDName, " on line ", val.getLineNumber() );
             return;
         }
         if( ieds.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found several IED whose name is the start of ", gSEControlName, " on line ", val.getLineNumber() );
+                             messagePrefix, "found several IED whose name is the start of ",
+                             controlWithIEDName, " on line ", val.getLineNumber() );
             return;
         }
-        String ldInst = gSEControlName.substring( ieds.get( 0 ).getName().length(), gSEControlName.indexOf( '/' ));
+        String ldInst = controlWithIEDName.substring( ieds.get( 0 ).getName().length(), controlWithIEDName.indexOf( '/' ));
         List< LDevice > lDevices =
                  ieds
                 .get( 0 )
@@ -700,40 +723,47 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .toList();
         if( lDevices.size() == 0 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found no LDevice whose inst is ", ldInst, " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                             messagePrefix, "found no LDevice whose inst is ", ldInst,
+                             " in IED on line ", ieds.get( 0 ).getLineNumber() );
             return;
         }
         if( lDevices.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found several LDevice whose inst is ", ldInst, " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                             messagePrefix, "found several LDevice whose inst is ", ldInst,
+                             " in IED on line ", ieds.get( 0 ).getLineNumber() );
             return;
         }
-        
+
         LN0 ln0 = lDevices.get( 0 ).getLN0();
         if( ln0 == null ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found no LN0 in LDevice on line ", lDevices.get( 0 ).getLineNumber() );
+                             messagePrefix, "found no LN0 in LDevice on line ", lDevices.get( 0 ).getLineNumber() );
             return;
         }
-        
-        List< GSEControl > gseControls =
-                 ln0
-                .getGSEControl()
+
+        List< ControlWithIEDName > controls =
+                Collections.< ControlWithIEDName >unmodifiableList(
+                        ( "LGOS".equals( getLnClass() ) ? ln0.getGSEControl() : ln0.getSampledValueControl() )
                 .stream()
-                .filter( gse -> gse.getName().equals( gSEControlName.substring( gSEControlName.indexOf( '.' ) + 1 )))
-                .toList();
-        if( gseControls.size() == 0 ) {
+                .filter( control -> control.getName().equals( controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 )))
+                .toList()
+        );
+        if( controls.size() == 0 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found no GSEControl whose name is ", gSEControlName.substring( gSEControlName.indexOf( '.' ) + 1 ), " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                             messagePrefix, "found no ControlWithIEDName whose name is ",
+                             controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
+                             " in LN0 on line ", ln0.getLineNumber() );
             return;
         }
-        if( gseControls.size() > 1 ) {
+        if( controls.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found several GSEControl whose name is ", gSEControlName.substring( gSEControlName.indexOf( '.' ) + 1 ), " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                             messagePrefix, "found several ControlWithIEDName whose name is ",
+                             controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
+                             " in LN0 on line ", ln0.getLineNumber() );
             return;
         }
-        
-        setRefersToGSEControl( gseControls.get( 0 ));
+
+        setRefersToControlWithIEDName( controls.get( 0 ));
     }
 
 } //LNImpl
