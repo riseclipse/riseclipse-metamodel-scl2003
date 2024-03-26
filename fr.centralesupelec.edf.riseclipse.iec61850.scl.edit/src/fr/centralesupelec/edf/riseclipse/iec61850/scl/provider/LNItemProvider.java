@@ -62,7 +62,7 @@ public class LNItemProvider extends AnyLNItemProvider {
             super.getPropertyDescriptors( object );
 
             addPrefixPropertyDescriptor( object );
-            addRefersToGSEControlPropertyDescriptor( object );
+            addRefersToControlWithIEDNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -89,19 +89,19 @@ public class LNItemProvider extends AnyLNItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Refers To GSE Control feature.
+     * This adds a property descriptor for the Refers To Control With IED Name feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToGSEControlPropertyDescriptor( Object object ) {
+    protected void addRefersToControlWithIEDNamePropertyDescriptor( Object object ) {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_LN_RefersToGSEControl_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_LN_RefersToGSEControl_feature",
+                        getString( "_UI_LN_RefersToControlWithIEDName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LN_RefersToControlWithIEDName_feature",
                                 "_UI_LN_type" ),
-                        SclPackage.eINSTANCE.getLN_RefersToGSEControl(),
+                        SclPackage.eINSTANCE.getLN_RefersToControlWithIEDName(),
                         true,
                         false,
                         true,

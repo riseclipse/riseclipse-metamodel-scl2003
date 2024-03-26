@@ -9831,13 +9831,22 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_IED_NAME__PROTOCOL = CONTROL_FEATURE_COUNT + 3;
 
     /**
+     * The feature id for the '<em><b>Referred By LN</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME__REFERRED_BY_LN = CONTROL_FEATURE_COUNT + 4;
+
+    /**
      * The number of structural features of the '<em>Control With IED Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL_WITH_IED_NAME_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 4;
+    int CONTROL_WITH_IED_NAME_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 5;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -11794,6 +11803,15 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL__PROTOCOL = CONTROL_WITH_IED_NAME__PROTOCOL;
 
     /**
+     * The feature id for the '<em><b>Referred By LN</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__REFERRED_BY_LN = CONTROL_WITH_IED_NAME__REFERRED_BY_LN;
+
+    /**
      * The feature id for the '<em><b>App ID</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11839,22 +11857,13 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL__PARENT_LN0 = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Referred By LSVS</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int GSE_CONTROL__REFERRED_BY_LSVS = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
-
-    /**
      * The number of structural features of the '<em>GSE Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 6;
+    int GSE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -13622,13 +13631,13 @@ public interface SclPackage extends EPackage {
     int LN__PARENT_LDEVICE = ANY_LN_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Refers To GSE Control</b></em>' reference.
+     * The feature id for the '<em><b>Refers To Control With IED Name</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN__REFERS_TO_GSE_CONTROL = ANY_LN_FEATURE_COUNT + 3;
+    int LN__REFERS_TO_CONTROL_WITH_IED_NAME = ANY_LN_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>LN</em>' class.
@@ -16158,6 +16167,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLED_VALUE_CONTROL__PROTOCOL = CONTROL_WITH_IED_NAME__PROTOCOL;
+
+    /**
+     * The feature id for the '<em><b>Referred By LN</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL__REFERRED_BY_LN = CONTROL_WITH_IED_NAME__REFERRED_BY_LN;
 
     /**
      * The feature id for the '<em><b>Multicast</b></em>' attribute.
@@ -27242,6 +27260,17 @@ public interface SclPackage extends EPackage {
     EReference getControlWithIEDName_Protocol();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN <em>Referred By LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN()
+     * @see #getControlWithIEDName()
+     * @generated
+     */
+    EReference getControlWithIEDName_ReferredByLN();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -28174,17 +28203,6 @@ public interface SclPackage extends EPackage {
     EReference getGSEControl_ParentLN0();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS <em>Referred By LSVS</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Referred By LSVS</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getReferredByLSVS()
-     * @see #getGSEControl()
-     * @generated
-     */
-    EReference getGSEControl_ReferredByLSVS();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir <em>GSE Dir</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -28919,15 +28937,15 @@ public interface SclPackage extends EPackage {
     EReference getLN_ParentLDevice();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl <em>Refers To GSE Control</em>}'.
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To GSE Control</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToGSEControl()
+     * @return the meta object for the reference '<em>Refers To Control With IED Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName()
      * @see #getLN()
      * @generated
      */
-    EReference getLN_RefersToGSEControl();
+    EReference getLN_RefersToControlWithIEDName();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0 <em>LN0</em>}'.
