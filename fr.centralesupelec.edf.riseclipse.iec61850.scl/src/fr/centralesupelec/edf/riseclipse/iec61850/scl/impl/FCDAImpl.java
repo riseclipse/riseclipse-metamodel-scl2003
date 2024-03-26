@@ -1188,7 +1188,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             return;
         }
         AccessPoint ap = ( AccessPoint ) object;
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found Server on line ", ap.getServer().getLineNumber() );
 
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap, getLdInst() );
@@ -1198,7 +1198,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                          lDevice.getLeft().getLineNumber() );
 
@@ -1218,14 +1218,14 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                     mess );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found ", mess, " on line ", anyLN.getLeft().getLineNumber() );
         anyLN.getLeft().buildExplicitLinks( console, false );
 
         if( anyLN.getLeft().getRefersToLNodeType() == null ) {
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found LNodeType on line ",
                          anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
 
@@ -1252,7 +1252,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                              " DO ( name = ", doNames[0], " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found DO ( name = ", doNames[0], " ) on line ",
                          res1.get( 0 ).getLineNumber() );
 
@@ -1262,7 +1262,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         if( doType == null ) {
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                          messagePrefix, "found DOType on line ", doType.getLineNumber() );
 
         for( int i = 1; i < doNames.length; ++i ) {
@@ -1280,7 +1280,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                         "SDO ( name = ", name, " ) in DOType on line ", doType.getLineNumber() );
                 return;
             }
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found SDO ( name = ", name, " ) in DOType (on line ",
                              doType.getLineNumber(), ") on line ", res2.get( 0 ).getLineNumber() );
 
@@ -1289,7 +1289,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             if( doType == null ) {
                 return;
             }
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found DOType on line ", doType.getLineNumber() );
         }
 
@@ -1311,14 +1311,14 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
                     if( res3.size() == 1 ) {
                         res3.get( 0 ).buildExplicitLinks( console, false );
-                        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                                          messagePrefix, "found SDO ( name = ", name, " ) in DOType on line ",
                                          res3.get( 0 ).getLineNumber() );
                         doType = res3.get( 0 ).getRefersToDOType();
                         if( doType == null ) {
                             return;
                         }
-                        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                                          messagePrefix, "found DOType on line ", doType.getLineNumber() );
                         continue;
                     }
@@ -1332,7 +1332,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
                     if( res4.size() == 1 ) {
                         attributeLookedFor = res4.get( 0 );
-                        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                                          messagePrefix, "found DA ( name = ", name, " ) in DOType on line ",
                                          attributeLookedFor.getLineNumber() );
                         doType = null;
@@ -1363,7 +1363,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                                         attributeLookedFor.getRefersToDAType().getLineNumber() );
                        return;
                    }
-                   console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                   console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                                     messagePrefix, "found BDA ( name = ", name, " ) in DAType (on line ",
                                             attributeLookedFor.getRefersToDAType().getLineNumber(),
                                             ") on line ", res5.get( 0 ).getLineNumber() );
@@ -1388,7 +1388,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
 
-            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                           "FCDA refers to AbstractDataAttribute ( name = ",
                           attributeLookedFor.getName(), " ) on line ", attributeLookedFor.getLineNumber() );
             getRefersToAbstractDataAttribute().add( attributeLookedFor );
@@ -1404,7 +1404,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         if( getRefersToAbstractDataAttribute().size() > 0 ) {
             for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
-                console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                               "FCDA refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ",
                               a.getLineNumber() );
             }

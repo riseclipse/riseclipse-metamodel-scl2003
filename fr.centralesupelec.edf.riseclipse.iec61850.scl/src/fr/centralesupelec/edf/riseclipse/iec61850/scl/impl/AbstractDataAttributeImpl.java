@@ -1581,7 +1581,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
-            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
                     getRefersToEnumType().getLineNumber() );
         }
@@ -1602,7 +1602,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
                     getRefersToDAType().getLineNumber() );
         }

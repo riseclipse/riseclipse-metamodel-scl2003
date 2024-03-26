@@ -1171,7 +1171,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                     " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                 ied.getLeft().getLineNumber() );
 
@@ -1184,7 +1184,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                 lDevice.getLeft().getLineNumber() );
 
@@ -1207,7 +1207,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "LNode refers to ", mess, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
@@ -1242,7 +1242,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "AnyLN refers to LNodeType( id = ", getLnType(), " ) on line ",
                 getRefersToLNodeType().getLineNumber() );
 

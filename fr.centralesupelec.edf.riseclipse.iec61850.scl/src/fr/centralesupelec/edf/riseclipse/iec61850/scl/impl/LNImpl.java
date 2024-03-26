@@ -626,7 +626,7 @@ public class LNImpl extends AnyLNImpl implements LN {
             return;
         }
         if( cBRef.size() == 0 ) {
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found no DOI named ", doiName );
             return;
         }
@@ -763,6 +763,8 @@ public class LNImpl extends AnyLNImpl implements LN {
             return;
         }
 
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                "LN ", getLnClass(), " supervises ControlWithIEDName ", controls.get( 0 ), " at line ", controls.get( 0 ).getLineNumber() );
         setRefersToControlWithIEDName( controls.get( 0 ));
     }
 

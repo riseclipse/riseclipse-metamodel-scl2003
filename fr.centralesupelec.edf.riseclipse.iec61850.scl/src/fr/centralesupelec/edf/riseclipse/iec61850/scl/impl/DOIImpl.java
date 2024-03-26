@@ -967,7 +967,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         if( ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) {
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LNodeType on line ",
                 getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
@@ -985,7 +985,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return;
         }
         setRefersToDO( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
     }
 

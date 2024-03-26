@@ -1265,7 +1265,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 return;
             }
             lDevice = lDevice1.getLeft();
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                     lDevice.getLineNumber() );
         }
@@ -1285,7 +1285,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                     mess );
             return;
         }
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "LogControl refers to ", mess, " on line ",
                 anyLN.getLeft().getLineNumber() );
 
@@ -1301,7 +1301,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return;
         }
         setRefersToLog( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getLineNumber(),
                 "LogControl refers to Log( name = ", getLogName(), " ) on line ",
                 getRefersToLog().getLineNumber() );
     }

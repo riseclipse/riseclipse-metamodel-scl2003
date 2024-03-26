@@ -1191,7 +1191,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                     "IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ", ied.getLeft().getLineNumber() );
 
         Pair< AccessPoint, Integer > ap = null;
@@ -1217,7 +1217,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                         " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found ", "AccessPoint( name = ", getApRef(), " ) on line ",
                     ap.getLeft().getLineNumber() );
         }
@@ -1236,7 +1236,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                         " LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
                     lDevice.getLeft().getLineNumber() );
 
@@ -1254,7 +1254,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ClientLN refers to ", mess, " on line ",
                 getRefersToAnyLN().getLineNumber() );
     }
