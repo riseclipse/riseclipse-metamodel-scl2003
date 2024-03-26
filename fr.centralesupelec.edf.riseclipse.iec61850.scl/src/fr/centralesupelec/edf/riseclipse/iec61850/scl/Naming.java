@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -36,7 +36,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model abstract="true"
  * @generated
  */
-public interface Naming extends BaseElement, AgDesc {
+public interface Naming extends BaseElement, AgDesc, AgUuid {
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->

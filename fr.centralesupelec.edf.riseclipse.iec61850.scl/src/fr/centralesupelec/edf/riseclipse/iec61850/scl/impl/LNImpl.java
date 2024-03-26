@@ -671,7 +671,7 @@ public class LNImpl extends AnyLNImpl implements LN {
         if(( controlWithIEDName == null ) || ( controlWithIEDName.length() <= 1 )) {
             // Do not display as warning, too many of them
             console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                            messagePrefix, "found no Val or empty Val in setSrcRef on line ", 
+                            messagePrefix, "found no Val or empty Val in setSrcRef on line ",
                             setSrcRef.get( 0 ).getLineNumber() );
             return;
         }

@@ -1,23 +1,22 @@
-/*
-*************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
-**  All rights reserved. This program and the accompanying materials
-**  are made available under the terms of the Eclipse Public License v2.0
-**  which accompanies this distribution, and is available at
-**  https://www.eclipse.org/legal/epl-v20.html
-**
-**  This file is part of the RiseClipse tool
-**
-**  Contributors:
-**      Computer Science Department, CentraleSupélec
-**      EDF R&D
-**  Contacts:
-**      dominique.marcadet@centralesupelec.fr
-**      aurelie.dehouck-neveu@edf.fr
-**  Web site:
-**      https://riseclipse.github.io/
-*************************************************************************
-*/
+/**
+ *  Copyright (c) 2016-2024 CentraleSupélec & EDF.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-v20.html
+ *
+ *  This file is part of the RiseClipse tool
+ *
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *      EDF R&D
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *      aurelie.dehouck-neveu@edf.fr
+ *  Web site:
+ *      https://riseclipse.github.io/
+ *
+ */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.Collection;
@@ -25,28 +24,42 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class NamingItemProvider extends BaseElementItemProvider {
+public class AgUuidItemProvider
+        extends ItemProviderAdapter
+        implements
+        IEditingDomainItemProvider,
+        IStructuredItemContentProvider,
+        ITreeItemContentProvider,
+        IItemLabelProvider,
+        IItemPropertySource {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public NamingItemProvider( AdapterFactory adapterFactory ) {
+    public AgUuidItemProvider( AdapterFactory adapterFactory ) {
         super( adapterFactory );
     }
 
@@ -61,54 +74,10 @@ public class NamingItemProvider extends BaseElementItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addDescPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
             addTemplateUuidPropertyDescriptor( object );
-            addNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Name feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addNamePropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_Naming_name_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Naming_name_feature", "_UI_Naming_type" ),
-                        SclPackage.eINSTANCE.getNaming_Name(),
-                        true,
-                        false,
-                        false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the Desc feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addDescPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_AgDesc_desc_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type" ),
-                        SclPackage.eINSTANCE.getAgDesc_Desc(),
-                        true,
-                        false,
-                        false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                        null,
-                        null ) );
     }
 
     /**
@@ -155,17 +124,6 @@ public class NamingItemProvider extends BaseElementItemProvider {
     }
 
     /**
-     * This returns Naming.gif.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Object getImage( Object object ) {
-        return overlayImage( object, getResourceLocator().getImage( "full/obj16/Naming" ) );
-    }
-
-    /**
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -173,9 +131,9 @@ public class NamingItemProvider extends BaseElementItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( Naming ) object ).getName();
-        return label == null || label.length() == 0 ? getString( "_UI_Naming_type" )
-                : getString( "_UI_Naming_type" ) + " " + label;
+        String label = ( ( AgUuid ) object ).getUuid();
+        return label == null || label.length() == 0 ? getString( "_UI_AgUuid_type" )
+                : getString( "_UI_AgUuid_type" ) + " " + label;
     }
 
     /**
@@ -189,11 +147,9 @@ public class NamingItemProvider extends BaseElementItemProvider {
     public void notifyChanged( Notification notification ) {
         updateChildren( notification );
 
-        switch( notification.getFeatureID( Naming.class ) ) {
-        case SclPackage.NAMING__DESC:
-        case SclPackage.NAMING__UUID:
-        case SclPackage.NAMING__TEMPLATE_UUID:
-        case SclPackage.NAMING__NAME:
+        switch( notification.getFeatureID( AgUuid.class ) ) {
+        case SclPackage.AG_UUID__UUID:
+        case SclPackage.AG_UUID__TEMPLATE_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }
@@ -210,6 +166,17 @@ public class NamingItemProvider extends BaseElementItemProvider {
     @Override
     protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
         super.collectNewChildDescriptors( newChildDescriptors, object );
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return SCLEditPlugin.INSTANCE;
     }
 
 }

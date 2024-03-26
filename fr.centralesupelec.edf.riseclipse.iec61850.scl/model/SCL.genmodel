@@ -1149,6 +1149,10 @@
     <genClasses image="false" ecoreClass="SCL.ecore#//AgVirtual">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgVirtual/virtual"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="SCL.ecore#//AgUuid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgUuid/uuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgUuid/templateUuid"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//IRiseClipseConsole"/>
     <genClasses image="false" ecoreClass="SCL.ecore#//INamespaceGetter">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//INamespaceGetter/namespace"/>

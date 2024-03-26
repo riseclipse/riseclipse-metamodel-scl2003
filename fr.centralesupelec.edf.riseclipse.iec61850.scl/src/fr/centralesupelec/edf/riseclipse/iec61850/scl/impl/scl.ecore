@@ -137,7 +137,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement #//AgDesc">
+  <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement #//AgDesc #//AgUuid">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
   </eClassifiers>
@@ -2332,6 +2332,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgVirtual" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgUuid" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IRiseClipseConsole" instanceClassName="fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole"
