@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: fr.centralesupelec.edf.riseclipse.iec61850.scl;singleton:=true
 Automatic-Module-Name: fr.centralesupelec.edf.riseclipse.iec61850.scl
-Bundle-Version: 1.2.8.qualifier
+Bundle-Version: 1.2.8
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
