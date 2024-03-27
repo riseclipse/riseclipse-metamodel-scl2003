@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -117,19 +117,24 @@ public class LN0ItemProvider extends AnyLNItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_LN0_type" ));
+
+        s.append( getString( "_UI_LN0_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_AnyLN_lnType_feature" ));
+
+        s.append( getString( "_UI_AnyLN_lnClass_feature" ) );
         s.append( "=\"" );
-        s.append((( LN0 ) object ).getLnType());
-        s.append( "\" ");
-        
-        s.append( "(");
-        s.append((( LN0 ) object ).getLineNumber());
-        s.append( ")");
-        
+        s.append( ( ( LN0 ) object ).getLnClass() );
+        s.append( "\" " );
+
+        s.append( getString( "_UI_AnyLN_inst_feature" ) );
+        s.append( "=\"" );
+        s.append( ( ( LN0 ) object ).getInst() );
+        s.append( "\" " );
+
+        s.append( "(" );
+        s.append( ( ( LN0 ) object ).getLineNumber() );
+        s.append( ")" );
+
         return s.toString();
     }
 

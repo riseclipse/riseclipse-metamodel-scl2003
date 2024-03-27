@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -260,13 +260,35 @@ public class LNodeItemProvider extends UnNamingItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( LNode ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_LNode_type" )
-                : getString( "_UI_LNode_type" ) + " " + label;
+        StringBuilder s = new StringBuilder();
+
+        s.append( getString( "_UI_LNode_type" ) );
+        s.append( ": " );
+
+        s.append( getString( "_UI_LNode_prefix_feature" ) );
+        s.append( "=\"" );
+        s.append( ( ( LNode ) object ).getPrefix() );
+        s.append( "\" " );
+
+        s.append( getString( "_UI_LNode_lnClass_feature" ) );
+        s.append( "=\"" );
+        s.append( ( ( LNode ) object ).getLnClass() );
+        s.append( "\" " );
+
+        s.append( getString( "_UI_LNode_lnInst_feature" ) );
+        s.append( "=\"" );
+        s.append( ( ( LNode ) object ).getLnInst() );
+        s.append( "\" " );
+
+        s.append( "(" );
+        s.append( ( ( LNode ) object ).getLineNumber() );
+        s.append( ")" );
+
+        return s.toString();
     }
 
     /**

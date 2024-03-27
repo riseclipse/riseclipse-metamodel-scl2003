@@ -1341,7 +1341,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                     " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                 ied.getLeft().getLineNumber() );
 
@@ -1354,7 +1354,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                     " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found ", "LDevice( inst = ", getLdInst(), " )", " on line ",
                 lDevice.getLeft().getLineNumber() );
 
@@ -1374,7 +1374,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Association refers to ", mess, " on line ",
                 getRefersToAnyLN().getLineNumber() );
     }

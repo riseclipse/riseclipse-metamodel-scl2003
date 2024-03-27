@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -62,6 +62,7 @@ public class LNItemProvider extends AnyLNItemProvider {
             super.getPropertyDescriptors( object );
 
             addPrefixPropertyDescriptor( object );
+            addRefersToControlWithIEDNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -88,6 +89,28 @@ public class LNItemProvider extends AnyLNItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Refers To Control With IED Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToControlWithIEDNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LN_RefersToControlWithIEDName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LN_RefersToControlWithIEDName_feature",
+                                "_UI_LN_type" ),
+                        SclPackage.eINSTANCE.getLN_RefersToControlWithIEDName(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns LN.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -107,24 +130,29 @@ public class LNItemProvider extends AnyLNItemProvider {
     @Override
     public String getText( Object object ) {
         StringBuilder s = new StringBuilder();
-        
-        s.append( getString( "_UI_LN_type" ));
+
+        s.append( getString( "_UI_LN_type" ) );
         s.append( ": " );
-        
-        s.append( getString( "_UI_AnyLN_lnClass_feature" ));
+
+        s.append( getString( "_UI_LN_prefix_feature" ) );
         s.append( "=\"" );
-        s.append((( LN ) object ).getLnClass());
-        s.append( "\" ");
-        
-        s.append( getString( "_UI_AnyLN_lnType_feature" ));
+        s.append( ( ( LN ) object ).getPrefix() );
+        s.append( "\" " );
+
+        s.append( getString( "_UI_AnyLN_lnClass_feature" ) );
         s.append( "=\"" );
-        s.append((( LN ) object ).getLnType());
-        s.append( "\" ");
-        
-        s.append( "(");
-        s.append((( LN ) object ).getLineNumber());
-        s.append( ")");
-        
+        s.append( ( ( LN ) object ).getLnClass() );
+        s.append( "\" " );
+
+        s.append( getString( "_UI_AnyLN_inst_feature" ) );
+        s.append( "=\"" );
+        s.append( ( ( LN ) object ).getInst() );
+        s.append( "\" " );
+
+        s.append( "(" );
+        s.append( ( ( LN ) object ).getLineNumber() );
+        s.append( ")" );
+
         return s.toString();
     }
 

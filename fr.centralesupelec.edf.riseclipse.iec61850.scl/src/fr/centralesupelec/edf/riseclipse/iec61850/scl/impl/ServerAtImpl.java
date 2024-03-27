@@ -510,7 +510,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ServerAt refers to AccessPoint( name = ", getApName(), " ) on line ",
                 getRefersToAccessPoint().getLineNumber() );
     }

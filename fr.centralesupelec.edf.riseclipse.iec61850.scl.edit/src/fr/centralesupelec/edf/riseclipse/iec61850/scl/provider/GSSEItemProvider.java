@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2021 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2024 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -26,8 +26,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE} object.
@@ -76,13 +74,11 @@ public class GSSEItemProvider extends ServiceWithMaxItemProvider {
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( GSSE ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_GSSE_type" )
-                : getString( "_UI_GSSE_type" ) + " " + label;
+        return getText( object, getString( "_UI_GSSE_type" ) );
     }
 
     /**

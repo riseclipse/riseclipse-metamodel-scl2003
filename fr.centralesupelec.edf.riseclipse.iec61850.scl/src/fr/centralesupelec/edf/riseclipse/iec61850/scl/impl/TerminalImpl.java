@@ -1239,7 +1239,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         Substation substation = res1.get( 0 );
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found Substation( name = ", getSubstationName(), " ) on line ",
                 substation.getLineNumber() );
 
@@ -1258,7 +1258,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         VoltageLevel voltageLevel = res2.get( 0 );
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found VoltageLevel( name = ", getVoltageLevelName(), " ) on line ",
                 voltageLevel.getLineNumber() );
 
@@ -1277,7 +1277,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         Bay bay = res3.get( 0 );
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found Bay( name = ", getBayName(), " ) on line ",
                 voltageLevel.getLineNumber() );
 
@@ -1296,7 +1296,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         setRefersToConnectivityNode( res4.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " ) on line ",
                 getRefersToConnectivityNode().getLineNumber() );
     }
@@ -1324,7 +1324,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         Line line = res1.get( 0 );
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found Line( name = ", getLineName(), " ) on line ",
                 line.getLineNumber() );
 
@@ -1342,7 +1342,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         setRefersToConnectivityNode( res2.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " )", " on line ",
                 getRefersToConnectivityNode().getLineNumber() );
     }

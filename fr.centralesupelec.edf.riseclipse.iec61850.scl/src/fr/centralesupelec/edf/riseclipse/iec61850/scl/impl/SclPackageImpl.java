@@ -422,6 +422,13 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass agUuidEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass iRiseClipseConsoleEClass = null;
 
     /**
@@ -4178,10 +4185,44 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EClass getAgUuid() {
+        if( agUuidEClass == null ) {
+            agUuidEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()
+                    .get( 182 );
+        }
+        return agUuidEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgUuid_Uuid() {
+        return ( EAttribute ) getAgUuid().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgUuid_TemplateUuid() {
+        return ( EAttribute ) getAgUuid().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getIRiseClipseConsole() {
         if( iRiseClipseConsoleEClass == null ) {
             iRiseClipseConsoleEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
-                    .getEClassifiers().get( 182 );
+                    .getEClassifiers().get( 183 );
         }
         return iRiseClipseConsoleEClass;
     }
@@ -4195,7 +4236,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     public EClass getINamespaceGetter() {
         if( iNamespaceGetterEClass == null ) {
             iNamespaceGetterEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
-                    .getEClassifiers().get( 183 );
+                    .getEClassifiers().get( 184 );
         }
         return iNamespaceGetterEClass;
     }
@@ -5304,6 +5345,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getControlWithIEDName_Protocol() {
         return ( EReference ) getControlWithIEDName().getEStructuralFeatures().get( 3 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getControlWithIEDName_ReferredByLN() {
+        return ( EReference ) getControlWithIEDName().getEStructuralFeatures().get( 4 );
     }
 
     /**
@@ -6956,6 +7007,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLN_ParentLDevice() {
         return ( EReference ) getLN().getEStructuralFeatures().get( 2 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getLN_RefersToControlWithIEDName() {
+        return ( EReference ) getLN().getEStructuralFeatures().get( 3 );
     }
 
     /**

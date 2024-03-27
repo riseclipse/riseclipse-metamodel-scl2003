@@ -137,7 +137,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement #//AgDesc">
+  <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement #//AgDesc #//AgUuid">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
   </eClassifiers>
@@ -783,6 +783,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Protocol" ordered="false"
         eType="#//Protocol" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//Protocol/ParentControlWithIEDName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLN" ordered="false"
+        upperBound="-1" eType="#//LN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LN/RefersToControlWithIEDName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlWithTriggerOpt" abstract="true"
       eSuperTypes="#//Control">
@@ -1147,6 +1150,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLDevice" ordered="false"
         eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LDevice/LN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToControlWithIEDName"
+        ordered="false" eType="#//ControlWithIEDName" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ControlWithIEDName/ReferredByLN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LN0" eSuperTypes="#//AnyLN">
     <eStructuralFeatures xsi:type="ecore:EReference" name="GSEControl" ordered="false"
@@ -2326,6 +2332,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgVirtual" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgUuid" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IRiseClipseConsole" instanceClassName="fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole"

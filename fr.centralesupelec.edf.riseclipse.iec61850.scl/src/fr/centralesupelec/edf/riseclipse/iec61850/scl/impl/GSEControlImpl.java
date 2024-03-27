@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -208,9 +208,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         appID = newAppID;
         boolean oldAppIDESet = appIDESet;
         appIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__APP_ID, oldAppID, appID,
                     !oldAppIDESet ) );
+        }
     }
 
     /**
@@ -224,9 +225,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldAppIDESet = appIDESet;
         appID = APP_ID_EDEFAULT;
         appIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__APP_ID, oldAppID,
                     APP_ID_EDEFAULT, oldAppIDESet ) );
+        }
     }
 
     /**
@@ -260,9 +262,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         fixedOffs = newFixedOffs;
         boolean oldFixedOffsESet = fixedOffsESet;
         fixedOffsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__FIXED_OFFS, oldFixedOffs,
                     fixedOffs, !oldFixedOffsESet ) );
+        }
     }
 
     /**
@@ -276,9 +279,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldFixedOffsESet = fixedOffsESet;
         fixedOffs = FIXED_OFFS_EDEFAULT;
         fixedOffsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__FIXED_OFFS, oldFixedOffs,
                     FIXED_OFFS_EDEFAULT, oldFixedOffsESet ) );
+        }
     }
 
     /**
@@ -312,9 +316,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         securityEnable = newSecurityEnable == null ? SECURITY_ENABLE_EDEFAULT : newSecurityEnable;
         boolean oldSecurityEnableESet = securityEnableESet;
         securityEnableESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__SECURITY_ENABLE,
                     oldSecurityEnable, securityEnable, !oldSecurityEnableESet ) );
+        }
     }
 
     /**
@@ -328,9 +333,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldSecurityEnableESet = securityEnableESet;
         securityEnable = SECURITY_ENABLE_EDEFAULT;
         securityEnableESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__SECURITY_ENABLE,
                     oldSecurityEnable, SECURITY_ENABLE_EDEFAULT, oldSecurityEnableESet ) );
+        }
     }
 
     /**
@@ -364,9 +370,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         type = newType == null ? TYPE_EDEFAULT : newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -380,9 +387,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_CONTROL__TYPE, oldType,
                     TYPE_EDEFAULT, oldTypeESet ) );
+        }
     }
 
     /**
@@ -402,7 +410,9 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      */
     @Override
     public LN0 getParentLN0() {
-        if( eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 ) return null;
+        if( eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 ) {
+            return null;
+        }
         return ( LN0 ) eInternalContainer();
     }
 
@@ -425,20 +435,26 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     public void setParentLN0( LN0 newParentLN0 ) {
         if( newParentLN0 != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 && newParentLN0 != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLN0 ) )
+            if( EcoreUtil.isAncestor( this, newParentLN0 ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLN0 != null )
+            }
+            if( newParentLN0 != null ) {
                 msgs = ( ( InternalEObject ) newParentLN0 ).eInverseAdd( this, SclPackage.LN0__GSE_CONTROL, LN0.class,
                         msgs );
+            }
             msgs = basicSetParentLN0( newParentLN0, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_CONTROL__PARENT_LN0, newParentLN0,
                     newParentLN0 ) );
+        }
     }
 
     /**
@@ -450,8 +466,9 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GSE_CONTROL__PARENT_LN0:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLN0( ( LN0 ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -590,29 +607,39 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (appID: " );
-        if( appIDESet )
+        if( appIDESet ) {
             result.append( appID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", fixedOffs: " );
-        if( fixedOffsESet )
+        if( fixedOffsESet ) {
             result.append( fixedOffs );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", securityEnable: " );
-        if( securityEnableESet )
+        if( securityEnableESet ) {
             result.append( securityEnable );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

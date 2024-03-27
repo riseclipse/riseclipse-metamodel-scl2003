@@ -608,7 +608,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DO refers to DOType( id = ", getType(), " ) on line ", getRefersToDOType().getLineNumber() );
     }
 

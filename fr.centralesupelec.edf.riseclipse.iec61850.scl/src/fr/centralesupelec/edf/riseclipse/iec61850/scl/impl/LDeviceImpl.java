@@ -1328,7 +1328,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         }
 
         if( grRef.size() == 0 ) {
-            console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                           "LDevice ", getInst(), " is a root LDevice" );
             return;            
         }
@@ -1401,7 +1401,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;            
         }
         
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                       "LDevice ", getInst(), " has ", lDevices.get( 0 ).getInst(), " for higher level LDevice" );
         setRefersToHigherLevelLDevice( lDevices.get( 0 ));
         

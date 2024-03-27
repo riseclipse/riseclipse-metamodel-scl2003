@@ -886,13 +886,31 @@ public interface SclPackage extends EPackage {
     int NAMING__DESC = BASE_ELEMENT_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING__UUID = BASE_ELEMENT_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING__TEMPLATE_UUID = BASE_ELEMENT_FEATURE_COUNT + 2;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int NAMING__NAME = BASE_ELEMENT_FEATURE_COUNT + 1;
+    int NAMING__NAME = BASE_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Naming</em>' class.
@@ -901,7 +919,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int NAMING_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
+    int NAMING_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -1002,6 +1020,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_CONTAINER__DESC = NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER__UUID = NAMING__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER__TEMPLATE_UUID = NAMING__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1131,6 +1167,24 @@ public interface SclPackage extends EPackage {
     int POWER_SYSTEM_RESOURCE__DESC = LNODE_CONTAINER__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE__UUID = LNODE_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE__TEMPLATE_UUID = LNODE_CONTAINER__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1256,6 +1310,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT_CONTAINER__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1401,6 +1473,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LINE__DESC = GENERAL_EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__UUID = GENERAL_EQUIPMENT_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__TEMPLATE_UUID = GENERAL_EQUIPMENT_CONTAINER__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1754,6 +1844,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROCESS__DESC = GENERAL_EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__UUID = GENERAL_EQUIPMENT_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__TEMPLATE_UUID = GENERAL_EQUIPMENT_CONTAINER__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4817,6 +4925,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_NETWORK__DESC = NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK__UUID = NAMING__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK__TEMPLATE_UUID = NAMING__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8035,6 +8161,24 @@ public interface SclPackage extends EPackage {
     int CERTIFICATE__DESC = NAMING__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE__UUID = NAMING__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE__TEMPLATE_UUID = NAMING__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -9831,13 +9975,22 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_IED_NAME__PROTOCOL = CONTROL_FEATURE_COUNT + 3;
 
     /**
+     * The feature id for the '<em><b>Referred By LN</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME__REFERRED_BY_LN = CONTROL_FEATURE_COUNT + 4;
+
+    /**
      * The number of structural features of the '<em>Control With IED Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL_WITH_IED_NAME_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 4;
+    int CONTROL_WITH_IED_NAME_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 5;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -11569,6 +11722,24 @@ public interface SclPackage extends EPackage {
     int GOOSE_SECURITY__DESC = CERTIFICATE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY__UUID = CERTIFICATE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY__TEMPLATE_UUID = CERTIFICATE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -11792,6 +11963,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_CONTROL__PROTOCOL = CONTROL_WITH_IED_NAME__PROTOCOL;
+
+    /**
+     * The feature id for the '<em><b>Referred By LN</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__REFERRED_BY_LN = CONTROL_WITH_IED_NAME__REFERRED_BY_LN;
 
     /**
      * The feature id for the '<em><b>App ID</b></em>' attribute.
@@ -13613,13 +13793,22 @@ public interface SclPackage extends EPackage {
     int LN__PARENT_LDEVICE = ANY_LN_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Refers To Control With IED Name</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__REFERS_TO_CONTROL_WITH_IED_NAME = ANY_LN_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 3;
+    int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -15620,6 +15809,24 @@ public interface SclPackage extends EPackage {
     int SMV_SECURITY__DESC = CERTIFICATE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY__UUID = CERTIFICATE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY__TEMPLATE_UUID = CERTIFICATE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16140,6 +16347,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLED_VALUE_CONTROL__PROTOCOL = CONTROL_WITH_IED_NAME__PROTOCOL;
+
+    /**
+     * The feature id for the '<em><b>Referred By LN</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL__REFERRED_BY_LN = CONTROL_WITH_IED_NAME__REFERRED_BY_LN;
 
     /**
      * The feature id for the '<em><b>Multicast</b></em>' attribute.
@@ -17897,6 +18113,24 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT__DESC = POWER_SYSTEM_RESOURCE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -18021,6 +18255,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_CONDUCTING_EQUIPMENT__DESC = EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT__UUID = EQUIPMENT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT__TEMPLATE_UUID = EQUIPMENT__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -18167,6 +18419,24 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_EQ_FUNC_SUB_FUNC__DESC = POWER_SYSTEM_RESOURCE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -18311,6 +18581,24 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT_CONTAINER__DESC = POWER_SYSTEM_RESOURCE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -18444,6 +18732,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BAY__DESC = EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY__UUID = EQUIPMENT_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY__TEMPLATE_UUID = EQUIPMENT_CONTAINER__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -18615,6 +18921,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONDUCTING_EQUIPMENT__DESC = ABSTRACT_CONDUCTING_EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT__UUID = ABSTRACT_CONDUCTING_EQUIPMENT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT__TEMPLATE_UUID = ABSTRACT_CONDUCTING_EQUIPMENT__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -18824,6 +19148,24 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__DESC = LNODE_CONTAINER__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE__UUID = LNODE_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE__TEMPLATE_UUID = LNODE_CONTAINER__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -18975,6 +19317,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_FUNCTION__DESC = ABSTRACT_EQ_FUNC_SUB_FUNC__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION__UUID = ABSTRACT_EQ_FUNC_SUB_FUNC__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION__TEMPLATE_UUID = ABSTRACT_EQ_FUNC_SUB_FUNC__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -19175,6 +19535,24 @@ public interface SclPackage extends EPackage {
     int EQ_SUB_FUNCTION__DESC = ABSTRACT_EQ_FUNC_SUB_FUNC__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION__UUID = ABSTRACT_EQ_FUNC_SUB_FUNC__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION__TEMPLATE_UUID = ABSTRACT_EQ_FUNC_SUB_FUNC__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -19326,6 +19704,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FUNCTION__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -19515,6 +19911,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT__DESC = EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT__UUID = EQUIPMENT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT__TEMPLATE_UUID = EQUIPMENT__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -20273,6 +20687,24 @@ public interface SclPackage extends EPackage {
     int POWER_TRANSFORMER__DESC = EQUIPMENT__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER__UUID = EQUIPMENT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER__TEMPLATE_UUID = EQUIPMENT__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -20442,6 +20874,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_EQUIPMENT__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -20615,6 +21065,24 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION__DESC = POWER_SYSTEM_RESOURCE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -20784,6 +21252,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUBSTATION__DESC = EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION__UUID = EQUIPMENT_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION__TEMPLATE_UUID = EQUIPMENT_CONTAINER__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -20957,6 +21443,24 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER__DESC = POWER_SYSTEM_RESOURCE__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__UUID = POWER_SYSTEM_RESOURCE__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__TEMPLATE_UUID = POWER_SYSTEM_RESOURCE__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -21117,6 +21621,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRANSFORMER_WINDING__DESC = ABSTRACT_CONDUCTING_EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING__UUID = ABSTRACT_CONDUCTING_EQUIPMENT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING__TEMPLATE_UUID = ABSTRACT_CONDUCTING_EQUIPMENT__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -21496,6 +22018,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE_LEVEL__DESC = EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL__UUID = EQUIPMENT_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL__TEMPLATE_UUID = EQUIPMENT_CONTAINER__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -23133,6 +23673,52 @@ public interface SclPackage extends EPackage {
     int AG_VIRTUAL_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgUuidImpl <em>Ag Uuid</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgUuidImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgUuid()
+     * @generated
+     */
+    int AG_UUID = 169;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID__UUID = 0;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID__TEMPLATE_UUID = 1;
+
+    /**
+     * The number of structural features of the '<em>Ag Uuid</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>Ag Uuid</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole <em>IRise Clipse Console</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23140,7 +23726,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getIRiseClipseConsole()
      * @generated
      */
-    int IRISE_CLIPSE_CONSOLE = 169;
+    int IRISE_CLIPSE_CONSOLE = 170;
 
     /**
      * The number of structural features of the '<em>IRise Clipse Console</em>' class.
@@ -23168,7 +23754,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getINamespaceGetter()
      * @generated
      */
-    int INAMESPACE_GETTER = 170;
+    int INAMESPACE_GETTER = 171;
 
     /**
      * The feature id for the '<em><b>Namespace</b></em>' attribute.
@@ -23205,7 +23791,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAssociationKindEnum()
      * @generated
      */
-    int ASSOCIATION_KIND_ENUM = 171;
+    int ASSOCIATION_KIND_ENUM = 172;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum <em>FC Enum</em>}' enum.
@@ -23215,7 +23801,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getFCEnum()
      * @generated
      */
-    int FC_ENUM = 172;
+    int FC_ENUM = 173;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum <em>GSE Control Type Enum</em>}' enum.
@@ -23225,7 +23811,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getGSEControlTypeEnum()
      * @generated
      */
-    int GSE_CONTROL_TYPE_ENUM = 173;
+    int GSE_CONTROL_TYPE_ENUM = 174;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhaseEnum <em>Phase Enum</em>}' enum.
@@ -23235,7 +23821,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPhaseEnum()
      * @generated
      */
-    int PHASE_ENUM = 174;
+    int PHASE_ENUM = 175;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum <em>Predefined Type Of Security Enum</em>}' enum.
@@ -23245,7 +23831,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPredefinedTypeOfSecurityEnum()
      * @generated
      */
-    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 175;
+    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 176;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum <em>SMV Delivery Enum</em>}' enum.
@@ -23255,7 +23841,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSMVDeliveryEnum()
      * @generated
      */
-    int SMV_DELIVERY_ENUM = 176;
+    int SMV_DELIVERY_ENUM = 177;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum <em>Service Settings Enum</em>}' enum.
@@ -23265,7 +23851,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_ENUM = 177;
+    int SERVICE_SETTINGS_ENUM = 178;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum <em>Service Settings No Dyn Enum</em>}' enum.
@@ -23275,7 +23861,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsNoDynEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_NO_DYN_ENUM = 178;
+    int SERVICE_SETTINGS_NO_DYN_ENUM = 179;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType <em>Service Type</em>}' enum.
@@ -23285,7 +23871,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceType()
      * @generated
      */
-    int SERVICE_TYPE = 179;
+    int SERVICE_TYPE = 180;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpMod <em>Smp Mod</em>}' enum.
@@ -23295,7 +23881,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSmpMod()
      * @generated
      */
-    int SMP_MOD = 180;
+    int SMP_MOD = 181;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum <em>Unit Multiplier Enum</em>}' enum.
@@ -23305,7 +23891,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getUnitMultiplierEnum()
      * @generated
      */
-    int UNIT_MULTIPLIER_ENUM = 181;
+    int UNIT_MULTIPLIER_ENUM = 182;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum <em>Val Kind Enum</em>}' enum.
@@ -23315,7 +23901,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getValKindEnum()
      * @generated
      */
-    int VAL_KIND_ENUM = 182;
+    int VAL_KIND_ENUM = 183;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum <em>buf Mode Enum</em>}' enum.
@@ -23325,7 +23911,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getbufModeEnum()
      * @generated
      */
-    int BUF_MODE_ENUM = 183;
+    int BUF_MODE_ENUM = 184;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace <em>Any Content From Other Namespace</em>}'.
@@ -26091,6 +26677,38 @@ public interface SclPackage extends EPackage {
     EAttribute getAgVirtual_Virtual();
 
     /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid <em>Ag Uuid</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Uuid</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid
+     * @generated
+     */
+    EClass getAgUuid();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid#getUuid <em>Uuid</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Uuid</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid#getUuid()
+     * @see #getAgUuid()
+     * @generated
+     */
+    EAttribute getAgUuid_Uuid();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid#getTemplateUuid <em>Template Uuid</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Template Uuid</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid#getTemplateUuid()
+     * @see #getAgUuid()
+     * @generated
+     */
+    EAttribute getAgUuid_TemplateUuid();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole <em>IRise Clipse Console</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -27222,6 +27840,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getControlWithIEDName_Protocol();
+
+    /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN <em>Referred By LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByLN()
+     * @see #getControlWithIEDName()
+     * @generated
+     */
+    EReference getControlWithIEDName_ReferredByLN();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
@@ -28888,6 +29517,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLN_ParentLDevice();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To Control With IED Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getRefersToControlWithIEDName()
+     * @see #getLN()
+     * @generated
+     */
+    EReference getLN_RefersToControlWithIEDName();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0 <em>LN0</em>}'.

@@ -1108,7 +1108,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
                     " IED( name = ", getIedName(), " )" );
             return;
         }
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
                 ied.getLeft().getLineNumber() );
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
@@ -1119,7 +1119,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ConnectedAP on line refers to AccessPoint( name = ", getApName(), " ) on line ",
                 getRefersToAccessPoint().getLineNumber() );
     }

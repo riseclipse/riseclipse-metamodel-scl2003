@@ -1538,7 +1538,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "AnyLN refers to LNodeType( id = ", getLnType(),
                 " ) on line ", getRefersToLNodeType().getLineNumber() );
 

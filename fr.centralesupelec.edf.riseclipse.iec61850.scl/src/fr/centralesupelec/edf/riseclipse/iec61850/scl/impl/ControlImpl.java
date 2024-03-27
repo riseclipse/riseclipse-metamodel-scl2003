@@ -659,7 +659,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
             return;
         }
         setRefersToDataSet( res.get( 0 ) );
-        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
                 getRefersToDataSet().getLineNumber() );
     }
