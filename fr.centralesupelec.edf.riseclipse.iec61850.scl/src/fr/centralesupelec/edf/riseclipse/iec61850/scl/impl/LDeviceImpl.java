@@ -22,7 +22,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -846,7 +845,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .getDOI()
                 .stream()
                 .filter( doi -> "NamPlt".equals( doi.getName() ) )
-                .collect( Collectors.toList() );
+                .toList() ;
         if( namPltDoi.size() == 1 ) {
             List< DAI > ldNsDai =
                      namPltDoi
@@ -854,14 +853,13 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                     .getDAI()
                     .stream()
                     .filter( dai -> "ldNs".equals( dai.getName() ) )
-                    .collect( Collectors.toList() );
-            if( ldNsDai.size() == 1 ) {
-                if( (      ldNsDai.get( 0 ).getVal().size() == 1 )
-                 && (      ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                 && (      ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
+                    .toList();
+            if( ldNsDai.size() == 1 && ( ldNsDai.get( 0 ).getVal().size() == 1 )
+                                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
                     return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
                 }
-            }
+            
         }
 
         if( getLN0().getRefersToLNodeType() == null ) return null;
@@ -871,7 +869,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .getDO()
                 .stream()
                 .filter( do_ -> "NamPlt".equals( do_.getName() ) )
-                .collect( Collectors.toList() );
+                .toList();
         if( namPltDo.size() == 1 ) {
             if( namPltDo.get( 0 ).getRefersToDOType() == null ) return null;
             List< DA > ldNsDa =
@@ -880,15 +878,14 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                     .getRefersToDOType()
                     .getDA()
                     .stream()
-                    .filter( da -> "ldNs".equals( da.getName() ) )
-                    .collect( Collectors.toList() );
-            if( ldNsDa.size() == 1 ) {
-                if((       ldNsDa.get( 0 ).getVal().size() == 1 )
-                      && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                      && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
+                    .filter( da -> "ldNs".equals( da.getName() ))
+                    .toList();
+            if( ldNsDa.size() == 1 && ( ldNsDa.get( 0 ).getVal().size() == 1 )
+                                   && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                                   && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                     return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
                 }
-            }
+            
         }
 
         return null;
@@ -1323,7 +1320,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .getDOI()
                 .stream()
                 .filter( doi -> "GrRef".equals(  doi.getName() ))
-                .collect( Collectors.toList() );
+                .toList();
 
         if( grRef.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1331,21 +1328,22 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;            
         }
 
-        if( grRef.size() == 0 ) {
+        if( grRef.isEmpty() ) {
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                           "LDevice ", getInst(), " is a root LDevice" );
             return;            
         }
         // Look for DAI name="setSrcRef" in GrRef
+        // When we try to get 
         List< DAI > setSrcRef =
                  grRef
                 .get( 0 )
                 .getDAI()
                 .stream()
                 .filter( dai -> "setSrcRef".equals( dai.getName() ))
-                .collect( Collectors.toList() );
+                .toList();
         
-        if( setSrcRef.size() == 0 ) {
+        if( setSrcRef.isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found no DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
             return;            
@@ -1356,7 +1354,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;            
         }
         
-        if( setSrcRef.get( 0 ).getVal().size() == 0 ) {
+        if( setSrcRef.get( 0 ).getVal().isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found no Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;            
@@ -1392,9 +1390,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .getLDevice()
                 .stream()
                 .filter( ld -> temp.equals( ld.getInst() ))
-                .collect( Collectors.toList() );
+                .toList();
         
-        if( lDevices.size() == 0 ) {
+        if( lDevices.isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found no LDevice named ", higherLevelLDeviceName );
             return;            

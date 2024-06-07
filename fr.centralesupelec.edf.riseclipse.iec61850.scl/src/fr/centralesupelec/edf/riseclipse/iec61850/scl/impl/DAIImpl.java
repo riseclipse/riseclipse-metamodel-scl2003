@@ -22,8 +22,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -493,7 +491,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         if( val == null && ( getRefersToAbstractDataAttribute() != null ) && ( getRefersToAbstractDataAttribute().isSetVal() )) {
                 // We make a copy to protect the DA from changes
                 EList< Val > valDA = getRefersToAbstractDataAttribute().getVal();
-                if(( valDA != null ) && ( valDA.size() > 0 )) {
+                if(( valDA != null ) && ( ! valDA.isEmpty() )) {
                     // We make a copy to protect the DA from changes
                     val = new EObjectContainmentWithInverseEList.Unsettable< >( Val.class, this, SclPackage.DAI__VAL,
                             SclPackage.VAL__PARENT_DAI );
@@ -503,7 +501,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 }
                 
             }
-        }
+        
         
         if( val == null ) {
             val = new EObjectContainmentWithInverseEList.Unsettable< >( Val.class, this, SclPackage.DAI__VAL,
@@ -1130,11 +1128,11 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .getDA()
                 .stream()
                 .filter( d -> getName().equals( d.getName() ) )
-                .collect( Collectors.toList() );
+                .toList();
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
                     " DA( name = ", getName(), " )" );
             return;
         }
@@ -1169,11 +1167,11 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                     .getDA()
                     .stream()
                     .filter( d -> getName().equals( d.getName() ) )
-                    .collect( Collectors.toList() );
+                    .toList();
 
             if( res.size() != 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                        messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
                         " DA( name = ", getName(), " )" );
                 return;
             }
@@ -1199,11 +1197,11 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .getBDA()
                 .stream()
                 .filter( b -> getName().equals( b.getName() ) )
-                .collect( Collectors.toList() );
+                .toList();
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
                     " BDA( name = ", getName(), " )" );
             return;
         }
