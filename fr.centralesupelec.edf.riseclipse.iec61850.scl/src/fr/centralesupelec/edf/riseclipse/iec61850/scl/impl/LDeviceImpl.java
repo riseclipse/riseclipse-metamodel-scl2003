@@ -1313,6 +1313,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         // TODO: warning message ?
         if( getLN0() == null ) return;
         
+        // When we get the Val of "setSrcRef" DAI, we may have to look to its associated DA (See DAIImpl.getVal()).
+        // Therefore, the link from DAI to DA must exist
+        getLN0().buildExplicitLinks( console, false );
+        
         // Look for DOI name="GrRef" in LN0
         List< DOI > grRef =
                  getLN0()
