@@ -481,31 +481,13 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     @Override
     public EList< Val > getVal() {
         if( val == null ) {
-            // If there is no Val, we try to get it from its associated DA
-            // We do this to solve https://github.com/riseclipse/riseclipse-metamodel-scl2003/issues/43
-            if(( getRefersToAbstractDataAttribute() != null ) && ( getRefersToAbstractDataAttribute().isSetVal() )) {
-                // We make a copy to protect the DA from changes
-                EList< Val > valDA = getRefersToAbstractDataAttribute().getVal();
-                if(( valDA != null ) && ( ! valDA.isEmpty() )) {
-                    // We make a copy to protect the DA from changes
-                    val = new EObjectContainmentWithInverseEList.Unsettable< >( Val.class, this, SclPackage.DAI__VAL,
-                            SclPackage.VAL__PARENT_DAI );
-                    for( Val v : valDA ) {
-                        val.add( EcoreUtil.copy( v ));
-                    }
-                }
-                
-            }
-        
-        
-        if( val == null ) {
             val = new EObjectContainmentWithInverseEList.Unsettable< >( Val.class, this, SclPackage.DAI__VAL,
-                SclPackage.VAL__PARENT_DAI );
+                    SclPackage.VAL__PARENT_DAI );
         }
         return val;
     }
