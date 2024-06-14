@@ -48,6 +48,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -1350,18 +1351,28 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;            
         }
         
-        if( setSrcRef.get( 0 ).getVal().isEmpty() ) {
+        EList< Val > val = setSrcRef.get( 0 ).getVal();
+        if( val.isEmpty() ) {
+            // We look for Val in DataTypeTemplates
+            // Therefore, the link from DAI to DA must exist
+            getLN0().buildExplicitLinks( console, false );
+            if( setSrcRef.get( 0 ).getRefersToAbstractDataAttribute() != null ) {
+                val = setSrcRef.get( 0 ).getRefersToAbstractDataAttribute().getVal();
+            }
+        }
+        
+        if( val.isEmpty() ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found no Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
-            return;            
+            return;
         }
-        if( setSrcRef.get( 0 ).getVal().size() > 1 ) {
+        if( val.size() > 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found several Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;            
         }
         
-        String higherLevelLDeviceName = setSrcRef.get( 0 ).getVal().get( 0 ).getValue();
+        String higherLevelLDeviceName = val.get( 0 ).getValue();;
         if(( higherLevelLDeviceName == null ) || ( higherLevelLDeviceName.length() <= 1 )) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                              messagePrefix, "found no Val or empty Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
