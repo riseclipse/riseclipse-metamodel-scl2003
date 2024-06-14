@@ -22,8 +22,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -1112,11 +1110,11 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .getDA()
                 .stream()
                 .filter( d -> getName().equals( d.getName() ) )
-                .collect( Collectors.toList() );
+                .toList();
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
                     " DA( name = ", getName(), " )" );
             return;
         }
@@ -1151,11 +1149,11 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                     .getDA()
                     .stream()
                     .filter( d -> getName().equals( d.getName() ) )
-                    .collect( Collectors.toList() );
+                    .toList();
 
             if( res.size() != 1 ) {
                 console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                        messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
                         " DA( name = ", getName(), " )" );
                 return;
             }
@@ -1181,11 +1179,11 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .getBDA()
                 .stream()
                 .filter( b -> getName().equals( b.getName() ) )
-                .collect( Collectors.toList() );
+                .toList();
 
         if( res.size() != 1 ) {
             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
                     " BDA( name = ", getName(), " )" );
             return;
         }
