@@ -1029,7 +1029,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="engRight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="full" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="manufacturer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclRevision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
