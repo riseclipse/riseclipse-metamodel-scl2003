@@ -998,7 +998,7 @@
         eType="#//McSecurity" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//McSecurity/ParentGSESettings"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kdaParticipant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSSE" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServices" ordered="false"
@@ -1029,7 +1029,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="engRight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="full" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="manufacturer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclRevision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1379,14 +1379,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//SMVDeliveryEnum"
         defaultValueLiteral="multicast" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deliveryConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServices" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/SMVsc"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rSV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SampledValueControl" eSuperTypes="#//ControlWithIEDName">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multicast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
