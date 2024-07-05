@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -107,6 +107,7 @@ public interface IED extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Eng Right</b></em>' attribute.
+     * The default value is <code>"full"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eng Right</em>' attribute isn't clear,
@@ -118,7 +119,7 @@ public interface IED extends UnNaming {
      * @see #unsetEngRight()
      * @see #setEngRight(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_EngRight()
-     * @model unsettable="true"
+     * @model default="full" unsettable="true"
      * @generated
      */
     String getEngRight();

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -236,6 +236,7 @@ public interface GSESettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Kda Participant</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Kda Participant</em>' attribute isn't clear,
@@ -247,7 +248,7 @@ public interface GSESettings extends ServiceSettings {
      * @see #unsetKdaParticipant()
      * @see #setKdaParticipant(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_KdaParticipant()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getKdaParticipant();

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -103,7 +104,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected static final String ENG_RIGHT_EDEFAULT = null;
+    protected static final String ENG_RIGHT_EDEFAULT = "full";
 
     /**
      * The cached value of the '{@link #getEngRight() <em>Eng Right</em>}' attribute.
@@ -425,9 +426,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         configVersion = newConfigVersion;
         boolean oldConfigVersionESet = configVersionESet;
         configVersionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion,
                     configVersion, !oldConfigVersionESet ) );
+        }
     }
 
     /**
@@ -441,9 +443,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldConfigVersionESet = configVersionESet;
         configVersion = CONFIG_VERSION_EDEFAULT;
         configVersionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion,
                     CONFIG_VERSION_EDEFAULT, oldConfigVersionESet ) );
+        }
     }
 
     /**
@@ -477,9 +480,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         engRight = newEngRight;
         boolean oldEngRightESet = engRightESet;
         engRightESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ENG_RIGHT, oldEngRight, engRight,
                     !oldEngRightESet ) );
+        }
     }
 
     /**
@@ -493,9 +497,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldEngRightESet = engRightESet;
         engRight = ENG_RIGHT_EDEFAULT;
         engRightESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ENG_RIGHT, oldEngRight,
                     ENG_RIGHT_EDEFAULT, oldEngRightESet ) );
+        }
     }
 
     /**
@@ -529,9 +534,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         manufacturer = newManufacturer;
         boolean oldManufacturerESet = manufacturerESet;
         manufacturerESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__MANUFACTURER, oldManufacturer,
                     manufacturer, !oldManufacturerESet ) );
+        }
     }
 
     /**
@@ -545,9 +551,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldManufacturerESet = manufacturerESet;
         manufacturer = MANUFACTURER_EDEFAULT;
         manufacturerESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__MANUFACTURER, oldManufacturer,
                     MANUFACTURER_EDEFAULT, oldManufacturerESet ) );
+        }
     }
 
     /**
@@ -581,9 +588,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         originalSclRevision = newOriginalSclRevision;
         boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
         originalSclRevisionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_REVISION,
                     oldOriginalSclRevision, originalSclRevision, !oldOriginalSclRevisionESet ) );
+        }
     }
 
     /**
@@ -597,9 +605,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
         originalSclRevision = ORIGINAL_SCL_REVISION_EDEFAULT;
         originalSclRevisionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_REVISION,
                     oldOriginalSclRevision, ORIGINAL_SCL_REVISION_EDEFAULT, oldOriginalSclRevisionESet ) );
+        }
     }
 
     /**
@@ -633,9 +642,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         originalSclVersion = newOriginalSclVersion;
         boolean oldOriginalSclVersionESet = originalSclVersionESet;
         originalSclVersionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_VERSION,
                     oldOriginalSclVersion, originalSclVersion, !oldOriginalSclVersionESet ) );
+        }
     }
 
     /**
@@ -649,9 +659,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOriginalSclVersionESet = originalSclVersionESet;
         originalSclVersion = ORIGINAL_SCL_VERSION_EDEFAULT;
         originalSclVersionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_VERSION,
                     oldOriginalSclVersion, ORIGINAL_SCL_VERSION_EDEFAULT, oldOriginalSclVersionESet ) );
+        }
     }
 
     /**
@@ -685,9 +696,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         owner = newOwner;
         boolean oldOwnerESet = ownerESet;
         ownerESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__OWNER, oldOwner, owner,
                     !oldOwnerESet ) );
+        }
     }
 
     /**
@@ -701,9 +713,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOwnerESet = ownerESet;
         owner = OWNER_EDEFAULT;
         ownerESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__OWNER, oldOwner, OWNER_EDEFAULT,
                     oldOwnerESet ) );
+        }
     }
 
     /**
@@ -737,9 +750,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -753,9 +767,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__TYPE, oldType, TYPE_EDEFAULT,
                     oldTypeESet ) );
+        }
     }
 
     /**
@@ -776,7 +791,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public EList< AccessPoint > getAccessPoint() {
         if( accessPoint == null ) {
-            accessPoint = new EObjectContainmentWithInverseEList.Unsettable< AccessPoint >( AccessPoint.class, this,
+            accessPoint = new EObjectContainmentWithInverseEList.Unsettable< >( AccessPoint.class, this,
                     SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__PARENT_IED );
         }
         return accessPoint;
@@ -789,7 +804,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void unsetAccessPoint() {
-        if( accessPoint != null ) ( ( InternalEList.Unsettable< ? > ) accessPoint ).unset();
+        if( accessPoint != null ) {
+            ( ( InternalEList.Unsettable< ? > ) accessPoint ).unset();
+        }
     }
 
     /**
@@ -810,7 +827,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public EList< KDC > getKDC() {
         if( kdc == null ) {
-            kdc = new EObjectContainmentWithInverseEList.Unsettable< KDC >( KDC.class, this, SclPackage.IED__KDC,
+            kdc = new EObjectContainmentWithInverseEList.Unsettable< >( KDC.class, this, SclPackage.IED__KDC,
                     SclPackage.KDC__PARENT_IED );
         }
         return kdc;
@@ -823,7 +840,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void unsetKDC() {
-        if( kdc != null ) ( ( InternalEList.Unsettable< ? > ) kdc ).unset();
+        if( kdc != null ) {
+            ( ( InternalEList.Unsettable< ? > ) kdc ).unset();
+        }
     }
 
     /**
@@ -859,10 +878,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.IED__SERVICES,
                     oldServices, newServices, !oldServicesESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -876,21 +897,26 @@ public class IEDImpl extends UnNamingImpl implements IED {
     public void setServices( Services newServices ) {
         if( newServices != services ) {
             NotificationChain msgs = null;
-            if( services != null )
+            if( services != null ) {
                 msgs = ( ( InternalEObject ) services ).eInverseRemove( this, SclPackage.SERVICES__PARENT_IED,
                         Services.class, msgs );
-            if( newServices != null )
+            }
+            if( newServices != null ) {
                 msgs = ( ( InternalEObject ) newServices ).eInverseAdd( this, SclPackage.SERVICES__PARENT_IED,
                         Services.class, msgs );
+            }
             msgs = basicSetServices( newServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServicesESet = servicesESet;
             servicesESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__SERVICES, newServices,
                         newServices, !oldServicesESet ) );
+            }
         }
     }
 
@@ -907,10 +933,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__SERVICES,
                     oldServices, null, oldServicesESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -927,14 +955,17 @@ public class IEDImpl extends UnNamingImpl implements IED {
             msgs = ( ( InternalEObject ) services ).eInverseRemove( this, SclPackage.SERVICES__PARENT_IED,
                     Services.class, msgs );
             msgs = basicUnsetServices( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServicesESet = servicesESet;
             servicesESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__SERVICES, null, null,
                         oldServicesESet ) );
+            }
         }
     }
 
@@ -955,7 +986,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public SCL getParentSCL() {
-        if( eContainerFeatureID() != SclPackage.IED__PARENT_SCL ) return null;
+        if( eContainerFeatureID() != SclPackage.IED__PARENT_SCL ) {
+            return null;
+        }
         return ( SCL ) eInternalContainer();
     }
 
@@ -978,19 +1011,25 @@ public class IEDImpl extends UnNamingImpl implements IED {
     public void setParentSCL( SCL newParentSCL ) {
         if( newParentSCL != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.IED__PARENT_SCL && newParentSCL != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSCL ) )
+            if( EcoreUtil.isAncestor( this, newParentSCL ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSCL != null )
+            }
+            if( newParentSCL != null ) {
                 msgs = ( ( InternalEObject ) newParentSCL ).eInverseAdd( this, SclPackage.SCL__IED, SCL.class, msgs );
+            }
             msgs = basicSetParentSCL( newParentSCL, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__PARENT_SCL, newParentSCL,
                     newParentSCL ) );
+        }
     }
 
     /**
@@ -1014,9 +1053,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -1030,9 +1070,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -1066,9 +1107,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         originalSclRelease = newOriginalSclRelease;
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
         originalSclReleaseESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_RELEASE,
                     oldOriginalSclRelease, originalSclRelease, !oldOriginalSclReleaseESet ) );
+        }
     }
 
     /**
@@ -1082,9 +1124,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
         originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
         originalSclReleaseESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_RELEASE,
                     oldOriginalSclRelease, ORIGINAL_SCL_RELEASE_EDEFAULT, oldOriginalSclReleaseESet ) );
+        }
     }
 
     /**
@@ -1121,10 +1164,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.IED__REFERRED_BY_IED_NAME, oldReferredByIEDName, newReferredByIEDName,
                     !oldReferredByIEDNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1138,21 +1183,26 @@ public class IEDImpl extends UnNamingImpl implements IED {
     public void setReferredByIEDName( IEDName newReferredByIEDName ) {
         if( newReferredByIEDName != referredByIEDName ) {
             NotificationChain msgs = null;
-            if( referredByIEDName != null )
+            if( referredByIEDName != null ) {
                 msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
                         SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
-            if( newReferredByIEDName != null )
+            }
+            if( newReferredByIEDName != null ) {
                 msgs = ( ( InternalEObject ) newReferredByIEDName ).eInverseAdd( this,
                         SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
+            }
             msgs = basicSetReferredByIEDName( newReferredByIEDName, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldReferredByIEDNameESet = referredByIEDNameESet;
             referredByIEDNameESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__REFERRED_BY_IED_NAME,
                         newReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet ) );
+            }
         }
     }
 
@@ -1169,10 +1219,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.IED__REFERRED_BY_IED_NAME, oldReferredByIEDName, null, oldReferredByIEDNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1189,14 +1241,17 @@ public class IEDImpl extends UnNamingImpl implements IED {
             msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this, SclPackage.IED_NAME__REFERS_TO_IED,
                     IEDName.class, msgs );
             msgs = basicUnsetReferredByIEDName( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldReferredByIEDNameESet = referredByIEDNameESet;
             referredByIEDNameESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__REFERRED_BY_IED_NAME, null,
                         null, oldReferredByIEDNameESet ) );
+            }
         }
     }
 
@@ -1225,18 +1280,21 @@ public class IEDImpl extends UnNamingImpl implements IED {
         case SclPackage.IED__KDC:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getKDC() ).basicAdd( otherEnd, msgs );
         case SclPackage.IED__SERVICES:
-            if( services != null )
+            if( services != null ) {
                 msgs = ( ( InternalEObject ) services ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.IED__SERVICES, null, msgs );
+            }
             return basicSetServices( ( Services ) otherEnd, msgs );
         case SclPackage.IED__PARENT_SCL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSCL( ( SCL ) otherEnd, msgs );
         case SclPackage.IED__REFERRED_BY_IED_NAME:
-            if( referredByIEDName != null )
+            if( referredByIEDName != null ) {
                 msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
                         SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
+            }
             return basicSetReferredByIEDName( ( IEDName ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -1476,54 +1534,74 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (configVersion: " );
-        if( configVersionESet )
+        if( configVersionESet ) {
             result.append( configVersion );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", engRight: " );
-        if( engRightESet )
+        if( engRightESet ) {
             result.append( engRight );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", manufacturer: " );
-        if( manufacturerESet )
+        if( manufacturerESet ) {
             result.append( manufacturer );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", originalSclRevision: " );
-        if( originalSclRevisionESet )
+        if( originalSclRevisionESet ) {
             result.append( originalSclRevision );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", originalSclVersion: " );
-        if( originalSclVersionESet )
+        if( originalSclVersionESet ) {
             result.append( originalSclVersion );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", owner: " );
-        if( ownerESet )
+        if( ownerESet ) {
             result.append( owner );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", originalSclRelease: " );
-        if( originalSclReleaseESet )
+        if( originalSclReleaseESet ) {
             result.append( originalSclRelease );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

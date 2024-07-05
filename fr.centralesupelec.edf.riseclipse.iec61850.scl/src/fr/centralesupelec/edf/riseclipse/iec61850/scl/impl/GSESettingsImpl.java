@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -136,7 +136,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * @generated
      * @ordered
      */
-    protected static final Boolean KDA_PARTICIPANT_EDEFAULT = null;
+    protected static final Boolean KDA_PARTICIPANT_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getKdaParticipant() <em>Kda Participant</em>}' attribute.
@@ -197,9 +197,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         appID = newAppID == null ? APP_ID_EDEFAULT : newAppID;
         boolean oldAppIDESet = appIDESet;
         appIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_SETTINGS__APP_ID, oldAppID, appID,
                     !oldAppIDESet ) );
+        }
     }
 
     /**
@@ -213,9 +214,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         boolean oldAppIDESet = appIDESet;
         appID = APP_ID_EDEFAULT;
         appIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_SETTINGS__APP_ID, oldAppID,
                     APP_ID_EDEFAULT, oldAppIDESet ) );
+        }
     }
 
     /**
@@ -249,9 +251,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         dataLabel = newDataLabel == null ? DATA_LABEL_EDEFAULT : newDataLabel;
         boolean oldDataLabelESet = dataLabelESet;
         dataLabelESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_SETTINGS__DATA_LABEL, oldDataLabel,
                     dataLabel, !oldDataLabelESet ) );
+        }
     }
 
     /**
@@ -265,9 +268,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         boolean oldDataLabelESet = dataLabelESet;
         dataLabel = DATA_LABEL_EDEFAULT;
         dataLabelESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_SETTINGS__DATA_LABEL, oldDataLabel,
                     DATA_LABEL_EDEFAULT, oldDataLabelESet ) );
+        }
     }
 
     /**
@@ -287,7 +291,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.GSE_SETTINGS__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.GSE_SETTINGS__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -312,20 +318,26 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GSE_SETTINGS__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__GSE_SETTINGS,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_SETTINGS__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -351,10 +363,12 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.GSE_SETTINGS__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -368,21 +382,26 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     public void setMcSecurity( McSecurity newMcSecurity ) {
         if( newMcSecurity != mcSecurity ) {
             NotificationChain msgs = null;
-            if( mcSecurity != null )
+            if( mcSecurity != null ) {
                 msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
                         SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, McSecurity.class, msgs );
-            if( newMcSecurity != null )
+            }
+            if( newMcSecurity != null ) {
                 msgs = ( ( InternalEObject ) newMcSecurity ).eInverseAdd( this,
                         SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, McSecurity.class, msgs );
+            }
             msgs = basicSetMcSecurity( newMcSecurity, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldMcSecurityESet = mcSecurityESet;
             mcSecurityESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_SETTINGS__MC_SECURITY,
                         newMcSecurity, newMcSecurity, !oldMcSecurityESet ) );
+            }
         }
     }
 
@@ -399,10 +418,12 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.GSE_SETTINGS__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -419,14 +440,17 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
             msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS,
                     McSecurity.class, msgs );
             msgs = basicUnsetMcSecurity( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldMcSecurityESet = mcSecurityESet;
             mcSecurityESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_SETTINGS__MC_SECURITY, null,
                         null, oldMcSecurityESet ) );
+            }
         }
     }
 
@@ -461,9 +485,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         kdaParticipant = newKdaParticipant;
         boolean oldKdaParticipantESet = kdaParticipantESet;
         kdaParticipantESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE_SETTINGS__KDA_PARTICIPANT,
                     oldKdaParticipant, kdaParticipant, !oldKdaParticipantESet ) );
+        }
     }
 
     /**
@@ -477,9 +502,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         boolean oldKdaParticipantESet = kdaParticipantESet;
         kdaParticipant = KDA_PARTICIPANT_EDEFAULT;
         kdaParticipantESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE_SETTINGS__KDA_PARTICIPANT,
                     oldKdaParticipant, KDA_PARTICIPANT_EDEFAULT, oldKdaParticipantESet ) );
+        }
     }
 
     /**
@@ -501,13 +527,15 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         case SclPackage.GSE_SETTINGS__MC_SECURITY:
-            if( mcSecurity != null )
+            if( mcSecurity != null ) {
                 msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.GSE_SETTINGS__MC_SECURITY, null, msgs );
+            }
             return basicSetMcSecurity( ( McSecurity ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -648,24 +676,32 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (appID: " );
-        if( appIDESet )
+        if( appIDESet ) {
             result.append( appID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dataLabel: " );
-        if( dataLabelESet )
+        if( dataLabelESet ) {
             result.append( dataLabel );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", kdaParticipant: " );
-        if( kdaParticipantESet )
+        if( kdaParticipantESet ) {
             result.append( kdaParticipant );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
