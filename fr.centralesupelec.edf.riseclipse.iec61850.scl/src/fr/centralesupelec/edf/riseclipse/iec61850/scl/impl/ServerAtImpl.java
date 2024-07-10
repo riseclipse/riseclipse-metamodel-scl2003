@@ -490,11 +490,11 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "while resolving link from ServerAt: ";
+//        String messagePrefix = "while resolving link from ServerAt: ";
 
         if( ( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "apName is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "apName is missing" );
             return;
         }
 
@@ -504,9 +504,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied, getApName() );
         if( ap.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                    " AccessPoint( name = ", getApName(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+//                    " AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );

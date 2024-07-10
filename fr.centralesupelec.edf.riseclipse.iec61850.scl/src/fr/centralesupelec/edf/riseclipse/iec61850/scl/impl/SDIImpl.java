@@ -1225,8 +1225,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         String messagePrefix = "while resolving link from SDI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "name is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "name is missing" );
             return;
         }
 
@@ -1267,9 +1267,9 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
         // Not an error if res1.size() == 0: will look for a DA
         if( res1.size() > 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found several SDO( name = ", getName(),
-                    " ) using ParentDOI" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "found several SDO( name = ", getName(),
+//                    " ) using ParentDOI" );
             return;
         }
         if( res1.size() == 1 ) {
@@ -1288,14 +1288,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
         // Specific message if res2.size() == 0
         if( res2.size() == 0 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "no SDO or DA found using ParentDOI" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "no SDO or DA found using ParentDOI" );
             return;
         }
         if( res2.size() > 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "found several DA( name = ", getName(),
-                    " ) using ParentDOI" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "found several DA( name = ", getName(),
+//                    " ) using ParentDOI" );
             return;
         }
         setRefersToAbstractDataAttribute( res2.get( 0 ) );
@@ -1327,8 +1327,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
             // Not an error if res1.size() == 0: will look for a DA
             if( res1.size() > 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, "found several SDO( name = ", getName(), " ) using ParentSDI" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, "found several SDO( name = ", getName(), " ) using ParentSDI" );
                 return;
             }
             if( res1.size() == 1 ) {
@@ -1347,13 +1347,13 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
             // Specific message if res2.size() == 0
             if( res2.size() == 0 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), messagePrefix,
-                        "no SDO or DA found using ParentSDI" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), messagePrefix,
+//                        "no SDO or DA found using ParentSDI" );
                 return;
             }
             if( res2.size() > 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, "found several DA( name = ", getName(), " ) using ParentSDI" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, "found several DA( name = ", getName(), " ) using ParentSDI" );
                 return;
             }
             setRefersToAbstractDataAttribute( res2.get( 0 ) );
@@ -1367,8 +1367,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         // When getParentSDI().getRefersToSDO() == null
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
         if( att == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "cannot find SDO or AbstractDataAttribute using ParentSDI" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "cannot find SDO or AbstractDataAttribute using ParentSDI" );
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1390,9 +1390,9 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-                    " BDA( name = ", getName(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+//                    " BDA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );

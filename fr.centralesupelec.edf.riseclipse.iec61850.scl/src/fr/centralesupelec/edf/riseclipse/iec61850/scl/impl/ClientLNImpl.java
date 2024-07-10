@@ -1167,18 +1167,18 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         String messagePrefix = "while resolving link from ClientLN: ";
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "iedName is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "ldInst is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "ldInst is missing" );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "lnClass is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "lnClass is missing" );
             return;
         }
 
@@ -1186,9 +1186,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         //   IED.name == ClientLN.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find " : "found several " ),
-                    "IED( name = ", getIedName(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find " : "found several " ),
+//                    "IED( name = ", getIedName(), " )" );
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1197,14 +1197,14 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         Pair< AccessPoint, Integer > ap = null;
         if( ( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
-                        " ) but apRef not specified" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
+//                        " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1212,9 +1212,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         else {
             ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
             if( ap.getLeft() == null ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                        " AccessPoint( name = ", getApRef(), " )" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+//                        " AccessPoint( name = ", getApRef(), " )" );
                 return;
             }
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1231,9 +1231,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         else {
             Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap.getLeft(), getLdInst() );
             if( lDevice.getLeft() == null ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-                        " LDevice( inst = ", getLdInst(), " )" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+//                        " LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1249,8 +1249,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );

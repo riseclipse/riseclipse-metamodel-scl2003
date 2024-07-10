@@ -582,11 +582,11 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         //                  access control definition applies
         // transient        If set to true, it indicates that the Transient definition from IEC 61850-7-4 applies
 
-        String messagePrefix = "while resolving link from DO: ";
+//        String messagePrefix = "while resolving link from DO: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "type is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "type is missing" );
             return;
         }
         // No error or warning message here: if this happens, error should have been detected before
@@ -602,9 +602,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-                    " DOType( id = ", getType(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+//                    " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
