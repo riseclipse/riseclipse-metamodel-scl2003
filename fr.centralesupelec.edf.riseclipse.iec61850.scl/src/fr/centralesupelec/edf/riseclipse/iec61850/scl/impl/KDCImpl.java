@@ -585,13 +585,13 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         String messagePrefix = "while resolving link from KDC: ";
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "iedName is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "iedName is missing" );
             return;
         }
         if( ( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "apName is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "apName is missing" );
             return;
         }
 
@@ -599,9 +599,9 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         //   IED.name == ConnectedAP.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-                    "IED( name = ", getIedName(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+//                    "IED( name = ", getIedName(), " )" );
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -610,9 +610,9 @@ public class KDCImpl extends SclObjectImpl implements KDC {
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         if( ap.getLeft() == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
-                    "AccessPoint( name = ", getApName(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( ap.getRight() == 0 ) ? "cannot find" : "found several" ),
+//                    "AccessPoint( name = ", getApName(), " )" );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );

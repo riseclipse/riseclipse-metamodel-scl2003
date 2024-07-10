@@ -631,11 +631,11 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         // datSet  The name of the data set to be sent by the report control block; datSet should only be missing within an ICD-File,
         //         or to indicate an unused control block. The referenced data set must be in the same LN as the control block.
 
-        String messagePrefix = "while resolving link from Control: ";
+//        String messagePrefix = "while resolving link from Control: ";
 
         if( ( getDatSet() == null ) || getDatSet().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "datSet is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "datSet is missing" );
             return;
         }
 
@@ -653,9 +653,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-                    " DataSet( name = ", getDatSet(), " )" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+//                    " DataSet( name = ", getDatSet(), " )" );
             return;
         }
         setRefersToDataSet( res.get( 0 ) );

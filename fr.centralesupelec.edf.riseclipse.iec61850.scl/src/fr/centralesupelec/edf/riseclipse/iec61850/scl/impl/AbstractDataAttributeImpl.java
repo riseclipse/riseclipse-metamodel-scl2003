@@ -1549,18 +1549,18 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         if( !( "Enum".equals( getBType() ) || "Struct".equals( getBType() ) ) ) {
             return;
         }
-        String messagePrefix = "while resolving link from AbstractDataAttribute: ";
+//        String messagePrefix = "while resolving link from AbstractDataAttribute: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "type is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "type is missing" );
             return;
         }
 
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                    messagePrefix, "DataTypeTemplates is missing" );
+//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                    messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1575,9 +1575,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .collect( Collectors.toList() );
 
             if( res.size() != 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-                        " EnumType( id = ", getType(), " )" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+//                        " EnumType( id = ", getType(), " )" );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
@@ -1596,9 +1596,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .collect( Collectors.toList() );
 
             if( res.size() != 1 ) {
-                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-                        " DAType( id = ", getType(), " )" );
+//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                        messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+//                        " DAType( id = ", getType(), " )" );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
