@@ -1259,9 +1259,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         if( ( getLdInst() != null ) && ( !getLdInst().isEmpty() ) ) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             if( lDevice1.getLeft() == null ) {
-            //     console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //             messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
-            //             "LDevice( inst = ", getLdInst(), " )" );
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //         messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
+                //         "LDevice( inst = ", getLdInst(), " )" );
                 return;
             }
             lDevice = lDevice1.getLeft();
