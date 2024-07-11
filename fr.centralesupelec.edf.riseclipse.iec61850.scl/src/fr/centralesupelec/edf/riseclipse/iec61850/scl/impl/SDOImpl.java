@@ -504,17 +504,17 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         // count    The number or reference to an attribute defining the number of array elements,
         //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
 
-//        String messagePrefix = "while resolving link from SDO: ";
+        // String messagePrefix = "while resolving link from SDO: ";
 
         if( ( getType() == null ) || getType().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "type is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "type is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "DataTypeTemplates is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -525,9 +525,9 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " DOType( id = ", getType(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " DOType( id = ", getType(), " )" );
             return;
         }
         setRefersToDOType( res.get( 0 ) );

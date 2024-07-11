@@ -1208,18 +1208,18 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
         if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "cNodeName is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "cNodeName is missing" );
             return;
         }
         if( ( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "voltageLevelName is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "voltageLevelName is missing" );
             return;
         }
         if( ( getBayName() == null ) || getBayName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "bayName is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "bayName is missing" );
             return;
         }
 
@@ -1233,9 +1233,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .collect( Collectors.toList() );
 
         if( res1.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " Substation( name = ", getSubstationName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " Substation( name = ", getSubstationName(), " )" );
             return;
         }
         Substation substation = res1.get( 0 );
@@ -1252,9 +1252,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .collect( Collectors.toList() );
 
         if( res2.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " VoltageLevel( name = ", getVoltageLevelName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " VoltageLevel( name = ", getVoltageLevelName(), " )" );
             return;
         }
         VoltageLevel voltageLevel = res2.get( 0 );
@@ -1271,9 +1271,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .collect( Collectors.toList() );
 
         if( res3.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " Bay( name = ", getBayName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " Bay( name = ", getBayName(), " )" );
             return;
         }
         Bay bay = res3.get( 0 );
@@ -1290,9 +1290,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .collect( Collectors.toList() );
 
         if( res4.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " ConnectivityNode( name = ", getCNodeName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " ConnectivityNode( name = ", getCNodeName(), " )" );
             return;
         }
         setRefersToConnectivityNode( res4.get( 0 ) );
@@ -1303,8 +1303,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
     private void doBuildExplicitLinkWithLine( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
         if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "cNodeName is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "cNodeName is missing" );
             return;
         }
 
@@ -1318,9 +1318,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .collect( Collectors.toList() );
 
         if( res1.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " Line( name = ", getLineName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " Line( name = ", getLineName(), " )" );
             return;
         }
         Line line = res1.get( 0 );
@@ -1336,9 +1336,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 .collect( Collectors.toList() );
 
         if( res2.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " ConnectivityNode( name = ", getCNodeName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " ConnectivityNode( name = ", getCNodeName(), " )" );
             return;
         }
         setRefersToConnectivityNode( res2.get( 0 ) );

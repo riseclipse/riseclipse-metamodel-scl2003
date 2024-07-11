@@ -613,7 +613,7 @@ public class LNImpl extends AnyLNImpl implements LN {
             return;
         }
 
-//        String messagePrefix = "while resolving link to ControlWithIEDName from LN lnClass=\"" + getLnClass() + "\": ";
+        // String messagePrefix = "while resolving link to ControlWithIEDName from LN lnClass=\"" + getLnClass() + "\": ";
 
         List< DOI > cBRef =
              getDOI()
@@ -621,13 +621,13 @@ public class LNImpl extends AnyLNImpl implements LN {
             .filter( doi -> doiName.equals( doi.getName() ))
             .collect( Collectors.toList() );
         if( cBRef.size() > 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found several DOI named ", doiName );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found several DOI named ", doiName );
             return;
         }
         if( cBRef.size() == 0 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "found no DOI named ", doiName );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "found no DOI named ", doiName );
             return;
         }
 
@@ -640,29 +640,29 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .filter( dai -> "setSrcRef".equals( dai.getName() ))
                 .toList();
         if( setSrcRef.size() == 0 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found no DAI named setSrcRef in ", doiName,
-//                             " on line ", cBRef.get( 0 ).getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found no DAI named setSrcRef in ", doiName,
+            //                  " on line ", cBRef.get( 0 ).getLineNumber() );
             return;
         }
         if( setSrcRef.size() > 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found several DAI named setSrcRef in ",
-//                             doiName, " on line ", cBRef.get( 0 ).getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found several DAI named setSrcRef in ",
+            //                  doiName, " on line ", cBRef.get( 0 ).getLineNumber() );
             return;
         }
 
         if( setSrcRef.get( 0 ).getVal().size() == 0 ) {
             // Do not display as warning, too many of them
-//            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                            messagePrefix, "found no Val in setSrcRef on line ",
-//                            setSrcRef.get( 0 ).getLineNumber() );
+            // console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                 messagePrefix, "found no Val in setSrcRef on line ",
+            //                 setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
         if( setSrcRef.get( 0 ).getVal().size() > 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found several Val in setSrcRef on line ",
-//                             setSrcRef.get( 0 ).getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found several Val in setSrcRef on line ",
+            //                  setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
 
@@ -670,23 +670,23 @@ public class LNImpl extends AnyLNImpl implements LN {
         String controlWithIEDName = val.getValue();
         if(( controlWithIEDName == null ) || ( controlWithIEDName.length() <= 1 )) {
             // Do not display as warning, too many of them
-//            console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                            messagePrefix, "found no Val or empty Val in setSrcRef on line ",
-//                            setSrcRef.get( 0 ).getLineNumber() );
+            // console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                 messagePrefix, "found no Val or empty Val in setSrcRef on line ",
+            //                 setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
         if( controlWithIEDName.indexOf( '/' ) == -1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
-//                             " is illformed, it should contain \"/\"" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
+            //                  " is illformed, it should contain \"/\"" );
             return;
         }
         if( ( controlWithIEDName.indexOf( '.' ) == -1 )
          || ( controlWithIEDName.indexOf( '.' ) != controlWithIEDName.indexOf( '/' ) + 5 )
          || ! "/LLN0.".equals( controlWithIEDName.subSequence( controlWithIEDName.indexOf( '/' ), controlWithIEDName.indexOf( '.' ) + 1 ))) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
-//                             " is illformed, it should contain \"/LLN0.\"" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
+            //                  " is illformed, it should contain \"/LLN0.\"" );
             return;
         }
 
@@ -698,15 +698,15 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .filter( ied -> controlWithIEDName.startsWith( ied.getName() ))
                 .toList();
         if( ieds.size() == 0 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found no IED whose name is the start of ",
-//                             controlWithIEDName, " on line ", val.getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found no IED whose name is the start of ",
+            //                  controlWithIEDName, " on line ", val.getLineNumber() );
             return;
         }
         if( ieds.size() > 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found several IED whose name is the start of ",
-//                             controlWithIEDName, " on line ", val.getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found several IED whose name is the start of ",
+            //                  controlWithIEDName, " on line ", val.getLineNumber() );
             return;
         }
         String ldInst = controlWithIEDName.substring( ieds.get( 0 ).getName().length(), controlWithIEDName.indexOf( '/' ));
@@ -722,22 +722,22 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .filter( ld -> ( ld != null ) && ld.getInst().equals( ldInst ))
                 .toList();
         if( lDevices.size() == 0 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found no LDevice whose inst is ", ldInst,
-//                             " in IED on line ", ieds.get( 0 ).getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found no LDevice whose inst is ", ldInst,
+            //                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
             return;
         }
         if( lDevices.size() > 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found several LDevice whose inst is ", ldInst,
-//                             " in IED on line ", ieds.get( 0 ).getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found several LDevice whose inst is ", ldInst,
+            //                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
             return;
         }
 
         LN0 ln0 = lDevices.get( 0 ).getLN0();
         if( ln0 == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found no LN0 in LDevice on line ", lDevices.get( 0 ).getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found no LN0 in LDevice on line ", lDevices.get( 0 ).getLineNumber() );
             return;
         }
 
@@ -749,17 +749,17 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .toList()
         );
         if( controls.size() == 0 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found no ControlWithIEDName whose name is ",
-//                             controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
-//                             " in LN0 on line ", ln0.getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found no ControlWithIEDName whose name is ",
+            //                  controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
+            //                  " in LN0 on line ", ln0.getLineNumber() );
             return;
         }
         if( controls.size() > 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                             messagePrefix, "found several ControlWithIEDName whose name is ",
-//                             controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
-//                             " in LN0 on line ", ln0.getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //                  messagePrefix, "found several ControlWithIEDName whose name is ",
+            //                  controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
+            //                  " in LN0 on line ", ln0.getLineNumber() );
             return;
         }
 

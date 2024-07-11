@@ -1317,18 +1317,18 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         String messagePrefix = "while resolving link from Association: ";
 
         if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "iedName is missing " );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "iedName is missing " );
             return;
         }
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "ldInst is missing " );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "ldInst is missing " );
             return;
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "lnClass is missing " );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "lnClass is missing " );
             return;
         }
 
@@ -1336,9 +1336,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         //   IED.name == Association.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                    " IED( name = ", getIedName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " IED( name = ", getIedName(), " )" );
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1349,9 +1349,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         //   LDevice.name == Association.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                    " LDevice( inst = ", getLdInst(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " LDevice( inst = ", getLdInst(), " )" );
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1369,8 +1369,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ), mess );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );

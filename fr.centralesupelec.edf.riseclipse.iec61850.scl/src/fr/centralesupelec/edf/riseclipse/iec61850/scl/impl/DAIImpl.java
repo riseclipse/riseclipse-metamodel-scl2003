@@ -1072,8 +1072,8 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         String messagePrefix = "while resolving link from DAI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "name is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "name is missing" );
             return;
         }
 
@@ -1114,9 +1114,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .toList();
 
         if( res.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
-//                    " DA( name = ", getName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
+            //         " DA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
@@ -1153,9 +1153,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                     .toList();
 
             if( res.size() != 1 ) {
-//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                        messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
-//                        " DA( name = ", getName(), " )" );
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //         messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
+                //         " DA( name = ", getName(), " )" );
                 return;
             }
             setRefersToAbstractDataAttribute( res.get( 0 ) );
@@ -1183,9 +1183,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .toList();
 
         if( res.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
-//                    " BDA( name = ", getName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res.isEmpty() ) ? "cannot find" : "found several" ),
+            //         " BDA( name = ", getName(), " )" );
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
