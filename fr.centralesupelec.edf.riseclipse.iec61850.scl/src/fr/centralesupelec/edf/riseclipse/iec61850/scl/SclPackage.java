@@ -11434,13 +11434,22 @@ public interface SclPackage extends EPackage {
     int FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
+     * The feature id for the '<em><b>Ord Nb</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FCDA__ORD_NB = SCL_OBJECT_FEATURE_COUNT + 10;
+
+    /**
      * The number of structural features of the '<em>FCDA</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FCDA_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
+    int FCDA_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 11;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -28589,6 +28598,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getFCDA_RefersToAbstractDataAttribute();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getOrdNb <em>Ord Nb</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Ord Nb</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getOrdNb()
+     * @see #getFCDA()
+     * @generated
+     */
+    EAttribute getFCDA_OrdNb();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling <em>File Handling</em>}'.

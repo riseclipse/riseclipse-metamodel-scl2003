@@ -533,6 +533,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/prefix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/ParentDataSet"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToAbstractDataAttribute"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/ordNb"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//FileHandling">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/ftp"/>

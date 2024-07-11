@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -41,6 +41,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet <em>Parent Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getOrdNb <em>Ord Nb</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA()
@@ -536,5 +537,17 @@ public interface FCDA extends SclObject {
      * @generated
      */
     boolean isSetRefersToAbstractDataAttribute();
+
+    /**
+     * Returns the value of the '<em><b>Ord Nb</b></em>' attribute.
+     * The default value is <code>"-1"</code>.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ord Nb</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_OrdNb()
+     * @model default="-1" transient="true" changeable="false" volatile="true"
+     * @generated
+     */
+    int getOrdNb();
 
 } // FCDA

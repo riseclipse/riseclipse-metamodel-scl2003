@@ -1511,17 +1511,17 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
-//        String messagePrefix = "while resolving link from AnyLN on line: ";
+        // String messagePrefix = "while resolving link from AnyLN on line: ";
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "lnType is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "DataTypeTemplates is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1532,9 +1532,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " LNodeType( id = ", getLnType(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " LNodeType( id = ", getLnType(), " )" );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
@@ -1543,9 +1543,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 " ) on line ", getRefersToLNodeType().getLineNumber() );
 
         if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() ) ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
-//                    getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
+            //         getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
         }
     }
 
