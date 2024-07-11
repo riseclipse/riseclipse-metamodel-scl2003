@@ -71,6 +71,7 @@ public class FCDAItemProvider
             addLnInstPropertyDescriptor( object );
             addPrefixPropertyDescriptor( object );
             addRefersToAbstractDataAttributePropertyDescriptor( object );
+            addOrdNbPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -266,6 +267,27 @@ public class FCDAItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Ord Nb feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addOrdNbPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_FCDA_ordNb_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_FCDA_ordNb_feature", "_UI_FCDA_type" ),
+                        SclPackage.eINSTANCE.getFCDA_OrdNb(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns FCDA.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -326,6 +348,7 @@ public class FCDAItemProvider
         case SclPackage.FCDA__LN_CLASS:
         case SclPackage.FCDA__LN_INST:
         case SclPackage.FCDA__PREFIX:
+        case SclPackage.FCDA__ORD_NB:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

@@ -73,6 +73,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getParentDataSet <em>Parent Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getOrdNb <em>Ord Nb</em>}</li>
  * </ul>
  *
  * @generated
@@ -319,6 +320,16 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * @ordered
      */
     protected EList< AbstractDataAttribute > refersToAbstractDataAttribute;
+
+    /**
+     * The default value of the '{@link #getOrdNb() <em>Ord Nb</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOrdNb()
+     * @generated
+     * @ordered
+     */
+    protected static final int ORD_NB_EDEFAULT = -1;
 
     /**
      * <!-- begin-user-doc -->
@@ -864,6 +875,19 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public int getOrdNb() {
+        if( getParentDataSet() == null ) {
+            return ORD_NB_EDEFAULT;
+        }
+        return getParentDataSet().getFCDA().indexOf( this );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @SuppressWarnings( "unchecked" )
@@ -940,6 +964,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             return getParentDataSet();
         case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             return getRefersToAbstractDataAttribute();
+        case SclPackage.FCDA__ORD_NB:
+            return getOrdNb();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1058,6 +1084,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             return getParentDataSet() != null;
         case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             return isSetRefersToAbstractDataAttribute();
+        case SclPackage.FCDA__ORD_NB:
+            return getOrdNb() != ORD_NB_EDEFAULT;
         }
         return super.eIsSet( featureID );
     }
