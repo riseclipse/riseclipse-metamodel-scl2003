@@ -1075,6 +1075,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ConnectedAPImpl.doBuildExplicitLinks()" );
 
@@ -1122,6 +1124,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ConnectedAP on line refers to AccessPoint( name = ", getApName(), " ) on line ",
                 getRefersToAccessPoint().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //ConnectedAPImpl

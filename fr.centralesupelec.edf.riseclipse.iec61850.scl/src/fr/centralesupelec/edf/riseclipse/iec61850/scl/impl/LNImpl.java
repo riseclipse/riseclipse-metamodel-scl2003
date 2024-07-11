@@ -766,6 +766,8 @@ public class LNImpl extends AnyLNImpl implements LN {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "LN ", getLnClass(), " supervises ControlWithIEDName ", controls.get( 0 ), " at line ", controls.get( 0 ).getLineNumber() );
         setRefersToControlWithIEDName( controls.get( 0 ));
+
+        //@formatter:on
     }
 
 } //LNImpl

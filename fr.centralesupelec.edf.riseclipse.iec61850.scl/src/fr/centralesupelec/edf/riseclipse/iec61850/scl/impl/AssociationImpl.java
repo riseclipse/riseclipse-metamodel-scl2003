@@ -1300,6 +1300,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "AssociationImpl.doBuildExplicitLinks()" );
 
@@ -1377,6 +1379,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Association refers to ", mess, " on line ",
                 getRefersToAnyLN().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //AssociationImpl

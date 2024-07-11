@@ -1529,6 +1529,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "AbstractDataAttributeImpl.doBuildExplicitLinks()" );
 
@@ -1606,6 +1608,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     "AbstractDataAttribute refers to EnumType( id = ", getType(), " ) on line ",
                     getRefersToDAType().getLineNumber() );
         }
+
+        //@formatter:on
     }
 
 } //AbstractDataAttributeImpl

@@ -724,6 +724,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ControlBlockImpl.doBuildExplicitLinks()" );
 
@@ -801,6 +803,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ControlBlock refers to ControlWithIEDName( name = ", getCbName(), " ) on line ",
                 getRefersToControlWithIEDName().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //ControlBlockImpl

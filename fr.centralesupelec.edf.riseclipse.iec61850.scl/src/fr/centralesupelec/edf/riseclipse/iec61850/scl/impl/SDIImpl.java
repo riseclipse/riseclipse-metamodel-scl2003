@@ -1242,6 +1242,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     }
 
     private void doResolveLinkWithParentDOI( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
+        //@formatter:off
+
         DO do_ = getParentDOI().getRefersToDO();
         // No error or warning message here: if this happens, error should have been detected before
         if( do_ == null ) {
@@ -1302,9 +1304,13 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "SDI refers to DA( name = ", getName(), " ) on line ",
                 getRefersToAbstractDataAttribute().getLineNumber() );
+
+        //@formatter:on
     }
 
     private void doResolveLinkWithParentSDI( @NonNull IRiseClipseConsole console, @NonNull String messagePrefix ) {
+        //@formatter:off
+
         SDO sdo = getParentSDI().getRefersToSDO();
         if( sdo != null ) {
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -1399,6 +1405,8 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "SDI refers to BDA( name = ", getName(), " ) on line ",
                 getRefersToAbstractDataAttribute().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //SDIImpl

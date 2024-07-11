@@ -950,6 +950,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "DOIImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
@@ -987,6 +989,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         setRefersToDO( res.get( 0 ) );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //DOIImpl

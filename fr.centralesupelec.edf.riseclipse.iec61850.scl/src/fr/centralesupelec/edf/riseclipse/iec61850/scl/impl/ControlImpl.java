@@ -621,6 +621,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "ControlImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
@@ -662,6 +664,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Control refers to DataSet( name = ", getDatSet(), " ) on line ",
                 getRefersToDataSet().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //ControlImpl
