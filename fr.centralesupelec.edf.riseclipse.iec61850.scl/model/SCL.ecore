@@ -848,9 +848,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByControl" ordered="false"
         upperBound="-1" eType="#//Control" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Control/RefersToDataSet"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="FCDA" ordered="false" upperBound="-1"
-        eType="#//FCDA" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//FCDA/ParentDataSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FCDA" upperBound="-1" eType="#//FCDA"
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//FCDA/ParentDataSet"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
   </eClassifiers>
@@ -941,6 +940,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataAttribute"
         ordered="false" upperBound="-1" eType="#//AbstractDataAttribute" transient="true"
         unsettable="true" resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByFCDA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordNb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true" defaultValueLiteral="-1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FileHandling" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"

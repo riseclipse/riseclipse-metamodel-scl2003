@@ -950,6 +950,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
     @Override
     protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        //@formatter:off
+
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "DOIImpl.doBuildExplicitLinks()" );
 
         // see Issue #13
@@ -958,8 +960,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         String messagePrefix = "while resolving link from DOI: ";
 
         if( ( getName() == null ) || getName().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "name is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "name is missing" );
             return;
         }
 
@@ -979,14 +981,16 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " DO( name = ", getName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " DO( name = ", getName(), " )" );
             return;
         }
         setRefersToDO( res.get( 0 ) );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
+
+        //@formatter:on
     }
 
 } //DOIImpl

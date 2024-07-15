@@ -2638,9 +2638,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         }
         if( ied.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                    " IED( name = ", getIedName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " IED( name = ", getIedName(), " )" );
             return Pair.of( null, null );
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2649,21 +2649,21 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         // Only now so that we can give back ied
         if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "ldInst is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "ldInst is missing" );
             return Pair.of( ied.getLeft(), null );
         }
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "lnClass is missing" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "lnClass is missing" );
             return Pair.of( ied.getLeft(), null );
         }
 
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                    " LDevice( inst = ", getLdInst(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " LDevice( inst = ", getLdInst(), " )" );
             return Pair.of( ied.getLeft(), null );
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2681,9 +2681,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                    mess );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         mess );
             return finalRes;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2714,9 +2714,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
 
         if( res1.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " DO ( name = ", doNames[0], " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " DO ( name = ", doNames[0], " )" );
             return finalRes;
         }
 
@@ -2738,9 +2738,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .collect( Collectors.toList() );
 
             if( res2.size() != 1 ) {
-//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                        messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
-//                        " SDO ( name = ", name, " ) in DOType on line ", doType.getLineNumber() );
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //         messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                //         " SDO ( name = ", name, " ) in DOType on line ", doType.getLineNumber() );
                 return finalRes;
             }
             ado = res2.get( 0 );
@@ -2776,9 +2776,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
 
         if( res3.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " DA ( name = ", daNames[0], " ) in DOType" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " DA ( name = ", daNames[0], " ) in DOType" );
             return finalRes;
         }
         AbstractDataAttribute da = res3.get( 0 );
@@ -2798,10 +2798,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .collect( Collectors.toList() );
 
             if( res4.size() != 1 ) {
-//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                        messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
-//                        " BDA ( name = ", name, " ) in DAType on line ",
-//                        da.getRefersToDAType().getLineNumber() );
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //         messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
+                //         " BDA ( name = ", name, " ) in DAType on line ",
+                //         da.getRefersToDAType().getLineNumber() );
                 return finalRes;
             }
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2843,9 +2843,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( ( getSrcLDInst() != null ) && ( !getSrcLDInst().isEmpty() ) ) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getSrcLDInst() );
             if( lDevice1.getLeft() == null ) {
-//                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                        messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                        " LDevice( inst = " + getSrcLDInst() + " )" );
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //         messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
+                //         " LDevice( inst = " + getSrcLDInst() + " )" );
                 return;
             }
             lDevice = lDevice1.getLeft();
@@ -2867,9 +2867,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-//                    mess );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         mess );
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2883,9 +2883,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             listControls.addAll( lDevice.getLN0().getSampledValueControl() );
         }
         if( listControls.size() == 0 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, "control not found because there are none of them in AnyLN line ",
-//                    anyLN.getLeft().getLineNumber() );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, "control not found because there are none of them in AnyLN line ",
+            //         anyLN.getLeft().getLineNumber() );
             return;
         }
 
@@ -2894,9 +2894,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .filter( c -> getSrcCBName().equals( c.getName() ) )
                 .collect( Collectors.toList() );
         if( res.size() != 1 ) {
-//            console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-//                    messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-//                    " Control( name = ", getSrcCBName(), " )" );
+            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " Control( name = ", getSrcCBName(), " )" );
             return;
         }
         setRefersToControl( res.get( 0 ) );
