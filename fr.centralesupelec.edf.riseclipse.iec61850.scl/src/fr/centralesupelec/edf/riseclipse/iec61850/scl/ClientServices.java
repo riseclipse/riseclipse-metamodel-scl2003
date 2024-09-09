@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -55,6 +55,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ClientServices extends SclObject {
     /**
      * Returns the value of the '<em><b>Buf Report</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buf Report</em>' attribute isn't clear,
@@ -66,7 +67,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetBufReport()
      * @see #setBufReport(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_BufReport()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getBufReport();
@@ -108,6 +109,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Goose</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Goose</em>' attribute isn't clear,
@@ -119,7 +121,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetGoose()
      * @see #setGoose(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_Goose()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getGoose();
@@ -161,6 +163,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Gsse</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Gsse</em>' attribute isn't clear,
@@ -172,7 +175,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetGsse()
      * @see #setGsse(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_Gsse()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getGsse();
@@ -426,6 +429,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Read Log</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Read Log</em>' attribute isn't clear,
@@ -437,7 +441,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetReadLog()
      * @see #setReadLog(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_ReadLog()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getReadLog();
@@ -479,6 +483,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Supports Ld Name</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Supports Ld Name</em>' attribute isn't clear,
@@ -490,7 +495,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetSupportsLdName()
      * @see #setSupportsLdName(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_SupportsLdName()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSupportsLdName();
@@ -532,6 +537,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Sv</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sv</em>' attribute isn't clear,
@@ -543,7 +549,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetSv()
      * @see #setSv(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_Sv()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSv();
@@ -585,6 +591,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Unbuf Report</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Unbuf Report</em>' attribute isn't clear,
@@ -596,7 +603,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetUnbufReport()
      * @see #setUnbufReport(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_UnbufReport()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getUnbufReport();
@@ -717,6 +724,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>RGOOSE</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>RGOOSE</em>' attribute isn't clear,
@@ -728,7 +736,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetRGOOSE()
      * @see #setRGOOSE(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_RGOOSE()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getRGOOSE();
@@ -770,6 +778,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>RSV</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>RSV</em>' attribute isn't clear,
@@ -781,7 +790,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetRSV()
      * @see #setRSV(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_RSV()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getRSV();
@@ -823,6 +832,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>No Ict Binding</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>No Ict Binding</em>' attribute isn't clear,
@@ -834,7 +844,7 @@ public interface ClientServices extends SclObject {
      * @see #unsetNoIctBinding()
      * @see #setNoIctBinding(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_NoIctBinding()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getNoIctBinding();

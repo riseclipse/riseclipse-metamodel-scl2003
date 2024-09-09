@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface AgAuthentication extends EObject {
     /**
      * Returns the value of the '<em><b>Certificate</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Certificate</em>' attribute.
@@ -52,7 +53,7 @@ public interface AgAuthentication extends EObject {
      * @see #unsetCertificate()
      * @see #setCertificate(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgAuthentication_Certificate()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getCertificate();
@@ -94,6 +95,7 @@ public interface AgAuthentication extends EObject {
 
     /**
      * Returns the value of the '<em><b>None</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>None</em>' attribute.
@@ -101,7 +103,7 @@ public interface AgAuthentication extends EObject {
      * @see #unsetNone()
      * @see #setNone(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgAuthentication_None()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getNone();
@@ -143,6 +145,7 @@ public interface AgAuthentication extends EObject {
 
     /**
      * Returns the value of the '<em><b>Password</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Password</em>' attribute.
@@ -150,7 +153,7 @@ public interface AgAuthentication extends EObject {
      * @see #unsetPassword()
      * @see #setPassword(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgAuthentication_Password()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getPassword();
@@ -192,6 +195,7 @@ public interface AgAuthentication extends EObject {
 
     /**
      * Returns the value of the '<em><b>Strong</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Strong</em>' attribute.
@@ -199,7 +203,7 @@ public interface AgAuthentication extends EObject {
      * @see #unsetStrong()
      * @see #setStrong(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgAuthentication_Strong()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getStrong();
@@ -241,6 +245,7 @@ public interface AgAuthentication extends EObject {
 
     /**
      * Returns the value of the '<em><b>Weak</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Weak</em>' attribute.
@@ -248,7 +253,7 @@ public interface AgAuthentication extends EObject {
      * @see #unsetWeak()
      * @see #setWeak(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgAuthentication_Weak()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getWeak();

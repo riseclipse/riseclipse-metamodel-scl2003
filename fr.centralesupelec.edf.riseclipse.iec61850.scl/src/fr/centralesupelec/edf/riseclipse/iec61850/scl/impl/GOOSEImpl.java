@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -56,7 +56,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * @generated
      * @ordered
      */
-    protected static final Boolean FIXED_OFFS_EDEFAULT = null;
+    protected static final Boolean FIXED_OFFS_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getFixedOffs() <em>Fixed Offs</em>}' attribute.
@@ -85,7 +85,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * @generated
      * @ordered
      */
-    protected static final Boolean GOOSE_EDEFAULT = null;
+    protected static final Boolean GOOSE_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getGoose() <em>Goose</em>}' attribute.
@@ -114,7 +114,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * @generated
      * @ordered
      */
-    protected static final Boolean RGOOSE_EDEFAULT = null;
+    protected static final Boolean RGOOSE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getRGOOSE() <em>RGOOSE</em>}' attribute.
@@ -175,9 +175,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         fixedOffs = newFixedOffs;
         boolean oldFixedOffsESet = fixedOffsESet;
         fixedOffsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GOOSE__FIXED_OFFS, oldFixedOffs,
                     fixedOffs, !oldFixedOffsESet ) );
+        }
     }
 
     /**
@@ -191,9 +192,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         boolean oldFixedOffsESet = fixedOffsESet;
         fixedOffs = FIXED_OFFS_EDEFAULT;
         fixedOffsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GOOSE__FIXED_OFFS, oldFixedOffs,
                     FIXED_OFFS_EDEFAULT, oldFixedOffsESet ) );
+        }
     }
 
     /**
@@ -213,7 +215,9 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.GOOSE__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.GOOSE__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -236,20 +240,26 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     public void setParentServices( Services newParentServices ) {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GOOSE__PARENT_SERVICES && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__GOOSE,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GOOSE__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -273,9 +283,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         goose = newGoose;
         boolean oldGooseESet = gooseESet;
         gooseESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GOOSE__GOOSE, oldGoose, goose,
                     !oldGooseESet ) );
+        }
     }
 
     /**
@@ -289,9 +300,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         boolean oldGooseESet = gooseESet;
         goose = GOOSE_EDEFAULT;
         gooseESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GOOSE__GOOSE, oldGoose, GOOSE_EDEFAULT,
                     oldGooseESet ) );
+        }
     }
 
     /**
@@ -325,9 +337,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         rGOOSE = newRGOOSE;
         boolean oldRGOOSEESet = rGOOSEESet;
         rGOOSEESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GOOSE__RGOOSE, oldRGOOSE, rGOOSE,
                     !oldRGOOSEESet ) );
+        }
     }
 
     /**
@@ -341,9 +354,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         boolean oldRGOOSEESet = rGOOSEESet;
         rGOOSE = RGOOSE_EDEFAULT;
         rGOOSEESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GOOSE__RGOOSE, oldRGOOSE,
                     RGOOSE_EDEFAULT, oldRGOOSEESet ) );
+        }
     }
 
     /**
@@ -365,8 +379,9 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GOOSE__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -495,24 +510,32 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (fixedOffs: " );
-        if( fixedOffsESet )
+        if( fixedOffsESet ) {
             result.append( fixedOffs );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", goose: " );
-        if( gooseESet )
+        if( gooseESet ) {
             result.append( goose );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", rGOOSE: " );
-        if( rGOOSEESet )
+        if( rGOOSEESet ) {
             result.append( rGOOSE );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

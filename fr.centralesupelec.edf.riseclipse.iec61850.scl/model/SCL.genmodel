@@ -675,6 +675,7 @@
     <genClasses ecoreClass="SCL.ecore#//Protocol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Protocol/mustUnderstand"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Protocol/ParentControlWithIEDName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Protocol/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ReadWrite">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReadWrite/ParentServices"/>
@@ -1128,7 +1129,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/reasonCode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/seqNum"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/timeStamp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/segmentation"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//AgDesc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgDesc/desc"/>

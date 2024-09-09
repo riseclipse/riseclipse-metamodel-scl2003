@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -44,6 +44,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface TrgOps extends SclObject {
     /**
      * Returns the value of the '<em><b>Dchg</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Dchg</em>' attribute isn't clear,
@@ -55,7 +56,7 @@ public interface TrgOps extends SclObject {
      * @see #unsetDchg()
      * @see #setDchg(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_Dchg()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getDchg();
@@ -97,6 +98,7 @@ public interface TrgOps extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Dupd</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Dupd</em>' attribute isn't clear,
@@ -108,7 +110,7 @@ public interface TrgOps extends SclObject {
      * @see #unsetDupd()
      * @see #setDupd(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_Dupd()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getDupd();
@@ -150,6 +152,7 @@ public interface TrgOps extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Gi</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Gi</em>' attribute isn't clear,
@@ -161,7 +164,7 @@ public interface TrgOps extends SclObject {
      * @see #unsetGi()
      * @see #setGi(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_Gi()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getGi();
@@ -203,6 +206,7 @@ public interface TrgOps extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Period</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Period</em>' attribute isn't clear,
@@ -214,7 +218,7 @@ public interface TrgOps extends SclObject {
      * @see #unsetPeriod()
      * @see #setPeriod(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_Period()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getPeriod();
@@ -256,6 +260,7 @@ public interface TrgOps extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Qchg</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Qchg</em>' attribute isn't clear,
@@ -267,7 +272,7 @@ public interface TrgOps extends SclObject {
      * @see #unsetQchg()
      * @see #setQchg(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_Qchg()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getQchg();

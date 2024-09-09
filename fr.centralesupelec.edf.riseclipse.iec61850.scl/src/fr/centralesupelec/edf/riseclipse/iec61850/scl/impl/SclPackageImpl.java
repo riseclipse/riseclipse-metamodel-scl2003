@@ -4005,16 +4005,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getAgOptFields_Segmentation() {
-        return ( EAttribute ) getAgOptFields().getEStructuralFeatures().get( 8 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EClass getAgDesc() {
         if( agDescEClass == null ) {
             agDescEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()
@@ -7351,6 +7341,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getProtocol_ParentControlWithIEDName() {
         return ( EReference ) getProtocol().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getProtocol_Value() {
+        return ( EAttribute ) getProtocol().getEStructuralFeatures().get( 2 );
     }
 
     /**

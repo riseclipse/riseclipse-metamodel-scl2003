@@ -162,7 +162,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected static final String ORIGINAL_SCL_REVISION_EDEFAULT = null;
+    protected static final String ORIGINAL_SCL_REVISION_EDEFAULT = "A";
 
     /**
      * The cached value of the '{@link #getOriginalSclRevision() <em>Original Scl Revision</em>}' attribute.
@@ -191,7 +191,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected static final String ORIGINAL_SCL_VERSION_EDEFAULT = null;
+    protected static final String ORIGINAL_SCL_VERSION_EDEFAULT = "2003";
 
     /**
      * The cached value of the '{@link #getOriginalSclVersion() <em>Original Scl Version</em>}' attribute.
@@ -346,7 +346,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected static final Integer ORIGINAL_SCL_RELEASE_EDEFAULT = null;
+    protected static final Integer ORIGINAL_SCL_RELEASE_EDEFAULT = Integer.valueOf( 1 );
 
     /**
      * The cached value of the '{@link #getOriginalSclRelease() <em>Original Scl Release</em>}' attribute.

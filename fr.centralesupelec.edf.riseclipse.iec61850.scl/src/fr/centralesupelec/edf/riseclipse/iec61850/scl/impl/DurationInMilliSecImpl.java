@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.math.BigDecimal;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -98,7 +99,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      * @ordered
      */
-    protected static final String UNIT_EDEFAULT = null;
+    protected static final String UNIT_EDEFAULT = "";
     /**
      * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -155,9 +156,10 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
     public void setValue( BigDecimal newValue ) {
         BigDecimal oldValue = value;
         value = newValue;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__VALUE, oldValue,
                     value ) );
+        }
     }
 
     /**
@@ -181,9 +183,10 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
         multiplier = newMultiplier == null ? MULTIPLIER_EDEFAULT : newMultiplier;
         boolean oldMultiplierESet = multiplierESet;
         multiplierESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER,
                     oldMultiplier, multiplier, !oldMultiplierESet ) );
+        }
     }
 
     /**
@@ -197,9 +200,10 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
         boolean oldMultiplierESet = multiplierESet;
         multiplier = MULTIPLIER_EDEFAULT;
         multiplierESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER,
                     oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet ) );
+        }
     }
 
     /**
@@ -233,9 +237,10 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
         unit = newUnit;
         boolean oldUnitESet = unitESet;
         unitESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__UNIT, oldUnit,
                     unit, !oldUnitESet ) );
+        }
     }
 
     /**
@@ -249,9 +254,10 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
         boolean oldUnitESet = unitESet;
         unit = UNIT_EDEFAULT;
         unitESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DURATION_IN_MILLI_SEC__UNIT, oldUnit,
                     UNIT_EDEFAULT, oldUnitESet ) );
+        }
     }
 
     /**
@@ -349,21 +355,27 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (value: " );
         result.append( value );
         result.append( ", multiplier: " );
-        if( multiplierESet )
+        if( multiplierESet ) {
             result.append( multiplier );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", unit: " );
-        if( unitESet )
+        if( unitESet ) {
             result.append( unit );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

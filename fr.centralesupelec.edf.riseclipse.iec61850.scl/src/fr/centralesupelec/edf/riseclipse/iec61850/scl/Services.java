@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -74,6 +74,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface Services extends SclObject {
     /**
      * Returns the value of the '<em><b>Name Length</b></em>' attribute.
+     * The default value is <code>"32"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Name Length</em>' attribute isn't clear,
@@ -85,7 +86,7 @@ public interface Services extends SclObject {
      * @see #unsetNameLength()
      * @see #setNameLength(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_NameLength()
-     * @model unsettable="true"
+     * @model default="32" unsettable="true"
      * @generated
      */
     Integer getNameLength();

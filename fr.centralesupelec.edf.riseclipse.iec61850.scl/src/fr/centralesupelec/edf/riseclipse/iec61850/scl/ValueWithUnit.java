@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -70,6 +70,7 @@ public interface ValueWithUnit extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Multiplier</b></em>' attribute.
+     * The default value is <code>""</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -83,7 +84,7 @@ public interface ValueWithUnit extends SclObject {
      * @see #unsetMultiplier()
      * @see #setMultiplier(UnitMultiplierEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getValueWithUnit_Multiplier()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     UnitMultiplierEnum getMultiplier();

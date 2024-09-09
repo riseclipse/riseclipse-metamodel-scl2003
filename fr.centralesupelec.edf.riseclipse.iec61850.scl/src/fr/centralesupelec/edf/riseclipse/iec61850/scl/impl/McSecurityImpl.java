@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,21 +20,18 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +59,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      * @ordered
      */
-    protected static final Boolean SIGNATURE_EDEFAULT = null;
+    protected static final Boolean SIGNATURE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getSignature() <em>Signature</em>}' attribute.
@@ -91,7 +88,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      * @ordered
      */
-    protected static final Boolean ENCRYPTION_EDEFAULT = null;
+    protected static final Boolean ENCRYPTION_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getEncryption() <em>Encryption</em>}' attribute.
@@ -138,7 +135,9 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      */
     @Override
     public ClientServices getParentClientServices() {
-        if( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES ) {
+            return null;
+        }
         return ( ClientServices ) eInternalContainer();
     }
 
@@ -164,20 +163,26 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         if( newParentClientServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES
                         && newParentClientServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentClientServices ) )
+            if( EcoreUtil.isAncestor( this, newParentClientServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentClientServices != null )
+            }
+            if( newParentClientServices != null ) {
                 msgs = ( ( InternalEObject ) newParentClientServices ).eInverseAdd( this,
                         SclPackage.CLIENT_SERVICES__MC_SECURITY, ClientServices.class, msgs );
+            }
             msgs = basicSetParentClientServices( newParentClientServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES,
                     newParentClientServices, newParentClientServices ) );
+        }
     }
 
     /**
@@ -187,7 +192,9 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      */
     @Override
     public GSESettings getParentGSESettings() {
-        if( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS ) return null;
+        if( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS ) {
+            return null;
+        }
         return ( GSESettings ) eInternalContainer();
     }
 
@@ -212,20 +219,26 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         if( newParentGSESettings != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS
                         && newParentGSESettings != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentGSESettings ) )
+            if( EcoreUtil.isAncestor( this, newParentGSESettings ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentGSESettings != null )
+            }
+            if( newParentGSESettings != null ) {
                 msgs = ( ( InternalEObject ) newParentGSESettings ).eInverseAdd( this,
                         SclPackage.GSE_SETTINGS__MC_SECURITY, GSESettings.class, msgs );
+            }
             msgs = basicSetParentGSESettings( newParentGSESettings, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS,
                     newParentGSESettings, newParentGSESettings ) );
+        }
     }
 
     /**
@@ -235,7 +248,9 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      */
     @Override
     public SMVSettings getParentSMVSettings() {
-        if( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS ) return null;
+        if( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS ) {
+            return null;
+        }
         return ( SMVSettings ) eInternalContainer();
     }
 
@@ -260,20 +275,26 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         if( newParentSMVSettings != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS
                         && newParentSMVSettings != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSMVSettings ) )
+            if( EcoreUtil.isAncestor( this, newParentSMVSettings ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSMVSettings != null )
+            }
+            if( newParentSMVSettings != null ) {
                 msgs = ( ( InternalEObject ) newParentSMVSettings ).eInverseAdd( this,
                         SclPackage.SMV_SETTINGS__MC_SECURITY, SMVSettings.class, msgs );
+            }
             msgs = basicSetParentSMVSettings( newParentSMVSettings, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS,
                     newParentSMVSettings, newParentSMVSettings ) );
+        }
     }
 
     /**
@@ -297,9 +318,10 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         signature = newSignature;
         boolean oldSignatureESet = signatureESet;
         signatureESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.MC_SECURITY__SIGNATURE, oldSignature,
                     signature, !oldSignatureESet ) );
+        }
     }
 
     /**
@@ -313,9 +335,10 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         boolean oldSignatureESet = signatureESet;
         signature = SIGNATURE_EDEFAULT;
         signatureESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.MC_SECURITY__SIGNATURE, oldSignature,
                     SIGNATURE_EDEFAULT, oldSignatureESet ) );
+        }
     }
 
     /**
@@ -349,9 +372,10 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         encryption = newEncryption;
         boolean oldEncryptionESet = encryptionESet;
         encryptionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.MC_SECURITY__ENCRYPTION, oldEncryption,
                     encryption, !oldEncryptionESet ) );
+        }
     }
 
     /**
@@ -365,9 +389,10 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         boolean oldEncryptionESet = encryptionESet;
         encryption = ENCRYPTION_EDEFAULT;
         encryptionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.MC_SECURITY__ENCRYPTION, oldEncryption,
                     ENCRYPTION_EDEFAULT, oldEncryptionESet ) );
+        }
     }
 
     /**
@@ -389,16 +414,19 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentClientServices( ( ClientServices ) otherEnd, msgs );
         case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentGSESettings( ( GSESettings ) otherEnd, msgs );
         case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSMVSettings( ( SMVSettings ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -548,19 +576,25 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (signature: " );
-        if( signatureESet )
+        if( signatureESet ) {
             result.append( signature );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", encryption: " );
-        if( encryptionESet )
+        if( encryptionESet ) {
             result.append( encryption );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

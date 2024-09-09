@@ -14711,22 +14711,13 @@ public interface SclPackage extends EPackage {
     int OPT_FIELDS__TIME_STAMP = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Segmentation</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int OPT_FIELDS__SEGMENTATION = SCL_OBJECT_FEATURE_COUNT + 8;
-
-    /**
      * The feature id for the '<em><b>Parent Report Control</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int OPT_FIELDS__PARENT_REPORT_CONTROL = SCL_OBJECT_FEATURE_COUNT + 9;
+    int OPT_FIELDS__PARENT_REPORT_CONTROL = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The number of structural features of the '<em>Opt Fields</em>' class.
@@ -14735,7 +14726,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int OPT_FIELDS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
+    int OPT_FIELDS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -14801,13 +14792,22 @@ public interface SclPackage extends EPackage {
     int PROTOCOL__PARENT_CONTROL_WITH_IED_NAME = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROTOCOL__VALUE = SCL_OBJECT_FEATURE_COUNT + 2;
+
+    /**
      * The number of structural features of the '<em>Protocol</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROTOCOL_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
+    int PROTOCOL_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -23389,22 +23389,13 @@ public interface SclPackage extends EPackage {
     int AG_OPT_FIELDS__TIME_STAMP = 7;
 
     /**
-     * The feature id for the '<em><b>Segmentation</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int AG_OPT_FIELDS__SEGMENTATION = 8;
-
-    /**
      * The number of structural features of the '<em>Ag Opt Fields</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AG_OPT_FIELDS_FEATURE_COUNT = 9;
+    int AG_OPT_FIELDS_FEATURE_COUNT = 8;
 
     /**
      * The number of operations of the '<em>Ag Opt Fields</em>' class.
@@ -26513,17 +26504,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getAgOptFields_TimeStamp();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Segmentation</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation()
-     * @see #getAgOptFields()
-     * @generated
-     */
-    EAttribute getAgOptFields_Segmentation();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc <em>Ag Desc</em>}'.
@@ -29872,6 +29852,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getProtocol_ParentControlWithIEDName();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getValue()
+     * @see #getProtocol()
+     * @generated
+     */
+    EAttribute getProtocol_Value();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite <em>Read Write</em>}'.

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -55,7 +55,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * @generated
      * @ordered
      */
-    protected static final Boolean FIX_LN_INST_EDEFAULT = null;
+    protected static final Boolean FIX_LN_INST_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getFixLnInst() <em>Fix Ln Inst</em>}' attribute.
@@ -84,7 +84,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * @generated
      * @ordered
      */
-    protected static final Boolean FIX_PREFIX_EDEFAULT = null;
+    protected static final Boolean FIX_PREFIX_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getFixPrefix() <em>Fix Prefix</em>}' attribute.
@@ -145,9 +145,10 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
         fixLnInst = newFixLnInst;
         boolean oldFixLnInstESet = fixLnInstESet;
         fixLnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONF_LNS__FIX_LN_INST, oldFixLnInst,
                     fixLnInst, !oldFixLnInstESet ) );
+        }
     }
 
     /**
@@ -161,9 +162,10 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
         boolean oldFixLnInstESet = fixLnInstESet;
         fixLnInst = FIX_LN_INST_EDEFAULT;
         fixLnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONF_LNS__FIX_LN_INST, oldFixLnInst,
                     FIX_LN_INST_EDEFAULT, oldFixLnInstESet ) );
+        }
     }
 
     /**
@@ -197,9 +199,10 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
         fixPrefix = newFixPrefix;
         boolean oldFixPrefixESet = fixPrefixESet;
         fixPrefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONF_LNS__FIX_PREFIX, oldFixPrefix,
                     fixPrefix, !oldFixPrefixESet ) );
+        }
     }
 
     /**
@@ -213,9 +216,10 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
         boolean oldFixPrefixESet = fixPrefixESet;
         fixPrefix = FIX_PREFIX_EDEFAULT;
         fixPrefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONF_LNS__FIX_PREFIX, oldFixPrefix,
                     FIX_PREFIX_EDEFAULT, oldFixPrefixESet ) );
+        }
     }
 
     /**
@@ -235,7 +239,9 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.CONF_LNS__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.CONF_LNS__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -258,20 +264,26 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     public void setParentServices( Services newParentServices ) {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.CONF_LNS__PARENT_SERVICES && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__CONF_LNS,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONF_LNS__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -283,8 +295,9 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.CONF_LNS__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -403,19 +416,25 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (fixLnInst: " );
-        if( fixLnInstESet )
+        if( fixLnInstESet ) {
             result.append( fixLnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", fixPrefix: " );
-        if( fixPrefixESet )
+        if( fixPrefixESet ) {
             result.append( fixPrefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

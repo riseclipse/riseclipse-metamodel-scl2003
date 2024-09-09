@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -56,7 +56,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * @generated
      * @ordered
      */
-    protected static final Boolean FTP_EDEFAULT = null;
+    protected static final Boolean FTP_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getFtp() <em>Ftp</em>}' attribute.
@@ -85,7 +85,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * @generated
      * @ordered
      */
-    protected static final Boolean FTPS_EDEFAULT = null;
+    protected static final Boolean FTPS_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getFtps() <em>Ftps</em>}' attribute.
@@ -114,7 +114,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * @generated
      * @ordered
      */
-    protected static final Boolean MMS_EDEFAULT = null;
+    protected static final Boolean MMS_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getMms() <em>Mms</em>}' attribute.
@@ -175,9 +175,10 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         ftp = newFtp;
         boolean oldFtpESet = ftpESet;
         ftpESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__FTP, oldFtp, ftp,
                     !oldFtpESet ) );
+        }
     }
 
     /**
@@ -191,9 +192,10 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         boolean oldFtpESet = ftpESet;
         ftp = FTP_EDEFAULT;
         ftpESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FILE_HANDLING__FTP, oldFtp,
                     FTP_EDEFAULT, oldFtpESet ) );
+        }
     }
 
     /**
@@ -227,9 +229,10 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         ftps = newFtps;
         boolean oldFtpsESet = ftpsESet;
         ftpsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__FTPS, oldFtps, ftps,
                     !oldFtpsESet ) );
+        }
     }
 
     /**
@@ -243,9 +246,10 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         boolean oldFtpsESet = ftpsESet;
         ftps = FTPS_EDEFAULT;
         ftpsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FILE_HANDLING__FTPS, oldFtps,
                     FTPS_EDEFAULT, oldFtpsESet ) );
+        }
     }
 
     /**
@@ -279,9 +283,10 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         mms = newMms;
         boolean oldMmsESet = mmsESet;
         mmsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__MMS, oldMms, mms,
                     !oldMmsESet ) );
+        }
     }
 
     /**
@@ -295,9 +300,10 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         boolean oldMmsESet = mmsESet;
         mms = MMS_EDEFAULT;
         mmsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FILE_HANDLING__MMS, oldMms,
                     MMS_EDEFAULT, oldMmsESet ) );
+        }
     }
 
     /**
@@ -317,7 +323,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -342,20 +350,26 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__FILE_HANDLING,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -367,8 +381,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -498,24 +513,32 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (ftp: " );
-        if( ftpESet )
+        if( ftpESet ) {
             result.append( ftp );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ftps: " );
-        if( ftpsESet )
+        if( ftpsESet ) {
             result.append( ftps );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", mms: " );
-        if( mmsESet )
+        if( mmsESet ) {
             result.append( mms );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

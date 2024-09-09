@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,9 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -83,7 +81,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * @generated
      * @ordered
      */
-    protected static final Boolean BUF_CONF_EDEFAULT = null;
+    protected static final Boolean BUF_CONF_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getBufConf() <em>Buf Conf</em>}' attribute.
@@ -173,9 +171,10 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         bufMode = newBufMode == null ? BUF_MODE_EDEFAULT : newBufMode;
         boolean oldBufModeESet = bufModeESet;
         bufModeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE,
                     oldBufMode, bufMode, !oldBufModeESet ) );
+        }
     }
 
     /**
@@ -189,9 +188,10 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         boolean oldBufModeESet = bufModeESet;
         bufMode = BUF_MODE_EDEFAULT;
         bufModeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE,
                     oldBufMode, BUF_MODE_EDEFAULT, oldBufModeESet ) );
+        }
     }
 
     /**
@@ -225,9 +225,10 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         bufConf = newBufConf;
         boolean oldBufConfESet = bufConfESet;
         bufConfESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF,
                     oldBufConf, bufConf, !oldBufConfESet ) );
+        }
     }
 
     /**
@@ -241,9 +242,10 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         boolean oldBufConfESet = bufConfESet;
         bufConf = BUF_CONF_EDEFAULT;
         bufConfESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF,
                     oldBufConf, BUF_CONF_EDEFAULT, oldBufConfESet ) );
+        }
     }
 
     /**
@@ -277,9 +279,10 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         maxBuf = newMaxBuf;
         boolean oldMaxBufESet = maxBufESet;
         maxBufESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF,
                     oldMaxBuf, maxBuf, !oldMaxBufESet ) );
+        }
     }
 
     /**
@@ -293,9 +296,10 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         boolean oldMaxBufESet = maxBufESet;
         maxBuf = MAX_BUF_EDEFAULT;
         maxBufESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF,
                     oldMaxBuf, MAX_BUF_EDEFAULT, oldMaxBufESet ) );
+        }
     }
 
     /**
@@ -393,24 +397,32 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (bufMode: " );
-        if( bufModeESet )
+        if( bufModeESet ) {
             result.append( bufMode );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", bufConf: " );
-        if( bufConfESet )
+        if( bufConfESet ) {
             result.append( bufConf );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", maxBuf: " );
-        if( maxBufESet )
+        if( maxBufESet ) {
             result.append( maxBuf );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

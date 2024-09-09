@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -44,6 +44,7 @@ import org.eclipse.emf.common.util.EList;
 public interface TapChanger extends PowerSystemResource, AgVirtual {
     /**
      * Returns the value of the '<em><b>Type</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -55,7 +56,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @see #unsetType()
      * @see #setType(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_Type()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getType();

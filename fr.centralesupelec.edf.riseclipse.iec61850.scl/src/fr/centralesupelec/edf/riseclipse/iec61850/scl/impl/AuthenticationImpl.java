@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -28,6 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
@@ -59,7 +59,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      * @ordered
      */
-    protected static final Boolean CERTIFICATE_EDEFAULT = null;
+    protected static final Boolean CERTIFICATE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getCertificate() <em>Certificate</em>}' attribute.
@@ -88,7 +88,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      * @ordered
      */
-    protected static final Boolean NONE_EDEFAULT = null;
+    protected static final Boolean NONE_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getNone() <em>None</em>}' attribute.
@@ -117,7 +117,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      * @ordered
      */
-    protected static final Boolean PASSWORD_EDEFAULT = null;
+    protected static final Boolean PASSWORD_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
@@ -146,7 +146,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      * @ordered
      */
-    protected static final Boolean STRONG_EDEFAULT = null;
+    protected static final Boolean STRONG_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getStrong() <em>Strong</em>}' attribute.
@@ -175,7 +175,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      * @ordered
      */
-    protected static final Boolean WEAK_EDEFAULT = null;
+    protected static final Boolean WEAK_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getWeak() <em>Weak</em>}' attribute.
@@ -236,9 +236,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         certificate = newCertificate;
         boolean oldCertificateESet = certificateESet;
         certificateESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__CERTIFICATE,
                     oldCertificate, certificate, !oldCertificateESet ) );
+        }
     }
 
     /**
@@ -252,9 +253,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldCertificateESet = certificateESet;
         certificate = CERTIFICATE_EDEFAULT;
         certificateESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__CERTIFICATE,
                     oldCertificate, CERTIFICATE_EDEFAULT, oldCertificateESet ) );
+        }
     }
 
     /**
@@ -288,9 +290,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         none = newNone;
         boolean oldNoneESet = noneESet;
         noneESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__NONE, oldNone, none,
                     !oldNoneESet ) );
+        }
     }
 
     /**
@@ -304,9 +307,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldNoneESet = noneESet;
         none = NONE_EDEFAULT;
         noneESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__NONE, oldNone,
                     NONE_EDEFAULT, oldNoneESet ) );
+        }
     }
 
     /**
@@ -340,9 +344,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         password = newPassword;
         boolean oldPasswordESet = passwordESet;
         passwordESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__PASSWORD, oldPassword,
                     password, !oldPasswordESet ) );
+        }
     }
 
     /**
@@ -356,9 +361,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldPasswordESet = passwordESet;
         password = PASSWORD_EDEFAULT;
         passwordESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__PASSWORD, oldPassword,
                     PASSWORD_EDEFAULT, oldPasswordESet ) );
+        }
     }
 
     /**
@@ -392,9 +398,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         strong = newStrong;
         boolean oldStrongESet = strongESet;
         strongESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__STRONG, oldStrong,
                     strong, !oldStrongESet ) );
+        }
     }
 
     /**
@@ -408,9 +415,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldStrongESet = strongESet;
         strong = STRONG_EDEFAULT;
         strongESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__STRONG, oldStrong,
                     STRONG_EDEFAULT, oldStrongESet ) );
+        }
     }
 
     /**
@@ -444,9 +452,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         weak = newWeak;
         boolean oldWeakESet = weakESet;
         weakESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__WEAK, oldWeak, weak,
                     !oldWeakESet ) );
+        }
     }
 
     /**
@@ -460,9 +469,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldWeakESet = weakESet;
         weak = WEAK_EDEFAULT;
         weakESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__WEAK, oldWeak,
                     WEAK_EDEFAULT, oldWeakESet ) );
+        }
     }
 
     /**
@@ -482,7 +492,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public Server getParentServer() {
-        if( eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER ) return null;
+        if( eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER ) {
+            return null;
+        }
         return ( Server ) eInternalContainer();
     }
 
@@ -506,20 +518,26 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     public void setParentServer( Server newParentServer ) {
         if( newParentServer != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER && newParentServer != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServer ) )
+            if( EcoreUtil.isAncestor( this, newParentServer ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServer != null )
+            }
+            if( newParentServer != null ) {
                 msgs = ( ( InternalEObject ) newParentServer ).eInverseAdd( this, SclPackage.SERVER__AUTHENTICATION,
                         Server.class, msgs );
+            }
             msgs = basicSetParentServer( newParentServer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__PARENT_SERVER,
                     newParentServer, newParentServer ) );
+        }
     }
 
     /**
@@ -531,8 +549,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.AUTHENTICATION__PARENT_SERVER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServer( ( Server ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -733,34 +752,46 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (certificate: " );
-        if( certificateESet )
+        if( certificateESet ) {
             result.append( certificate );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", none: " );
-        if( noneESet )
+        if( noneESet ) {
             result.append( none );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", password: " );
-        if( passwordESet )
+        if( passwordESet ) {
             result.append( password );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", strong: " );
-        if( strongESet )
+        if( strongESet ) {
             result.append( strong );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", weak: " );
-        if( weakESet )
+        if( weakESet ) {
             result.append( weak );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

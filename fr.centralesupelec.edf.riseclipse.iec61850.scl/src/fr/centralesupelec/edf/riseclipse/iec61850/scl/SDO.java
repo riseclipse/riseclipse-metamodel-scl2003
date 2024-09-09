@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -43,6 +43,7 @@ import org.eclipse.emf.common.util.EList;
 public interface SDO extends AbstractDataObject, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Count</b></em>' attribute.
+     * The default value is <code>"0"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Count</em>' attribute isn't clear,
@@ -54,7 +55,7 @@ public interface SDO extends AbstractDataObject, INamespaceGetter {
      * @see #unsetCount()
      * @see #setCount(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_Count()
-     * @model unsettable="true"
+     * @model default="0" unsettable="true"
      * @generated
      */
     String getCount();

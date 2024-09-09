@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -115,6 +115,7 @@ public interface McSecurity extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Signature</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Signature</em>' attribute isn't clear,
@@ -126,7 +127,7 @@ public interface McSecurity extends SclObject {
      * @see #unsetSignature()
      * @see #setSignature(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_Signature()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSignature();
@@ -168,6 +169,7 @@ public interface McSecurity extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Encryption</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Encryption</em>' attribute isn't clear,
@@ -179,7 +181,7 @@ public interface McSecurity extends SclObject {
      * @see #unsetEncryption()
      * @see #setEncryption(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_Encryption()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getEncryption();

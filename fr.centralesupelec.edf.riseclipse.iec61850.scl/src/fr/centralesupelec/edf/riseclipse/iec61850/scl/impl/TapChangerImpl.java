@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,8 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment;
@@ -64,7 +65,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      * @ordered
      */
-    protected static final Boolean VIRTUAL_EDEFAULT = null;
+    protected static final Boolean VIRTUAL_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
@@ -93,7 +94,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      * @ordered
      */
-    protected static final String TYPE_EDEFAULT = null;
+    protected static final String TYPE_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -174,9 +175,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TAP_CHANGER__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -190,9 +192,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TAP_CHANGER__TYPE, oldType,
                     TYPE_EDEFAULT, oldTypeESet ) );
+        }
     }
 
     /**
@@ -226,9 +229,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         virtual = newVirtual;
         boolean oldVirtualESet = virtualESet;
         virtualESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TAP_CHANGER__VIRTUAL, oldVirtual,
                     virtual, !oldVirtualESet ) );
+        }
     }
 
     /**
@@ -242,9 +246,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         boolean oldVirtualESet = virtualESet;
         virtual = VIRTUAL_EDEFAULT;
         virtualESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TAP_CHANGER__VIRTUAL, oldVirtual,
                     VIRTUAL_EDEFAULT, oldVirtualESet ) );
+        }
     }
 
     /**
@@ -265,7 +270,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public EList< EqFunction > getEqFunction() {
         if( eqFunction == null ) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< EqFunction >( EqFunction.class, this,
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< >( EqFunction.class, this,
                     SclPackage.TAP_CHANGER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER );
         }
         return eqFunction;
@@ -278,7 +283,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public void unsetEqFunction() {
-        if( eqFunction != null ) ( ( InternalEList.Unsettable< ? > ) eqFunction ).unset();
+        if( eqFunction != null ) {
+            ( ( InternalEList.Unsettable< ? > ) eqFunction ).unset();
+        }
     }
 
     /**
@@ -299,7 +306,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public EList< SubEquipment > getSubEquipment() {
         if( subEquipment == null ) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable< SubEquipment >( SubEquipment.class, this,
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable< >( SubEquipment.class, this,
                     SclPackage.TAP_CHANGER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER );
         }
         return subEquipment;
@@ -312,7 +319,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public void unsetSubEquipment() {
-        if( subEquipment != null ) ( ( InternalEList.Unsettable< ? > ) subEquipment ).unset();
+        if( subEquipment != null ) {
+            ( ( InternalEList.Unsettable< ? > ) subEquipment ).unset();
+        }
     }
 
     /**
@@ -332,7 +341,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public TransformerWinding getParentTransformerWinding() {
-        if( eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING ) return null;
+        if( eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING ) {
+            return null;
+        }
         return ( TransformerWinding ) eInternalContainer();
     }
 
@@ -358,20 +369,26 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         if( newParentTransformerWinding != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING
                         && newParentTransformerWinding != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) )
+            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentTransformerWinding != null )
+            }
+            if( newParentTransformerWinding != null ) {
                 msgs = ( ( InternalEObject ) newParentTransformerWinding ).eInverseAdd( this,
                         SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs );
+            }
             msgs = basicSetParentTransformerWinding( newParentTransformerWinding, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING,
                     newParentTransformerWinding, newParentTransformerWinding ) );
+        }
     }
 
     /**
@@ -390,8 +407,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubEquipment() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentTransformerWinding( ( TransformerWinding ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -574,19 +592,25 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (virtual: " );
-        if( virtualESet )
+        if( virtualESet ) {
             result.append( virtual );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

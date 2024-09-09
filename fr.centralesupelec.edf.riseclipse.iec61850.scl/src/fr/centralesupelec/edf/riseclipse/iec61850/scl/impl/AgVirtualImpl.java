@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,15 +20,13 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +50,7 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean VIRTUAL_EDEFAULT = null;
+    protected static final Boolean VIRTUAL_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
@@ -113,9 +111,10 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
         virtual = newVirtual;
         boolean oldVirtualESet = virtualESet;
         virtualESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_VIRTUAL__VIRTUAL, oldVirtual, virtual,
                     !oldVirtualESet ) );
+        }
     }
 
     /**
@@ -129,9 +128,10 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
         boolean oldVirtualESet = virtualESet;
         virtual = VIRTUAL_EDEFAULT;
         virtualESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_VIRTUAL__VIRTUAL, oldVirtual,
                     VIRTUAL_EDEFAULT, oldVirtualESet ) );
+        }
     }
 
     /**
@@ -209,14 +209,18 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (virtual: " );
-        if( virtualESet )
+        if( virtualESet ) {
             result.append( virtual );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

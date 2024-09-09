@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -54,7 +54,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean IPV6_EDEFAULT = null;
+    protected static final Boolean IPV6_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getIpv6() <em>Ipv6</em>}' attribute.
@@ -115,9 +115,10 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
         ipv6 = newIpv6;
         boolean oldIpv6ESet = ipv6ESet;
         ipv6ESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.COMM_PROT__IPV6, oldIpv6, ipv6,
                     !oldIpv6ESet ) );
+        }
     }
 
     /**
@@ -131,9 +132,10 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
         boolean oldIpv6ESet = ipv6ESet;
         ipv6 = IPV6_EDEFAULT;
         ipv6ESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.COMM_PROT__IPV6, oldIpv6,
                     IPV6_EDEFAULT, oldIpv6ESet ) );
+        }
     }
 
     /**
@@ -153,7 +155,9 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.COMM_PROT__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.COMM_PROT__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -176,20 +180,26 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     public void setParentServices( Services newParentServices ) {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.COMM_PROT__PARENT_SERVICES && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__COMM_PROT,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.COMM_PROT__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -201,8 +211,9 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.COMM_PROT__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -311,14 +322,18 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (ipv6: " );
-        if( ipv6ESet )
+        if( ipv6ESet ) {
             result.append( ipv6 );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

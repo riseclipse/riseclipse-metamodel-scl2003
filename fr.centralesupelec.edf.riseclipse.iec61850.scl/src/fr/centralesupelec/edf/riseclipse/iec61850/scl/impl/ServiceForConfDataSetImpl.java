@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,9 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -51,7 +49,7 @@ public class ServiceForConfDataSetImpl extends ServiceWithMaxAndMaxAttributesImp
      * @generated
      * @ordered
      */
-    protected static final Boolean MODIFY_EDEFAULT = null;
+    protected static final Boolean MODIFY_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getModify() <em>Modify</em>}' attribute.
@@ -112,9 +110,10 @@ public class ServiceForConfDataSetImpl extends ServiceWithMaxAndMaxAttributesImp
         modify = newModify;
         boolean oldModifyESet = modifyESet;
         modifyESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_FOR_CONF_DATA_SET__MODIFY,
                     oldModify, modify, !oldModifyESet ) );
+        }
     }
 
     /**
@@ -128,9 +127,10 @@ public class ServiceForConfDataSetImpl extends ServiceWithMaxAndMaxAttributesImp
         boolean oldModifyESet = modifyESet;
         modify = MODIFY_EDEFAULT;
         modifyESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_FOR_CONF_DATA_SET__MODIFY,
                     oldModify, MODIFY_EDEFAULT, oldModifyESet ) );
+        }
     }
 
     /**
@@ -208,14 +208,18 @@ public class ServiceForConfDataSetImpl extends ServiceWithMaxAndMaxAttributesImp
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (modify: " );
-        if( modifyESet )
+        if( modifyESet ) {
             result.append( modify );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

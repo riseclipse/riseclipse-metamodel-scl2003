@@ -266,7 +266,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * @generated
      * @ordered
      */
-    protected static final String NAME_EDEFAULT = null;
+    protected static final String NAME_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -356,9 +356,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         bayName = newBayName;
         boolean oldBayNameESet = bayNameESet;
         bayNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__BAY_NAME, oldBayName, bayName,
                     !oldBayNameESet ) );
+        }
     }
 
     /**
@@ -372,9 +373,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldBayNameESet = bayNameESet;
         bayName = BAY_NAME_EDEFAULT;
         bayNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__BAY_NAME, oldBayName,
                     BAY_NAME_EDEFAULT, oldBayNameESet ) );
+        }
     }
 
     /**
@@ -408,9 +410,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         cNodeName = newCNodeName;
         boolean oldCNodeNameESet = cNodeNameESet;
         cNodeNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__CNODE_NAME, oldCNodeName,
                     cNodeName, !oldCNodeNameESet ) );
+        }
     }
 
     /**
@@ -424,9 +427,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldCNodeNameESet = cNodeNameESet;
         cNodeName = CNODE_NAME_EDEFAULT;
         cNodeNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__CNODE_NAME, oldCNodeName,
                     CNODE_NAME_EDEFAULT, oldCNodeNameESet ) );
+        }
     }
 
     /**
@@ -460,9 +464,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         connectivityNode = newConnectivityNode;
         boolean oldConnectivityNodeESet = connectivityNodeESet;
         connectivityNodeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__CONNECTIVITY_NODE,
                     oldConnectivityNode, connectivityNode, !oldConnectivityNodeESet ) );
+        }
     }
 
     /**
@@ -476,9 +481,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldConnectivityNodeESet = connectivityNodeESet;
         connectivityNode = CONNECTIVITY_NODE_EDEFAULT;
         connectivityNodeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__CONNECTIVITY_NODE,
                     oldConnectivityNode, CONNECTIVITY_NODE_EDEFAULT, oldConnectivityNodeESet ) );
+        }
     }
 
     /**
@@ -512,9 +518,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         processName = newProcessName;
         boolean oldProcessNameESet = processNameESet;
         processNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__PROCESS_NAME, oldProcessName,
                     processName, !oldProcessNameESet ) );
+        }
     }
 
     /**
@@ -528,9 +535,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldProcessNameESet = processNameESet;
         processName = PROCESS_NAME_EDEFAULT;
         processNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__PROCESS_NAME, oldProcessName,
                     PROCESS_NAME_EDEFAULT, oldProcessNameESet ) );
+        }
     }
 
     /**
@@ -564,9 +572,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         substationName = newSubstationName;
         boolean oldSubstationNameESet = substationNameESet;
         substationNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__SUBSTATION_NAME,
                     oldSubstationName, substationName, !oldSubstationNameESet ) );
+        }
     }
 
     /**
@@ -580,9 +589,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldSubstationNameESet = substationNameESet;
         substationName = SUBSTATION_NAME_EDEFAULT;
         substationNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION_NAME,
                     oldSubstationName, SUBSTATION_NAME_EDEFAULT, oldSubstationNameESet ) );
+        }
     }
 
     /**
@@ -616,9 +626,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         voltageLevelName = newVoltageLevelName;
         boolean oldVoltageLevelNameESet = voltageLevelNameESet;
         voltageLevelNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME,
                     oldVoltageLevelName, voltageLevelName, !oldVoltageLevelNameESet ) );
+        }
     }
 
     /**
@@ -632,9 +643,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldVoltageLevelNameESet = voltageLevelNameESet;
         voltageLevelName = VOLTAGE_LEVEL_NAME_EDEFAULT;
         voltageLevelNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME,
                     oldVoltageLevelName, VOLTAGE_LEVEL_NAME_EDEFAULT, oldVoltageLevelNameESet ) );
+        }
     }
 
     /**
@@ -654,7 +666,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      */
     @Override
     public AbstractConductingEquipment getParentAbstractConductingEquipment() {
-        if( eContainerFeatureID() != SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT ) return null;
+        if( eContainerFeatureID() != SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT ) {
+            return null;
+        }
         return ( AbstractConductingEquipment ) eInternalContainer();
     }
 
@@ -681,21 +695,27 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         if( newParentAbstractConductingEquipment != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT
                         && newParentAbstractConductingEquipment != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAbstractConductingEquipment ) )
+            if( EcoreUtil.isAncestor( this, newParentAbstractConductingEquipment ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAbstractConductingEquipment != null )
+            }
+            if( newParentAbstractConductingEquipment != null ) {
                 msgs = ( ( InternalEObject ) newParentAbstractConductingEquipment ).eInverseAdd( this,
                         SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs );
+            }
             msgs = basicSetParentAbstractConductingEquipment( newParentAbstractConductingEquipment, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT, newParentAbstractConductingEquipment,
                     newParentAbstractConductingEquipment ) );
+        }
     }
 
     /**
@@ -723,10 +743,12 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, oldRefersToConnectivityNode,
                     newRefersToConnectivityNode, !oldRefersToConnectivityNodeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -740,22 +762,27 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     public void setRefersToConnectivityNode( ConnectivityNode newRefersToConnectivityNode ) {
         if( newRefersToConnectivityNode != refersToConnectivityNode ) {
             NotificationChain msgs = null;
-            if( refersToConnectivityNode != null )
+            if( refersToConnectivityNode != null ) {
                 msgs = ( ( InternalEObject ) refersToConnectivityNode ).eInverseRemove( this,
                         SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs );
-            if( newRefersToConnectivityNode != null )
+            }
+            if( newRefersToConnectivityNode != null ) {
                 msgs = ( ( InternalEObject ) newRefersToConnectivityNode ).eInverseAdd( this,
                         SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs );
+            }
             msgs = basicSetRefersToConnectivityNode( newRefersToConnectivityNode, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToConnectivityNodeESet = refersToConnectivityNodeESet;
             refersToConnectivityNodeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, newRefersToConnectivityNode,
                         newRefersToConnectivityNode, !oldRefersToConnectivityNodeESet ) );
+            }
         }
     }
 
@@ -773,10 +800,12 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, oldRefersToConnectivityNode, null,
                     oldRefersToConnectivityNodeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -793,15 +822,18 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             msgs = ( ( InternalEObject ) refersToConnectivityNode ).eInverseRemove( this,
                     SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs );
             msgs = basicUnsetRefersToConnectivityNode( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToConnectivityNodeESet = refersToConnectivityNodeESet;
             refersToConnectivityNodeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, null, null,
                         oldRefersToConnectivityNodeESet ) );
+            }
         }
     }
 
@@ -836,9 +868,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -852,9 +885,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -888,9 +922,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         lineName = newLineName;
         boolean oldLineNameESet = lineNameESet;
         lineNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__LINE_NAME, oldLineName,
                     lineName, !oldLineNameESet ) );
+        }
     }
 
     /**
@@ -904,9 +939,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         boolean oldLineNameESet = lineNameESet;
         lineName = LINE_NAME_EDEFAULT;
         lineNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TERMINAL__LINE_NAME, oldLineName,
                     LINE_NAME_EDEFAULT, oldLineNameESet ) );
+        }
     }
 
     /**
@@ -928,13 +964,15 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAbstractConductingEquipment( ( AbstractConductingEquipment ) otherEnd, msgs );
         case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
-            if( refersToConnectivityNode != null )
+            if( refersToConnectivityNode != null ) {
                 msgs = ( ( InternalEObject ) refersToConnectivityNode ).eInverseRemove( this,
                         SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs );
+            }
             return basicSetRefersToConnectivityNode( ( ConnectivityNode ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -1126,49 +1164,67 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (bayName: " );
-        if( bayNameESet )
+        if( bayNameESet ) {
             result.append( bayName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", cNodeName: " );
-        if( cNodeNameESet )
+        if( cNodeNameESet ) {
             result.append( cNodeName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", connectivityNode: " );
-        if( connectivityNodeESet )
+        if( connectivityNodeESet ) {
             result.append( connectivityNode );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", processName: " );
-        if( processNameESet )
+        if( processNameESet ) {
             result.append( processName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", substationName: " );
-        if( substationNameESet )
+        if( substationNameESet ) {
             result.append( substationName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", voltageLevelName: " );
-        if( voltageLevelNameESet )
+        if( voltageLevelNameESet ) {
             result.append( voltageLevelName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lineName: " );
-        if( lineNameESet )
+        if( lineNameESet ) {
             result.append( lineName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

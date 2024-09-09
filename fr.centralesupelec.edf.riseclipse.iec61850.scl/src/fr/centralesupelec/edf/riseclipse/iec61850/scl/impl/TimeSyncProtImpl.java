@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -59,7 +59,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean C37_238_EDEFAULT = null;
+    protected static final Boolean C37_238_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getC37_238() <em>C37 238</em>}' attribute.
@@ -88,7 +88,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean OTHER_EDEFAULT = null;
+    protected static final Boolean OTHER_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getOther() <em>Other</em>}' attribute.
@@ -117,7 +117,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean SNTP_EDEFAULT = null;
+    protected static final Boolean SNTP_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getSntp() <em>Sntp</em>}' attribute.
@@ -146,7 +146,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean IEC61850_93_EDEFAULT = null;
+    protected static final Boolean IEC61850_93_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getIec61850_9_3() <em>Iec61850 93</em>}' attribute.
@@ -207,9 +207,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         c37_238 = newC37_238;
         boolean oldC37_238ESet = c37_238ESet;
         c37_238ESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TIME_SYNC_PROT__C37_238, oldC37_238,
                     c37_238, !oldC37_238ESet ) );
+        }
     }
 
     /**
@@ -223,9 +224,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         boolean oldC37_238ESet = c37_238ESet;
         c37_238 = C37_238_EDEFAULT;
         c37_238ESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TIME_SYNC_PROT__C37_238, oldC37_238,
                     C37_238_EDEFAULT, oldC37_238ESet ) );
+        }
     }
 
     /**
@@ -259,9 +261,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         other = newOther;
         boolean oldOtherESet = otherESet;
         otherESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TIME_SYNC_PROT__OTHER, oldOther, other,
                     !oldOtherESet ) );
+        }
     }
 
     /**
@@ -275,9 +278,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         boolean oldOtherESet = otherESet;
         other = OTHER_EDEFAULT;
         otherESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TIME_SYNC_PROT__OTHER, oldOther,
                     OTHER_EDEFAULT, oldOtherESet ) );
+        }
     }
 
     /**
@@ -311,9 +315,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         sntp = newSntp;
         boolean oldSntpESet = sntpESet;
         sntpESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TIME_SYNC_PROT__SNTP, oldSntp, sntp,
                     !oldSntpESet ) );
+        }
     }
 
     /**
@@ -327,9 +332,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         boolean oldSntpESet = sntpESet;
         sntp = SNTP_EDEFAULT;
         sntpESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TIME_SYNC_PROT__SNTP, oldSntp,
                     SNTP_EDEFAULT, oldSntpESet ) );
+        }
     }
 
     /**
@@ -349,7 +355,9 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      */
     @Override
     public ClientServices getParentClientServices() {
-        if( eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES ) {
+            return null;
+        }
         return ( ClientServices ) eInternalContainer();
     }
 
@@ -375,20 +383,26 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         if( newParentClientServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES
                         && newParentClientServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentClientServices ) )
+            if( EcoreUtil.isAncestor( this, newParentClientServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentClientServices != null )
+            }
+            if( newParentClientServices != null ) {
                 msgs = ( ( InternalEObject ) newParentClientServices ).eInverseAdd( this,
                         SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, ClientServices.class, msgs );
+            }
             msgs = basicSetParentClientServices( newParentClientServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES,
                     newParentClientServices, newParentClientServices ) );
+        }
     }
 
     /**
@@ -398,7 +412,9 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -423,20 +439,26 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__TIME_SYNC_PROT,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TIME_SYNC_PROT__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -460,9 +482,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         iec61850_9_3 = newIec61850_9_3;
         boolean oldIec61850_9_3ESet = iec61850_9_3ESet;
         iec61850_9_3ESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TIME_SYNC_PROT__IEC61850_93,
                     oldIec61850_9_3, iec61850_9_3, !oldIec61850_9_3ESet ) );
+        }
     }
 
     /**
@@ -476,9 +499,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         boolean oldIec61850_9_3ESet = iec61850_9_3ESet;
         iec61850_9_3 = IEC61850_93_EDEFAULT;
         iec61850_9_3ESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TIME_SYNC_PROT__IEC61850_93,
                     oldIec61850_9_3, IEC61850_93_EDEFAULT, oldIec61850_9_3ESet ) );
+        }
     }
 
     /**
@@ -500,12 +524,14 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentClientServices( ( ClientServices ) otherEnd, msgs );
         case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -660,29 +686,39 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (c37_238: " );
-        if( c37_238ESet )
+        if( c37_238ESet ) {
             result.append( c37_238 );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", other: " );
-        if( otherESet )
+        if( otherESet ) {
             result.append( other );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", sntp: " );
-        if( sntpESet )
+        if( sntpESet ) {
             result.append( sntp );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", iec61850_9_3: " );
-        if( iec61850_9_3ESet )
+        if( iec61850_9_3ESet ) {
             result.append( iec61850_9_3 );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

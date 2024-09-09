@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -42,6 +42,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface FileHandling extends SclObject {
     /**
      * Returns the value of the '<em><b>Ftp</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ftp</em>' attribute isn't clear,
@@ -53,7 +54,7 @@ public interface FileHandling extends SclObject {
      * @see #unsetFtp()
      * @see #setFtp(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFileHandling_Ftp()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getFtp();
@@ -95,6 +96,7 @@ public interface FileHandling extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Ftps</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ftps</em>' attribute isn't clear,
@@ -106,7 +108,7 @@ public interface FileHandling extends SclObject {
      * @see #unsetFtps()
      * @see #setFtps(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFileHandling_Ftps()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getFtps();
@@ -148,6 +150,7 @@ public interface FileHandling extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Mms</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Mms</em>' attribute isn't clear,
@@ -159,7 +162,7 @@ public interface FileHandling extends SclObject {
      * @see #unsetMms()
      * @see #setMms(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFileHandling_Mms()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getMms();

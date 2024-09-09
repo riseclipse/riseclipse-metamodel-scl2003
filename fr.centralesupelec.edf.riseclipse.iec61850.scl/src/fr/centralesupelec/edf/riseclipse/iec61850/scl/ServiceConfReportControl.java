@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -98,6 +98,7 @@ public interface ServiceConfReportControl extends ServiceWithMax {
 
     /**
      * Returns the value of the '<em><b>Buf Conf</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buf Conf</em>' attribute isn't clear,
@@ -109,7 +110,7 @@ public interface ServiceConfReportControl extends ServiceWithMax {
      * @see #unsetBufConf()
      * @see #setBufConf(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceConfReportControl_BufConf()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getBufConf();

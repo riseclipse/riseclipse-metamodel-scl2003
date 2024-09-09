@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface AgSmvOpts extends EObject {
     /**
      * Returns the value of the '<em><b>Data Set</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Data Set</em>' attribute.
@@ -55,7 +56,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetDataSet()
      * @see #setDataSet(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_DataSet()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getDataSet();
@@ -97,6 +98,7 @@ public interface AgSmvOpts extends EObject {
 
     /**
      * Returns the value of the '<em><b>Refresh Time</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Refresh Time</em>' attribute.
@@ -104,7 +106,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetRefreshTime()
      * @see #setRefreshTime(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_RefreshTime()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getRefreshTime();
@@ -146,6 +148,7 @@ public interface AgSmvOpts extends EObject {
 
     /**
      * Returns the value of the '<em><b>Sample Rate</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Sample Rate</em>' attribute.
@@ -153,7 +156,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetSampleRate()
      * @see #setSampleRate(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_SampleRate()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSampleRate();
@@ -244,6 +247,7 @@ public interface AgSmvOpts extends EObject {
 
     /**
      * Returns the value of the '<em><b>Security</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Security</em>' attribute.
@@ -251,7 +255,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetSecurity()
      * @see #setSecurity(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_Security()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSecurity();
@@ -293,6 +297,7 @@ public interface AgSmvOpts extends EObject {
 
     /**
      * Returns the value of the '<em><b>Timestamp</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Timestamp</em>' attribute.
@@ -300,7 +305,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetTimestamp()
      * @see #setTimestamp(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_Timestamp()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getTimestamp();
@@ -342,6 +347,7 @@ public interface AgSmvOpts extends EObject {
 
     /**
      * Returns the value of the '<em><b>Synch Source Id</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Synch Source Id</em>' attribute.
@@ -349,7 +355,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetSynchSourceId()
      * @see #setSynchSourceId(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_SynchSourceId()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSynchSourceId();
@@ -391,6 +397,7 @@ public interface AgSmvOpts extends EObject {
 
     /**
      * Returns the value of the '<em><b>Data Ref</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Data Ref</em>' attribute.
@@ -398,7 +405,7 @@ public interface AgSmvOpts extends EObject {
      * @see #unsetDataRef()
      * @see #setDataRef(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_DataRef()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getDataRef();
