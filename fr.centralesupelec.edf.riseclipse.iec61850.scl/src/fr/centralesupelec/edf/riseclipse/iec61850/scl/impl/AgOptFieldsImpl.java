@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,15 +20,13 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +44,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getSeqNum <em>Seq Num</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getTimeStamp <em>Time Stamp</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getSegmentation <em>Segmentation</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,7 +57,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean BUF_OVFL_EDEFAULT = null;
+    protected static final Boolean BUF_OVFL_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getBufOvfl() <em>Buf Ovfl</em>}' attribute.
@@ -89,7 +86,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean CONFIG_REF_EDEFAULT = null;
+    protected static final Boolean CONFIG_REF_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getConfigRef() <em>Config Ref</em>}' attribute.
@@ -118,7 +115,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean DATA_REF_EDEFAULT = null;
+    protected static final Boolean DATA_REF_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
@@ -147,7 +144,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean DATA_SET_EDEFAULT = null;
+    protected static final Boolean DATA_SET_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDataSet() <em>Data Set</em>}' attribute.
@@ -176,7 +173,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean ENTRY_ID_EDEFAULT = null;
+    protected static final Boolean ENTRY_ID_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getEntryID() <em>Entry ID</em>}' attribute.
@@ -205,7 +202,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean REASON_CODE_EDEFAULT = null;
+    protected static final Boolean REASON_CODE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
@@ -234,7 +231,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean SEQ_NUM_EDEFAULT = null;
+    protected static final Boolean SEQ_NUM_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getSeqNum() <em>Seq Num</em>}' attribute.
@@ -263,7 +260,7 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      * @ordered
      */
-    protected static final Boolean TIME_STAMP_EDEFAULT = null;
+    protected static final Boolean TIME_STAMP_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getTimeStamp() <em>Time Stamp</em>}' attribute.
@@ -283,35 +280,6 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @ordered
      */
     protected boolean timeStampESet;
-
-    /**
-     * The default value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSegmentation()
-     * @generated
-     * @ordered
-     */
-    protected static final Boolean SEGMENTATION_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSegmentation()
-     * @generated
-     * @ordered
-     */
-    protected Boolean segmentation = SEGMENTATION_EDEFAULT;
-
-    /**
-     * This is true if the Segmentation attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean segmentationESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -353,9 +321,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         bufOvfl = newBufOvfl;
         boolean oldBufOvflESet = bufOvflESet;
         bufOvflESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__BUF_OVFL, oldBufOvfl,
                     bufOvfl, !oldBufOvflESet ) );
+        }
     }
 
     /**
@@ -369,9 +338,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldBufOvflESet = bufOvflESet;
         bufOvfl = BUF_OVFL_EDEFAULT;
         bufOvflESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__BUF_OVFL, oldBufOvfl,
                     BUF_OVFL_EDEFAULT, oldBufOvflESet ) );
+        }
     }
 
     /**
@@ -405,9 +375,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         configRef = newConfigRef;
         boolean oldConfigRefESet = configRefESet;
         configRefESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__CONFIG_REF, oldConfigRef,
                     configRef, !oldConfigRefESet ) );
+        }
     }
 
     /**
@@ -421,9 +392,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldConfigRefESet = configRefESet;
         configRef = CONFIG_REF_EDEFAULT;
         configRefESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__CONFIG_REF,
                     oldConfigRef, CONFIG_REF_EDEFAULT, oldConfigRefESet ) );
+        }
     }
 
     /**
@@ -457,9 +429,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         dataRef = newDataRef;
         boolean oldDataRefESet = dataRefESet;
         dataRefESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__DATA_REF, oldDataRef,
                     dataRef, !oldDataRefESet ) );
+        }
     }
 
     /**
@@ -473,9 +446,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldDataRefESet = dataRefESet;
         dataRef = DATA_REF_EDEFAULT;
         dataRefESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__DATA_REF, oldDataRef,
                     DATA_REF_EDEFAULT, oldDataRefESet ) );
+        }
     }
 
     /**
@@ -509,9 +483,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         dataSet = newDataSet;
         boolean oldDataSetESet = dataSetESet;
         dataSetESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__DATA_SET, oldDataSet,
                     dataSet, !oldDataSetESet ) );
+        }
     }
 
     /**
@@ -525,9 +500,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldDataSetESet = dataSetESet;
         dataSet = DATA_SET_EDEFAULT;
         dataSetESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__DATA_SET, oldDataSet,
                     DATA_SET_EDEFAULT, oldDataSetESet ) );
+        }
     }
 
     /**
@@ -561,9 +537,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         entryID = newEntryID;
         boolean oldEntryIDESet = entryIDESet;
         entryIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__ENTRY_ID, oldEntryID,
                     entryID, !oldEntryIDESet ) );
+        }
     }
 
     /**
@@ -577,9 +554,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldEntryIDESet = entryIDESet;
         entryID = ENTRY_ID_EDEFAULT;
         entryIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__ENTRY_ID, oldEntryID,
                     ENTRY_ID_EDEFAULT, oldEntryIDESet ) );
+        }
     }
 
     /**
@@ -613,9 +591,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         reasonCode = newReasonCode;
         boolean oldReasonCodeESet = reasonCodeESet;
         reasonCodeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__REASON_CODE,
                     oldReasonCode, reasonCode, !oldReasonCodeESet ) );
+        }
     }
 
     /**
@@ -629,9 +608,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldReasonCodeESet = reasonCodeESet;
         reasonCode = REASON_CODE_EDEFAULT;
         reasonCodeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__REASON_CODE,
                     oldReasonCode, REASON_CODE_EDEFAULT, oldReasonCodeESet ) );
+        }
     }
 
     /**
@@ -665,9 +645,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         seqNum = newSeqNum;
         boolean oldSeqNumESet = seqNumESet;
         seqNumESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__SEQ_NUM, oldSeqNum,
                     seqNum, !oldSeqNumESet ) );
+        }
     }
 
     /**
@@ -681,9 +662,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldSeqNumESet = seqNumESet;
         seqNum = SEQ_NUM_EDEFAULT;
         seqNumESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__SEQ_NUM, oldSeqNum,
                     SEQ_NUM_EDEFAULT, oldSeqNumESet ) );
+        }
     }
 
     /**
@@ -717,9 +699,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         timeStamp = newTimeStamp;
         boolean oldTimeStampESet = timeStampESet;
         timeStampESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__TIME_STAMP, oldTimeStamp,
                     timeStamp, !oldTimeStampESet ) );
+        }
     }
 
     /**
@@ -733,9 +716,10 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         boolean oldTimeStampESet = timeStampESet;
         timeStamp = TIME_STAMP_EDEFAULT;
         timeStampESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__TIME_STAMP,
                     oldTimeStamp, TIME_STAMP_EDEFAULT, oldTimeStampESet ) );
+        }
     }
 
     /**
@@ -746,58 +730,6 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
     @Override
     public boolean isSetTimeStamp() {
         return timeStampESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Boolean getSegmentation() {
-        return segmentation;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setSegmentation( Boolean newSegmentation ) {
-        Boolean oldSegmentation = segmentation;
-        segmentation = newSegmentation;
-        boolean oldSegmentationESet = segmentationESet;
-        segmentationESet = true;
-        if( eNotificationRequired() )
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_OPT_FIELDS__SEGMENTATION,
-                    oldSegmentation, segmentation, !oldSegmentationESet ) );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetSegmentation() {
-        Boolean oldSegmentation = segmentation;
-        boolean oldSegmentationESet = segmentationESet;
-        segmentation = SEGMENTATION_EDEFAULT;
-        segmentationESet = false;
-        if( eNotificationRequired() )
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__SEGMENTATION,
-                    oldSegmentation, SEGMENTATION_EDEFAULT, oldSegmentationESet ) );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetSegmentation() {
-        return segmentationESet;
     }
 
     /**
@@ -824,8 +756,6 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
             return getSeqNum();
         case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
             return getTimeStamp();
-        case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
-            return getSegmentation();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -861,9 +791,6 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
             return;
         case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
             setTimeStamp( ( Boolean ) newValue );
-            return;
-        case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
-            setSegmentation( ( Boolean ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -901,9 +828,6 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
             unsetTimeStamp();
             return;
-        case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
-            unsetSegmentation();
-            return;
         }
         super.eUnset( featureID );
     }
@@ -932,8 +856,6 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
             return isSetSeqNum();
         case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
             return isSetTimeStamp();
-        case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
-            return isSetSegmentation();
         }
         return super.eIsSet( featureID );
     }
@@ -945,54 +867,67 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (bufOvfl: " );
-        if( bufOvflESet )
+        if( bufOvflESet ) {
             result.append( bufOvfl );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", configRef: " );
-        if( configRefESet )
+        if( configRefESet ) {
             result.append( configRef );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dataRef: " );
-        if( dataRefESet )
+        if( dataRefESet ) {
             result.append( dataRef );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dataSet: " );
-        if( dataSetESet )
+        if( dataSetESet ) {
             result.append( dataSet );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", entryID: " );
-        if( entryIDESet )
+        if( entryIDESet ) {
             result.append( entryID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", reasonCode: " );
-        if( reasonCodeESet )
+        if( reasonCodeESet ) {
             result.append( reasonCode );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", seqNum: " );
-        if( seqNumESet )
+        if( seqNumESet ) {
             result.append( seqNum );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", timeStamp: " );
-        if( timeStampESet )
+        if( timeStampESet ) {
             result.append( timeStamp );
-        else
+        }
+        else {
             result.append( "<unset>" );
-        result.append( ", segmentation: " );
-        if( segmentationESet )
-            result.append( segmentation );
-        else
-            result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

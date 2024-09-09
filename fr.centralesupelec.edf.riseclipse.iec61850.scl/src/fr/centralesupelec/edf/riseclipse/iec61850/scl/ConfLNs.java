@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -41,6 +41,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ConfLNs extends SclObject {
     /**
      * Returns the value of the '<em><b>Fix Ln Inst</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Fix Ln Inst</em>' attribute isn't clear,
@@ -52,7 +53,7 @@ public interface ConfLNs extends SclObject {
      * @see #unsetFixLnInst()
      * @see #setFixLnInst(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConfLNs_FixLnInst()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getFixLnInst();
@@ -94,6 +95,7 @@ public interface ConfLNs extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Fix Prefix</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Fix Prefix</em>' attribute isn't clear,
@@ -105,7 +107,7 @@ public interface ConfLNs extends SclObject {
      * @see #unsetFixPrefix()
      * @see #setFixPrefix(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConfLNs_FixPrefix()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getFixPrefix();

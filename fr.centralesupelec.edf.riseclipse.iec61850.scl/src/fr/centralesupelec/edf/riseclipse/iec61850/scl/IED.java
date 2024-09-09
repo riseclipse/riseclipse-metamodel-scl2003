@@ -214,6 +214,7 @@ public interface IED extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Original Scl Revision</b></em>' attribute.
+     * The default value is <code>"A"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Original Scl Revision</em>' attribute isn't clear,
@@ -225,7 +226,7 @@ public interface IED extends UnNaming {
      * @see #unsetOriginalSclRevision()
      * @see #setOriginalSclRevision(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_OriginalSclRevision()
-     * @model unsettable="true"
+     * @model default="A" unsettable="true"
      * @generated
      */
     String getOriginalSclRevision();
@@ -267,6 +268,7 @@ public interface IED extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Original Scl Version</b></em>' attribute.
+     * The default value is <code>"2003"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Original Scl Version</em>' attribute isn't clear,
@@ -278,7 +280,7 @@ public interface IED extends UnNaming {
      * @see #unsetOriginalSclVersion()
      * @see #setOriginalSclVersion(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_OriginalSclVersion()
-     * @model unsettable="true"
+     * @model default="2003" unsettable="true"
      * @generated
      */
     String getOriginalSclVersion();
@@ -640,6 +642,7 @@ public interface IED extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Original Scl Release</b></em>' attribute.
+     * The default value is <code>"1"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Original Scl Release</em>' attribute isn't clear,
@@ -651,7 +654,7 @@ public interface IED extends UnNaming {
      * @see #unsetOriginalSclRelease()
      * @see #setOriginalSclRelease(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_OriginalSclRelease()
-     * @model unsettable="true"
+     * @model default="1" unsettable="true"
      * @generated
      */
     Integer getOriginalSclRelease();

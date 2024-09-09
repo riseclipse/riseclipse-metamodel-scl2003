@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -44,6 +44,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface TimeSyncProt extends SclObject {
     /**
      * Returns the value of the '<em><b>C37 238</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>C37 238</em>' attribute isn't clear,
@@ -55,7 +56,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #unsetC37_238()
      * @see #setC37_238(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_C37_238()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getC37_238();
@@ -97,6 +98,7 @@ public interface TimeSyncProt extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Other</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Other</em>' attribute isn't clear,
@@ -108,7 +110,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #unsetOther()
      * @see #setOther(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_Other()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getOther();
@@ -150,6 +152,7 @@ public interface TimeSyncProt extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Sntp</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sntp</em>' attribute isn't clear,
@@ -161,7 +164,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #unsetSntp()
      * @see #setSntp(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_Sntp()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getSntp();
@@ -251,6 +254,7 @@ public interface TimeSyncProt extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Iec61850 93</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Iec61850 93</em>' attribute isn't clear,
@@ -262,7 +266,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #unsetIec61850_9_3()
      * @see #setIec61850_9_3(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_Iec61850_9_3()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getIec61850_9_3();

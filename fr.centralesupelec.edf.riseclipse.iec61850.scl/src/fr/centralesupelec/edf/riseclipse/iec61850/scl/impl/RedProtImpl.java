@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -56,7 +56,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean HSR_EDEFAULT = null;
+    protected static final Boolean HSR_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getHsr() <em>Hsr</em>}' attribute.
@@ -85,7 +85,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean PRP_EDEFAULT = null;
+    protected static final Boolean PRP_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getPrp() <em>Prp</em>}' attribute.
@@ -114,7 +114,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * @generated
      * @ordered
      */
-    protected static final Boolean RSTP_EDEFAULT = null;
+    protected static final Boolean RSTP_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getRstp() <em>Rstp</em>}' attribute.
@@ -175,9 +175,10 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         hsr = newHsr;
         boolean oldHsrESet = hsrESet;
         hsrESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.RED_PROT__HSR, oldHsr, hsr,
                     !oldHsrESet ) );
+        }
     }
 
     /**
@@ -191,9 +192,10 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         boolean oldHsrESet = hsrESet;
         hsr = HSR_EDEFAULT;
         hsrESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.RED_PROT__HSR, oldHsr, HSR_EDEFAULT,
                     oldHsrESet ) );
+        }
     }
 
     /**
@@ -227,9 +229,10 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         prp = newPrp;
         boolean oldPrpESet = prpESet;
         prpESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.RED_PROT__PRP, oldPrp, prp,
                     !oldPrpESet ) );
+        }
     }
 
     /**
@@ -243,9 +246,10 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         boolean oldPrpESet = prpESet;
         prp = PRP_EDEFAULT;
         prpESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.RED_PROT__PRP, oldPrp, PRP_EDEFAULT,
                     oldPrpESet ) );
+        }
     }
 
     /**
@@ -279,9 +283,10 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         rstp = newRstp;
         boolean oldRstpESet = rstpESet;
         rstpESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.RED_PROT__RSTP, oldRstp, rstp,
                     !oldRstpESet ) );
+        }
     }
 
     /**
@@ -295,9 +300,10 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         boolean oldRstpESet = rstpESet;
         rstp = RSTP_EDEFAULT;
         rstpESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.RED_PROT__RSTP, oldRstp, RSTP_EDEFAULT,
                     oldRstpESet ) );
+        }
     }
 
     /**
@@ -317,7 +323,9 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.RED_PROT__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.RED_PROT__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -340,20 +348,26 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     public void setParentServices( Services newParentServices ) {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.RED_PROT__PARENT_SERVICES && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__RED_PROT,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.RED_PROT__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -365,8 +379,9 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.RED_PROT__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -495,24 +510,32 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (hsr: " );
-        if( hsrESet )
+        if( hsrESet ) {
             result.append( hsr );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prp: " );
-        if( prpESet )
+        if( prpESet ) {
             result.append( prp );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", rstp: " );
-        if( rstpESet )
+        if( rstpESet ) {
             result.append( rstp );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -31,6 +31,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getMustUnderstand <em>Must Understand</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName <em>Parent Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtocol()
@@ -114,5 +115,28 @@ public interface Protocol extends SclObject {
      * @generated
      */
     void setParentControlWithIEDName( ControlWithIEDName value );
+
+    /**
+     * Returns the value of the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Value</em>' attribute.
+     * @see #setValue(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtocol_Value()
+     * @model required="true"
+     *        extendedMetaData="kind='simple'"
+     * @generated
+     */
+    String getValue();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getValue <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Value</em>' attribute.
+     * @see #getValue()
+     * @generated
+     */
+    void setValue( String value );
 
 } // Protocol

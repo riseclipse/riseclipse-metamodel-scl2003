@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,6 +71,7 @@ public interface BitRateInMbPerSec extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Multiplier</b></em>' attribute.
+     * The default value is <code>""</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -84,7 +85,7 @@ public interface BitRateInMbPerSec extends SclObject {
      * @see #unsetMultiplier()
      * @see #setMultiplier(UnitMultiplierEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBitRateInMbPerSec_Multiplier()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     UnitMultiplierEnum getMultiplier();
@@ -127,6 +128,7 @@ public interface BitRateInMbPerSec extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Unit</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Unit</em>' attribute isn't clear,
@@ -138,7 +140,7 @@ public interface BitRateInMbPerSec extends SclObject {
      * @see #unsetUnit()
      * @see #setUnit(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBitRateInMbPerSec_Unit()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getUnit();

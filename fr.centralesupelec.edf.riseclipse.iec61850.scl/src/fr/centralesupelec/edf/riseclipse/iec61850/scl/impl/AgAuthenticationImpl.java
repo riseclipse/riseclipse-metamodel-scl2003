@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,15 +20,13 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +54,7 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      * @ordered
      */
-    protected static final Boolean CERTIFICATE_EDEFAULT = null;
+    protected static final Boolean CERTIFICATE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getCertificate() <em>Certificate</em>}' attribute.
@@ -85,7 +83,7 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      * @ordered
      */
-    protected static final Boolean NONE_EDEFAULT = null;
+    protected static final Boolean NONE_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getNone() <em>None</em>}' attribute.
@@ -114,7 +112,7 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      * @ordered
      */
-    protected static final Boolean PASSWORD_EDEFAULT = null;
+    protected static final Boolean PASSWORD_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
@@ -143,7 +141,7 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      * @ordered
      */
-    protected static final Boolean STRONG_EDEFAULT = null;
+    protected static final Boolean STRONG_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getStrong() <em>Strong</em>}' attribute.
@@ -172,7 +170,7 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      * @ordered
      */
-    protected static final Boolean WEAK_EDEFAULT = null;
+    protected static final Boolean WEAK_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getWeak() <em>Weak</em>}' attribute.
@@ -233,9 +231,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         certificate = newCertificate;
         boolean oldCertificateESet = certificateESet;
         certificateESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__CERTIFICATE,
                     oldCertificate, certificate, !oldCertificateESet ) );
+        }
     }
 
     /**
@@ -249,9 +248,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldCertificateESet = certificateESet;
         certificate = CERTIFICATE_EDEFAULT;
         certificateESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__CERTIFICATE,
                     oldCertificate, CERTIFICATE_EDEFAULT, oldCertificateESet ) );
+        }
     }
 
     /**
@@ -285,9 +285,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         none = newNone;
         boolean oldNoneESet = noneESet;
         noneESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__NONE, oldNone, none,
                     !oldNoneESet ) );
+        }
     }
 
     /**
@@ -301,9 +302,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldNoneESet = noneESet;
         none = NONE_EDEFAULT;
         noneESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__NONE, oldNone,
                     NONE_EDEFAULT, oldNoneESet ) );
+        }
     }
 
     /**
@@ -337,9 +339,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         password = newPassword;
         boolean oldPasswordESet = passwordESet;
         passwordESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__PASSWORD, oldPassword,
                     password, !oldPasswordESet ) );
+        }
     }
 
     /**
@@ -353,9 +356,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldPasswordESet = passwordESet;
         password = PASSWORD_EDEFAULT;
         passwordESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__PASSWORD,
                     oldPassword, PASSWORD_EDEFAULT, oldPasswordESet ) );
+        }
     }
 
     /**
@@ -389,9 +393,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         strong = newStrong;
         boolean oldStrongESet = strongESet;
         strongESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__STRONG, oldStrong,
                     strong, !oldStrongESet ) );
+        }
     }
 
     /**
@@ -405,9 +410,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldStrongESet = strongESet;
         strong = STRONG_EDEFAULT;
         strongESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__STRONG, oldStrong,
                     STRONG_EDEFAULT, oldStrongESet ) );
+        }
     }
 
     /**
@@ -441,9 +447,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         weak = newWeak;
         boolean oldWeakESet = weakESet;
         weakESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__WEAK, oldWeak, weak,
                     !oldWeakESet ) );
+        }
     }
 
     /**
@@ -457,9 +464,10 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldWeakESet = weakESet;
         weak = WEAK_EDEFAULT;
         weakESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__WEAK, oldWeak,
                     WEAK_EDEFAULT, oldWeakESet ) );
+        }
     }
 
     /**
@@ -577,34 +585,46 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (certificate: " );
-        if( certificateESet )
+        if( certificateESet ) {
             result.append( certificate );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", none: " );
-        if( noneESet )
+        if( noneESet ) {
             result.append( none );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", password: " );
-        if( passwordESet )
+        if( passwordESet ) {
             result.append( password );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", strong: " );
-        if( strongESet )
+        if( strongESet ) {
             result.append( strong );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", weak: " );
-        if( weakESet )
+        if( weakESet ) {
             result.append( weak );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

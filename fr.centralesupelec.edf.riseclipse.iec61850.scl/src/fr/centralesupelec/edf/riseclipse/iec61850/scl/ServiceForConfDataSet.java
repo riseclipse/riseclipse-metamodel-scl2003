@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -39,6 +39,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ServiceForConfDataSet extends ServiceWithMaxAndMaxAttributes {
     /**
      * Returns the value of the '<em><b>Modify</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Modify</em>' attribute isn't clear,
@@ -50,7 +51,7 @@ public interface ServiceForConfDataSet extends ServiceWithMaxAndMaxAttributes {
      * @see #unsetModify()
      * @see #setModify(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceForConfDataSet_Modify()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getModify();

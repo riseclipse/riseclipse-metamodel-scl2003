@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -60,7 +61,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * @generated
      * @ordered
      */
-    protected static final Integer MAX_EDEFAULT = null;
+    protected static final Integer MAX_EDEFAULT = Integer.valueOf( 1 );
 
     /**
      * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -131,9 +132,10 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
         max = newMax;
         boolean oldMaxESet = maxESet;
         maxESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.RPT_ENABLED__MAX, oldMax, max,
                     !oldMaxESet ) );
+        }
     }
 
     /**
@@ -147,9 +149,10 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
         boolean oldMaxESet = maxESet;
         max = MAX_EDEFAULT;
         maxESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.RPT_ENABLED__MAX, oldMax, MAX_EDEFAULT,
                     oldMaxESet ) );
+        }
     }
 
     /**
@@ -170,7 +173,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
     @Override
     public EList< ClientLN > getClientLN() {
         if( clientLN == null ) {
-            clientLN = new EObjectContainmentWithInverseEList.Unsettable< ClientLN >( ClientLN.class, this,
+            clientLN = new EObjectContainmentWithInverseEList.Unsettable< >( ClientLN.class, this,
                     SclPackage.RPT_ENABLED__CLIENT_LN, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED );
         }
         return clientLN;
@@ -183,7 +186,9 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      */
     @Override
     public void unsetClientLN() {
-        if( clientLN != null ) ( ( InternalEList.Unsettable< ? > ) clientLN ).unset();
+        if( clientLN != null ) {
+            ( ( InternalEList.Unsettable< ? > ) clientLN ).unset();
+        }
     }
 
     /**
@@ -203,7 +208,9 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      */
     @Override
     public ReportControl getParentReportControl() {
-        if( eContainerFeatureID() != SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL ) return null;
+        if( eContainerFeatureID() != SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL ) {
+            return null;
+        }
         return ( ReportControl ) eInternalContainer();
     }
 
@@ -229,20 +236,26 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
         if( newParentReportControl != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL
                         && newParentReportControl != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentReportControl ) )
+            if( EcoreUtil.isAncestor( this, newParentReportControl ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentReportControl != null )
+            }
+            if( newParentReportControl != null ) {
                 msgs = ( ( InternalEObject ) newParentReportControl ).eInverseAdd( this,
                         SclPackage.REPORT_CONTROL__RPT_ENABLED, ReportControl.class, msgs );
+            }
             msgs = basicSetParentReportControl( newParentReportControl, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL,
                     newParentReportControl, newParentReportControl ) );
+        }
     }
 
     /**
@@ -258,8 +271,9 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getClientLN() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentReportControl( ( ReportControl ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -383,14 +397,18 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (max: " );
-        if( maxESet )
+        if( maxESet ) {
             result.append( max );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

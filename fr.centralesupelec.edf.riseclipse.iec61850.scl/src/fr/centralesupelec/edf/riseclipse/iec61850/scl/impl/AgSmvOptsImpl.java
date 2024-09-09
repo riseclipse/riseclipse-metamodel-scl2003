@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,15 +20,13 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +57,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean DATA_SET_EDEFAULT = null;
+    protected static final Boolean DATA_SET_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDataSet() <em>Data Set</em>}' attribute.
@@ -88,7 +86,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean REFRESH_TIME_EDEFAULT = null;
+    protected static final Boolean REFRESH_TIME_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getRefreshTime() <em>Refresh Time</em>}' attribute.
@@ -117,7 +115,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean SAMPLE_RATE_EDEFAULT = null;
+    protected static final Boolean SAMPLE_RATE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getSampleRate() <em>Sample Rate</em>}' attribute.
@@ -175,7 +173,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean SECURITY_EDEFAULT = null;
+    protected static final Boolean SECURITY_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getSecurity() <em>Security</em>}' attribute.
@@ -204,7 +202,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean TIMESTAMP_EDEFAULT = null;
+    protected static final Boolean TIMESTAMP_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
@@ -233,7 +231,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean SYNCH_SOURCE_ID_EDEFAULT = null;
+    protected static final Boolean SYNCH_SOURCE_ID_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getSynchSourceId() <em>Synch Source Id</em>}' attribute.
@@ -262,7 +260,7 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      * @ordered
      */
-    protected static final Boolean DATA_REF_EDEFAULT = null;
+    protected static final Boolean DATA_REF_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
@@ -323,9 +321,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         dataSet = newDataSet;
         boolean oldDataSetESet = dataSetESet;
         dataSetESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_SET, oldDataSet,
                     dataSet, !oldDataSetESet ) );
+        }
     }
 
     /**
@@ -339,9 +338,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldDataSetESet = dataSetESet;
         dataSet = DATA_SET_EDEFAULT;
         dataSetESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_SET, oldDataSet,
                     DATA_SET_EDEFAULT, oldDataSetESet ) );
+        }
     }
 
     /**
@@ -375,9 +375,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         refreshTime = newRefreshTime;
         boolean oldRefreshTimeESet = refreshTimeESet;
         refreshTimeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__REFRESH_TIME,
                     oldRefreshTime, refreshTime, !oldRefreshTimeESet ) );
+        }
     }
 
     /**
@@ -391,9 +392,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldRefreshTimeESet = refreshTimeESet;
         refreshTime = REFRESH_TIME_EDEFAULT;
         refreshTimeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__REFRESH_TIME,
                     oldRefreshTime, REFRESH_TIME_EDEFAULT, oldRefreshTimeESet ) );
+        }
     }
 
     /**
@@ -427,9 +429,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         sampleRate = newSampleRate;
         boolean oldSampleRateESet = sampleRateESet;
         sampleRateESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SAMPLE_RATE, oldSampleRate,
                     sampleRate, !oldSampleRateESet ) );
+        }
     }
 
     /**
@@ -443,9 +446,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSampleRateESet = sampleRateESet;
         sampleRate = SAMPLE_RATE_EDEFAULT;
         sampleRateESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SAMPLE_RATE,
                     oldSampleRate, SAMPLE_RATE_EDEFAULT, oldSampleRateESet ) );
+        }
     }
 
     /**
@@ -479,9 +483,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         sampleSynchronized = newSampleSynchronized;
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
         sampleSynchronizedESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED,
                     oldSampleSynchronized, sampleSynchronized, !oldSampleSynchronizedESet ) );
+        }
     }
 
     /**
@@ -495,9 +500,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
         sampleSynchronized = SAMPLE_SYNCHRONIZED_EDEFAULT;
         sampleSynchronizedESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED,
                     oldSampleSynchronized, SAMPLE_SYNCHRONIZED_EDEFAULT, oldSampleSynchronizedESet ) );
+        }
     }
 
     /**
@@ -531,9 +537,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         security = newSecurity;
         boolean oldSecurityESet = securityESet;
         securityESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SECURITY, oldSecurity,
                     security, !oldSecurityESet ) );
+        }
     }
 
     /**
@@ -547,9 +554,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSecurityESet = securityESet;
         security = SECURITY_EDEFAULT;
         securityESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SECURITY, oldSecurity,
                     SECURITY_EDEFAULT, oldSecurityESet ) );
+        }
     }
 
     /**
@@ -583,9 +591,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         timestamp = newTimestamp;
         boolean oldTimestampESet = timestampESet;
         timestampESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__TIMESTAMP, oldTimestamp,
                     timestamp, !oldTimestampESet ) );
+        }
     }
 
     /**
@@ -599,9 +608,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldTimestampESet = timestampESet;
         timestamp = TIMESTAMP_EDEFAULT;
         timestampESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__TIMESTAMP, oldTimestamp,
                     TIMESTAMP_EDEFAULT, oldTimestampESet ) );
+        }
     }
 
     /**
@@ -635,9 +645,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         synchSourceId = newSynchSourceId;
         boolean oldSynchSourceIdESet = synchSourceIdESet;
         synchSourceIdESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID,
                     oldSynchSourceId, synchSourceId, !oldSynchSourceIdESet ) );
+        }
     }
 
     /**
@@ -651,9 +662,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSynchSourceIdESet = synchSourceIdESet;
         synchSourceId = SYNCH_SOURCE_ID_EDEFAULT;
         synchSourceIdESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID,
                     oldSynchSourceId, SYNCH_SOURCE_ID_EDEFAULT, oldSynchSourceIdESet ) );
+        }
     }
 
     /**
@@ -687,9 +699,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         dataRef = newDataRef;
         boolean oldDataRefESet = dataRefESet;
         dataRefESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef,
                     dataRef, !oldDataRefESet ) );
+        }
     }
 
     /**
@@ -703,9 +716,10 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldDataRefESet = dataRefESet;
         dataRef = DATA_REF_EDEFAULT;
         dataRefESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef,
                     DATA_REF_EDEFAULT, oldDataRefESet ) );
+        }
     }
 
     /**
@@ -853,49 +867,67 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (dataSet: " );
-        if( dataSetESet )
+        if( dataSetESet ) {
             result.append( dataSet );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", refreshTime: " );
-        if( refreshTimeESet )
+        if( refreshTimeESet ) {
             result.append( refreshTime );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", sampleRate: " );
-        if( sampleRateESet )
+        if( sampleRateESet ) {
             result.append( sampleRate );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", sampleSynchronized: " );
-        if( sampleSynchronizedESet )
+        if( sampleSynchronizedESet ) {
             result.append( sampleSynchronized );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", security: " );
-        if( securityESet )
+        if( securityESet ) {
             result.append( security );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", timestamp: " );
-        if( timestampESet )
+        if( timestampESet ) {
             result.append( timestamp );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", synchSourceId: " );
-        if( synchSourceIdESet )
+        if( synchSourceIdESet ) {
             result.append( synchSourceId );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dataRef: " );
-        if( dataRefESet )
+        if( dataRefESet ) {
             result.append( dataRef );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

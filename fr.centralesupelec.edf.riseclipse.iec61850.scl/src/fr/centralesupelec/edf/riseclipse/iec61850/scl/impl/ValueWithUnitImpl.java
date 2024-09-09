@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -23,9 +23,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.math.BigDecimal;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -76,7 +74,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      * @ordered
      */
-    protected static final UnitMultiplierEnum MULTIPLIER_EDEFAULT = UnitMultiplierEnum.MILLI;
+    protected static final UnitMultiplierEnum MULTIPLIER_EDEFAULT = UnitMultiplierEnum.NONE;
 
     /**
      * The cached value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
@@ -164,9 +162,10 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
     public void setValue( BigDecimal newValue ) {
         BigDecimal oldValue = value;
         value = newValue;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VALUE_WITH_UNIT__VALUE, oldValue,
                     value ) );
+        }
     }
 
     /**
@@ -190,9 +189,10 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
         multiplier = newMultiplier == null ? MULTIPLIER_EDEFAULT : newMultiplier;
         boolean oldMultiplierESet = multiplierESet;
         multiplierESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VALUE_WITH_UNIT__MULTIPLIER,
                     oldMultiplier, multiplier, !oldMultiplierESet ) );
+        }
     }
 
     /**
@@ -206,9 +206,10 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
         boolean oldMultiplierESet = multiplierESet;
         multiplier = MULTIPLIER_EDEFAULT;
         multiplierESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VALUE_WITH_UNIT__MULTIPLIER,
                     oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet ) );
+        }
     }
 
     /**
@@ -242,9 +243,10 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
         unit = newUnit;
         boolean oldUnitESet = unitESet;
         unitESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VALUE_WITH_UNIT__UNIT, oldUnit, unit,
                     !oldUnitESet ) );
+        }
     }
 
     /**
@@ -258,9 +260,10 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
         boolean oldUnitESet = unitESet;
         unit = UNIT_EDEFAULT;
         unitESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VALUE_WITH_UNIT__UNIT, oldUnit,
                     UNIT_EDEFAULT, oldUnitESet ) );
+        }
     }
 
     /**
@@ -358,21 +361,27 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (value: " );
         result.append( value );
         result.append( ", multiplier: " );
-        if( multiplierESet )
+        if( multiplierESet ) {
             result.append( multiplier );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", unit: " );
-        if( unitESet )
+        if( unitESet ) {
             result.append( unit );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

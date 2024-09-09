@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -28,6 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -48,7 +48,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getSeqNum <em>Seq Num</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getTimeStamp <em>Time Stamp</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getSegmentation <em>Segmentation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getParentReportControl <em>Parent Report Control</em>}</li>
  * </ul>
  *
@@ -63,7 +62,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean BUF_OVFL_EDEFAULT = null;
+    protected static final Boolean BUF_OVFL_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getBufOvfl() <em>Buf Ovfl</em>}' attribute.
@@ -92,7 +91,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean CONFIG_REF_EDEFAULT = null;
+    protected static final Boolean CONFIG_REF_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getConfigRef() <em>Config Ref</em>}' attribute.
@@ -121,7 +120,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean DATA_REF_EDEFAULT = null;
+    protected static final Boolean DATA_REF_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
@@ -150,7 +149,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean DATA_SET_EDEFAULT = null;
+    protected static final Boolean DATA_SET_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDataSet() <em>Data Set</em>}' attribute.
@@ -179,7 +178,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean ENTRY_ID_EDEFAULT = null;
+    protected static final Boolean ENTRY_ID_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getEntryID() <em>Entry ID</em>}' attribute.
@@ -208,7 +207,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean REASON_CODE_EDEFAULT = null;
+    protected static final Boolean REASON_CODE_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
@@ -237,7 +236,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean SEQ_NUM_EDEFAULT = null;
+    protected static final Boolean SEQ_NUM_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getSeqNum() <em>Seq Num</em>}' attribute.
@@ -266,7 +265,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      * @ordered
      */
-    protected static final Boolean TIME_STAMP_EDEFAULT = null;
+    protected static final Boolean TIME_STAMP_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getTimeStamp() <em>Time Stamp</em>}' attribute.
@@ -286,35 +285,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @ordered
      */
     protected boolean timeStampESet;
-
-    /**
-     * The default value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSegmentation()
-     * @generated
-     * @ordered
-     */
-    protected static final Boolean SEGMENTATION_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSegmentation()
-     * @generated
-     * @ordered
-     */
-    protected Boolean segmentation = SEGMENTATION_EDEFAULT;
-
-    /**
-     * This is true if the Segmentation attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean segmentationESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -356,9 +326,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         bufOvfl = newBufOvfl;
         boolean oldBufOvflESet = bufOvflESet;
         bufOvflESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__BUF_OVFL, oldBufOvfl,
                     bufOvfl, !oldBufOvflESet ) );
+        }
     }
 
     /**
@@ -372,9 +343,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldBufOvflESet = bufOvflESet;
         bufOvfl = BUF_OVFL_EDEFAULT;
         bufOvflESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__BUF_OVFL, oldBufOvfl,
                     BUF_OVFL_EDEFAULT, oldBufOvflESet ) );
+        }
     }
 
     /**
@@ -408,9 +380,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         configRef = newConfigRef;
         boolean oldConfigRefESet = configRefESet;
         configRefESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__CONFIG_REF, oldConfigRef,
                     configRef, !oldConfigRefESet ) );
+        }
     }
 
     /**
@@ -424,9 +397,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldConfigRefESet = configRefESet;
         configRef = CONFIG_REF_EDEFAULT;
         configRefESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__CONFIG_REF, oldConfigRef,
                     CONFIG_REF_EDEFAULT, oldConfigRefESet ) );
+        }
     }
 
     /**
@@ -460,9 +434,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         dataRef = newDataRef;
         boolean oldDataRefESet = dataRefESet;
         dataRefESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__DATA_REF, oldDataRef,
                     dataRef, !oldDataRefESet ) );
+        }
     }
 
     /**
@@ -476,9 +451,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldDataRefESet = dataRefESet;
         dataRef = DATA_REF_EDEFAULT;
         dataRefESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__DATA_REF, oldDataRef,
                     DATA_REF_EDEFAULT, oldDataRefESet ) );
+        }
     }
 
     /**
@@ -512,9 +488,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         dataSet = newDataSet;
         boolean oldDataSetESet = dataSetESet;
         dataSetESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__DATA_SET, oldDataSet,
                     dataSet, !oldDataSetESet ) );
+        }
     }
 
     /**
@@ -528,9 +505,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldDataSetESet = dataSetESet;
         dataSet = DATA_SET_EDEFAULT;
         dataSetESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__DATA_SET, oldDataSet,
                     DATA_SET_EDEFAULT, oldDataSetESet ) );
+        }
     }
 
     /**
@@ -564,9 +542,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         entryID = newEntryID;
         boolean oldEntryIDESet = entryIDESet;
         entryIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__ENTRY_ID, oldEntryID,
                     entryID, !oldEntryIDESet ) );
+        }
     }
 
     /**
@@ -580,9 +559,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldEntryIDESet = entryIDESet;
         entryID = ENTRY_ID_EDEFAULT;
         entryIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__ENTRY_ID, oldEntryID,
                     ENTRY_ID_EDEFAULT, oldEntryIDESet ) );
+        }
     }
 
     /**
@@ -616,9 +596,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         reasonCode = newReasonCode;
         boolean oldReasonCodeESet = reasonCodeESet;
         reasonCodeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__REASON_CODE, oldReasonCode,
                     reasonCode, !oldReasonCodeESet ) );
+        }
     }
 
     /**
@@ -632,9 +613,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldReasonCodeESet = reasonCodeESet;
         reasonCode = REASON_CODE_EDEFAULT;
         reasonCodeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__REASON_CODE, oldReasonCode,
                     REASON_CODE_EDEFAULT, oldReasonCodeESet ) );
+        }
     }
 
     /**
@@ -668,9 +650,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         seqNum = newSeqNum;
         boolean oldSeqNumESet = seqNumESet;
         seqNumESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__SEQ_NUM, oldSeqNum, seqNum,
                     !oldSeqNumESet ) );
+        }
     }
 
     /**
@@ -684,9 +667,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldSeqNumESet = seqNumESet;
         seqNum = SEQ_NUM_EDEFAULT;
         seqNumESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__SEQ_NUM, oldSeqNum,
                     SEQ_NUM_EDEFAULT, oldSeqNumESet ) );
+        }
     }
 
     /**
@@ -720,9 +704,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         timeStamp = newTimeStamp;
         boolean oldTimeStampESet = timeStampESet;
         timeStampESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__TIME_STAMP, oldTimeStamp,
                     timeStamp, !oldTimeStampESet ) );
+        }
     }
 
     /**
@@ -736,9 +721,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         boolean oldTimeStampESet = timeStampESet;
         timeStamp = TIME_STAMP_EDEFAULT;
         timeStampESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__TIME_STAMP, oldTimeStamp,
                     TIME_STAMP_EDEFAULT, oldTimeStampESet ) );
+        }
     }
 
     /**
@@ -757,60 +743,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      */
     @Override
-    public Boolean getSegmentation() {
-        return segmentation;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setSegmentation( Boolean newSegmentation ) {
-        Boolean oldSegmentation = segmentation;
-        segmentation = newSegmentation;
-        boolean oldSegmentationESet = segmentationESet;
-        segmentationESet = true;
-        if( eNotificationRequired() )
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__SEGMENTATION,
-                    oldSegmentation, segmentation, !oldSegmentationESet ) );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetSegmentation() {
-        Boolean oldSegmentation = segmentation;
-        boolean oldSegmentationESet = segmentationESet;
-        segmentation = SEGMENTATION_EDEFAULT;
-        segmentationESet = false;
-        if( eNotificationRequired() )
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.OPT_FIELDS__SEGMENTATION,
-                    oldSegmentation, SEGMENTATION_EDEFAULT, oldSegmentationESet ) );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetSegmentation() {
-        return segmentationESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public ReportControl getParentReportControl() {
-        if( eContainerFeatureID() != SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL ) return null;
+        if( eContainerFeatureID() != SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL ) {
+            return null;
+        }
         return ( ReportControl ) eInternalContainer();
     }
 
@@ -836,20 +772,26 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         if( newParentReportControl != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL
                         && newParentReportControl != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentReportControl ) )
+            if( EcoreUtil.isAncestor( this, newParentReportControl ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentReportControl != null )
+            }
+            if( newParentReportControl != null ) {
                 msgs = ( ( InternalEObject ) newParentReportControl ).eInverseAdd( this,
                         SclPackage.REPORT_CONTROL__OPT_FIELDS, ReportControl.class, msgs );
+            }
             msgs = basicSetParentReportControl( newParentReportControl, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL,
                     newParentReportControl, newParentReportControl ) );
+        }
     }
 
     /**
@@ -861,8 +803,9 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentReportControl( ( ReportControl ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -921,8 +864,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
             return getSeqNum();
         case SclPackage.OPT_FIELDS__TIME_STAMP:
             return getTimeStamp();
-        case SclPackage.OPT_FIELDS__SEGMENTATION:
-            return getSegmentation();
         case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
             return getParentReportControl();
         }
@@ -960,9 +901,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
             return;
         case SclPackage.OPT_FIELDS__TIME_STAMP:
             setTimeStamp( ( Boolean ) newValue );
-            return;
-        case SclPackage.OPT_FIELDS__SEGMENTATION:
-            setSegmentation( ( Boolean ) newValue );
             return;
         case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
             setParentReportControl( ( ReportControl ) newValue );
@@ -1003,9 +941,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         case SclPackage.OPT_FIELDS__TIME_STAMP:
             unsetTimeStamp();
             return;
-        case SclPackage.OPT_FIELDS__SEGMENTATION:
-            unsetSegmentation();
-            return;
         case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
             setParentReportControl( ( ReportControl ) null );
             return;
@@ -1037,8 +972,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
             return isSetSeqNum();
         case SclPackage.OPT_FIELDS__TIME_STAMP:
             return isSetTimeStamp();
-        case SclPackage.OPT_FIELDS__SEGMENTATION:
-            return isSetSegmentation();
         case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
             return getParentReportControl() != null;
         }
@@ -1070,8 +1003,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return SclPackage.AG_OPT_FIELDS__SEQ_NUM;
             case SclPackage.OPT_FIELDS__TIME_STAMP:
                 return SclPackage.AG_OPT_FIELDS__TIME_STAMP;
-            case SclPackage.OPT_FIELDS__SEGMENTATION:
-                return SclPackage.AG_OPT_FIELDS__SEGMENTATION;
             default:
                 return -1;
             }
@@ -1104,8 +1035,6 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return SclPackage.OPT_FIELDS__SEQ_NUM;
             case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
                 return SclPackage.OPT_FIELDS__TIME_STAMP;
-            case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
-                return SclPackage.OPT_FIELDS__SEGMENTATION;
             default:
                 return -1;
             }
@@ -1120,54 +1049,67 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (bufOvfl: " );
-        if( bufOvflESet )
+        if( bufOvflESet ) {
             result.append( bufOvfl );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", configRef: " );
-        if( configRefESet )
+        if( configRefESet ) {
             result.append( configRef );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dataRef: " );
-        if( dataRefESet )
+        if( dataRefESet ) {
             result.append( dataRef );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dataSet: " );
-        if( dataSetESet )
+        if( dataSetESet ) {
             result.append( dataSet );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", entryID: " );
-        if( entryIDESet )
+        if( entryIDESet ) {
             result.append( entryID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", reasonCode: " );
-        if( reasonCodeESet )
+        if( reasonCodeESet ) {
             result.append( reasonCode );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", seqNum: " );
-        if( seqNumESet )
+        if( seqNumESet ) {
             result.append( seqNum );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", timeStamp: " );
-        if( timeStampESet )
+        if( timeStampESet ) {
             result.append( timeStamp );
-        else
+        }
+        else {
             result.append( "<unset>" );
-        result.append( ", segmentation: " );
-        if( segmentationESet )
-            result.append( segmentation );
-        else
-            result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

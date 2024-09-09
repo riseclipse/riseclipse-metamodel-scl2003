@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -58,7 +58,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      * @ordered
      */
-    protected static final Boolean DCHG_EDEFAULT = null;
+    protected static final Boolean DCHG_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDchg() <em>Dchg</em>}' attribute.
@@ -87,7 +87,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      * @ordered
      */
-    protected static final Boolean DUPD_EDEFAULT = null;
+    protected static final Boolean DUPD_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDupd() <em>Dupd</em>}' attribute.
@@ -116,7 +116,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      * @ordered
      */
-    protected static final Boolean GI_EDEFAULT = null;
+    protected static final Boolean GI_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getGi() <em>Gi</em>}' attribute.
@@ -145,7 +145,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      * @ordered
      */
-    protected static final Boolean PERIOD_EDEFAULT = null;
+    protected static final Boolean PERIOD_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getPeriod() <em>Period</em>}' attribute.
@@ -174,7 +174,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      * @ordered
      */
-    protected static final Boolean QCHG_EDEFAULT = null;
+    protected static final Boolean QCHG_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
@@ -235,9 +235,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         dchg = newDchg;
         boolean oldDchgESet = dchgESet;
         dchgESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__DCHG, oldDchg, dchg,
                     !oldDchgESet ) );
+        }
     }
 
     /**
@@ -251,9 +252,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldDchgESet = dchgESet;
         dchg = DCHG_EDEFAULT;
         dchgESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__DCHG, oldDchg, DCHG_EDEFAULT,
                     oldDchgESet ) );
+        }
     }
 
     /**
@@ -287,9 +289,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         dupd = newDupd;
         boolean oldDupdESet = dupdESet;
         dupdESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__DUPD, oldDupd, dupd,
                     !oldDupdESet ) );
+        }
     }
 
     /**
@@ -303,9 +306,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldDupdESet = dupdESet;
         dupd = DUPD_EDEFAULT;
         dupdESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__DUPD, oldDupd, DUPD_EDEFAULT,
                     oldDupdESet ) );
+        }
     }
 
     /**
@@ -339,8 +343,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         gi = newGi;
         boolean oldGiESet = giESet;
         giESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__GI, oldGi, gi, !oldGiESet ) );
+        }
     }
 
     /**
@@ -354,9 +359,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldGiESet = giESet;
         gi = GI_EDEFAULT;
         giESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__GI, oldGi, GI_EDEFAULT,
                     oldGiESet ) );
+        }
     }
 
     /**
@@ -390,9 +396,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         period = newPeriod;
         boolean oldPeriodESet = periodESet;
         periodESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__PERIOD, oldPeriod, period,
                     !oldPeriodESet ) );
+        }
     }
 
     /**
@@ -406,9 +413,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldPeriodESet = periodESet;
         period = PERIOD_EDEFAULT;
         periodESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__PERIOD, oldPeriod,
                     PERIOD_EDEFAULT, oldPeriodESet ) );
+        }
     }
 
     /**
@@ -442,9 +450,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         qchg = newQchg;
         boolean oldQchgESet = qchgESet;
         qchgESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__QCHG, oldQchg, qchg,
                     !oldQchgESet ) );
+        }
     }
 
     /**
@@ -458,9 +467,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldQchgESet = qchgESet;
         qchg = QCHG_EDEFAULT;
         qchgESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__QCHG, oldQchg, QCHG_EDEFAULT,
                     oldQchgESet ) );
+        }
     }
 
     /**
@@ -480,7 +490,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public ControlWithTriggerOpt getParentControlWithTriggerOpt() {
-        if( eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT ) return null;
+        if( eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT ) {
+            return null;
+        }
         return ( ControlWithTriggerOpt ) eInternalContainer();
     }
 
@@ -506,20 +518,26 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         if( newParentControlWithTriggerOpt != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT
                         && newParentControlWithTriggerOpt != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentControlWithTriggerOpt ) )
+            if( EcoreUtil.isAncestor( this, newParentControlWithTriggerOpt ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentControlWithTriggerOpt != null )
+            }
+            if( newParentControlWithTriggerOpt != null ) {
                 msgs = ( ( InternalEObject ) newParentControlWithTriggerOpt ).eInverseAdd( this,
                         SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs );
+            }
             msgs = basicSetParentControlWithTriggerOpt( newParentControlWithTriggerOpt, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT,
                     newParentControlWithTriggerOpt, newParentControlWithTriggerOpt ) );
+        }
     }
 
     /**
@@ -531,8 +549,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentControlWithTriggerOpt( ( ControlWithTriggerOpt ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -682,34 +701,46 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (dchg: " );
-        if( dchgESet )
+        if( dchgESet ) {
             result.append( dchg );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", dupd: " );
-        if( dupdESet )
+        if( dupdESet ) {
             result.append( dupd );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", gi: " );
-        if( giESet )
+        if( giESet ) {
             result.append( gi );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", period: " );
-        if( periodESet )
+        if( periodESet ) {
             result.append( period );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", qchg: " );
-        if( qchgESet )
+        if( qchgESet ) {
             result.append( qchg );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

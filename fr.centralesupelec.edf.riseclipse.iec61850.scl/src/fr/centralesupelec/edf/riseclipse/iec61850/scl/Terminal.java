@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -445,6 +445,7 @@ public interface Terminal extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Name</em>' attribute isn't clear,
@@ -456,7 +457,7 @@ public interface Terminal extends UnNaming {
      * @see #unsetName()
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_Name()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getName();

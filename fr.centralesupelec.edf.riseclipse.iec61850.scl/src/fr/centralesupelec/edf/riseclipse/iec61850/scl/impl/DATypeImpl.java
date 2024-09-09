@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,8 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
@@ -65,7 +66,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      * @ordered
      */
-    protected static final String IED_TYPE_EDEFAULT = null;
+    protected static final String IED_TYPE_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getIedType() <em>Ied Type</em>}' attribute.
@@ -156,9 +157,10 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         iedType = newIedType;
         boolean oldIedTypeESet = iedTypeESet;
         iedTypeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA_TYPE__IED_TYPE, oldIedType, iedType,
                     !oldIedTypeESet ) );
+        }
     }
 
     /**
@@ -172,9 +174,10 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         boolean oldIedTypeESet = iedTypeESet;
         iedType = IED_TYPE_EDEFAULT;
         iedTypeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DA_TYPE__IED_TYPE, oldIedType,
                     IED_TYPE_EDEFAULT, oldIedTypeESet ) );
+        }
     }
 
     /**
@@ -195,7 +198,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     @Override
     public EList< BDA > getBDA() {
         if( bda == null ) {
-            bda = new EObjectContainmentWithInverseEList.Unsettable< BDA >( BDA.class, this, SclPackage.DA_TYPE__BDA,
+            bda = new EObjectContainmentWithInverseEList.Unsettable< >( BDA.class, this, SclPackage.DA_TYPE__BDA,
                     SclPackage.BDA__PARENT_DA_TYPE );
         }
         return bda;
@@ -208,7 +211,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void unsetBDA() {
-        if( bda != null ) ( ( InternalEList.Unsettable< ? > ) bda ).unset();
+        if( bda != null ) {
+            ( ( InternalEList.Unsettable< ? > ) bda ).unset();
+        }
     }
 
     /**
@@ -229,7 +234,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     @Override
     public EList< AbstractDataAttribute > getReferredByAbstractDataAttribute() {
         if( referredByAbstractDataAttribute == null ) {
-            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable< AbstractDataAttribute >(
+            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable< >(
                     AbstractDataAttribute.class, this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE );
         }
@@ -243,8 +248,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void unsetReferredByAbstractDataAttribute() {
-        if( referredByAbstractDataAttribute != null )
+        if( referredByAbstractDataAttribute != null ) {
             ( ( InternalEList.Unsettable< ? > ) referredByAbstractDataAttribute ).unset();
+        }
     }
 
     /**
@@ -265,7 +271,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public DataTypeTemplates getParentDataTypeTemplates() {
-        if( eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES ) return null;
+        if( eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES ) {
+            return null;
+        }
         return ( DataTypeTemplates ) eInternalContainer();
     }
 
@@ -291,20 +299,26 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         if( newParentDataTypeTemplates != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES
                         && newParentDataTypeTemplates != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) )
+            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDataTypeTemplates != null )
+            }
+            if( newParentDataTypeTemplates != null ) {
                 msgs = ( ( InternalEObject ) newParentDataTypeTemplates ).eInverseAdd( this,
                         SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, DataTypeTemplates.class, msgs );
+            }
             msgs = basicSetParentDataTypeTemplates( newParentDataTypeTemplates, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES,
                     newParentDataTypeTemplates, newParentDataTypeTemplates ) );
+        }
     }
 
     /**
@@ -315,7 +329,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     @Override
     public EList< ProtNs > getProtNs() {
         if( protNs == null ) {
-            protNs = new EObjectContainmentWithInverseEList.Unsettable< ProtNs >( ProtNs.class, this,
+            protNs = new EObjectContainmentWithInverseEList.Unsettable< >( ProtNs.class, this,
                     SclPackage.DA_TYPE__PROT_NS, SclPackage.PROT_NS__PARENT_DA_TYPE );
         }
         return protNs;
@@ -328,7 +342,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void unsetProtNs() {
-        if( protNs != null ) ( ( InternalEList.Unsettable< ? > ) protNs ).unset();
+        if( protNs != null ) {
+            ( ( InternalEList.Unsettable< ? > ) protNs ).unset();
+        }
     }
 
     /**
@@ -356,8 +372,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByAbstractDataAttribute() )
                     .basicAdd( otherEnd, msgs );
         case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
         case SclPackage.DA_TYPE__PROT_NS:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getProtNs() ).basicAdd( otherEnd,
@@ -510,14 +527,18 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (iedType: " );
-        if( iedTypeESet )
+        if( iedTypeESet ) {
             result.append( iedType );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

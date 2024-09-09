@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -54,7 +54,7 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      * @generated
      * @ordered
      */
-    protected static final Boolean RESV_TMS_EDEFAULT = null;
+    protected static final Boolean RESV_TMS_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
@@ -115,9 +115,10 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
         resvTms = newResvTms;
         boolean oldResvTmsESet = resvTmsESet;
         resvTmsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, resvTms,
                     !oldResvTmsESet ) );
+        }
     }
 
     /**
@@ -131,9 +132,10 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
         boolean oldResvTmsESet = resvTmsESet;
         resvTms = RESV_TMS_EDEFAULT;
         resvTmsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms,
                     RESV_TMS_EDEFAULT, oldResvTmsESet ) );
+        }
     }
 
     /**
@@ -153,7 +155,9 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public SettingGroups getParentSettingGroups() {
-        if( eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS ) return null;
+        if( eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS ) {
+            return null;
+        }
         return ( SettingGroups ) eInternalContainer();
     }
 
@@ -179,20 +183,26 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
         if( newParentSettingGroups != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS
                         && newParentSettingGroups != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSettingGroups ) )
+            if( EcoreUtil.isAncestor( this, newParentSettingGroups ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSettingGroups != null )
+            }
+            if( newParentSettingGroups != null ) {
                 msgs = ( ( InternalEObject ) newParentSettingGroups ).eInverseAdd( this,
                         SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs );
+            }
             msgs = basicSetParentSettingGroups( newParentSettingGroups, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
                     newParentSettingGroups, newParentSettingGroups ) );
+        }
     }
 
     /**
@@ -204,8 +214,9 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSettingGroups( ( SettingGroups ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -315,14 +326,18 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (resvTms: " );
-        if( resvTmsESet )
+        if( resvTmsESet ) {
             result.append( resvTms );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

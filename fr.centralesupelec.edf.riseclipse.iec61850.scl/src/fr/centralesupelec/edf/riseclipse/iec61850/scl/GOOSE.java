@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -42,6 +42,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface GOOSE extends ServiceWithMax {
     /**
      * Returns the value of the '<em><b>Fixed Offs</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Fixed Offs</em>' attribute isn't clear,
@@ -53,7 +54,7 @@ public interface GOOSE extends ServiceWithMax {
      * @see #unsetFixedOffs()
      * @see #setFixedOffs(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSE_FixedOffs()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getFixedOffs();
@@ -119,6 +120,7 @@ public interface GOOSE extends ServiceWithMax {
 
     /**
      * Returns the value of the '<em><b>Goose</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Goose</em>' attribute isn't clear,
@@ -130,7 +132,7 @@ public interface GOOSE extends ServiceWithMax {
      * @see #unsetGoose()
      * @see #setGoose(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSE_Goose()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getGoose();
@@ -172,6 +174,7 @@ public interface GOOSE extends ServiceWithMax {
 
     /**
      * Returns the value of the '<em><b>RGOOSE</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>RGOOSE</em>' attribute isn't clear,
@@ -183,7 +186,7 @@ public interface GOOSE extends ServiceWithMax {
      * @see #unsetRGOOSE()
      * @see #setRGOOSE(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSE_RGOOSE()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getRGOOSE();

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -41,6 +41,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ProtocolImpl#getMustUnderstand <em>Must Understand</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ProtocolImpl#getParentControlWithIEDName <em>Parent Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ProtocolImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +75,26 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * @ordered
      */
     protected boolean mustUnderstandESet;
+
+    /**
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getValue()
+     * @generated
+     * @ordered
+     */
+    protected static final String VALUE_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getValue()
+     * @generated
+     * @ordered
+     */
+    protected String value = VALUE_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -115,9 +136,10 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         mustUnderstand = newMustUnderstand;
         boolean oldMustUnderstandESet = mustUnderstandESet;
         mustUnderstandESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROTOCOL__MUST_UNDERSTAND,
                     oldMustUnderstand, mustUnderstand, !oldMustUnderstandESet ) );
+        }
     }
 
     /**
@@ -131,9 +153,10 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         boolean oldMustUnderstandESet = mustUnderstandESet;
         mustUnderstand = MUST_UNDERSTAND_EDEFAULT;
         mustUnderstandESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PROTOCOL__MUST_UNDERSTAND,
                     oldMustUnderstand, MUST_UNDERSTAND_EDEFAULT, oldMustUnderstandESet ) );
+        }
     }
 
     /**
@@ -153,7 +176,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public ControlWithIEDName getParentControlWithIEDName() {
-        if( eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME ) return null;
+        if( eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME ) {
+            return null;
+        }
         return ( ControlWithIEDName ) eInternalContainer();
     }
 
@@ -179,20 +204,50 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         if( newParentControlWithIEDName != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME
                         && newParentControlWithIEDName != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentControlWithIEDName ) )
+            if( EcoreUtil.isAncestor( this, newParentControlWithIEDName ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentControlWithIEDName != null )
+            }
+            if( newParentControlWithIEDName != null ) {
                 msgs = ( ( InternalEObject ) newParentControlWithIEDName ).eInverseAdd( this,
                         SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs );
+            }
             msgs = basicSetParentControlWithIEDName( newParentControlWithIEDName, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME,
                     newParentControlWithIEDName, newParentControlWithIEDName ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setValue( String newValue ) {
+        String oldValue = value;
+        value = newValue;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROTOCOL__VALUE, oldValue, value ) );
+        }
     }
 
     /**
@@ -204,8 +259,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentControlWithIEDName( ( ControlWithIEDName ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -252,6 +308,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
             return getMustUnderstand();
         case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
             return getParentControlWithIEDName();
+        case SclPackage.PROTOCOL__VALUE:
+            return getValue();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -269,6 +327,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
             return;
         case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
             setParentControlWithIEDName( ( ControlWithIEDName ) newValue );
+            return;
+        case SclPackage.PROTOCOL__VALUE:
+            setValue( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -288,6 +349,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
             setParentControlWithIEDName( ( ControlWithIEDName ) null );
             return;
+        case SclPackage.PROTOCOL__VALUE:
+            setValue( VALUE_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -304,6 +368,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
             return isSetMustUnderstand();
         case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
             return getParentControlWithIEDName() != null;
+        case SclPackage.PROTOCOL__VALUE:
+            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
         }
         return super.eIsSet( featureID );
     }
@@ -315,14 +381,20 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (mustUnderstand: " );
-        if( mustUnderstandESet )
+        if( mustUnderstandESet ) {
             result.append( mustUnderstand );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
+        result.append( ", value: " );
+        result.append( value );
         result.append( ')' );
         return result.toString();
     }

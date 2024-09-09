@@ -79,7 +79,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * @generated
      * @ordered
      */
-    protected static final String COUNT_EDEFAULT = null;
+    protected static final String COUNT_EDEFAULT = "0";
 
     /**
      * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
