@@ -63,6 +63,7 @@ public class ProtocolItemProvider
             super.getPropertyDescriptors( object );
 
             addMustUnderstandPropertyDescriptor( object );
+            addValuePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -81,6 +82,28 @@ public class ProtocolItemProvider
                         getString( "_UI_PropertyDescriptor_description", "_UI_Protocol_mustUnderstand_feature",
                                 "_UI_Protocol_type" ),
                         SclPackage.eINSTANCE.getProtocol_MustUnderstand(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Value feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addValuePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Protocol_value_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Protocol_value_feature",
+                                "_UI_Protocol_type" ),
+                        SclPackage.eINSTANCE.getProtocol_Value(),
                         true,
                         false,
                         false,
@@ -124,6 +147,7 @@ public class ProtocolItemProvider
 
         switch( notification.getFeatureID( Protocol.class ) ) {
         case SclPackage.PROTOCOL__MUST_UNDERSTAND:
+        case SclPackage.PROTOCOL__VALUE:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }
