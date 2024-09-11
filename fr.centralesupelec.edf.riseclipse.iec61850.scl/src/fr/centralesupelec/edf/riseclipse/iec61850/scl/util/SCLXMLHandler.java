@@ -132,6 +132,11 @@ public class SCLXMLHandler extends SAXXMLHandler {
             }
             return;
         }
+        if( ! SclPackage.eNS_URI.equals( uri )) {
+            // any content is ignored (see getFeature() below) so do not call standard endElement
+            // because no object has been put on the stack
+            return;
+        }
         super.endElement( uri, localName, name );
     }
 
