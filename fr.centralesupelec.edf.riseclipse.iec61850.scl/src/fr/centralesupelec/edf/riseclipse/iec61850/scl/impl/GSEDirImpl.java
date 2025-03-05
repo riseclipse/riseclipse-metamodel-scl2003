@@ -212,4 +212,9 @@ public class GSEDirImpl extends ServiceYesNoImpl implements GSEDir {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GSEDir";
+    }
+
 } //GSEDirImpl

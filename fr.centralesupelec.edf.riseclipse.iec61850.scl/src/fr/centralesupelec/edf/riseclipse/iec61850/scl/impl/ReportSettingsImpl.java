@@ -909,4 +909,9 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ReportSettings";
+    }
+
 } //ReportSettingsImpl

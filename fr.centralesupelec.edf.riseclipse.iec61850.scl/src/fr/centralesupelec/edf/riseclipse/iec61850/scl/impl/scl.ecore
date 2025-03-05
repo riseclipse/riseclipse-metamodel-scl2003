@@ -2103,6 +2103,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true"
         defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xpath" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnNaming" abstract="true" eSuperTypes="#//BaseElement #//AgDesc"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceYesNo" eSuperTypes="#//SclObject"/>

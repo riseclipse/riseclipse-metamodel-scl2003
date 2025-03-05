@@ -1143,4 +1143,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return "/scl:SCL";
+    }
+
 } //SCLImpl

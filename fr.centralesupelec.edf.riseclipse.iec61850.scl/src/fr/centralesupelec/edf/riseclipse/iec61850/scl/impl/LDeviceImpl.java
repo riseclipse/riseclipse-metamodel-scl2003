@@ -1417,4 +1417,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         //@formatter:on
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServer().getXpath() + "/scl:LDevice[@inst='" + getInst() + "']";
+    }
+
 } //LDeviceImpl

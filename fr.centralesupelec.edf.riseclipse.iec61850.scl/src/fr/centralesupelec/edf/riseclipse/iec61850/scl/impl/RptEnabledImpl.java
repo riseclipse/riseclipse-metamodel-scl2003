@@ -413,4 +413,9 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentReportControl().getXpath() + "/scl:RptEnabled";
+    }
+
 } //RptEnabledImpl

@@ -423,4 +423,9 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:SupSubscription";
+    }
+
 } //SupSubscriptionImpl

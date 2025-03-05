@@ -599,4 +599,19 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentClientServices() != null ) {
+            parentXpath = getParentClientServices().getXpath();
+        }
+        if( getParentGSESettings() != null ) {
+            parentXpath = getParentGSESettings().getXpath();
+        }
+        if( getParentSMVSettings() != null ) {
+            parentXpath = getParentSMVSettings().getXpath();
+        }
+        return parentXpath + "/scl:McSecurity";
+    }
+
 } //McSecurityImpl

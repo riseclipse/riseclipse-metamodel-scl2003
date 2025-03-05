@@ -466,4 +466,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSCL().getXpath() + "/scl:DataTypeTemplates";
+    }
+
 } //DataTypeTemplatesImpl

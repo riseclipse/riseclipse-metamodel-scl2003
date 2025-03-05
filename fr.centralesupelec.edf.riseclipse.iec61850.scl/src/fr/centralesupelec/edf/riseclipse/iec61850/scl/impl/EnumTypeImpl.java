@@ -350,4 +350,9 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentDataTypeTemplates().getXpath() + "/scl:EnumType[@id='" + getId() + "']";
+    }
+
 } //EnumTypeImpl

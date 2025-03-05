@@ -214,4 +214,9 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:DynDataSet";
+    }
+
 } //DynDataSetImpl

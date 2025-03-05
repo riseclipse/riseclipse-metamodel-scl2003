@@ -796,4 +796,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServer().getXpath() + "/scl:Authentication";
+    }
+
 } //AuthenticationImpl

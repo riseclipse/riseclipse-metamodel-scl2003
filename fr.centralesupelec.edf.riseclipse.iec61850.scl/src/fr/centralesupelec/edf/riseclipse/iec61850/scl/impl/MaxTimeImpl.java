@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -71,7 +72,9 @@ public class MaxTimeImpl extends DurationInMilliSecImpl implements MaxTime {
      */
     @Override
     public GSE getParentGSE() {
-        if( eContainerFeatureID() != SclPackage.MAX_TIME__PARENT_GSE ) return null;
+        if( eContainerFeatureID() != SclPackage.MAX_TIME__PARENT_GSE ) {
+            return null;
+        }
         return ( GSE ) eInternalContainer();
     }
 
@@ -94,20 +97,26 @@ public class MaxTimeImpl extends DurationInMilliSecImpl implements MaxTime {
     public void setParentGSE( GSE newParentGSE ) {
         if( newParentGSE != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.MAX_TIME__PARENT_GSE && newParentGSE != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentGSE ) )
+            if( EcoreUtil.isAncestor( this, newParentGSE ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentGSE != null )
+            }
+            if( newParentGSE != null ) {
                 msgs = ( ( InternalEObject ) newParentGSE ).eInverseAdd( this, SclPackage.GSE__MAX_TIME, GSE.class,
                         msgs );
+            }
             msgs = basicSetParentGSE( newParentGSE, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.MAX_TIME__PARENT_GSE, newParentGSE,
                     newParentGSE ) );
+        }
     }
 
     /**
@@ -119,8 +128,9 @@ public class MaxTimeImpl extends DurationInMilliSecImpl implements MaxTime {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.MAX_TIME__PARENT_GSE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentGSE( ( GSE ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -210,6 +220,14 @@ public class MaxTimeImpl extends DurationInMilliSecImpl implements MaxTime {
             return getParentGSE() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        if( eContainer() instanceof SclObject ) {
+            return ( ( SclObject ) eContainer() ).getXpath() + "/scl:MaxTime";
+        }
+        return "/scl:MaxTime";
     }
 
 } //MaxTimeImpl

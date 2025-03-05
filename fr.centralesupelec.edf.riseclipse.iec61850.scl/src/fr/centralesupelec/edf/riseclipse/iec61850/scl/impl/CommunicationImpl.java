@@ -280,4 +280,9 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSCL().getXpath() + "/scl:Communication";
+    }
+
 } //CommunicationImpl

@@ -1010,4 +1010,9 @@ public class HeaderImpl extends SclObjectImpl implements Header {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSCL().getXpath() + "/scl:Header";
+    }
+
 } //HeaderImpl

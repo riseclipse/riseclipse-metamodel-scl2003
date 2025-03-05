@@ -959,14 +959,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
         String messagePrefix = "while resolving link from DOI: ";
 
-        if( ( getName() == null ) || getName().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "name is missing" );
-            return;
-        }
-
         // No error or warning message here: if this happens, error should have been detected before
-        if( ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) {
+        if( ( getName() == null ) || getName().isEmpty() || ( getParentAnyLN() == null ) || ( getParentAnyLN().getRefersToLNodeType() == null ) ) {
             return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -991,6 +985,14 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 "DOI refers to DO( name = ", getName(), " ) on line ", getRefersToDO().getLineNumber() );
 
         //@formatter:on
+    }
+
+    @Override
+    public String getXpath() {
+        if( getParentAnyLN().getDOI().size() == 1 ) {
+            return getParentAnyLN().getXpath() + "/scl:DOI";
+        }
+        return getParentAnyLN().getXpath() + "/scl:DOI[@name='" + getName() + "']";
     }
 
 } //DOIImpl

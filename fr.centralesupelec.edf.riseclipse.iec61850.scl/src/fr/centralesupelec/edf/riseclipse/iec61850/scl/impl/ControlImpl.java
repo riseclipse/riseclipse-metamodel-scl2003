@@ -635,14 +635,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
         // String messagePrefix = "while resolving link from Control: ";
 
-        if( ( getDatSet() == null ) || getDatSet().isEmpty() ) {
-            //  console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //          messagePrefix, "datSet is missing" );
-            return;
-        }
-
         // No error or warning message here: if this happens, error should have been detected before
-        if( getParentAnyLN() == null ) {
+        if( ( getDatSet() == null ) || getDatSet().isEmpty() || ( getParentAnyLN() == null ) ) {
             return;
         }
 

@@ -408,4 +408,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentVoltageLevel().getXpath() + "/scl:Bay[@name='" + getName() + "']";
+    }
+
 } //BayImpl

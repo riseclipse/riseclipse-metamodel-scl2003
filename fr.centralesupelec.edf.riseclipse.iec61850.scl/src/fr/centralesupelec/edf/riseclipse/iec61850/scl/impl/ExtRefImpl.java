@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -737,9 +736,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         daName = newDaName;
         boolean oldDaNameESet = daNameESet;
         daNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__DA_NAME, oldDaName, daName,
                     !oldDaNameESet ) );
+        }
     }
 
     /**
@@ -753,9 +753,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldDaNameESet = daNameESet;
         daName = DA_NAME_EDEFAULT;
         daNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__DA_NAME, oldDaName,
                     DA_NAME_EDEFAULT, oldDaNameESet ) );
+        }
     }
 
     /**
@@ -789,9 +790,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         doName = newDoName;
         boolean oldDoNameESet = doNameESet;
         doNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__DO_NAME, oldDoName, doName,
                     !oldDoNameESet ) );
+        }
     }
 
     /**
@@ -805,9 +807,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldDoNameESet = doNameESet;
         doName = DO_NAME_EDEFAULT;
         doNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__DO_NAME, oldDoName,
                     DO_NAME_EDEFAULT, oldDoNameESet ) );
+        }
     }
 
     /**
@@ -841,9 +844,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__IED_NAME, oldIedName, iedName,
                     !oldIedNameESet ) );
+        }
     }
 
     /**
@@ -857,9 +861,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__IED_NAME, oldIedName,
                     IED_NAME_EDEFAULT, oldIedNameESet ) );
+        }
     }
 
     /**
@@ -893,9 +898,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         intAddr = newIntAddr;
         boolean oldIntAddrESet = intAddrESet;
         intAddrESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__INT_ADDR, oldIntAddr, intAddr,
                     !oldIntAddrESet ) );
+        }
     }
 
     /**
@@ -909,9 +915,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldIntAddrESet = intAddrESet;
         intAddr = INT_ADDR_EDEFAULT;
         intAddrESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__INT_ADDR, oldIntAddr,
                     INT_ADDR_EDEFAULT, oldIntAddrESet ) );
+        }
     }
 
     /**
@@ -945,9 +952,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LD_INST, oldLdInst, ldInst,
                     !oldLdInstESet ) );
+        }
     }
 
     /**
@@ -961,9 +969,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LD_INST, oldLdInst,
                     LD_INST_EDEFAULT, oldLdInstESet ) );
+        }
     }
 
     /**
@@ -997,9 +1006,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -1013,9 +1023,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -1049,9 +1060,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LN_INST, oldLnInst, lnInst,
                     !oldLnInstESet ) );
+        }
     }
 
     /**
@@ -1065,9 +1077,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LN_INST, oldLnInst,
                     LN_INST_EDEFAULT, oldLnInstESet ) );
+        }
     }
 
     /**
@@ -1101,9 +1114,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PREFIX, oldPrefix, prefix,
                     !oldPrefixESet ) );
+        }
     }
 
     /**
@@ -1117,9 +1131,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PREFIX, oldPrefix,
                     PREFIX_EDEFAULT, oldPrefixESet ) );
+        }
     }
 
     /**
@@ -1153,9 +1168,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         serviceType = newServiceType == null ? SERVICE_TYPE_EDEFAULT : newServiceType;
         boolean oldServiceTypeESet = serviceTypeESet;
         serviceTypeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__SERVICE_TYPE, oldServiceType,
                     serviceType, !oldServiceTypeESet ) );
+        }
     }
 
     /**
@@ -1169,9 +1185,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldServiceTypeESet = serviceTypeESet;
         serviceType = SERVICE_TYPE_EDEFAULT;
         serviceTypeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__SERVICE_TYPE, oldServiceType,
                     SERVICE_TYPE_EDEFAULT, oldServiceTypeESet ) );
+        }
     }
 
     /**
@@ -1205,9 +1222,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         srcCBName = newSrcCBName;
         boolean oldSrcCBNameESet = srcCBNameESet;
         srcCBNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__SRC_CB_NAME, oldSrcCBName,
                     srcCBName, !oldSrcCBNameESet ) );
+        }
     }
 
     /**
@@ -1221,9 +1239,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldSrcCBNameESet = srcCBNameESet;
         srcCBName = SRC_CB_NAME_EDEFAULT;
         srcCBNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__SRC_CB_NAME, oldSrcCBName,
                     SRC_CB_NAME_EDEFAULT, oldSrcCBNameESet ) );
+        }
     }
 
     /**
@@ -1257,9 +1276,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         srcLDInst = newSrcLDInst;
         boolean oldSrcLDInstESet = srcLDInstESet;
         srcLDInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__SRC_LD_INST, oldSrcLDInst,
                     srcLDInst, !oldSrcLDInstESet ) );
+        }
     }
 
     /**
@@ -1273,9 +1293,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldSrcLDInstESet = srcLDInstESet;
         srcLDInst = SRC_LD_INST_EDEFAULT;
         srcLDInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__SRC_LD_INST, oldSrcLDInst,
                     SRC_LD_INST_EDEFAULT, oldSrcLDInstESet ) );
+        }
     }
 
     /**
@@ -1309,9 +1330,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         srcLNClass = newSrcLNClass;
         boolean oldSrcLNClassESet = srcLNClassESet;
         srcLNClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__SRC_LN_CLASS, oldSrcLNClass,
                     srcLNClass, !oldSrcLNClassESet ) );
+        }
     }
 
     /**
@@ -1325,9 +1347,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldSrcLNClassESet = srcLNClassESet;
         srcLNClass = SRC_LN_CLASS_EDEFAULT;
         srcLNClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__SRC_LN_CLASS, oldSrcLNClass,
                     SRC_LN_CLASS_EDEFAULT, oldSrcLNClassESet ) );
+        }
     }
 
     /**
@@ -1361,9 +1384,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         srcLNInst = newSrcLNInst;
         boolean oldSrcLNInstESet = srcLNInstESet;
         srcLNInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__SRC_LN_INST, oldSrcLNInst,
                     srcLNInst, !oldSrcLNInstESet ) );
+        }
     }
 
     /**
@@ -1377,9 +1401,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldSrcLNInstESet = srcLNInstESet;
         srcLNInst = SRC_LN_INST_EDEFAULT;
         srcLNInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__SRC_LN_INST, oldSrcLNInst,
                     SRC_LN_INST_EDEFAULT, oldSrcLNInstESet ) );
+        }
     }
 
     /**
@@ -1413,9 +1438,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         srcPrefix = newSrcPrefix;
         boolean oldSrcPrefixESet = srcPrefixESet;
         srcPrefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__SRC_PREFIX, oldSrcPrefix,
                     srcPrefix, !oldSrcPrefixESet ) );
+        }
     }
 
     /**
@@ -1429,9 +1455,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldSrcPrefixESet = srcPrefixESet;
         srcPrefix = SRC_PREFIX_EDEFAULT;
         srcPrefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__SRC_PREFIX, oldSrcPrefix,
                     SRC_PREFIX_EDEFAULT, oldSrcPrefixESet ) );
+        }
     }
 
     /**
@@ -1451,7 +1478,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      */
     @Override
     public Inputs getParentInputs() {
-        if( eContainerFeatureID() != SclPackage.EXT_REF__PARENT_INPUTS ) return null;
+        if( eContainerFeatureID() != SclPackage.EXT_REF__PARENT_INPUTS ) {
+            return null;
+        }
         return ( Inputs ) eInternalContainer();
     }
 
@@ -1474,20 +1503,26 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     public void setParentInputs( Inputs newParentInputs ) {
         if( newParentInputs != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EXT_REF__PARENT_INPUTS && newParentInputs != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentInputs ) )
+            if( EcoreUtil.isAncestor( this, newParentInputs ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentInputs != null )
+            }
+            if( newParentInputs != null ) {
                 msgs = ( ( InternalEObject ) newParentInputs ).eInverseAdd( this, SclPackage.INPUTS__EXT_REF,
                         Inputs.class, msgs );
+            }
             msgs = basicSetParentInputs( newParentInputs, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PARENT_INPUTS, newParentInputs,
                     newParentInputs ) );
+        }
     }
 
     /**
@@ -1515,10 +1550,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, oldRefersToAbstractDataAttribute,
                     newRefersToAbstractDataAttribute, !oldRefersToAbstractDataAttributeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1532,22 +1569,27 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     public void setRefersToAbstractDataAttribute( AbstractDataAttribute newRefersToAbstractDataAttribute ) {
         if( newRefersToAbstractDataAttribute != refersToAbstractDataAttribute ) {
             NotificationChain msgs = null;
-            if( refersToAbstractDataAttribute != null )
+            if( refersToAbstractDataAttribute != null ) {
                 msgs = ( ( InternalEObject ) refersToAbstractDataAttribute ).eInverseRemove( this,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, AbstractDataAttribute.class, msgs );
-            if( newRefersToAbstractDataAttribute != null )
+            }
+            if( newRefersToAbstractDataAttribute != null ) {
                 msgs = ( ( InternalEObject ) newRefersToAbstractDataAttribute ).eInverseAdd( this,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, AbstractDataAttribute.class, msgs );
+            }
             msgs = basicSetRefersToAbstractDataAttribute( newRefersToAbstractDataAttribute, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
             refersToAbstractDataAttributeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, newRefersToAbstractDataAttribute,
                         newRefersToAbstractDataAttribute, !oldRefersToAbstractDataAttributeESet ) );
+            }
         }
     }
 
@@ -1565,10 +1607,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, oldRefersToAbstractDataAttribute, null,
                     oldRefersToAbstractDataAttributeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1585,15 +1629,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             msgs = ( ( InternalEObject ) refersToAbstractDataAttribute ).eInverseRemove( this,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, AbstractDataAttribute.class, msgs );
             msgs = basicUnsetRefersToAbstractDataAttribute( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
             refersToAbstractDataAttributeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, null, null,
                         oldRefersToAbstractDataAttributeESet ) );
+            }
         }
     }
 
@@ -1632,10 +1679,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, oldRefersToAbstractDataObject,
                     newRefersToAbstractDataObject, !oldRefersToAbstractDataObjectESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1649,22 +1698,27 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     public void setRefersToAbstractDataObject( AbstractDataObject newRefersToAbstractDataObject ) {
         if( newRefersToAbstractDataObject != refersToAbstractDataObject ) {
             NotificationChain msgs = null;
-            if( refersToAbstractDataObject != null )
+            if( refersToAbstractDataObject != null ) {
                 msgs = ( ( InternalEObject ) refersToAbstractDataObject ).eInverseRemove( this,
                         SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs );
-            if( newRefersToAbstractDataObject != null )
+            }
+            if( newRefersToAbstractDataObject != null ) {
                 msgs = ( ( InternalEObject ) newRefersToAbstractDataObject ).eInverseAdd( this,
                         SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs );
+            }
             msgs = basicSetRefersToAbstractDataObject( newRefersToAbstractDataObject, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAbstractDataObjectESet = refersToAbstractDataObjectESet;
             refersToAbstractDataObjectESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, newRefersToAbstractDataObject,
                         newRefersToAbstractDataObject, !oldRefersToAbstractDataObjectESet ) );
+            }
         }
     }
 
@@ -1682,10 +1736,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, oldRefersToAbstractDataObject, null,
                     oldRefersToAbstractDataObjectESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1702,15 +1758,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             msgs = ( ( InternalEObject ) refersToAbstractDataObject ).eInverseRemove( this,
                     SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs );
             msgs = basicUnsetRefersToAbstractDataObject( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAbstractDataObjectESet = refersToAbstractDataObjectESet;
             refersToAbstractDataObjectESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, null, null,
                         oldRefersToAbstractDataObjectESet ) );
+            }
         }
     }
 
@@ -1745,9 +1804,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__DESC, oldDesc, desc,
                     !oldDescESet ) );
+        }
     }
 
     /**
@@ -1761,9 +1821,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__DESC, oldDesc, DESC_EDEFAULT,
                     oldDescESet ) );
+        }
     }
 
     /**
@@ -1797,9 +1858,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         pServT = newPServT == null ? PSERV_T_EDEFAULT : newPServT;
         boolean oldPServTESet = pServTESet;
         pServTESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PSERV_T, oldPServT, pServT,
                     !oldPServTESet ) );
+        }
     }
 
     /**
@@ -1813,9 +1875,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldPServTESet = pServTESet;
         pServT = PSERV_T_EDEFAULT;
         pServTESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PSERV_T, oldPServT,
                     PSERV_T_EDEFAULT, oldPServTESet ) );
+        }
     }
 
     /**
@@ -1849,9 +1912,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         pLN = newPLN;
         boolean oldPLNESet = pLNESet;
         pLNESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PLN, oldPLN, pLN,
                     !oldPLNESet ) );
+        }
     }
 
     /**
@@ -1865,9 +1929,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldPLNESet = pLNESet;
         pLN = PLN_EDEFAULT;
         pLNESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PLN, oldPLN, PLN_EDEFAULT,
                     oldPLNESet ) );
+        }
     }
 
     /**
@@ -1901,9 +1966,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         pDO = newPDO;
         boolean oldPDOESet = pDOESet;
         pDOESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PDO, oldPDO, pDO,
                     !oldPDOESet ) );
+        }
     }
 
     /**
@@ -1917,9 +1983,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldPDOESet = pDOESet;
         pDO = PDO_EDEFAULT;
         pDOESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PDO, oldPDO, PDO_EDEFAULT,
                     oldPDOESet ) );
+        }
     }
 
     /**
@@ -1953,9 +2020,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         pDA = newPDA;
         boolean oldPDAESet = pDAESet;
         pDAESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PDA, oldPDA, pDA,
                     !oldPDAESet ) );
+        }
     }
 
     /**
@@ -1969,9 +2037,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         boolean oldPDAESet = pDAESet;
         pDA = PDA_EDEFAULT;
         pDAESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PDA, oldPDA, PDA_EDEFAULT,
                     oldPDAESet ) );
+        }
     }
 
     /**
@@ -2008,10 +2077,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.EXT_REF__REFERS_TO_CONTROL, oldRefersToControl, newRefersToControl,
                     !oldRefersToControlESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -2025,21 +2096,26 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     public void setRefersToControl( Control newRefersToControl ) {
         if( newRefersToControl != refersToControl ) {
             NotificationChain msgs = null;
-            if( refersToControl != null )
+            if( refersToControl != null ) {
                 msgs = ( ( InternalEObject ) refersToControl ).eInverseRemove( this,
                         SclPackage.CONTROL__REFERRED_BY_EXT_REF, Control.class, msgs );
-            if( newRefersToControl != null )
+            }
+            if( newRefersToControl != null ) {
                 msgs = ( ( InternalEObject ) newRefersToControl ).eInverseAdd( this,
                         SclPackage.CONTROL__REFERRED_BY_EXT_REF, Control.class, msgs );
+            }
             msgs = basicSetRefersToControl( newRefersToControl, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToControlESet = refersToControlESet;
             refersToControlESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_CONTROL,
                         newRefersToControl, newRefersToControl, !oldRefersToControlESet ) );
+            }
         }
     }
 
@@ -2056,10 +2132,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.EXT_REF__REFERS_TO_CONTROL, oldRefersToControl, null, oldRefersToControlESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -2076,14 +2154,17 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             msgs = ( ( InternalEObject ) refersToControl ).eInverseRemove( this,
                     SclPackage.CONTROL__REFERRED_BY_EXT_REF, Control.class, msgs );
             msgs = basicUnsetRefersToControl( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToControlESet = refersToControlESet;
             refersToControlESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_CONTROL, null,
                         null, oldRefersToControlESet ) );
+            }
         }
     }
 
@@ -2106,23 +2187,27 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.EXT_REF__PARENT_INPUTS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentInputs( ( Inputs ) otherEnd, msgs );
         case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-            if( refersToAbstractDataAttribute != null )
+            if( refersToAbstractDataAttribute != null ) {
                 msgs = ( ( InternalEObject ) refersToAbstractDataAttribute ).eInverseRemove( this,
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, AbstractDataAttribute.class, msgs );
+            }
             return basicSetRefersToAbstractDataAttribute( ( AbstractDataAttribute ) otherEnd, msgs );
         case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
-            if( refersToAbstractDataObject != null )
+            if( refersToAbstractDataObject != null ) {
                 msgs = ( ( InternalEObject ) refersToAbstractDataObject ).eInverseRemove( this,
                         SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs );
+            }
             return basicSetRefersToAbstractDataObject( ( AbstractDataObject ) otherEnd, msgs );
         case SclPackage.EXT_REF__REFERS_TO_CONTROL:
-            if( refersToControl != null )
+            if( refersToControl != null ) {
                 msgs = ( ( InternalEObject ) refersToControl ).eInverseRemove( this,
                         SclPackage.CONTROL__REFERRED_BY_EXT_REF, Control.class, msgs );
+            }
             return basicSetRefersToControl( ( Control ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -2483,104 +2568,144 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (desc: " );
-        if( descESet )
+        if( descESet ) {
             result.append( desc );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", daName: " );
-        if( daNameESet )
+        if( daNameESet ) {
             result.append( daName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", doName: " );
-        if( doNameESet )
+        if( doNameESet ) {
             result.append( doName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", iedName: " );
-        if( iedNameESet )
+        if( iedNameESet ) {
             result.append( iedName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", intAddr: " );
-        if( intAddrESet )
+        if( intAddrESet ) {
             result.append( intAddr );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldInst: " );
-        if( ldInstESet )
+        if( ldInstESet ) {
             result.append( ldInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnInst: " );
-        if( lnInstESet )
+        if( lnInstESet ) {
             result.append( lnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prefix: " );
-        if( prefixESet )
+        if( prefixESet ) {
             result.append( prefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", serviceType: " );
-        if( serviceTypeESet )
+        if( serviceTypeESet ) {
             result.append( serviceType );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", srcCBName: " );
-        if( srcCBNameESet )
+        if( srcCBNameESet ) {
             result.append( srcCBName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", srcLDInst: " );
-        if( srcLDInstESet )
+        if( srcLDInstESet ) {
             result.append( srcLDInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", srcLNClass: " );
-        if( srcLNClassESet )
+        if( srcLNClassESet ) {
             result.append( srcLNClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", srcLNInst: " );
-        if( srcLNInstESet )
+        if( srcLNInstESet ) {
             result.append( srcLNInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", srcPrefix: " );
-        if( srcPrefixESet )
+        if( srcPrefixESet ) {
             result.append( srcPrefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", pServT: " );
-        if( pServTESet )
+        if( pServTESet ) {
             result.append( pServT );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", pLN: " );
-        if( pLNESet )
+        if( pLNESet ) {
             result.append( pLN );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", pDO: " );
-        if( pDOESet )
+        if( pDOESet ) {
             result.append( pDO );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", pDA: " );
-        if( pDAESet )
+        if( pDAESet ) {
             result.append( pDA );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -2648,12 +2773,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 ied.getLeft().getLineNumber() );
 
         // Only now so that we can give back ied
-        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "ldInst is missing" );
-            return Pair.of( ied.getLeft(), null );
-        }
-        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
+        if( ( getLdInst() == null ) || getLdInst().isEmpty() || ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "lnClass is missing" );
             return Pair.of( ied.getLeft(), null );
@@ -2677,7 +2797,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         String mess = " LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
+            if( getPrefix() != "" ) {
+                mess += ", prefix = " + getPrefix();
+            }
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
@@ -2692,7 +2814,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         anyLN.getLeft().buildExplicitLinks( console, false );
 
         // No error or warning message here: if this happens, error should have been detected before
-        if( anyLN.getLeft().getRefersToLNodeType() == null ) return finalRes;
+        if( anyLN.getLeft().getRefersToLNodeType() == null ) {
+            return finalRes;
+        }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LNodeType on line ",
                 anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
@@ -2727,7 +2851,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         for( int i = 1; i < doNames.length; ++i ) {
             DOType doType = ado.getRefersToDOType();
-            if( doType == null ) return finalRes;
+            if( doType == null ) {
+                return finalRes;
+            }
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found DOType on line ", doType.getLineNumber() );
             String name = doNames[i];
@@ -2761,7 +2887,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         DOType doType = ado.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
-        if( doType == null ) return finalRes;
+        if( doType == null ) {
+            return finalRes;
+        }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found DOType on line ", doType.getLineNumber() );
 
@@ -2832,7 +2960,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         IED ied = args.getLeft();
         LDevice lDevice = args.getRight();
 
-        if( ied == null ) return;
+        if( ied == null ) {
+            return;
+        }
 
         if( ( getSrcCBName() == null ) || getSrcCBName().isEmpty() ) {
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2853,7 +2983,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     messagePrefix, "found LDevice( inst = ", getSrcLDInst(), " ) on line ",
                     lDevice.getLineNumber() );
         }
-        if( lDevice == null ) return;
+        if( lDevice == null ) {
+            return;
+        }
 
         String cbLNClass = "LLN0";
         if( ( getSrcLNClass() != null ) && ( !getSrcLNClass().isEmpty() ) ) {
@@ -2863,7 +2995,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         String mess = " LN( lnClass = " + cbLNClass;
         if( getSrcLNInst() != null ) {
             mess += ", inst = " + getSrcLNInst();
-            if( getSrcPrefix() != "" ) mess += ", prefix = " + getSrcPrefix();
+            if( getSrcPrefix() != "" ) {
+                mess += ", prefix = " + getSrcPrefix();
+            }
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
@@ -2903,6 +3037,45 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ExtRef refers to Control( name = ", getSrcCBName(), " ) on line ",
                 getRefersToControl().getLineNumber() );
+    }
+
+    @Override
+    public String getXpath() {
+        if( isSetIntAddr() && ( !getIntAddr().isEmpty() ) ) {
+            return getParentInputs().getXpath() + "/scl:ExtRef[@intaddr='" + getIntAddr() + "']";
+        }
+        String ldInstXpath = "";
+        if( isSetLdInst() ) {
+            ldInstXpath = "[@ldInst='" + getLdInst() + "']";
+        }
+        String lnClassXpath = "";
+        if( isSetLnClass() ) {
+            lnClassXpath = "[@lnClass='" + getLnClass() + "']";
+        }
+        String lnInstXpath = "";
+        if( isSetLnInst() ) {
+            lnInstXpath = "[@lnInst='" + getLnInst() + "']";
+        }
+        String prefixXpath = "";
+        if( !getPrefix().isEmpty() ) {
+            prefixXpath = "[@prefix='" + getPrefix() + "']";
+        }
+        String doNameXpath = "";
+        if( isSetDoName() ) {
+            doNameXpath = "[@doName='" + getDoName() + "']";
+        }
+        String daNameXpath = "";
+        if( isSetDaName() ) {
+            daNameXpath = "[@daName='" + getDaName() + "']";
+        }
+        return getParentInputs().getXpath() + "/scl:ExtRef"
+                + "[@iedName='" + getIedName() + "']"
+                + ldInstXpath
+                + prefixXpath
+                + lnClassXpath
+                + lnInstXpath
+                + doNameXpath
+                + daNameXpath;
     }
 
 } //ExtRefImpl

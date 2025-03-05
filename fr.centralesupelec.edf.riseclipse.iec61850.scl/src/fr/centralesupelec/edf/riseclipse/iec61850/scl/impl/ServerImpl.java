@@ -639,4 +639,9 @@ public class ServerImpl extends UnNamingImpl implements Server {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAccessPoint().getXpath() + "/scl:Server";
+    }
+
 } //ServerImpl

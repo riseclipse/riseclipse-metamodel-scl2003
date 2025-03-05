@@ -214,4 +214,9 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentLDevice().getXpath() + "/scl:AccessControl";
+    }
+
 } //AccessControlImpl

@@ -342,4 +342,9 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSettingGroups().getXpath() + "/scl:SGEdit";
+    }
+
 } //SGEditImpl

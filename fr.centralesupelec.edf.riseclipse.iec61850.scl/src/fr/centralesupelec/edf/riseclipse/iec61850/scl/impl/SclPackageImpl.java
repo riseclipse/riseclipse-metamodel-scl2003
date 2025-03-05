@@ -10581,6 +10581,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getSclObject_Xpath() {
+        return ( EAttribute ) getSclObject().getEStructuralFeatures().get( 3 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EOperation getSclObject__BuildExplicitLinks__IRiseClipseConsole_Boolean() {
         return getSclObject().getEOperations().get( 0 );
     }

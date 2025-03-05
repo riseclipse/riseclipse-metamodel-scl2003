@@ -741,4 +741,9 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentPowerTransformer().getXpath() + "/scl:TransformerWinding[@name='" + getName() + "']";
+    }
+
 } //TransformerWindingImpl

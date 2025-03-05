@@ -1011,4 +1011,9 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAnyLN().getXpath() + "/scl:ReportControl[@name='" + getName() + "']";
+    }
+
 } //ReportControlImpl

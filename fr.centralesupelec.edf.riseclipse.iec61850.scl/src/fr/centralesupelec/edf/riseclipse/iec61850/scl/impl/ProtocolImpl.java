@@ -399,4 +399,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentControlWithIEDName().getXpath() + "/scl:Protocol";
+    }
+
 } //ProtocolImpl

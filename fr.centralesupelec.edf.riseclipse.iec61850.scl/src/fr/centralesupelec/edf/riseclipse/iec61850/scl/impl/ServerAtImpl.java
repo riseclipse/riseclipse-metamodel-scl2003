@@ -515,4 +515,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
                 getRefersToAccessPoint().getLineNumber() );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAccessPoint().getXpath() + "/scl:ServerAt";
+    }
+
 } //ServerAtImpl

@@ -439,4 +439,9 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ConfLNs";
+    }
+
 } //ConfLNsImpl

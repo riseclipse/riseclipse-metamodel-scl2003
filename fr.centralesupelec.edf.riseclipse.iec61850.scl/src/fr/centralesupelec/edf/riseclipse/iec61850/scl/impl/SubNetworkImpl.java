@@ -545,4 +545,9 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentCommunication().getXpath() + "/scl:SubNetwork[@name='" + getName() + "']";
+    }
+
 } //SubNetworkImpl

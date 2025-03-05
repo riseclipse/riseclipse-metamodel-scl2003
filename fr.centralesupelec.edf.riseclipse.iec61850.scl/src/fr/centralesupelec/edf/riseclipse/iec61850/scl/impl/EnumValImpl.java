@@ -513,4 +513,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentEnumType().getXpath() + "/scl:EnumVal[@ord='" + getOrd() + "']";
+    }
+
 } //EnumValImpl

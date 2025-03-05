@@ -217,4 +217,9 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAbstractEqFuncSubFunc().getXpath() + "/scl:EqSubFunction[@name='" + getName() + "']";
+    }
+
 } //EqSubFunctionImpl

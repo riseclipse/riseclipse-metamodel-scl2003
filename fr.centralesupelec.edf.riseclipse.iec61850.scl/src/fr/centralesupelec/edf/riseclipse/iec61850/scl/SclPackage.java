@@ -114,13 +114,22 @@ public interface SclPackage extends EPackage {
     int SCL_OBJECT__FILENAME = 2;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_OBJECT__XPATH = 3;
+
+    /**
      * The number of structural features of the '<em>Object</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_OBJECT_FEATURE_COUNT = 3;
+    int SCL_OBJECT_FEATURE_COUNT = 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -176,6 +185,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_CONTENT_FROM_OTHER_NAMESPACE__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_CONTENT_FROM_OTHER_NAMESPACE__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -278,6 +296,15 @@ public interface SclPackage extends EPackage {
     int BASE_ELEMENT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_ELEMENT__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -376,6 +403,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HEADER__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HEADER__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -514,6 +550,15 @@ public interface SclPackage extends EPackage {
     int HISTORY__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HISTORY__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Header</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -594,6 +639,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HITEM__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HITEM__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -723,6 +777,15 @@ public interface SclPackage extends EPackage {
     int ID_NAMING__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ID_NAMING__XPATH = BASE_ELEMENT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -839,6 +902,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NAMING__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING__XPATH = BASE_ELEMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -975,6 +1047,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_CONTAINER__FILENAME = NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER__XPATH = NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1122,6 +1203,15 @@ public interface SclPackage extends EPackage {
     int POWER_SYSTEM_RESOURCE__FILENAME = LNODE_CONTAINER__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE__XPATH = LNODE_CONTAINER__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1265,6 +1355,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT_CONTAINER__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1428,6 +1527,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LINE__FILENAME = GENERAL_EQUIPMENT_CONTAINER__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__XPATH = GENERAL_EQUIPMENT_CONTAINER__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1665,6 +1773,15 @@ public interface SclPackage extends EPackage {
     int PRIVATE__FILENAME = ANY_CONTENT_FROM_OTHER_NAMESPACE__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE__XPATH = ANY_CONTENT_FROM_OTHER_NAMESPACE__XPATH;
+
+    /**
      * The feature id for the '<em><b>Mixed</b></em>' attribute list.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1799,6 +1916,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROCESS__FILENAME = GENERAL_EQUIPMENT_CONTAINER__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__XPATH = GENERAL_EQUIPMENT_CONTAINER__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -2027,6 +2153,15 @@ public interface SclPackage extends EPackage {
     int SCL__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL__XPATH = BASE_ELEMENT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2217,6 +2352,15 @@ public interface SclPackage extends EPackage {
     int TEXT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Source</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -2315,6 +2459,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ADDRESS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ADDRESS__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
@@ -3658,6 +3811,15 @@ public interface SclPackage extends EPackage {
     int UN_NAMING__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UN_NAMING__XPATH = BASE_ELEMENT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3755,6 +3917,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int COMMUNICATION__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMUNICATION__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3872,6 +4043,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_BLOCK__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4016,6 +4196,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTED_AP__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTED_AP__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4198,6 +4387,15 @@ public interface SclPackage extends EPackage {
     int GSE__FILENAME = CONTROL_BLOCK__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE__XPATH = CONTROL_BLOCK__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4369,6 +4567,15 @@ public interface SclPackage extends EPackage {
     int PADDR__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PADDR__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -4439,6 +4646,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int P__FILENAME = PADDR__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int P__XPATH = PADDR__XPATH;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -4522,6 +4738,15 @@ public interface SclPackage extends EPackage {
     int PPHYS_CONN__FILENAME = PADDR__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PPHYS_CONN__XPATH = PADDR__XPATH;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -4601,6 +4826,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PHYS_CONN__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PHYS_CONN__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4727,6 +4961,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV__FILENAME = CONTROL_BLOCK__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV__XPATH = CONTROL_BLOCK__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4880,6 +5123,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_NETWORK__FILENAME = NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK__XPATH = NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5042,6 +5294,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_ATTRIBUTE__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5267,6 +5528,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__FILENAME = ABSTRACT_DATA_ATTRIBUTE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__XPATH = ABSTRACT_DATA_ATTRIBUTE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5501,6 +5771,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__FILENAME = ABSTRACT_DATA_ATTRIBUTE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__XPATH = ABSTRACT_DATA_ATTRIBUTE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5782,6 +6061,15 @@ public interface SclPackage extends EPackage {
     int DA_TYPE__FILENAME = ID_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA_TYPE__XPATH = ID_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5945,6 +6233,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_OBJECT__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_OBJECT__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6078,6 +6375,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO__FILENAME = ABSTRACT_DATA_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO__XPATH = ABSTRACT_DATA_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6260,6 +6566,15 @@ public interface SclPackage extends EPackage {
     int DO_TYPE__FILENAME = ID_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE__XPATH = ID_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6431,6 +6746,15 @@ public interface SclPackage extends EPackage {
     int DATA_TYPE_TEMPLATES__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_TYPE_TEMPLATES__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>DA Type</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6528,6 +6852,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ENUM_TYPE__FILENAME = ID_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_TYPE__XPATH = ID_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6665,6 +6998,15 @@ public interface SclPackage extends EPackage {
     int ENUM_VAL__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_VAL__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6753,6 +7095,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_TYPE__FILENAME = ID_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__XPATH = ID_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6926,6 +7277,15 @@ public interface SclPackage extends EPackage {
     int PROT_NS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROT_NS__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7014,6 +7374,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDO__FILENAME = ABSTRACT_DATA_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO__XPATH = ABSTRACT_DATA_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7187,6 +7556,15 @@ public interface SclPackage extends EPackage {
     int VAL__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAL__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>SGroup</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7297,6 +7675,15 @@ public interface SclPackage extends EPackage {
     int ACCESS_CONTROL__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_CONTROL__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent LDevice</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7358,6 +7745,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ACCESS_POINT__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_POINT__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7583,6 +7979,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_LN__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7828,6 +8233,15 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION__XPATH = BASE_ELEMENT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8008,6 +8422,15 @@ public interface SclPackage extends EPackage {
     int AUTHENTICATION__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AUTHENTICATION__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Certificate</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8114,6 +8537,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CERTIFICATE__FILENAME = NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE__XPATH = NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -8278,6 +8710,15 @@ public interface SclPackage extends EPackage {
     int CLIENT_LN__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_LN__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8411,6 +8852,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CLIENT_SERVICES__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Buf Report</b></em>' attribute.
@@ -8620,6 +9070,15 @@ public interface SclPackage extends EPackage {
     int COMM_PROT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_PROT__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Ipv6</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8690,6 +9149,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8763,6 +9231,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__FILENAME = SERVICE_WITH_MAX__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__XPATH = SERVICE_WITH_MAX__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8847,6 +9324,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_FOR_CONF_DATA_SET__FILENAME = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_FOR_CONF_DATA_SET__XPATH = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8926,6 +9412,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_DATA_SET__FILENAME = SERVICE_FOR_CONF_DATA_SET__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_DATA_SET__XPATH = SERVICE_FOR_CONF_DATA_SET__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -9016,6 +9511,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LNS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LNS__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Fix Ln Inst</b></em>' attribute.
@@ -9109,6 +9613,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_YES_NO__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_YES_NO__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The number of structural features of the '<em>Service Yes No</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9161,6 +9674,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LD_NAME__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LD_NAME__XPATH = SERVICE_YES_NO__XPATH;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -9236,6 +9758,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_NON_ZERO__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_NON_ZERO__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9297,6 +9828,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LOG_CONTROL__FILENAME = SERVICE_WITH_MAX_NON_ZERO__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LOG_CONTROL__XPATH = SERVICE_WITH_MAX_NON_ZERO__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -9379,6 +9919,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_CONF_REPORT_CONTROL__FILENAME = SERVICE_WITH_MAX__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_CONF_REPORT_CONTROL__XPATH = SERVICE_WITH_MAX__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -9469,6 +10018,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_REPORT_CONTROL__FILENAME = SERVICE_CONF_REPORT_CONTROL__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_REPORT_CONTROL__XPATH = SERVICE_CONF_REPORT_CONTROL__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -9570,6 +10128,15 @@ public interface SclPackage extends EPackage {
     int CONF_SG__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SG__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Resv Tms</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9642,6 +10209,15 @@ public interface SclPackage extends EPackage {
     int CONF_SIG_REF__FILENAME = SERVICE_WITH_MAX_NON_ZERO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SIG_REF__XPATH = SERVICE_WITH_MAX_NON_ZERO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9712,6 +10288,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9856,6 +10441,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_WITH_IED_NAME__FILENAME = CONTROL__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME__XPATH = CONTROL__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10047,6 +10641,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_TRIGGER_OPT__FILENAME = CONTROL__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_TRIGGER_OPT__XPATH = CONTROL__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10207,6 +10810,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DAI__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAI__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10389,6 +11001,15 @@ public interface SclPackage extends EPackage {
     int DOI__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10560,6 +11181,15 @@ public interface SclPackage extends EPackage {
     int DATA_OBJECT_DIRECTORY__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_OBJECT_DIRECTORY__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10621,6 +11251,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_SET__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10758,6 +11397,15 @@ public interface SclPackage extends EPackage {
     int DATA_SET_DIRECTORY__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET_DIRECTORY__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10831,6 +11479,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_OPTIONAL_MAX__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_OPTIONAL_MAX__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10892,6 +11549,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_ASSOCIATION__FILENAME = SERVICE_WITH_OPTIONAL_MAX__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_ASSOCIATION__XPATH = SERVICE_WITH_OPTIONAL_MAX__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -10964,6 +11630,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_DATA_SET__FILENAME = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_DATA_SET__XPATH = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -11045,6 +11720,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EXT_REF__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__XPATH = BASE_ELEMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11344,6 +12028,15 @@ public interface SclPackage extends EPackage {
     int FCDA__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FCDA__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -11497,6 +12190,15 @@ public interface SclPackage extends EPackage {
     int FILE_HANDLING__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FILE_HANDLING__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Ftp</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -11585,6 +12287,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE__FILENAME = SERVICE_WITH_MAX__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE__XPATH = SERVICE_WITH_MAX__XPATH;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -11684,6 +12395,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE_SECURITY__FILENAME = CERTIFICATE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY__XPATH = CERTIFICATE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11855,6 +12575,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_CONTROL__FILENAME = CONTROL_WITH_IED_NAME__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__XPATH = CONTROL_WITH_IED_NAME__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12091,6 +12820,15 @@ public interface SclPackage extends EPackage {
     int GSE_DIR__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_DIR__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12152,6 +12890,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_SETTINGS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_SETTINGS__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -12224,6 +12971,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS__XPATH = SERVICE_SETTINGS__XPATH;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -12343,6 +13099,15 @@ public interface SclPackage extends EPackage {
     int GSSE__FILENAME = SERVICE_WITH_MAX__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSSE__XPATH = SERVICE_WITH_MAX__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -12415,6 +13180,15 @@ public interface SclPackage extends EPackage {
     int GET_CB_VALUES__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_CB_VALUES__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12476,6 +13250,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_DATA_OBJECT_DEFINITION__FILENAME = SERVICE_YES_NO__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_OBJECT_DEFINITION__XPATH = SERVICE_YES_NO__XPATH;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -12541,6 +13324,15 @@ public interface SclPackage extends EPackage {
     int GET_DATA_SET_VALUE__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_SET_VALUE__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12604,6 +13396,15 @@ public interface SclPackage extends EPackage {
     int GET_DIRECTORY__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DIRECTORY__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12665,6 +13466,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int IED__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12892,6 +13702,15 @@ public interface SclPackage extends EPackage {
     int IED_NAME__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED_NAME__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Ap Ref</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -13036,6 +13855,15 @@ public interface SclPackage extends EPackage {
     int INPUTS__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUTS__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13163,6 +13991,15 @@ public interface SclPackage extends EPackage {
     int CERT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERT__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13233,6 +14070,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ISSUER_NAME__FILENAME = CERT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ISSUER_NAME__XPATH = CERT__XPATH;
 
     /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
@@ -13314,6 +14160,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int KDC__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDC__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Ap Name</b></em>' attribute.
@@ -13404,6 +14259,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LDEVICE__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13593,6 +14457,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN__FILENAME = ANY_LN__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__XPATH = ANY_LN__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13874,6 +14747,15 @@ public interface SclPackage extends EPackage {
     int LN0__FILENAME = ANY_LN__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0__XPATH = ANY_LN__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14153,6 +15035,15 @@ public interface SclPackage extends EPackage {
     int LOG__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14277,6 +15168,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG_CONTROL__FILENAME = CONTROL_WITH_TRIGGER_OPT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL__XPATH = CONTROL_WITH_TRIGGER_OPT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14531,6 +15431,15 @@ public interface SclPackage extends EPackage {
     int LOG_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_SETTINGS__XPATH = SERVICE_SETTINGS__XPATH;
+
+    /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14637,6 +15546,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int OPT_FIELDS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPT_FIELDS__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Buf Ovfl</b></em>' attribute.
@@ -14774,6 +15692,15 @@ public interface SclPackage extends EPackage {
     int PROTOCOL__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROTOCOL__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Must Understand</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14855,6 +15782,15 @@ public interface SclPackage extends EPackage {
     int READ_WRITE__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int READ_WRITE__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14916,6 +15852,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int RED_PROT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RED_PROT__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Hsr</b></em>' attribute.
@@ -15006,6 +15951,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int REPORT_CONTROL__FILENAME = CONTROL_WITH_TRIGGER_OPT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_CONTROL__XPATH = CONTROL_WITH_TRIGGER_OPT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15242,6 +16196,15 @@ public interface SclPackage extends EPackage {
     int REPORT_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_SETTINGS__XPATH = SERVICE_SETTINGS__XPATH;
+
+    /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15386,6 +16349,15 @@ public interface SclPackage extends EPackage {
     int RPT_ENABLED__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RPT_ENABLED__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15510,6 +16482,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDI__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15701,6 +16682,15 @@ public interface SclPackage extends EPackage {
     int SG_EDIT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SG_EDIT__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Resv Tms</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15771,6 +16761,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SECURITY__FILENAME = CERTIFICATE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY__XPATH = CERTIFICATE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15942,6 +16941,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SETTINGS__FILENAME = SERVICE_SETTINGS__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__XPATH = SERVICE_SETTINGS__XPATH;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -16133,6 +17141,15 @@ public interface SclPackage extends EPackage {
     int SM_VSC__FILENAME = SERVICE_WITH_MAX__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC__XPATH = SERVICE_WITH_MAX__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16239,6 +17256,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLED_VALUE_CONTROL__FILENAME = CONTROL_WITH_IED_NAME__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL__XPATH = CONTROL_WITH_IED_NAME__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16502,6 +17528,15 @@ public interface SclPackage extends EPackage {
     int SERVER__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16646,6 +17681,15 @@ public interface SclPackage extends EPackage {
     int SERVER_AT__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER_AT__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16770,6 +17814,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICES__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICES__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Name Length</b></em>' attribute.
@@ -17150,6 +18203,15 @@ public interface SclPackage extends EPackage {
     int SET_DATA_SET_VALUE__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SET_DATA_SET_VALUE__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17211,6 +18273,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SETTING_CONTROL__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_CONTROL__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17348,6 +18419,15 @@ public interface SclPackage extends EPackage {
     int SETTING_GROUPS__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_GROUPS__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Conf SG</b></em>' containment reference.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -17427,6 +18507,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_OPTS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Data Set</b></em>' attribute.
@@ -17564,6 +18653,15 @@ public interface SclPackage extends EPackage {
     int SUBJECT__FILENAME = CERT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBJECT__XPATH = CERT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -17645,6 +18743,15 @@ public interface SclPackage extends EPackage {
     int SUP_SUBSCRIPTION__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUP_SUBSCRIPTION__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max Go</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -17724,6 +18831,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TIME_SYNC_PROT__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIME_SYNC_PROT__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>C37 238</b></em>' attribute.
@@ -17834,6 +18950,15 @@ public interface SclPackage extends EPackage {
     int TIMER_ACTIVATED_CONTROL__FILENAME = SERVICE_YES_NO__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIMER_ACTIVATED_CONTROL__XPATH = SERVICE_YES_NO__XPATH;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17895,6 +19020,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRG_OPS__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRG_OPS__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -18005,6 +19139,15 @@ public interface SclPackage extends EPackage {
     int VALUE_HANDLING__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_HANDLING__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Set To RO</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -18075,6 +19218,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -18219,6 +19371,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_CONDUCTING_EQUIPMENT__FILENAME = EQUIPMENT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT__XPATH = EQUIPMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -18383,6 +19544,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_EQ_FUNC_SUB_FUNC__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18545,6 +19715,15 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT_CONTAINER__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18696,6 +19875,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BAY__FILENAME = EQUIPMENT_CONTAINER__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY__XPATH = EQUIPMENT_CONTAINER__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -18885,6 +20073,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONDUCTING_EQUIPMENT__FILENAME = ABSTRACT_CONDUCTING_EQUIPMENT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT__XPATH = ABSTRACT_CONDUCTING_EQUIPMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -19112,6 +20309,15 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__FILENAME = LNODE_CONTAINER__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE__XPATH = LNODE_CONTAINER__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19281,6 +20487,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_FUNCTION__FILENAME = ABSTRACT_EQ_FUNC_SUB_FUNC__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION__XPATH = ABSTRACT_EQ_FUNC_SUB_FUNC__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -19499,6 +20714,15 @@ public interface SclPackage extends EPackage {
     int EQ_SUB_FUNCTION__FILENAME = ABSTRACT_EQ_FUNC_SUB_FUNC__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION__XPATH = ABSTRACT_EQ_FUNC_SUB_FUNC__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19668,6 +20892,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FUNCTION__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -19877,6 +21110,15 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT__FILENAME = EQUIPMENT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT__XPATH = EQUIPMENT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20084,6 +21326,15 @@ public interface SclPackage extends EPackage {
     int LNODE__FILENAME = UN_NAMING__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE__XPATH = UN_NAMING__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20262,6 +21513,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TERMINAL__FILENAME = UN_NAMING__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TERMINAL__XPATH = UN_NAMING__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -20451,6 +21711,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NEUTRAL_POINT__FILENAME = TERMINAL__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEUTRAL_POINT__XPATH = TERMINAL__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -20651,6 +21920,15 @@ public interface SclPackage extends EPackage {
     int POWER_TRANSFORMER__FILENAME = EQUIPMENT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER__XPATH = EQUIPMENT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20838,6 +22116,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_EQUIPMENT__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -21029,6 +22316,15 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21216,6 +22512,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUBSTATION__FILENAME = EQUIPMENT_CONTAINER__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION__XPATH = EQUIPMENT_CONTAINER__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -21407,6 +22712,15 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER__FILENAME = POWER_SYSTEM_RESOURCE__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__XPATH = POWER_SYSTEM_RESOURCE__XPATH;
+
+    /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21585,6 +22899,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRANSFORMER_WINDING__FILENAME = ABSTRACT_CONDUCTING_EQUIPMENT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING__XPATH = ABSTRACT_CONDUCTING_EQUIPMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -21804,6 +23127,15 @@ public interface SclPackage extends EPackage {
     int VALUE_WITH_UNIT__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_WITH_UNIT__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21883,6 +23215,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE__FILENAME = VALUE_WITH_UNIT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE__XPATH = VALUE_WITH_UNIT__XPATH;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -21982,6 +23323,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE_LEVEL__FILENAME = EQUIPMENT_CONTAINER__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL__XPATH = EQUIPMENT_CONTAINER__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -22201,6 +23551,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_AND_MODIFY__FILENAME = SERVICE_WITH_MAX__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MODIFY__XPATH = SERVICE_WITH_MAX__XPATH;
+
+    /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22281,6 +23640,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DURATION_IN_SEC__FILENAME = VALUE_WITH_UNIT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_SEC__XPATH = VALUE_WITH_UNIT__XPATH;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -22364,6 +23732,15 @@ public interface SclPackage extends EPackage {
     int DURATION_IN_MILLI_SEC__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_MILLI_SEC__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22445,6 +23822,15 @@ public interface SclPackage extends EPackage {
     int BIT_RATE_IN_MB_PER_SEC__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE_IN_MB_PER_SEC__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22524,6 +23910,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MIN_TIME__FILENAME = DURATION_IN_MILLI_SEC__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_TIME__XPATH = DURATION_IN_MILLI_SEC__XPATH;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -22614,6 +24009,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MAX_TIME__FILENAME = DURATION_IN_MILLI_SEC__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MAX_TIME__XPATH = DURATION_IN_MILLI_SEC__XPATH;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -22716,6 +24120,15 @@ public interface SclPackage extends EPackage {
     int BIT_RATE__FILENAME = BIT_RATE_IN_MB_PER_SEC__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE__XPATH = BIT_RATE_IN_MB_PER_SEC__XPATH;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22816,6 +24229,15 @@ public interface SclPackage extends EPackage {
     int SMP_RATE__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMP_RATE__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22896,6 +24318,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLES_PER_SEC__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLES_PER_SEC__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -22980,6 +24411,15 @@ public interface SclPackage extends EPackage {
     int SEC_PER_SAMPLES__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SEC_PER_SAMPLES__XPATH = SCL_OBJECT__XPATH;
+
+    /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23060,6 +24500,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MC_SECURITY__FILENAME = SCL_OBJECT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Parent Client Services</b></em>' container reference.
@@ -33121,6 +34570,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getSclObject_Filename();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getXpath <em>Xpath</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Xpath</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getXpath()
+     * @see #getSclObject()
+     * @generated
+     */
+    EAttribute getSclObject_Xpath();
 
     /**
      * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, java.lang.Boolean) <em>Build Explicit Links</em>}' operation.

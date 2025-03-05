@@ -215,4 +215,9 @@ public class GetDataObjectDefinitionImpl extends ServiceYesNoImpl implements Get
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GetDataObjectDefinition";
+    }
+
 } //GetDataObjectDefinitionImpl

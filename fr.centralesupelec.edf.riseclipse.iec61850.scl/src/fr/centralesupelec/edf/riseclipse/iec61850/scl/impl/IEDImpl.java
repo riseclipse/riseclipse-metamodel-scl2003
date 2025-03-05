@@ -1606,4 +1606,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentSCL().getIED().size() == 1 ) {
+            return getParentSCL().getXpath() + "/scl:IED";
+        }
+        return getParentSCL().getXpath() + "/scl:IED[@name='" + getName() + "']";
+    }
+
 } //IEDImpl

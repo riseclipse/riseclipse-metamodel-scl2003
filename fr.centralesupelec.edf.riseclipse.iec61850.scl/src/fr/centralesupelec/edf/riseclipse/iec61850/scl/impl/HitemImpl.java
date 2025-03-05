@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -265,9 +265,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         revision = newRevision;
         boolean oldRevisionESet = revisionESet;
         revisionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__REVISION, oldRevision, revision,
                     !oldRevisionESet ) );
+        }
     }
 
     /**
@@ -281,9 +282,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         boolean oldRevisionESet = revisionESet;
         revision = REVISION_EDEFAULT;
         revisionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__REVISION, oldRevision,
                     REVISION_EDEFAULT, oldRevisionESet ) );
+        }
     }
 
     /**
@@ -317,9 +319,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         version = newVersion;
         boolean oldVersionESet = versionESet;
         versionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__VERSION, oldVersion, version,
                     !oldVersionESet ) );
+        }
     }
 
     /**
@@ -333,9 +336,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         boolean oldVersionESet = versionESet;
         version = VERSION_EDEFAULT;
         versionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__VERSION, oldVersion,
                     VERSION_EDEFAULT, oldVersionESet ) );
+        }
     }
 
     /**
@@ -369,9 +373,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         what = newWhat;
         boolean oldWhatESet = whatESet;
         whatESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__WHAT, oldWhat, what,
                     !oldWhatESet ) );
+        }
     }
 
     /**
@@ -385,9 +390,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         boolean oldWhatESet = whatESet;
         what = WHAT_EDEFAULT;
         whatESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__WHAT, oldWhat, WHAT_EDEFAULT,
                     oldWhatESet ) );
+        }
     }
 
     /**
@@ -421,9 +427,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         when = newWhen;
         boolean oldWhenESet = whenESet;
         whenESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__WHEN, oldWhen, when,
                     !oldWhenESet ) );
+        }
     }
 
     /**
@@ -437,9 +444,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         boolean oldWhenESet = whenESet;
         when = WHEN_EDEFAULT;
         whenESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__WHEN, oldWhen, WHEN_EDEFAULT,
                     oldWhenESet ) );
+        }
     }
 
     /**
@@ -473,8 +481,9 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         who = newWho;
         boolean oldWhoESet = whoESet;
         whoESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__WHO, oldWho, who, !oldWhoESet ) );
+        }
     }
 
     /**
@@ -488,9 +497,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         boolean oldWhoESet = whoESet;
         who = WHO_EDEFAULT;
         whoESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__WHO, oldWho, WHO_EDEFAULT,
                     oldWhoESet ) );
+        }
     }
 
     /**
@@ -524,8 +534,9 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         why = newWhy;
         boolean oldWhyESet = whyESet;
         whyESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__WHY, oldWhy, why, !oldWhyESet ) );
+        }
     }
 
     /**
@@ -539,9 +550,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         boolean oldWhyESet = whyESet;
         why = WHY_EDEFAULT;
         whyESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__WHY, oldWhy, WHY_EDEFAULT,
                     oldWhyESet ) );
+        }
     }
 
     /**
@@ -561,7 +573,9 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      */
     @Override
     public History getParentHistory() {
-        if( eContainerFeatureID() != SclPackage.HITEM__PARENT_HISTORY ) return null;
+        if( eContainerFeatureID() != SclPackage.HITEM__PARENT_HISTORY ) {
+            return null;
+        }
         return ( History ) eInternalContainer();
     }
 
@@ -584,20 +598,26 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
     public void setParentHistory( History newParentHistory ) {
         if( newParentHistory != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.HITEM__PARENT_HISTORY && newParentHistory != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentHistory ) )
+            if( EcoreUtil.isAncestor( this, newParentHistory ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentHistory != null )
+            }
+            if( newParentHistory != null ) {
                 msgs = ( ( InternalEObject ) newParentHistory ).eInverseAdd( this, SclPackage.HISTORY__HITEM,
                         History.class, msgs );
+            }
             msgs = basicSetParentHistory( newParentHistory, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__PARENT_HISTORY, newParentHistory,
                     newParentHistory ) );
+        }
     }
 
     /**
@@ -609,8 +629,9 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.HITEM__PARENT_HISTORY:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentHistory( ( History ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -769,41 +790,61 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (revision: " );
-        if( revisionESet )
+        if( revisionESet ) {
             result.append( revision );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", version: " );
-        if( versionESet )
+        if( versionESet ) {
             result.append( version );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", what: " );
-        if( whatESet )
+        if( whatESet ) {
             result.append( what );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", when: " );
-        if( whenESet )
+        if( whenESet ) {
             result.append( when );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", who: " );
-        if( whoESet )
+        if( whoESet ) {
             result.append( who );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", why: " );
-        if( whyESet )
+        if( whyESet ) {
             result.append( why );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getXpath() {
+        return getParentHistory().getXpath() + "/scl:Hitem[@version='" + getVersion() + "'][@revision='" + getRevision()
+                + "']";
     }
 
 } //HitemImpl

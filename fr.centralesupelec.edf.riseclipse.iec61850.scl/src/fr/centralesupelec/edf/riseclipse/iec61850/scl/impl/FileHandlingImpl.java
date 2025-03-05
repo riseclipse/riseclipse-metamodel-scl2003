@@ -543,4 +543,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:FileHandling";
+    }
+
 } //FileHandlingImpl

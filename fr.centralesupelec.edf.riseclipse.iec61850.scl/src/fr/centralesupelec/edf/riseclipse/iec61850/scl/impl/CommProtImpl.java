@@ -338,4 +338,9 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:CommProt";
+    }
+
 } //CommProtImpl

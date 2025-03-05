@@ -215,4 +215,9 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentCertificate().getXpath() + "/scl:IssuerName";
+    }
+
 } //IssuerNameImpl

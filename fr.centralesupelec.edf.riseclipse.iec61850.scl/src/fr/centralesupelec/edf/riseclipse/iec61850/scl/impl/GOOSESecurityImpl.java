@@ -215,4 +215,9 @@ public class GOOSESecurityImpl extends CertificateImpl implements GOOSESecurity 
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAccessPoint().getXpath() + "/scl:GOOSESecurity[@name='" + getName() + "']";
+    }
+
 } //GOOSESecurityImpl

@@ -215,4 +215,9 @@ public class SubjectImpl extends CertImpl implements Subject {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentCertificate().getXpath() + "/scl:Subject";
+    }
+
 } //SubjectImpl

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -139,9 +140,10 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -155,9 +157,10 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GENERAL_EQUIPMENT__TYPE, oldType,
                     TYPE_EDEFAULT, oldTypeESet ) );
+        }
     }
 
     /**
@@ -177,7 +180,9 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public AbstractEqFuncSubFunc getParentAbstractEqFuncSubFunc() {
-        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC ) return null;
+        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC ) {
+            return null;
+        }
         return ( AbstractEqFuncSubFunc ) eInternalContainer();
     }
 
@@ -203,22 +208,28 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         if( newParentAbstractEqFuncSubFunc != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC
                         && newParentAbstractEqFuncSubFunc != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAbstractEqFuncSubFunc ) )
+            if( EcoreUtil.isAncestor( this, newParentAbstractEqFuncSubFunc ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAbstractEqFuncSubFunc != null )
+            }
+            if( newParentAbstractEqFuncSubFunc != null ) {
                 msgs = ( ( InternalEObject ) newParentAbstractEqFuncSubFunc ).eInverseAdd( this,
                         SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, AbstractEqFuncSubFunc.class,
                         msgs );
+            }
             msgs = basicSetParentAbstractEqFuncSubFunc( newParentAbstractEqFuncSubFunc, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC, newParentAbstractEqFuncSubFunc,
                     newParentAbstractEqFuncSubFunc ) );
+        }
     }
 
     /**
@@ -229,7 +240,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
     @Override
     public EList< EqFunction > getEqFunction() {
         if( eqFunction == null ) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< EqFunction >( EqFunction.class, this,
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< >( EqFunction.class, this,
                     SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT );
         }
         return eqFunction;
@@ -242,7 +253,9 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public void unsetEqFunction() {
-        if( eqFunction != null ) ( ( InternalEList.Unsettable< ? > ) eqFunction ).unset();
+        if( eqFunction != null ) {
+            ( ( InternalEList.Unsettable< ? > ) eqFunction ).unset();
+        }
     }
 
     /**
@@ -262,7 +275,9 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public EquipmentContainer getParentEquipmentContainer() {
-        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER ) return null;
+        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER ) {
+            return null;
+        }
         return ( EquipmentContainer ) eInternalContainer();
     }
 
@@ -288,21 +303,27 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         if( newParentEquipmentContainer != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER
                         && newParentEquipmentContainer != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentEquipmentContainer ) )
+            if( EcoreUtil.isAncestor( this, newParentEquipmentContainer ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentEquipmentContainer != null )
+            }
+            if( newParentEquipmentContainer != null ) {
                 msgs = ( ( InternalEObject ) newParentEquipmentContainer ).eInverseAdd( this,
                         SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, EquipmentContainer.class, msgs );
+            }
             msgs = basicSetParentEquipmentContainer( newParentEquipmentContainer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER, newParentEquipmentContainer,
                     newParentEquipmentContainer ) );
+        }
     }
 
     /**
@@ -312,7 +333,9 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public Function getParentFunction() {
-        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION ) return null;
+        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION ) {
+            return null;
+        }
         return ( Function ) eInternalContainer();
     }
 
@@ -337,20 +360,26 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         if( newParentFunction != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION
                         && newParentFunction != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentFunction ) )
+            if( EcoreUtil.isAncestor( this, newParentFunction ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentFunction != null )
+            }
+            if( newParentFunction != null ) {
                 msgs = ( ( InternalEObject ) newParentFunction ).eInverseAdd( this,
                         SclPackage.FUNCTION__GENERAL_EQUIPMENT, Function.class, msgs );
+            }
             msgs = basicSetParentFunction( newParentFunction, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION,
                     newParentFunction, newParentFunction ) );
+        }
     }
 
     /**
@@ -360,7 +389,9 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public GeneralEquipmentContainer getParentGeneralEquipmentContainer() {
-        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER ) return null;
+        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER ) {
+            return null;
+        }
         return ( GeneralEquipmentContainer ) eInternalContainer();
     }
 
@@ -386,22 +417,28 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         if( newParentGeneralEquipmentContainer != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER
                         && newParentGeneralEquipmentContainer != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentGeneralEquipmentContainer ) )
+            if( EcoreUtil.isAncestor( this, newParentGeneralEquipmentContainer ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentGeneralEquipmentContainer != null )
+            }
+            if( newParentGeneralEquipmentContainer != null ) {
                 msgs = ( ( InternalEObject ) newParentGeneralEquipmentContainer ).eInverseAdd( this,
                         SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, GeneralEquipmentContainer.class,
                         msgs );
+            }
             msgs = basicSetParentGeneralEquipmentContainer( newParentGeneralEquipmentContainer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER,
                     newParentGeneralEquipmentContainer, newParentGeneralEquipmentContainer ) );
+        }
     }
 
     /**
@@ -411,7 +448,9 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public SubFunction getParentSubFunction() {
-        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION ) return null;
+        if( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION ) {
+            return null;
+        }
         return ( SubFunction ) eInternalContainer();
     }
 
@@ -436,20 +475,26 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         if( newParentSubFunction != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION
                         && newParentSubFunction != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSubFunction ) )
+            if( EcoreUtil.isAncestor( this, newParentSubFunction ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSubFunction != null )
+            }
+            if( newParentSubFunction != null ) {
                 msgs = ( ( InternalEObject ) newParentSubFunction ).eInverseAdd( this,
                         SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SubFunction.class, msgs );
+            }
             msgs = basicSetParentSubFunction( newParentSubFunction, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION,
                     newParentSubFunction, newParentSubFunction ) );
+        }
     }
 
     /**
@@ -462,27 +507,32 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAbstractEqFuncSubFunc( ( AbstractEqFuncSubFunc ) otherEnd, msgs );
         case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getEqFunction() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentEquipmentContainer( ( EquipmentContainer ) otherEnd, msgs );
         case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentFunction( ( Function ) otherEnd, msgs );
         case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentGeneralEquipmentContainer( ( GeneralEquipmentContainer ) otherEnd, msgs );
         case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSubFunction( ( SubFunction ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -666,16 +716,41 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentAbstractEqFuncSubFunc() != null ) {
+            parentXpath = getParentAbstractEqFuncSubFunc().getXpath();
+        }
+        if( getParentEquipmentContainer() != null ) {
+            parentXpath = getParentEquipmentContainer().getXpath();
+        }
+        if( getParentFunction() != null ) {
+            parentXpath = getParentFunction().getXpath();
+        }
+        if( getParentGeneralEquipmentContainer() != null ) {
+            parentXpath = getParentGeneralEquipmentContainer().getXpath();
+        }
+        if( getParentSubFunction() != null ) {
+            parentXpath = getParentSubFunction().getXpath();
+        }
+        return parentXpath + "/scl:GeneralEquipment[@name='" + getName() + "']";
     }
 
 } //GeneralEquipmentImpl

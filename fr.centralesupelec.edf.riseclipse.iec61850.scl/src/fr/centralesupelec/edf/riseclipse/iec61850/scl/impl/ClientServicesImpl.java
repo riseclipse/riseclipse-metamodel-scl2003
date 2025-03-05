@@ -1981,4 +1981,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ClientServices";
+    }
+
 } //ClientServicesImpl

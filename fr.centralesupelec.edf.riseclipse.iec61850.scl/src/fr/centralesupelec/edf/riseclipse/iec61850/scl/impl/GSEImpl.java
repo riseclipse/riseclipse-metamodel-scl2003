@@ -129,10 +129,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.GSE__MAX_TIME,
                     oldMaxTime, newMaxTime, !oldMaxTimeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -146,21 +148,26 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     public void setMaxTime( MaxTime newMaxTime ) {
         if( newMaxTime != maxTime ) {
             NotificationChain msgs = null;
-            if( maxTime != null )
+            if( maxTime != null ) {
                 msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this, SclPackage.MAX_TIME__PARENT_GSE,
                         MaxTime.class, msgs );
-            if( newMaxTime != null )
+            }
+            if( newMaxTime != null ) {
                 msgs = ( ( InternalEObject ) newMaxTime ).eInverseAdd( this, SclPackage.MAX_TIME__PARENT_GSE,
                         MaxTime.class, msgs );
+            }
             msgs = basicSetMaxTime( newMaxTime, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldMaxTimeESet = maxTimeESet;
             maxTimeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE__MAX_TIME, newMaxTime,
                         newMaxTime, !oldMaxTimeESet ) );
+            }
         }
     }
 
@@ -177,10 +184,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE__MAX_TIME,
                     oldMaxTime, null, oldMaxTimeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -197,14 +206,17 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
             msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this, SclPackage.MAX_TIME__PARENT_GSE, MaxTime.class,
                     msgs );
             msgs = basicUnsetMaxTime( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldMaxTimeESet = maxTimeESet;
             maxTimeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE__MAX_TIME, null, null,
                         oldMaxTimeESet ) );
+            }
         }
     }
 
@@ -225,7 +237,9 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        if( eContainerFeatureID() != SclPackage.GSE__PARENT_CONNECTED_AP ) return null;
+        if( eContainerFeatureID() != SclPackage.GSE__PARENT_CONNECTED_AP ) {
+            return null;
+        }
         return ( ConnectedAP ) eInternalContainer();
     }
 
@@ -249,20 +263,26 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     public void setParentConnectedAP( ConnectedAP newParentConnectedAP ) {
         if( newParentConnectedAP != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.GSE__PARENT_CONNECTED_AP && newParentConnectedAP != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentConnectedAP ) )
+            if( EcoreUtil.isAncestor( this, newParentConnectedAP ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentConnectedAP != null )
+            }
+            if( newParentConnectedAP != null ) {
                 msgs = ( ( InternalEObject ) newParentConnectedAP ).eInverseAdd( this, SclPackage.CONNECTED_AP__GSE,
                         ConnectedAP.class, msgs );
+            }
             msgs = basicSetParentConnectedAP( newParentConnectedAP, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE__PARENT_CONNECTED_AP,
                     newParentConnectedAP, newParentConnectedAP ) );
+        }
     }
 
     /**
@@ -288,10 +308,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.GSE__MIN_TIME,
                     oldMinTime, newMinTime, !oldMinTimeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -305,21 +327,26 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     public void setMinTime( MinTime newMinTime ) {
         if( newMinTime != minTime ) {
             NotificationChain msgs = null;
-            if( minTime != null )
+            if( minTime != null ) {
                 msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this, SclPackage.MIN_TIME__PARENT_GSE,
                         MinTime.class, msgs );
-            if( newMinTime != null )
+            }
+            if( newMinTime != null ) {
                 msgs = ( ( InternalEObject ) newMinTime ).eInverseAdd( this, SclPackage.MIN_TIME__PARENT_GSE,
                         MinTime.class, msgs );
+            }
             msgs = basicSetMinTime( newMinTime, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldMinTimeESet = minTimeESet;
             minTimeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.GSE__MIN_TIME, newMinTime,
                         newMinTime, !oldMinTimeESet ) );
+            }
         }
     }
 
@@ -336,10 +363,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE__MIN_TIME,
                     oldMinTime, null, oldMinTimeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -356,14 +385,17 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
             msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this, SclPackage.MIN_TIME__PARENT_GSE, MinTime.class,
                     msgs );
             msgs = basicUnsetMinTime( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldMinTimeESet = minTimeESet;
             minTimeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.GSE__MIN_TIME, null, null,
                         oldMinTimeESet ) );
+            }
         }
     }
 
@@ -386,18 +418,21 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.GSE__MIN_TIME:
-            if( minTime != null )
+            if( minTime != null ) {
                 msgs = ( ( InternalEObject ) minTime ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs );
+            }
             return basicSetMinTime( ( MinTime ) otherEnd, msgs );
         case SclPackage.GSE__MAX_TIME:
-            if( maxTime != null )
+            if( maxTime != null ) {
                 msgs = ( ( InternalEObject ) maxTime ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs );
+            }
             return basicSetMaxTime( ( MaxTime ) otherEnd, msgs );
         case SclPackage.GSE__PARENT_CONNECTED_AP:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentConnectedAP( ( ConnectedAP ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -511,6 +546,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
             return getParentConnectedAP() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        return getParentConnectedAP().getXpath() + "/scl:GSE[@ldInst='" + getLdInst() + "'][@cbName='" + getCbName()
+                + "']";
     }
 
 } //GSEImpl

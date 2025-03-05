@@ -46,6 +46,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#getLineNumber <em>Line Number</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#getFilename <em>Filename</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclObjectImpl#getXpath <em>Xpath</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,6 +116,16 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     protected String filename = FILENAME_EDEFAULT;
 
     /**
+     * The default value of the '{@link #getXpath() <em>Xpath</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getXpath()
+     * @generated NOT
+     * @ordered
+     */
+    protected static final String XPATH_EDEFAULT = "";
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -152,9 +163,10 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     public void setLineNumber( int newLineNumber ) {
         int oldLineNumber = lineNumber;
         lineNumber = newLineNumber;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_OBJECT__LINE_NUMBER, oldLineNumber,
                     lineNumber ) );
+        }
     }
 
     /**
@@ -176,9 +188,10 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     public void setExplicitLinksBuilt( boolean newExplicitLinksBuilt ) {
         boolean oldExplicitLinksBuilt = explicitLinksBuilt;
         explicitLinksBuilt = newExplicitLinksBuilt;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT,
                     oldExplicitLinksBuilt, explicitLinksBuilt ) );
+        }
     }
 
     /**
@@ -200,9 +213,20 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     public void setFilename( String newFilename ) {
         String oldFilename = filename;
         filename = newFilename;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_OBJECT__FILENAME, oldFilename,
                     filename ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public String getXpath() {
+        return XPATH_EDEFAULT;
     }
 
     /**
@@ -214,7 +238,9 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     public boolean buildExplicitLinks( @NonNull IRiseClipseConsole console, Boolean forceUpdate ) {
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "SclObjectImpl.buildExplicitLinks()" );
 
-        if( ( !forceUpdate ) && isExplicitLinksBuilt() ) return true;
+        if( ( !forceUpdate ) && isExplicitLinksBuilt() ) {
+            return true;
+        }
 
         // Parent's links must be built before children's one
         // because children may need them
@@ -254,6 +280,8 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
             return isExplicitLinksBuilt();
         case SclPackage.SCL_OBJECT__FILENAME:
             return getFilename();
+        case SclPackage.SCL_OBJECT__XPATH:
+            return getXpath();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -314,6 +342,8 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
             return explicitLinksBuilt != EXPLICIT_LINKS_BUILT_EDEFAULT;
         case SclPackage.SCL_OBJECT__FILENAME:
             return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals( filename );
+        case SclPackage.SCL_OBJECT__XPATH:
+            return XPATH_EDEFAULT == null ? getXpath() != null : !XPATH_EDEFAULT.equals( getXpath() );
         }
         return super.eIsSet( featureID );
     }
@@ -339,7 +369,9 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (lineNumber: " );
