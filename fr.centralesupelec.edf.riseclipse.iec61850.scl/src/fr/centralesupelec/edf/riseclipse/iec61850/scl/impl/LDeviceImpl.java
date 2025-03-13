@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2025 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -1322,13 +1323,13 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( grRef.size() > 1 ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several DOI named GrRef in LN0" );
-            return;            
+            return;
         }
 
         if( grRef.isEmpty() ) {
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                           "LDevice ", getInst(), " is a root LDevice" );
-            return;            
+            return;
         }
         // Look for DAI name="setSrcRef" in GrRef
         // When we try to get 
@@ -1343,12 +1344,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( setSrcRef.isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found no DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
-            return;            
+            return;
         }
         if( setSrcRef.size() > 1 ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
-            return;            
+            return;
         }
         
         EList< Val > val = setSrcRef.get( 0 ).getVal();
@@ -1369,51 +1370,101 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( val.size() > 1 ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
-            return;            
+            return;
         }
         
-        String higherLevelLDeviceName = val.get( 0 ).getValue();;
-        if(( higherLevelLDeviceName == null ) || ( higherLevelLDeviceName.length() <= 1 )) {
+        String higherLevelLDeviceReference = val.get( 0 ).getValue();;
+        if(( higherLevelLDeviceReference == null ) || ( higherLevelLDeviceReference.length() <= 1 )) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found no Val or empty Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
-            return;            
+            return;
         }
         
-        // TODO: higherLevelLDeviceName may or must be prefixed by @ ?
-        if( ! higherLevelLDeviceName.startsWith( "@" )) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
-            //                  " does not start with @" );
+        List< LDevice > lDevices = null;
+
+        if( higherLevelLDeviceReference.startsWith( "@" )) {
+            // Must be final or effectively final
+            String temp = higherLevelLDeviceReference.substring( 1 );
+
+            // Look for LDevice in same Server with "LDevice.inst" higherLevelLDeviceName
+            lDevices =
+                     getParentServer()
+                    .getLDevice()
+                    .stream()
+                    .filter( ld -> temp.equals( ld.getInst() ))
+                    .toList();
+
         }
-        else {
-            higherLevelLDeviceName = higherLevelLDeviceName.substring( 1 );
+            
+        if( lDevices == null ) {
+            // Issue #63
+            // Look for LDevice in same Server with "LDevice.ldName" higherLevelLDeviceName
+            lDevices =
+                    getParentServer()
+                   .getLDevice()
+                   .stream()
+                   .filter( ld -> higherLevelLDeviceReference.equals( ld.getLdName() ))
+                   .toList();
         }
-        
-        // Look for LDevice in same Server with name higherLevelLDeviceName
-        // Must be final or effectively final
-        String temp = higherLevelLDeviceName;
-        List< LDevice > lDevices =
-                 getParentServer()
-                .getLDevice()
-                .stream()
-                .filter( ld -> temp.equals( ld.getInst() ))
-                .toList();
+
+       if( lDevices.isEmpty() ) {
+           // look for "IED.name" concatenated with "LDevice.inst"
+           List< IED > lIEDs = 
+                    getParentServer()
+                   .getParentAccessPoint()
+                   .getParentIED()
+                   .getParentSCL()
+                   .getIED()
+                   .stream()
+                   .filter( ied -> higherLevelLDeviceReference.startsWith( ied.getName() ))
+                   .toList();
+               
+           if( lIEDs.isEmpty() ) {
+               // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+               //                  messagePrefix, "found no IED with name is a prefix of ", higherLevelLDeviceName );
+               return;
+           }
+           if( lIEDs.size() > 1 ) {
+               // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+               //                  messagePrefix, "found several IEDd with name is a prefix of ", higherLevelLDeviceName );
+               return;
+           }
+           IED ied = lIEDs.get( 0 );
+           String ldInst = higherLevelLDeviceReference.substring( ied.getName().length() );
+           
+           lDevices =
+                   ied
+                   .getAccessPoint()
+                   .stream()
+                   .flatMap( ap -> {
+                       if( ap.getServer() == null ) {
+                           return Stream.of();
+                       }
+                       return 
+                               ap
+                               .getServer()
+                               .getLDevice()
+                               .stream()
+                               .filter( ld -> ldInst.equals( ld.getInst() ));
+                   })
+                   .toList();
+        }
         
         if( lDevices.isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found no LDevice named ", higherLevelLDeviceName );
-            return;            
+            return;
         }
         if( lDevices.size() > 1 ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several LDevice ", higherLevelLDeviceName );
-            return;            
+            return;
         }
         
-        console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                       "LDevice ", getInst(), " has ", lDevices.get( 0 ).getInst(), " for higher level LDevice" );
         setRefersToHigherLevelLDevice( lDevices.get( 0 ));
-        
+
         //@formatter:on
     }
 
