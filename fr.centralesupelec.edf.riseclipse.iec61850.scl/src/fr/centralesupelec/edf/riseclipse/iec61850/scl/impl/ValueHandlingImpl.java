@@ -341,4 +341,9 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ValueHandling";
+    }
+
 } //ValueHandlingImpl

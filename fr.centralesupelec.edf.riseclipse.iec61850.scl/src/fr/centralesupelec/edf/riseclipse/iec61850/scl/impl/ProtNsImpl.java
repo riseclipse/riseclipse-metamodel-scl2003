@@ -469,4 +469,19 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentDA() != null ) {
+            if( getParentDA().getProtNs().size() == 1 ) {
+                return getParentDA().getXpath() + "/scl:ProtNs";
+            }
+            return getParentDA().getXpath() + "/scl:ProtNs[" + ( getParentDA().getProtNs().indexOf( this ) + 1 ) + "]";
+        }
+        if( getParentDAType().getProtNs().size() == 1 ) {
+            return getParentDAType().getXpath() + "/scl:ProtNs";
+        }
+        return getParentDAType().getXpath() + "/scl:ProtNs[" + ( getParentDAType().getProtNs().indexOf( this ) + 1 )
+                + "]";
+    }
+
 } //ProtNsImpl

@@ -1442,4 +1442,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentIED().getAccessPoint().size() == 1 ) {
+            return getParentIED().getXpath() + "/scl:AccessPoint";
+        }
+        return getParentIED().getXpath() + "/scl:AccessPoint[@name='" + getName() + "']";
+    }
+
 } //AccessPointImpl

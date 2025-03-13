@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,16 +20,14 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
 
@@ -106,8 +104,9 @@ public class SmpRateImpl extends SclObjectImpl implements SmpRate {
     public void setValue( Integer newValue ) {
         Integer oldValue = value;
         value = newValue;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMP_RATE__VALUE, oldValue, value ) );
+        }
     }
 
     /**
@@ -117,7 +116,9 @@ public class SmpRateImpl extends SclObjectImpl implements SmpRate {
      */
     @Override
     public SMVSettings getParentSMVSettings() {
-        if( eContainerFeatureID() != SclPackage.SMP_RATE__PARENT_SMV_SETTINGS ) return null;
+        if( eContainerFeatureID() != SclPackage.SMP_RATE__PARENT_SMV_SETTINGS ) {
+            return null;
+        }
         return ( SMVSettings ) eInternalContainer();
     }
 
@@ -142,20 +143,26 @@ public class SmpRateImpl extends SclObjectImpl implements SmpRate {
         if( newParentSMVSettings != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SMP_RATE__PARENT_SMV_SETTINGS
                         && newParentSMVSettings != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSMVSettings ) )
+            if( EcoreUtil.isAncestor( this, newParentSMVSettings ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSMVSettings != null )
+            }
+            if( newParentSMVSettings != null ) {
                 msgs = ( ( InternalEObject ) newParentSMVSettings ).eInverseAdd( this,
                         SclPackage.SMV_SETTINGS__SMP_RATE, SMVSettings.class, msgs );
+            }
             msgs = basicSetParentSMVSettings( newParentSMVSettings, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMP_RATE__PARENT_SMV_SETTINGS,
                     newParentSMVSettings, newParentSMVSettings ) );
+        }
     }
 
     /**
@@ -167,8 +174,9 @@ public class SmpRateImpl extends SclObjectImpl implements SmpRate {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SMP_RATE__PARENT_SMV_SETTINGS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSMVSettings( ( SMVSettings ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -278,13 +286,24 @@ public class SmpRateImpl extends SclObjectImpl implements SmpRate {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (value: " );
         result.append( value );
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getXpath() {
+        if( getParentSMVSettings().getSmpRate().size() == 1 ) {
+            return getParentSMVSettings().getXpath() + "/scl:SmpRate";
+        }
+        return getParentSMVSettings().getXpath() + "/scl:SmpRate["
+                + ( getParentSMVSettings().getSmpRate().indexOf( this ) + 1 ) + "]";
     }
 
 } //SmpRateImpl

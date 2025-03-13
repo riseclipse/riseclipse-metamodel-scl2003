@@ -745,4 +745,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentControlWithTriggerOpt().getXpath() + "/scl:TrgOps";
+    }
+
 } //TrgOpsImpl

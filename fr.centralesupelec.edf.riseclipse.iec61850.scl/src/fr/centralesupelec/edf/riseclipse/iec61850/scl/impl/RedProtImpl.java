@@ -540,4 +540,9 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:RedProt";
+    }
+
 } //RedProtImpl

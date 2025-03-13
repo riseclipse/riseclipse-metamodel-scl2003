@@ -713,4 +713,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentDataTypeTemplates().getXpath() + "/scl:LNodeType[@id='" + getId() + "']";
+    }
+
 } //LNodeTypeImpl

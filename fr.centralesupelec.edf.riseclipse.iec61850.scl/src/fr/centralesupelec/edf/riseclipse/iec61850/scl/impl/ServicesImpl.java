@@ -5814,4 +5814,16 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentIED() != null ) {
+            parentXpath = getParentIED().getXpath();
+        }
+        if( getParentAccessPoint() != null ) {
+            parentXpath = getParentAccessPoint().getXpath();
+        }
+        return parentXpath + "/scl:Services";
+    }
+
 } //ServicesImpl

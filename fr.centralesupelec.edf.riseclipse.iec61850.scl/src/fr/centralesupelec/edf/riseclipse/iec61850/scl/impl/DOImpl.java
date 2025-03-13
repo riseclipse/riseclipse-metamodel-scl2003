@@ -636,4 +636,12 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         //@formatter:on
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentLNodeType().getDO().size() == 1 ) {
+            return getParentLNodeType().getXpath() + "/scl:DO";
+        }
+        return getParentLNodeType().getXpath() + "/scl:DO[@name='" + getName() + "']";
+    }
+
 } //DOImpl

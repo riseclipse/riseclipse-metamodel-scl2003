@@ -213,4 +213,9 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentPhysConn().getXpath() + "/scl:P_PhysConn[@type='" + getType() + "']";
+    }
+
 } //P_PhysConnImpl

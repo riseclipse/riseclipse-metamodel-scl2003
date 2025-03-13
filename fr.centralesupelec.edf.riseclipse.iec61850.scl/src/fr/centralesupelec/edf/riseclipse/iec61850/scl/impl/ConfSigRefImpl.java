@@ -214,4 +214,9 @@ public class ConfSigRefImpl extends ServiceWithMaxNonZeroImpl implements ConfSig
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ConfSigRef";
+    }
+
 } //ConfSigRefImpl

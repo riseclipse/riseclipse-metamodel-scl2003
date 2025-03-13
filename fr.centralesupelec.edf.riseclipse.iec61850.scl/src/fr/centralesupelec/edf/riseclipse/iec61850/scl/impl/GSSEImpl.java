@@ -212,4 +212,9 @@ public class GSSEImpl extends ServiceWithMaxImpl implements GSSE {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GSSE";
+    }
+
 } //GSSEImpl

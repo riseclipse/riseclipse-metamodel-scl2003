@@ -1114,4 +1114,9 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentReportControl().getXpath() + "/scl:OptFields";
+    }
+
 } //OptFieldsImpl

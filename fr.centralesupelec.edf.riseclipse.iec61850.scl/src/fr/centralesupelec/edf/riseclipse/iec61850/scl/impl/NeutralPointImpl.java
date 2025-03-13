@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
      */
     @Override
     public TransformerWinding getParentTransformerWinding() {
-        if( eContainerFeatureID() != SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING ) return null;
+        if( eContainerFeatureID() != SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING ) {
+            return null;
+        }
         return ( TransformerWinding ) eInternalContainer();
     }
 
@@ -97,21 +99,27 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
         if( newParentTransformerWinding != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING
                         && newParentTransformerWinding != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) )
+            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentTransformerWinding != null )
+            }
+            if( newParentTransformerWinding != null ) {
                 msgs = ( ( InternalEObject ) newParentTransformerWinding ).eInverseAdd( this,
                         SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs );
+            }
             msgs = basicSetParentTransformerWinding( newParentTransformerWinding, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, newParentTransformerWinding,
                     newParentTransformerWinding ) );
+        }
     }
 
     /**
@@ -123,8 +131,9 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentTransformerWinding( ( TransformerWinding ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -215,6 +224,18 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
             return getParentTransformerWinding() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentAbstractConductingEquipment() != null ) {
+            parentXpath = getParentAbstractConductingEquipment().getXpath();
+        }
+        if( getParentTransformerWinding() != null ) {
+            parentXpath = getParentTransformerWinding().getXpath();
+        }
+        return parentXpath + "/scl:NeutralPoint";
     }
 
 } //NeutralPointImpl

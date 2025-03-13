@@ -215,4 +215,9 @@ public class GetCBValuesImpl extends ServiceYesNoImpl implements GetCBValues {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GetCBValues";
+    }
+
 } //GetCBValuesImpl

@@ -215,4 +215,9 @@ public class DynAssociationImpl extends ServiceWithOptionalMaxImpl implements Dy
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:DynAssociation";
+    }
+
 } //DynAssociationImpl

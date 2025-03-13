@@ -393,4 +393,9 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentConnectedAP().getXpath() + "/scl:PhysConn[@type='" + getType() + "']";
+    }
+
 } //PhysConnImpl

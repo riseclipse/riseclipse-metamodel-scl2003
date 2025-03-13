@@ -215,4 +215,9 @@ public class BitRateImpl extends BitRateInMbPerSecImpl implements BitRate {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSubNetwork().getXpath() + "/scl:BitRate";
+    }
+
 } //BitRateImpl

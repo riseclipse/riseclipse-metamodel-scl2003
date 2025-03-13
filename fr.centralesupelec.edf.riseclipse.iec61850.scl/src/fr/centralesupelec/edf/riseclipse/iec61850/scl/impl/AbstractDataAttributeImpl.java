@@ -1548,12 +1548,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         //                      A referenced attribute shall exist in the same type definition. The default value 0 states that the attribute is no array.
         // valKind              Determines how the value shall be interpreted if any is given
 
-        if( !( "Enum".equals( getBType() ) || "Struct".equals( getBType() ) ) ) {
-            return;
-        }
+
         // String messagePrefix = "while resolving link from AbstractDataAttribute: ";
 
-        if( ( getType() == null ) || getType().isEmpty() ) {
+        if( !( "Enum".equals( getBType() ) || "Struct".equals( getBType() ) ) || ( getType() == null ) || getType().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "type is missing" );
             return;

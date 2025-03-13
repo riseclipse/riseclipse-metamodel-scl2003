@@ -212,4 +212,9 @@ public class PImpl extends PAddrImpl implements P {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAddress().getXpath() + "/scl:P[@type='" + getType() + "']";
+    }
+
 } //PImpl

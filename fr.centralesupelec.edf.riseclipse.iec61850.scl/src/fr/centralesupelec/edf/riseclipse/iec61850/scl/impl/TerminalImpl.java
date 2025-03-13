@@ -1263,12 +1263,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // cNodeName        The (relative) name of the connectivityNode within its bay
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
-        if( ( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "cNodeName is missing" );
-            return;
-        }
-        if( ( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
+        if( ( getCNodeName() == null ) || getCNodeName().isEmpty() || ( getVoltageLevelName() == null )
+                || getVoltageLevelName().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "voltageLevelName is missing" );
             return;
@@ -1401,6 +1397,15 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "Terminal refers to ConnectivityNode( name = ", getCNodeName(), " )", " on line ",
                 getRefersToConnectivityNode().getLineNumber() );
+    }
+
+    @Override
+    public String getXpath() {
+        if( getParentAbstractConductingEquipment().getTerminal().size() == 1 ) {
+            return getParentAbstractConductingEquipment().getXpath() + "/scl:Terminal";
+        }
+        return getParentAbstractConductingEquipment().getXpath() + "/scl:Terminal["
+                + ( getParentAbstractConductingEquipment().getTerminal().indexOf( this ) + 1 ) + "]";
     }
 
 } //TerminalImpl

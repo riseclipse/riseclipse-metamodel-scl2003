@@ -1194,4 +1194,16 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentDOI() != null ) {
+            parentXpath = getParentDOI().getXpath();
+        }
+        if( getParentSDI() != null ) {
+            parentXpath = getParentSDI().getXpath();
+        }
+        return parentXpath + "/scl:DAI[@name='" + getName() + "']";
+    }
+
 } //DAIImpl

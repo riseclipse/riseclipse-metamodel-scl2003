@@ -743,12 +743,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
         String messagePrefix = "while resolving link from ControlBlock: ";
 
-        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "ldInst is missing" );
-            return;
-        }
-        if( ( getCbName() == null ) || getCbName().isEmpty() ) {
+        if( ( getLdInst() == null ) || getLdInst().isEmpty() || ( getCbName() == null ) || getCbName().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "cbName is missing" );
             return;

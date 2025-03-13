@@ -540,4 +540,9 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GOOSE";
+    }
+
 } //GOOSEImpl

@@ -543,4 +543,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentDataTypeTemplates().getXpath() + "/scl:DAType[@id='" + getId() + "']";
+    }
+
 } //DATypeImpl

@@ -215,4 +215,9 @@ public class DataSetDirectoryImpl extends ServiceYesNoImpl implements DataSetDir
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:DataSetDirectory";
+    }
+
 } //DataSetDirectoryImpl

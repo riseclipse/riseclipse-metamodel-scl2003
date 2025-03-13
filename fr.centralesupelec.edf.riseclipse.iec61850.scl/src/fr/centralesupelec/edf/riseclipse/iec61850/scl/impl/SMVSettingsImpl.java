@@ -1323,4 +1323,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:SMVSettings";
+    }
+
 } //SMVSettingsImpl

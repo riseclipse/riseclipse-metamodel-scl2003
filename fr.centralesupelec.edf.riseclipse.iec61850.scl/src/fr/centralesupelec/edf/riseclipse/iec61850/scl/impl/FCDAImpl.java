@@ -1189,12 +1189,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         String messagePrefix = "while resolving link from FCDA: ";
 
-        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "ldInst is missing" );
-            return;
-        }
-        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
+        if( ( getLdInst() == null ) || getLdInst().isEmpty() || ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "lnClass is missing" );
             return;
@@ -1476,6 +1471,51 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         return das;
 
         //@formatter:on
+    }
+
+    @Override
+    public String getXpath() {
+        String prefixXpath = "";
+        if( !getPrefix().isEmpty() ) {
+            prefixXpath = "[@prefix='" + getPrefix() + "']";
+        }
+        String ldInstXpath = "";
+        if( isSetLdInst() ) {
+            ldInstXpath = "[@ldInst='" + getLdInst() + "']";
+        }
+        String lnClassXpath = "";
+        if( isSetLnClass() ) {
+            lnClassXpath = "[@lnClass='" + getLnClass() + "']";
+        }
+        String lnInstXpath = "";
+        if( isSetLnInst() ) {
+            lnInstXpath = "[@lnInst='" + getLnInst() + "']";
+        }
+        String doNameXpath = "";
+        if( isSetDoName() ) {
+            doNameXpath = "[@doName='" + getDoName() + "']";
+        }
+        String daNameXpath = "";
+        if( isSetDaName() ) {
+            daNameXpath = "[@daName='" + getDaName() + "']";
+        }
+        String fcXpath = "";
+        if( isSetFc() ) {
+            fcXpath = "[@fc='" + getFc() + "']";
+        }
+        String ixXpath = "";
+        if( isSetIx() ) {
+            ixXpath = "[@ix='" + getIx() + "']";
+        }
+        return getParentDataSet().getXpath() + "/scl:FCDA"
+                + ldInstXpath
+                + prefixXpath
+                + lnClassXpath
+                + lnInstXpath
+                + doNameXpath
+                + daNameXpath
+                + fcXpath
+                + ixXpath;
     }
 
 } //FCDAImpl

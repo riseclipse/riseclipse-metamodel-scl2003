@@ -1089,12 +1089,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
         String messagePrefix = "while resolving link from ConnectedAP: ";
 
-        if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "iedName is missing" );
-            return;
-        }
-        if( ( getApName() == null ) || getApName().isEmpty() ) {
+        if( ( getIedName() == null ) || getIedName().isEmpty() || ( getApName() == null ) || getApName().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "apName is missing" );
             return;
@@ -1126,6 +1121,12 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
                 getRefersToAccessPoint().getLineNumber() );
 
         //@formatter:on
+    }
+
+    @Override
+    public String getXpath() {
+        return getParentSubNetwork().getXpath() + "/scl:ConnectedAP[@iedName='" + getIedName() + "'][@apName='"
+                + getApName() + "']";
     }
 
 } //ConnectedAPImpl

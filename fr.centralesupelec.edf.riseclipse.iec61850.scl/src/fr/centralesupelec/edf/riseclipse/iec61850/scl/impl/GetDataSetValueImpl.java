@@ -215,4 +215,9 @@ public class GetDataSetValueImpl extends ServiceYesNoImpl implements GetDataSetV
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GetDataSetValue";
+    }
+
 } //GetDataSetValueImpl

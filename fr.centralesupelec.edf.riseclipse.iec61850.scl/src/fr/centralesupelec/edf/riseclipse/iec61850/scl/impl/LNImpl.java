@@ -620,12 +620,7 @@ public class LNImpl extends AnyLNImpl implements LN {
             .stream()
             .filter( doi -> doiName.equals( doi.getName() ))
             .collect( Collectors.toList() );
-        if( cBRef.size() > 1 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found several DOI named ", doiName );
-            return;
-        }
-        if( cBRef.size() == 0 ) {
+        if( ( cBRef.size() > 1 ) || ( cBRef.size() == 0 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "found no DOI named ", doiName );
             return;
@@ -639,27 +634,7 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .stream()
                 .filter( dai -> "setSrcRef".equals( dai.getName() ))
                 .toList();
-        if( setSrcRef.size() == 0 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no DAI named setSrcRef in ", doiName,
-            //                  " on line ", cBRef.get( 0 ).getLineNumber() );
-            return;
-        }
-        if( setSrcRef.size() > 1 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found several DAI named setSrcRef in ",
-            //                  doiName, " on line ", cBRef.get( 0 ).getLineNumber() );
-            return;
-        }
-
-        if( setSrcRef.get( 0 ).getVal().size() == 0 ) {
-            // Do not display as warning, too many of them
-            // console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                 messagePrefix, "found no Val in setSrcRef on line ",
-            //                 setSrcRef.get( 0 ).getLineNumber() );
-            return;
-        }
-        if( setSrcRef.get( 0 ).getVal().size() > 1 ) {
+        if( ( setSrcRef.size() == 0 ) || ( setSrcRef.size() > 1 ) || ( setSrcRef.get( 0 ).getVal().size() == 0 ) || ( setSrcRef.get( 0 ).getVal().size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several Val in setSrcRef on line ",
             //                  setSrcRef.get( 0 ).getLineNumber() );
@@ -668,14 +643,7 @@ public class LNImpl extends AnyLNImpl implements LN {
 
         Val val = setSrcRef.get( 0 ).getVal().get( 0 );
         String controlWithIEDName = val.getValue();
-        if(( controlWithIEDName == null ) || ( controlWithIEDName.length() <= 1 )) {
-            // Do not display as warning, too many of them
-            // console.notice( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                 messagePrefix, "found no Val or empty Val in setSrcRef on line ",
-            //                 setSrcRef.get( 0 ).getLineNumber() );
-            return;
-        }
-        if( controlWithIEDName.indexOf( '/' ) == -1 ) {
+        if( ( controlWithIEDName == null ) || ( controlWithIEDName.length() <= 1 ) || ( controlWithIEDName.indexOf( '/' ) == -1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "Val of setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber(),
             //                  " is illformed, it should contain \"/\"" );
@@ -697,13 +665,7 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .stream()
                 .filter( ied -> controlWithIEDName.startsWith( ied.getName() ))
                 .toList();
-        if( ieds.size() == 0 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no IED whose name is the start of ",
-            //                  controlWithIEDName, " on line ", val.getLineNumber() );
-            return;
-        }
-        if( ieds.size() > 1 ) {
+        if( ( ieds.size() == 0 ) || ( ieds.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several IED whose name is the start of ",
             //                  controlWithIEDName, " on line ", val.getLineNumber() );
@@ -768,6 +730,22 @@ public class LNImpl extends AnyLNImpl implements LN {
         setRefersToControlWithIEDName( controls.get( 0 ));
 
         //@formatter:on
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentLDevice() != null ) {
+            parentXpath = getParentLDevice().getXpath();
+        }
+        if( getParentAccessPoint() != null ) {
+            parentXpath = getParentAccessPoint().getXpath();
+        }
+        String prefixXpath = "";
+        if( !getPrefix().isEmpty() ) {
+            prefixXpath = "[@prefix='" + getPrefix() + "']";
+        }
+        return parentXpath + "/scl:LN" + prefixXpath + "[@lnClass='" + getLnClass() + "'][@inst='" + getInst() + "']";
     }
 
 } //LNImpl

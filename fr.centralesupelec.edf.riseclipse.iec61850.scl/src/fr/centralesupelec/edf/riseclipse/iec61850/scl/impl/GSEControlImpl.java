@@ -649,4 +649,9 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         return getParentLN0();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAnyLN().getXpath() + "/scl:GSEControl[@name='" + getName() + "']";
+    }
+
 } //GSEControlImpl

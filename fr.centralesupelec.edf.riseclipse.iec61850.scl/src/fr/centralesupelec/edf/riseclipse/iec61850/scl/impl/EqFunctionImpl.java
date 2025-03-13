@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -81,7 +81,9 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      */
     @Override
     public ConductingEquipment getParentConductingEquipment() {
-        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT ) {
+            return null;
+        }
         return ( ConductingEquipment ) eInternalContainer();
     }
 
@@ -107,20 +109,26 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
         if( newParentConductingEquipment != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT
                         && newParentConductingEquipment != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentConductingEquipment ) )
+            if( EcoreUtil.isAncestor( this, newParentConductingEquipment ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentConductingEquipment != null )
+            }
+            if( newParentConductingEquipment != null ) {
                 msgs = ( ( InternalEObject ) newParentConductingEquipment ).eInverseAdd( this,
                         SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION, ConductingEquipment.class, msgs );
+            }
             msgs = basicSetParentConductingEquipment( newParentConductingEquipment, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT,
                     newParentConductingEquipment, newParentConductingEquipment ) );
+        }
     }
 
     /**
@@ -130,7 +138,9 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      */
     @Override
     public GeneralEquipment getParentGeneralEquipment() {
-        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT ) {
+            return null;
+        }
         return ( GeneralEquipment ) eInternalContainer();
     }
 
@@ -156,20 +166,26 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
         if( newParentGeneralEquipment != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT
                         && newParentGeneralEquipment != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentGeneralEquipment ) )
+            if( EcoreUtil.isAncestor( this, newParentGeneralEquipment ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentGeneralEquipment != null )
+            }
+            if( newParentGeneralEquipment != null ) {
                 msgs = ( ( InternalEObject ) newParentGeneralEquipment ).eInverseAdd( this,
                         SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION, GeneralEquipment.class, msgs );
+            }
             msgs = basicSetParentGeneralEquipment( newParentGeneralEquipment, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT,
                     newParentGeneralEquipment, newParentGeneralEquipment ) );
+        }
     }
 
     /**
@@ -179,7 +195,9 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      */
     @Override
     public PowerTransformer getParentPowerTransformer() {
-        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_POWER_TRANSFORMER ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_POWER_TRANSFORMER ) {
+            return null;
+        }
         return ( PowerTransformer ) eInternalContainer();
     }
 
@@ -205,20 +223,26 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
         if( newParentPowerTransformer != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_POWER_TRANSFORMER
                         && newParentPowerTransformer != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentPowerTransformer ) )
+            if( EcoreUtil.isAncestor( this, newParentPowerTransformer ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentPowerTransformer != null )
+            }
+            if( newParentPowerTransformer != null ) {
                 msgs = ( ( InternalEObject ) newParentPowerTransformer ).eInverseAdd( this,
                         SclPackage.POWER_TRANSFORMER__EQ_FUNCTION, PowerTransformer.class, msgs );
+            }
             msgs = basicSetParentPowerTransformer( newParentPowerTransformer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQ_FUNCTION__PARENT_POWER_TRANSFORMER,
                     newParentPowerTransformer, newParentPowerTransformer ) );
+        }
     }
 
     /**
@@ -228,7 +252,9 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      */
     @Override
     public SubEquipment getParentSubEquipment() {
-        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_SUB_EQUIPMENT ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_SUB_EQUIPMENT ) {
+            return null;
+        }
         return ( SubEquipment ) eInternalContainer();
     }
 
@@ -253,20 +279,26 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
         if( newParentSubEquipment != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_SUB_EQUIPMENT
                         && newParentSubEquipment != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSubEquipment ) )
+            if( EcoreUtil.isAncestor( this, newParentSubEquipment ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSubEquipment != null )
+            }
+            if( newParentSubEquipment != null ) {
                 msgs = ( ( InternalEObject ) newParentSubEquipment ).eInverseAdd( this,
                         SclPackage.SUB_EQUIPMENT__EQ_FUNCTION, SubEquipment.class, msgs );
+            }
             msgs = basicSetParentSubEquipment( newParentSubEquipment, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQ_FUNCTION__PARENT_SUB_EQUIPMENT,
                     newParentSubEquipment, newParentSubEquipment ) );
+        }
     }
 
     /**
@@ -276,7 +308,9 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      */
     @Override
     public TransformerWinding getParentTransformerWinding() {
-        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING ) {
+            return null;
+        }
         return ( TransformerWinding ) eInternalContainer();
     }
 
@@ -302,20 +336,26 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
         if( newParentTransformerWinding != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING
                         && newParentTransformerWinding != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) )
+            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentTransformerWinding != null )
+            }
+            if( newParentTransformerWinding != null ) {
                 msgs = ( ( InternalEObject ) newParentTransformerWinding ).eInverseAdd( this,
                         SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION, TransformerWinding.class, msgs );
+            }
             msgs = basicSetParentTransformerWinding( newParentTransformerWinding, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING,
                     newParentTransformerWinding, newParentTransformerWinding ) );
+        }
     }
 
     /**
@@ -325,7 +365,9 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      */
     @Override
     public TapChanger getParentTapChanger() {
-        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER ) {
+            return null;
+        }
         return ( TapChanger ) eInternalContainer();
     }
 
@@ -350,20 +392,26 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
         if( newParentTapChanger != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER
                         && newParentTapChanger != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentTapChanger ) )
+            if( EcoreUtil.isAncestor( this, newParentTapChanger ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentTapChanger != null )
+            }
+            if( newParentTapChanger != null ) {
                 msgs = ( ( InternalEObject ) newParentTapChanger ).eInverseAdd( this,
                         SclPackage.TAP_CHANGER__EQ_FUNCTION, TapChanger.class, msgs );
+            }
             msgs = basicSetParentTapChanger( newParentTapChanger, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER,
                     newParentTapChanger, newParentTapChanger ) );
+        }
     }
 
     /**
@@ -375,28 +423,34 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentConductingEquipment( ( ConductingEquipment ) otherEnd, msgs );
         case SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentGeneralEquipment( ( GeneralEquipment ) otherEnd, msgs );
         case SclPackage.EQ_FUNCTION__PARENT_POWER_TRANSFORMER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentPowerTransformer( ( PowerTransformer ) otherEnd, msgs );
         case SclPackage.EQ_FUNCTION__PARENT_SUB_EQUIPMENT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSubEquipment( ( SubEquipment ) otherEnd, msgs );
         case SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentTransformerWinding( ( TransformerWinding ) otherEnd, msgs );
         case SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentTapChanger( ( TapChanger ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -562,6 +616,30 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
             return getParentTapChanger() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentConductingEquipment() != null ) {
+            parentXpath = getParentConductingEquipment().getXpath();
+        }
+        if( getParentGeneralEquipment() != null ) {
+            parentXpath = getParentGeneralEquipment().getXpath();
+        }
+        if( getParentPowerTransformer() != null ) {
+            parentXpath = getParentPowerTransformer().getXpath();
+        }
+        if( getParentSubEquipment() != null ) {
+            parentXpath = getParentSubEquipment().getXpath();
+        }
+        if( getParentTapChanger() != null ) {
+            parentXpath = getParentTapChanger().getXpath();
+        }
+        if( getParentTransformerWinding() != null ) {
+            parentXpath = getParentTransformerWinding().getXpath();
+        }
+        return parentXpath + "/scl:EqFunction[@name='" + getName() + "']";
     }
 
 } //EqFunctionImpl

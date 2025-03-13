@@ -36,6 +36,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getLineNumber <em>Line Number</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getFilename <em>Filename</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getXpath <em>Xpath</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclObject()
@@ -115,6 +116,17 @@ public interface SclObject extends EObject {
      * @generated
      */
     void setFilename( String value );
+
+    /**
+     * Returns the value of the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Xpath</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclObject_Xpath()
+     * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+     * @generated
+     */
+    String getXpath();
 
     /**
      * <!-- begin-user-doc -->

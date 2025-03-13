@@ -1114,4 +1114,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSampledValueControl().getXpath() + "/scl:SmvOpts";
+    }
+
 } //SmvOptsImpl

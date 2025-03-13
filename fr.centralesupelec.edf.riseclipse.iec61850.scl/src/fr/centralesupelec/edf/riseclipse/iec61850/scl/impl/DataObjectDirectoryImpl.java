@@ -215,4 +215,9 @@ public class DataObjectDirectoryImpl extends ServiceYesNoImpl implements DataObj
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:DataObjectDirectory";
+    }
+
 } //DataObjectDirectoryImpl

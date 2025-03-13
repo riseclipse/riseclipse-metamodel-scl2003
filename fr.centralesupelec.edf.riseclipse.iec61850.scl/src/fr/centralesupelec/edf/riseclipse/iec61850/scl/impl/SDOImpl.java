@@ -536,4 +536,12 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
                 getRefersToDOType().getLineNumber() );
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentDOType().getSDO().size() == 1 ) {
+            return getParentDOType().getXpath() + "/scl:SDO";
+        }
+        return getParentDOType().getXpath() + "/scl:SDO[@name='" + getName() + "']";
+    }
+
 } //SDOImpl

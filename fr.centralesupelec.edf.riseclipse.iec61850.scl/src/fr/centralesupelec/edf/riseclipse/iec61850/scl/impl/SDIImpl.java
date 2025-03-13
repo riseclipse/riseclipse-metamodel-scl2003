@@ -1289,12 +1289,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 .collect( Collectors.toList() );
 
         // Specific message if res2.size() == 0
-        if( res2.size() == 0 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "no SDO or DA found using ParentDOI" );
-            return;
-        }
-        if( res2.size() > 1 ) {
+        if( ( res2.size() == 0 ) || ( res2.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "found several DA( name = ", getName(),
             //         " ) using ParentDOI" );
@@ -1352,12 +1347,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                     .collect( Collectors.toList() );
 
             // Specific message if res2.size() == 0
-            if( res2.size() == 0 ) {
-                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), messagePrefix,
-                //         "no SDO or DA found using ParentSDI" );
-                return;
-            }
-            if( res2.size() > 1 ) {
+            if( ( res2.size() == 0 ) || ( res2.size() > 1 ) ) {
                 // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 //         messagePrefix, "found several DA( name = ", getName(), " ) using ParentSDI" );
                 return;
@@ -1407,6 +1397,18 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 getRefersToAbstractDataAttribute().getLineNumber() );
 
         //@formatter:on
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentDOI() != null ) {
+            parentXpath = getParentDOI().getXpath();
+        }
+        if( getParentSDI() != null ) {
+            parentXpath = getParentSDI().getXpath();
+        }
+        return parentXpath + "/scl:SDI[@name='" + getName() + "']";
     }
 
 } //SDIImpl

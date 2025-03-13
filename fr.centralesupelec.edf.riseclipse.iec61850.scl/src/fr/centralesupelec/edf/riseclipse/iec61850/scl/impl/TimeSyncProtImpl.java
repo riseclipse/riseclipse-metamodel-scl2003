@@ -723,4 +723,16 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentClientServices() != null ) {
+            parentXpath = getParentClientServices().getXpath();
+        }
+        if( getParentServices() != null ) {
+            parentXpath = getParentServices().getXpath();
+        }
+        return parentXpath + "/scl:TimeSyncProt";
+    }
+
 } //TimeSyncProtImpl

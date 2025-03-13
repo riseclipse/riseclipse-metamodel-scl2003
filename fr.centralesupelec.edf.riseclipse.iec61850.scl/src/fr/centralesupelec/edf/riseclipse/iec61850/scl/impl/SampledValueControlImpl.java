@@ -967,4 +967,9 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         return getParentLN0();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAnyLN().getXpath() + "/scl:SampledValueControl[@name='" + getName() + "']";
+    }
+
 } //SampledValueControlImpl

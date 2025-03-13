@@ -697,4 +697,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         //@formatter:on
     }
 
+    @Override
+    public String getXpath() {
+        return getParentDataTypeTemplates().getXpath() + "/scl:DOType[@id='" + getId() + "']";
+    }
+
 } //DOTypeImpl

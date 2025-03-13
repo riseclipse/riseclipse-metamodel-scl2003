@@ -703,4 +703,9 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSubstation().getXpath() + "/scl:VoltageLevel[@name='" + getName() + "']";
+    }
+
 } //VoltageLevelImpl

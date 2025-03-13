@@ -214,4 +214,9 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ConfLdName";
+    }
+
 } //ConfLdNameImpl

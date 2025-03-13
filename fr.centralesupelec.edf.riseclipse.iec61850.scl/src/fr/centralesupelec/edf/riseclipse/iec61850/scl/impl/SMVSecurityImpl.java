@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public AccessPoint getParentAccessPoint() {
-        if( eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT ) return null;
+        if( eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT ) {
+            return null;
+        }
         return ( AccessPoint ) eInternalContainer();
     }
 
@@ -96,20 +98,26 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
         if( newParentAccessPoint != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT
                         && newParentAccessPoint != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) )
+            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAccessPoint != null )
+            }
+            if( newParentAccessPoint != null ) {
                 msgs = ( ( InternalEObject ) newParentAccessPoint ).eInverseAdd( this,
                         SclPackage.ACCESS_POINT__SMV_SECURITY, AccessPoint.class, msgs );
+            }
             msgs = basicSetParentAccessPoint( newParentAccessPoint, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT,
                     newParentAccessPoint, newParentAccessPoint ) );
+        }
     }
 
     /**
@@ -121,8 +129,9 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAccessPoint( ( AccessPoint ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -213,6 +222,11 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
             return getParentAccessPoint() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        return getParentAccessPoint().getXpath() + "/scl:SMVSecurity[@name='" + getName() + "']";
     }
 
 } //SMVSecurityImpl
