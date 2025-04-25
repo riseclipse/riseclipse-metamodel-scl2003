@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -168,6 +168,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Bay()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel
      * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Bay > getBay();
@@ -209,6 +210,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Function()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel
      * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Function > getFunction();
@@ -274,6 +276,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Voltage()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel
      * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Voltage getVoltage();

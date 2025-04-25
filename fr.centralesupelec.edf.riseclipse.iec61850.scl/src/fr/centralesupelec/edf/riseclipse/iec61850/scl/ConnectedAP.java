@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -222,6 +222,7 @@ public interface ConnectedAP extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_Address()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentConnectedAP
      * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Address getAddress();
@@ -356,6 +357,7 @@ public interface ConnectedAP extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_PhysConn()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP
      * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< PhysConn > getPhysConn();
@@ -397,6 +399,7 @@ public interface ConnectedAP extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_GSE()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getParentConnectedAP
      * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< GSE > getGSE();
@@ -438,6 +441,7 @@ public interface ConnectedAP extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_SMV()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getParentConnectedAP
      * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SMV > getSMV();

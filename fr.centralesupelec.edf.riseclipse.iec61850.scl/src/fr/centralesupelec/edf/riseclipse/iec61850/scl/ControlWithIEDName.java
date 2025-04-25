@@ -112,6 +112,7 @@ public interface ControlWithIEDName extends Control {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithIEDName_IEDName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName
      * @model opposite="ParentControlWithIEDName" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< IEDName > getIEDName();
@@ -194,6 +195,7 @@ public interface ControlWithIEDName extends Control {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithIEDName_Protocol()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName
      * @model opposite="ParentControlWithIEDName" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Protocol getProtocol();

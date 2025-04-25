@@ -108,6 +108,7 @@ public interface ControlWithTriggerOpt extends Control {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithTriggerOpt_TrgOps()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt
      * @model opposite="ParentControlWithTriggerOpt" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     TrgOps getTrgOps();

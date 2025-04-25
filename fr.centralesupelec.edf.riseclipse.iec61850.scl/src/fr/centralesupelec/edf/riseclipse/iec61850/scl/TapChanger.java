@@ -112,6 +112,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_EqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger
      * @model opposite="ParentTapChanger" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< EqFunction > getEqFunction();
@@ -153,6 +154,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_SubEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger
      * @model opposite="ParentTapChanger" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SubEquipment > getSubEquipment();

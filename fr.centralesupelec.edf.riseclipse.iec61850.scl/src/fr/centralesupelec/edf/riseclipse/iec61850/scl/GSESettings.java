@@ -195,6 +195,7 @@ public interface GSESettings extends ServiceSettings {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_McSecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings
      * @model opposite="ParentGSESettings" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     McSecurity getMcSecurity();

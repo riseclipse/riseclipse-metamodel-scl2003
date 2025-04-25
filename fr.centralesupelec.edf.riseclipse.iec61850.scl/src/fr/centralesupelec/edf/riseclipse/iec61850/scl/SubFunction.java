@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -113,6 +113,7 @@ public interface SubFunction extends PowerSystemResource {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubFunction_ConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunction
      * @model opposite="ParentSubFunction" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ConductingEquipment > getConductingEquipment();
@@ -178,6 +179,7 @@ public interface SubFunction extends PowerSystemResource {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubFunction_GeneralEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentSubFunction
      * @model opposite="ParentSubFunction" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< GeneralEquipment > getGeneralEquipment();
@@ -219,6 +221,7 @@ public interface SubFunction extends PowerSystemResource {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubFunction_SubSubFunctions()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentSubFunction
      * @model opposite="ParentSubFunction" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SubFunction > getSubSubFunctions();
