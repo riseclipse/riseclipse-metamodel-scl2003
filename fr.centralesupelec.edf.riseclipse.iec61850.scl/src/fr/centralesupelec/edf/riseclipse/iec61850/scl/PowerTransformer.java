@@ -113,6 +113,7 @@ public interface PowerTransformer extends Equipment {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_EqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer
      * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< EqFunction > getEqFunction();
@@ -178,6 +179,7 @@ public interface PowerTransformer extends Equipment {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_SubEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer
      * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SubEquipment > getSubEquipment();
@@ -219,6 +221,7 @@ public interface PowerTransformer extends Equipment {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_TransformerWinding()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer
      * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< TransformerWinding > getTransformerWinding();

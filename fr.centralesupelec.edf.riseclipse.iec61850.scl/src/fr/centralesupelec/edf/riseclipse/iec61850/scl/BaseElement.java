@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -59,6 +59,7 @@ public interface BaseElement extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBaseElement_Private()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement
      * @model opposite="ParentBaseElement" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Private > getPrivate();
@@ -100,6 +101,7 @@ public interface BaseElement extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBaseElement_Text()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement
      * @model opposite="ParentBaseElement" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Text getText();

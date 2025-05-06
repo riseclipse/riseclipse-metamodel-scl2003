@@ -442,6 +442,7 @@ public interface IED extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_AccessPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED
      * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< AccessPoint > getAccessPoint();
@@ -483,6 +484,7 @@ public interface IED extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_KDC()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED
      * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< KDC > getKDC();
@@ -524,6 +526,7 @@ public interface IED extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_Services()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED
      * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Services getServices();

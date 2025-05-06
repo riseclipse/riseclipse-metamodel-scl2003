@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -56,6 +56,7 @@ public interface EquipmentContainer extends PowerSystemResource {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEquipmentContainer_PowerTransformer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer
      * @model opposite="ParentEquipmentContainer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< PowerTransformer > getPowerTransformer();
@@ -97,6 +98,7 @@ public interface EquipmentContainer extends PowerSystemResource {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEquipmentContainer_GeneralEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentEquipmentContainer
      * @model opposite="ParentEquipmentContainer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< GeneralEquipment > getGeneralEquipment();

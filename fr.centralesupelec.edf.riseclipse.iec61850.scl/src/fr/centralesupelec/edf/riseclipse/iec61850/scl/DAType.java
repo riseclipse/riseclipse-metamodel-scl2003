@@ -113,6 +113,7 @@ public interface DAType extends IDNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_BDA()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType
      * @model opposite="ParentDAType" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< BDA > getBDA();
@@ -215,6 +216,7 @@ public interface DAType extends IDNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_ProtNs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType
      * @model opposite="ParentDAType" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ProtNs > getProtNs();

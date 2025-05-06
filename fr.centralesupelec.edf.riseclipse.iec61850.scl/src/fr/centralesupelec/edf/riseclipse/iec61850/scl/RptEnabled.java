@@ -111,6 +111,7 @@ public interface RptEnabled extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRptEnabled_ClientLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled
      * @model opposite="ParentRptEnabled" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ClientLN > getClientLN();

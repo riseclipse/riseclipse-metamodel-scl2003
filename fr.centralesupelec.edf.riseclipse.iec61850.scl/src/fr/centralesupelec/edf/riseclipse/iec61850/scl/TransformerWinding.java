@@ -113,6 +113,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_EqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding
      * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< EqFunction > getEqFunction();
@@ -154,6 +155,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_NeutralPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getParentTransformerWinding
      * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     NeutralPoint getNeutralPoint();
@@ -233,6 +235,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_TapChanger()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding
      * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     TapChanger getTapChanger();

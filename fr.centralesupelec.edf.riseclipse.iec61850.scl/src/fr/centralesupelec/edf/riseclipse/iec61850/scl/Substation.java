@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -58,6 +58,7 @@ public interface Substation extends EquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_Function()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation
      * @model opposite="ParentSubstation" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Function > getFunction();
@@ -99,6 +100,7 @@ public interface Substation extends EquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_VoltageLevel()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation
      * @model opposite="ParentSubstation" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< VoltageLevel > getVoltageLevel();

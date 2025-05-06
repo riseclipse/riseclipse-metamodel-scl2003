@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -351,6 +351,7 @@ public interface Header extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_Text()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader
      * @model opposite="ParentHeader" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Text getText();
@@ -406,6 +407,7 @@ public interface Header extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_History()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getParentHeader
      * @model opposite="ParentHeader" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     History getHistory();

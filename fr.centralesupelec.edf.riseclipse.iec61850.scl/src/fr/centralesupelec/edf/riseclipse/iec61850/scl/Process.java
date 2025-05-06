@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -114,6 +114,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_Line()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Line > getLine();
@@ -179,6 +180,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_ConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ConductingEquipment > getConductingEquipment();
@@ -220,6 +222,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_Substation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Substation > getSubstation();
@@ -261,6 +264,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_SubProcesses()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentProcess
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Process > getSubProcesses();

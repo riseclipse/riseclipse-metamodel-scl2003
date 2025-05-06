@@ -137,6 +137,7 @@ public interface Server extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_Association()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer
      * @model opposite="ParentServer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Association > getAssociation();
@@ -178,6 +179,7 @@ public interface Server extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_Authentication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer
      * @model opposite="ParentServer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Authentication getAuthentication();
@@ -233,6 +235,7 @@ public interface Server extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_LDevice()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer
      * @model opposite="ParentServer" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< LDevice > getLDevice();

@@ -123,6 +123,7 @@ public interface DataSet extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataSet_FCDA()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet
      * @model opposite="ParentDataSet" containment="true" unsettable="true"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< FCDA > getFCDA();
