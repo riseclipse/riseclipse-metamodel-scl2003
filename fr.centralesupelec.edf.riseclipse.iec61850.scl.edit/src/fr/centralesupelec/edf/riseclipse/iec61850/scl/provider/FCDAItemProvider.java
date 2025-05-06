@@ -316,10 +316,12 @@ public class FCDAItemProvider
         s.append( ( ( FCDA ) object ).getDoName() );
         s.append( "\" " );
 
-        s.append( getString( "_UI_FCDA_daName_feature" ) );
-        s.append( "=\"" );
-        s.append( ( ( FCDA ) object ).getDaName() );
-        s.append( "\" " );
+        if( (( FCDA ) object ).getDaName() != null ) {
+            s.append( getString( "_UI_FCDA_daName_feature" ) );
+            s.append( "=\"" );
+            s.append( ( ( FCDA ) object ).getDaName() );
+            s.append( "\" " );
+        }
 
         s.append( "(" );
         s.append( ( ( FCDA ) object ).getLineNumber() );
