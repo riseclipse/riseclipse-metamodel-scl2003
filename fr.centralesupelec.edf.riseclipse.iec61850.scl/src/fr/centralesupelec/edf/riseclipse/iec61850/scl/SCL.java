@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -170,6 +170,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Header()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Header getHeader();
@@ -225,6 +226,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Line()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Line > getLine();
@@ -266,6 +268,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Process()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process > getProcess();
@@ -307,6 +310,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_IED()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< IED > getIED();
@@ -348,6 +352,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_DataTypeTemplates()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     DataTypeTemplates getDataTypeTemplates();
@@ -403,6 +408,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Communication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Communication getCommunication();
@@ -458,6 +464,7 @@ public interface SCL extends BaseElement {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Substation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Substation > getSubstation();

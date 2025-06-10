@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -58,6 +58,7 @@ public interface LN0 extends AnyLN {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_GSEControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0
      * @model opposite="ParentLN0" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< GSEControl > getGSEControl();
@@ -124,6 +125,7 @@ public interface LN0 extends AnyLN {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_SampledValueControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0
      * @model opposite="ParentLN0" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SampledValueControl > getSampledValueControl();
@@ -165,6 +167,7 @@ public interface LN0 extends AnyLN {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_SettingControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getParentLN0
      * @model opposite="ParentLN0" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     SettingControl getSettingControl();

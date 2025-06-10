@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -156,9 +156,10 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         source = newSource;
         boolean oldSourceESet = sourceESet;
         sourceESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PRIVATE__SOURCE, oldSource, source,
                     !oldSourceESet ) );
+        }
     }
 
     /**
@@ -172,9 +173,10 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         boolean oldSourceESet = sourceESet;
         source = SOURCE_EDEFAULT;
         sourceESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PRIVATE__SOURCE, oldSource,
                     SOURCE_EDEFAULT, oldSourceESet ) );
+        }
     }
 
     /**
@@ -208,9 +210,10 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PRIVATE__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -224,9 +227,10 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PRIVATE__TYPE, oldType, TYPE_EDEFAULT,
                     oldTypeESet ) );
+        }
     }
 
     /**
@@ -246,7 +250,9 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      */
     @Override
     public BaseElement getParentBaseElement() {
-        if( eContainerFeatureID() != SclPackage.PRIVATE__PARENT_BASE_ELEMENT ) return null;
+        if( eContainerFeatureID() != SclPackage.PRIVATE__PARENT_BASE_ELEMENT ) {
+            return null;
+        }
         return ( BaseElement ) eInternalContainer();
     }
 
@@ -271,20 +277,26 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         if( newParentBaseElement != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.PRIVATE__PARENT_BASE_ELEMENT
                         && newParentBaseElement != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentBaseElement ) )
+            if( EcoreUtil.isAncestor( this, newParentBaseElement ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentBaseElement != null )
+            }
+            if( newParentBaseElement != null ) {
                 msgs = ( ( InternalEObject ) newParentBaseElement ).eInverseAdd( this, SclPackage.BASE_ELEMENT__PRIVATE,
                         BaseElement.class, msgs );
+            }
             msgs = basicSetParentBaseElement( newParentBaseElement, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PRIVATE__PARENT_BASE_ELEMENT,
                     newParentBaseElement, newParentBaseElement ) );
+        }
     }
 
     /**
@@ -310,8 +322,9 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentBaseElement( ( BaseElement ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -435,21 +448,36 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (source: " );
-        if( sourceESet )
+        if( sourceESet ) {
             result.append( source );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getXpath() {
+        if( getParentBaseElement().getPrivate().size() == 1 ) {
+            return getParentBaseElement().getXpath() + "/scl:Private";
+        }
+        return getParentBaseElement().getXpath() + "/scl:Private["
+                + ( getParentBaseElement().getPrivate().indexOf( this ) + 1 ) + "]";
     }
 
 } //PrivateImpl

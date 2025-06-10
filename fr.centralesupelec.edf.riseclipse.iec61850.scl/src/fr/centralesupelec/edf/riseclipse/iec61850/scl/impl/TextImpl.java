@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -138,9 +138,10 @@ public class TextImpl extends SclObjectImpl implements Text {
         source = newSource;
         boolean oldSourceESet = sourceESet;
         sourceESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TEXT__SOURCE, oldSource, source,
                     !oldSourceESet ) );
+        }
     }
 
     /**
@@ -154,9 +155,10 @@ public class TextImpl extends SclObjectImpl implements Text {
         boolean oldSourceESet = sourceESet;
         source = SOURCE_EDEFAULT;
         sourceESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TEXT__SOURCE, oldSource,
                     SOURCE_EDEFAULT, oldSourceESet ) );
+        }
     }
 
     /**
@@ -176,7 +178,9 @@ public class TextImpl extends SclObjectImpl implements Text {
      */
     @Override
     public BaseElement getParentBaseElement() {
-        if( eContainerFeatureID() != SclPackage.TEXT__PARENT_BASE_ELEMENT ) return null;
+        if( eContainerFeatureID() != SclPackage.TEXT__PARENT_BASE_ELEMENT ) {
+            return null;
+        }
         return ( BaseElement ) eInternalContainer();
     }
 
@@ -200,20 +204,26 @@ public class TextImpl extends SclObjectImpl implements Text {
     public void setParentBaseElement( BaseElement newParentBaseElement ) {
         if( newParentBaseElement != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TEXT__PARENT_BASE_ELEMENT && newParentBaseElement != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentBaseElement ) )
+            if( EcoreUtil.isAncestor( this, newParentBaseElement ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentBaseElement != null )
+            }
+            if( newParentBaseElement != null ) {
                 msgs = ( ( InternalEObject ) newParentBaseElement ).eInverseAdd( this, SclPackage.BASE_ELEMENT__TEXT,
                         BaseElement.class, msgs );
+            }
             msgs = basicSetParentBaseElement( newParentBaseElement, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TEXT__PARENT_BASE_ELEMENT,
                     newParentBaseElement, newParentBaseElement ) );
+        }
     }
 
     /**
@@ -223,7 +233,9 @@ public class TextImpl extends SclObjectImpl implements Text {
      */
     @Override
     public Header getParentHeader() {
-        if( eContainerFeatureID() != SclPackage.TEXT__PARENT_HEADER ) return null;
+        if( eContainerFeatureID() != SclPackage.TEXT__PARENT_HEADER ) {
+            return null;
+        }
         return ( Header ) eInternalContainer();
     }
 
@@ -246,20 +258,26 @@ public class TextImpl extends SclObjectImpl implements Text {
     public void setParentHeader( Header newParentHeader ) {
         if( newParentHeader != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.TEXT__PARENT_HEADER && newParentHeader != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentHeader ) )
+            if( EcoreUtil.isAncestor( this, newParentHeader ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentHeader != null )
+            }
+            if( newParentHeader != null ) {
                 msgs = ( ( InternalEObject ) newParentHeader ).eInverseAdd( this, SclPackage.HEADER__TEXT, Header.class,
                         msgs );
+            }
             msgs = basicSetParentHeader( newParentHeader, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TEXT__PARENT_HEADER, newParentHeader,
                     newParentHeader ) );
+        }
     }
 
     /**
@@ -281,8 +299,9 @@ public class TextImpl extends SclObjectImpl implements Text {
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TEXT__VALUE, oldValue, value ) );
+        }
     }
 
     /**
@@ -294,12 +313,14 @@ public class TextImpl extends SclObjectImpl implements Text {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.TEXT__PARENT_BASE_ELEMENT:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentBaseElement( ( BaseElement ) otherEnd, msgs );
         case SclPackage.TEXT__PARENT_HEADER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentHeader( ( Header ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -432,18 +453,34 @@ public class TextImpl extends SclObjectImpl implements Text {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (source: " );
-        if( sourceESet )
+        if( sourceESet ) {
             result.append( source );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", value: " );
         result.append( value );
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentBaseElement() != null ) {
+            parentXpath = getParentBaseElement().getXpath();
+        }
+        if( getParentHeader() != null ) {
+            parentXpath = getParentHeader().getXpath();
+        }
+        return parentXpath + "/scl:Text";
     }
 
 } //TextImpl

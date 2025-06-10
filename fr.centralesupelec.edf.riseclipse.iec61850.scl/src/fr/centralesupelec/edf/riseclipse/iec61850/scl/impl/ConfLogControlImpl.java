@@ -215,4 +215,9 @@ public class ConfLogControlImpl extends ServiceWithMaxNonZeroImpl implements Con
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ConfLogControl";
+    }
+
 } //ConfLogControlImpl

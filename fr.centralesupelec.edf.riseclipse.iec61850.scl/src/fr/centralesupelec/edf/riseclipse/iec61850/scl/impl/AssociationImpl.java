@@ -1318,12 +1318,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
         String messagePrefix = "while resolving link from Association: ";
 
-        if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "iedName is missing " );
-            return;
-        }
-        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
+        if( ( getIedName() == null ) || getIedName().isEmpty() || ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "ldInst is missing " );
             return;
@@ -1381,6 +1376,35 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 getRefersToAnyLN().getLineNumber() );
 
         //@formatter:on
+    }
+
+    @Override
+    public String getXpath() {
+        if( !getAssociationID().isEmpty() ) {
+            return getParentServer().getXpath() + "/scl:Association[@associationID='" + getAssociationID() + "']";
+        }
+        String ldInstXpath = "";
+        if( isSetLdInst() ) {
+            ldInstXpath = "[@ldInst='" + getLdInst() + "']";
+        }
+        String lnClassXpath = "";
+        if( isSetLnClass() ) {
+            lnClassXpath = "[@lnClass='" + getLnClass() + "']";
+        }
+        String lnInstXpath = "";
+        if( isSetLnInst() ) {
+            lnInstXpath = "[@lnInst='" + getLnInst() + "']";
+        }
+        String prefixXpath = "";
+        if( !getPrefix().isEmpty() ) {
+            prefixXpath = "[@prefix='" + getPrefix() + "']";
+        }
+        return getParentServer().getXpath() + "/scl:Association"
+                + "[@iedName='" + getIedName() + "']"
+                + ldInstXpath
+                + prefixXpath
+                + lnClassXpath
+                + lnInstXpath;
     }
 
 } //AssociationImpl

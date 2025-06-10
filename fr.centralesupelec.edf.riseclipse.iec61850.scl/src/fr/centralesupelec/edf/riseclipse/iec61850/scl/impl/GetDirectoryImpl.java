@@ -215,4 +215,9 @@ public class GetDirectoryImpl extends ServiceYesNoImpl implements GetDirectory {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GetDirectory";
+    }
+
 } //GetDirectoryImpl

@@ -7,10 +7,10 @@
     editorPluginClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.presentation.SCLEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     testSuiteClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.tests.SCLAllTests"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
     editPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.edit" editorPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.editor"
-    runtimeVersion="2.37" operationReflection="true" importOrganizing="true" cleanup="true"
-    eclipsePlatformVersion="2024-03">
+    runtimeVersion="2.40" operationReflection="true" importOrganizing="true" cleanup="true"
+    eclipsePlatformVersion="2024-12">
   <genPackages prefix="Scl" basePackage="fr.centralesupelec.edf.riseclipse.iec61850"
       resource="XML" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
       fileExtensions="scl,scd,xml" ecorePackage="SCL.ecore#/">
@@ -1028,6 +1028,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/lineNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/explicitLinksBuilt"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/filename"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/xpath"/>
       <genOperations ecoreOperation="SCL.ecore#//SclObject/buildExplicitLinks">
         <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/console"/>
         <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/forceUpdate"/>

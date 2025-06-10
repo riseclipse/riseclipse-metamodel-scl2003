@@ -1306,4 +1306,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 getRefersToLog().getLineNumber() );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAnyLN().getXpath() + "/scl:LogControl[@name='" + getName() + "']";
+    }
+
 } //LogControlImpl

@@ -215,4 +215,9 @@ public class TimerActivatedControlImpl extends ServiceYesNoImpl implements Timer
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:TimerActivatedControl";
+    }
+
 } //TimerActivatedControlImpl

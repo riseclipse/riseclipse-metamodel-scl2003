@@ -342,4 +342,9 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSettingGroups().getXpath() + "/scl:ConfSG";
+    }
+
 } //ConfSGImpl

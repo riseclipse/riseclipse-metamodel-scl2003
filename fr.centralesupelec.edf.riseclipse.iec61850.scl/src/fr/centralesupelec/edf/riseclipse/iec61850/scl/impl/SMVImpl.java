@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        if( eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP ) return null;
+        if( eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP ) {
+            return null;
+        }
         return ( ConnectedAP ) eInternalContainer();
     }
 
@@ -95,20 +97,26 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
     public void setParentConnectedAP( ConnectedAP newParentConnectedAP ) {
         if( newParentConnectedAP != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP && newParentConnectedAP != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentConnectedAP ) )
+            if( EcoreUtil.isAncestor( this, newParentConnectedAP ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentConnectedAP != null )
+            }
+            if( newParentConnectedAP != null ) {
                 msgs = ( ( InternalEObject ) newParentConnectedAP ).eInverseAdd( this, SclPackage.CONNECTED_AP__SMV,
                         ConnectedAP.class, msgs );
+            }
             msgs = basicSetParentConnectedAP( newParentConnectedAP, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV__PARENT_CONNECTED_AP,
                     newParentConnectedAP, newParentConnectedAP ) );
+        }
     }
 
     /**
@@ -120,8 +128,9 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SMV__PARENT_CONNECTED_AP:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentConnectedAP( ( ConnectedAP ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -211,6 +220,12 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
             return getParentConnectedAP() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        return getParentConnectedAP().getXpath() + "/scl:SMV[@ldInst='" + getLdInst() + "'][@cbName='" + getCbName()
+                + "']";
     }
 
 } //SMVImpl

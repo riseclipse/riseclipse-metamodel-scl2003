@@ -520,4 +520,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:LogSettings";
+    }
+
 } //LogSettingsImpl

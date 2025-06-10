@@ -515,4 +515,9 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:SettingGroups";
+    }
+
 } //SettingGroupsImpl

@@ -280,4 +280,9 @@ public class HistoryImpl extends SclObjectImpl implements History {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentHeader().getXpath() + "/scl:History";
+    }
+
 } //HistoryImpl

@@ -78,6 +78,7 @@ public class SclObjectItemProvider
             addLineNumberPropertyDescriptor( object );
             addExplicitLinksBuiltPropertyDescriptor( object );
             addFilenamePropertyDescriptor( object );
+            addXpathPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -149,6 +150,28 @@ public class SclObjectItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Xpath feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addXpathPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SclObject_xpath_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclObject_xpath_feature",
+                                "_UI_SclObject_type" ),
+                        SclPackage.eINSTANCE.getSclObject_Xpath(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -186,6 +209,7 @@ public class SclObjectItemProvider
         case SclPackage.SCL_OBJECT__LINE_NUMBER:
         case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
         case SclPackage.SCL_OBJECT__FILENAME:
+        case SclPackage.SCL_OBJECT__XPATH:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

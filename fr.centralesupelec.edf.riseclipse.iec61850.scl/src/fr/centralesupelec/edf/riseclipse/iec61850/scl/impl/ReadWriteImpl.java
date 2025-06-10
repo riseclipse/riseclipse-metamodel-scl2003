@@ -213,4 +213,9 @@ public class ReadWriteImpl extends ServiceYesNoImpl implements ReadWrite {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ReadWrite";
+    }
+
 } //ReadWriteImpl

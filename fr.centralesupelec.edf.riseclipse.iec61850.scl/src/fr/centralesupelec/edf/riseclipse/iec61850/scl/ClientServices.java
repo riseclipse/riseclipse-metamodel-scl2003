@@ -683,6 +683,7 @@ public interface ClientServices extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_TimeSyncProt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices
      * @model opposite="ParentClientServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     TimeSyncProt getTimeSyncProt();
@@ -900,6 +901,7 @@ public interface ClientServices extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_McSecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices
      * @model opposite="ParentClientServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     McSecurity getMcSecurity();

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,17 +20,17 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +73,9 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
      */
     @Override
     public Line getParentLine() {
-        if( eContainerFeatureID() != SclPackage.VOLTAGE__PARENT_LINE ) return null;
+        if( eContainerFeatureID() != SclPackage.VOLTAGE__PARENT_LINE ) {
+            return null;
+        }
         return ( Line ) eInternalContainer();
     }
 
@@ -96,20 +98,26 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
     public void setParentLine( Line newParentLine ) {
         if( newParentLine != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.VOLTAGE__PARENT_LINE && newParentLine != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLine ) )
+            if( EcoreUtil.isAncestor( this, newParentLine ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLine != null )
+            }
+            if( newParentLine != null ) {
                 msgs = ( ( InternalEObject ) newParentLine ).eInverseAdd( this, SclPackage.LINE__VOLTAGE, Line.class,
                         msgs );
+            }
             msgs = basicSetParentLine( newParentLine, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VOLTAGE__PARENT_LINE, newParentLine,
                     newParentLine ) );
+        }
     }
 
     /**
@@ -119,7 +127,9 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
      */
     @Override
     public VoltageLevel getParentVoltageLevel() {
-        if( eContainerFeatureID() != SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL ) return null;
+        if( eContainerFeatureID() != SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL ) {
+            return null;
+        }
         return ( VoltageLevel ) eInternalContainer();
     }
 
@@ -144,20 +154,26 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
         if( newParentVoltageLevel != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL
                         && newParentVoltageLevel != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentVoltageLevel ) )
+            if( EcoreUtil.isAncestor( this, newParentVoltageLevel ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentVoltageLevel != null )
+            }
+            if( newParentVoltageLevel != null ) {
                 msgs = ( ( InternalEObject ) newParentVoltageLevel ).eInverseAdd( this,
                         SclPackage.VOLTAGE_LEVEL__VOLTAGE, VoltageLevel.class, msgs );
+            }
             msgs = basicSetParentVoltageLevel( newParentVoltageLevel, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL,
                     newParentVoltageLevel, newParentVoltageLevel ) );
+        }
     }
 
     /**
@@ -169,12 +185,14 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.VOLTAGE__PARENT_LINE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLine( ( Line ) otherEnd, msgs );
         case SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentVoltageLevel( ( VoltageLevel ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -279,6 +297,18 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
             return getParentVoltageLevel() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentLine() != null ) {
+            parentXpath = getParentLine().getXpath();
+        }
+        if( getParentVoltageLevel() != null ) {
+            parentXpath = getParentVoltageLevel().getXpath();
+        }
+        return parentXpath + "/scl:Voltage";
     }
 
 } //VoltageImpl

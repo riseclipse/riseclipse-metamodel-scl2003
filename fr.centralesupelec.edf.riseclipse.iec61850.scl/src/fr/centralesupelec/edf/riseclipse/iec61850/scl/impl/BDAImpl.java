@@ -211,4 +211,12 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentDAType().getBDA().size() == 1 ) {
+            return getParentDAType().getXpath() + "/scl:BDA";
+        }
+        return getParentDAType().getXpath() + "/scl:BDA[@name='" + getName() + "']";
+    }
+
 } //BDAImpl

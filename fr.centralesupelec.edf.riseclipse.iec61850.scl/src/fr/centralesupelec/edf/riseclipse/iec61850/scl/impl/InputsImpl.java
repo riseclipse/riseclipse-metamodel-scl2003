@@ -280,4 +280,9 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAnyLN().getXpath() + "/scl:Inputs";
+    }
+
 } //InputsImpl

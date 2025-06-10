@@ -615,4 +615,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentTransformerWinding().getXpath() + "/scl:TapChanger[@name='" + getName() + "']";
+    }
+
 } //TapChangerImpl

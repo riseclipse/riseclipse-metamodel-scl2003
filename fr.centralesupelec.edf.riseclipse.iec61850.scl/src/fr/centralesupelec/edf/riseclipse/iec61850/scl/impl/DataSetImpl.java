@@ -453,4 +453,9 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentAnyLN().getXpath() + "/scl:DataSet[@name='" + getName() + "']";
+    }
+
 } //DataSetImpl

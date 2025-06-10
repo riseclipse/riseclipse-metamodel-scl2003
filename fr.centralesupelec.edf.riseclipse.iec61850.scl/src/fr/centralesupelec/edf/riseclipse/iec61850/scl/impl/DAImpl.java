@@ -741,4 +741,12 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentDOType().getDA().size() == 1 ) {
+            return getParentDOType().getXpath() + "/scl:DA";
+        }
+        return getParentDOType().getXpath() + "/scl:DA[@name='" + getName() + "']";
+    }
+
 } //DAImpl

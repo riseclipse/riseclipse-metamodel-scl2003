@@ -517,4 +517,9 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentLN0().getXpath() + "/scl:SettingControlImpl";
+    }
+
 } //SettingControlImpl

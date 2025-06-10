@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -349,6 +349,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SmpRate > getSmpRate();
@@ -390,6 +391,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSec()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SamplesPerSec > getSamplesPerSec();
@@ -431,6 +433,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SecPerSamples()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getParentSMVSettings
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SecPerSamples > getSecPerSamples();
@@ -661,6 +664,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_McSecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     McSecurity getMcSecurity();

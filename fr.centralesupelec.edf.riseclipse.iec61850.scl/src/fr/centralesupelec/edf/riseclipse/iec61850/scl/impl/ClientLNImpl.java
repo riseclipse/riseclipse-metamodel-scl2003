@@ -21,7 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -327,9 +326,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         apRef = newApRef;
         boolean oldApRefESet = apRefESet;
         apRefESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__AP_REF, oldApRef, apRef,
                     !oldApRefESet ) );
+        }
     }
 
     /**
@@ -343,9 +343,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldApRefESet = apRefESet;
         apRef = AP_REF_EDEFAULT;
         apRefESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__AP_REF, oldApRef,
                     AP_REF_EDEFAULT, oldApRefESet ) );
+        }
     }
 
     /**
@@ -365,7 +366,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public RptEnabled getParentRptEnabled() {
-        if( eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED ) return null;
+        if( eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED ) {
+            return null;
+        }
         return ( RptEnabled ) eInternalContainer();
     }
 
@@ -390,20 +393,26 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         if( newParentRptEnabled != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED
                         && newParentRptEnabled != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentRptEnabled ) )
+            if( EcoreUtil.isAncestor( this, newParentRptEnabled ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentRptEnabled != null )
+            }
+            if( newParentRptEnabled != null ) {
                 msgs = ( ( InternalEObject ) newParentRptEnabled ).eInverseAdd( this, SclPackage.RPT_ENABLED__CLIENT_LN,
                         RptEnabled.class, msgs );
+            }
             msgs = basicSetParentRptEnabled( newParentRptEnabled, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED,
                     newParentRptEnabled, newParentRptEnabled ) );
+        }
     }
 
     /**
@@ -427,9 +436,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__IED_NAME, oldIedName, iedName,
                     !oldIedNameESet ) );
+        }
     }
 
     /**
@@ -443,9 +453,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__IED_NAME, oldIedName,
                     IED_NAME_EDEFAULT, oldIedNameESet ) );
+        }
     }
 
     /**
@@ -479,9 +490,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LD_INST, oldLdInst, ldInst,
                     !oldLdInstESet ) );
+        }
     }
 
     /**
@@ -495,9 +507,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__LD_INST, oldLdInst,
                     LD_INST_EDEFAULT, oldLdInstESet ) );
+        }
     }
 
     /**
@@ -531,9 +544,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -547,9 +561,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -583,9 +598,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LN_INST, oldLnInst, lnInst,
                     !oldLnInstESet ) );
+        }
     }
 
     /**
@@ -599,9 +615,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__LN_INST, oldLnInst,
                     LN_INST_EDEFAULT, oldLnInstESet ) );
+        }
     }
 
     /**
@@ -635,9 +652,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__PREFIX, oldPrefix, prefix,
                     !oldPrefixESet ) );
+        }
     }
 
     /**
@@ -651,9 +669,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__PREFIX, oldPrefix,
                     PREFIX_EDEFAULT, oldPrefixESet ) );
+        }
     }
 
     /**
@@ -687,9 +706,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__DESC, oldDesc, desc,
                     !oldDescESet ) );
+        }
     }
 
     /**
@@ -703,9 +723,10 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__DESC, oldDesc,
                     DESC_EDEFAULT, oldDescESet ) );
+        }
     }
 
     /**
@@ -741,10 +762,12 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -758,21 +781,26 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
         if( newRefersToAnyLN != refersToAnyLN ) {
             NotificationChain msgs = null;
-            if( refersToAnyLN != null )
+            if( refersToAnyLN != null ) {
                 msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
                         SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs );
-            if( newRefersToAnyLN != null )
+            }
+            if( newRefersToAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newRefersToAnyLN ).eInverseAdd( this,
                         SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs );
+            }
             msgs = basicSetRefersToAnyLN( newRefersToAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN,
                         newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet ) );
+            }
         }
     }
 
@@ -789,10 +817,12 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -809,14 +839,17 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN,
                     AnyLN.class, msgs );
             msgs = basicUnsetRefersToAnyLN( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, null,
                         null, oldRefersToAnyLNESet ) );
+            }
         }
     }
 
@@ -839,13 +872,15 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentRptEnabled( ( RptEnabled ) otherEnd, msgs );
         case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-            if( refersToAnyLN != null )
+            if( refersToAnyLN != null ) {
                 msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
                         SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs );
+            }
             return basicSetRefersToAnyLN( ( AnyLN ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -1107,44 +1142,60 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (desc: " );
-        if( descESet )
+        if( descESet ) {
             result.append( desc );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", iedName: " );
-        if( iedNameESet )
+        if( iedNameESet ) {
             result.append( iedName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldInst: " );
-        if( ldInstESet )
+        if( ldInstESet ) {
             result.append( ldInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnInst: " );
-        if( lnInstESet )
+        if( lnInstESet ) {
             result.append( lnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prefix: " );
-        if( prefixESet )
+        if( prefixESet ) {
             result.append( prefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", apRef: " );
-        if( apRefESet )
+        if( apRefESet ) {
             result.append( apRef );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -1166,12 +1217,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
 
         String messagePrefix = "while resolving link from ClientLN: ";
 
-        if( ( getIedName() == null ) || getIedName().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "iedName is missing" );
-            return;
-        }
-        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
+        if( ( getIedName() == null ) || getIedName().isEmpty() || ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "ldInst is missing" );
             return;
@@ -1196,12 +1242,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
 
         Pair< AccessPoint, Integer > ap = null;
         if( ( getApRef() == null ) || getApRef().isEmpty() ) {
-            if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                //         messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
-                return;
-            }
-            if( ied.getLeft().getAccessPoint().size() > 1 ) {
+            if( ( ied.getLeft().getAccessPoint().size() == 0 ) || ( ied.getLeft().getAccessPoint().size() > 1 ) ) {
                 // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 //         messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
                 //         " ) but apRef not specified" );
@@ -1245,7 +1286,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         String mess = " LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
+            if( getPrefix() != "" ) {
+                mess += ", prefix = " + getPrefix();
+            }
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
@@ -1257,6 +1300,32 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 "ClientLN refers to ", mess, " on line ",
                 getRefersToAnyLN().getLineNumber() );
+    }
+
+    @Override
+    public String getXpath() {
+        String ldInstXpath = "";
+        if( isSetLdInst() ) {
+            ldInstXpath = "[@ldInst='" + getLdInst() + "']";
+        }
+        String lnClassXpath = "";
+        if( isSetLnClass() ) {
+            lnClassXpath = "[@lnClass='" + getLnClass() + "']";
+        }
+        String lnInstXpath = "";
+        if( isSetLnInst() && ( !getLnInst().isEmpty() ) ) {
+            lnInstXpath = "[@lnInst='" + getLnInst() + "']";
+        }
+        String prefixXpath = "";
+        if( !getPrefix().isEmpty() ) {
+            prefixXpath = "[@prefix='" + getPrefix() + "']";
+        }
+        return getParentRptEnabled().getXpath() + "/scl:ClientLN"
+                + "[@iedName='" + getIedName() + "']"
+                + ldInstXpath
+                + prefixXpath
+                + lnClassXpath
+                + lnInstXpath;
     }
 
 } //ClientLNImpl

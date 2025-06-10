@@ -282,6 +282,7 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Inputs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Inputs getInputs();
@@ -337,6 +338,7 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Log()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< Log > getLog();
@@ -378,6 +380,7 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_DOI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< DOI > getDOI();
@@ -419,6 +422,7 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ReportControl > getReportControl();
@@ -460,6 +464,7 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_LogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< LogControl > getLogControl();
@@ -501,6 +506,7 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_DataSet()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< DataSet > getDataSet();

@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -318,9 +317,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__IED_NAME, oldIedName, iedName,
                     !oldIedNameESet ) );
+        }
     }
 
     /**
@@ -334,9 +334,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__IED_NAME, oldIedName,
                     IED_NAME_EDEFAULT, oldIedNameESet ) );
+        }
     }
 
     /**
@@ -370,9 +371,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LD_INST, oldLdInst, ldInst,
                     !oldLdInstESet ) );
+        }
     }
 
     /**
@@ -386,9 +388,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__LD_INST, oldLdInst,
                     LD_INST_EDEFAULT, oldLdInstESet ) );
+        }
     }
 
     /**
@@ -422,9 +425,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -438,9 +442,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -474,9 +479,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LN_INST, oldLnInst, lnInst,
                     !oldLnInstESet ) );
+        }
     }
 
     /**
@@ -490,9 +496,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__LN_INST, oldLnInst,
                     LN_INST_EDEFAULT, oldLnInstESet ) );
+        }
     }
 
     /**
@@ -526,9 +533,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         lnType = newLnType;
         boolean oldLnTypeESet = lnTypeESet;
         lnTypeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LN_TYPE, oldLnType, lnType,
                     !oldLnTypeESet ) );
+        }
     }
 
     /**
@@ -542,9 +550,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         boolean oldLnTypeESet = lnTypeESet;
         lnType = LN_TYPE_EDEFAULT;
         lnTypeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__LN_TYPE, oldLnType,
                     LN_TYPE_EDEFAULT, oldLnTypeESet ) );
+        }
     }
 
     /**
@@ -578,9 +587,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__PREFIX, oldPrefix, prefix,
                     !oldPrefixESet ) );
+        }
     }
 
     /**
@@ -594,9 +604,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__PREFIX, oldPrefix,
                     PREFIX_EDEFAULT, oldPrefixESet ) );
+        }
     }
 
     /**
@@ -632,10 +643,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.LNODE__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -649,21 +662,26 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
         if( newRefersToAnyLN != refersToAnyLN ) {
             NotificationChain msgs = null;
-            if( refersToAnyLN != null )
+            if( refersToAnyLN != null ) {
                 msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this, SclPackage.ANY_LN__REFERRED_BY_LNODE,
                         AnyLN.class, msgs );
-            if( newRefersToAnyLN != null )
+            }
+            if( newRefersToAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newRefersToAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__REFERRED_BY_LNODE,
                         AnyLN.class, msgs );
+            }
             msgs = basicSetRefersToAnyLN( newRefersToAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__REFERS_TO_ANY_LN,
                         newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet ) );
+            }
         }
     }
 
@@ -680,10 +698,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.LNODE__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -700,14 +720,17 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this, SclPackage.ANY_LN__REFERRED_BY_LNODE,
                     AnyLN.class, msgs );
             msgs = basicUnsetRefersToAnyLN( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__REFERS_TO_ANY_LN, null,
                         null, oldRefersToAnyLNESet ) );
+            }
         }
     }
 
@@ -728,7 +751,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      */
     @Override
     public LNodeContainer getParentLNodeContainer() {
-        if( eContainerFeatureID() != SclPackage.LNODE__PARENT_LNODE_CONTAINER ) return null;
+        if( eContainerFeatureID() != SclPackage.LNODE__PARENT_LNODE_CONTAINER ) {
+            return null;
+        }
         return ( LNodeContainer ) eInternalContainer();
     }
 
@@ -754,20 +779,26 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( newParentLNodeContainer != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.LNODE__PARENT_LNODE_CONTAINER
                         && newParentLNodeContainer != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLNodeContainer ) )
+            if( EcoreUtil.isAncestor( this, newParentLNodeContainer ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLNodeContainer != null )
+            }
+            if( newParentLNodeContainer != null ) {
                 msgs = ( ( InternalEObject ) newParentLNodeContainer ).eInverseAdd( this,
                         SclPackage.LNODE_CONTAINER__LNODE, LNodeContainer.class, msgs );
+            }
             msgs = basicSetParentLNodeContainer( newParentLNodeContainer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__PARENT_LNODE_CONTAINER,
                     newParentLNodeContainer, newParentLNodeContainer ) );
+        }
     }
 
     /**
@@ -794,10 +825,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.LNODE__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, newRefersToLNodeType,
                     !oldRefersToLNodeTypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -811,21 +844,26 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     public void setRefersToLNodeType( LNodeType newRefersToLNodeType ) {
         if( newRefersToLNodeType != refersToLNodeType ) {
             NotificationChain msgs = null;
-            if( refersToLNodeType != null )
+            if( refersToLNodeType != null ) {
                 msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
                         SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs );
-            if( newRefersToLNodeType != null )
+            }
+            if( newRefersToLNodeType != null ) {
                 msgs = ( ( InternalEObject ) newRefersToLNodeType ).eInverseAdd( this,
                         SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs );
+            }
             msgs = basicSetRefersToLNodeType( newRefersToLNodeType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
             refersToLNodeTypeESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__REFERS_TO_LNODE_TYPE,
                         newRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet ) );
+            }
         }
     }
 
@@ -842,10 +880,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.LNODE__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, null, oldRefersToLNodeTypeESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -862,14 +902,17 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
                     SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs );
             msgs = basicUnsetRefersToLNodeType( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
             refersToLNodeTypeESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__REFERS_TO_LNODE_TYPE, null,
                         null, oldRefersToLNodeTypeESet ) );
+            }
         }
     }
 
@@ -892,18 +935,21 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.LNODE__REFERS_TO_ANY_LN:
-            if( refersToAnyLN != null )
+            if( refersToAnyLN != null ) {
                 msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this, SclPackage.ANY_LN__REFERRED_BY_LNODE,
                         AnyLN.class, msgs );
+            }
             return basicSetRefersToAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLNodeContainer( ( LNodeContainer ) otherEnd, msgs );
         case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
-            if( refersToLNodeType != null )
+            if( refersToLNodeType != null ) {
                 msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
                         SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs );
+            }
             return basicSetRefersToLNodeType( ( LNodeType ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -1087,39 +1133,53 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (iedName: " );
-        if( iedNameESet )
+        if( iedNameESet ) {
             result.append( iedName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldInst: " );
-        if( ldInstESet )
+        if( ldInstESet ) {
             result.append( ldInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnInst: " );
-        if( lnInstESet )
+        if( lnInstESet ) {
             result.append( lnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnType: " );
-        if( lnTypeESet )
+        if( lnTypeESet ) {
             result.append( lnType );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prefix: " );
-        if( prefixESet )
+        if( prefixESet ) {
             result.append( prefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -1197,7 +1257,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         String mess = " LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess += ", prefix = " + getPrefix();
+            if( getPrefix() != "" ) {
+                mess += ", prefix = " + getPrefix();
+            }
         }
         mess += " )";
         if( anyLN.getLeft() == null ) {
@@ -1252,6 +1314,32 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             //         messagePrefix, "lnClass in LNodeType( id = ", getLnType(), " ) is ",
             //         getRefersToLNodeType().getLnClass(), " and not ", getLnClass() );
         }
+    }
+
+    @Override
+    public String getXpath() {
+        String ldInstXpath = "";
+        if( isSetLdInst() && ( !getLdInst().isEmpty() ) ) {
+            ldInstXpath = "[@ldInst='" + getLdInst() + "']";
+        }
+        String lnClassXpath = "";
+        if( isSetLnClass() ) {
+            lnClassXpath = "[@lnClass='" + getLnClass() + "']";
+        }
+        String lnInstXpath = "";
+        if( isSetLnInst() && ( !getLnInst().isEmpty() ) ) {
+            lnInstXpath = "[@lnInst='" + getLnInst() + "']";
+        }
+        String prefixXpath = "";
+        if( !getPrefix().isEmpty() ) {
+            prefixXpath = "[@prefix='" + getPrefix() + "']";
+        }
+        return getParentLNodeContainer().getXpath() + "/scl:LNode"
+                + "[@iedName='" + getIedName() + "']"
+                + ldInstXpath
+                + prefixXpath
+                + lnClassXpath
+                + lnInstXpath;
     }
 
 } //LNodeImpl

@@ -706,4 +706,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:GSESettings";
+    }
+
 } //GSESettingsImpl

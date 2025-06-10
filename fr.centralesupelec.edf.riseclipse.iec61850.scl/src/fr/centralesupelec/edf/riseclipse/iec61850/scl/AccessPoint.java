@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -254,6 +254,7 @@ public interface AccessPoint extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_LN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint
      * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< LN > getLN();
@@ -295,6 +296,7 @@ public interface AccessPoint extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_SMVSecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getParentAccessPoint
      * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< SMVSecurity > getSMVSecurity();
@@ -336,6 +338,7 @@ public interface AccessPoint extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_ServerAt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint
      * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ServerAt getServerAt();
@@ -391,6 +394,7 @@ public interface AccessPoint extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Server()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint
      * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Server getServer();
@@ -446,6 +450,7 @@ public interface AccessPoint extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Services()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint
      * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Services getServices();
@@ -501,6 +506,7 @@ public interface AccessPoint extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_GOOSESecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getParentAccessPoint
      * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< GOOSESecurity > getGOOSESecurity();

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import java.math.BigDecimal;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -164,6 +165,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConnectivityNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentLine
      * @model opposite="ParentLine" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ConnectivityNode > getConnectivityNode();
@@ -205,6 +207,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine
      * @model opposite="ParentLine" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     EList< ConductingEquipment > getConductingEquipment();
@@ -246,6 +249,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Voltage()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine
      * @model opposite="ParentLine" containment="true" unsettable="true"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Voltage getVoltage();

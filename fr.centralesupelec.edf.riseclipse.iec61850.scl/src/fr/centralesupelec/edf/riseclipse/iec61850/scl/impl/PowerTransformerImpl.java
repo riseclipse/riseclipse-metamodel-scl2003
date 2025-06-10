@@ -543,4 +543,9 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentEquipmentContainer().getXpath() + "/scl:PowerTransformer[@name='" + getName() + "']";
+    }
+
 } //PowerTransformerImpl

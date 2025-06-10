@@ -166,6 +166,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ClientServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ClientServices getClientServices();
@@ -221,6 +222,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_CommProt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     CommProt getCommProt();
@@ -276,6 +278,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfDataSet()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ConfDataSet getConfDataSet();
@@ -331,6 +334,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfLNs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ConfLNs getConfLNs();
@@ -386,6 +390,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfLdName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ConfLdName getConfLdName();
@@ -441,6 +446,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfLogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ConfLogControl getConfLogControl();
@@ -496,6 +502,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ConfReportControl getConfReportControl();
@@ -551,6 +558,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfSigRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ConfSigRef getConfSigRef();
@@ -606,6 +614,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DataObjectDirectory()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     DataObjectDirectory getDataObjectDirectory();
@@ -661,6 +670,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DataSetDirectory()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     DataSetDirectory getDataSetDirectory();
@@ -716,6 +726,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DynAssociation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     DynAssociation getDynAssociation();
@@ -771,6 +782,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DynDataSet()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     DynDataSet getDynDataSet();
@@ -826,6 +838,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_FileHandling()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     FileHandling getFileHandling();
@@ -881,6 +894,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GOOSE()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GOOSE getGOOSE();
@@ -936,6 +950,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GSEDir()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GSEDir getGSEDir();
@@ -991,6 +1006,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GSESettings()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GSESettings getGSESettings();
@@ -1046,6 +1062,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GSSE()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GSSE getGSSE();
@@ -1101,6 +1118,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetCBValues()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GetCBValues getGetCBValues();
@@ -1156,6 +1174,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetDataObjectDefinition()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GetDataObjectDefinition getGetDataObjectDefinition();
@@ -1211,6 +1230,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetDataSetValue()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GetDataSetValue getGetDataSetValue();
@@ -1266,6 +1286,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetDirectory()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     GetDirectory getGetDirectory();
@@ -1345,6 +1366,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_LogSettings()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     LogSettings getLogSettings();
@@ -1400,6 +1422,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ReadWrite()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ReadWrite getReadWrite();
@@ -1455,6 +1478,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_RedProt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     RedProt getRedProt();
@@ -1510,6 +1534,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ReportSettings()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ReportSettings getReportSettings();
@@ -1565,6 +1590,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SMVsc()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     SMVsc getSMVsc();
@@ -1620,6 +1646,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SupSubscription()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     SupSubscription getSupSubscription();
@@ -1675,6 +1702,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ValueHandling()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     ValueHandling getValueHandling();
@@ -1730,6 +1758,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SetDataSetValue()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     SetDataSetValue getSetDataSetValue();
@@ -1785,6 +1814,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SettingGroups()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     SettingGroups getSettingGroups();
@@ -1840,6 +1870,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_TimeSyncProt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     TimeSyncProt getTimeSyncProt();
@@ -1895,6 +1926,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_TimerActivatedControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     TimerActivatedControl getTimerActivatedControl();
@@ -1950,6 +1982,7 @@ public interface Services extends SclObject {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SMVSettings()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices
      * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     SMVSettings getSMVSettings();

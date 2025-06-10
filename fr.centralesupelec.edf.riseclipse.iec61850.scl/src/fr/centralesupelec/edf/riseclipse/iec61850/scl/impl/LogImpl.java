@@ -389,4 +389,10 @@ public class LogImpl extends UnNamingImpl implements Log {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        if( getParentAnyLN().getLog().size() == 1 ) return getParentAnyLN().getXpath() + "/scl:Log";
+        return getParentAnyLN().getXpath() + "/scl:Log[@name='" + getName() + "']";
+    }
+
 } //LogImpl

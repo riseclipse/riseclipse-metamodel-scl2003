@@ -621,4 +621,9 @@ public class KDCImpl extends SclObjectImpl implements KDC {
                 getRefersToAccessPoint().getLineNumber() );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentIED().getXpath() + "/scl:KDC[@iedName='" + getIedName() + "'][@apName='" + getApName() + "']";
+    }
+
 } //KDCImpl

@@ -409,4 +409,9 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentSCL().getXpath() + "/scl:Substation[@name='" + getName() + "']";
+    }
+
 } //SubstationImpl

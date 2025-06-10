@@ -215,4 +215,9 @@ public class ConfDataSetImpl extends ServiceForConfDataSetImpl implements ConfDa
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:ConfDataSet";
+    }
+
 } //ConfDataSetImpl

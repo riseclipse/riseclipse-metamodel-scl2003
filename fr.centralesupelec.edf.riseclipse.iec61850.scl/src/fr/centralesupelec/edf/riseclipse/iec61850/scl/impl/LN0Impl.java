@@ -493,4 +493,9 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
         return super.eIsSet( featureID );
     }
 
+    @Override
+    public String getXpath() {
+        return getParentLDevice().getXpath() + "/scl:LN0";
+    }
+
 } //LN0Impl

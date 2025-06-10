@@ -712,4 +712,19 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        String parentXpath = "";
+        if( getParentAbstractConductingEquipment() != null ) {
+            parentXpath = getParentAbstractConductingEquipment().getXpath();
+        }
+        if( getParentPowerTransformer() != null ) {
+            parentXpath = getParentPowerTransformer().getXpath();
+        }
+        if( getParentTapChanger() != null ) {
+            parentXpath = getParentTapChanger().getXpath();
+        }
+        return parentXpath + "/scl:SubEquipment[@name='" + getName() + "']";
+    }
+
 } //SubEquipmentImpl

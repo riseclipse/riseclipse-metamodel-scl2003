@@ -641,4 +641,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         return result.toString();
     }
 
+    @Override
+    public String getXpath() {
+        return getParentServices().getXpath() + "/scl:SMVsc";
+    }
+
 } //SMVscImpl
