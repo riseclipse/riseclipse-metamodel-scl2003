@@ -613,7 +613,7 @@ public class LNImpl extends AnyLNImpl implements LN {
             return;
         }
 
-        // String messagePrefix = "while resolving link to ControlWithIEDName from LN lnClass=\"" + getLnClass() + "\": ";
+         String messagePrefix = "while resolving link to ControlWithIEDName from LN lnClass=\"" + getLnClass() + "\": ";
 
         List< DOI > cBRef =
              getDOI()
@@ -665,37 +665,65 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .stream()
                 .filter( ied -> controlWithIEDName.startsWith( ied.getName() ))
                 .toList();
-        if( ( ieds.size() == 0 ) || ( ieds.size() > 1 ) ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found several IED whose name is the start of ",
-            //                  controlWithIEDName, " on line ", val.getLineNumber() );
+        if( ieds.size() > 1 ) {
+             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                              messagePrefix, "found several IED whose name is the start of ",
+                              controlWithIEDName, " on line ", val.getLineNumber() );
             return;
         }
-        String ldInst = controlWithIEDName.substring( ieds.get( 0 ).getName().length(), controlWithIEDName.indexOf( '/' ));
-        List< LDevice > lDevices =
-                 ieds
-                .get( 0 )
-                .getAccessPoint()
-                .stream()
-                .map( ap -> ap.getServer() )
-                .filter(  s -> s != null  )
-                .map( s -> s.getLDevice() )
-                .flatMap( List::stream )
-                .filter( ld -> ( ld != null ) && ld.getInst().equals( ldInst ))
-                .toList();
-        if( lDevices.size() == 0 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no LDevice whose inst is ", ldInst,
-            //                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
-            return;
-        }
-        if( lDevices.size() > 1 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found several LDevice whose inst is ", ldInst,
-            //                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
-            return;
-        }
+        List< LDevice > lDevices = null;
+        if( ieds.size() == 1 ) {
+            String ldInst = controlWithIEDName.substring( ieds.get( 0 ).getName().length(), controlWithIEDName.indexOf( '/' ));
+            lDevices =
+                     ieds
+                    .get( 0 )
+                    .getAccessPoint()
+                    .stream()
+                    .map( ap -> ap.getServer() )
+                    .filter(  s -> s != null  )
+                    .flatMap( s -> s.getLDevice().stream() )
+                    .filter( ld -> ( ld != null ) && ld.getInst().equals( ldInst ))
+                    .toList();
+            if( lDevices.size() == 0 ) {
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //                  messagePrefix, "found no LDevice whose inst is ", ldInst,
+                //                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                return;
+            }
+            if( lDevices.size() > 1 ) {
+                 console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                                  messagePrefix, "found several LDevice whose inst is ", ldInst,
+                                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                return;
+            }
 
+        }
+        else {
+            // look for ldName which should be unique (see issue #38)
+            String ldName = controlWithIEDName.substring( 0, controlWithIEDName.indexOf( '/' ));
+            lDevices =
+                    scl
+                   .getIED()
+                   .stream()
+                   .flatMap( ied -> ied.getAccessPoint().stream() )
+                   .map( ap -> ap.getServer() )
+                   .filter( s -> s != null )
+                   .flatMap( s -> s.getLDevice().stream() )
+                   .peek( ld -> System.out.println( ))
+                   .filter( ld -> ldName.equals( ld.getLdName() ))
+                   .toList();
+            if( lDevices.size() == 0 ) {
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //                  messagePrefix, "found no LDevice whose ldName is ", ldName );
+                return;
+            }
+            if( lDevices.size() > 1 ) {
+                 console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                                  messagePrefix, "found several LDevice whose ldName is ", ldName );
+                return;
+            }
+
+        }
         LN0 ln0 = lDevices.get( 0 ).getLN0();
         if( ln0 == null ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
