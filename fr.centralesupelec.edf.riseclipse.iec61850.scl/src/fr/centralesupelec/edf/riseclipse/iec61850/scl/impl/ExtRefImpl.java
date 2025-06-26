@@ -566,10 +566,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getPServT()
-     * @generated
+     * @generated NOT
      * @ordered
      */
-    protected static final ServiceType PSERV_T_EDEFAULT = ServiceType.POLL;
+    // The default value for a 0..1 attribute should not be a value of the enumeration! 
+    //protected static final ServiceType PSERV_T_EDEFAULT = ServiceType.POLL;
+    protected static final ServiceType PSERV_T_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getPServT() <em>PServ T</em>}' attribute.
