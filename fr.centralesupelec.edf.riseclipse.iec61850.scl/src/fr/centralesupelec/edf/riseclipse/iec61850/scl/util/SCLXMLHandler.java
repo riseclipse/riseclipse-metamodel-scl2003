@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdXMLHandler;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
@@ -44,17 +46,29 @@ public class SCLXMLHandler extends SAXXMLHandler {
     private Stack< Integer > lineNumbers = new Stack< Integer >();
     private boolean inPrivate = false;
     private String lastElement;
+    private AsdXMLHandler asdHandler;
     
     public SCLXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
         super( xmiResource, helper, options );
+        
+        asdHandler = new AsdXMLHandler( xmiResource, helper, options, this.objects );
+        asdHandler.setDocumentLocator( this.locator );
     }
 
     @Override
     public void startElement( String uri, String localName, String qName, Attributes attributes ) throws SAXException {
+        if (AsdPackage.eNS_URI.equals( uri )) {
+            asdHandler.setDocumentLocator( this.locator );
+            asdHandler.startElement( uri, localName, qName, attributes );
+            return;
+        }
+        
         lineNumbers.push( this.locator.getLineNumber() );
         
-        if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri )) {
-            inPrivate = true;
+        if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri ) ) {
+            if( !"eIEC61850-6-100".equals( attributes.getValue( "type" ) ) ) {
+                inPrivate = true;
+            }
         }
         else if( inPrivate ) {
             if( text == null ) text = new StringBuffer();
@@ -111,6 +125,12 @@ public class SCLXMLHandler extends SAXXMLHandler {
 
     @Override
     public void endElement( String uri, String localName, String name ) {
+        if (AsdPackage.eNS_URI.equals( uri )) {
+            asdHandler.setDocumentLocator( this.locator );
+            asdHandler.endElement( uri, localName, name );
+            return;
+        }
+        
         if( lineNumbers.empty() ) {
             AbstractRiseClipseConsole.getConsole().warning(
                 XML_HANDLER_CATEGORY, resourceURI.lastSegment(), 0, "linenumber stack empty !" );

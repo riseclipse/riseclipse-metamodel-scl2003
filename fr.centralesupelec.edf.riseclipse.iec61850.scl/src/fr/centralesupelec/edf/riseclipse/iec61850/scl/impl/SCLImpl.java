@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -57,6 +58,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SCLImpl#getCommunication <em>Communication</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SCLImpl#getSubstation <em>Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SCLImpl#getRelease <em>Release</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SCLImpl#getRevisionASD <em>Revision ASD</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SCLImpl#getVersionASD <em>Version ASD</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SCLImpl#getReleaseASD <em>Release ASD</em>}</li>
  * </ul>
  *
  * @generated
@@ -247,6 +251,93 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     protected boolean releaseESet;
 
     /**
+     * The default value of the '{@link #getRevisionASD() <em>Revision ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRevisionASD()
+     * @generated
+     * @ordered
+     */
+    protected static final String REVISION_ASD_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getRevisionASD() <em>Revision ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRevisionASD()
+     * @generated
+     * @ordered
+     */
+    protected String revisionASD = REVISION_ASD_EDEFAULT;
+
+    /**
+     * This is true if the Revision ASD attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean revisionASDESet;
+
+    /**
+     * The default value of the '{@link #getVersionASD() <em>Version ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVersionASD()
+     * @generated
+     * @ordered
+     */
+    protected static final String VERSION_ASD_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getVersionASD() <em>Version ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVersionASD()
+     * @generated
+     * @ordered
+     */
+    protected String versionASD = VERSION_ASD_EDEFAULT;
+
+    /**
+     * This is true if the Version ASD attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean versionASDESet;
+
+    /**
+     * The default value of the '{@link #getReleaseASD() <em>Release ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReleaseASD()
+     * @generated
+     * @ordered
+     */
+    protected static final Integer RELEASE_ASD_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getReleaseASD() <em>Release ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReleaseASD()
+     * @generated
+     * @ordered
+     */
+    protected Integer releaseASD = RELEASE_ASD_EDEFAULT;
+
+    /**
+     * This is true if the Release ASD attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean releaseASDESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -286,9 +377,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         revision = newRevision;
         boolean oldRevisionESet = revisionESet;
         revisionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__REVISION, oldRevision, revision,
                     !oldRevisionESet ) );
+        }
     }
 
     /**
@@ -302,9 +394,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         boolean oldRevisionESet = revisionESet;
         revision = REVISION_EDEFAULT;
         revisionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__REVISION, oldRevision,
                     REVISION_EDEFAULT, oldRevisionESet ) );
+        }
     }
 
     /**
@@ -338,9 +431,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         version = newVersion;
         boolean oldVersionESet = versionESet;
         versionESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__VERSION, oldVersion, version,
                     !oldVersionESet ) );
+        }
     }
 
     /**
@@ -354,9 +448,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         boolean oldVersionESet = versionESet;
         version = VERSION_EDEFAULT;
         versionESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__VERSION, oldVersion,
                     VERSION_EDEFAULT, oldVersionESet ) );
+        }
     }
 
     /**
@@ -392,10 +487,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.SCL__HEADER,
                     oldHeader, newHeader, !oldHeaderESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -409,21 +506,26 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     public void setHeader( Header newHeader ) {
         if( newHeader != header ) {
             NotificationChain msgs = null;
-            if( header != null )
+            if( header != null ) {
                 msgs = ( ( InternalEObject ) header ).eInverseRemove( this, SclPackage.HEADER__PARENT_SCL, Header.class,
                         msgs );
-            if( newHeader != null )
+            }
+            if( newHeader != null ) {
                 msgs = ( ( InternalEObject ) newHeader ).eInverseAdd( this, SclPackage.HEADER__PARENT_SCL, Header.class,
                         msgs );
+            }
             msgs = basicSetHeader( newHeader, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldHeaderESet = headerESet;
             headerESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__HEADER, newHeader, newHeader,
                         !oldHeaderESet ) );
+            }
         }
     }
 
@@ -440,10 +542,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__HEADER,
                     oldHeader, null, oldHeaderESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -460,14 +564,17 @@ public class SCLImpl extends BaseElementImpl implements SCL {
             msgs = ( ( InternalEObject ) header ).eInverseRemove( this, SclPackage.HEADER__PARENT_SCL, Header.class,
                     msgs );
             msgs = basicUnsetHeader( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldHeaderESet = headerESet;
             headerESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__HEADER, null, null,
                         oldHeaderESet ) );
+            }
         }
     }
 
@@ -489,7 +596,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList< Line > getLine() {
         if( line == null ) {
-            line = new EObjectContainmentWithInverseEList.Unsettable< Line >( Line.class, this, SclPackage.SCL__LINE,
+            line = new EObjectContainmentWithInverseEList.Unsettable< >( Line.class, this, SclPackage.SCL__LINE,
                     SclPackage.LINE__PARENT_SCL );
         }
         return line;
@@ -502,7 +609,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetLine() {
-        if( line != null ) ( ( InternalEList.Unsettable< ? > ) line ).unset();
+        if( line != null ) {
+            ( ( InternalEList.Unsettable< ? > ) line ).unset();
+        }
     }
 
     /**
@@ -523,7 +632,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process > getProcess() {
         if( process == null ) {
-            process = new EObjectContainmentWithInverseEList.Unsettable< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process >(
+            process = new EObjectContainmentWithInverseEList.Unsettable< >(
                     fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.SCL__PROCESS,
                     SclPackage.PROCESS__PARENT_SCL );
         }
@@ -537,7 +646,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetProcess() {
-        if( process != null ) ( ( InternalEList.Unsettable< ? > ) process ).unset();
+        if( process != null ) {
+            ( ( InternalEList.Unsettable< ? > ) process ).unset();
+        }
     }
 
     /**
@@ -558,7 +669,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList< IED > getIED() {
         if( ied == null ) {
-            ied = new EObjectContainmentWithInverseEList.Unsettable< IED >( IED.class, this, SclPackage.SCL__IED,
+            ied = new EObjectContainmentWithInverseEList.Unsettable< >( IED.class, this, SclPackage.SCL__IED,
                     SclPackage.IED__PARENT_SCL );
         }
         return ied;
@@ -571,7 +682,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetIED() {
-        if( ied != null ) ( ( InternalEList.Unsettable< ? > ) ied ).unset();
+        if( ied != null ) {
+            ( ( InternalEList.Unsettable< ? > ) ied ).unset();
+        }
     }
 
     /**
@@ -609,10 +722,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SCL__DATA_TYPE_TEMPLATES, oldDataTypeTemplates, newDataTypeTemplates,
                     !oldDataTypeTemplatesESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -626,21 +741,26 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
         if( newDataTypeTemplates != dataTypeTemplates ) {
             NotificationChain msgs = null;
-            if( dataTypeTemplates != null )
+            if( dataTypeTemplates != null ) {
                 msgs = ( ( InternalEObject ) dataTypeTemplates ).eInverseRemove( this,
                         SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs );
-            if( newDataTypeTemplates != null )
+            }
+            if( newDataTypeTemplates != null ) {
                 msgs = ( ( InternalEObject ) newDataTypeTemplates ).eInverseAdd( this,
                         SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs );
+            }
             msgs = basicSetDataTypeTemplates( newDataTypeTemplates, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldDataTypeTemplatesESet = dataTypeTemplatesESet;
             dataTypeTemplatesESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__DATA_TYPE_TEMPLATES,
                         newDataTypeTemplates, newDataTypeTemplates, !oldDataTypeTemplatesESet ) );
+            }
         }
     }
 
@@ -657,10 +777,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SCL__DATA_TYPE_TEMPLATES, oldDataTypeTemplates, null, oldDataTypeTemplatesESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -677,14 +799,17 @@ public class SCLImpl extends BaseElementImpl implements SCL {
             msgs = ( ( InternalEObject ) dataTypeTemplates ).eInverseRemove( this,
                     SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs );
             msgs = basicUnsetDataTypeTemplates( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldDataTypeTemplatesESet = dataTypeTemplatesESet;
             dataTypeTemplatesESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__DATA_TYPE_TEMPLATES, null,
                         null, oldDataTypeTemplatesESet ) );
+            }
         }
     }
 
@@ -721,10 +846,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SCL__COMMUNICATION, oldCommunication, newCommunication, !oldCommunicationESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -738,21 +865,26 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     public void setCommunication( Communication newCommunication ) {
         if( newCommunication != communication ) {
             NotificationChain msgs = null;
-            if( communication != null )
+            if( communication != null ) {
                 msgs = ( ( InternalEObject ) communication ).eInverseRemove( this, SclPackage.COMMUNICATION__PARENT_SCL,
                         Communication.class, msgs );
-            if( newCommunication != null )
+            }
+            if( newCommunication != null ) {
                 msgs = ( ( InternalEObject ) newCommunication ).eInverseAdd( this, SclPackage.COMMUNICATION__PARENT_SCL,
                         Communication.class, msgs );
+            }
             msgs = basicSetCommunication( newCommunication, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldCommunicationESet = communicationESet;
             communicationESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__COMMUNICATION, newCommunication,
                         newCommunication, !oldCommunicationESet ) );
+            }
         }
     }
 
@@ -769,10 +901,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SCL__COMMUNICATION, oldCommunication, null, oldCommunicationESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -789,14 +923,17 @@ public class SCLImpl extends BaseElementImpl implements SCL {
             msgs = ( ( InternalEObject ) communication ).eInverseRemove( this, SclPackage.COMMUNICATION__PARENT_SCL,
                     Communication.class, msgs );
             msgs = basicUnsetCommunication( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldCommunicationESet = communicationESet;
             communicationESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__COMMUNICATION, null, null,
                         oldCommunicationESet ) );
+            }
         }
     }
 
@@ -818,7 +955,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList< Substation > getSubstation() {
         if( substation == null ) {
-            substation = new EObjectContainmentWithInverseEList.Unsettable< Substation >( Substation.class, this,
+            substation = new EObjectContainmentWithInverseEList.Unsettable< >( Substation.class, this,
                     SclPackage.SCL__SUBSTATION, SclPackage.SUBSTATION__PARENT_SCL );
         }
         return substation;
@@ -831,7 +968,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetSubstation() {
-        if( substation != null ) ( ( InternalEList.Unsettable< ? > ) substation ).unset();
+        if( substation != null ) {
+            ( ( InternalEList.Unsettable< ? > ) substation ).unset();
+        }
     }
 
     /**
@@ -865,9 +1004,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         release = newRelease;
         boolean oldReleaseESet = releaseESet;
         releaseESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__RELEASE, oldRelease, release,
                     !oldReleaseESet ) );
+        }
     }
 
     /**
@@ -881,9 +1021,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         boolean oldReleaseESet = releaseESet;
         release = RELEASE_EDEFAULT;
         releaseESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__RELEASE, oldRelease,
                     RELEASE_EDEFAULT, oldReleaseESet ) );
+        }
     }
 
     /**
@@ -901,14 +1042,177 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getRevisionASD() {
+        return revisionASD;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRevisionASD( String newRevisionASD ) {
+        String oldRevisionASD = revisionASD;
+        revisionASD = newRevisionASD;
+        boolean oldRevisionASDESet = revisionASDESet;
+        revisionASDESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__REVISION_ASD, oldRevisionASD,
+                    revisionASD, !oldRevisionASDESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRevisionASD() {
+        String oldRevisionASD = revisionASD;
+        boolean oldRevisionASDESet = revisionASDESet;
+        revisionASD = REVISION_ASD_EDEFAULT;
+        revisionASDESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__REVISION_ASD, oldRevisionASD,
+                    REVISION_ASD_EDEFAULT, oldRevisionASDESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRevisionASD() {
+        return revisionASDESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getVersionASD() {
+        return versionASD;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setVersionASD( String newVersionASD ) {
+        String oldVersionASD = versionASD;
+        versionASD = newVersionASD;
+        boolean oldVersionASDESet = versionASDESet;
+        versionASDESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__VERSION_ASD, oldVersionASD,
+                    versionASD, !oldVersionASDESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetVersionASD() {
+        String oldVersionASD = versionASD;
+        boolean oldVersionASDESet = versionASDESet;
+        versionASD = VERSION_ASD_EDEFAULT;
+        versionASDESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__VERSION_ASD, oldVersionASD,
+                    VERSION_ASD_EDEFAULT, oldVersionASDESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetVersionASD() {
+        return versionASDESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Integer getReleaseASD() {
+        return releaseASD;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setReleaseASD( Integer newReleaseASD ) {
+        Integer oldReleaseASD = releaseASD;
+        releaseASD = newReleaseASD;
+        boolean oldReleaseASDESet = releaseASDESet;
+        releaseASDESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__RELEASE_ASD, oldReleaseASD,
+                    releaseASD, !oldReleaseASDESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReleaseASD() {
+        Integer oldReleaseASD = releaseASD;
+        boolean oldReleaseASDESet = releaseASDESet;
+        releaseASD = RELEASE_ASD_EDEFAULT;
+        releaseASDESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__RELEASE_ASD, oldReleaseASD,
+                    RELEASE_ASD_EDEFAULT, oldReleaseASDESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReleaseASD() {
+        return releaseASDESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SCL__HEADER:
-            if( header != null )
+            if( header != null ) {
                 msgs = ( ( InternalEObject ) header ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SCL__HEADER, null, msgs );
+            }
             return basicSetHeader( ( Header ) otherEnd, msgs );
         case SclPackage.SCL__LINE:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLine() ).basicAdd( otherEnd, msgs );
@@ -918,14 +1222,16 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         case SclPackage.SCL__IED:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getIED() ).basicAdd( otherEnd, msgs );
         case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-            if( dataTypeTemplates != null )
+            if( dataTypeTemplates != null ) {
                 msgs = ( ( InternalEObject ) dataTypeTemplates ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SCL__DATA_TYPE_TEMPLATES, null, msgs );
+            }
             return basicSetDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
         case SclPackage.SCL__COMMUNICATION:
-            if( communication != null )
+            if( communication != null ) {
                 msgs = ( ( InternalEObject ) communication ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SCL__COMMUNICATION, null, msgs );
+            }
             return basicSetCommunication( ( Communication ) otherEnd, msgs );
         case SclPackage.SCL__SUBSTATION:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubstation() ).basicAdd( otherEnd,
@@ -988,6 +1294,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
             return getSubstation();
         case SclPackage.SCL__RELEASE:
             return getRelease();
+        case SclPackage.SCL__REVISION_ASD:
+            return getRevisionASD();
+        case SclPackage.SCL__VERSION_ASD:
+            return getVersionASD();
+        case SclPackage.SCL__RELEASE_ASD:
+            return getReleaseASD();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1036,6 +1348,15 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         case SclPackage.SCL__RELEASE:
             setRelease( ( Integer ) newValue );
             return;
+        case SclPackage.SCL__REVISION_ASD:
+            setRevisionASD( ( String ) newValue );
+            return;
+        case SclPackage.SCL__VERSION_ASD:
+            setVersionASD( ( String ) newValue );
+            return;
+        case SclPackage.SCL__RELEASE_ASD:
+            setReleaseASD( ( Integer ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1078,6 +1399,15 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         case SclPackage.SCL__RELEASE:
             unsetRelease();
             return;
+        case SclPackage.SCL__REVISION_ASD:
+            unsetRevisionASD();
+            return;
+        case SclPackage.SCL__VERSION_ASD:
+            unsetVersionASD();
+            return;
+        case SclPackage.SCL__RELEASE_ASD:
+            unsetReleaseASD();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1110,6 +1440,12 @@ public class SCLImpl extends BaseElementImpl implements SCL {
             return isSetSubstation();
         case SclPackage.SCL__RELEASE:
             return isSetRelease();
+        case SclPackage.SCL__REVISION_ASD:
+            return isSetRevisionASD();
+        case SclPackage.SCL__VERSION_ASD:
+            return isSetVersionASD();
+        case SclPackage.SCL__RELEASE_ASD:
+            return isSetReleaseASD();
         }
         return super.eIsSet( featureID );
     }
@@ -1121,24 +1457,53 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (revision: " );
-        if( revisionESet )
+        if( revisionESet ) {
             result.append( revision );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", version: " );
-        if( versionESet )
+        if( versionESet ) {
             result.append( version );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", release: " );
-        if( releaseESet )
+        if( releaseESet ) {
             result.append( release );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
+        result.append( ", revisionASD: " );
+        if( revisionASDESet ) {
+            result.append( revisionASD );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", versionASD: " );
+        if( versionASDESet ) {
+            result.append( versionASD );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", releaseASD: " );
+        if( releaseASDESet ) {
+            result.append( releaseASD );
+        }
+        else {
+            result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

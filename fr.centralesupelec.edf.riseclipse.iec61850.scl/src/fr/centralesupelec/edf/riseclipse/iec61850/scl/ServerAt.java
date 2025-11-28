@@ -32,6 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getApName <em>Ap Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getApUuid <em>Ap Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServerAt()
@@ -170,5 +171,27 @@ public interface ServerAt extends UnNaming {
      * @generated
      */
     boolean isSetRefersToAccessPoint();
+
+    /**
+     * Returns the value of the '<em><b>Ap Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ap Uuid</em>' attribute.
+     * @see #setApUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServerAt_ApUuid()
+     * @model
+     * @generated
+     */
+    String getApUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getApUuid <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ap Uuid</em>' attribute.
+     * @see #getApUuid()
+     * @generated
+     */
+    void setApUuid( String value );
 
 } // ServerAt

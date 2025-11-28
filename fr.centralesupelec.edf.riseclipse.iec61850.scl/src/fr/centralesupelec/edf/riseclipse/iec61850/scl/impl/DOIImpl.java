@@ -41,6 +41,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
@@ -61,6 +62,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getRefersToDO <em>Refers To DO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -201,6 +203,25 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @ordered
      */
     protected boolean refersToDOESet;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -635,6 +656,130 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.DOI__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_DOI, Labels.class,
+                        msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_DOI, Labels.class,
+                        msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__LABELS, newLabels, newLabels,
+                        !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__LABELS,
+                    oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_DOI, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -712,6 +857,12 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                         DO.class, msgs );
             }
             return basicSetRefersToDO( ( DO ) otherEnd, msgs );
+        case SclPackage.DOI__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.DOI__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -732,6 +883,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return ( ( InternalEList< ? > ) getSDI() ).basicRemove( otherEnd, msgs );
         case SclPackage.DOI__REFERS_TO_DO:
             return basicUnsetRefersToDO( msgs );
+        case SclPackage.DOI__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -774,6 +927,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return getName();
         case SclPackage.DOI__REFERS_TO_DO:
             return getRefersToDO();
+        case SclPackage.DOI__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -810,6 +965,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         case SclPackage.DOI__REFERS_TO_DO:
             setRefersToDO( ( DO ) newValue );
             return;
+        case SclPackage.DOI__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -843,6 +1001,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         case SclPackage.DOI__REFERS_TO_DO:
             unsetRefersToDO();
             return;
+        case SclPackage.DOI__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -871,6 +1032,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return isSetName();
         case SclPackage.DOI__REFERS_TO_DO:
             return isSetRefersToDO();
+        case SclPackage.DOI__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }

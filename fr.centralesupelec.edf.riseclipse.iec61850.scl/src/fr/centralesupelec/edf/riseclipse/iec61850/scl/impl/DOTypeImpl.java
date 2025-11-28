@@ -40,6 +40,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -58,6 +59,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByAbstractDataObject <em>Referred By Abstract Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getSDO <em>SDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -160,6 +162,25 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @ordered
      */
     protected EList< SDO > sdo;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -443,6 +464,130 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.DO_TYPE__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_DO_TYPE,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_DO_TYPE,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_TYPE__LABELS, newLabels,
+                        newLabels, !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.DO_TYPE__LABELS, oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_DO_TYPE, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_TYPE__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -458,6 +603,12 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             return basicSetParentDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
         case SclPackage.DO_TYPE__SDO:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSDO() ).basicAdd( otherEnd, msgs );
+        case SclPackage.DO_TYPE__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.DO_TYPE__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -478,6 +629,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             return basicSetParentDataTypeTemplates( null, msgs );
         case SclPackage.DO_TYPE__SDO:
             return ( ( InternalEList< ? > ) getSDO() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DO_TYPE__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -519,6 +672,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             return getParentDataTypeTemplates();
         case SclPackage.DO_TYPE__SDO:
             return getSDO();
+        case SclPackage.DO_TYPE__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -553,6 +708,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             getSDO().clear();
             getSDO().addAll( ( Collection< ? extends SDO > ) newValue );
             return;
+        case SclPackage.DO_TYPE__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -583,6 +741,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         case SclPackage.DO_TYPE__SDO:
             unsetSDO();
             return;
+        case SclPackage.DO_TYPE__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -609,6 +770,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             return getParentDataTypeTemplates() != null;
         case SclPackage.DO_TYPE__SDO:
             return isSetSDO();
+        case SclPackage.DO_TYPE__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }

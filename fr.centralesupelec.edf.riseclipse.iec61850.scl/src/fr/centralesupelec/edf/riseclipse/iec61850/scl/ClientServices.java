@@ -20,6 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Client Services</b></em>'.
@@ -46,6 +48,10 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getGOOSEMcSecurity <em>GOOSE Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSMVcSecurity <em>SM Vc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSecurity <em>Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#isAcceptServerInitiatedAssociation <em>Accept Server Initiated Association</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices()
@@ -886,7 +892,8 @@ public interface ClientServices extends SclObject {
     boolean isSetNoIctBinding();
 
     /**
-     * Returns the value of the '<em><b>Mc Security</b></em>' containment reference.
+     * Returns the value of the '<em><b>Mc Security</b></em>' containment reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity}.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices <em>Parent Client Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
@@ -894,51 +901,212 @@ public interface ClientServices extends SclObject {
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Mc Security</em>' containment reference.
+     * @return the value of the '<em>Mc Security</em>' containment reference list.
      * @see #isSetMcSecurity()
      * @see #unsetMcSecurity()
-     * @see #setMcSecurity(McSecurity)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_McSecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices
      * @model opposite="ParentClientServices" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
-    McSecurity getMcSecurity();
+    EList< McSecurity > getMcSecurity();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Mc Security</em>' containment reference.
-     * @see #isSetMcSecurity()
-     * @see #unsetMcSecurity()
-     * @see #getMcSecurity()
-     * @generated
-     */
-    void setMcSecurity( McSecurity value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetMcSecurity()
      * @see #getMcSecurity()
-     * @see #setMcSecurity(McSecurity)
      * @generated
      */
     void unsetMcSecurity();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference list is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Mc Security</em>' containment reference is set.
+     * @return whether the value of the '<em>Mc Security</em>' containment reference list is set.
      * @see #unsetMcSecurity()
      * @see #getMcSecurity()
-     * @see #setMcSecurity(McSecurity)
      * @generated
      */
     boolean isSetMcSecurity();
+
+    /**
+     * Returns the value of the '<em><b>GOOSE Mc Security</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity#getParentClientServicesFromGooseMcSecurity <em>Parent Client Services From Goose Mc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>GOOSE Mc Security</em>' containment reference.
+     * @see #isSetGOOSEMcSecurity()
+     * @see #unsetGOOSEMcSecurity()
+     * @see #setGOOSEMcSecurity(GOOSEMcSecurity)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_GOOSEMcSecurity()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity#getParentClientServicesFromGooseMcSecurity
+     * @model opposite="ParentClientServicesFromGooseMcSecurity" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    GOOSEMcSecurity getGOOSEMcSecurity();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getGOOSEMcSecurity <em>GOOSE Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>GOOSE Mc Security</em>' containment reference.
+     * @see #isSetGOOSEMcSecurity()
+     * @see #unsetGOOSEMcSecurity()
+     * @see #getGOOSEMcSecurity()
+     * @generated
+     */
+    void setGOOSEMcSecurity( GOOSEMcSecurity value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getGOOSEMcSecurity <em>GOOSE Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetGOOSEMcSecurity()
+     * @see #getGOOSEMcSecurity()
+     * @see #setGOOSEMcSecurity(GOOSEMcSecurity)
+     * @generated
+     */
+    void unsetGOOSEMcSecurity();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getGOOSEMcSecurity <em>GOOSE Mc Security</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>GOOSE Mc Security</em>' containment reference is set.
+     * @see #unsetGOOSEMcSecurity()
+     * @see #getGOOSEMcSecurity()
+     * @see #setGOOSEMcSecurity(GOOSEMcSecurity)
+     * @generated
+     */
+    boolean isSetGOOSEMcSecurity();
+
+    /**
+     * Returns the value of the '<em><b>SM Vc Security</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity#getParentClientServicesFromSMVcSecurity <em>Parent Client Services From SM Vc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>SM Vc Security</em>' containment reference.
+     * @see #isSetSMVcSecurity()
+     * @see #unsetSMVcSecurity()
+     * @see #setSMVcSecurity(SMVcSecurity)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_SMVcSecurity()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity#getParentClientServicesFromSMVcSecurity
+     * @model opposite="ParentClientServicesFromSMVcSecurity" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    SMVcSecurity getSMVcSecurity();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSMVcSecurity <em>SM Vc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>SM Vc Security</em>' containment reference.
+     * @see #isSetSMVcSecurity()
+     * @see #unsetSMVcSecurity()
+     * @see #getSMVcSecurity()
+     * @generated
+     */
+    void setSMVcSecurity( SMVcSecurity value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSMVcSecurity <em>SM Vc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSMVcSecurity()
+     * @see #getSMVcSecurity()
+     * @see #setSMVcSecurity(SMVcSecurity)
+     * @generated
+     */
+    void unsetSMVcSecurity();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSMVcSecurity <em>SM Vc Security</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>SM Vc Security</em>' containment reference is set.
+     * @see #unsetSMVcSecurity()
+     * @see #getSMVcSecurity()
+     * @see #setSMVcSecurity(SMVcSecurity)
+     * @generated
+     */
+    boolean isSetSMVcSecurity();
+
+    /**
+     * Returns the value of the '<em><b>Security</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Security#getParentClientServices <em>Parent Client Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Security</em>' containment reference.
+     * @see #isSetSecurity()
+     * @see #unsetSecurity()
+     * @see #setSecurity(Security)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_Security()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Security#getParentClientServices
+     * @model opposite="ParentClientServices" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Security getSecurity();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSecurity <em>Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Security</em>' containment reference.
+     * @see #isSetSecurity()
+     * @see #unsetSecurity()
+     * @see #getSecurity()
+     * @generated
+     */
+    void setSecurity( Security value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSecurity <em>Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSecurity()
+     * @see #getSecurity()
+     * @see #setSecurity(Security)
+     * @generated
+     */
+    void unsetSecurity();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSecurity <em>Security</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Security</em>' containment reference is set.
+     * @see #unsetSecurity()
+     * @see #getSecurity()
+     * @see #setSecurity(Security)
+     * @generated
+     */
+    boolean isSetSecurity();
+
+    /**
+     * Returns the value of the '<em><b>Accept Server Initiated Association</b></em>' attribute.
+     * The default value is <code>"false"</code>.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Accept Server Initiated Association</em>' attribute.
+     * @see #setAcceptServerInitiatedAssociation(boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_AcceptServerInitiatedAssociation()
+     * @model default="false"
+     * @generated
+     */
+    boolean isAcceptServerInitiatedAssociation();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#isAcceptServerInitiatedAssociation <em>Accept Server Initiated Association</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Accept Server Initiated Association</em>' attribute.
+     * @see #isAcceptServerInitiatedAssociation()
+     * @generated
+     */
+    void setAcceptServerInitiatedAssociation( boolean value );
 
 } // ClientServices

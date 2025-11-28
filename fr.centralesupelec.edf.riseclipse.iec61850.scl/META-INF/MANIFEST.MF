@@ -8,7 +8,10 @@ Bundle-Version: 1.2.16.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-21
-Export-Package: fr.centralesupelec.edf.riseclipse.iec61850.scl,
+Export-Package: fr.centralesupelec.edf.riseclipse.iec61850.asd,
+ fr.centralesupelec.edf.riseclipse.iec61850.asd.impl,
+ fr.centralesupelec.edf.riseclipse.iec61850.asd.util,
+ fr.centralesupelec.edf.riseclipse.iec61850.scl,
  fr.centralesupelec.edf.riseclipse.iec61850.scl.impl,
  fr.centralesupelec.edf.riseclipse.iec61850.scl.util
 Require-Bundle: org.eclipse.core.runtime,

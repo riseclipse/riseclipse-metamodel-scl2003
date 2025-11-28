@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.jdt.annotation.NonNull;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
@@ -254,6 +255,9 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
             EObject o = it.next();
             if( o instanceof SclObject ) {
                 ( ( SclObject ) o ).buildExplicitLinks( console, forceUpdate );
+            }
+            else if( o instanceof AsdObject ) {
+                ( ( AsdObject ) o ).buildExplicitLinks( console, forceUpdate );
             }
         }
 

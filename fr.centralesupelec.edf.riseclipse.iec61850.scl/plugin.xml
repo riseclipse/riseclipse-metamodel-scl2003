@@ -44,6 +44,21 @@
             type="xml"
             class="fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceFactoryImpl"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SCL -->
+      <package
+            uri="http://www.iec.ch/61850/2019/SCL/6-100"
+            class="fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage"
+            genModel="model/SCL.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SCL -->
+      <parser
+            type="asd"
+            class="fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdResourceFactoryImpl"/>
+   </extension>
    <extension
          point="fr.centralesupelec.edf.riseclipse.main.meta_models">
       <meta_model

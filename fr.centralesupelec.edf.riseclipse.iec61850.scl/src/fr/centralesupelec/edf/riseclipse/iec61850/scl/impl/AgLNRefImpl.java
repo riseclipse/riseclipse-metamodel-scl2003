@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getLnUuid <em>Ln Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +132,26 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @ordered
      */
     protected boolean prefixESet;
+
+    /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -313,6 +334,31 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_UUID, oldLnUuid,
+                    lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
         case SclPackage.AG_LN_REF__LN_CLASS:
@@ -321,6 +367,8 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             return getLnInst();
         case SclPackage.AG_LN_REF__PREFIX:
             return getPrefix();
+        case SclPackage.AG_LN_REF__LN_UUID:
+            return getLnUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -341,6 +389,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             return;
         case SclPackage.AG_LN_REF__PREFIX:
             setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.AG_LN_REF__LN_UUID:
+            setLnUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -363,6 +414,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         case SclPackage.AG_LN_REF__PREFIX:
             unsetPrefix();
             return;
+        case SclPackage.AG_LN_REF__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -381,6 +435,8 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             return isSetLnInst();
         case SclPackage.AG_LN_REF__PREFIX:
             return isSetPrefix();
+        case SclPackage.AG_LN_REF__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -410,6 +466,8 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             result.append( prefix );
         else
             result.append( "<unset>" );
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ')' );
         return result.toString();
     }

@@ -57,6 +57,9 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToIED <em>Refers To IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToLDevice <em>Refers To LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getApUuid <em>Ap Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getLdUuid <em>Ld Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getLnUuid <em>Ln Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -292,6 +295,66 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
      * @ordered
      */
     protected boolean refersToLDeviceESet;
+
+    /**
+     * The default value of the '{@link #getApUuid() <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String AP_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getApUuid() <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApUuid()
+     * @generated
+     * @ordered
+     */
+    protected String apUuid = AP_UUID_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getLdUuid() <em>Ld Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLdUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LD_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLdUuid() <em>Ld Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLdUuid()
+     * @generated
+     * @ordered
+     */
+    protected String ldUuid = LD_UUID_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -1072,6 +1135,78 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
      * @generated
      */
     @Override
+    public String getApUuid() {
+        return apUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setApUuid( String newApUuid ) {
+        String oldApUuid = apUuid;
+        apUuid = newApUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED_NAME__AP_UUID, oldApUuid, apUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getLdUuid() {
+        return ldUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLdUuid( String newLdUuid ) {
+        String oldLdUuid = ldUuid;
+        ldUuid = newLdUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED_NAME__LD_UUID, oldLdUuid, ldUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED_NAME__LN_UUID, oldLnUuid, lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
@@ -1164,6 +1299,12 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             return getRefersToIED();
         case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
             return getRefersToLDevice();
+        case SclPackage.IED_NAME__AP_UUID:
+            return getApUuid();
+        case SclPackage.IED_NAME__LD_UUID:
+            return getLdUuid();
+        case SclPackage.IED_NAME__LN_UUID:
+            return getLnUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1205,6 +1346,15 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             return;
         case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
             setRefersToLDevice( ( LDevice ) newValue );
+            return;
+        case SclPackage.IED_NAME__AP_UUID:
+            setApUuid( ( String ) newValue );
+            return;
+        case SclPackage.IED_NAME__LD_UUID:
+            setLdUuid( ( String ) newValue );
+            return;
+        case SclPackage.IED_NAME__LN_UUID:
+            setLnUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -1248,6 +1398,15 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
             unsetRefersToLDevice();
             return;
+        case SclPackage.IED_NAME__AP_UUID:
+            setApUuid( AP_UUID_EDEFAULT );
+            return;
+        case SclPackage.IED_NAME__LD_UUID:
+            setLdUuid( LD_UUID_EDEFAULT );
+            return;
+        case SclPackage.IED_NAME__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1280,6 +1439,12 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             return isSetRefersToIED();
         case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
             return isSetRefersToLDevice();
+        case SclPackage.IED_NAME__AP_UUID:
+            return AP_UUID_EDEFAULT == null ? apUuid != null : !AP_UUID_EDEFAULT.equals( apUuid );
+        case SclPackage.IED_NAME__LD_UUID:
+            return LD_UUID_EDEFAULT == null ? ldUuid != null : !LD_UUID_EDEFAULT.equals( ldUuid );
+        case SclPackage.IED_NAME__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -1338,6 +1503,12 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", apUuid: " );
+        result.append( apUuid );
+        result.append( ", ldUuid: " );
+        result.append( ldUuid );
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ')' );
         return result.toString();
     }
