@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -19,6 +19,15 @@
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
+
+import org.eclipse.emf.common.util.EList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LogicVarRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessEcho;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,13 +47,21 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer <em>Parent LNode Container</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLabels <em>Labels</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLnUuid <em>Ln Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentAbstract6100LNodeContainer <em>Parent Abstract6100 LNode Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByLNodeDataRef <em>Referred By LNode Data Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByLogicVarRef <em>Referred By Logic Var Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByProcessEcho <em>Referred By Process Echo</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByControlRef <em>Referred By Control Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredBySourceRef <em>Referred By Source Ref</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode()
  * @model
  * @generated
  */
-public interface LNode extends UnNaming {
+public interface LNode extends UnNaming, AgUuid {
     /**
      * Returns the value of the '<em><b>Ied Name</b></em>' attribute.
      * The default value is <code>"None"</code>.
@@ -492,5 +509,287 @@ public interface LNode extends UnNaming {
      * @generated
      */
     boolean isSetRefersToLNodeType();
+
+    /**
+     * Returns the value of the '<em><b>Labels</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentLNode <em>Parent LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #setLabels(Labels)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_Labels()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentLNode
+     * @model opposite="ParentLNode" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Labels getLabels();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @generated
+     */
+    void setLabels( Labels value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    void unsetLabels();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLabels <em>Labels</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Labels</em>' containment reference is set.
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    boolean isSetLabels();
+
+    /**
+     * Returns the value of the '<em><b>Ln Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ln Uuid</em>' attribute.
+     * @see #setLnUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_LnUuid()
+     * @model
+     * @generated
+     */
+    String getLnUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLnUuid <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ln Uuid</em>' attribute.
+     * @see #getLnUuid()
+     * @generated
+     */
+    void setLnUuid( String value );
+
+    /**
+     * Returns the value of the '<em><b>Parent Abstract6100 LNode Container</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getLNode <em>LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent Abstract6100 LNode Container</em>' container reference.
+     * @see #setParentAbstract6100LNodeContainer(Abstract6100LNodeContainer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ParentAbstract6100LNodeContainer()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getLNode
+     * @model opposite="lNode" unsettable="true" ordered="false"
+     * @generated
+     */
+    Abstract6100LNodeContainer getParentAbstract6100LNodeContainer();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentAbstract6100LNodeContainer <em>Parent Abstract6100 LNode Container</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent Abstract6100 LNode Container</em>' container reference.
+     * @see #getParentAbstract6100LNodeContainer()
+     * @generated
+     */
+    void setParentAbstract6100LNodeContainer( Abstract6100LNodeContainer value );
+
+    /**
+     * Returns the value of the '<em><b>Referred By LNode Data Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef#getRefersToLNode <em>Refers To LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By LNode Data Ref</em>' reference list.
+     * @see #isSetReferredByLNodeDataRef()
+     * @see #unsetReferredByLNodeDataRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ReferredByLNodeDataRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef#getRefersToLNode
+     * @model opposite="RefersToLNode" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< LNodeDataRef > getReferredByLNodeDataRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByLNodeDataRef <em>Referred By LNode Data Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByLNodeDataRef()
+     * @see #getReferredByLNodeDataRef()
+     * @generated
+     */
+    void unsetReferredByLNodeDataRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByLNodeDataRef <em>Referred By LNode Data Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By LNode Data Ref</em>' reference list is set.
+     * @see #unsetReferredByLNodeDataRef()
+     * @see #getReferredByLNodeDataRef()
+     * @generated
+     */
+    boolean isSetReferredByLNodeDataRef();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Logic Var Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LogicVarRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LogicVarRef#getRefersToLNode <em>Refers To LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Logic Var Ref</em>' reference list.
+     * @see #isSetReferredByLogicVarRef()
+     * @see #unsetReferredByLogicVarRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ReferredByLogicVarRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.LogicVarRef#getRefersToLNode
+     * @model opposite="RefersToLNode" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< LogicVarRef > getReferredByLogicVarRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByLogicVarRef <em>Referred By Logic Var Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByLogicVarRef()
+     * @see #getReferredByLogicVarRef()
+     * @generated
+     */
+    void unsetReferredByLogicVarRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByLogicVarRef <em>Referred By Logic Var Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Logic Var Ref</em>' reference list is set.
+     * @see #unsetReferredByLogicVarRef()
+     * @see #getReferredByLogicVarRef()
+     * @generated
+     */
+    boolean isSetReferredByLogicVarRef();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Process Echo</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessEcho}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessEcho#getRefersToLNode <em>Refers To LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Process Echo</em>' reference list.
+     * @see #isSetReferredByProcessEcho()
+     * @see #unsetReferredByProcessEcho()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ReferredByProcessEcho()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessEcho#getRefersToLNode
+     * @model opposite="RefersToLNode" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< ProcessEcho > getReferredByProcessEcho();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByProcessEcho <em>Referred By Process Echo</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByProcessEcho()
+     * @see #getReferredByProcessEcho()
+     * @generated
+     */
+    void unsetReferredByProcessEcho();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByProcessEcho <em>Referred By Process Echo</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Process Echo</em>' reference list is set.
+     * @see #unsetReferredByProcessEcho()
+     * @see #getReferredByProcessEcho()
+     * @generated
+     */
+    boolean isSetReferredByProcessEcho();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Control Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef#getRefersToLNode <em>Refers To LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Control Ref</em>' reference list.
+     * @see #isSetReferredByControlRef()
+     * @see #unsetReferredByControlRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ReferredByControlRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef#getRefersToLNode
+     * @model opposite="RefersToLNode" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< ControlRef > getReferredByControlRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByControlRef <em>Referred By Control Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByControlRef()
+     * @see #getReferredByControlRef()
+     * @generated
+     */
+    void unsetReferredByControlRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredByControlRef <em>Referred By Control Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Control Ref</em>' reference list is set.
+     * @see #unsetReferredByControlRef()
+     * @see #getReferredByControlRef()
+     * @generated
+     */
+    boolean isSetReferredByControlRef();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Source Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getRefersToLNode <em>Refers To LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Source Ref</em>' reference list.
+     * @see #isSetReferredBySourceRef()
+     * @see #unsetReferredBySourceRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ReferredBySourceRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getRefersToLNode
+     * @model opposite="RefersToLNode" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< SourceRef > getReferredBySourceRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredBySourceRef <em>Referred By Source Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredBySourceRef()
+     * @see #getReferredBySourceRef()
+     * @generated
+     */
+    void unsetReferredBySourceRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getReferredBySourceRef <em>Referred By Source Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Source Ref</em>' reference list is set.
+     * @see #unsetReferredBySourceRef()
+     * @see #getReferredBySourceRef()
+     * @generated
+     */
+    boolean isSetReferredBySourceRef();
 
 } // LNode

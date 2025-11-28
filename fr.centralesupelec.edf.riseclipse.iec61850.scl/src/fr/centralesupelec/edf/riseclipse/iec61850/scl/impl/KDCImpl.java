@@ -49,6 +49,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getApUuid <em>Ap Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -130,6 +131,26 @@ public class KDCImpl extends SclObjectImpl implements KDC {
      * @ordered
      */
     protected boolean refersToAccessPointESet;
+
+    /**
+     * The default value of the '{@link #getApUuid() <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String AP_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getApUuid() <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApUuid()
+     * @generated
+     * @ordered
+     */
+    protected String apUuid = AP_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -418,6 +439,30 @@ public class KDCImpl extends SclObjectImpl implements KDC {
      * @generated
      */
     @Override
+    public String getApUuid() {
+        return apUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setApUuid( String newApUuid ) {
+        String oldApUuid = apUuid;
+        apUuid = newApUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.KDC__AP_UUID, oldApUuid, apUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.KDC__PARENT_IED:
@@ -479,6 +524,8 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             return getParentIED();
         case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
             return getRefersToAccessPoint();
+        case SclPackage.KDC__AP_UUID:
+            return getApUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -502,6 +549,9 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             return;
         case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
             setRefersToAccessPoint( ( AccessPoint ) newValue );
+            return;
+        case SclPackage.KDC__AP_UUID:
+            setApUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -527,6 +577,9 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
             unsetRefersToAccessPoint();
             return;
+        case SclPackage.KDC__AP_UUID:
+            setApUuid( AP_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -547,6 +600,8 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             return getParentIED() != null;
         case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
             return isSetRefersToAccessPoint();
+        case SclPackage.KDC__AP_UUID:
+            return AP_UUID_EDEFAULT == null ? apUuid != null : !AP_UUID_EDEFAULT.equals( apUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -571,6 +626,8 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             result.append( iedName );
         else
             result.append( "<unset>" );
+        result.append( ", apUuid: " );
+        result.append( apUuid );
         result.append( ')' );
         return result.toString();
     }

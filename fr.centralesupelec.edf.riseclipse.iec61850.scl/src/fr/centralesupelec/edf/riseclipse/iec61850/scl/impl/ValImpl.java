@@ -20,6 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -44,6 +46,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getParentDAI <em>Parent DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getParentDas <em>Parent Das</em>}</li>
  * </ul>
  *
  * @generated
@@ -307,6 +310,59 @@ public class ValImpl extends SclObjectImpl implements Val {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public DAS getParentDas() {
+        if( eContainerFeatureID() != SclPackage.VAL__PARENT_DAS ) {
+            return null;
+        }
+        return ( DAS ) eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentDas( DAS newParentDas, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDas, SclPackage.VAL__PARENT_DAS, msgs );
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentDas( DAS newParentDas ) {
+        if( newParentDas != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.VAL__PARENT_DAS && newParentDas != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDas ) ) {
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
+            NotificationChain msgs = null;
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            if( newParentDas != null ) {
+                msgs = ( ( InternalEObject ) newParentDas ).eInverseAdd( this, AsdPackage.DAS__VAL, DAS.class, msgs );
+            }
+            msgs = basicSetParentDas( newParentDas, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VAL__PARENT_DAS, newParentDas,
+                    newParentDas ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -323,6 +379,11 @@ public class ValImpl extends SclObjectImpl implements Val {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentDAI( ( DAI ) otherEnd, msgs );
+        case SclPackage.VAL__PARENT_DAS:
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            return basicSetParentDas( ( DAS ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -339,6 +400,8 @@ public class ValImpl extends SclObjectImpl implements Val {
             return basicSetParentAbstractDataAttribute( null, msgs );
         case SclPackage.VAL__PARENT_DAI:
             return basicSetParentDAI( null, msgs );
+        case SclPackage.VAL__PARENT_DAS:
+            return basicSetParentDas( null, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -356,6 +419,8 @@ public class ValImpl extends SclObjectImpl implements Val {
                     AbstractDataAttribute.class, msgs );
         case SclPackage.VAL__PARENT_DAI:
             return eInternalContainer().eInverseRemove( this, SclPackage.DAI__VAL, DAI.class, msgs );
+        case SclPackage.VAL__PARENT_DAS:
+            return eInternalContainer().eInverseRemove( this, AsdPackage.DAS__VAL, DAS.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );
     }
@@ -376,6 +441,8 @@ public class ValImpl extends SclObjectImpl implements Val {
             return getParentDAI();
         case SclPackage.VAL__VALUE:
             return getValue();
+        case SclPackage.VAL__PARENT_DAS:
+            return getParentDas();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -399,6 +466,9 @@ public class ValImpl extends SclObjectImpl implements Val {
             return;
         case SclPackage.VAL__VALUE:
             setValue( ( String ) newValue );
+            return;
+        case SclPackage.VAL__PARENT_DAS:
+            setParentDas( ( DAS ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -424,6 +494,9 @@ public class ValImpl extends SclObjectImpl implements Val {
         case SclPackage.VAL__VALUE:
             setValue( VALUE_EDEFAULT );
             return;
+        case SclPackage.VAL__PARENT_DAS:
+            setParentDas( ( DAS ) null );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -444,6 +517,8 @@ public class ValImpl extends SclObjectImpl implements Val {
             return getParentDAI() != null;
         case SclPackage.VAL__VALUE:
             return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
+        case SclPackage.VAL__PARENT_DAS:
+            return getParentDas() != null;
         }
         return super.eIsSet( featureID );
     }

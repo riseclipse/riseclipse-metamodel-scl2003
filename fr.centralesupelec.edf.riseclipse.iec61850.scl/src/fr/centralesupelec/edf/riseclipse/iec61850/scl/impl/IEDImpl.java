@@ -33,9 +33,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
@@ -48,6 +52,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getConfigVersion <em>Config Version</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getEngRight <em>Eng Right</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getManufacturer <em>Manufacturer</em>}</li>
@@ -62,11 +68,72 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getOriginalSclRelease <em>Original Scl Release</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getIEDSourceFiles <em>IED Source Files</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getLabels <em>Labels</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getMinRequestedSCDFiles <em>Min Requested SCD Files</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IEDImpl extends UnNamingImpl implements IED {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
     /**
      * The default value of the '{@link #getConfigVersion() <em>Config Version</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -387,6 +454,63 @@ public class IEDImpl extends UnNamingImpl implements IED {
     protected boolean referredByIEDNameESet;
 
     /**
+     * The cached value of the '{@link #getIEDSourceFiles() <em>IED Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getIEDSourceFiles()
+     * @generated
+     * @ordered
+     */
+    protected IEDSourceFiles iedSourceFiles;
+
+    /**
+     * This is true if the IED Source Files containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean iedSourceFilesESet;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
+
+    /**
+     * The cached value of the '{@link #getMinRequestedSCDFiles() <em>Min Requested SCD Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMinRequestedSCDFiles()
+     * @generated
+     * @ordered
+     */
+    protected MinRequestedSCDFiles minRequestedSCDFiles;
+
+    /**
+     * This is true if the Min Requested SCD Files containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean minRequestedSCDFilesESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -403,6 +527,114 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getIED();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__TEMPLATE_UUID, oldTemplateUuid,
+                    TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -1270,6 +1502,381 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public IEDSourceFiles getIEDSourceFiles() {
+        return iedSourceFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetIEDSourceFiles( IEDSourceFiles newIEDSourceFiles, NotificationChain msgs ) {
+        IEDSourceFiles oldIEDSourceFiles = iedSourceFiles;
+        iedSourceFiles = newIEDSourceFiles;
+        boolean oldIEDSourceFilesESet = iedSourceFilesESet;
+        iedSourceFilesESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.IED__IED_SOURCE_FILES, oldIEDSourceFiles, newIEDSourceFiles, !oldIEDSourceFilesESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setIEDSourceFiles( IEDSourceFiles newIEDSourceFiles ) {
+        if( newIEDSourceFiles != iedSourceFiles ) {
+            NotificationChain msgs = null;
+            if( iedSourceFiles != null ) {
+                msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this,
+                        SclPackage.IED_SOURCE_FILES__PARENT_IED, IEDSourceFiles.class, msgs );
+            }
+            if( newIEDSourceFiles != null ) {
+                msgs = ( ( InternalEObject ) newIEDSourceFiles ).eInverseAdd( this,
+                        SclPackage.IED_SOURCE_FILES__PARENT_IED, IEDSourceFiles.class, msgs );
+            }
+            msgs = basicSetIEDSourceFiles( newIEDSourceFiles, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldIEDSourceFilesESet = iedSourceFilesESet;
+            iedSourceFilesESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__IED_SOURCE_FILES,
+                        newIEDSourceFiles, newIEDSourceFiles, !oldIEDSourceFilesESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetIEDSourceFiles( NotificationChain msgs ) {
+        IEDSourceFiles oldIEDSourceFiles = iedSourceFiles;
+        iedSourceFiles = null;
+        boolean oldIEDSourceFilesESet = iedSourceFilesESet;
+        iedSourceFilesESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.IED__IED_SOURCE_FILES, oldIEDSourceFiles, null, oldIEDSourceFilesESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetIEDSourceFiles() {
+        if( iedSourceFiles != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this, SclPackage.IED_SOURCE_FILES__PARENT_IED,
+                    IEDSourceFiles.class, msgs );
+            msgs = basicUnsetIEDSourceFiles( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldIEDSourceFilesESet = iedSourceFilesESet;
+            iedSourceFilesESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__IED_SOURCE_FILES, null, null,
+                        oldIEDSourceFilesESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetIEDSourceFiles() {
+        return iedSourceFilesESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.IED__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_IED, Labels.class,
+                        msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_IED, Labels.class,
+                        msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__LABELS, newLabels, newLabels,
+                        !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__LABELS,
+                    oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_IED, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public MinRequestedSCDFiles getMinRequestedSCDFiles() {
+        return minRequestedSCDFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetMinRequestedSCDFiles( MinRequestedSCDFiles newMinRequestedSCDFiles,
+            NotificationChain msgs ) {
+        MinRequestedSCDFiles oldMinRequestedSCDFiles = minRequestedSCDFiles;
+        minRequestedSCDFiles = newMinRequestedSCDFiles;
+        boolean oldMinRequestedSCDFilesESet = minRequestedSCDFilesESet;
+        minRequestedSCDFilesESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.IED__MIN_REQUESTED_SCD_FILES, oldMinRequestedSCDFiles, newMinRequestedSCDFiles,
+                    !oldMinRequestedSCDFilesESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setMinRequestedSCDFiles( MinRequestedSCDFiles newMinRequestedSCDFiles ) {
+        if( newMinRequestedSCDFiles != minRequestedSCDFiles ) {
+            NotificationChain msgs = null;
+            if( minRequestedSCDFiles != null ) {
+                msgs = ( ( InternalEObject ) minRequestedSCDFiles ).eInverseRemove( this,
+                        SclPackage.MIN_REQUESTED_SCD_FILES__PARENT_IED, MinRequestedSCDFiles.class, msgs );
+            }
+            if( newMinRequestedSCDFiles != null ) {
+                msgs = ( ( InternalEObject ) newMinRequestedSCDFiles ).eInverseAdd( this,
+                        SclPackage.MIN_REQUESTED_SCD_FILES__PARENT_IED, MinRequestedSCDFiles.class, msgs );
+            }
+            msgs = basicSetMinRequestedSCDFiles( newMinRequestedSCDFiles, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldMinRequestedSCDFilesESet = minRequestedSCDFilesESet;
+            minRequestedSCDFilesESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__MIN_REQUESTED_SCD_FILES,
+                        newMinRequestedSCDFiles, newMinRequestedSCDFiles, !oldMinRequestedSCDFilesESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetMinRequestedSCDFiles( NotificationChain msgs ) {
+        MinRequestedSCDFiles oldMinRequestedSCDFiles = minRequestedSCDFiles;
+        minRequestedSCDFiles = null;
+        boolean oldMinRequestedSCDFilesESet = minRequestedSCDFilesESet;
+        minRequestedSCDFilesESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.IED__MIN_REQUESTED_SCD_FILES, oldMinRequestedSCDFiles, null,
+                    oldMinRequestedSCDFilesESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetMinRequestedSCDFiles() {
+        if( minRequestedSCDFiles != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) minRequestedSCDFiles ).eInverseRemove( this,
+                    SclPackage.MIN_REQUESTED_SCD_FILES__PARENT_IED, MinRequestedSCDFiles.class, msgs );
+            msgs = basicUnsetMinRequestedSCDFiles( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldMinRequestedSCDFilesESet = minRequestedSCDFilesESet;
+            minRequestedSCDFilesESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__MIN_REQUESTED_SCD_FILES, null,
+                        null, oldMinRequestedSCDFilesESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetMinRequestedSCDFiles() {
+        return minRequestedSCDFilesESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1296,6 +1903,24 @@ public class IEDImpl extends UnNamingImpl implements IED {
                         SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
             }
             return basicSetReferredByIEDName( ( IEDName ) otherEnd, msgs );
+        case SclPackage.IED__IED_SOURCE_FILES:
+            if( iedSourceFiles != null ) {
+                msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.IED__IED_SOURCE_FILES, null, msgs );
+            }
+            return basicSetIEDSourceFiles( ( IEDSourceFiles ) otherEnd, msgs );
+        case SclPackage.IED__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.IED__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
+        case SclPackage.IED__MIN_REQUESTED_SCD_FILES:
+            if( minRequestedSCDFiles != null ) {
+                msgs = ( ( InternalEObject ) minRequestedSCDFiles ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.IED__MIN_REQUESTED_SCD_FILES, null, msgs );
+            }
+            return basicSetMinRequestedSCDFiles( ( MinRequestedSCDFiles ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1318,6 +1943,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
             return basicSetParentSCL( null, msgs );
         case SclPackage.IED__REFERRED_BY_IED_NAME:
             return basicUnsetReferredByIEDName( msgs );
+        case SclPackage.IED__IED_SOURCE_FILES:
+            return basicUnsetIEDSourceFiles( msgs );
+        case SclPackage.IED__LABELS:
+            return basicUnsetLabels( msgs );
+        case SclPackage.IED__MIN_REQUESTED_SCD_FILES:
+            return basicUnsetMinRequestedSCDFiles( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1344,6 +1975,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.IED__UUID:
+            return getUuid();
+        case SclPackage.IED__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.IED__CONFIG_VERSION:
             return getConfigVersion();
         case SclPackage.IED__ENG_RIGHT:
@@ -1372,6 +2007,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
             return getOriginalSclRelease();
         case SclPackage.IED__REFERRED_BY_IED_NAME:
             return getReferredByIEDName();
+        case SclPackage.IED__IED_SOURCE_FILES:
+            return getIEDSourceFiles();
+        case SclPackage.IED__LABELS:
+            return getLabels();
+        case SclPackage.IED__MIN_REQUESTED_SCD_FILES:
+            return getMinRequestedSCDFiles();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1385,6 +2026,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.IED__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.IED__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.IED__CONFIG_VERSION:
             setConfigVersion( ( String ) newValue );
             return;
@@ -1429,6 +2076,15 @@ public class IEDImpl extends UnNamingImpl implements IED {
         case SclPackage.IED__REFERRED_BY_IED_NAME:
             setReferredByIEDName( ( IEDName ) newValue );
             return;
+        case SclPackage.IED__IED_SOURCE_FILES:
+            setIEDSourceFiles( ( IEDSourceFiles ) newValue );
+            return;
+        case SclPackage.IED__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
+        case SclPackage.IED__MIN_REQUESTED_SCD_FILES:
+            setMinRequestedSCDFiles( ( MinRequestedSCDFiles ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1441,6 +2097,12 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.IED__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.IED__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.IED__CONFIG_VERSION:
             unsetConfigVersion();
             return;
@@ -1483,6 +2145,15 @@ public class IEDImpl extends UnNamingImpl implements IED {
         case SclPackage.IED__REFERRED_BY_IED_NAME:
             unsetReferredByIEDName();
             return;
+        case SclPackage.IED__IED_SOURCE_FILES:
+            unsetIEDSourceFiles();
+            return;
+        case SclPackage.IED__LABELS:
+            unsetLabels();
+            return;
+        case SclPackage.IED__MIN_REQUESTED_SCD_FILES:
+            unsetMinRequestedSCDFiles();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1495,6 +2166,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.IED__UUID:
+            return isSetUuid();
+        case SclPackage.IED__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.IED__CONFIG_VERSION:
             return isSetConfigVersion();
         case SclPackage.IED__ENG_RIGHT:
@@ -1523,8 +2198,54 @@ public class IEDImpl extends UnNamingImpl implements IED {
             return isSetOriginalSclRelease();
         case SclPackage.IED__REFERRED_BY_IED_NAME:
             return isSetReferredByIEDName();
+        case SclPackage.IED__IED_SOURCE_FILES:
+            return isSetIEDSourceFiles();
+        case SclPackage.IED__LABELS:
+            return isSetLabels();
+        case SclPackage.IED__MIN_REQUESTED_SCD_FILES:
+            return isSetMinRequestedSCDFiles();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.IED__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.IED__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.IED__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.IED__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -1539,7 +2260,21 @@ public class IEDImpl extends UnNamingImpl implements IED {
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (configVersion: " );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", configVersion: " );
         if( configVersionESet ) {
             result.append( configVersion );
         }

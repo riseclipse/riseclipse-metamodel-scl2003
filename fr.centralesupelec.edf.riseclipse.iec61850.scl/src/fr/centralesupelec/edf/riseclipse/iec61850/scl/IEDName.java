@@ -39,6 +39,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApUuid <em>Ap Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdUuid <em>Ld Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnUuid <em>Ln Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName()
@@ -546,5 +549,71 @@ public interface IEDName extends SclObject {
      * @generated
      */
     boolean isSetRefersToLDevice();
+
+    /**
+     * Returns the value of the '<em><b>Ap Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ap Uuid</em>' attribute.
+     * @see #setApUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ApUuid()
+     * @model
+     * @generated
+     */
+    String getApUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApUuid <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ap Uuid</em>' attribute.
+     * @see #getApUuid()
+     * @generated
+     */
+    void setApUuid( String value );
+
+    /**
+     * Returns the value of the '<em><b>Ld Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ld Uuid</em>' attribute.
+     * @see #setLdUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LdUuid()
+     * @model
+     * @generated
+     */
+    String getLdUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdUuid <em>Ld Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ld Uuid</em>' attribute.
+     * @see #getLdUuid()
+     * @generated
+     */
+    void setLdUuid( String value );
+
+    /**
+     * Returns the value of the '<em><b>Ln Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ln Uuid</em>' attribute.
+     * @see #setLnUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LnUuid()
+     * @model
+     * @generated
+     */
+    String getLnUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnUuid <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ln Uuid</em>' attribute.
+     * @see #getLnUuid()
+     * @generated
+     */
+    void setLnUuid( String value );
 
 } // IEDName

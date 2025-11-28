@@ -33,6 +33,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getApUuid <em>Ap Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getKDC()
@@ -224,5 +225,27 @@ public interface KDC extends SclObject {
      * @generated
      */
     boolean isSetRefersToAccessPoint();
+
+    /**
+     * Returns the value of the '<em><b>Ap Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ap Uuid</em>' attribute.
+     * @see #setApUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getKDC_ApUuid()
+     * @model
+     * @generated
+     */
+    String getApUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getApUuid <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ap Uuid</em>' attribute.
+     * @see #getApUuid()
+     * @generated
+     */
+    void setApUuid( String value );
 
 } // KDC

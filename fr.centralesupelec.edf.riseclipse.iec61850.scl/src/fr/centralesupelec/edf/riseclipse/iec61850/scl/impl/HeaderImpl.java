@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -31,6 +31,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
 
 /**
@@ -49,6 +50,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getText <em>Text</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getHistory <em>History</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getSourceFiles <em>Source Files</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getFileType <em>File Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getBaseUuid <em>Base Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -236,6 +241,85 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * @ordered
      */
     protected boolean historyESet;
+
+    /**
+     * The cached value of the '{@link #getSourceFiles() <em>Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSourceFiles()
+     * @generated
+     * @ordered
+     */
+    protected SourceFiles sourceFiles;
+
+    /**
+     * The default value of the '{@link #getFileType() <em>File Type</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFileType()
+     * @generated
+     * @ordered
+     */
+    protected static final String FILE_TYPE_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getFileType() <em>File Type</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFileType()
+     * @generated
+     * @ordered
+     */
+    protected String fileType = FILE_TYPE_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getBaseUuid() <em>Base Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getBaseUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String BASE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getBaseUuid() <em>Base Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getBaseUuid()
+     * @generated
+     * @ordered
+     */
+    protected String baseUuid = BASE_UUID_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -791,6 +875,169 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * @generated
      */
     @Override
+    public SourceFiles getSourceFiles() {
+        return sourceFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSourceFiles( SourceFiles newSourceFiles, NotificationChain msgs ) {
+        SourceFiles oldSourceFiles = sourceFiles;
+        sourceFiles = newSourceFiles;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.HEADER__SOURCE_FILES, oldSourceFiles, newSourceFiles );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSourceFiles( SourceFiles newSourceFiles ) {
+        if( newSourceFiles != sourceFiles ) {
+            NotificationChain msgs = null;
+            if( sourceFiles != null ) {
+                msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this, SclPackage.SOURCE_FILES__PARENT_HEADER,
+                        SourceFiles.class, msgs );
+            }
+            if( newSourceFiles != null ) {
+                msgs = ( ( InternalEObject ) newSourceFiles ).eInverseAdd( this, SclPackage.SOURCE_FILES__PARENT_HEADER,
+                        SourceFiles.class, msgs );
+            }
+            msgs = basicSetSourceFiles( newSourceFiles, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HEADER__SOURCE_FILES, newSourceFiles,
+                    newSourceFiles ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getFileType() {
+        return fileType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setFileType( String newFileType ) {
+        String oldFileType = fileType;
+        fileType = newFileType;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HEADER__FILE_TYPE, oldFileType,
+                    fileType ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getBaseUuid() {
+        return baseUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setBaseUuid( String newBaseUuid ) {
+        String oldBaseUuid = baseUuid;
+        baseUuid = newBaseUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HEADER__BASE_UUID, oldBaseUuid,
+                    baseUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HEADER__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HEADER__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.HEADER__PARENT_SCL:
@@ -807,6 +1054,12 @@ public class HeaderImpl extends SclObjectImpl implements Header {
                 msgs = ( ( InternalEObject ) history ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__HISTORY, null, msgs );
             return basicSetHistory( ( History ) otherEnd, msgs );
+        case SclPackage.HEADER__SOURCE_FILES:
+            if( sourceFiles != null ) {
+                msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__SOURCE_FILES, null, msgs );
+            }
+            return basicSetSourceFiles( ( SourceFiles ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -825,6 +1078,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
             return basicUnsetText( msgs );
         case SclPackage.HEADER__HISTORY:
             return basicUnsetHistory( msgs );
+        case SclPackage.HEADER__SOURCE_FILES:
+            return basicSetSourceFiles( null, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -867,6 +1122,14 @@ public class HeaderImpl extends SclObjectImpl implements Header {
             return getText();
         case SclPackage.HEADER__HISTORY:
             return getHistory();
+        case SclPackage.HEADER__SOURCE_FILES:
+            return getSourceFiles();
+        case SclPackage.HEADER__FILE_TYPE:
+            return getFileType();
+        case SclPackage.HEADER__BASE_UUID:
+            return getBaseUuid();
+        case SclPackage.HEADER__UUID:
+            return getUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -902,6 +1165,18 @@ public class HeaderImpl extends SclObjectImpl implements Header {
             return;
         case SclPackage.HEADER__HISTORY:
             setHistory( ( History ) newValue );
+            return;
+        case SclPackage.HEADER__SOURCE_FILES:
+            setSourceFiles( ( SourceFiles ) newValue );
+            return;
+        case SclPackage.HEADER__FILE_TYPE:
+            setFileType( ( String ) newValue );
+            return;
+        case SclPackage.HEADER__BASE_UUID:
+            setBaseUuid( ( String ) newValue );
+            return;
+        case SclPackage.HEADER__UUID:
+            setUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -939,6 +1214,18 @@ public class HeaderImpl extends SclObjectImpl implements Header {
         case SclPackage.HEADER__HISTORY:
             unsetHistory();
             return;
+        case SclPackage.HEADER__SOURCE_FILES:
+            setSourceFiles( ( SourceFiles ) null );
+            return;
+        case SclPackage.HEADER__FILE_TYPE:
+            setFileType( FILE_TYPE_EDEFAULT );
+            return;
+        case SclPackage.HEADER__BASE_UUID:
+            setBaseUuid( BASE_UUID_EDEFAULT );
+            return;
+        case SclPackage.HEADER__UUID:
+            unsetUuid();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -967,6 +1254,14 @@ public class HeaderImpl extends SclObjectImpl implements Header {
             return isSetText();
         case SclPackage.HEADER__HISTORY:
             return isSetHistory();
+        case SclPackage.HEADER__SOURCE_FILES:
+            return sourceFiles != null;
+        case SclPackage.HEADER__FILE_TYPE:
+            return FILE_TYPE_EDEFAULT == null ? fileType != null : !FILE_TYPE_EDEFAULT.equals( fileType );
+        case SclPackage.HEADER__BASE_UUID:
+            return BASE_UUID_EDEFAULT == null ? baseUuid != null : !BASE_UUID_EDEFAULT.equals( baseUuid );
+        case SclPackage.HEADER__UUID:
+            return isSetUuid();
         }
         return super.eIsSet( featureID );
     }
@@ -1004,6 +1299,15 @@ public class HeaderImpl extends SclObjectImpl implements Header {
         result.append( ", version: " );
         if( versionESet )
             result.append( version );
+        else
+            result.append( "<unset>" );
+        result.append( ", fileType: " );
+        result.append( fileType );
+        result.append( ", baseUuid: " );
+        result.append( baseUuid );
+        result.append( ", uuid: " );
+        if( uuidESet )
+            result.append( uuid );
         else
             result.append( "<unset>" );
         result.append( ')' );

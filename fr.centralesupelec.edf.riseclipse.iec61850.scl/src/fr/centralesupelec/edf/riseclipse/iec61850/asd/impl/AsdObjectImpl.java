@@ -1,0 +1,476 @@
+/**
+ *  Copyright (c) 2016-2024 CentraleSupélec & EDF.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-v20.html
+ *
+ *  This file is part of the RiseClipse tool
+ *
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec
+ *      EDF R&D
+ *  Contacts:
+ *      dominique.marcadet@centralesupelec.fr
+ *      aurelie.dehouck-neveu@edf.fr
+ *  Web site:
+ *      https://riseclipse.github.io/
+ *
+ */
+package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
+
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.annotation.NonNull;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Object</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdObjectImpl#getFilename <em>Filename</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdObjectImpl#getLineNumber <em>Line Number</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdObjectImpl#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdObjectImpl#getParentPrivate <em>Parent Private</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public abstract class AsdObjectImpl extends MinimalEObjectImpl.Container implements AsdObject {
+
+    protected static final String EXPLICIT_LINK_CATEGORY = "ASD/ExplicitLinks";
+
+    /**
+     * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFilename()
+     * @generated
+     * @ordered
+     */
+    protected static final String FILENAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFilename()
+     * @generated
+     * @ordered
+     */
+    protected String filename = FILENAME_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLineNumber()
+     * @generated
+     * @ordered
+     */
+    protected static final int LINE_NUMBER_EDEFAULT = 0;
+
+    /**
+     * The cached value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLineNumber()
+     * @generated
+     * @ordered
+     */
+    protected int lineNumber = LINE_NUMBER_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #isExplicitLinksBuilt() <em>Explicit Links Built</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isExplicitLinksBuilt()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean EXPLICIT_LINKS_BUILT_EDEFAULT = false;
+
+    /**
+     * The cached value of the '{@link #isExplicitLinksBuilt() <em>Explicit Links Built</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isExplicitLinksBuilt()
+     * @generated
+     * @ordered
+     */
+    protected boolean explicitLinksBuilt = EXPLICIT_LINKS_BUILT_EDEFAULT;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AsdObjectImpl() {
+        super();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return AsdPackage.eINSTANCE.getAsdObject();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getFilename() {
+        return filename;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setFilename( String newFilename ) {
+        String oldFilename = filename;
+        filename = newFilename;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.ASD_OBJECT__FILENAME, oldFilename,
+                    filename ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int getLineNumber() {
+        return lineNumber;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLineNumber( int newLineNumber ) {
+        int oldLineNumber = lineNumber;
+        lineNumber = newLineNumber;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.ASD_OBJECT__LINE_NUMBER, oldLineNumber,
+                    lineNumber ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isExplicitLinksBuilt() {
+        return explicitLinksBuilt;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setExplicitLinksBuilt( boolean newExplicitLinksBuilt ) {
+        boolean oldExplicitLinksBuilt = explicitLinksBuilt;
+        explicitLinksBuilt = newExplicitLinksBuilt;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.ASD_OBJECT__EXPLICIT_LINKS_BUILT,
+                    oldExplicitLinksBuilt, explicitLinksBuilt ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Private getParentPrivate() {
+        if( eContainerFeatureID() != AsdPackage.ASD_OBJECT__PARENT_PRIVATE ) {
+            return null;
+        }
+        return ( Private ) eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentPrivate( Private newParentPrivate, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentPrivate, AsdPackage.ASD_OBJECT__PARENT_PRIVATE, msgs );
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentPrivate( Private newParentPrivate ) {
+        if( newParentPrivate != eInternalContainer()
+                || ( eContainerFeatureID() != AsdPackage.ASD_OBJECT__PARENT_PRIVATE && newParentPrivate != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentPrivate ) ) {
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
+            NotificationChain msgs = null;
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            if( newParentPrivate != null ) {
+                msgs = ( ( InternalEObject ) newParentPrivate ).eInverseAdd( this, SclPackage.PRIVATE__ASD_OBJECTS,
+                        Private.class, msgs );
+            }
+            msgs = basicSetParentPrivate( newParentPrivate, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.ASD_OBJECT__PARENT_PRIVATE,
+                    newParentPrivate, newParentPrivate ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public boolean buildExplicitLinks( @NonNull IRiseClipseConsole console, Boolean forceUpdate ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "AsdObjectImpl.buildExplicitLinks()" );
+
+        if( ( !forceUpdate ) && isExplicitLinksBuilt() ) {
+            return true;
+        }
+
+        // Parent's links must be built before children's one
+        // because children may need them
+        doBuildExplicitLinks( console );
+
+        // Calls on children may lead to recursion
+        setExplicitLinksBuilt( true );
+
+        TreeIterator< EObject > it = eAllContents();
+        while( it.hasNext() ) {
+            EObject o = it.next();
+            if( o instanceof AsdObject ) {
+                ( ( AsdObject ) o ).buildExplicitLinks( console, forceUpdate );
+            }
+        }
+
+        return false;
+    }
+
+    protected void doBuildExplicitLinks( @NonNull IRiseClipseConsole console ) {
+        console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(), "AsdObjectImpl.doBuildExplicitLinks()" );
+
+        // Default do nothing
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            return basicSetParentPrivate( ( Private ) otherEnd, msgs );
+        }
+        return super.eInverseAdd( otherEnd, featureID, msgs );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            return basicSetParentPrivate( null, msgs );
+        }
+        return super.eInverseRemove( otherEnd, featureID, msgs );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
+        switch( eContainerFeatureID() ) {
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.PRIVATE__ASD_OBJECTS, Private.class, msgs );
+        }
+        return super.eBasicRemoveFromContainerFeature( msgs );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case AsdPackage.ASD_OBJECT__FILENAME:
+            return getFilename();
+        case AsdPackage.ASD_OBJECT__LINE_NUMBER:
+            return getLineNumber();
+        case AsdPackage.ASD_OBJECT__EXPLICIT_LINKS_BUILT:
+            return isExplicitLinksBuilt();
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            return getParentPrivate();
+        }
+        return super.eGet( featureID, resolve, coreType );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case AsdPackage.ASD_OBJECT__FILENAME:
+            setFilename( ( String ) newValue );
+            return;
+        case AsdPackage.ASD_OBJECT__LINE_NUMBER:
+            setLineNumber( ( Integer ) newValue );
+            return;
+        case AsdPackage.ASD_OBJECT__EXPLICIT_LINKS_BUILT:
+            setExplicitLinksBuilt( ( Boolean ) newValue );
+            return;
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            setParentPrivate( ( Private ) newValue );
+            return;
+        }
+        super.eSet( featureID, newValue );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case AsdPackage.ASD_OBJECT__FILENAME:
+            setFilename( FILENAME_EDEFAULT );
+            return;
+        case AsdPackage.ASD_OBJECT__LINE_NUMBER:
+            setLineNumber( LINE_NUMBER_EDEFAULT );
+            return;
+        case AsdPackage.ASD_OBJECT__EXPLICIT_LINKS_BUILT:
+            setExplicitLinksBuilt( EXPLICIT_LINKS_BUILT_EDEFAULT );
+            return;
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            setParentPrivate( ( Private ) null );
+            return;
+        }
+        super.eUnset( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case AsdPackage.ASD_OBJECT__FILENAME:
+            return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals( filename );
+        case AsdPackage.ASD_OBJECT__LINE_NUMBER:
+            return lineNumber != LINE_NUMBER_EDEFAULT;
+        case AsdPackage.ASD_OBJECT__EXPLICIT_LINKS_BUILT:
+            return explicitLinksBuilt != EXPLICIT_LINKS_BUILT_EDEFAULT;
+        case AsdPackage.ASD_OBJECT__PARENT_PRIVATE:
+            return getParentPrivate() != null;
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
+        switch( operationID ) {
+        case AsdPackage.ASD_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN:
+            return buildExplicitLinks( ( IRiseClipseConsole ) arguments.get( 0 ), ( Boolean ) arguments.get( 1 ) );
+        }
+        return super.eInvoke( operationID, arguments );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if( eIsProxy() ) {
+            return super.toString();
+        }
+
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (filename: " );
+        result.append( filename );
+        result.append( ", lineNumber: " );
+        result.append( lineNumber );
+        result.append( ", explicitLinksBuilt: " );
+        result.append( explicitLinksBuilt );
+        result.append( ')' );
+        return result.toString();
+    }
+
+} //AsdObjectImpl

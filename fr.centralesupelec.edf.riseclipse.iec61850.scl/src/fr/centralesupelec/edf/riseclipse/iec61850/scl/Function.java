@@ -22,6 +22,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Function</b></em>'.
@@ -39,6 +42,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel <em>Parent Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubFunction <em>Sub Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipment <em>General Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getReferredByFunctionRef <em>Referred By Function Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getReferredByFunctionCatRef <em>Referred By Function Cat Ref</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction()
@@ -320,5 +325,79 @@ public interface Function extends PowerSystemResource {
      * @generated
      */
     boolean isSetGeneralEquipment();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Function Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef#getRefersToFunction <em>Refers To Function</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Function Ref</em>' reference list.
+     * @see #isSetReferredByFunctionRef()
+     * @see #unsetReferredByFunctionRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ReferredByFunctionRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef#getRefersToFunction
+     * @model opposite="RefersToFunction" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< FunctionRef > getReferredByFunctionRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getReferredByFunctionRef <em>Referred By Function Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByFunctionRef()
+     * @see #getReferredByFunctionRef()
+     * @generated
+     */
+    void unsetReferredByFunctionRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getReferredByFunctionRef <em>Referred By Function Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Function Ref</em>' reference list is set.
+     * @see #unsetReferredByFunctionRef()
+     * @see #getReferredByFunctionRef()
+     * @generated
+     */
+    boolean isSetReferredByFunctionRef();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Function Cat Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef#getRefersToFunction <em>Refers To Function</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Function Cat Ref</em>' reference list.
+     * @see #isSetReferredByFunctionCatRef()
+     * @see #unsetReferredByFunctionCatRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ReferredByFunctionCatRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef#getRefersToFunction
+     * @model opposite="RefersToFunction" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< FunctionCatRef > getReferredByFunctionCatRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getReferredByFunctionCatRef <em>Referred By Function Cat Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByFunctionCatRef()
+     * @see #getReferredByFunctionCatRef()
+     * @generated
+     */
+    void unsetReferredByFunctionCatRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getReferredByFunctionCatRef <em>Referred By Function Cat Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Function Cat Ref</em>' reference list is set.
+     * @see #unsetReferredByFunctionCatRef()
+     * @see #getReferredByFunctionCatRef()
+     * @generated
+     */
+    boolean isSetReferredByFunctionCatRef();
 
 } // Function

@@ -34,6 +34,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationInitiator;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
@@ -56,10 +57,13 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getLnUuid <em>Ln Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getAssociationID <em>Association ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getParentServer <em>Parent Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getApRef <em>Ap Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getInitiator <em>Initiator</em>}</li>
  * </ul>
  *
  * @generated
@@ -239,6 +243,26 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     protected boolean prefixESet;
 
     /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
+
+    /**
      * The default value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -314,6 +338,46 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @ordered
      */
     protected boolean refersToAnyLNESet;
+
+    /**
+     * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApRef()
+     * @generated
+     * @ordered
+     */
+    protected static final String AP_REF_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApRef()
+     * @generated
+     * @ordered
+     */
+    protected String apRef = AP_REF_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getInitiator() <em>Initiator</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getInitiator()
+     * @generated
+     * @ordered
+     */
+    protected static final AssociationInitiator INITIATOR_EDEFAULT = AssociationInitiator.CLIENT;
+
+    /**
+     * The cached value of the '{@link #getInitiator() <em>Initiator</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getInitiator()
+     * @generated
+     * @ordered
+     */
+    protected AssociationInitiator initiator = INITIATOR_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -826,6 +890,31 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__LN_UUID, oldLnUuid,
+                    lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -951,6 +1040,55 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
+    public String getApRef() {
+        return apRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setApRef( String newApRef ) {
+        String oldApRef = apRef;
+        apRef = newApRef;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__AP_REF, oldApRef, apRef ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public AssociationInitiator getInitiator() {
+        return initiator;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setInitiator( AssociationInitiator newInitiator ) {
+        AssociationInitiator oldInitiator = initiator;
+        initiator = newInitiator == null ? INITIATOR_EDEFAULT : newInitiator;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__INITIATOR, oldInitiator,
+                    initiator ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.ASSOCIATION__PARENT_SERVER:
@@ -1018,6 +1156,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return getLnInst();
         case SclPackage.ASSOCIATION__PREFIX:
             return getPrefix();
+        case SclPackage.ASSOCIATION__LN_UUID:
+            return getLnUuid();
         case SclPackage.ASSOCIATION__ASSOCIATION_ID:
             return getAssociationID();
         case SclPackage.ASSOCIATION__KIND:
@@ -1026,6 +1166,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return getParentServer();
         case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
             return getRefersToAnyLN();
+        case SclPackage.ASSOCIATION__AP_REF:
+            return getApRef();
+        case SclPackage.ASSOCIATION__INITIATOR:
+            return getInitiator();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1056,6 +1200,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         case SclPackage.ASSOCIATION__PREFIX:
             setPrefix( ( String ) newValue );
             return;
+        case SclPackage.ASSOCIATION__LN_UUID:
+            setLnUuid( ( String ) newValue );
+            return;
         case SclPackage.ASSOCIATION__ASSOCIATION_ID:
             setAssociationID( ( String ) newValue );
             return;
@@ -1067,6 +1214,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
             setRefersToAnyLN( ( AnyLN ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__AP_REF:
+            setApRef( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__INITIATOR:
+            setInitiator( ( AssociationInitiator ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -1098,6 +1251,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         case SclPackage.ASSOCIATION__PREFIX:
             unsetPrefix();
             return;
+        case SclPackage.ASSOCIATION__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
         case SclPackage.ASSOCIATION__ASSOCIATION_ID:
             unsetAssociationID();
             return;
@@ -1109,6 +1265,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
             unsetRefersToAnyLN();
+            return;
+        case SclPackage.ASSOCIATION__AP_REF:
+            setApRef( AP_REF_EDEFAULT );
+            return;
+        case SclPackage.ASSOCIATION__INITIATOR:
+            setInitiator( INITIATOR_EDEFAULT );
             return;
         }
         super.eUnset( featureID );
@@ -1134,6 +1296,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return isSetLnInst();
         case SclPackage.ASSOCIATION__PREFIX:
             return isSetPrefix();
+        case SclPackage.ASSOCIATION__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
         case SclPackage.ASSOCIATION__ASSOCIATION_ID:
             return isSetAssociationID();
         case SclPackage.ASSOCIATION__KIND:
@@ -1142,6 +1306,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return getParentServer() != null;
         case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
             return isSetRefersToAnyLN();
+        case SclPackage.ASSOCIATION__AP_REF:
+            return AP_REF_EDEFAULT == null ? apRef != null : !AP_REF_EDEFAULT.equals( apRef );
+        case SclPackage.ASSOCIATION__INITIATOR:
+            return initiator != INITIATOR_EDEFAULT;
         }
         return super.eIsSet( featureID );
     }
@@ -1179,6 +1347,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return SclPackage.AG_LN_REF__LN_INST;
             case SclPackage.ASSOCIATION__PREFIX:
                 return SclPackage.AG_LN_REF__PREFIX;
+            case SclPackage.ASSOCIATION__LN_UUID:
+                return SclPackage.AG_LN_REF__LN_UUID;
             default:
                 return -1;
             }
@@ -1219,6 +1389,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return SclPackage.ASSOCIATION__LN_INST;
             case SclPackage.AG_LN_REF__PREFIX:
                 return SclPackage.ASSOCIATION__PREFIX;
+            case SclPackage.AG_LN_REF__LN_UUID:
+                return SclPackage.ASSOCIATION__LN_UUID;
             default:
                 return -1;
             }
@@ -1280,6 +1452,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ", associationID: " );
         if( associationIDESet ) {
             result.append( associationID );
@@ -1294,6 +1468,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", apRef: " );
+        result.append( apRef );
+        result.append( ", initiator: " );
+        result.append( initiator );
         result.append( ')' );
         return result.toString();
     }

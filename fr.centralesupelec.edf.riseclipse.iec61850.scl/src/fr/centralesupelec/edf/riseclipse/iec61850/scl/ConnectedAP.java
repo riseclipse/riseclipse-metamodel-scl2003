@@ -40,6 +40,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getGSE <em>GSE</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV <em>SMV</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getApUuid <em>Ap Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP()
@@ -466,5 +467,27 @@ public interface ConnectedAP extends UnNaming {
      * @generated
      */
     boolean isSetSMV();
+
+    /**
+     * Returns the value of the '<em><b>Ap Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ap Uuid</em>' attribute.
+     * @see #setApUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_ApUuid()
+     * @model
+     * @generated
+     */
+    String getApUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getApUuid <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ap Uuid</em>' attribute.
+     * @see #getApUuid()
+     * @generated
+     */
+    void setApUuid( String value );
 
 } // ConnectedAP

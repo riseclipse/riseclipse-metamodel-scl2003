@@ -41,7 +41,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface Control extends UnNaming {
+public interface Control extends UnNaming, AgUuid {
     /**
      * Returns the value of the '<em><b>Dat Set</b></em>' attribute.
      * <!-- begin-user-doc -->

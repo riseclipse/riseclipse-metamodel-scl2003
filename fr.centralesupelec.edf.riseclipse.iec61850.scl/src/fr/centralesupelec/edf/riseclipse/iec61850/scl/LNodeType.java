@@ -37,6 +37,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByAnyLN <em>Referred By Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType()
@@ -294,5 +295,56 @@ public interface LNodeType extends IDNaming, INamespaceGetter {
      * @generated
      */
     boolean isSetReferredByLNode();
+
+    /**
+     * Returns the value of the '<em><b>Labels</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentLNodeType <em>Parent LNode Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #setLabels(Labels)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType_Labels()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentLNodeType
+     * @model opposite="ParentLNodeType" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Labels getLabels();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @generated
+     */
+    void setLabels( Labels value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    void unsetLabels();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getLabels <em>Labels</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Labels</em>' containment reference is set.
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    boolean isSetLabels();
 
 } // LNodeType

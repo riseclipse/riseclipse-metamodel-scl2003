@@ -65,6 +65,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getTimeSyncProt <em>Time Sync Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getTimerActivatedControl <em>Timer Activated Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getMultiAPPerSubNet <em>Multi AP Per Sub Net</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSCSM <em>SCSM</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSecurity <em>Security</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices()
@@ -2021,5 +2024,158 @@ public interface Services extends SclObject {
      * @generated
      */
     boolean isSetSMVSettings();
+
+    /**
+     * Returns the value of the '<em><b>Multi AP Per Sub Net</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet#getParentServices <em>Parent Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Multi AP Per Sub Net</em>' containment reference.
+     * @see #isSetMultiAPPerSubNet()
+     * @see #unsetMultiAPPerSubNet()
+     * @see #setMultiAPPerSubNet(MultiAPPerSubNet)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_MultiAPPerSubNet()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    MultiAPPerSubNet getMultiAPPerSubNet();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getMultiAPPerSubNet <em>Multi AP Per Sub Net</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Multi AP Per Sub Net</em>' containment reference.
+     * @see #isSetMultiAPPerSubNet()
+     * @see #unsetMultiAPPerSubNet()
+     * @see #getMultiAPPerSubNet()
+     * @generated
+     */
+    void setMultiAPPerSubNet( MultiAPPerSubNet value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getMultiAPPerSubNet <em>Multi AP Per Sub Net</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetMultiAPPerSubNet()
+     * @see #getMultiAPPerSubNet()
+     * @see #setMultiAPPerSubNet(MultiAPPerSubNet)
+     * @generated
+     */
+    void unsetMultiAPPerSubNet();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getMultiAPPerSubNet <em>Multi AP Per Sub Net</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Multi AP Per Sub Net</em>' containment reference is set.
+     * @see #unsetMultiAPPerSubNet()
+     * @see #getMultiAPPerSubNet()
+     * @see #setMultiAPPerSubNet(MultiAPPerSubNet)
+     * @generated
+     */
+    boolean isSetMultiAPPerSubNet();
+
+    /**
+     * Returns the value of the '<em><b>SCSM</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM#getParentServices <em>Parent Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>SCSM</em>' containment reference.
+     * @see #isSetSCSM()
+     * @see #unsetSCSM()
+     * @see #setSCSM(SCSM)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SCSM()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    SCSM getSCSM();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSCSM <em>SCSM</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>SCSM</em>' containment reference.
+     * @see #isSetSCSM()
+     * @see #unsetSCSM()
+     * @see #getSCSM()
+     * @generated
+     */
+    void setSCSM( SCSM value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSCSM <em>SCSM</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSCSM()
+     * @see #getSCSM()
+     * @see #setSCSM(SCSM)
+     * @generated
+     */
+    void unsetSCSM();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSCSM <em>SCSM</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>SCSM</em>' containment reference is set.
+     * @see #unsetSCSM()
+     * @see #getSCSM()
+     * @see #setSCSM(SCSM)
+     * @generated
+     */
+    boolean isSetSCSM();
+
+    /**
+     * Returns the value of the '<em><b>Security</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Security#getParentServices <em>Parent Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Security</em>' containment reference.
+     * @see #isSetSecurity()
+     * @see #unsetSecurity()
+     * @see #setSecurity(Security)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_Security()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Security#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Security getSecurity();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSecurity <em>Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Security</em>' containment reference.
+     * @see #isSetSecurity()
+     * @see #unsetSecurity()
+     * @see #getSecurity()
+     * @generated
+     */
+    void setSecurity( Security value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSecurity <em>Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSecurity()
+     * @see #getSecurity()
+     * @see #setSecurity(Security)
+     * @generated
+     */
+    void unsetSecurity();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSecurity <em>Security</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Security</em>' containment reference is set.
+     * @see #unsetSecurity()
+     * @see #getSecurity()
+     * @see #setSecurity(Security)
+     * @generated
+     */
+    boolean isSetSecurity();
 
 } // Services

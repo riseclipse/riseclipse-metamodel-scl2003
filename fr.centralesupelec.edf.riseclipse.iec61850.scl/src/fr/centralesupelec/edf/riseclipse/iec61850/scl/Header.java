@@ -37,6 +37,10 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText <em>Text</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getHistory <em>History</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSourceFiles <em>Source Files</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getFileType <em>File Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getBaseUuid <em>Base Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader()
@@ -446,5 +450,122 @@ public interface Header extends SclObject {
      * @generated
      */
     boolean isSetHistory();
+
+    /**
+     * Returns the value of the '<em><b>Source Files</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader <em>Parent Header</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Source Files</em>' containment reference.
+     * @see #setSourceFiles(SourceFiles)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_SourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader
+     * @model opposite="ParentHeader" containment="true"
+     * @generated
+     */
+    SourceFiles getSourceFiles();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSourceFiles <em>Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Source Files</em>' containment reference.
+     * @see #getSourceFiles()
+     * @generated
+     */
+    void setSourceFiles( SourceFiles value );
+
+    /**
+     * Returns the value of the '<em><b>File Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>File Type</em>' attribute.
+     * @see #setFileType(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_FileType()
+     * @model
+     * @generated
+     */
+    String getFileType();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getFileType <em>File Type</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>File Type</em>' attribute.
+     * @see #getFileType()
+     * @generated
+     */
+    void setFileType( String value );
+
+    /**
+     * Returns the value of the '<em><b>Base Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Base Uuid</em>' attribute.
+     * @see #setBaseUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_BaseUuid()
+     * @model
+     * @generated
+     */
+    String getBaseUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getBaseUuid <em>Base Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Base Uuid</em>' attribute.
+     * @see #getBaseUuid()
+     * @generated
+     */
+    void setBaseUuid( String value );
+
+    /**
+     * Returns the value of the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Uuid</em>' attribute.
+     * @see #isSetUuid()
+     * @see #unsetUuid()
+     * @see #setUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_Uuid()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getUuid <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Uuid</em>' attribute.
+     * @see #isSetUuid()
+     * @see #unsetUuid()
+     * @see #getUuid()
+     * @generated
+     */
+    void setUuid( String value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getUuid <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetUuid()
+     * @see #getUuid()
+     * @see #setUuid(String)
+     * @generated
+     */
+    void unsetUuid();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getUuid <em>Uuid</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Uuid</em>' attribute is set.
+     * @see #unsetUuid()
+     * @see #getUuid()
+     * @see #setUuid(String)
+     * @generated
+     */
+    boolean isSetUuid();
 
 } // Header

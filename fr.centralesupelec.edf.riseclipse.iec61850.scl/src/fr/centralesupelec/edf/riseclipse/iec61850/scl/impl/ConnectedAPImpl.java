@@ -63,6 +63,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getPhysConn <em>Phys Conn</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getGSE <em>GSE</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getSMV <em>SMV</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getApUuid <em>Ap Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -222,6 +223,26 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * @ordered
      */
     protected EList< SMV > smv;
+
+    /**
+     * The default value of the '{@link #getApUuid() <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String AP_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getApUuid() <em>Ap Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getApUuid()
+     * @generated
+     * @ordered
+     */
+    protected String apUuid = AP_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -823,6 +844,31 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getApUuid() {
+        return apUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setApUuid( String newApUuid ) {
+        String oldApUuid = apUuid;
+        apUuid = newApUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONNECTED_AP__AP_UUID, oldApUuid,
+                    apUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -920,6 +966,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return getGSE();
         case SclPackage.CONNECTED_AP__SMV:
             return getSMV();
+        case SclPackage.CONNECTED_AP__AP_UUID:
+            return getApUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -963,6 +1011,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             getSMV().clear();
             getSMV().addAll( ( Collection< ? extends SMV > ) newValue );
             return;
+        case SclPackage.CONNECTED_AP__AP_UUID:
+            setApUuid( ( String ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1002,6 +1053,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         case SclPackage.CONNECTED_AP__SMV:
             unsetSMV();
             return;
+        case SclPackage.CONNECTED_AP__AP_UUID:
+            setApUuid( AP_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1032,6 +1086,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return isSetGSE();
         case SclPackage.CONNECTED_AP__SMV:
             return isSetSMV();
+        case SclPackage.CONNECTED_AP__AP_UUID:
+            return AP_UUID_EDEFAULT == null ? apUuid != null : !AP_UUID_EDEFAULT.equals( apUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -1069,6 +1125,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", apUuid: " );
+        result.append( apUuid );
         result.append( ')' );
         return result.toString();
     }

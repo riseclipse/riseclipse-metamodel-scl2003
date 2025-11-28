@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
@@ -47,6 +48,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
@@ -61,6 +63,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAccessControl <em>Access Control</em>}</li>
@@ -70,6 +74,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +89,64 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @ordered
      */
     protected static final String NAMESPACE_EDEFAULT = null;
+
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
 
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
@@ -238,6 +301,25 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @ordered
      */
     protected EList< LDevice > refersToLowerLevelLDevices;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -828,6 +910,130 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LDEVICE,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_LDEVICE,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LABELS, newLabels,
+                        newLabels, !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.LDEVICE__LABELS, oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LDEVICE, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -893,6 +1099,114 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         return null;
         
         //@formatter:on
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -1044,6 +1358,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getRefersToLowerLevelLDevices() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.LDEVICE__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.LDEVICE__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1070,6 +1390,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return basicUnsetRefersToHigherLevelLDevice( msgs );
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return ( ( InternalEList< ? > ) getRefersToLowerLevelLDevices() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LDEVICE__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1098,6 +1420,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         switch( featureID ) {
         case SclPackage.LDEVICE__NAMESPACE:
             return getNamespace();
+        case SclPackage.LDEVICE__UUID:
+            return getUuid();
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.LDEVICE__INST:
             return getInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1116,6 +1442,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return getRefersToHigherLevelLDevice();
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return getRefersToLowerLevelLDevices();
+        case SclPackage.LDEVICE__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1129,6 +1457,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.LDEVICE__INST:
             setInst( ( String ) newValue );
             return;
@@ -1158,6 +1492,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             getRefersToLowerLevelLDevices().clear();
             getRefersToLowerLevelLDevices().addAll( ( Collection< ? extends LDevice > ) newValue );
             return;
+        case SclPackage.LDEVICE__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1170,6 +1507,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.LDEVICE__INST:
             unsetInst();
             return;
@@ -1197,6 +1540,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             unsetRefersToLowerLevelLDevices();
             return;
+        case SclPackage.LDEVICE__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1211,6 +1557,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         switch( featureID ) {
         case SclPackage.LDEVICE__NAMESPACE:
             return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
+        case SclPackage.LDEVICE__UUID:
+            return isSetUuid();
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.LDEVICE__INST:
             return isSetInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1229,6 +1579,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return isSetRefersToHigherLevelLDevice();
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return isSetRefersToLowerLevelLDevices();
+        case SclPackage.LDEVICE__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }
@@ -1244,6 +1596,16 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             switch( derivedFeatureID ) {
             case SclPackage.LDEVICE__NAMESPACE:
                 return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.LDEVICE__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.LDEVICE__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
             default:
                 return -1;
             }
@@ -1266,6 +1628,16 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return -1;
             }
         }
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.LDEVICE__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.LDEVICE__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
         return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
@@ -1276,19 +1648,39 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (inst: " );
-        if( instESet )
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", inst: " );
+        if( instESet ) {
             result.append( inst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldName: " );
-        if( ldNameESet )
+        if( ldNameESet ) {
             result.append( ldName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -1373,7 +1765,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;
         }
         
-        String higherLevelLDeviceReference = val.get( 0 ).getValue();;
+        String higherLevelLDeviceReference = val.get( 0 ).getValue();
         if(( higherLevelLDeviceReference == null ) || ( higherLevelLDeviceReference.length() <= 1 )) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found no Val or empty Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );

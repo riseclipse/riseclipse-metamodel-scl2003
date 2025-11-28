@@ -41,6 +41,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getCommunication <em>Communication</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getSubstation <em>Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRelease <em>Release</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRevisionASD <em>Revision ASD</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getVersionASD <em>Version ASD</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getReleaseASD <em>Release ASD</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL()
@@ -542,5 +545,155 @@ public interface SCL extends BaseElement {
      * @generated
      */
     boolean isSetRelease();
+
+    /**
+     * Returns the value of the '<em><b>Revision ASD</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Revision ASD</em>' attribute.
+     * @see #isSetRevisionASD()
+     * @see #unsetRevisionASD()
+     * @see #setRevisionASD(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_RevisionASD()
+     * @model unsettable="true"
+     *        extendedMetaData="kind='attribute' namespace='http://www.iec.ch/61850/2019/SCL/6-100' name='revision'"
+     * @generated
+     */
+    String getRevisionASD();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRevisionASD <em>Revision ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Revision ASD</em>' attribute.
+     * @see #isSetRevisionASD()
+     * @see #unsetRevisionASD()
+     * @see #getRevisionASD()
+     * @generated
+     */
+    void setRevisionASD( String value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRevisionASD <em>Revision ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRevisionASD()
+     * @see #getRevisionASD()
+     * @see #setRevisionASD(String)
+     * @generated
+     */
+    void unsetRevisionASD();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRevisionASD <em>Revision ASD</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Revision ASD</em>' attribute is set.
+     * @see #unsetRevisionASD()
+     * @see #getRevisionASD()
+     * @see #setRevisionASD(String)
+     * @generated
+     */
+    boolean isSetRevisionASD();
+
+    /**
+     * Returns the value of the '<em><b>Version ASD</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Version ASD</em>' attribute.
+     * @see #isSetVersionASD()
+     * @see #unsetVersionASD()
+     * @see #setVersionASD(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_VersionASD()
+     * @model unsettable="true"
+     *        extendedMetaData="kind='attribute' namespace='http://www.iec.ch/61850/2019/SCL/6-100' name='version'"
+     * @generated
+     */
+    String getVersionASD();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getVersionASD <em>Version ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Version ASD</em>' attribute.
+     * @see #isSetVersionASD()
+     * @see #unsetVersionASD()
+     * @see #getVersionASD()
+     * @generated
+     */
+    void setVersionASD( String value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getVersionASD <em>Version ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetVersionASD()
+     * @see #getVersionASD()
+     * @see #setVersionASD(String)
+     * @generated
+     */
+    void unsetVersionASD();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getVersionASD <em>Version ASD</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Version ASD</em>' attribute is set.
+     * @see #unsetVersionASD()
+     * @see #getVersionASD()
+     * @see #setVersionASD(String)
+     * @generated
+     */
+    boolean isSetVersionASD();
+
+    /**
+     * Returns the value of the '<em><b>Release ASD</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Release ASD</em>' attribute.
+     * @see #isSetReleaseASD()
+     * @see #unsetReleaseASD()
+     * @see #setReleaseASD(Integer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_ReleaseASD()
+     * @model unsettable="true"
+     *        extendedMetaData="kind='attribute' namespace='http://www.iec.ch/61850/2019/SCL/6-100' name='release'"
+     * @generated
+     */
+    Integer getReleaseASD();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getReleaseASD <em>Release ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Release ASD</em>' attribute.
+     * @see #isSetReleaseASD()
+     * @see #unsetReleaseASD()
+     * @see #getReleaseASD()
+     * @generated
+     */
+    void setReleaseASD( Integer value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getReleaseASD <em>Release ASD</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReleaseASD()
+     * @see #getReleaseASD()
+     * @see #setReleaseASD(Integer)
+     * @generated
+     */
+    void unsetReleaseASD();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getReleaseASD <em>Release ASD</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Release ASD</em>' attribute is set.
+     * @see #unsetReleaseASD()
+     * @see #getReleaseASD()
+     * @see #setReleaseASD(Integer)
+     * @generated
+     */
+    boolean isSetReleaseASD();
 
 } // SCL
