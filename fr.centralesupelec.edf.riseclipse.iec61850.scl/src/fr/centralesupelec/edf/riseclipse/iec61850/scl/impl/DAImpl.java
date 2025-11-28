@@ -456,6 +456,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
 
     @Override
     public boolean isSetType() {
+        if( "Enum".equals( bType ) ) {
+            return super.isSetType();
+        }
+
         return isSetRefersToDAType();
     }
 
