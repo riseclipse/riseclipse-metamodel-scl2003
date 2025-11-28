@@ -78,6 +78,7 @@ public class ClientServicesItemProvider
             addRGOOSEPropertyDescriptor( object );
             addRSVPropertyDescriptor( object );
             addNoIctBindingPropertyDescriptor( object );
+            addAcceptServerInitiatedAssociationPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -391,6 +392,28 @@ public class ClientServicesItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Accept Server Initiated Association feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addAcceptServerInitiatedAssociationPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add( createItemPropertyDescriptor(
+                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                getResourceLocator(),
+                getString( "_UI_ClientServices_acceptServerInitiatedAssociation_feature" ),
+                getString( "_UI_PropertyDescriptor_description",
+                        "_UI_ClientServices_acceptServerInitiatedAssociation_feature", "_UI_ClientServices_type" ),
+                SclPackage.eINSTANCE.getClientServices_AcceptServerInitiatedAssociation(),
+                true,
+                false,
+                false,
+                ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+                null,
+                null ) );
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -404,6 +427,9 @@ public class ClientServicesItemProvider
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_TimeSyncProt() );
             childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_McSecurity() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_GOOSEMcSecurity() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_SMVcSecurity() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_Security() );
         }
         return childrenFeatures;
     }
@@ -469,10 +495,14 @@ public class ClientServicesItemProvider
         case SclPackage.CLIENT_SERVICES__RGOOSE:
         case SclPackage.CLIENT_SERVICES__RSV:
         case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+        case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
+        case SclPackage.CLIENT_SERVICES__SECURITY:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -495,6 +525,43 @@ public class ClientServicesItemProvider
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_McSecurity(),
                 SclFactory.eINSTANCE.createMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_McSecurity(),
+                SclFactory.eINSTANCE.createSMVcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_McSecurity(),
+                SclFactory.eINSTANCE.createGOOSEMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_GOOSEMcSecurity(),
+                SclFactory.eINSTANCE.createGOOSEMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_SMVcSecurity(),
+                SclFactory.eINSTANCE.createSMVcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_Security(),
+                SclFactory.eINSTANCE.createSecurity() ) );
+    }
+
+    /**
+     * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getCreateChildText( Object owner, Object feature, Object child, Collection< ? > selection ) {
+        Object childFeature = feature;
+        Object childObject = child;
+
+        boolean qualify = childFeature == SclPackage.eINSTANCE.getClientServices_McSecurity() ||
+                childFeature == SclPackage.eINSTANCE.getClientServices_SMVcSecurity() ||
+                childFeature == SclPackage.eINSTANCE.getClientServices_GOOSEMcSecurity();
+
+        if( qualify ) {
+            return getString( "_UI_CreateChild_text2",
+                    new Object[] { getTypeText( childObject ), getFeatureText( childFeature ), getTypeText( owner ) } );
+        }
+        return super.getCreateChildText( owner, feature, child, selection );
     }
 
 }

@@ -63,6 +63,7 @@ public class ServerAtItemProvider extends UnNamingItemProvider {
 
             addApNamePropertyDescriptor( object );
             addRefersToAccessPointPropertyDescriptor( object );
+            addApUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -107,6 +108,28 @@ public class ServerAtItemProvider extends UnNamingItemProvider {
                         false,
                         true,
                         null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Ap Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addApUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ServerAt_apUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ServerAt_apUuid_feature",
+                                "_UI_ServerAt_type" ),
+                        SclPackage.eINSTANCE.getServerAt_ApUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
                         null,
                         null ) );
     }
@@ -160,6 +183,7 @@ public class ServerAtItemProvider extends UnNamingItemProvider {
 
         switch( notification.getFeatureID( ServerAt.class ) ) {
         case SclPackage.SERVER_AT__AP_NAME:
+        case SclPackage.SERVER_AT__AP_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

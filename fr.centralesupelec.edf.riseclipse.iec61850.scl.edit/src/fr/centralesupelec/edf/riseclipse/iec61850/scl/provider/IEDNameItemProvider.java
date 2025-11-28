@@ -71,6 +71,9 @@ public class IEDNameItemProvider
             addValuePropertyDescriptor( object );
             addRefersToIEDPropertyDescriptor( object );
             addRefersToLDevicePropertyDescriptor( object );
+            addApUuidPropertyDescriptor( object );
+            addLdUuidPropertyDescriptor( object );
+            addLnUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -274,6 +277,72 @@ public class IEDNameItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Ap Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addApUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IEDName_apUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IEDName_apUuid_feature",
+                                "_UI_IEDName_type" ),
+                        SclPackage.eINSTANCE.getIEDName_ApUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Ld Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLdUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IEDName_ldUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IEDName_ldUuid_feature",
+                                "_UI_IEDName_type" ),
+                        SclPackage.eINSTANCE.getIEDName_LdUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Ln Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLnUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IEDName_lnUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IEDName_lnUuid_feature",
+                                "_UI_IEDName_type" ),
+                        SclPackage.eINSTANCE.getIEDName_LnUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns IEDName.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -313,6 +382,9 @@ public class IEDNameItemProvider
         case SclPackage.IED_NAME__LN_INST:
         case SclPackage.IED_NAME__PREFIX:
         case SclPackage.IED_NAME__VALUE:
+        case SclPackage.IED_NAME__AP_UUID:
+        case SclPackage.IED_NAME__LD_UUID:
+        case SclPackage.IED_NAME__LN_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

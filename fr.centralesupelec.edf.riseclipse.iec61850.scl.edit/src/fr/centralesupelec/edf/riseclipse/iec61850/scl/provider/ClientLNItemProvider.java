@@ -67,6 +67,7 @@ public class ClientLNItemProvider extends SclObjectItemProvider {
             addLnClassPropertyDescriptor( object );
             addLnInstPropertyDescriptor( object );
             addPrefixPropertyDescriptor( object );
+            addLnUuidPropertyDescriptor( object );
             addApRefPropertyDescriptor( object );
             addRefersToAnyLNPropertyDescriptor( object );
         }
@@ -206,6 +207,28 @@ public class ClientLNItemProvider extends SclObjectItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Ln Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLnUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgLNRef_lnUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnUuid_feature",
+                                "_UI_AgLNRef_type" ),
+                        SclPackage.eINSTANCE.getAgLNRef_LnUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This adds a property descriptor for the Desc feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -288,6 +311,7 @@ public class ClientLNItemProvider extends SclObjectItemProvider {
         case SclPackage.CLIENT_LN__LN_CLASS:
         case SclPackage.CLIENT_LN__LN_INST:
         case SclPackage.CLIENT_LN__PREFIX:
+        case SclPackage.CLIENT_LN__LN_UUID:
         case SclPackage.CLIENT_LN__AP_REF:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;

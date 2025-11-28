@@ -65,6 +65,7 @@ public class AgLNRefItemProvider extends AgLDRefItemProvider {
             addLnClassPropertyDescriptor( object );
             addLnInstPropertyDescriptor( object );
             addPrefixPropertyDescriptor( object );
+            addLnUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -136,6 +137,28 @@ public class AgLNRefItemProvider extends AgLDRefItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Ln Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLnUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgLNRef_lnUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnUuid_feature",
+                                "_UI_AgLNRef_type" ),
+                        SclPackage.eINSTANCE.getAgLNRef_LnUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns AgLNRef.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -174,6 +197,7 @@ public class AgLNRefItemProvider extends AgLDRefItemProvider {
         case SclPackage.AG_LN_REF__LN_CLASS:
         case SclPackage.AG_LN_REF__LN_INST:
         case SclPackage.AG_LN_REF__PREFIX:
+        case SclPackage.AG_LN_REF__LN_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

@@ -172,6 +172,7 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getDOType_DA() );
             childrenFeatures.add( SclPackage.eINSTANCE.getDOType_SDO() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDOType_Labels() );
         }
         return childrenFeatures;
     }
@@ -249,6 +250,7 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
             return;
         case SclPackage.DO_TYPE__DA:
         case SclPackage.DO_TYPE__SDO:
+        case SclPackage.DO_TYPE__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -271,6 +273,9 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDOType_SDO(),
                 SclFactory.eINSTANCE.createSDO() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDOType_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }
