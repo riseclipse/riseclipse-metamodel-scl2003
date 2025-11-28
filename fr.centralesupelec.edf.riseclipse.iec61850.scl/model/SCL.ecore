@@ -1594,6 +1594,9 @@
         eOpposite="#//ReportControl/OptFields"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Protocol" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mustUnderstand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentControlWithIEDName"
