@@ -23,6 +23,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.utilities;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceFactoryImpl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceSetImpl;
@@ -41,6 +42,7 @@ public class SclModelLoader extends AbstractRiseClipseModelLoader {
 
         // Register the package to ensure it is available during loading.
         getResourceSet().getPackageRegistry().put( SclPackage.eNS_URI, SclPackage.eINSTANCE );
+        getResourceSet().getPackageRegistry().put( AsdPackage.eNS_URI, AsdPackage.eINSTANCE );
     }
 
     public void reset() {
@@ -53,6 +55,7 @@ public class SclModelLoader extends AbstractRiseClipseModelLoader {
 
         // Register the package to ensure it is available during loading.
         getResourceSet().getPackageRegistry().put( SclPackage.eNS_URI, SclPackage.eINSTANCE );
+        getResourceSet().getPackageRegistry().put( AsdPackage.eNS_URI, AsdPackage.eINSTANCE );
     }
 
     public Resource loadWithoutValidation( String name ) {
