@@ -67,6 +67,7 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
             addIedNamePropertyDescriptor( object );
             addRedProtPropertyDescriptor( object );
             addRefersToAccessPointPropertyDescriptor( object );
+            addApUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -160,6 +161,28 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Ap Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addApUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectedAP_apUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConnectedAP_apUuid_feature",
+                                "_UI_ConnectedAP_type" ),
+                        SclPackage.eINSTANCE.getConnectedAP_ApUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -243,6 +266,7 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
         case SclPackage.CONNECTED_AP__AP_NAME:
         case SclPackage.CONNECTED_AP__IED_NAME:
         case SclPackage.CONNECTED_AP__RED_PROT:
+        case SclPackage.CONNECTED_AP__AP_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.CONNECTED_AP__ADDRESS:

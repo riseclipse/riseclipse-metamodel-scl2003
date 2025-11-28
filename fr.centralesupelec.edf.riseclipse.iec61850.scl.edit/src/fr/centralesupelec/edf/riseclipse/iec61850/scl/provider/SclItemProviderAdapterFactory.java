@@ -965,6 +965,121 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SCSMItemProvider scsmItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSCSMAdapter() {
+        if( scsmItemProvider == null ) {
+            scsmItemProvider = new SCSMItemProvider( this );
+        }
+
+        return scsmItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SMVcSecurityItemProvider smVcSecurityItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSMVcSecurityAdapter() {
+        if( smVcSecurityItemProvider == null ) {
+            smVcSecurityItemProvider = new SMVcSecurityItemProvider( this );
+        }
+
+        return smVcSecurityItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SclFileReferenceItemProvider sclFileReferenceItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSclFileReferenceAdapter() {
+        if( sclFileReferenceItemProvider == null ) {
+            sclFileReferenceItemProvider = new SclFileReferenceItemProvider( this );
+        }
+
+        return sclFileReferenceItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Security} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SecurityItemProvider securityItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Security}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSecurityAdapter() {
+        if( securityItemProvider == null ) {
+            securityItemProvider = new SecurityItemProvider( this );
+        }
+
+        return securityItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SignalRoleItemProvider signalRoleItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSignalRoleAdapter() {
+        if( signalRoleItemProvider == null ) {
+            signalRoleItemProvider = new SignalRoleItemProvider( this );
+        }
+
+        return signalRoleItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1031,6 +1146,213 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         }
 
         return agLNRefItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtCtrl} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ExtCtrlItemProvider extCtrlItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtCtrl}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createExtCtrlAdapter() {
+        if( extCtrlItemProvider == null ) {
+            extCtrlItemProvider = new ExtCtrlItemProvider( this );
+        }
+
+        return extCtrlItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected GOOSEMcSecurityItemProvider gooseMcSecurityItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createGOOSEMcSecurityAdapter() {
+        if( gooseMcSecurityItemProvider == null ) {
+            gooseMcSecurityItemProvider = new GOOSEMcSecurityItemProvider( this );
+        }
+
+        return gooseMcSecurityItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected IEDSourceFilesItemProvider iedSourceFilesItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createIEDSourceFilesAdapter() {
+        if( iedSourceFilesItemProvider == null ) {
+            iedSourceFilesItemProvider = new IEDSourceFilesItemProvider( this );
+        }
+
+        return iedSourceFilesItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Label} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected LabelItemProvider labelItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Label}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createLabelAdapter() {
+        if( labelItemProvider == null ) {
+            labelItemProvider = new LabelItemProvider( this );
+        }
+
+        return labelItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected LabelsItemProvider labelsItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createLabelsAdapter() {
+        if( labelsItemProvider == null ) {
+            labelsItemProvider = new LabelsItemProvider( this );
+        }
+
+        return labelsItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFile} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MinRequestedSCDFileItemProvider minRequestedSCDFileItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFile}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createMinRequestedSCDFileAdapter() {
+        if( minRequestedSCDFileItemProvider == null ) {
+            minRequestedSCDFileItemProvider = new MinRequestedSCDFileItemProvider( this );
+        }
+
+        return minRequestedSCDFileItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MinRequestedSCDFilesItemProvider minRequestedSCDFilesItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createMinRequestedSCDFilesAdapter() {
+        if( minRequestedSCDFilesItemProvider == null ) {
+            minRequestedSCDFilesItemProvider = new MinRequestedSCDFilesItemProvider( this );
+        }
+
+        return minRequestedSCDFilesItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected MultiAPPerSubNetItemProvider multiAPPerSubNetItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createMultiAPPerSubNetAdapter() {
+        if( multiAPPerSubNetItemProvider == null ) {
+            multiAPPerSubNetItemProvider = new MultiAPPerSubNetItemProvider( this );
+        }
+
+        return multiAPPerSubNetItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected OutputsItemProvider outputsItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createOutputsAdapter() {
+        if( outputsItemProvider == null ) {
+            outputsItemProvider = new OutputsItemProvider( this );
+        }
+
+        return outputsItemProvider;
     }
 
     /**
@@ -3357,6 +3679,29 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SourceFilesItemProvider sourceFilesItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSourceFilesAdapter() {
+        if( sourceFilesItemProvider == null ) {
+            sourceFilesItemProvider = new SourceFilesItemProvider( this );
+        }
+
+        return sourceFilesItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceYesNo} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3691,45 +4036,20 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
      */
     @Override
     public void dispose() {
-        if( headerItemProvider != null ) headerItemProvider.dispose();
-        if( historyItemProvider != null ) historyItemProvider.dispose();
-        if( hitemItemProvider != null ) hitemItemProvider.dispose();
-        if( idNamingItemProvider != null ) idNamingItemProvider.dispose();
-        if( lineItemProvider != null ) lineItemProvider.dispose();
-        if( privateItemProvider != null ) privateItemProvider.dispose();
-        if( processItemProvider != null ) processItemProvider.dispose();
-        if( sclItemProvider != null ) sclItemProvider.dispose();
-        if( textItemProvider != null ) textItemProvider.dispose();
         if( addressItemProvider != null ) addressItemProvider.dispose();
-        if( communicationItemProvider != null ) communicationItemProvider.dispose();
-        if( connectedAPItemProvider != null ) connectedAPItemProvider.dispose();
-        if( gseItemProvider != null ) gseItemProvider.dispose();
-        if( pItemProvider != null ) pItemProvider.dispose();
-        if( pAddrItemProvider != null ) pAddrItemProvider.dispose();
-        if( p_PhysConnItemProvider != null ) p_PhysConnItemProvider.dispose();
-        if( physConnItemProvider != null ) physConnItemProvider.dispose();
-        if( smvItemProvider != null ) smvItemProvider.dispose();
-        if( subNetworkItemProvider != null ) subNetworkItemProvider.dispose();
-        if( bdaItemProvider != null ) bdaItemProvider.dispose();
-        if( daItemProvider != null ) daItemProvider.dispose();
-        if( daTypeItemProvider != null ) daTypeItemProvider.dispose();
-        if( doItemProvider != null ) doItemProvider.dispose();
-        if( doTypeItemProvider != null ) doTypeItemProvider.dispose();
-        if( dataTypeTemplatesItemProvider != null ) dataTypeTemplatesItemProvider.dispose();
-        if( enumTypeItemProvider != null ) enumTypeItemProvider.dispose();
-        if( enumValItemProvider != null ) enumValItemProvider.dispose();
-        if( lNodeTypeItemProvider != null ) lNodeTypeItemProvider.dispose();
-        if( protNsItemProvider != null ) protNsItemProvider.dispose();
-        if( sdoItemProvider != null ) sdoItemProvider.dispose();
-        if( valItemProvider != null ) valItemProvider.dispose();
         if( accessControlItemProvider != null ) accessControlItemProvider.dispose();
         if( accessPointItemProvider != null ) accessPointItemProvider.dispose();
+        if( abstractConductingEquipmentItemProvider != null ) abstractConductingEquipmentItemProvider.dispose();
+        if( abstractEqFuncSubFuncItemProvider != null ) abstractEqFuncSubFuncItemProvider.dispose();
         if( associationItemProvider != null ) associationItemProvider.dispose();
         if( authenticationItemProvider != null ) authenticationItemProvider.dispose();
+        if( bayItemProvider != null ) bayItemProvider.dispose();
+        if( bdaItemProvider != null ) bdaItemProvider.dispose();
         if( certificateItemProvider != null ) certificateItemProvider.dispose();
         if( clientLNItemProvider != null ) clientLNItemProvider.dispose();
         if( clientServicesItemProvider != null ) clientServicesItemProvider.dispose();
         if( commProtItemProvider != null ) commProtItemProvider.dispose();
+        if( communicationItemProvider != null ) communicationItemProvider.dispose();
         if( confDataSetItemProvider != null ) confDataSetItemProvider.dispose();
         if( confLNsItemProvider != null ) confLNsItemProvider.dispose();
         if( confLdNameItemProvider != null ) confLdNameItemProvider.dispose();
@@ -3738,6 +4058,10 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( confSGItemProvider != null ) confSGItemProvider.dispose();
         if( confSigRefItemProvider != null ) confSigRefItemProvider.dispose();
         if( controlWithIEDNameItemProvider != null ) controlWithIEDNameItemProvider.dispose();
+        if( conductingEquipmentItemProvider != null ) conductingEquipmentItemProvider.dispose();
+        if( connectivityNodeItemProvider != null ) connectivityNodeItemProvider.dispose();
+        if( connectedAPItemProvider != null ) connectedAPItemProvider.dispose();
+        if( daItemProvider != null ) daItemProvider.dispose();
         if( daiItemProvider != null ) daiItemProvider.dispose();
         if( doiItemProvider != null ) doiItemProvider.dispose();
         if( dataObjectDirectoryItemProvider != null ) dataObjectDirectoryItemProvider.dispose();
@@ -3745,9 +4069,21 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( dataSetDirectoryItemProvider != null ) dataSetDirectoryItemProvider.dispose();
         if( dynAssociationItemProvider != null ) dynAssociationItemProvider.dispose();
         if( dynDataSetItemProvider != null ) dynDataSetItemProvider.dispose();
+        if( daTypeItemProvider != null ) daTypeItemProvider.dispose();
+        if( dataTypeTemplatesItemProvider != null ) dataTypeTemplatesItemProvider.dispose();
+        if( doItemProvider != null ) doItemProvider.dispose();
+        if( doTypeItemProvider != null ) doTypeItemProvider.dispose();
+        if( enumValItemProvider != null ) enumValItemProvider.dispose();
+        if( enumTypeItemProvider != null ) enumTypeItemProvider.dispose();
         if( extRefItemProvider != null ) extRefItemProvider.dispose();
+        if( eqFunctionItemProvider != null ) eqFunctionItemProvider.dispose();
+        if( eqSubFunctionItemProvider != null ) eqSubFunctionItemProvider.dispose();
+        if( equipmentItemProvider != null ) equipmentItemProvider.dispose();
+        if( equipmentContainerItemProvider != null ) equipmentContainerItemProvider.dispose();
         if( fcdaItemProvider != null ) fcdaItemProvider.dispose();
         if( fileHandlingItemProvider != null ) fileHandlingItemProvider.dispose();
+        if( generalEquipmentItemProvider != null ) generalEquipmentItemProvider.dispose();
+        if( gseItemProvider != null ) gseItemProvider.dispose();
         if( gooseItemProvider != null ) gooseItemProvider.dispose();
         if( gooseSecurityItemProvider != null ) gooseSecurityItemProvider.dispose();
         if( gseControlItemProvider != null ) gseControlItemProvider.dispose();
@@ -3758,11 +4094,19 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( getDataObjectDefinitionItemProvider != null ) getDataObjectDefinitionItemProvider.dispose();
         if( getDataSetValueItemProvider != null ) getDataSetValueItemProvider.dispose();
         if( getDirectoryItemProvider != null ) getDirectoryItemProvider.dispose();
+        if( headerItemProvider != null ) headerItemProvider.dispose();
+        if( historyItemProvider != null ) historyItemProvider.dispose();
+        if( hitemItemProvider != null ) hitemItemProvider.dispose();
+        if( idNamingItemProvider != null ) idNamingItemProvider.dispose();
         if( iedItemProvider != null ) iedItemProvider.dispose();
         if( iedNameItemProvider != null ) iedNameItemProvider.dispose();
         if( inputsItemProvider != null ) inputsItemProvider.dispose();
         if( issuerNameItemProvider != null ) issuerNameItemProvider.dispose();
         if( kdcItemProvider != null ) kdcItemProvider.dispose();
+        if( lineItemProvider != null ) lineItemProvider.dispose();
+        if( lNodeItemProvider != null ) lNodeItemProvider.dispose();
+        if( lNodeTypeItemProvider != null ) lNodeTypeItemProvider.dispose();
+        if( lNodeContainerItemProvider != null ) lNodeContainerItemProvider.dispose();
         if( lDeviceItemProvider != null ) lDeviceItemProvider.dispose();
         if( lnItemProvider != null ) lnItemProvider.dispose();
         if( ln0ItemProvider != null ) ln0ItemProvider.dispose();
@@ -3770,12 +4114,20 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( logControlItemProvider != null ) logControlItemProvider.dispose();
         if( logSettingsItemProvider != null ) logSettingsItemProvider.dispose();
         if( optFieldsItemProvider != null ) optFieldsItemProvider.dispose();
+        if( pItemProvider != null ) pItemProvider.dispose();
+        if( pAddrItemProvider != null ) pAddrItemProvider.dispose();
+        if( p_PhysConnItemProvider != null ) p_PhysConnItemProvider.dispose();
+        if( physConnItemProvider != null ) physConnItemProvider.dispose();
+        if( privateItemProvider != null ) privateItemProvider.dispose();
+        if( processItemProvider != null ) processItemProvider.dispose();
+        if( protNsItemProvider != null ) protNsItemProvider.dispose();
         if( protocolItemProvider != null ) protocolItemProvider.dispose();
         if( readWriteItemProvider != null ) readWriteItemProvider.dispose();
         if( redProtItemProvider != null ) redProtItemProvider.dispose();
         if( reportControlItemProvider != null ) reportControlItemProvider.dispose();
         if( reportSettingsItemProvider != null ) reportSettingsItemProvider.dispose();
         if( rptEnabledItemProvider != null ) rptEnabledItemProvider.dispose();
+        if( sclItemProvider != null ) sclItemProvider.dispose();
         if( sdiItemProvider != null ) sdiItemProvider.dispose();
         if( sgEditItemProvider != null ) sgEditItemProvider.dispose();
         if( smvSecurityItemProvider != null ) smvSecurityItemProvider.dispose();
@@ -3793,27 +4145,35 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( smvOptsItemProvider != null ) smvOptsItemProvider.dispose();
         if( subjectItemProvider != null ) subjectItemProvider.dispose();
         if( supSubscriptionItemProvider != null ) supSubscriptionItemProvider.dispose();
+        if( smvItemProvider != null ) smvItemProvider.dispose();
+        if( subNetworkItemProvider != null ) subNetworkItemProvider.dispose();
+        if( sdoItemProvider != null ) sdoItemProvider.dispose();
+        if( textItemProvider != null ) textItemProvider.dispose();
+        if( valItemProvider != null ) valItemProvider.dispose();
         if( timeSyncProtItemProvider != null ) timeSyncProtItemProvider.dispose();
         if( timerActivatedControlItemProvider != null ) timerActivatedControlItemProvider.dispose();
         if( trgOpsItemProvider != null ) trgOpsItemProvider.dispose();
         if( valueHandlingItemProvider != null ) valueHandlingItemProvider.dispose();
-        if( abstractConductingEquipmentItemProvider != null ) abstractConductingEquipmentItemProvider.dispose();
-        if( abstractEqFuncSubFuncItemProvider != null ) abstractEqFuncSubFuncItemProvider.dispose();
-        if( bayItemProvider != null ) bayItemProvider.dispose();
-        if( conductingEquipmentItemProvider != null ) conductingEquipmentItemProvider.dispose();
-        if( connectivityNodeItemProvider != null ) connectivityNodeItemProvider.dispose();
-        if( eqFunctionItemProvider != null ) eqFunctionItemProvider.dispose();
-        if( eqSubFunctionItemProvider != null ) eqSubFunctionItemProvider.dispose();
-        if( equipmentItemProvider != null ) equipmentItemProvider.dispose();
-        if( equipmentContainerItemProvider != null ) equipmentContainerItemProvider.dispose();
         if( functionItemProvider != null ) functionItemProvider.dispose();
-        if( generalEquipmentItemProvider != null ) generalEquipmentItemProvider.dispose();
         if( generalEquipmentContainerItemProvider != null ) generalEquipmentContainerItemProvider.dispose();
-        if( lNodeItemProvider != null ) lNodeItemProvider.dispose();
-        if( lNodeContainerItemProvider != null ) lNodeContainerItemProvider.dispose();
         if( neutralPointItemProvider != null ) neutralPointItemProvider.dispose();
         if( powerSystemResourceItemProvider != null ) powerSystemResourceItemProvider.dispose();
         if( powerTransformerItemProvider != null ) powerTransformerItemProvider.dispose();
+        if( serviceYesNoItemProvider != null ) serviceYesNoItemProvider.dispose();
+        if( serviceWithOptionalMaxItemProvider != null ) serviceWithOptionalMaxItemProvider.dispose();
+        if( serviceWithMaxNonZeroItemProvider != null ) serviceWithMaxNonZeroItemProvider.dispose();
+        if( serviceConfReportControlItemProvider != null ) serviceConfReportControlItemProvider.dispose();
+        if( serviceWithMaxAndMaxAttributesItemProvider != null ) serviceWithMaxAndMaxAttributesItemProvider.dispose();
+        if( serviceWithMaxAndModifyItemProvider != null ) serviceWithMaxAndModifyItemProvider.dispose();
+        if( serviceForConfDataSetItemProvider != null ) serviceForConfDataSetItemProvider.dispose();
+        if( smpRateItemProvider != null ) smpRateItemProvider.dispose();
+        if( samplesPerSecItemProvider != null ) samplesPerSecItemProvider.dispose();
+        if( secPerSamplesItemProvider != null ) secPerSamplesItemProvider.dispose();
+        if( scsmItemProvider != null ) scsmItemProvider.dispose();
+        if( smVcSecurityItemProvider != null ) smVcSecurityItemProvider.dispose();
+        if( sclFileReferenceItemProvider != null ) sclFileReferenceItemProvider.dispose();
+        if( securityItemProvider != null ) securityItemProvider.dispose();
+        if( signalRoleItemProvider != null ) signalRoleItemProvider.dispose();
         if( subEquipmentItemProvider != null ) subEquipmentItemProvider.dispose();
         if( subFunctionItemProvider != null ) subFunctionItemProvider.dispose();
         if( substationItemProvider != null ) substationItemProvider.dispose();
@@ -3822,13 +4182,7 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( transformerWindingItemProvider != null ) transformerWindingItemProvider.dispose();
         if( voltageItemProvider != null ) voltageItemProvider.dispose();
         if( voltageLevelItemProvider != null ) voltageLevelItemProvider.dispose();
-        if( serviceYesNoItemProvider != null ) serviceYesNoItemProvider.dispose();
-        if( serviceWithOptionalMaxItemProvider != null ) serviceWithOptionalMaxItemProvider.dispose();
-        if( serviceWithMaxNonZeroItemProvider != null ) serviceWithMaxNonZeroItemProvider.dispose();
-        if( serviceConfReportControlItemProvider != null ) serviceConfReportControlItemProvider.dispose();
-        if( serviceWithMaxAndMaxAttributesItemProvider != null ) serviceWithMaxAndMaxAttributesItemProvider.dispose();
-        if( serviceWithMaxAndModifyItemProvider != null ) serviceWithMaxAndModifyItemProvider.dispose();
-        if( serviceForConfDataSetItemProvider != null ) serviceForConfDataSetItemProvider.dispose();
+        if( sourceFilesItemProvider != null ) sourceFilesItemProvider.dispose();
         if( certItemProvider != null ) certItemProvider.dispose();
         if( valueWithUnitItemProvider != null ) valueWithUnitItemProvider.dispose();
         if( durationInSecItemProvider != null ) durationInSecItemProvider.dispose();
@@ -3837,12 +4191,18 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory
         if( minTimeItemProvider != null ) minTimeItemProvider.dispose();
         if( maxTimeItemProvider != null ) maxTimeItemProvider.dispose();
         if( bitRateItemProvider != null ) bitRateItemProvider.dispose();
-        if( smpRateItemProvider != null ) smpRateItemProvider.dispose();
-        if( samplesPerSecItemProvider != null ) samplesPerSecItemProvider.dispose();
-        if( secPerSamplesItemProvider != null ) secPerSamplesItemProvider.dispose();
         if( mcSecurityItemProvider != null ) mcSecurityItemProvider.dispose();
         if( agAuthenticationItemProvider != null ) agAuthenticationItemProvider.dispose();
         if( agLNRefItemProvider != null ) agLNRefItemProvider.dispose();
+        if( extCtrlItemProvider != null ) extCtrlItemProvider.dispose();
+        if( gooseMcSecurityItemProvider != null ) gooseMcSecurityItemProvider.dispose();
+        if( iedSourceFilesItemProvider != null ) iedSourceFilesItemProvider.dispose();
+        if( labelItemProvider != null ) labelItemProvider.dispose();
+        if( labelsItemProvider != null ) labelsItemProvider.dispose();
+        if( minRequestedSCDFileItemProvider != null ) minRequestedSCDFileItemProvider.dispose();
+        if( minRequestedSCDFilesItemProvider != null ) minRequestedSCDFilesItemProvider.dispose();
+        if( multiAPPerSubNetItemProvider != null ) multiAPPerSubNetItemProvider.dispose();
+        if( outputsItemProvider != null ) outputsItemProvider.dispose();
     }
 
 }

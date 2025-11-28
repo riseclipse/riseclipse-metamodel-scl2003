@@ -67,9 +67,12 @@ public class AssociationItemProvider extends BaseElementItemProvider {
             addLnClassPropertyDescriptor( object );
             addLnInstPropertyDescriptor( object );
             addPrefixPropertyDescriptor( object );
+            addLnUuidPropertyDescriptor( object );
             addAssociationIDPropertyDescriptor( object );
             addKindPropertyDescriptor( object );
             addRefersToAnyLNPropertyDescriptor( object );
+            addApRefPropertyDescriptor( object );
+            addInitiatorPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -250,6 +253,28 @@ public class AssociationItemProvider extends BaseElementItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Ln Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLnUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgLNRef_lnUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnUuid_feature",
+                                "_UI_AgLNRef_type" ),
+                        SclPackage.eINSTANCE.getAgLNRef_LnUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This adds a property descriptor for the Refers To Any LN feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -267,6 +292,50 @@ public class AssociationItemProvider extends BaseElementItemProvider {
                         false,
                         true,
                         null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Ap Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addApRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Association_apRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Association_apRef_feature",
+                                "_UI_Association_type" ),
+                        SclPackage.eINSTANCE.getAssociation_ApRef(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Initiator feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addInitiatorPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Association_initiator_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Association_initiator_feature",
+                                "_UI_Association_type" ),
+                        SclPackage.eINSTANCE.getAssociation_Initiator(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
                         null,
                         null ) );
     }
@@ -311,8 +380,11 @@ public class AssociationItemProvider extends BaseElementItemProvider {
         case SclPackage.ASSOCIATION__LN_CLASS:
         case SclPackage.ASSOCIATION__LN_INST:
         case SclPackage.ASSOCIATION__PREFIX:
+        case SclPackage.ASSOCIATION__LN_UUID:
         case SclPackage.ASSOCIATION__ASSOCIATION_ID:
         case SclPackage.ASSOCIATION__KIND:
+        case SclPackage.ASSOCIATION__AP_REF:
+        case SclPackage.ASSOCIATION__INITIATOR:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

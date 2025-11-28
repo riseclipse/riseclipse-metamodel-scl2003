@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -63,6 +64,8 @@ public class FunctionItemProvider extends PowerSystemResourceItemProvider {
             super.getPropertyDescriptors( object );
 
             addTypePropertyDescriptor( object );
+            addReferredByFunctionRefPropertyDescriptor( object );
+            addReferredByFunctionCatRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -85,6 +88,50 @@ public class FunctionItemProvider extends PowerSystemResourceItemProvider {
                         false,
                         false,
                         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Function Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByFunctionRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Function_ReferredByFunctionRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Function_ReferredByFunctionRef_feature",
+                                "_UI_Function_type" ),
+                        SclPackage.eINSTANCE.getFunction_ReferredByFunctionRef(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Function Cat Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByFunctionCatRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Function_ReferredByFunctionCatRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_Function_ReferredByFunctionCatRef_feature", "_UI_Function_type" ),
+                        SclPackage.eINSTANCE.getFunction_ReferredByFunctionCatRef(),
+                        true,
+                        false,
+                        true,
+                        null,
                         null,
                         null ) );
     }

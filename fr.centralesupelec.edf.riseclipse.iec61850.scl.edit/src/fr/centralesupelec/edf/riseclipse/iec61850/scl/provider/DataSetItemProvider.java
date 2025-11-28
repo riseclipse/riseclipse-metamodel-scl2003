@@ -62,10 +62,55 @@ public class DataSetItemProvider extends UnNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addReferredByControlPropertyDescriptor( object );
             addNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -178,6 +223,8 @@ public class DataSetItemProvider extends UnNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( DataSet.class ) ) {
+        case SclPackage.DATA_SET__UUID:
+        case SclPackage.DATA_SET__TEMPLATE_UUID:
         case SclPackage.DATA_SET__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;

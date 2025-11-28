@@ -64,6 +64,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
             super.getPropertyDescriptors( object );
 
             addNamespacePropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addInstPropertyDescriptor( object );
             addLdNamePropertyDescriptor( object );
             addReferredByIEDNamePropertyDescriptor( object );
@@ -88,6 +90,49 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
                                 "_UI_INamespaceGetter_type" ),
                         SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
                         false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
                         false,
                         false,
                         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -220,6 +265,7 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
             childrenFeatures.add( SclPackage.eINSTANCE.getLDevice_AccessControl() );
             childrenFeatures.add( SclPackage.eINSTANCE.getLDevice_LN0() );
             childrenFeatures.add( SclPackage.eINSTANCE.getLDevice_LN() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getLDevice_Labels() );
         }
         return childrenFeatures;
     }
@@ -286,6 +332,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
 
         switch( notification.getFeatureID( LDevice.class ) ) {
         case SclPackage.LDEVICE__NAMESPACE:
+        case SclPackage.LDEVICE__UUID:
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
         case SclPackage.LDEVICE__INST:
         case SclPackage.LDEVICE__LD_NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
@@ -293,6 +341,7 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
         case SclPackage.LDEVICE__ACCESS_CONTROL:
         case SclPackage.LDEVICE__LN0:
         case SclPackage.LDEVICE__LN:
+        case SclPackage.LDEVICE__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -318,6 +367,9 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLDevice_LN(),
                 SclFactory.eINSTANCE.createLN() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLDevice_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

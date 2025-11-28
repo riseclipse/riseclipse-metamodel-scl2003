@@ -36,6 +36,19 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated SCL -->
+      <factory
+            uri="http://www.iec.ch/61850/2019/SCL/6-100"
+            class="fr.centralesupelec.edf.riseclipse.iec61850.asd.provider.AsdItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
    <extension
          point="fr.centralesupelec.edf.riseclipse.main.meta_models">
       <meta_model

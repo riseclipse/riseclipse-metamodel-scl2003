@@ -62,14 +62,19 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             super.getPropertyDescriptors( object );
 
             addDescPropertyDescriptor( object );
-            addDaNamePropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addDoNamePropertyDescriptor( object );
             addIedNamePropertyDescriptor( object );
-            addIntAddrPropertyDescriptor( object );
             addLdInstPropertyDescriptor( object );
             addLnClassPropertyDescriptor( object );
             addLnInstPropertyDescriptor( object );
+            addLnUuidPropertyDescriptor( object );
+            addPDOPropertyDescriptor( object );
+            addPLNPropertyDescriptor( object );
             addPrefixPropertyDescriptor( object );
+            addDaNamePropertyDescriptor( object );
+            addIntAddrPropertyDescriptor( object );
             addServiceTypePropertyDescriptor( object );
             addSrcCBNamePropertyDescriptor( object );
             addSrcLDInstPropertyDescriptor( object );
@@ -79,10 +84,10 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             addRefersToAbstractDataAttributePropertyDescriptor( object );
             addRefersToAbstractDataObjectPropertyDescriptor( object );
             addPServTPropertyDescriptor( object );
-            addPLNPropertyDescriptor( object );
-            addPDOPropertyDescriptor( object );
             addPDAPropertyDescriptor( object );
             addRefersToControlPropertyDescriptor( object );
+            addSrcCBUuidPropertyDescriptor( object );
+            addReferredBySourceRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -119,10 +124,9 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ExtRef_doName_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_doName_feature",
-                                "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_DoName(),
+                        getString( "_UI_DORef_doName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_doName_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_DoName(),
                         true,
                         false,
                         false,
@@ -141,10 +145,10 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ExtRef_iedName_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_iedName_feature",
-                                "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_IedName(),
+                        getString( "_UI_DORef_iedName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_iedName_feature",
+                                "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_IedName(),
                         true,
                         false,
                         false,
@@ -185,10 +189,9 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ExtRef_ldInst_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_ldInst_feature",
-                                "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_LdInst(),
+                        getString( "_UI_DORef_ldInst_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_ldInst_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_LdInst(),
                         true,
                         false,
                         false,
@@ -207,10 +210,10 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ExtRef_lnClass_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_lnClass_feature",
-                                "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_LnClass(),
+                        getString( "_UI_DORef_lnClass_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_lnClass_feature",
+                                "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_LnClass(),
                         true,
                         false,
                         false,
@@ -229,10 +232,72 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ExtRef_lnInst_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_lnInst_feature",
-                                "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_LnInst(),
+                        getString( "_UI_DORef_lnInst_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_lnInst_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_LnInst(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Ln Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLnUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DORef_lnUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_lnUuid_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_LnUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the PDO feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPDOPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DORef_pDO_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_pDO_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_PDO(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the PLN feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPLNPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DORef_pLN_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_pLN_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_PLN(),
                         true,
                         false,
                         false,
@@ -251,10 +316,9 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ExtRef_prefix_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_prefix_feature",
-                                "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_Prefix(),
+                        getString( "_UI_DORef_prefix_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DORef_prefix_feature", "_UI_DORef_type" ),
+                        SclPackage.eINSTANCE.getDORef_Prefix(),
                         true,
                         false,
                         false,
@@ -461,6 +525,49 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This adds a property descriptor for the PServ T feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -474,48 +581,6 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
                         getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_pServT_feature",
                                 "_UI_ExtRef_type" ),
                         SclPackage.eINSTANCE.getExtRef_PServT(),
-                        true,
-                        false,
-                        false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the PLN feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addPLNPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_ExtRef_pLN_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_pLN_feature", "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_PLN(),
-                        true,
-                        false,
-                        false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the PDO feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addPDOPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_ExtRef_pDO_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_pDO_feature", "_UI_ExtRef_type" ),
-                        SclPackage.eINSTANCE.getExtRef_PDO(),
                         true,
                         false,
                         false,
@@ -559,6 +624,50 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
                         getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_RefersToControl_feature",
                                 "_UI_ExtRef_type" ),
                         SclPackage.eINSTANCE.getExtRef_RefersToControl(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Src CB Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addSrcCBUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ExtRef_srcCBUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_srcCBUuid_feature",
+                                "_UI_ExtRef_type" ),
+                        SclPackage.eINSTANCE.getExtRef_SrcCBUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Source Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredBySourceRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ExtRef_ReferredBySourceRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ExtRef_ReferredBySourceRef_feature",
+                                "_UI_ExtRef_type" ),
+                        SclPackage.eINSTANCE.getExtRef_ReferredBySourceRef(),
                         true,
                         false,
                         true,
@@ -621,14 +730,19 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
 
         switch( notification.getFeatureID( ExtRef.class ) ) {
         case SclPackage.EXT_REF__DESC:
-        case SclPackage.EXT_REF__DA_NAME:
+        case SclPackage.EXT_REF__UUID:
+        case SclPackage.EXT_REF__TEMPLATE_UUID:
         case SclPackage.EXT_REF__DO_NAME:
         case SclPackage.EXT_REF__IED_NAME:
-        case SclPackage.EXT_REF__INT_ADDR:
         case SclPackage.EXT_REF__LD_INST:
         case SclPackage.EXT_REF__LN_CLASS:
         case SclPackage.EXT_REF__LN_INST:
+        case SclPackage.EXT_REF__LN_UUID:
+        case SclPackage.EXT_REF__PDO:
+        case SclPackage.EXT_REF__PLN:
         case SclPackage.EXT_REF__PREFIX:
+        case SclPackage.EXT_REF__DA_NAME:
+        case SclPackage.EXT_REF__INT_ADDR:
         case SclPackage.EXT_REF__SERVICE_TYPE:
         case SclPackage.EXT_REF__SRC_CB_NAME:
         case SclPackage.EXT_REF__SRC_LD_INST:
@@ -636,9 +750,8 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         case SclPackage.EXT_REF__SRC_LN_INST:
         case SclPackage.EXT_REF__SRC_PREFIX:
         case SclPackage.EXT_REF__PSERV_T:
-        case SclPackage.EXT_REF__PLN:
-        case SclPackage.EXT_REF__PDO:
         case SclPackage.EXT_REF__PDA:
+        case SclPackage.EXT_REF__SRC_CB_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

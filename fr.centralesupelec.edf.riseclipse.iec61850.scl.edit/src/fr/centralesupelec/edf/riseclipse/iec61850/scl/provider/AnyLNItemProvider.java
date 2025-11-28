@@ -64,6 +64,8 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             super.getPropertyDescriptors( object );
 
             addNamespacePropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addInstPropertyDescriptor( object );
             addLnClassPropertyDescriptor( object );
             addLnTypePropertyDescriptor( object );
@@ -72,6 +74,9 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addReferredByAssociationPropertyDescriptor( object );
             addReferredByIEDNamePropertyDescriptor( object );
             addReferredByLNodePropertyDescriptor( object );
+            addReferredByDOSPropertyDescriptor( object );
+            addReferredBySDSPropertyDescriptor( object );
+            addReferredByDASPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -91,6 +96,49 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
                                 "_UI_INamespaceGetter_type" ),
                         SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
                         false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
                         false,
                         false,
                         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -273,6 +321,72 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Referred By DOS feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByDOSPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByDOS_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByDOS_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByDOS(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By SDS feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredBySDSPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredBySDS_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredBySDS_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredBySDS(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By DAS feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByDASPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByDAS_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByDAS_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByDAS(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -290,6 +404,8 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
             childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_LogControl() );
             childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_DataSet() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_Labels() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_Outputs() );
         }
         return childrenFeatures;
     }
@@ -342,6 +458,8 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
 
         switch( notification.getFeatureID( AnyLN.class ) ) {
         case SclPackage.ANY_LN__NAMESPACE:
+        case SclPackage.ANY_LN__UUID:
+        case SclPackage.ANY_LN__TEMPLATE_UUID:
         case SclPackage.ANY_LN__INST:
         case SclPackage.ANY_LN__LN_CLASS:
         case SclPackage.ANY_LN__LN_TYPE:
@@ -353,6 +471,8 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
         case SclPackage.ANY_LN__REPORT_CONTROL:
         case SclPackage.ANY_LN__LOG_CONTROL:
         case SclPackage.ANY_LN__DATA_SET:
+        case SclPackage.ANY_LN__LABELS:
+        case SclPackage.ANY_LN__OUTPUTS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -387,6 +507,12 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_DataSet(),
                 SclFactory.eINSTANCE.createDataSet() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_Outputs(),
+                SclFactory.eINSTANCE.createOutputs() ) );
     }
 
 }
