@@ -36,6 +36,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getWho <em>Who</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getWhy <em>Why</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getParentHistory <em>Parent History</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles <em>Source Files</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHitem()
@@ -384,5 +385,56 @@ public interface Hitem extends SclObject {
      * @generated
      */
     void setParentHistory( History value );
+
+    /**
+     * Returns the value of the '<em><b>Source Files</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem <em>Parent Hitem</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Source Files</em>' containment reference.
+     * @see #isSetSourceFiles()
+     * @see #unsetSourceFiles()
+     * @see #setSourceFiles(SourceFiles)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHitem_SourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem
+     * @model opposite="ParentHitem" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    SourceFiles getSourceFiles();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles <em>Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Source Files</em>' containment reference.
+     * @see #isSetSourceFiles()
+     * @see #unsetSourceFiles()
+     * @see #getSourceFiles()
+     * @generated
+     */
+    void setSourceFiles( SourceFiles value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles <em>Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSourceFiles()
+     * @see #getSourceFiles()
+     * @see #setSourceFiles(SourceFiles)
+     * @generated
+     */
+    void unsetSourceFiles();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles <em>Source Files</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Source Files</em>' containment reference is set.
+     * @see #unsetSourceFiles()
+     * @see #getSourceFiles()
+     * @see #setSourceFiles(SourceFiles)
+     * @generated
+     */
+    boolean isSetSourceFiles();
 
 } // Hitem

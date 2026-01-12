@@ -29,9 +29,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
@@ -58,6 +62,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getParentVoltageLevel <em>Parent Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getSubFunction <em>Sub Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getGeneralEquipment <em>General Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getReferredByFunctionRef <em>Referred By Function Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getReferredByFunctionCatRef <em>Referred By Function Cat Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -121,6 +127,26 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @ordered
      */
     protected EList< GeneralEquipment > generalEquipment;
+
+    /**
+     * The cached value of the '{@link #getReferredByFunctionRef() <em>Referred By Function Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByFunctionRef()
+     * @generated
+     * @ordered
+     */
+    protected EList< FunctionRef > referredByFunctionRef;
+
+    /**
+     * The cached value of the '{@link #getReferredByFunctionCatRef() <em>Referred By Function Cat Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByFunctionCatRef()
+     * @generated
+     * @ordered
+     */
+    protected EList< FunctionCatRef > referredByFunctionCatRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -534,6 +560,80 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public EList< FunctionRef > getReferredByFunctionRef() {
+        if( referredByFunctionRef == null ) {
+            referredByFunctionRef = new EObjectWithInverseResolvingEList.Unsettable< >( FunctionRef.class,
+                    this, SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF, AsdPackage.FUNCTION_REF__REFERS_TO_FUNCTION );
+        }
+        return referredByFunctionRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByFunctionRef() {
+        if( referredByFunctionRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByFunctionRef ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByFunctionRef() {
+        return referredByFunctionRef != null && ( ( InternalEList.Unsettable< ? > ) referredByFunctionRef ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< FunctionCatRef > getReferredByFunctionCatRef() {
+        if( referredByFunctionCatRef == null ) {
+            referredByFunctionCatRef = new EObjectWithInverseResolvingEList.Unsettable< >(
+                    FunctionCatRef.class, this, SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF,
+                    AsdPackage.FUNCTION_CAT_REF__REFERS_TO_FUNCTION );
+        }
+        return referredByFunctionCatRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByFunctionCatRef() {
+        if( referredByFunctionCatRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByFunctionCatRef ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByFunctionCatRef() {
+        return referredByFunctionCatRef != null
+                && ( ( InternalEList.Unsettable< ? > ) referredByFunctionCatRef ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -567,6 +667,12 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
         case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getGeneralEquipment() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByFunctionRef() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByFunctionCatRef() )
+                    .basicAdd( otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -593,6 +699,10 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
             return ( ( InternalEList< ? > ) getSubFunction() ).basicRemove( otherEnd, msgs );
         case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
             return ( ( InternalEList< ? > ) getGeneralEquipment() ).basicRemove( otherEnd, msgs );
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF:
+            return ( ( InternalEList< ? > ) getReferredByFunctionRef() ).basicRemove( otherEnd, msgs );
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF:
+            return ( ( InternalEList< ? > ) getReferredByFunctionCatRef() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -643,6 +753,10 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
             return getSubFunction();
         case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
             return getGeneralEquipment();
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF:
+            return getReferredByFunctionRef();
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF:
+            return getReferredByFunctionCatRef();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -683,6 +797,14 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
             getGeneralEquipment().clear();
             getGeneralEquipment().addAll( ( Collection< ? extends GeneralEquipment > ) newValue );
             return;
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF:
+            getReferredByFunctionRef().clear();
+            getReferredByFunctionRef().addAll( ( Collection< ? extends FunctionRef > ) newValue );
+            return;
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF:
+            getReferredByFunctionCatRef().clear();
+            getReferredByFunctionCatRef().addAll( ( Collection< ? extends FunctionCatRef > ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -719,6 +841,12 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
         case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
             unsetGeneralEquipment();
             return;
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF:
+            unsetReferredByFunctionRef();
+            return;
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF:
+            unsetReferredByFunctionCatRef();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -747,6 +875,10 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
             return isSetSubFunction();
         case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
             return isSetGeneralEquipment();
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_REF:
+            return isSetReferredByFunctionRef();
+        case SclPackage.FUNCTION__REFERRED_BY_FUNCTION_CAT_REF:
+            return isSetReferredByFunctionCatRef();
         }
         return super.eIsSet( featureID );
     }

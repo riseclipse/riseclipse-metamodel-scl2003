@@ -24,6 +24,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.*;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
@@ -85,201 +89,6 @@ public class SclSwitch< T > extends Switch< T > {
     @Override
     protected T doSwitch( int classifierID, EObject theEObject ) {
         switch( classifierID ) {
-        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE: {
-            AnyContentFromOtherNamespace anyContentFromOtherNamespace = ( AnyContentFromOtherNamespace ) theEObject;
-            T result = caseAnyContentFromOtherNamespace( anyContentFromOtherNamespace );
-            if( result == null ) {
-                result = caseSclObject( anyContentFromOtherNamespace );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.BASE_ELEMENT: {
-            BaseElement baseElement = ( BaseElement ) theEObject;
-            T result = caseBaseElement( baseElement );
-            if( result == null ) {
-                result = caseSclObject( baseElement );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.HEADER: {
-            Header header = ( Header ) theEObject;
-            T result = caseHeader( header );
-            if( result == null ) {
-                result = caseSclObject( header );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.HISTORY: {
-            History history = ( History ) theEObject;
-            T result = caseHistory( history );
-            if( result == null ) {
-                result = caseSclObject( history );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.HITEM: {
-            Hitem hitem = ( Hitem ) theEObject;
-            T result = caseHitem( hitem );
-            if( result == null ) {
-                result = caseSclObject( hitem );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.ID_NAMING: {
-            IDNaming idNaming = ( IDNaming ) theEObject;
-            T result = caseIDNaming( idNaming );
-            if( result == null ) {
-                result = caseBaseElement( idNaming );
-            }
-            if( result == null ) {
-                result = caseAgDesc( idNaming );
-            }
-            if( result == null ) {
-                result = caseSclObject( idNaming );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.LINE: {
-            Line line = ( Line ) theEObject;
-            T result = caseLine( line );
-            if( result == null ) {
-                result = caseGeneralEquipmentContainer( line );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( line );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( line );
-            }
-            if( result == null ) {
-                result = caseNaming( line );
-            }
-            if( result == null ) {
-                result = caseBaseElement( line );
-            }
-            if( result == null ) {
-                result = caseAgDesc( line );
-            }
-            if( result == null ) {
-                result = caseAgUuid( line );
-            }
-            if( result == null ) {
-                result = caseSclObject( line );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.NAMING: {
-            Naming naming = ( Naming ) theEObject;
-            T result = caseNaming( naming );
-            if( result == null ) {
-                result = caseBaseElement( naming );
-            }
-            if( result == null ) {
-                result = caseAgDesc( naming );
-            }
-            if( result == null ) {
-                result = caseAgUuid( naming );
-            }
-            if( result == null ) {
-                result = caseSclObject( naming );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.PRIVATE: {
-            Private private_ = ( Private ) theEObject;
-            T result = casePrivate( private_ );
-            if( result == null ) {
-                result = caseAnyContentFromOtherNamespace( private_ );
-            }
-            if( result == null ) {
-                result = caseSclObject( private_ );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.PROCESS: {
-            fr.centralesupelec.edf.riseclipse.iec61850.scl.Process process = ( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process ) theEObject;
-            T result = caseProcess( process );
-            if( result == null ) {
-                result = caseGeneralEquipmentContainer( process );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( process );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( process );
-            }
-            if( result == null ) {
-                result = caseNaming( process );
-            }
-            if( result == null ) {
-                result = caseBaseElement( process );
-            }
-            if( result == null ) {
-                result = caseAgDesc( process );
-            }
-            if( result == null ) {
-                result = caseAgUuid( process );
-            }
-            if( result == null ) {
-                result = caseSclObject( process );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SCL: {
-            SCL scl = ( SCL ) theEObject;
-            T result = caseSCL( scl );
-            if( result == null ) {
-                result = caseBaseElement( scl );
-            }
-            if( result == null ) {
-                result = caseSclObject( scl );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.TEXT: {
-            Text text = ( Text ) theEObject;
-            T result = caseText( text );
-            if( result == null ) {
-                result = caseSclObject( text );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
         case SclPackage.ADDRESS: {
             Address address = ( Address ) theEObject;
             T result = caseAddress( address );
@@ -291,188 +100,34 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.COMMUNICATION: {
-            Communication communication = ( Communication ) theEObject;
-            T result = caseCommunication( communication );
+        case SclPackage.ACCESS_CONTROL: {
+            AccessControl accessControl = ( AccessControl ) theEObject;
+            T result = caseAccessControl( accessControl );
             if( result == null ) {
-                result = caseUnNaming( communication );
-            }
-            if( result == null ) {
-                result = caseBaseElement( communication );
-            }
-            if( result == null ) {
-                result = caseAgDesc( communication );
-            }
-            if( result == null ) {
-                result = caseSclObject( communication );
+                result = caseSclObject( accessControl );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
             }
             return result;
         }
-        case SclPackage.CONTROL_BLOCK: {
-            ControlBlock controlBlock = ( ControlBlock ) theEObject;
-            T result = caseControlBlock( controlBlock );
+        case SclPackage.ACCESS_POINT: {
+            AccessPoint accessPoint = ( AccessPoint ) theEObject;
+            T result = caseAccessPoint( accessPoint );
             if( result == null ) {
-                result = caseUnNaming( controlBlock );
+                result = caseUnNaming( accessPoint );
             }
             if( result == null ) {
-                result = caseBaseElement( controlBlock );
+                result = caseAgUuid( accessPoint );
             }
             if( result == null ) {
-                result = caseAgDesc( controlBlock );
+                result = caseBaseElement( accessPoint );
             }
             if( result == null ) {
-                result = caseSclObject( controlBlock );
+                result = caseAgDesc( accessPoint );
             }
             if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.CONNECTED_AP: {
-            ConnectedAP connectedAP = ( ConnectedAP ) theEObject;
-            T result = caseConnectedAP( connectedAP );
-            if( result == null ) {
-                result = caseUnNaming( connectedAP );
-            }
-            if( result == null ) {
-                result = caseBaseElement( connectedAP );
-            }
-            if( result == null ) {
-                result = caseAgDesc( connectedAP );
-            }
-            if( result == null ) {
-                result = caseSclObject( connectedAP );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.GSE: {
-            GSE gse = ( GSE ) theEObject;
-            T result = caseGSE( gse );
-            if( result == null ) {
-                result = caseControlBlock( gse );
-            }
-            if( result == null ) {
-                result = caseUnNaming( gse );
-            }
-            if( result == null ) {
-                result = caseBaseElement( gse );
-            }
-            if( result == null ) {
-                result = caseAgDesc( gse );
-            }
-            if( result == null ) {
-                result = caseSclObject( gse );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.P: {
-            P p = ( P ) theEObject;
-            T result = caseP( p );
-            if( result == null ) {
-                result = casePAddr( p );
-            }
-            if( result == null ) {
-                result = caseSclObject( p );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.PADDR: {
-            PAddr pAddr = ( PAddr ) theEObject;
-            T result = casePAddr( pAddr );
-            if( result == null ) {
-                result = caseSclObject( pAddr );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.PPHYS_CONN: {
-            P_PhysConn p_PhysConn = ( P_PhysConn ) theEObject;
-            T result = caseP_PhysConn( p_PhysConn );
-            if( result == null ) {
-                result = casePAddr( p_PhysConn );
-            }
-            if( result == null ) {
-                result = caseSclObject( p_PhysConn );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.PHYS_CONN: {
-            PhysConn physConn = ( PhysConn ) theEObject;
-            T result = casePhysConn( physConn );
-            if( result == null ) {
-                result = caseUnNaming( physConn );
-            }
-            if( result == null ) {
-                result = caseBaseElement( physConn );
-            }
-            if( result == null ) {
-                result = caseAgDesc( physConn );
-            }
-            if( result == null ) {
-                result = caseSclObject( physConn );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SMV: {
-            SMV smv = ( SMV ) theEObject;
-            T result = caseSMV( smv );
-            if( result == null ) {
-                result = caseControlBlock( smv );
-            }
-            if( result == null ) {
-                result = caseUnNaming( smv );
-            }
-            if( result == null ) {
-                result = caseBaseElement( smv );
-            }
-            if( result == null ) {
-                result = caseAgDesc( smv );
-            }
-            if( result == null ) {
-                result = caseSclObject( smv );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SUB_NETWORK: {
-            SubNetwork subNetwork = ( SubNetwork ) theEObject;
-            T result = caseSubNetwork( subNetwork );
-            if( result == null ) {
-                result = caseNaming( subNetwork );
-            }
-            if( result == null ) {
-                result = caseBaseElement( subNetwork );
-            }
-            if( result == null ) {
-                result = caseAgDesc( subNetwork );
-            }
-            if( result == null ) {
-                result = caseAgUuid( subNetwork );
-            }
-            if( result == null ) {
-                result = caseSclObject( subNetwork );
+                result = caseSclObject( accessPoint );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -499,265 +154,64 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.BDA: {
-            BDA bda = ( BDA ) theEObject;
-            T result = caseBDA( bda );
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT: {
+            AbstractConductingEquipment abstractConductingEquipment = ( AbstractConductingEquipment ) theEObject;
+            T result = caseAbstractConductingEquipment( abstractConductingEquipment );
             if( result == null ) {
-                result = caseAbstractDataAttribute( bda );
+                result = caseEquipment( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseUnNaming( bda );
+                result = casePowerSystemResource( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseBaseElement( bda );
+                result = caseAgVirtual( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseAgDesc( bda );
+                result = caseLNodeContainer( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseSclObject( bda );
+                result = caseNaming( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.DA: {
-            DA da = ( DA ) theEObject;
-            T result = caseDA( da );
-            if( result == null ) {
-                result = caseAbstractDataAttribute( da );
+                result = caseBaseElement( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseAgDATrgOp( da );
+                result = caseAgDesc( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseUnNaming( da );
+                result = caseAgUuid( abstractConductingEquipment );
             }
             if( result == null ) {
-                result = caseBaseElement( da );
-            }
-            if( result == null ) {
-                result = caseAgDesc( da );
-            }
-            if( result == null ) {
-                result = caseSclObject( da );
+                result = caseSclObject( abstractConductingEquipment );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
             }
             return result;
         }
-        case SclPackage.DA_TYPE: {
-            DAType daType = ( DAType ) theEObject;
-            T result = caseDAType( daType );
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC: {
+            AbstractEqFuncSubFunc abstractEqFuncSubFunc = ( AbstractEqFuncSubFunc ) theEObject;
+            T result = caseAbstractEqFuncSubFunc( abstractEqFuncSubFunc );
             if( result == null ) {
-                result = caseIDNaming( daType );
+                result = casePowerSystemResource( abstractEqFuncSubFunc );
             }
             if( result == null ) {
-                result = caseBaseElement( daType );
+                result = caseLNodeContainer( abstractEqFuncSubFunc );
             }
             if( result == null ) {
-                result = caseAgDesc( daType );
+                result = caseNaming( abstractEqFuncSubFunc );
             }
             if( result == null ) {
-                result = caseSclObject( daType );
+                result = caseBaseElement( abstractEqFuncSubFunc );
             }
             if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.DO: {
-            DO do_ = ( DO ) theEObject;
-            T result = caseDO( do_ );
-            if( result == null ) {
-                result = caseAbstractDataObject( do_ );
+                result = caseAgDesc( abstractEqFuncSubFunc );
             }
             if( result == null ) {
-                result = caseINamespaceGetter( do_ );
+                result = caseAgUuid( abstractEqFuncSubFunc );
             }
             if( result == null ) {
-                result = caseUnNaming( do_ );
-            }
-            if( result == null ) {
-                result = caseBaseElement( do_ );
-            }
-            if( result == null ) {
-                result = caseAgDesc( do_ );
-            }
-            if( result == null ) {
-                result = caseSclObject( do_ );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.DO_TYPE: {
-            DOType doType = ( DOType ) theEObject;
-            T result = caseDOType( doType );
-            if( result == null ) {
-                result = caseIDNaming( doType );
-            }
-            if( result == null ) {
-                result = caseINamespaceGetter( doType );
-            }
-            if( result == null ) {
-                result = caseBaseElement( doType );
-            }
-            if( result == null ) {
-                result = caseAgDesc( doType );
-            }
-            if( result == null ) {
-                result = caseSclObject( doType );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.DATA_TYPE_TEMPLATES: {
-            DataTypeTemplates dataTypeTemplates = ( DataTypeTemplates ) theEObject;
-            T result = caseDataTypeTemplates( dataTypeTemplates );
-            if( result == null ) {
-                result = caseSclObject( dataTypeTemplates );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.ENUM_TYPE: {
-            EnumType enumType = ( EnumType ) theEObject;
-            T result = caseEnumType( enumType );
-            if( result == null ) {
-                result = caseIDNaming( enumType );
-            }
-            if( result == null ) {
-                result = caseBaseElement( enumType );
-            }
-            if( result == null ) {
-                result = caseAgDesc( enumType );
-            }
-            if( result == null ) {
-                result = caseSclObject( enumType );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.ENUM_VAL: {
-            EnumVal enumVal = ( EnumVal ) theEObject;
-            T result = caseEnumVal( enumVal );
-            if( result == null ) {
-                result = caseSclObject( enumVal );
-            }
-            if( result == null ) {
-                result = caseAgDesc( enumVal );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.LNODE_TYPE: {
-            LNodeType lNodeType = ( LNodeType ) theEObject;
-            T result = caseLNodeType( lNodeType );
-            if( result == null ) {
-                result = caseIDNaming( lNodeType );
-            }
-            if( result == null ) {
-                result = caseINamespaceGetter( lNodeType );
-            }
-            if( result == null ) {
-                result = caseBaseElement( lNodeType );
-            }
-            if( result == null ) {
-                result = caseAgDesc( lNodeType );
-            }
-            if( result == null ) {
-                result = caseSclObject( lNodeType );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.PROT_NS: {
-            ProtNs protNs = ( ProtNs ) theEObject;
-            T result = caseProtNs( protNs );
-            if( result == null ) {
-                result = caseSclObject( protNs );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SDO: {
-            SDO sdo = ( SDO ) theEObject;
-            T result = caseSDO( sdo );
-            if( result == null ) {
-                result = caseAbstractDataObject( sdo );
-            }
-            if( result == null ) {
-                result = caseINamespaceGetter( sdo );
-            }
-            if( result == null ) {
-                result = caseUnNaming( sdo );
-            }
-            if( result == null ) {
-                result = caseBaseElement( sdo );
-            }
-            if( result == null ) {
-                result = caseAgDesc( sdo );
-            }
-            if( result == null ) {
-                result = caseSclObject( sdo );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.VAL: {
-            Val val = ( Val ) theEObject;
-            T result = caseVal( val );
-            if( result == null ) {
-                result = caseSclObject( val );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.ACCESS_CONTROL: {
-            AccessControl accessControl = ( AccessControl ) theEObject;
-            T result = caseAccessControl( accessControl );
-            if( result == null ) {
-                result = caseSclObject( accessControl );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.ACCESS_POINT: {
-            AccessPoint accessPoint = ( AccessPoint ) theEObject;
-            T result = caseAccessPoint( accessPoint );
-            if( result == null ) {
-                result = caseUnNaming( accessPoint );
-            }
-            if( result == null ) {
-                result = caseBaseElement( accessPoint );
-            }
-            if( result == null ) {
-                result = caseAgDesc( accessPoint );
-            }
-            if( result == null ) {
-                result = caseSclObject( accessPoint );
+                result = caseSclObject( abstractEqFuncSubFunc );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -772,6 +226,9 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseINamespaceGetter( anyLN );
+            }
+            if( result == null ) {
+                result = caseAgUuid( anyLN );
             }
             if( result == null ) {
                 result = caseBaseElement( anyLN );
@@ -814,10 +271,87 @@ public class SclSwitch< T > extends Switch< T > {
             Authentication authentication = ( Authentication ) theEObject;
             T result = caseAuthentication( authentication );
             if( result == null ) {
+                result = caseAgAuthentication( authentication );
+            }
+            if( result == null ) {
                 result = caseSclObject( authentication );
             }
             if( result == null ) {
-                result = caseAgAuthentication( authentication );
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE: {
+            AnyContentFromOtherNamespace anyContentFromOtherNamespace = ( AnyContentFromOtherNamespace ) theEObject;
+            T result = caseAnyContentFromOtherNamespace( anyContentFromOtherNamespace );
+            if( result == null ) {
+                result = caseSclObject( anyContentFromOtherNamespace );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.BASE_ELEMENT: {
+            BaseElement baseElement = ( BaseElement ) theEObject;
+            T result = caseBaseElement( baseElement );
+            if( result == null ) {
+                result = caseSclObject( baseElement );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.BAY: {
+            Bay bay = ( Bay ) theEObject;
+            T result = caseBay( bay );
+            if( result == null ) {
+                result = caseEquipmentContainer( bay );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( bay );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( bay );
+            }
+            if( result == null ) {
+                result = caseNaming( bay );
+            }
+            if( result == null ) {
+                result = caseBaseElement( bay );
+            }
+            if( result == null ) {
+                result = caseAgDesc( bay );
+            }
+            if( result == null ) {
+                result = caseAgUuid( bay );
+            }
+            if( result == null ) {
+                result = caseSclObject( bay );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.BDA: {
+            BDA bda = ( BDA ) theEObject;
+            T result = caseBDA( bda );
+            if( result == null ) {
+                result = caseAbstractDataAttribute( bda );
+            }
+            if( result == null ) {
+                result = caseUnNaming( bda );
+            }
+            if( result == null ) {
+                result = caseBaseElement( bda );
+            }
+            if( result == null ) {
+                result = caseAgDesc( bda );
+            }
+            if( result == null ) {
+                result = caseSclObject( bda );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -883,6 +417,26 @@ public class SclSwitch< T > extends Switch< T > {
             T result = caseCommProt( commProt );
             if( result == null ) {
                 result = caseSclObject( commProt );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.COMMUNICATION: {
+            Communication communication = ( Communication ) theEObject;
+            T result = caseCommunication( communication );
+            if( result == null ) {
+                result = caseUnNaming( communication );
+            }
+            if( result == null ) {
+                result = caseBaseElement( communication );
+            }
+            if( result == null ) {
+                result = caseAgDesc( communication );
+            }
+            if( result == null ) {
+                result = caseSclObject( communication );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -997,6 +551,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseUnNaming( control );
             }
             if( result == null ) {
+                result = caseAgUuid( control );
+            }
+            if( result == null ) {
                 result = caseBaseElement( control );
             }
             if( result == null ) {
@@ -1020,6 +577,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseUnNaming( controlWithIEDName );
             }
             if( result == null ) {
+                result = caseAgUuid( controlWithIEDName );
+            }
+            if( result == null ) {
                 result = caseBaseElement( controlWithIEDName );
             }
             if( result == null ) {
@@ -1027,6 +587,70 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseSclObject( controlWithIEDName );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.CONDUCTING_EQUIPMENT: {
+            ConductingEquipment conductingEquipment = ( ConductingEquipment ) theEObject;
+            T result = caseConductingEquipment( conductingEquipment );
+            if( result == null ) {
+                result = caseAbstractConductingEquipment( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseEquipment( conductingEquipment );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseAgVirtual( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseNaming( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseBaseElement( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseAgDesc( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseAgUuid( conductingEquipment );
+            }
+            if( result == null ) {
+                result = caseSclObject( conductingEquipment );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.CONNECTIVITY_NODE: {
+            ConnectivityNode connectivityNode = ( ConnectivityNode ) theEObject;
+            T result = caseConnectivityNode( connectivityNode );
+            if( result == null ) {
+                result = caseLNodeContainer( connectivityNode );
+            }
+            if( result == null ) {
+                result = caseNaming( connectivityNode );
+            }
+            if( result == null ) {
+                result = caseBaseElement( connectivityNode );
+            }
+            if( result == null ) {
+                result = caseAgDesc( connectivityNode );
+            }
+            if( result == null ) {
+                result = caseAgUuid( connectivityNode );
+            }
+            if( result == null ) {
+                result = caseSclObject( connectivityNode );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -1043,6 +667,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseUnNaming( controlWithTriggerOpt );
             }
             if( result == null ) {
+                result = caseAgUuid( controlWithTriggerOpt );
+            }
+            if( result == null ) {
                 result = caseBaseElement( controlWithTriggerOpt );
             }
             if( result == null ) {
@@ -1050,6 +677,72 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseSclObject( controlWithTriggerOpt );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.CONTROL_BLOCK: {
+            ControlBlock controlBlock = ( ControlBlock ) theEObject;
+            T result = caseControlBlock( controlBlock );
+            if( result == null ) {
+                result = caseUnNaming( controlBlock );
+            }
+            if( result == null ) {
+                result = caseBaseElement( controlBlock );
+            }
+            if( result == null ) {
+                result = caseAgDesc( controlBlock );
+            }
+            if( result == null ) {
+                result = caseSclObject( controlBlock );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.CONNECTED_AP: {
+            ConnectedAP connectedAP = ( ConnectedAP ) theEObject;
+            T result = caseConnectedAP( connectedAP );
+            if( result == null ) {
+                result = caseUnNaming( connectedAP );
+            }
+            if( result == null ) {
+                result = caseBaseElement( connectedAP );
+            }
+            if( result == null ) {
+                result = caseAgDesc( connectedAP );
+            }
+            if( result == null ) {
+                result = caseSclObject( connectedAP );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.DA: {
+            DA da = ( DA ) theEObject;
+            T result = caseDA( da );
+            if( result == null ) {
+                result = caseAbstractDataAttribute( da );
+            }
+            if( result == null ) {
+                result = caseAgDATrgOp( da );
+            }
+            if( result == null ) {
+                result = caseUnNaming( da );
+            }
+            if( result == null ) {
+                result = caseBaseElement( da );
+            }
+            if( result == null ) {
+                result = caseAgDesc( da );
+            }
+            if( result == null ) {
+                result = caseSclObject( da );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -1120,6 +813,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseUnNaming( dataSet );
             }
             if( result == null ) {
+                result = caseAgUuid( dataSet );
+            }
+            if( result == null ) {
                 result = caseBaseElement( dataSet );
             }
             if( result == null ) {
@@ -1178,17 +874,262 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
+        case SclPackage.DA_TYPE: {
+            DAType daType = ( DAType ) theEObject;
+            T result = caseDAType( daType );
+            if( result == null ) {
+                result = caseIDNaming( daType );
+            }
+            if( result == null ) {
+                result = caseBaseElement( daType );
+            }
+            if( result == null ) {
+                result = caseAgDesc( daType );
+            }
+            if( result == null ) {
+                result = caseSclObject( daType );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.DATA_TYPE_TEMPLATES: {
+            DataTypeTemplates dataTypeTemplates = ( DataTypeTemplates ) theEObject;
+            T result = caseDataTypeTemplates( dataTypeTemplates );
+            if( result == null ) {
+                result = caseSclObject( dataTypeTemplates );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.DO: {
+            DO do_ = ( DO ) theEObject;
+            T result = caseDO( do_ );
+            if( result == null ) {
+                result = caseAbstractDataObject( do_ );
+            }
+            if( result == null ) {
+                result = caseINamespaceGetter( do_ );
+            }
+            if( result == null ) {
+                result = caseUnNaming( do_ );
+            }
+            if( result == null ) {
+                result = caseBaseElement( do_ );
+            }
+            if( result == null ) {
+                result = caseAgDesc( do_ );
+            }
+            if( result == null ) {
+                result = caseSclObject( do_ );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.DO_TYPE: {
+            DOType doType = ( DOType ) theEObject;
+            T result = caseDOType( doType );
+            if( result == null ) {
+                result = caseIDNaming( doType );
+            }
+            if( result == null ) {
+                result = caseINamespaceGetter( doType );
+            }
+            if( result == null ) {
+                result = caseBaseElement( doType );
+            }
+            if( result == null ) {
+                result = caseAgDesc( doType );
+            }
+            if( result == null ) {
+                result = caseSclObject( doType );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.ENUM_VAL: {
+            EnumVal enumVal = ( EnumVal ) theEObject;
+            T result = caseEnumVal( enumVal );
+            if( result == null ) {
+                result = caseSclObject( enumVal );
+            }
+            if( result == null ) {
+                result = caseAgDesc( enumVal );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.ENUM_TYPE: {
+            EnumType enumType = ( EnumType ) theEObject;
+            T result = caseEnumType( enumType );
+            if( result == null ) {
+                result = caseIDNaming( enumType );
+            }
+            if( result == null ) {
+                result = caseBaseElement( enumType );
+            }
+            if( result == null ) {
+                result = caseAgDesc( enumType );
+            }
+            if( result == null ) {
+                result = caseSclObject( enumType );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
         case SclPackage.EXT_REF: {
             ExtRef extRef = ( ExtRef ) theEObject;
             T result = caseExtRef( extRef );
             if( result == null ) {
+                result = caseDORef( extRef );
+            }
+            if( result == null ) {
                 result = caseBaseElement( extRef );
+            }
+            if( result == null ) {
+                result = caseSclObject( extRef );
             }
             if( result == null ) {
                 result = caseAgDesc( extRef );
             }
             if( result == null ) {
-                result = caseSclObject( extRef );
+                result = caseAgUuid( extRef );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.EQ_FUNCTION: {
+            EqFunction eqFunction = ( EqFunction ) theEObject;
+            T result = caseEqFunction( eqFunction );
+            if( result == null ) {
+                result = caseAbstractEqFuncSubFunc( eqFunction );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( eqFunction );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( eqFunction );
+            }
+            if( result == null ) {
+                result = caseNaming( eqFunction );
+            }
+            if( result == null ) {
+                result = caseBaseElement( eqFunction );
+            }
+            if( result == null ) {
+                result = caseAgDesc( eqFunction );
+            }
+            if( result == null ) {
+                result = caseAgUuid( eqFunction );
+            }
+            if( result == null ) {
+                result = caseSclObject( eqFunction );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.EQ_SUB_FUNCTION: {
+            EqSubFunction eqSubFunction = ( EqSubFunction ) theEObject;
+            T result = caseEqSubFunction( eqSubFunction );
+            if( result == null ) {
+                result = caseAbstractEqFuncSubFunc( eqSubFunction );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( eqSubFunction );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( eqSubFunction );
+            }
+            if( result == null ) {
+                result = caseNaming( eqSubFunction );
+            }
+            if( result == null ) {
+                result = caseBaseElement( eqSubFunction );
+            }
+            if( result == null ) {
+                result = caseAgDesc( eqSubFunction );
+            }
+            if( result == null ) {
+                result = caseAgUuid( eqSubFunction );
+            }
+            if( result == null ) {
+                result = caseSclObject( eqSubFunction );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.EQUIPMENT: {
+            Equipment equipment = ( Equipment ) theEObject;
+            T result = caseEquipment( equipment );
+            if( result == null ) {
+                result = casePowerSystemResource( equipment );
+            }
+            if( result == null ) {
+                result = caseAgVirtual( equipment );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( equipment );
+            }
+            if( result == null ) {
+                result = caseNaming( equipment );
+            }
+            if( result == null ) {
+                result = caseBaseElement( equipment );
+            }
+            if( result == null ) {
+                result = caseAgDesc( equipment );
+            }
+            if( result == null ) {
+                result = caseAgUuid( equipment );
+            }
+            if( result == null ) {
+                result = caseSclObject( equipment );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.EQUIPMENT_CONTAINER: {
+            EquipmentContainer equipmentContainer = ( EquipmentContainer ) theEObject;
+            T result = caseEquipmentContainer( equipmentContainer );
+            if( result == null ) {
+                result = casePowerSystemResource( equipmentContainer );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( equipmentContainer );
+            }
+            if( result == null ) {
+                result = caseNaming( equipmentContainer );
+            }
+            if( result == null ) {
+                result = caseBaseElement( equipmentContainer );
+            }
+            if( result == null ) {
+                result = caseAgDesc( equipmentContainer );
+            }
+            if( result == null ) {
+                result = caseAgUuid( equipmentContainer );
+            }
+            if( result == null ) {
+                result = caseSclObject( equipmentContainer );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -1211,6 +1152,64 @@ public class SclSwitch< T > extends Switch< T > {
             T result = caseFileHandling( fileHandling );
             if( result == null ) {
                 result = caseSclObject( fileHandling );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.GENERAL_EQUIPMENT: {
+            GeneralEquipment generalEquipment = ( GeneralEquipment ) theEObject;
+            T result = caseGeneralEquipment( generalEquipment );
+            if( result == null ) {
+                result = caseEquipment( generalEquipment );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseAgVirtual( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseNaming( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseBaseElement( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseAgDesc( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseAgUuid( generalEquipment );
+            }
+            if( result == null ) {
+                result = caseSclObject( generalEquipment );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.GSE: {
+            GSE gse = ( GSE ) theEObject;
+            T result = caseGSE( gse );
+            if( result == null ) {
+                result = caseControlBlock( gse );
+            }
+            if( result == null ) {
+                result = caseUnNaming( gse );
+            }
+            if( result == null ) {
+                result = caseBaseElement( gse );
+            }
+            if( result == null ) {
+                result = caseAgDesc( gse );
+            }
+            if( result == null ) {
+                result = caseSclObject( gse );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -1268,6 +1267,9 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseUnNaming( gseControl );
+            }
+            if( result == null ) {
+                result = caseAgUuid( gseControl );
             }
             if( result == null ) {
                 result = caseBaseElement( gseControl );
@@ -1381,11 +1383,64 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
+        case SclPackage.HEADER: {
+            Header header = ( Header ) theEObject;
+            T result = caseHeader( header );
+            if( result == null ) {
+                result = caseSclObject( header );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.HISTORY: {
+            History history = ( History ) theEObject;
+            T result = caseHistory( history );
+            if( result == null ) {
+                result = caseSclObject( history );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.HITEM: {
+            Hitem hitem = ( Hitem ) theEObject;
+            T result = caseHitem( hitem );
+            if( result == null ) {
+                result = caseSclObject( hitem );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.ID_NAMING: {
+            IDNaming idNaming = ( IDNaming ) theEObject;
+            T result = caseIDNaming( idNaming );
+            if( result == null ) {
+                result = caseBaseElement( idNaming );
+            }
+            if( result == null ) {
+                result = caseAgDesc( idNaming );
+            }
+            if( result == null ) {
+                result = caseSclObject( idNaming );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
         case SclPackage.IED: {
             IED ied = ( IED ) theEObject;
             T result = caseIED( ied );
             if( result == null ) {
                 result = caseUnNaming( ied );
+            }
+            if( result == null ) {
+                result = caseAgUuid( ied );
             }
             if( result == null ) {
                 result = caseBaseElement( ied );
@@ -1457,6 +1512,107 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
+        case SclPackage.LINE: {
+            Line line = ( Line ) theEObject;
+            T result = caseLine( line );
+            if( result == null ) {
+                result = caseGeneralEquipmentContainer( line );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( line );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( line );
+            }
+            if( result == null ) {
+                result = caseNaming( line );
+            }
+            if( result == null ) {
+                result = caseBaseElement( line );
+            }
+            if( result == null ) {
+                result = caseAgDesc( line );
+            }
+            if( result == null ) {
+                result = caseAgUuid( line );
+            }
+            if( result == null ) {
+                result = caseSclObject( line );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.LNODE: {
+            LNode lNode = ( LNode ) theEObject;
+            T result = caseLNode( lNode );
+            if( result == null ) {
+                result = caseUnNaming( lNode );
+            }
+            if( result == null ) {
+                result = caseAgUuid( lNode );
+            }
+            if( result == null ) {
+                result = caseBaseElement( lNode );
+            }
+            if( result == null ) {
+                result = caseAgDesc( lNode );
+            }
+            if( result == null ) {
+                result = caseSclObject( lNode );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.LNODE_TYPE: {
+            LNodeType lNodeType = ( LNodeType ) theEObject;
+            T result = caseLNodeType( lNodeType );
+            if( result == null ) {
+                result = caseIDNaming( lNodeType );
+            }
+            if( result == null ) {
+                result = caseINamespaceGetter( lNodeType );
+            }
+            if( result == null ) {
+                result = caseBaseElement( lNodeType );
+            }
+            if( result == null ) {
+                result = caseAgDesc( lNodeType );
+            }
+            if( result == null ) {
+                result = caseSclObject( lNodeType );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.LNODE_CONTAINER: {
+            LNodeContainer lNodeContainer = ( LNodeContainer ) theEObject;
+            T result = caseLNodeContainer( lNodeContainer );
+            if( result == null ) {
+                result = caseNaming( lNodeContainer );
+            }
+            if( result == null ) {
+                result = caseBaseElement( lNodeContainer );
+            }
+            if( result == null ) {
+                result = caseAgDesc( lNodeContainer );
+            }
+            if( result == null ) {
+                result = caseAgUuid( lNodeContainer );
+            }
+            if( result == null ) {
+                result = caseSclObject( lNodeContainer );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
         case SclPackage.LDEVICE: {
             LDevice lDevice = ( LDevice ) theEObject;
             T result = caseLDevice( lDevice );
@@ -1465,6 +1621,9 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseINamespaceGetter( lDevice );
+            }
+            if( result == null ) {
+                result = caseAgUuid( lDevice );
             }
             if( result == null ) {
                 result = caseBaseElement( lDevice );
@@ -1493,6 +1652,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseINamespaceGetter( ln );
             }
             if( result == null ) {
+                result = caseAgUuid( ln );
+            }
+            if( result == null ) {
                 result = caseBaseElement( ln );
             }
             if( result == null ) {
@@ -1517,6 +1679,9 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseINamespaceGetter( ln0 );
+            }
+            if( result == null ) {
+                result = caseAgUuid( ln0 );
             }
             if( result == null ) {
                 result = caseBaseElement( ln0 );
@@ -1565,6 +1730,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseUnNaming( logControl );
             }
             if( result == null ) {
+                result = caseAgUuid( logControl );
+            }
+            if( result == null ) {
                 result = caseBaseElement( logControl );
             }
             if( result == null ) {
@@ -1592,6 +1760,26 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
+        case SclPackage.NAMING: {
+            Naming naming = ( Naming ) theEObject;
+            T result = caseNaming( naming );
+            if( result == null ) {
+                result = caseBaseElement( naming );
+            }
+            if( result == null ) {
+                result = caseAgDesc( naming );
+            }
+            if( result == null ) {
+                result = caseAgUuid( naming );
+            }
+            if( result == null ) {
+                result = caseSclObject( naming );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
         case SclPackage.OPT_FIELDS: {
             OptFields optFields = ( OptFields ) theEObject;
             T result = caseOptFields( optFields );
@@ -1600,6 +1788,122 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseAgOptFields( optFields );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.P: {
+            P p = ( P ) theEObject;
+            T result = caseP( p );
+            if( result == null ) {
+                result = casePAddr( p );
+            }
+            if( result == null ) {
+                result = caseSclObject( p );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.PADDR: {
+            PAddr pAddr = ( PAddr ) theEObject;
+            T result = casePAddr( pAddr );
+            if( result == null ) {
+                result = caseSclObject( pAddr );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.PPHYS_CONN: {
+            P_PhysConn p_PhysConn = ( P_PhysConn ) theEObject;
+            T result = caseP_PhysConn( p_PhysConn );
+            if( result == null ) {
+                result = casePAddr( p_PhysConn );
+            }
+            if( result == null ) {
+                result = caseSclObject( p_PhysConn );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.PHYS_CONN: {
+            PhysConn physConn = ( PhysConn ) theEObject;
+            T result = casePhysConn( physConn );
+            if( result == null ) {
+                result = caseUnNaming( physConn );
+            }
+            if( result == null ) {
+                result = caseBaseElement( physConn );
+            }
+            if( result == null ) {
+                result = caseAgDesc( physConn );
+            }
+            if( result == null ) {
+                result = caseSclObject( physConn );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.PRIVATE: {
+            Private private_ = ( Private ) theEObject;
+            T result = casePrivate( private_ );
+            if( result == null ) {
+                result = caseAnyContentFromOtherNamespace( private_ );
+            }
+            if( result == null ) {
+                result = caseSclObject( private_ );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.PROCESS: {
+            fr.centralesupelec.edf.riseclipse.iec61850.scl.Process process = ( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process ) theEObject;
+            T result = caseProcess( process );
+            if( result == null ) {
+                result = caseGeneralEquipmentContainer( process );
+            }
+            if( result == null ) {
+                result = casePowerSystemResource( process );
+            }
+            if( result == null ) {
+                result = caseLNodeContainer( process );
+            }
+            if( result == null ) {
+                result = caseNaming( process );
+            }
+            if( result == null ) {
+                result = caseBaseElement( process );
+            }
+            if( result == null ) {
+                result = caseAgDesc( process );
+            }
+            if( result == null ) {
+                result = caseAgUuid( process );
+            }
+            if( result == null ) {
+                result = caseSclObject( process );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.PROT_NS: {
+            ProtNs protNs = ( ProtNs ) theEObject;
+            T result = caseProtNs( protNs );
+            if( result == null ) {
+                result = caseSclObject( protNs );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -1655,6 +1959,9 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseUnNaming( reportControl );
             }
             if( result == null ) {
+                result = caseAgUuid( reportControl );
+            }
+            if( result == null ) {
                 result = caseBaseElement( reportControl );
             }
             if( result == null ) {
@@ -1696,6 +2003,20 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseSclObject( rptEnabled );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SCL: {
+            SCL scl = ( SCL ) theEObject;
+            T result = caseSCL( scl );
+            if( result == null ) {
+                result = caseBaseElement( scl );
+            }
+            if( result == null ) {
+                result = caseSclObject( scl );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -1801,6 +2122,9 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseUnNaming( sampledValueControl );
+            }
+            if( result == null ) {
+                result = caseAgUuid( sampledValueControl );
             }
             if( result == null ) {
                 result = caseBaseElement( sampledValueControl );
@@ -1973,6 +2297,100 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
+        case SclPackage.SMV: {
+            SMV smv = ( SMV ) theEObject;
+            T result = caseSMV( smv );
+            if( result == null ) {
+                result = caseControlBlock( smv );
+            }
+            if( result == null ) {
+                result = caseUnNaming( smv );
+            }
+            if( result == null ) {
+                result = caseBaseElement( smv );
+            }
+            if( result == null ) {
+                result = caseAgDesc( smv );
+            }
+            if( result == null ) {
+                result = caseSclObject( smv );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SUB_NETWORK: {
+            SubNetwork subNetwork = ( SubNetwork ) theEObject;
+            T result = caseSubNetwork( subNetwork );
+            if( result == null ) {
+                result = caseNaming( subNetwork );
+            }
+            if( result == null ) {
+                result = caseBaseElement( subNetwork );
+            }
+            if( result == null ) {
+                result = caseAgDesc( subNetwork );
+            }
+            if( result == null ) {
+                result = caseAgUuid( subNetwork );
+            }
+            if( result == null ) {
+                result = caseSclObject( subNetwork );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SDO: {
+            SDO sdo = ( SDO ) theEObject;
+            T result = caseSDO( sdo );
+            if( result == null ) {
+                result = caseAbstractDataObject( sdo );
+            }
+            if( result == null ) {
+                result = caseINamespaceGetter( sdo );
+            }
+            if( result == null ) {
+                result = caseUnNaming( sdo );
+            }
+            if( result == null ) {
+                result = caseBaseElement( sdo );
+            }
+            if( result == null ) {
+                result = caseAgDesc( sdo );
+            }
+            if( result == null ) {
+                result = caseSclObject( sdo );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.TEXT: {
+            Text text = ( Text ) theEObject;
+            T result = caseText( text );
+            if( result == null ) {
+                result = caseSclObject( text );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.VAL: {
+            Val val = ( Val ) theEObject;
+            T result = caseVal( val );
+            if( result == null ) {
+                result = caseSclObject( val );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
         case SclPackage.TIME_SYNC_PROT: {
             TimeSyncProt timeSyncProt = ( TimeSyncProt ) theEObject;
             T result = caseTimeSyncProt( timeSyncProt );
@@ -2020,291 +2438,6 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT: {
-            AbstractConductingEquipment abstractConductingEquipment = ( AbstractConductingEquipment ) theEObject;
-            T result = caseAbstractConductingEquipment( abstractConductingEquipment );
-            if( result == null ) {
-                result = caseEquipment( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseAgVirtual( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseNaming( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseBaseElement( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseAgDesc( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseAgUuid( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = caseSclObject( abstractConductingEquipment );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC: {
-            AbstractEqFuncSubFunc abstractEqFuncSubFunc = ( AbstractEqFuncSubFunc ) theEObject;
-            T result = caseAbstractEqFuncSubFunc( abstractEqFuncSubFunc );
-            if( result == null ) {
-                result = casePowerSystemResource( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = caseNaming( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = caseBaseElement( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = caseAgDesc( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = caseAgUuid( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = caseSclObject( abstractEqFuncSubFunc );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.BAY: {
-            Bay bay = ( Bay ) theEObject;
-            T result = caseBay( bay );
-            if( result == null ) {
-                result = caseEquipmentContainer( bay );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( bay );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( bay );
-            }
-            if( result == null ) {
-                result = caseNaming( bay );
-            }
-            if( result == null ) {
-                result = caseBaseElement( bay );
-            }
-            if( result == null ) {
-                result = caseAgDesc( bay );
-            }
-            if( result == null ) {
-                result = caseAgUuid( bay );
-            }
-            if( result == null ) {
-                result = caseSclObject( bay );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.CONDUCTING_EQUIPMENT: {
-            ConductingEquipment conductingEquipment = ( ConductingEquipment ) theEObject;
-            T result = caseConductingEquipment( conductingEquipment );
-            if( result == null ) {
-                result = caseAbstractConductingEquipment( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseEquipment( conductingEquipment );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseAgVirtual( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseNaming( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseBaseElement( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseAgDesc( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseAgUuid( conductingEquipment );
-            }
-            if( result == null ) {
-                result = caseSclObject( conductingEquipment );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.CONNECTIVITY_NODE: {
-            ConnectivityNode connectivityNode = ( ConnectivityNode ) theEObject;
-            T result = caseConnectivityNode( connectivityNode );
-            if( result == null ) {
-                result = caseLNodeContainer( connectivityNode );
-            }
-            if( result == null ) {
-                result = caseNaming( connectivityNode );
-            }
-            if( result == null ) {
-                result = caseBaseElement( connectivityNode );
-            }
-            if( result == null ) {
-                result = caseAgDesc( connectivityNode );
-            }
-            if( result == null ) {
-                result = caseAgUuid( connectivityNode );
-            }
-            if( result == null ) {
-                result = caseSclObject( connectivityNode );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.EQ_FUNCTION: {
-            EqFunction eqFunction = ( EqFunction ) theEObject;
-            T result = caseEqFunction( eqFunction );
-            if( result == null ) {
-                result = caseAbstractEqFuncSubFunc( eqFunction );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( eqFunction );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( eqFunction );
-            }
-            if( result == null ) {
-                result = caseNaming( eqFunction );
-            }
-            if( result == null ) {
-                result = caseBaseElement( eqFunction );
-            }
-            if( result == null ) {
-                result = caseAgDesc( eqFunction );
-            }
-            if( result == null ) {
-                result = caseAgUuid( eqFunction );
-            }
-            if( result == null ) {
-                result = caseSclObject( eqFunction );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.EQ_SUB_FUNCTION: {
-            EqSubFunction eqSubFunction = ( EqSubFunction ) theEObject;
-            T result = caseEqSubFunction( eqSubFunction );
-            if( result == null ) {
-                result = caseAbstractEqFuncSubFunc( eqSubFunction );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( eqSubFunction );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( eqSubFunction );
-            }
-            if( result == null ) {
-                result = caseNaming( eqSubFunction );
-            }
-            if( result == null ) {
-                result = caseBaseElement( eqSubFunction );
-            }
-            if( result == null ) {
-                result = caseAgDesc( eqSubFunction );
-            }
-            if( result == null ) {
-                result = caseAgUuid( eqSubFunction );
-            }
-            if( result == null ) {
-                result = caseSclObject( eqSubFunction );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.EQUIPMENT: {
-            Equipment equipment = ( Equipment ) theEObject;
-            T result = caseEquipment( equipment );
-            if( result == null ) {
-                result = casePowerSystemResource( equipment );
-            }
-            if( result == null ) {
-                result = caseAgVirtual( equipment );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( equipment );
-            }
-            if( result == null ) {
-                result = caseNaming( equipment );
-            }
-            if( result == null ) {
-                result = caseBaseElement( equipment );
-            }
-            if( result == null ) {
-                result = caseAgDesc( equipment );
-            }
-            if( result == null ) {
-                result = caseAgUuid( equipment );
-            }
-            if( result == null ) {
-                result = caseSclObject( equipment );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.EQUIPMENT_CONTAINER: {
-            EquipmentContainer equipmentContainer = ( EquipmentContainer ) theEObject;
-            T result = caseEquipmentContainer( equipmentContainer );
-            if( result == null ) {
-                result = casePowerSystemResource( equipmentContainer );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( equipmentContainer );
-            }
-            if( result == null ) {
-                result = caseNaming( equipmentContainer );
-            }
-            if( result == null ) {
-                result = caseBaseElement( equipmentContainer );
-            }
-            if( result == null ) {
-                result = caseAgDesc( equipmentContainer );
-            }
-            if( result == null ) {
-                result = caseAgUuid( equipmentContainer );
-            }
-            if( result == null ) {
-                result = caseSclObject( equipmentContainer );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
         case SclPackage.FUNCTION: {
             Function function = ( Function ) theEObject;
             T result = caseFunction( function );
@@ -2334,41 +2467,6 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.GENERAL_EQUIPMENT: {
-            GeneralEquipment generalEquipment = ( GeneralEquipment ) theEObject;
-            T result = caseGeneralEquipment( generalEquipment );
-            if( result == null ) {
-                result = caseEquipment( generalEquipment );
-            }
-            if( result == null ) {
-                result = casePowerSystemResource( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseAgVirtual( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseLNodeContainer( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseNaming( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseBaseElement( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseAgDesc( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseAgUuid( generalEquipment );
-            }
-            if( result == null ) {
-                result = caseSclObject( generalEquipment );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
         case SclPackage.GENERAL_EQUIPMENT_CONTAINER: {
             GeneralEquipmentContainer generalEquipmentContainer = ( GeneralEquipmentContainer ) theEObject;
             T result = caseGeneralEquipmentContainer( generalEquipmentContainer );
@@ -2392,49 +2490,6 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseSclObject( generalEquipmentContainer );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.LNODE: {
-            LNode lNode = ( LNode ) theEObject;
-            T result = caseLNode( lNode );
-            if( result == null ) {
-                result = caseUnNaming( lNode );
-            }
-            if( result == null ) {
-                result = caseBaseElement( lNode );
-            }
-            if( result == null ) {
-                result = caseAgDesc( lNode );
-            }
-            if( result == null ) {
-                result = caseSclObject( lNode );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.LNODE_CONTAINER: {
-            LNodeContainer lNodeContainer = ( LNodeContainer ) theEObject;
-            T result = caseLNodeContainer( lNodeContainer );
-            if( result == null ) {
-                result = caseNaming( lNodeContainer );
-            }
-            if( result == null ) {
-                result = caseBaseElement( lNodeContainer );
-            }
-            if( result == null ) {
-                result = caseAgDesc( lNodeContainer );
-            }
-            if( result == null ) {
-                result = caseAgUuid( lNodeContainer );
-            }
-            if( result == null ) {
-                result = caseSclObject( lNodeContainer );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -2519,6 +2574,201 @@ public class SclSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseSclObject( powerTransformer );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_YES_NO: {
+            ServiceYesNo serviceYesNo = ( ServiceYesNo ) theEObject;
+            T result = caseServiceYesNo( serviceYesNo );
+            if( result == null ) {
+                result = caseSclObject( serviceYesNo );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_WITH_OPTIONAL_MAX: {
+            ServiceWithOptionalMax serviceWithOptionalMax = ( ServiceWithOptionalMax ) theEObject;
+            T result = caseServiceWithOptionalMax( serviceWithOptionalMax );
+            if( result == null ) {
+                result = caseSclObject( serviceWithOptionalMax );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_WITH_MAX_NON_ZERO: {
+            ServiceWithMaxNonZero serviceWithMaxNonZero = ( ServiceWithMaxNonZero ) theEObject;
+            T result = caseServiceWithMaxNonZero( serviceWithMaxNonZero );
+            if( result == null ) {
+                result = caseSclObject( serviceWithMaxNonZero );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_CONF_REPORT_CONTROL: {
+            ServiceConfReportControl serviceConfReportControl = ( ServiceConfReportControl ) theEObject;
+            T result = caseServiceConfReportControl( serviceConfReportControl );
+            if( result == null ) {
+                result = caseServiceWithMax( serviceConfReportControl );
+            }
+            if( result == null ) {
+                result = caseSclObject( serviceConfReportControl );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES: {
+            ServiceWithMaxAndMaxAttributes serviceWithMaxAndMaxAttributes = ( ServiceWithMaxAndMaxAttributes ) theEObject;
+            T result = caseServiceWithMaxAndMaxAttributes( serviceWithMaxAndMaxAttributes );
+            if( result == null ) {
+                result = caseServiceWithMax( serviceWithMaxAndMaxAttributes );
+            }
+            if( result == null ) {
+                result = caseSclObject( serviceWithMaxAndMaxAttributes );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_WITH_MAX_AND_MODIFY: {
+            ServiceWithMaxAndModify serviceWithMaxAndModify = ( ServiceWithMaxAndModify ) theEObject;
+            T result = caseServiceWithMaxAndModify( serviceWithMaxAndModify );
+            if( result == null ) {
+                result = caseServiceWithMax( serviceWithMaxAndModify );
+            }
+            if( result == null ) {
+                result = caseSclObject( serviceWithMaxAndModify );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SERVICE_FOR_CONF_DATA_SET: {
+            ServiceForConfDataSet serviceForConfDataSet = ( ServiceForConfDataSet ) theEObject;
+            T result = caseServiceForConfDataSet( serviceForConfDataSet );
+            if( result == null ) {
+                result = caseServiceWithMaxAndMaxAttributes( serviceForConfDataSet );
+            }
+            if( result == null ) {
+                result = caseServiceWithMax( serviceForConfDataSet );
+            }
+            if( result == null ) {
+                result = caseSclObject( serviceForConfDataSet );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SMP_RATE: {
+            SmpRate smpRate = ( SmpRate ) theEObject;
+            T result = caseSmpRate( smpRate );
+            if( result == null ) {
+                result = caseSclObject( smpRate );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SAMPLES_PER_SEC: {
+            SamplesPerSec samplesPerSec = ( SamplesPerSec ) theEObject;
+            T result = caseSamplesPerSec( samplesPerSec );
+            if( result == null ) {
+                result = caseSclObject( samplesPerSec );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SEC_PER_SAMPLES: {
+            SecPerSamples secPerSamples = ( SecPerSamples ) theEObject;
+            T result = caseSecPerSamples( secPerSamples );
+            if( result == null ) {
+                result = caseSclObject( secPerSamples );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SCSM: {
+            SCSM scsm = ( SCSM ) theEObject;
+            T result = caseSCSM( scsm );
+            if( result == null ) {
+                result = caseServiceYesNo( scsm );
+            }
+            if( result == null ) {
+                result = caseSclObject( scsm );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SM_VC_SECURITY: {
+            SMVcSecurity smVcSecurity = ( SMVcSecurity ) theEObject;
+            T result = caseSMVcSecurity( smVcSecurity );
+            if( result == null ) {
+                result = caseMcSecurity( smVcSecurity );
+            }
+            if( result == null ) {
+                result = caseSclObject( smVcSecurity );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SCL_FILE_REFERENCE: {
+            SclFileReference sclFileReference = ( SclFileReference ) theEObject;
+            T result = caseSclFileReference( sclFileReference );
+            if( result == null ) {
+                result = caseSclObject( sclFileReference );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SECURITY: {
+            Security security = ( Security ) theEObject;
+            T result = caseSecurity( security );
+            if( result == null ) {
+                result = caseSclObject( security );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.SIGNAL_ROLE: {
+            SignalRole signalRole = ( SignalRole ) theEObject;
+            T result = caseSignalRole( signalRole );
+            if( result == null ) {
+                result = caseFunctionalVariantRefContainer( signalRole );
+            }
+            if( result == null ) {
+                result = caseBaseExtensionElementWithDesc( signalRole );
+            }
+            if( result == null ) {
+                result = caseBaseExtensionElement( signalRole );
+            }
+            if( result == null ) {
+                result = caseAsdObject( signalRole );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -2799,92 +3049,14 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.SERVICE_YES_NO: {
-            ServiceYesNo serviceYesNo = ( ServiceYesNo ) theEObject;
-            T result = caseServiceYesNo( serviceYesNo );
+        case SclPackage.SOURCE_FILES: {
+            SourceFiles sourceFiles = ( SourceFiles ) theEObject;
+            T result = caseSourceFiles( sourceFiles );
             if( result == null ) {
-                result = caseSclObject( serviceYesNo );
+                result = caseBaseElement( sourceFiles );
             }
             if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SERVICE_WITH_OPTIONAL_MAX: {
-            ServiceWithOptionalMax serviceWithOptionalMax = ( ServiceWithOptionalMax ) theEObject;
-            T result = caseServiceWithOptionalMax( serviceWithOptionalMax );
-            if( result == null ) {
-                result = caseSclObject( serviceWithOptionalMax );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SERVICE_WITH_MAX_NON_ZERO: {
-            ServiceWithMaxNonZero serviceWithMaxNonZero = ( ServiceWithMaxNonZero ) theEObject;
-            T result = caseServiceWithMaxNonZero( serviceWithMaxNonZero );
-            if( result == null ) {
-                result = caseSclObject( serviceWithMaxNonZero );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SERVICE_CONF_REPORT_CONTROL: {
-            ServiceConfReportControl serviceConfReportControl = ( ServiceConfReportControl ) theEObject;
-            T result = caseServiceConfReportControl( serviceConfReportControl );
-            if( result == null ) {
-                result = caseServiceWithMax( serviceConfReportControl );
-            }
-            if( result == null ) {
-                result = caseSclObject( serviceConfReportControl );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES: {
-            ServiceWithMaxAndMaxAttributes serviceWithMaxAndMaxAttributes = ( ServiceWithMaxAndMaxAttributes ) theEObject;
-            T result = caseServiceWithMaxAndMaxAttributes( serviceWithMaxAndMaxAttributes );
-            if( result == null ) {
-                result = caseServiceWithMax( serviceWithMaxAndMaxAttributes );
-            }
-            if( result == null ) {
-                result = caseSclObject( serviceWithMaxAndMaxAttributes );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SERVICE_WITH_MAX_AND_MODIFY: {
-            ServiceWithMaxAndModify serviceWithMaxAndModify = ( ServiceWithMaxAndModify ) theEObject;
-            T result = caseServiceWithMaxAndModify( serviceWithMaxAndModify );
-            if( result == null ) {
-                result = caseServiceWithMax( serviceWithMaxAndModify );
-            }
-            if( result == null ) {
-                result = caseSclObject( serviceWithMaxAndModify );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SERVICE_FOR_CONF_DATA_SET: {
-            ServiceForConfDataSet serviceForConfDataSet = ( ServiceForConfDataSet ) theEObject;
-            T result = caseServiceForConfDataSet( serviceForConfDataSet );
-            if( result == null ) {
-                result = caseServiceWithMaxAndMaxAttributes( serviceForConfDataSet );
-            }
-            if( result == null ) {
-                result = caseServiceWithMax( serviceForConfDataSet );
-            }
-            if( result == null ) {
-                result = caseSclObject( serviceForConfDataSet );
+                result = caseSclObject( sourceFiles );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -2991,39 +3163,6 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.SMP_RATE: {
-            SmpRate smpRate = ( SmpRate ) theEObject;
-            T result = caseSmpRate( smpRate );
-            if( result == null ) {
-                result = caseSclObject( smpRate );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SAMPLES_PER_SEC: {
-            SamplesPerSec samplesPerSec = ( SamplesPerSec ) theEObject;
-            T result = caseSamplesPerSec( samplesPerSec );
-            if( result == null ) {
-                result = caseSclObject( samplesPerSec );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SEC_PER_SAMPLES: {
-            SecPerSamples secPerSamples = ( SecPerSamples ) theEObject;
-            T result = caseSecPerSamples( secPerSamples );
-            if( result == null ) {
-                result = caseSclObject( secPerSamples );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
         case SclPackage.MC_SECURITY: {
             McSecurity mcSecurity = ( McSecurity ) theEObject;
             T result = caseMcSecurity( mcSecurity );
@@ -3038,6 +3177,9 @@ public class SclSwitch< T > extends Switch< T > {
         case SclPackage.AG_AUTHENTICATION: {
             AgAuthentication agAuthentication = ( AgAuthentication ) theEObject;
             T result = caseAgAuthentication( agAuthentication );
+            if( result == null ) {
+                result = caseSclObject( agAuthentication );
+            }
             if( result == null ) {
                 result = defaultCase( theEObject );
             }
@@ -3127,6 +3269,170 @@ public class SclSwitch< T > extends Switch< T > {
         case SclPackage.INAMESPACE_GETTER: {
             INamespaceGetter iNamespaceGetter = ( INamespaceGetter ) theEObject;
             T result = caseINamespaceGetter( iNamespaceGetter );
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.DO_REF: {
+            DORef doRef = ( DORef ) theEObject;
+            T result = caseDORef( doRef );
+            if( result == null ) {
+                result = caseAgUuid( doRef );
+            }
+            if( result == null ) {
+                result = caseBaseElement( doRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( doRef );
+            }
+            if( result == null ) {
+                result = caseSclObject( doRef );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.EXT_CTRL: {
+            ExtCtrl extCtrl = ( ExtCtrl ) theEObject;
+            T result = caseExtCtrl( extCtrl );
+            if( result == null ) {
+                result = caseDORef( extCtrl );
+            }
+            if( result == null ) {
+                result = caseAgUuid( extCtrl );
+            }
+            if( result == null ) {
+                result = caseBaseElement( extCtrl );
+            }
+            if( result == null ) {
+                result = caseAgDesc( extCtrl );
+            }
+            if( result == null ) {
+                result = caseSclObject( extCtrl );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.GOOSE_MC_SECURITY: {
+            GOOSEMcSecurity gooseMcSecurity = ( GOOSEMcSecurity ) theEObject;
+            T result = caseGOOSEMcSecurity( gooseMcSecurity );
+            if( result == null ) {
+                result = caseMcSecurity( gooseMcSecurity );
+            }
+            if( result == null ) {
+                result = caseSclObject( gooseMcSecurity );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.IED_SOURCE_FILES: {
+            IEDSourceFiles iedSourceFiles = ( IEDSourceFiles ) theEObject;
+            T result = caseIEDSourceFiles( iedSourceFiles );
+            if( result == null ) {
+                result = caseBaseElement( iedSourceFiles );
+            }
+            if( result == null ) {
+                result = caseSclObject( iedSourceFiles );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.LABEL: {
+            Label label = ( Label ) theEObject;
+            T result = caseLabel( label );
+            if( result == null ) {
+                result = caseSclObject( label );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.LABELS: {
+            Labels labels = ( Labels ) theEObject;
+            T result = caseLabels( labels );
+            if( result == null ) {
+                result = caseUnNaming( labels );
+            }
+            if( result == null ) {
+                result = caseBaseElement( labels );
+            }
+            if( result == null ) {
+                result = caseAgDesc( labels );
+            }
+            if( result == null ) {
+                result = caseSclObject( labels );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.MIN_REQUESTED_SCD_FILE: {
+            MinRequestedSCDFile minRequestedSCDFile = ( MinRequestedSCDFile ) theEObject;
+            T result = caseMinRequestedSCDFile( minRequestedSCDFile );
+            if( result == null ) {
+                result = caseSclFileReference( minRequestedSCDFile );
+            }
+            if( result == null ) {
+                result = caseSclObject( minRequestedSCDFile );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.MIN_REQUESTED_SCD_FILES: {
+            MinRequestedSCDFiles minRequestedSCDFiles = ( MinRequestedSCDFiles ) theEObject;
+            T result = caseMinRequestedSCDFiles( minRequestedSCDFiles );
+            if( result == null ) {
+                result = caseBaseElement( minRequestedSCDFiles );
+            }
+            if( result == null ) {
+                result = caseSclObject( minRequestedSCDFiles );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.MULTI_AP_PER_SUB_NET: {
+            MultiAPPerSubNet multiAPPerSubNet = ( MultiAPPerSubNet ) theEObject;
+            T result = caseMultiAPPerSubNet( multiAPPerSubNet );
+            if( result == null ) {
+                result = caseServiceYesNo( multiAPPerSubNet );
+            }
+            if( result == null ) {
+                result = caseSclObject( multiAPPerSubNet );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case SclPackage.OUTPUTS: {
+            Outputs outputs = ( Outputs ) theEObject;
+            T result = caseOutputs( outputs );
+            if( result == null ) {
+                result = caseUnNaming( outputs );
+            }
+            if( result == null ) {
+                result = caseBaseElement( outputs );
+            }
+            if( result == null ) {
+                result = caseAgDesc( outputs );
+            }
+            if( result == null ) {
+                result = caseSclObject( outputs );
+            }
             if( result == null ) {
                 result = defaultCase( theEObject );
             }
@@ -4079,6 +4385,21 @@ public class SclSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseExtRef( ExtRef object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>DO Ref</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>DO Ref</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDORef( DORef object ) {
         return null;
     }
 
@@ -5268,6 +5589,21 @@ public class SclSwitch< T > extends Switch< T > {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Source Files</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Source Files</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSourceFiles( SourceFiles object ) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Service Yes No</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -5538,6 +5874,81 @@ public class SclSwitch< T > extends Switch< T > {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>SCSM</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>SCSM</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSCSM( SCSM object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>SM Vc Security</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>SM Vc Security</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSMVcSecurity( SMVcSecurity object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>File Reference</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>File Reference</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSclFileReference( SclFileReference object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Security</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Security</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSecurity( Security object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Signal Role</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Signal Role</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSignalRole( SignalRole object ) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Mc Security</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -5714,6 +6125,201 @@ public class SclSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseINamespaceGetter( INamespaceGetter object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ext Ctrl</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ext Ctrl</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseExtCtrl( ExtCtrl object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>GOOSE Mc Security</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>GOOSE Mc Security</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseGOOSEMcSecurity( GOOSEMcSecurity object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>IED Source Files</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>IED Source Files</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseIEDSourceFiles( IEDSourceFiles object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Label</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseLabel( Label object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Labels</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Labels</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseLabels( Labels object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Min Requested SCD File</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Min Requested SCD File</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseMinRequestedSCDFile( MinRequestedSCDFile object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Min Requested SCD Files</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Min Requested SCD Files</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseMinRequestedSCDFiles( MinRequestedSCDFiles object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Multi AP Per Sub Net</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Multi AP Per Sub Net</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseMultiAPPerSubNet( MultiAPPerSubNet object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Outputs</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Outputs</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseOutputs( Outputs object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Object</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Object</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAsdObject( AsdObject object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Base Extension Element</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Base Extension Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBaseExtensionElement( BaseExtensionElement object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Base Extension Element With Desc</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Base Extension Element With Desc</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBaseExtensionElementWithDesc( BaseExtensionElementWithDesc object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Functional Variant Ref Container</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Functional Variant Ref Container</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseFunctionalVariantRefContainer( FunctionalVariantRefContainer object ) {
         return null;
     }
 

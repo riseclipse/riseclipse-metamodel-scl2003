@@ -25,6 +25,10 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.*;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
@@ -82,183 +86,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      */
     protected SclSwitch< Adapter > modelSwitch = new SclSwitch< >() {
         @Override
-        public Adapter caseAnyContentFromOtherNamespace( AnyContentFromOtherNamespace object ) {
-            return createAnyContentFromOtherNamespaceAdapter();
-        }
-
-        @Override
-        public Adapter caseBaseElement( BaseElement object ) {
-            return createBaseElementAdapter();
-        }
-
-        @Override
-        public Adapter caseHeader( Header object ) {
-            return createHeaderAdapter();
-        }
-
-        @Override
-        public Adapter caseHistory( History object ) {
-            return createHistoryAdapter();
-        }
-
-        @Override
-        public Adapter caseHitem( Hitem object ) {
-            return createHitemAdapter();
-        }
-
-        @Override
-        public Adapter caseIDNaming( IDNaming object ) {
-            return createIDNamingAdapter();
-        }
-
-        @Override
-        public Adapter caseLine( Line object ) {
-            return createLineAdapter();
-        }
-
-        @Override
-        public Adapter caseNaming( Naming object ) {
-            return createNamingAdapter();
-        }
-
-        @Override
-        public Adapter casePrivate( Private object ) {
-            return createPrivateAdapter();
-        }
-
-        @Override
-        public Adapter caseProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process object ) {
-            return createProcessAdapter();
-        }
-
-        @Override
-        public Adapter caseSCL( SCL object ) {
-            return createSCLAdapter();
-        }
-
-        @Override
-        public Adapter caseText( Text object ) {
-            return createTextAdapter();
-        }
-
-        @Override
         public Adapter caseAddress( Address object ) {
             return createAddressAdapter();
-        }
-
-        @Override
-        public Adapter caseCommunication( Communication object ) {
-            return createCommunicationAdapter();
-        }
-
-        @Override
-        public Adapter caseControlBlock( ControlBlock object ) {
-            return createControlBlockAdapter();
-        }
-
-        @Override
-        public Adapter caseConnectedAP( ConnectedAP object ) {
-            return createConnectedAPAdapter();
-        }
-
-        @Override
-        public Adapter caseGSE( GSE object ) {
-            return createGSEAdapter();
-        }
-
-        @Override
-        public Adapter caseP( P object ) {
-            return createPAdapter();
-        }
-
-        @Override
-        public Adapter casePAddr( PAddr object ) {
-            return createPAddrAdapter();
-        }
-
-        @Override
-        public Adapter caseP_PhysConn( P_PhysConn object ) {
-            return createP_PhysConnAdapter();
-        }
-
-        @Override
-        public Adapter casePhysConn( PhysConn object ) {
-            return createPhysConnAdapter();
-        }
-
-        @Override
-        public Adapter caseSMV( SMV object ) {
-            return createSMVAdapter();
-        }
-
-        @Override
-        public Adapter caseSubNetwork( SubNetwork object ) {
-            return createSubNetworkAdapter();
-        }
-
-        @Override
-        public Adapter caseAbstractDataAttribute( AbstractDataAttribute object ) {
-            return createAbstractDataAttributeAdapter();
-        }
-
-        @Override
-        public Adapter caseBDA( BDA object ) {
-            return createBDAAdapter();
-        }
-
-        @Override
-        public Adapter caseDA( DA object ) {
-            return createDAAdapter();
-        }
-
-        @Override
-        public Adapter caseDAType( DAType object ) {
-            return createDATypeAdapter();
-        }
-
-        @Override
-        public Adapter caseDO( DO object ) {
-            return createDOAdapter();
-        }
-
-        @Override
-        public Adapter caseDOType( DOType object ) {
-            return createDOTypeAdapter();
-        }
-
-        @Override
-        public Adapter caseDataTypeTemplates( DataTypeTemplates object ) {
-            return createDataTypeTemplatesAdapter();
-        }
-
-        @Override
-        public Adapter caseEnumType( EnumType object ) {
-            return createEnumTypeAdapter();
-        }
-
-        @Override
-        public Adapter caseEnumVal( EnumVal object ) {
-            return createEnumValAdapter();
-        }
-
-        @Override
-        public Adapter caseLNodeType( LNodeType object ) {
-            return createLNodeTypeAdapter();
-        }
-
-        @Override
-        public Adapter caseProtNs( ProtNs object ) {
-            return createProtNsAdapter();
-        }
-
-        @Override
-        public Adapter caseSDO( SDO object ) {
-            return createSDOAdapter();
-        }
-
-        @Override
-        public Adapter caseVal( Val object ) {
-            return createValAdapter();
         }
 
         @Override
@@ -269,6 +98,21 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseAccessPoint( AccessPoint object ) {
             return createAccessPointAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractDataAttribute( AbstractDataAttribute object ) {
+            return createAbstractDataAttributeAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractConductingEquipment( AbstractConductingEquipment object ) {
+            return createAbstractConductingEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractEqFuncSubFunc( AbstractEqFuncSubFunc object ) {
+            return createAbstractEqFuncSubFuncAdapter();
         }
 
         @Override
@@ -284,6 +128,26 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseAuthentication( Authentication object ) {
             return createAuthenticationAdapter();
+        }
+
+        @Override
+        public Adapter caseAnyContentFromOtherNamespace( AnyContentFromOtherNamespace object ) {
+            return createAnyContentFromOtherNamespaceAdapter();
+        }
+
+        @Override
+        public Adapter caseBaseElement( BaseElement object ) {
+            return createBaseElementAdapter();
+        }
+
+        @Override
+        public Adapter caseBay( Bay object ) {
+            return createBayAdapter();
+        }
+
+        @Override
+        public Adapter caseBDA( BDA object ) {
+            return createBDAAdapter();
         }
 
         @Override
@@ -304,6 +168,11 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseCommProt( CommProt object ) {
             return createCommProtAdapter();
+        }
+
+        @Override
+        public Adapter caseCommunication( Communication object ) {
+            return createCommunicationAdapter();
         }
 
         @Override
@@ -352,8 +221,33 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseConductingEquipment( ConductingEquipment object ) {
+            return createConductingEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseConnectivityNode( ConnectivityNode object ) {
+            return createConnectivityNodeAdapter();
+        }
+
+        @Override
         public Adapter caseControlWithTriggerOpt( ControlWithTriggerOpt object ) {
             return createControlWithTriggerOptAdapter();
+        }
+
+        @Override
+        public Adapter caseControlBlock( ControlBlock object ) {
+            return createControlBlockAdapter();
+        }
+
+        @Override
+        public Adapter caseConnectedAP( ConnectedAP object ) {
+            return createConnectedAPAdapter();
+        }
+
+        @Override
+        public Adapter caseDA( DA object ) {
+            return createDAAdapter();
         }
 
         @Override
@@ -392,8 +286,58 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseDAType( DAType object ) {
+            return createDATypeAdapter();
+        }
+
+        @Override
+        public Adapter caseDataTypeTemplates( DataTypeTemplates object ) {
+            return createDataTypeTemplatesAdapter();
+        }
+
+        @Override
+        public Adapter caseDO( DO object ) {
+            return createDOAdapter();
+        }
+
+        @Override
+        public Adapter caseDOType( DOType object ) {
+            return createDOTypeAdapter();
+        }
+
+        @Override
+        public Adapter caseEnumVal( EnumVal object ) {
+            return createEnumValAdapter();
+        }
+
+        @Override
+        public Adapter caseEnumType( EnumType object ) {
+            return createEnumTypeAdapter();
+        }
+
+        @Override
         public Adapter caseExtRef( ExtRef object ) {
             return createExtRefAdapter();
+        }
+
+        @Override
+        public Adapter caseEqFunction( EqFunction object ) {
+            return createEqFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseEqSubFunction( EqSubFunction object ) {
+            return createEqSubFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseEquipment( Equipment object ) {
+            return createEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseEquipmentContainer( EquipmentContainer object ) {
+            return createEquipmentContainerAdapter();
         }
 
         @Override
@@ -404,6 +348,16 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseFileHandling( FileHandling object ) {
             return createFileHandlingAdapter();
+        }
+
+        @Override
+        public Adapter caseGeneralEquipment( GeneralEquipment object ) {
+            return createGeneralEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseGSE( GSE object ) {
+            return createGSEAdapter();
         }
 
         @Override
@@ -457,6 +411,26 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseHeader( Header object ) {
+            return createHeaderAdapter();
+        }
+
+        @Override
+        public Adapter caseHistory( History object ) {
+            return createHistoryAdapter();
+        }
+
+        @Override
+        public Adapter caseHitem( Hitem object ) {
+            return createHitemAdapter();
+        }
+
+        @Override
+        public Adapter caseIDNaming( IDNaming object ) {
+            return createIDNamingAdapter();
+        }
+
+        @Override
         public Adapter caseIED( IED object ) {
             return createIEDAdapter();
         }
@@ -479,6 +453,26 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseKDC( KDC object ) {
             return createKDCAdapter();
+        }
+
+        @Override
+        public Adapter caseLine( Line object ) {
+            return createLineAdapter();
+        }
+
+        @Override
+        public Adapter caseLNode( LNode object ) {
+            return createLNodeAdapter();
+        }
+
+        @Override
+        public Adapter caseLNodeType( LNodeType object ) {
+            return createLNodeTypeAdapter();
+        }
+
+        @Override
+        public Adapter caseLNodeContainer( LNodeContainer object ) {
+            return createLNodeContainerAdapter();
         }
 
         @Override
@@ -512,8 +506,48 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseNaming( Naming object ) {
+            return createNamingAdapter();
+        }
+
+        @Override
         public Adapter caseOptFields( OptFields object ) {
             return createOptFieldsAdapter();
+        }
+
+        @Override
+        public Adapter caseP( P object ) {
+            return createPAdapter();
+        }
+
+        @Override
+        public Adapter casePAddr( PAddr object ) {
+            return createPAddrAdapter();
+        }
+
+        @Override
+        public Adapter caseP_PhysConn( P_PhysConn object ) {
+            return createP_PhysConnAdapter();
+        }
+
+        @Override
+        public Adapter casePhysConn( PhysConn object ) {
+            return createPhysConnAdapter();
+        }
+
+        @Override
+        public Adapter casePrivate( Private object ) {
+            return createPrivateAdapter();
+        }
+
+        @Override
+        public Adapter caseProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process object ) {
+            return createProcessAdapter();
+        }
+
+        @Override
+        public Adapter caseProtNs( ProtNs object ) {
+            return createProtNsAdapter();
         }
 
         @Override
@@ -544,6 +578,11 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseRptEnabled( RptEnabled object ) {
             return createRptEnabledAdapter();
+        }
+
+        @Override
+        public Adapter caseSCL( SCL object ) {
+            return createSCLAdapter();
         }
 
         @Override
@@ -632,6 +671,31 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseSMV( SMV object ) {
+            return createSMVAdapter();
+        }
+
+        @Override
+        public Adapter caseSubNetwork( SubNetwork object ) {
+            return createSubNetworkAdapter();
+        }
+
+        @Override
+        public Adapter caseSDO( SDO object ) {
+            return createSDOAdapter();
+        }
+
+        @Override
+        public Adapter caseText( Text object ) {
+            return createTextAdapter();
+        }
+
+        @Override
+        public Adapter caseVal( Val object ) {
+            return createValAdapter();
+        }
+
+        @Override
         public Adapter caseTimeSyncProt( TimeSyncProt object ) {
             return createTimeSyncProtAdapter();
         }
@@ -652,73 +716,13 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseAbstractConductingEquipment( AbstractConductingEquipment object ) {
-            return createAbstractConductingEquipmentAdapter();
-        }
-
-        @Override
-        public Adapter caseAbstractEqFuncSubFunc( AbstractEqFuncSubFunc object ) {
-            return createAbstractEqFuncSubFuncAdapter();
-        }
-
-        @Override
-        public Adapter caseBay( Bay object ) {
-            return createBayAdapter();
-        }
-
-        @Override
-        public Adapter caseConductingEquipment( ConductingEquipment object ) {
-            return createConductingEquipmentAdapter();
-        }
-
-        @Override
-        public Adapter caseConnectivityNode( ConnectivityNode object ) {
-            return createConnectivityNodeAdapter();
-        }
-
-        @Override
-        public Adapter caseEqFunction( EqFunction object ) {
-            return createEqFunctionAdapter();
-        }
-
-        @Override
-        public Adapter caseEqSubFunction( EqSubFunction object ) {
-            return createEqSubFunctionAdapter();
-        }
-
-        @Override
-        public Adapter caseEquipment( Equipment object ) {
-            return createEquipmentAdapter();
-        }
-
-        @Override
-        public Adapter caseEquipmentContainer( EquipmentContainer object ) {
-            return createEquipmentContainerAdapter();
-        }
-
-        @Override
         public Adapter caseFunction( Function object ) {
             return createFunctionAdapter();
         }
 
         @Override
-        public Adapter caseGeneralEquipment( GeneralEquipment object ) {
-            return createGeneralEquipmentAdapter();
-        }
-
-        @Override
         public Adapter caseGeneralEquipmentContainer( GeneralEquipmentContainer object ) {
             return createGeneralEquipmentContainerAdapter();
-        }
-
-        @Override
-        public Adapter caseLNode( LNode object ) {
-            return createLNodeAdapter();
-        }
-
-        @Override
-        public Adapter caseLNodeContainer( LNodeContainer object ) {
-            return createLNodeContainerAdapter();
         }
 
         @Override
@@ -734,6 +738,81 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter casePowerTransformer( PowerTransformer object ) {
             return createPowerTransformerAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceYesNo( ServiceYesNo object ) {
+            return createServiceYesNoAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithOptionalMax( ServiceWithOptionalMax object ) {
+            return createServiceWithOptionalMaxAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMaxNonZero( ServiceWithMaxNonZero object ) {
+            return createServiceWithMaxNonZeroAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceConfReportControl( ServiceConfReportControl object ) {
+            return createServiceConfReportControlAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMaxAndMaxAttributes( ServiceWithMaxAndMaxAttributes object ) {
+            return createServiceWithMaxAndMaxAttributesAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMaxAndModify( ServiceWithMaxAndModify object ) {
+            return createServiceWithMaxAndModifyAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceForConfDataSet( ServiceForConfDataSet object ) {
+            return createServiceForConfDataSetAdapter();
+        }
+
+        @Override
+        public Adapter caseSmpRate( SmpRate object ) {
+            return createSmpRateAdapter();
+        }
+
+        @Override
+        public Adapter caseSamplesPerSec( SamplesPerSec object ) {
+            return createSamplesPerSecAdapter();
+        }
+
+        @Override
+        public Adapter caseSecPerSamples( SecPerSamples object ) {
+            return createSecPerSamplesAdapter();
+        }
+
+        @Override
+        public Adapter caseSCSM( SCSM object ) {
+            return createSCSMAdapter();
+        }
+
+        @Override
+        public Adapter caseSMVcSecurity( SMVcSecurity object ) {
+            return createSMVcSecurityAdapter();
+        }
+
+        @Override
+        public Adapter caseSclFileReference( SclFileReference object ) {
+            return createSclFileReferenceAdapter();
+        }
+
+        @Override
+        public Adapter caseSecurity( Security object ) {
+            return createSecurityAdapter();
+        }
+
+        @Override
+        public Adapter caseSignalRole( SignalRole object ) {
+            return createSignalRoleAdapter();
         }
 
         @Override
@@ -792,38 +871,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseServiceYesNo( ServiceYesNo object ) {
-            return createServiceYesNoAdapter();
-        }
-
-        @Override
-        public Adapter caseServiceWithOptionalMax( ServiceWithOptionalMax object ) {
-            return createServiceWithOptionalMaxAdapter();
-        }
-
-        @Override
-        public Adapter caseServiceWithMaxNonZero( ServiceWithMaxNonZero object ) {
-            return createServiceWithMaxNonZeroAdapter();
-        }
-
-        @Override
-        public Adapter caseServiceConfReportControl( ServiceConfReportControl object ) {
-            return createServiceConfReportControlAdapter();
-        }
-
-        @Override
-        public Adapter caseServiceWithMaxAndMaxAttributes( ServiceWithMaxAndMaxAttributes object ) {
-            return createServiceWithMaxAndMaxAttributesAdapter();
-        }
-
-        @Override
-        public Adapter caseServiceWithMaxAndModify( ServiceWithMaxAndModify object ) {
-            return createServiceWithMaxAndModifyAdapter();
-        }
-
-        @Override
-        public Adapter caseServiceForConfDataSet( ServiceForConfDataSet object ) {
-            return createServiceForConfDataSetAdapter();
+        public Adapter caseSourceFiles( SourceFiles object ) {
+            return createSourceFilesAdapter();
         }
 
         @Override
@@ -864,21 +913,6 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseBitRate( BitRate object ) {
             return createBitRateAdapter();
-        }
-
-        @Override
-        public Adapter caseSmpRate( SmpRate object ) {
-            return createSmpRateAdapter();
-        }
-
-        @Override
-        public Adapter caseSamplesPerSec( SamplesPerSec object ) {
-            return createSamplesPerSecAdapter();
-        }
-
-        @Override
-        public Adapter caseSecPerSamples( SecPerSamples object ) {
-            return createSecPerSamplesAdapter();
         }
 
         @Override
@@ -939,6 +973,76 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseINamespaceGetter( INamespaceGetter object ) {
             return createINamespaceGetterAdapter();
+        }
+
+        @Override
+        public Adapter caseDORef( DORef object ) {
+            return createDORefAdapter();
+        }
+
+        @Override
+        public Adapter caseExtCtrl( ExtCtrl object ) {
+            return createExtCtrlAdapter();
+        }
+
+        @Override
+        public Adapter caseGOOSEMcSecurity( GOOSEMcSecurity object ) {
+            return createGOOSEMcSecurityAdapter();
+        }
+
+        @Override
+        public Adapter caseIEDSourceFiles( IEDSourceFiles object ) {
+            return createIEDSourceFilesAdapter();
+        }
+
+        @Override
+        public Adapter caseLabel( Label object ) {
+            return createLabelAdapter();
+        }
+
+        @Override
+        public Adapter caseLabels( Labels object ) {
+            return createLabelsAdapter();
+        }
+
+        @Override
+        public Adapter caseMinRequestedSCDFile( MinRequestedSCDFile object ) {
+            return createMinRequestedSCDFileAdapter();
+        }
+
+        @Override
+        public Adapter caseMinRequestedSCDFiles( MinRequestedSCDFiles object ) {
+            return createMinRequestedSCDFilesAdapter();
+        }
+
+        @Override
+        public Adapter caseMultiAPPerSubNet( MultiAPPerSubNet object ) {
+            return createMultiAPPerSubNetAdapter();
+        }
+
+        @Override
+        public Adapter caseOutputs( Outputs object ) {
+            return createOutputsAdapter();
+        }
+
+        @Override
+        public Adapter caseAsdObject( AsdObject object ) {
+            return createAsdObjectAdapter();
+        }
+
+        @Override
+        public Adapter caseBaseExtensionElement( BaseExtensionElement object ) {
+            return createBaseExtensionElementAdapter();
+        }
+
+        @Override
+        public Adapter caseBaseExtensionElementWithDesc( BaseExtensionElementWithDesc object ) {
+            return createBaseExtensionElementWithDescAdapter();
+        }
+
+        @Override
+        public Adapter caseFunctionalVariantRefContainer( FunctionalVariantRefContainer object ) {
+            return createFunctionalVariantRefContainerAdapter();
         }
 
         @Override
@@ -1576,6 +1680,76 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM <em>SCSM</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM
+     * @generated
+     */
+    public Adapter createSCSMAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity <em>SM Vc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity
+     * @generated
+     */
+    public Adapter createSMVcSecurityAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference <em>File Reference</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference
+     * @generated
+     */
+    public Adapter createSclFileReferenceAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Security <em>Security</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Security
+     * @generated
+     */
+    public Adapter createSecurityAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole <em>Signal Role</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole
+     * @generated
+     */
+    public Adapter createSignalRoleAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity <em>Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -1740,6 +1914,188 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createINamespaceGetterAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtCtrl <em>Ext Ctrl</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtCtrl
+     * @generated
+     */
+    public Adapter createExtCtrlAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity <em>GOOSE Mc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity
+     * @generated
+     */
+    public Adapter createGOOSEMcSecurityAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles <em>IED Source Files</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles
+     * @generated
+     */
+    public Adapter createIEDSourceFilesAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Label <em>Label</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Label
+     * @generated
+     */
+    public Adapter createLabelAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels <em>Labels</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels
+     * @generated
+     */
+    public Adapter createLabelsAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFile <em>Min Requested SCD File</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFile
+     * @generated
+     */
+    public Adapter createMinRequestedSCDFileAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles <em>Min Requested SCD Files</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles
+     * @generated
+     */
+    public Adapter createMinRequestedSCDFilesAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet <em>Multi AP Per Sub Net</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet
+     * @generated
+     */
+    public Adapter createMultiAPPerSubNetAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs <em>Outputs</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs
+     * @generated
+     */
+    public Adapter createOutputsAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject <em>Object</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject
+     * @generated
+     */
+    public Adapter createAsdObjectAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement <em>Base Extension Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement
+     * @generated
+     */
+    public Adapter createBaseExtensionElementAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc <em>Base Extension Element With Desc</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc
+     * @generated
+     */
+    public Adapter createBaseExtensionElementWithDescAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer <em>Functional Variant Ref Container</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer
+     * @generated
+     */
+    public Adapter createFunctionalVariantRefContainerAdapter() {
         return null;
     }
 
@@ -2143,6 +2499,20 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createExtRefAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DORef <em>DO Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DORef
+     * @generated
+     */
+    public Adapter createDORefAdapter() {
         return null;
     }
 
@@ -3267,6 +3637,20 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createUnNamingAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles <em>Source Files</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles
+     * @generated
+     */
+    public Adapter createSourceFilesAdapter() {
         return null;
     }
 

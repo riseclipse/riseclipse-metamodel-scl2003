@@ -156,6 +156,26 @@ public class SclUtilities {
         return Pair.of( res.get( 0 ), 1 );
     }
 
+    public static Pair< AnyLN, Integer > getAnyLN( @NonNull LDevice lDevice, @NonNull String lnName ) {
+        if( "LLN0".equals( lnName )) {
+            return Pair.of( lDevice.getLN0(), ( lDevice.getLN0() == null ) ? 0 : 1  );
+        }
+        
+        // Null checks must be done as annotation-based null analysis is not enabled (issue #64)
+        if( lnName == null ) return Pair.of( null, 0 );
+        
+        List< LN > res =
+                lDevice
+                .getLN()
+                .stream()
+                .filter( ln -> lnName.equals( ln.getPrefix() + ln.getLnClass() + ln.getInst() ))
+                .collect( Collectors.toList() );
+        if( res.size() != 1 ) {
+            return Pair.of( null, res.size() );
+        }
+        return Pair.of( res.get( 0 ), 1 );
+    }
+
     public static Pair< AnyLN, Integer > getAnyLN( @NonNull AccessPoint accessPoint, @NonNull String lnClass, @NonNull String lnInst, String prefix ) {
         if( "LLN0".equals( lnClass )) {
             return Pair.of( null, 0 );

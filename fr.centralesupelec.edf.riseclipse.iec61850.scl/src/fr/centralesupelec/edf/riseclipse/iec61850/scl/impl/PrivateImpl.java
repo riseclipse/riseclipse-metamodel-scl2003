@@ -20,13 +20,20 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -43,6 +50,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getParentBaseElement <em>Parent Base Element</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getAsdObjects <em>Asd Objects</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,6 +123,16 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * @ordered
      */
     protected static final String VALUE_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getAsdObjects() <em>Asd Objects</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAsdObjects()
+     * @generated
+     * @ordered
+     */
+    protected EList< AsdObject > asdObjects;
 
     /**
      * <!-- begin-user-doc -->
@@ -319,6 +337,43 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * @generated
      */
     @Override
+    public EList< AsdObject > getAsdObjects() {
+        if( asdObjects == null ) {
+            asdObjects = new EObjectContainmentWithInverseEList.Unsettable< >( AsdObject.class, this,
+                    SclPackage.PRIVATE__ASD_OBJECTS, AsdPackage.ASD_OBJECT__PARENT_PRIVATE );
+        }
+        return asdObjects;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetAsdObjects() {
+        if( asdObjects != null ) {
+            ( ( InternalEList.Unsettable< ? > ) asdObjects ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetAsdObjects() {
+        return asdObjects != null && ( ( InternalEList.Unsettable< ? > ) asdObjects ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings( "unchecked" )
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
@@ -326,6 +381,9 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentBaseElement( ( BaseElement ) otherEnd, msgs );
+        case SclPackage.PRIVATE__ASD_OBJECTS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getAsdObjects() ).basicAdd( otherEnd,
+                    msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -340,6 +398,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         switch( featureID ) {
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
             return basicSetParentBaseElement( null, msgs );
+        case SclPackage.PRIVATE__ASD_OBJECTS:
+            return ( ( InternalEList< ? > ) getAsdObjects() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -375,6 +435,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             return getParentBaseElement();
         case SclPackage.PRIVATE__VALUE:
             return getValue();
+        case SclPackage.PRIVATE__ASD_OBJECTS:
+            return getAsdObjects();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -384,6 +446,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
@@ -395,6 +458,10 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             return;
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
             setParentBaseElement( ( BaseElement ) newValue );
+            return;
+        case SclPackage.PRIVATE__ASD_OBJECTS:
+            getAsdObjects().clear();
+            getAsdObjects().addAll( ( Collection< ? extends AsdObject > ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -417,6 +484,9 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
             setParentBaseElement( ( BaseElement ) null );
             return;
+        case SclPackage.PRIVATE__ASD_OBJECTS:
+            unsetAsdObjects();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -437,6 +507,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             return getParentBaseElement() != null;
         case SclPackage.PRIVATE__VALUE:
             return VALUE_EDEFAULT == null ? getValue() != null : !VALUE_EDEFAULT.equals( getValue() );
+        case SclPackage.PRIVATE__ASD_OBJECTS:
+            return isSetAsdObjects();
         }
         return super.eIsSet( featureID );
     }

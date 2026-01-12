@@ -127,6 +127,7 @@ public class DATypeItemProvider extends IDNamingItemProvider {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getDAType_BDA() );
             childrenFeatures.add( SclPackage.eINSTANCE.getDAType_ProtNs() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDAType_Labels() );
         }
         return childrenFeatures;
     }
@@ -197,6 +198,7 @@ public class DATypeItemProvider extends IDNamingItemProvider {
             return;
         case SclPackage.DA_TYPE__BDA:
         case SclPackage.DA_TYPE__PROT_NS:
+        case SclPackage.DA_TYPE__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -219,6 +221,9 @@ public class DATypeItemProvider extends IDNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDAType_ProtNs(),
                 SclFactory.eINSTANCE.createProtNs() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDAType_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

@@ -32,6 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnUuid <em>Ln Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgLNRef()
@@ -186,5 +187,27 @@ public interface AgLNRef extends AgLDRef {
      * @generated
      */
     boolean isSetPrefix();
+
+    /**
+     * Returns the value of the '<em><b>Ln Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ln Uuid</em>' attribute.
+     * @see #setLnUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgLNRef_LnUuid()
+     * @model
+     * @generated
+     */
+    String getLnUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnUuid <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ln Uuid</em>' attribute.
+     * @see #getLnUuid()
+     * @generated
+     */
+    void setLnUuid( String value );
 
 } // AgLNRef

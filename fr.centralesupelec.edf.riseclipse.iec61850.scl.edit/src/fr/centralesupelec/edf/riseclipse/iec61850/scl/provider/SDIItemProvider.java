@@ -215,6 +215,7 @@ public class SDIItemProvider extends UnNamingItemProvider {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getSDI_DAI() );
             childrenFeatures.add( SclPackage.eINSTANCE.getSDI_SubSDI() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSDI_Labels() );
         }
         return childrenFeatures;
     }
@@ -276,6 +277,7 @@ public class SDIItemProvider extends UnNamingItemProvider {
             return;
         case SclPackage.SDI__DAI:
         case SclPackage.SDI__SUB_SDI:
+        case SclPackage.SDI__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -298,6 +300,9 @@ public class SDIItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSDI_SubSDI(),
                 SclFactory.eINSTANCE.createSDI() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSDI_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

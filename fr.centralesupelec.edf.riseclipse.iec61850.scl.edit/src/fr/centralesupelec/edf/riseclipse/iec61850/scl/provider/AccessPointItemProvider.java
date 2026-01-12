@@ -62,6 +62,8 @@ public class AccessPointItemProvider extends UnNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addClockPropertyDescriptor( object );
             addKdcPropertyDescriptor( object );
             addRouterPropertyDescriptor( object );
@@ -71,6 +73,49 @@ public class AccessPointItemProvider extends UnNamingItemProvider {
             addReferredByKDCPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -245,6 +290,7 @@ public class AccessPointItemProvider extends UnNamingItemProvider {
             childrenFeatures.add( SclPackage.eINSTANCE.getAccessPoint_Server() );
             childrenFeatures.add( SclPackage.eINSTANCE.getAccessPoint_Services() );
             childrenFeatures.add( SclPackage.eINSTANCE.getAccessPoint_GOOSESecurity() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAccessPoint_Labels() );
         }
         return childrenFeatures;
     }
@@ -298,6 +344,8 @@ public class AccessPointItemProvider extends UnNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( AccessPoint.class ) ) {
+        case SclPackage.ACCESS_POINT__UUID:
+        case SclPackage.ACCESS_POINT__TEMPLATE_UUID:
         case SclPackage.ACCESS_POINT__CLOCK:
         case SclPackage.ACCESS_POINT__KDC:
         case SclPackage.ACCESS_POINT__ROUTER:
@@ -310,6 +358,7 @@ public class AccessPointItemProvider extends UnNamingItemProvider {
         case SclPackage.ACCESS_POINT__SERVER:
         case SclPackage.ACCESS_POINT__SERVICES:
         case SclPackage.ACCESS_POINT__GOOSE_SECURITY:
+        case SclPackage.ACCESS_POINT__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -344,6 +393,9 @@ public class AccessPointItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAccessPoint_GOOSESecurity(),
                 SclFactory.eINSTANCE.createGOOSESecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAccessPoint_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

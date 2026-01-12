@@ -136,6 +136,9 @@ public class ServicesItemProvider
             childrenFeatures.add( SclPackage.eINSTANCE.getServices_TimeSyncProt() );
             childrenFeatures.add( SclPackage.eINSTANCE.getServices_TimerActivatedControl() );
             childrenFeatures.add( SclPackage.eINSTANCE.getServices_SMVSettings() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getServices_MultiAPPerSubNet() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getServices_SCSM() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getServices_Security() );
         }
         return childrenFeatures;
     }
@@ -223,6 +226,9 @@ public class ServicesItemProvider
         case SclPackage.SERVICES__TIME_SYNC_PROT:
         case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
         case SclPackage.SERVICES__SMV_SETTINGS:
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+        case SclPackage.SERVICES__SCSM:
+        case SclPackage.SERVICES__SECURITY:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -338,6 +344,15 @@ public class ServicesItemProvider
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getServices_SMVSettings(),
                 SclFactory.eINSTANCE.createSMVSettings() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getServices_MultiAPPerSubNet(),
+                SclFactory.eINSTANCE.createMultiAPPerSubNet() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getServices_SCSM(),
+                SclFactory.eINSTANCE.createSCSM() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getServices_Security(),
+                SclFactory.eINSTANCE.createSecurity() ) );
     }
 
 }

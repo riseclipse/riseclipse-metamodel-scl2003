@@ -51,12 +51,15 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.MultiAPPerSubNet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCSM;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Security;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups;
@@ -109,6 +112,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getTimeSyncProt <em>Time Sync Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getTimerActivatedControl <em>Timer Activated Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getSMVSettings <em>SMV Settings</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getMultiAPPerSubNet <em>Multi AP Per Sub Net</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getSCSM <em>SCSM</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getSecurity <em>Security</em>}</li>
  * </ul>
  *
  * @generated
@@ -771,6 +777,63 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     protected boolean smvSettingsESet;
 
     /**
+     * The cached value of the '{@link #getMultiAPPerSubNet() <em>Multi AP Per Sub Net</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMultiAPPerSubNet()
+     * @generated
+     * @ordered
+     */
+    protected MultiAPPerSubNet multiAPPerSubNet;
+
+    /**
+     * This is true if the Multi AP Per Sub Net containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean multiAPPerSubNetESet;
+
+    /**
+     * The cached value of the '{@link #getSCSM() <em>SCSM</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSCSM()
+     * @generated
+     * @ordered
+     */
+    protected SCSM scsm;
+
+    /**
+     * This is true if the SCSM containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean scsmESet;
+
+    /**
+     * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSecurity()
+     * @generated
+     * @ordered
+     */
+    protected Security security;
+
+    /**
+     * This is true if the Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean securityESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -810,10 +873,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         nameLength = newNameLength;
         boolean oldNameLengthESet = nameLengthESet;
         nameLengthESet = true;
-        if( eNotificationRequired() ) {
+        if( eNotificationRequired() )
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__NAME_LENGTH, oldNameLength,
                     nameLength, !oldNameLengthESet ) );
-        }
     }
 
     /**
@@ -827,10 +889,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         boolean oldNameLengthESet = nameLengthESet;
         nameLength = NAME_LENGTH_EDEFAULT;
         nameLengthESet = false;
-        if( eNotificationRequired() ) {
+        if( eNotificationRequired() )
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__NAME_LENGTH, oldNameLength,
                     NAME_LENGTH_EDEFAULT, oldNameLengthESet ) );
-        }
     }
 
     /**
@@ -850,9 +911,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      */
     @Override
     public AccessPoint getParentAccessPoint() {
-        if( eContainerFeatureID() != SclPackage.SERVICES__PARENT_ACCESS_POINT ) {
-            return null;
-        }
+        if( eContainerFeatureID() != SclPackage.SERVICES__PARENT_ACCESS_POINT ) return null;
         return ( AccessPoint ) eInternalContainer();
     }
 
@@ -877,26 +936,20 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( newParentAccessPoint != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SERVICES__PARENT_ACCESS_POINT
                         && newParentAccessPoint != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) )
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
-            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null ) {
+            if( eInternalContainer() != null )
                 msgs = eBasicRemoveFromContainer( msgs );
-            }
-            if( newParentAccessPoint != null ) {
+            if( newParentAccessPoint != null )
                 msgs = ( ( InternalEObject ) newParentAccessPoint ).eInverseAdd( this,
                         SclPackage.ACCESS_POINT__SERVICES, AccessPoint.class, msgs );
-            }
             msgs = basicSetParentAccessPoint( newParentAccessPoint, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
-        else if( eNotificationRequired() ) {
+        else if( eNotificationRequired() )
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__PARENT_ACCESS_POINT,
                     newParentAccessPoint, newParentAccessPoint ) );
-        }
     }
 
     /**
@@ -923,12 +976,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CLIENT_SERVICES, oldClientServices, newClientServices,
                     !oldClientServicesESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -942,26 +993,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setClientServices( ClientServices newClientServices ) {
         if( newClientServices != clientServices ) {
             NotificationChain msgs = null;
-            if( clientServices != null ) {
+            if( clientServices != null )
                 msgs = ( ( InternalEObject ) clientServices ).eInverseRemove( this,
                         SclPackage.CLIENT_SERVICES__PARENT_SERVICES, ClientServices.class, msgs );
-            }
-            if( newClientServices != null ) {
+            if( newClientServices != null )
                 msgs = ( ( InternalEObject ) newClientServices ).eInverseAdd( this,
                         SclPackage.CLIENT_SERVICES__PARENT_SERVICES, ClientServices.class, msgs );
-            }
             msgs = basicSetClientServices( newClientServices, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldClientServicesESet = clientServicesESet;
             clientServicesESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CLIENT_SERVICES,
                         newClientServices, newClientServices, !oldClientServicesESet ) );
-            }
         }
     }
 
@@ -978,12 +1024,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CLIENT_SERVICES, oldClientServices, null, oldClientServicesESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1000,17 +1044,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) clientServices ).eInverseRemove( this,
                     SclPackage.CLIENT_SERVICES__PARENT_SERVICES, ClientServices.class, msgs );
             msgs = basicUnsetClientServices( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldClientServicesESet = clientServicesESet;
             clientServicesESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CLIENT_SERVICES, null,
                         null, oldClientServicesESet ) );
-            }
         }
     }
 
@@ -1047,12 +1088,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__COMM_PROT, oldCommProt, newCommProt, !oldCommProtESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1066,26 +1105,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setCommProt( CommProt newCommProt ) {
         if( newCommProt != commProt ) {
             NotificationChain msgs = null;
-            if( commProt != null ) {
+            if( commProt != null )
                 msgs = ( ( InternalEObject ) commProt ).eInverseRemove( this, SclPackage.COMM_PROT__PARENT_SERVICES,
                         CommProt.class, msgs );
-            }
-            if( newCommProt != null ) {
+            if( newCommProt != null )
                 msgs = ( ( InternalEObject ) newCommProt ).eInverseAdd( this, SclPackage.COMM_PROT__PARENT_SERVICES,
                         CommProt.class, msgs );
-            }
             msgs = basicSetCommProt( newCommProt, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldCommProtESet = commProtESet;
             commProtESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__COMM_PROT, newCommProt,
                         newCommProt, !oldCommProtESet ) );
-            }
         }
     }
 
@@ -1102,12 +1136,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__COMM_PROT, oldCommProt, null, oldCommProtESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1124,17 +1156,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) commProt ).eInverseRemove( this, SclPackage.COMM_PROT__PARENT_SERVICES,
                     CommProt.class, msgs );
             msgs = basicUnsetCommProt( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldCommProtESet = commProtESet;
             commProtESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__COMM_PROT, null, null,
                         oldCommProtESet ) );
-            }
         }
     }
 
@@ -1171,12 +1200,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CONF_DATA_SET, oldConfDataSet, newConfDataSet, !oldConfDataSetESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1190,26 +1217,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setConfDataSet( ConfDataSet newConfDataSet ) {
         if( newConfDataSet != confDataSet ) {
             NotificationChain msgs = null;
-            if( confDataSet != null ) {
+            if( confDataSet != null )
                 msgs = ( ( InternalEObject ) confDataSet ).eInverseRemove( this,
                         SclPackage.CONF_DATA_SET__PARENT_SERVICES, ConfDataSet.class, msgs );
-            }
-            if( newConfDataSet != null ) {
+            if( newConfDataSet != null )
                 msgs = ( ( InternalEObject ) newConfDataSet ).eInverseAdd( this,
                         SclPackage.CONF_DATA_SET__PARENT_SERVICES, ConfDataSet.class, msgs );
-            }
             msgs = basicSetConfDataSet( newConfDataSet, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfDataSetESet = confDataSetESet;
             confDataSetESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CONF_DATA_SET,
                         newConfDataSet, newConfDataSet, !oldConfDataSetESet ) );
-            }
         }
     }
 
@@ -1226,12 +1248,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CONF_DATA_SET, oldConfDataSet, null, oldConfDataSetESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1248,17 +1268,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) confDataSet ).eInverseRemove( this, SclPackage.CONF_DATA_SET__PARENT_SERVICES,
                     ConfDataSet.class, msgs );
             msgs = basicUnsetConfDataSet( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfDataSetESet = confDataSetESet;
             confDataSetESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CONF_DATA_SET, null,
                         null, oldConfDataSetESet ) );
-            }
         }
     }
 
@@ -1295,12 +1312,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CONF_LNS, oldConfLNs, newConfLNs, !oldConfLNsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1314,26 +1329,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setConfLNs( ConfLNs newConfLNs ) {
         if( newConfLNs != confLNs ) {
             NotificationChain msgs = null;
-            if( confLNs != null ) {
+            if( confLNs != null )
                 msgs = ( ( InternalEObject ) confLNs ).eInverseRemove( this, SclPackage.CONF_LNS__PARENT_SERVICES,
                         ConfLNs.class, msgs );
-            }
-            if( newConfLNs != null ) {
+            if( newConfLNs != null )
                 msgs = ( ( InternalEObject ) newConfLNs ).eInverseAdd( this, SclPackage.CONF_LNS__PARENT_SERVICES,
                         ConfLNs.class, msgs );
-            }
             msgs = basicSetConfLNs( newConfLNs, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfLNsESet = confLNsESet;
             confLNsESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CONF_LNS, newConfLNs,
                         newConfLNs, !oldConfLNsESet ) );
-            }
         }
     }
 
@@ -1350,12 +1360,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CONF_LNS, oldConfLNs, null, oldConfLNsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1372,17 +1380,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) confLNs ).eInverseRemove( this, SclPackage.CONF_LNS__PARENT_SERVICES,
                     ConfLNs.class, msgs );
             msgs = basicUnsetConfLNs( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfLNsESet = confLNsESet;
             confLNsESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CONF_LNS, null, null,
                         oldConfLNsESet ) );
-            }
         }
     }
 
@@ -1419,12 +1424,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CONF_LD_NAME, oldConfLdName, newConfLdName, !oldConfLdNameESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1438,26 +1441,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setConfLdName( ConfLdName newConfLdName ) {
         if( newConfLdName != confLdName ) {
             NotificationChain msgs = null;
-            if( confLdName != null ) {
+            if( confLdName != null )
                 msgs = ( ( InternalEObject ) confLdName ).eInverseRemove( this,
                         SclPackage.CONF_LD_NAME__PARENT_SERVICES, ConfLdName.class, msgs );
-            }
-            if( newConfLdName != null ) {
+            if( newConfLdName != null )
                 msgs = ( ( InternalEObject ) newConfLdName ).eInverseAdd( this,
                         SclPackage.CONF_LD_NAME__PARENT_SERVICES, ConfLdName.class, msgs );
-            }
             msgs = basicSetConfLdName( newConfLdName, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfLdNameESet = confLdNameESet;
             confLdNameESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CONF_LD_NAME,
                         newConfLdName, newConfLdName, !oldConfLdNameESet ) );
-            }
         }
     }
 
@@ -1474,12 +1472,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CONF_LD_NAME, oldConfLdName, null, oldConfLdNameESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1496,17 +1492,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) confLdName ).eInverseRemove( this, SclPackage.CONF_LD_NAME__PARENT_SERVICES,
                     ConfLdName.class, msgs );
             msgs = basicUnsetConfLdName( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfLdNameESet = confLdNameESet;
             confLdNameESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CONF_LD_NAME, null, null,
                         oldConfLdNameESet ) );
-            }
         }
     }
 
@@ -1544,12 +1537,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CONF_LOG_CONTROL, oldConfLogControl, newConfLogControl,
                     !oldConfLogControlESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1563,26 +1554,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setConfLogControl( ConfLogControl newConfLogControl ) {
         if( newConfLogControl != confLogControl ) {
             NotificationChain msgs = null;
-            if( confLogControl != null ) {
+            if( confLogControl != null )
                 msgs = ( ( InternalEObject ) confLogControl ).eInverseRemove( this,
                         SclPackage.CONF_LOG_CONTROL__PARENT_SERVICES, ConfLogControl.class, msgs );
-            }
-            if( newConfLogControl != null ) {
+            if( newConfLogControl != null )
                 msgs = ( ( InternalEObject ) newConfLogControl ).eInverseAdd( this,
                         SclPackage.CONF_LOG_CONTROL__PARENT_SERVICES, ConfLogControl.class, msgs );
-            }
             msgs = basicSetConfLogControl( newConfLogControl, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfLogControlESet = confLogControlESet;
             confLogControlESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CONF_LOG_CONTROL,
                         newConfLogControl, newConfLogControl, !oldConfLogControlESet ) );
-            }
         }
     }
 
@@ -1599,12 +1585,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CONF_LOG_CONTROL, oldConfLogControl, null, oldConfLogControlESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1621,17 +1605,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) confLogControl ).eInverseRemove( this,
                     SclPackage.CONF_LOG_CONTROL__PARENT_SERVICES, ConfLogControl.class, msgs );
             msgs = basicUnsetConfLogControl( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfLogControlESet = confLogControlESet;
             confLogControlESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CONF_LOG_CONTROL, null,
                         null, oldConfLogControlESet ) );
-            }
         }
     }
 
@@ -1670,12 +1651,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CONF_REPORT_CONTROL, oldConfReportControl, newConfReportControl,
                     !oldConfReportControlESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1689,26 +1668,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setConfReportControl( ConfReportControl newConfReportControl ) {
         if( newConfReportControl != confReportControl ) {
             NotificationChain msgs = null;
-            if( confReportControl != null ) {
+            if( confReportControl != null )
                 msgs = ( ( InternalEObject ) confReportControl ).eInverseRemove( this,
                         SclPackage.CONF_REPORT_CONTROL__PARENT_SERVICES, ConfReportControl.class, msgs );
-            }
-            if( newConfReportControl != null ) {
+            if( newConfReportControl != null )
                 msgs = ( ( InternalEObject ) newConfReportControl ).eInverseAdd( this,
                         SclPackage.CONF_REPORT_CONTROL__PARENT_SERVICES, ConfReportControl.class, msgs );
-            }
             msgs = basicSetConfReportControl( newConfReportControl, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfReportControlESet = confReportControlESet;
             confReportControlESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CONF_REPORT_CONTROL,
                         newConfReportControl, newConfReportControl, !oldConfReportControlESet ) );
-            }
         }
     }
 
@@ -1725,12 +1699,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CONF_REPORT_CONTROL, oldConfReportControl, null, oldConfReportControlESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1747,17 +1719,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) confReportControl ).eInverseRemove( this,
                     SclPackage.CONF_REPORT_CONTROL__PARENT_SERVICES, ConfReportControl.class, msgs );
             msgs = basicUnsetConfReportControl( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfReportControlESet = confReportControlESet;
             confReportControlESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CONF_REPORT_CONTROL,
                         null, null, oldConfReportControlESet ) );
-            }
         }
     }
 
@@ -1794,12 +1763,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__CONF_SIG_REF, oldConfSigRef, newConfSigRef, !oldConfSigRefESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1813,26 +1780,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setConfSigRef( ConfSigRef newConfSigRef ) {
         if( newConfSigRef != confSigRef ) {
             NotificationChain msgs = null;
-            if( confSigRef != null ) {
+            if( confSigRef != null )
                 msgs = ( ( InternalEObject ) confSigRef ).eInverseRemove( this,
                         SclPackage.CONF_SIG_REF__PARENT_SERVICES, ConfSigRef.class, msgs );
-            }
-            if( newConfSigRef != null ) {
+            if( newConfSigRef != null )
                 msgs = ( ( InternalEObject ) newConfSigRef ).eInverseAdd( this,
                         SclPackage.CONF_SIG_REF__PARENT_SERVICES, ConfSigRef.class, msgs );
-            }
             msgs = basicSetConfSigRef( newConfSigRef, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfSigRefESet = confSigRefESet;
             confSigRefESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__CONF_SIG_REF,
                         newConfSigRef, newConfSigRef, !oldConfSigRefESet ) );
-            }
         }
     }
 
@@ -1849,12 +1811,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__CONF_SIG_REF, oldConfSigRef, null, oldConfSigRefESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1871,17 +1831,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) confSigRef ).eInverseRemove( this, SclPackage.CONF_SIG_REF__PARENT_SERVICES,
                     ConfSigRef.class, msgs );
             msgs = basicUnsetConfSigRef( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfSigRefESet = confSigRefESet;
             confSigRefESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__CONF_SIG_REF, null, null,
                         oldConfSigRefESet ) );
-            }
         }
     }
 
@@ -1920,12 +1877,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__DATA_OBJECT_DIRECTORY, oldDataObjectDirectory, newDataObjectDirectory,
                     !oldDataObjectDirectoryESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1939,26 +1894,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setDataObjectDirectory( DataObjectDirectory newDataObjectDirectory ) {
         if( newDataObjectDirectory != dataObjectDirectory ) {
             NotificationChain msgs = null;
-            if( dataObjectDirectory != null ) {
+            if( dataObjectDirectory != null )
                 msgs = ( ( InternalEObject ) dataObjectDirectory ).eInverseRemove( this,
                         SclPackage.DATA_OBJECT_DIRECTORY__PARENT_SERVICES, DataObjectDirectory.class, msgs );
-            }
-            if( newDataObjectDirectory != null ) {
+            if( newDataObjectDirectory != null )
                 msgs = ( ( InternalEObject ) newDataObjectDirectory ).eInverseAdd( this,
                         SclPackage.DATA_OBJECT_DIRECTORY__PARENT_SERVICES, DataObjectDirectory.class, msgs );
-            }
             msgs = basicSetDataObjectDirectory( newDataObjectDirectory, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDataObjectDirectoryESet = dataObjectDirectoryESet;
             dataObjectDirectoryESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__DATA_OBJECT_DIRECTORY,
                         newDataObjectDirectory, newDataObjectDirectory, !oldDataObjectDirectoryESet ) );
-            }
         }
     }
 
@@ -1976,12 +1926,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__DATA_OBJECT_DIRECTORY, oldDataObjectDirectory, null,
                     oldDataObjectDirectoryESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -1998,17 +1946,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) dataObjectDirectory ).eInverseRemove( this,
                     SclPackage.DATA_OBJECT_DIRECTORY__PARENT_SERVICES, DataObjectDirectory.class, msgs );
             msgs = basicUnsetDataObjectDirectory( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDataObjectDirectoryESet = dataObjectDirectoryESet;
             dataObjectDirectoryESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__DATA_OBJECT_DIRECTORY,
                         null, null, oldDataObjectDirectoryESet ) );
-            }
         }
     }
 
@@ -2046,12 +1991,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__DATA_SET_DIRECTORY, oldDataSetDirectory, newDataSetDirectory,
                     !oldDataSetDirectoryESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2065,26 +2008,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setDataSetDirectory( DataSetDirectory newDataSetDirectory ) {
         if( newDataSetDirectory != dataSetDirectory ) {
             NotificationChain msgs = null;
-            if( dataSetDirectory != null ) {
+            if( dataSetDirectory != null )
                 msgs = ( ( InternalEObject ) dataSetDirectory ).eInverseRemove( this,
                         SclPackage.DATA_SET_DIRECTORY__PARENT_SERVICES, DataSetDirectory.class, msgs );
-            }
-            if( newDataSetDirectory != null ) {
+            if( newDataSetDirectory != null )
                 msgs = ( ( InternalEObject ) newDataSetDirectory ).eInverseAdd( this,
                         SclPackage.DATA_SET_DIRECTORY__PARENT_SERVICES, DataSetDirectory.class, msgs );
-            }
             msgs = basicSetDataSetDirectory( newDataSetDirectory, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDataSetDirectoryESet = dataSetDirectoryESet;
             dataSetDirectoryESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__DATA_SET_DIRECTORY,
                         newDataSetDirectory, newDataSetDirectory, !oldDataSetDirectoryESet ) );
-            }
         }
     }
 
@@ -2101,12 +2039,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__DATA_SET_DIRECTORY, oldDataSetDirectory, null, oldDataSetDirectoryESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2123,17 +2059,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) dataSetDirectory ).eInverseRemove( this,
                     SclPackage.DATA_SET_DIRECTORY__PARENT_SERVICES, DataSetDirectory.class, msgs );
             msgs = basicUnsetDataSetDirectory( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDataSetDirectoryESet = dataSetDirectoryESet;
             dataSetDirectoryESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__DATA_SET_DIRECTORY, null,
                         null, oldDataSetDirectoryESet ) );
-            }
         }
     }
 
@@ -2171,12 +2104,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__DYN_ASSOCIATION, oldDynAssociation, newDynAssociation,
                     !oldDynAssociationESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2190,26 +2121,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setDynAssociation( DynAssociation newDynAssociation ) {
         if( newDynAssociation != dynAssociation ) {
             NotificationChain msgs = null;
-            if( dynAssociation != null ) {
+            if( dynAssociation != null )
                 msgs = ( ( InternalEObject ) dynAssociation ).eInverseRemove( this,
                         SclPackage.DYN_ASSOCIATION__PARENT_SERVICES, DynAssociation.class, msgs );
-            }
-            if( newDynAssociation != null ) {
+            if( newDynAssociation != null )
                 msgs = ( ( InternalEObject ) newDynAssociation ).eInverseAdd( this,
                         SclPackage.DYN_ASSOCIATION__PARENT_SERVICES, DynAssociation.class, msgs );
-            }
             msgs = basicSetDynAssociation( newDynAssociation, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDynAssociationESet = dynAssociationESet;
             dynAssociationESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__DYN_ASSOCIATION,
                         newDynAssociation, newDynAssociation, !oldDynAssociationESet ) );
-            }
         }
     }
 
@@ -2226,12 +2152,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__DYN_ASSOCIATION, oldDynAssociation, null, oldDynAssociationESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2248,17 +2172,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) dynAssociation ).eInverseRemove( this,
                     SclPackage.DYN_ASSOCIATION__PARENT_SERVICES, DynAssociation.class, msgs );
             msgs = basicUnsetDynAssociation( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDynAssociationESet = dynAssociationESet;
             dynAssociationESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__DYN_ASSOCIATION, null,
                         null, oldDynAssociationESet ) );
-            }
         }
     }
 
@@ -2295,12 +2216,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__DYN_DATA_SET, oldDynDataSet, newDynDataSet, !oldDynDataSetESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2314,26 +2233,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setDynDataSet( DynDataSet newDynDataSet ) {
         if( newDynDataSet != dynDataSet ) {
             NotificationChain msgs = null;
-            if( dynDataSet != null ) {
+            if( dynDataSet != null )
                 msgs = ( ( InternalEObject ) dynDataSet ).eInverseRemove( this,
                         SclPackage.DYN_DATA_SET__PARENT_SERVICES, DynDataSet.class, msgs );
-            }
-            if( newDynDataSet != null ) {
+            if( newDynDataSet != null )
                 msgs = ( ( InternalEObject ) newDynDataSet ).eInverseAdd( this,
                         SclPackage.DYN_DATA_SET__PARENT_SERVICES, DynDataSet.class, msgs );
-            }
             msgs = basicSetDynDataSet( newDynDataSet, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDynDataSetESet = dynDataSetESet;
             dynDataSetESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__DYN_DATA_SET,
                         newDynDataSet, newDynDataSet, !oldDynDataSetESet ) );
-            }
         }
     }
 
@@ -2350,12 +2264,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__DYN_DATA_SET, oldDynDataSet, null, oldDynDataSetESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2372,17 +2284,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) dynDataSet ).eInverseRemove( this, SclPackage.DYN_DATA_SET__PARENT_SERVICES,
                     DynDataSet.class, msgs );
             msgs = basicUnsetDynDataSet( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDynDataSetESet = dynDataSetESet;
             dynDataSetESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__DYN_DATA_SET, null, null,
                         oldDynDataSetESet ) );
-            }
         }
     }
 
@@ -2419,12 +2328,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__FILE_HANDLING, oldFileHandling, newFileHandling, !oldFileHandlingESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2438,26 +2345,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setFileHandling( FileHandling newFileHandling ) {
         if( newFileHandling != fileHandling ) {
             NotificationChain msgs = null;
-            if( fileHandling != null ) {
+            if( fileHandling != null )
                 msgs = ( ( InternalEObject ) fileHandling ).eInverseRemove( this,
                         SclPackage.FILE_HANDLING__PARENT_SERVICES, FileHandling.class, msgs );
-            }
-            if( newFileHandling != null ) {
+            if( newFileHandling != null )
                 msgs = ( ( InternalEObject ) newFileHandling ).eInverseAdd( this,
                         SclPackage.FILE_HANDLING__PARENT_SERVICES, FileHandling.class, msgs );
-            }
             msgs = basicSetFileHandling( newFileHandling, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldFileHandlingESet = fileHandlingESet;
             fileHandlingESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__FILE_HANDLING,
                         newFileHandling, newFileHandling, !oldFileHandlingESet ) );
-            }
         }
     }
 
@@ -2474,12 +2376,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__FILE_HANDLING, oldFileHandling, null, oldFileHandlingESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2496,17 +2396,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) fileHandling ).eInverseRemove( this, SclPackage.FILE_HANDLING__PARENT_SERVICES,
                     FileHandling.class, msgs );
             msgs = basicUnsetFileHandling( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldFileHandlingESet = fileHandlingESet;
             fileHandlingESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__FILE_HANDLING, null,
                         null, oldFileHandlingESet ) );
-            }
         }
     }
 
@@ -2543,12 +2440,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GOOSE,
                     oldGOOSE, newGOOSE, !oldGOOSEESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2562,26 +2457,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGOOSE( GOOSE newGOOSE ) {
         if( newGOOSE != goose ) {
             NotificationChain msgs = null;
-            if( goose != null ) {
+            if( goose != null )
                 msgs = ( ( InternalEObject ) goose ).eInverseRemove( this, SclPackage.GOOSE__PARENT_SERVICES,
                         GOOSE.class, msgs );
-            }
-            if( newGOOSE != null ) {
+            if( newGOOSE != null )
                 msgs = ( ( InternalEObject ) newGOOSE ).eInverseAdd( this, SclPackage.GOOSE__PARENT_SERVICES,
                         GOOSE.class, msgs );
-            }
             msgs = basicSetGOOSE( newGOOSE, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGOOSEESet = gooseESet;
             gooseESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GOOSE, newGOOSE, newGOOSE,
                         !oldGOOSEESet ) );
-            }
         }
     }
 
@@ -2598,12 +2488,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GOOSE, oldGOOSE, null, oldGOOSEESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2620,17 +2508,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) goose ).eInverseRemove( this, SclPackage.GOOSE__PARENT_SERVICES, GOOSE.class,
                     msgs );
             msgs = basicUnsetGOOSE( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGOOSEESet = gooseESet;
             gooseESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GOOSE, null, null,
                         oldGOOSEESet ) );
-            }
         }
     }
 
@@ -2667,12 +2552,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__GSE_DIR, oldGSEDir, newGSEDir, !oldGSEDirESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2686,26 +2569,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGSEDir( GSEDir newGSEDir ) {
         if( newGSEDir != gseDir ) {
             NotificationChain msgs = null;
-            if( gseDir != null ) {
+            if( gseDir != null )
                 msgs = ( ( InternalEObject ) gseDir ).eInverseRemove( this, SclPackage.GSE_DIR__PARENT_SERVICES,
                         GSEDir.class, msgs );
-            }
-            if( newGSEDir != null ) {
+            if( newGSEDir != null )
                 msgs = ( ( InternalEObject ) newGSEDir ).eInverseAdd( this, SclPackage.GSE_DIR__PARENT_SERVICES,
                         GSEDir.class, msgs );
-            }
             msgs = basicSetGSEDir( newGSEDir, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGSEDirESet = gseDirESet;
             gseDirESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GSE_DIR, newGSEDir,
                         newGSEDir, !oldGSEDirESet ) );
-            }
         }
     }
 
@@ -2722,12 +2600,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GSE_DIR, oldGSEDir, null, oldGSEDirESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2744,17 +2620,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) gseDir ).eInverseRemove( this, SclPackage.GSE_DIR__PARENT_SERVICES,
                     GSEDir.class, msgs );
             msgs = basicUnsetGSEDir( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGSEDirESet = gseDirESet;
             gseDirESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GSE_DIR, null, null,
                         oldGSEDirESet ) );
-            }
         }
     }
 
@@ -2791,12 +2664,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__GSE_SETTINGS, oldGSESettings, newGSESettings, !oldGSESettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2810,26 +2681,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGSESettings( GSESettings newGSESettings ) {
         if( newGSESettings != gseSettings ) {
             NotificationChain msgs = null;
-            if( gseSettings != null ) {
+            if( gseSettings != null )
                 msgs = ( ( InternalEObject ) gseSettings ).eInverseRemove( this,
                         SclPackage.GSE_SETTINGS__PARENT_SERVICES, GSESettings.class, msgs );
-            }
-            if( newGSESettings != null ) {
+            if( newGSESettings != null )
                 msgs = ( ( InternalEObject ) newGSESettings ).eInverseAdd( this,
                         SclPackage.GSE_SETTINGS__PARENT_SERVICES, GSESettings.class, msgs );
-            }
             msgs = basicSetGSESettings( newGSESettings, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGSESettingsESet = gseSettingsESet;
             gseSettingsESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GSE_SETTINGS,
                         newGSESettings, newGSESettings, !oldGSESettingsESet ) );
-            }
         }
     }
 
@@ -2846,12 +2712,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GSE_SETTINGS, oldGSESettings, null, oldGSESettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2868,17 +2732,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) gseSettings ).eInverseRemove( this, SclPackage.GSE_SETTINGS__PARENT_SERVICES,
                     GSESettings.class, msgs );
             msgs = basicUnsetGSESettings( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGSESettingsESet = gseSettingsESet;
             gseSettingsESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GSE_SETTINGS, null, null,
                         oldGSESettingsESet ) );
-            }
         }
     }
 
@@ -2915,12 +2776,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GSSE,
                     oldGSSE, newGSSE, !oldGSSEESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2934,26 +2793,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGSSE( GSSE newGSSE ) {
         if( newGSSE != gsse ) {
             NotificationChain msgs = null;
-            if( gsse != null ) {
+            if( gsse != null )
                 msgs = ( ( InternalEObject ) gsse ).eInverseRemove( this, SclPackage.GSSE__PARENT_SERVICES, GSSE.class,
                         msgs );
-            }
-            if( newGSSE != null ) {
+            if( newGSSE != null )
                 msgs = ( ( InternalEObject ) newGSSE ).eInverseAdd( this, SclPackage.GSSE__PARENT_SERVICES, GSSE.class,
                         msgs );
-            }
             msgs = basicSetGSSE( newGSSE, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGSSEESet = gsseESet;
             gsseESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GSSE, newGSSE, newGSSE,
                         !oldGSSEESet ) );
-            }
         }
     }
 
@@ -2970,12 +2824,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GSSE,
                     oldGSSE, null, oldGSSEESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -2992,17 +2844,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) gsse ).eInverseRemove( this, SclPackage.GSSE__PARENT_SERVICES, GSSE.class,
                     msgs );
             msgs = basicUnsetGSSE( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGSSEESet = gsseESet;
             gsseESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GSSE, null, null,
                         oldGSSEESet ) );
-            }
         }
     }
 
@@ -3039,12 +2888,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__GET_CB_VALUES, oldGetCBValues, newGetCBValues, !oldGetCBValuesESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3058,26 +2905,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGetCBValues( GetCBValues newGetCBValues ) {
         if( newGetCBValues != getCBValues ) {
             NotificationChain msgs = null;
-            if( getCBValues != null ) {
+            if( getCBValues != null )
                 msgs = ( ( InternalEObject ) getCBValues ).eInverseRemove( this,
                         SclPackage.GET_CB_VALUES__PARENT_SERVICES, GetCBValues.class, msgs );
-            }
-            if( newGetCBValues != null ) {
+            if( newGetCBValues != null )
                 msgs = ( ( InternalEObject ) newGetCBValues ).eInverseAdd( this,
                         SclPackage.GET_CB_VALUES__PARENT_SERVICES, GetCBValues.class, msgs );
-            }
             msgs = basicSetGetCBValues( newGetCBValues, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetCBValuesESet = getCBValuesESet;
             getCBValuesESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GET_CB_VALUES,
                         newGetCBValues, newGetCBValues, !oldGetCBValuesESet ) );
-            }
         }
     }
 
@@ -3094,12 +2936,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GET_CB_VALUES, oldGetCBValues, null, oldGetCBValuesESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3116,17 +2956,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) getCBValues ).eInverseRemove( this, SclPackage.GET_CB_VALUES__PARENT_SERVICES,
                     GetCBValues.class, msgs );
             msgs = basicUnsetGetCBValues( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetCBValuesESet = getCBValuesESet;
             getCBValuesESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GET_CB_VALUES, null,
                         null, oldGetCBValuesESet ) );
-            }
         }
     }
 
@@ -3165,12 +3002,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__GET_DATA_OBJECT_DEFINITION, oldGetDataObjectDefinition,
                     newGetDataObjectDefinition, !oldGetDataObjectDefinitionESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3184,26 +3019,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGetDataObjectDefinition( GetDataObjectDefinition newGetDataObjectDefinition ) {
         if( newGetDataObjectDefinition != getDataObjectDefinition ) {
             NotificationChain msgs = null;
-            if( getDataObjectDefinition != null ) {
+            if( getDataObjectDefinition != null )
                 msgs = ( ( InternalEObject ) getDataObjectDefinition ).eInverseRemove( this,
                         SclPackage.GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES, GetDataObjectDefinition.class, msgs );
-            }
-            if( newGetDataObjectDefinition != null ) {
+            if( newGetDataObjectDefinition != null )
                 msgs = ( ( InternalEObject ) newGetDataObjectDefinition ).eInverseAdd( this,
                         SclPackage.GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES, GetDataObjectDefinition.class, msgs );
-            }
             msgs = basicSetGetDataObjectDefinition( newGetDataObjectDefinition, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetDataObjectDefinitionESet = getDataObjectDefinitionESet;
             getDataObjectDefinitionESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GET_DATA_OBJECT_DEFINITION,
                         newGetDataObjectDefinition, newGetDataObjectDefinition, !oldGetDataObjectDefinitionESet ) );
-            }
         }
     }
 
@@ -3221,12 +3051,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GET_DATA_OBJECT_DEFINITION, oldGetDataObjectDefinition, null,
                     oldGetDataObjectDefinitionESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3243,17 +3071,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) getDataObjectDefinition ).eInverseRemove( this,
                     SclPackage.GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES, GetDataObjectDefinition.class, msgs );
             msgs = basicUnsetGetDataObjectDefinition( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetDataObjectDefinitionESet = getDataObjectDefinitionESet;
             getDataObjectDefinitionESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.SERVICES__GET_DATA_OBJECT_DEFINITION, null, null, oldGetDataObjectDefinitionESet ) );
-            }
         }
     }
 
@@ -3291,12 +3116,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__GET_DATA_SET_VALUE, oldGetDataSetValue, newGetDataSetValue,
                     !oldGetDataSetValueESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3310,26 +3133,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGetDataSetValue( GetDataSetValue newGetDataSetValue ) {
         if( newGetDataSetValue != getDataSetValue ) {
             NotificationChain msgs = null;
-            if( getDataSetValue != null ) {
+            if( getDataSetValue != null )
                 msgs = ( ( InternalEObject ) getDataSetValue ).eInverseRemove( this,
                         SclPackage.GET_DATA_SET_VALUE__PARENT_SERVICES, GetDataSetValue.class, msgs );
-            }
-            if( newGetDataSetValue != null ) {
+            if( newGetDataSetValue != null )
                 msgs = ( ( InternalEObject ) newGetDataSetValue ).eInverseAdd( this,
                         SclPackage.GET_DATA_SET_VALUE__PARENT_SERVICES, GetDataSetValue.class, msgs );
-            }
             msgs = basicSetGetDataSetValue( newGetDataSetValue, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetDataSetValueESet = getDataSetValueESet;
             getDataSetValueESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GET_DATA_SET_VALUE,
                         newGetDataSetValue, newGetDataSetValue, !oldGetDataSetValueESet ) );
-            }
         }
     }
 
@@ -3346,12 +3164,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GET_DATA_SET_VALUE, oldGetDataSetValue, null, oldGetDataSetValueESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3368,17 +3184,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) getDataSetValue ).eInverseRemove( this,
                     SclPackage.GET_DATA_SET_VALUE__PARENT_SERVICES, GetDataSetValue.class, msgs );
             msgs = basicUnsetGetDataSetValue( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetDataSetValueESet = getDataSetValueESet;
             getDataSetValueESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GET_DATA_SET_VALUE, null,
                         null, oldGetDataSetValueESet ) );
-            }
         }
     }
 
@@ -3415,12 +3228,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__GET_DIRECTORY, oldGetDirectory, newGetDirectory, !oldGetDirectoryESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3434,26 +3245,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setGetDirectory( GetDirectory newGetDirectory ) {
         if( newGetDirectory != getDirectory ) {
             NotificationChain msgs = null;
-            if( getDirectory != null ) {
+            if( getDirectory != null )
                 msgs = ( ( InternalEObject ) getDirectory ).eInverseRemove( this,
                         SclPackage.GET_DIRECTORY__PARENT_SERVICES, GetDirectory.class, msgs );
-            }
-            if( newGetDirectory != null ) {
+            if( newGetDirectory != null )
                 msgs = ( ( InternalEObject ) newGetDirectory ).eInverseAdd( this,
                         SclPackage.GET_DIRECTORY__PARENT_SERVICES, GetDirectory.class, msgs );
-            }
             msgs = basicSetGetDirectory( newGetDirectory, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetDirectoryESet = getDirectoryESet;
             getDirectoryESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__GET_DIRECTORY,
                         newGetDirectory, newGetDirectory, !oldGetDirectoryESet ) );
-            }
         }
     }
 
@@ -3470,12 +3276,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__GET_DIRECTORY, oldGetDirectory, null, oldGetDirectoryESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3492,17 +3296,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) getDirectory ).eInverseRemove( this, SclPackage.GET_DIRECTORY__PARENT_SERVICES,
                     GetDirectory.class, msgs );
             msgs = basicUnsetGetDirectory( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldGetDirectoryESet = getDirectoryESet;
             getDirectoryESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__GET_DIRECTORY, null,
                         null, oldGetDirectoryESet ) );
-            }
         }
     }
 
@@ -3523,9 +3324,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      */
     @Override
     public IED getParentIED() {
-        if( eContainerFeatureID() != SclPackage.SERVICES__PARENT_IED ) {
-            return null;
-        }
+        if( eContainerFeatureID() != SclPackage.SERVICES__PARENT_IED ) return null;
         return ( IED ) eInternalContainer();
     }
 
@@ -3548,26 +3347,20 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setParentIED( IED newParentIED ) {
         if( newParentIED != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SERVICES__PARENT_IED && newParentIED != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentIED ) ) {
+            if( EcoreUtil.isAncestor( this, newParentIED ) )
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
-            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null ) {
+            if( eInternalContainer() != null )
                 msgs = eBasicRemoveFromContainer( msgs );
-            }
-            if( newParentIED != null ) {
+            if( newParentIED != null )
                 msgs = ( ( InternalEObject ) newParentIED ).eInverseAdd( this, SclPackage.IED__SERVICES, IED.class,
                         msgs );
-            }
             msgs = basicSetParentIED( newParentIED, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
-        else if( eNotificationRequired() ) {
+        else if( eNotificationRequired() )
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__PARENT_IED, newParentIED,
                     newParentIED ) );
-        }
     }
 
     /**
@@ -3593,12 +3386,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__LOG_SETTINGS, oldLogSettings, newLogSettings, !oldLogSettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3612,26 +3403,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setLogSettings( LogSettings newLogSettings ) {
         if( newLogSettings != logSettings ) {
             NotificationChain msgs = null;
-            if( logSettings != null ) {
+            if( logSettings != null )
                 msgs = ( ( InternalEObject ) logSettings ).eInverseRemove( this,
                         SclPackage.LOG_SETTINGS__PARENT_SERVICES, LogSettings.class, msgs );
-            }
-            if( newLogSettings != null ) {
+            if( newLogSettings != null )
                 msgs = ( ( InternalEObject ) newLogSettings ).eInverseAdd( this,
                         SclPackage.LOG_SETTINGS__PARENT_SERVICES, LogSettings.class, msgs );
-            }
             msgs = basicSetLogSettings( newLogSettings, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldLogSettingsESet = logSettingsESet;
             logSettingsESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__LOG_SETTINGS,
                         newLogSettings, newLogSettings, !oldLogSettingsESet ) );
-            }
         }
     }
 
@@ -3648,12 +3434,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__LOG_SETTINGS, oldLogSettings, null, oldLogSettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3670,17 +3454,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) logSettings ).eInverseRemove( this, SclPackage.LOG_SETTINGS__PARENT_SERVICES,
                     LogSettings.class, msgs );
             msgs = basicUnsetLogSettings( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldLogSettingsESet = logSettingsESet;
             logSettingsESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__LOG_SETTINGS, null, null,
                         oldLogSettingsESet ) );
-            }
         }
     }
 
@@ -3717,12 +3498,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__READ_WRITE, oldReadWrite, newReadWrite, !oldReadWriteESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3736,26 +3515,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setReadWrite( ReadWrite newReadWrite ) {
         if( newReadWrite != readWrite ) {
             NotificationChain msgs = null;
-            if( readWrite != null ) {
+            if( readWrite != null )
                 msgs = ( ( InternalEObject ) readWrite ).eInverseRemove( this, SclPackage.READ_WRITE__PARENT_SERVICES,
                         ReadWrite.class, msgs );
-            }
-            if( newReadWrite != null ) {
+            if( newReadWrite != null )
                 msgs = ( ( InternalEObject ) newReadWrite ).eInverseAdd( this, SclPackage.READ_WRITE__PARENT_SERVICES,
                         ReadWrite.class, msgs );
-            }
             msgs = basicSetReadWrite( newReadWrite, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldReadWriteESet = readWriteESet;
             readWriteESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__READ_WRITE, newReadWrite,
                         newReadWrite, !oldReadWriteESet ) );
-            }
         }
     }
 
@@ -3772,12 +3546,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__READ_WRITE, oldReadWrite, null, oldReadWriteESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3794,17 +3566,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) readWrite ).eInverseRemove( this, SclPackage.READ_WRITE__PARENT_SERVICES,
                     ReadWrite.class, msgs );
             msgs = basicUnsetReadWrite( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldReadWriteESet = readWriteESet;
             readWriteESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__READ_WRITE, null, null,
                         oldReadWriteESet ) );
-            }
         }
     }
 
@@ -3841,12 +3610,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__RED_PROT, oldRedProt, newRedProt, !oldRedProtESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3860,26 +3627,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setRedProt( RedProt newRedProt ) {
         if( newRedProt != redProt ) {
             NotificationChain msgs = null;
-            if( redProt != null ) {
+            if( redProt != null )
                 msgs = ( ( InternalEObject ) redProt ).eInverseRemove( this, SclPackage.RED_PROT__PARENT_SERVICES,
                         RedProt.class, msgs );
-            }
-            if( newRedProt != null ) {
+            if( newRedProt != null )
                 msgs = ( ( InternalEObject ) newRedProt ).eInverseAdd( this, SclPackage.RED_PROT__PARENT_SERVICES,
                         RedProt.class, msgs );
-            }
             msgs = basicSetRedProt( newRedProt, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRedProtESet = redProtESet;
             redProtESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__RED_PROT, newRedProt,
                         newRedProt, !oldRedProtESet ) );
-            }
         }
     }
 
@@ -3896,12 +3658,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__RED_PROT, oldRedProt, null, oldRedProtESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3918,17 +3678,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) redProt ).eInverseRemove( this, SclPackage.RED_PROT__PARENT_SERVICES,
                     RedProt.class, msgs );
             msgs = basicUnsetRedProt( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRedProtESet = redProtESet;
             redProtESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__RED_PROT, null, null,
                         oldRedProtESet ) );
-            }
         }
     }
 
@@ -3966,12 +3723,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__REPORT_SETTINGS, oldReportSettings, newReportSettings,
                     !oldReportSettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -3985,26 +3740,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setReportSettings( ReportSettings newReportSettings ) {
         if( newReportSettings != reportSettings ) {
             NotificationChain msgs = null;
-            if( reportSettings != null ) {
+            if( reportSettings != null )
                 msgs = ( ( InternalEObject ) reportSettings ).eInverseRemove( this,
                         SclPackage.REPORT_SETTINGS__PARENT_SERVICES, ReportSettings.class, msgs );
-            }
-            if( newReportSettings != null ) {
+            if( newReportSettings != null )
                 msgs = ( ( InternalEObject ) newReportSettings ).eInverseAdd( this,
                         SclPackage.REPORT_SETTINGS__PARENT_SERVICES, ReportSettings.class, msgs );
-            }
             msgs = basicSetReportSettings( newReportSettings, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldReportSettingsESet = reportSettingsESet;
             reportSettingsESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__REPORT_SETTINGS,
                         newReportSettings, newReportSettings, !oldReportSettingsESet ) );
-            }
         }
     }
 
@@ -4021,12 +3771,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__REPORT_SETTINGS, oldReportSettings, null, oldReportSettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4043,17 +3791,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) reportSettings ).eInverseRemove( this,
                     SclPackage.REPORT_SETTINGS__PARENT_SERVICES, ReportSettings.class, msgs );
             msgs = basicUnsetReportSettings( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldReportSettingsESet = reportSettingsESet;
             reportSettingsESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__REPORT_SETTINGS, null,
                         null, oldReportSettingsESet ) );
-            }
         }
     }
 
@@ -4090,12 +3835,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SM_VSC,
                     oldSMVsc, newSMVsc, !oldSMVscESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4109,26 +3852,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setSMVsc( SMVsc newSMVsc ) {
         if( newSMVsc != smVsc ) {
             NotificationChain msgs = null;
-            if( smVsc != null ) {
+            if( smVsc != null )
                 msgs = ( ( InternalEObject ) smVsc ).eInverseRemove( this, SclPackage.SM_VSC__PARENT_SERVICES,
                         SMVsc.class, msgs );
-            }
-            if( newSMVsc != null ) {
+            if( newSMVsc != null )
                 msgs = ( ( InternalEObject ) newSMVsc ).eInverseAdd( this, SclPackage.SM_VSC__PARENT_SERVICES,
                         SMVsc.class, msgs );
-            }
             msgs = basicSetSMVsc( newSMVsc, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSMVscESet = smVscESet;
             smVscESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SM_VSC, newSMVsc, newSMVsc,
                         !oldSMVscESet ) );
-            }
         }
     }
 
@@ -4145,12 +3883,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__SM_VSC, oldSMVsc, null, oldSMVscESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4167,17 +3903,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) smVsc ).eInverseRemove( this, SclPackage.SM_VSC__PARENT_SERVICES, SMVsc.class,
                     msgs );
             msgs = basicUnsetSMVsc( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSMVscESet = smVscESet;
             smVscESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SM_VSC, null, null,
                         oldSMVscESet ) );
-            }
         }
     }
 
@@ -4215,12 +3948,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__SUP_SUBSCRIPTION, oldSupSubscription, newSupSubscription,
                     !oldSupSubscriptionESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4234,26 +3965,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setSupSubscription( SupSubscription newSupSubscription ) {
         if( newSupSubscription != supSubscription ) {
             NotificationChain msgs = null;
-            if( supSubscription != null ) {
+            if( supSubscription != null )
                 msgs = ( ( InternalEObject ) supSubscription ).eInverseRemove( this,
                         SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES, SupSubscription.class, msgs );
-            }
-            if( newSupSubscription != null ) {
+            if( newSupSubscription != null )
                 msgs = ( ( InternalEObject ) newSupSubscription ).eInverseAdd( this,
                         SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES, SupSubscription.class, msgs );
-            }
             msgs = basicSetSupSubscription( newSupSubscription, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSupSubscriptionESet = supSubscriptionESet;
             supSubscriptionESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SUP_SUBSCRIPTION,
                         newSupSubscription, newSupSubscription, !oldSupSubscriptionESet ) );
-            }
         }
     }
 
@@ -4270,12 +3996,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__SUP_SUBSCRIPTION, oldSupSubscription, null, oldSupSubscriptionESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4292,17 +4016,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) supSubscription ).eInverseRemove( this,
                     SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES, SupSubscription.class, msgs );
             msgs = basicUnsetSupSubscription( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSupSubscriptionESet = supSubscriptionESet;
             supSubscriptionESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SUP_SUBSCRIPTION, null,
                         null, oldSupSubscriptionESet ) );
-            }
         }
     }
 
@@ -4339,12 +4060,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__VALUE_HANDLING, oldValueHandling, newValueHandling, !oldValueHandlingESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4358,26 +4077,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setValueHandling( ValueHandling newValueHandling ) {
         if( newValueHandling != valueHandling ) {
             NotificationChain msgs = null;
-            if( valueHandling != null ) {
+            if( valueHandling != null )
                 msgs = ( ( InternalEObject ) valueHandling ).eInverseRemove( this,
                         SclPackage.VALUE_HANDLING__PARENT_SERVICES, ValueHandling.class, msgs );
-            }
-            if( newValueHandling != null ) {
+            if( newValueHandling != null )
                 msgs = ( ( InternalEObject ) newValueHandling ).eInverseAdd( this,
                         SclPackage.VALUE_HANDLING__PARENT_SERVICES, ValueHandling.class, msgs );
-            }
             msgs = basicSetValueHandling( newValueHandling, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldValueHandlingESet = valueHandlingESet;
             valueHandlingESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__VALUE_HANDLING,
                         newValueHandling, newValueHandling, !oldValueHandlingESet ) );
-            }
         }
     }
 
@@ -4394,12 +4108,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__VALUE_HANDLING, oldValueHandling, null, oldValueHandlingESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4416,17 +4128,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) valueHandling ).eInverseRemove( this,
                     SclPackage.VALUE_HANDLING__PARENT_SERVICES, ValueHandling.class, msgs );
             msgs = basicUnsetValueHandling( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldValueHandlingESet = valueHandlingESet;
             valueHandlingESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__VALUE_HANDLING, null,
                         null, oldValueHandlingESet ) );
-            }
         }
     }
 
@@ -4464,12 +4173,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__SET_DATA_SET_VALUE, oldSetDataSetValue, newSetDataSetValue,
                     !oldSetDataSetValueESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4483,26 +4190,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setSetDataSetValue( SetDataSetValue newSetDataSetValue ) {
         if( newSetDataSetValue != setDataSetValue ) {
             NotificationChain msgs = null;
-            if( setDataSetValue != null ) {
+            if( setDataSetValue != null )
                 msgs = ( ( InternalEObject ) setDataSetValue ).eInverseRemove( this,
                         SclPackage.SET_DATA_SET_VALUE__PARENT_SERVICES, SetDataSetValue.class, msgs );
-            }
-            if( newSetDataSetValue != null ) {
+            if( newSetDataSetValue != null )
                 msgs = ( ( InternalEObject ) newSetDataSetValue ).eInverseAdd( this,
                         SclPackage.SET_DATA_SET_VALUE__PARENT_SERVICES, SetDataSetValue.class, msgs );
-            }
             msgs = basicSetSetDataSetValue( newSetDataSetValue, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSetDataSetValueESet = setDataSetValueESet;
             setDataSetValueESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SET_DATA_SET_VALUE,
                         newSetDataSetValue, newSetDataSetValue, !oldSetDataSetValueESet ) );
-            }
         }
     }
 
@@ -4519,12 +4221,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__SET_DATA_SET_VALUE, oldSetDataSetValue, null, oldSetDataSetValueESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4541,17 +4241,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) setDataSetValue ).eInverseRemove( this,
                     SclPackage.SET_DATA_SET_VALUE__PARENT_SERVICES, SetDataSetValue.class, msgs );
             msgs = basicUnsetSetDataSetValue( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSetDataSetValueESet = setDataSetValueESet;
             setDataSetValueESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SET_DATA_SET_VALUE, null,
                         null, oldSetDataSetValueESet ) );
-            }
         }
     }
 
@@ -4588,12 +4285,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__SETTING_GROUPS, oldSettingGroups, newSettingGroups, !oldSettingGroupsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4607,26 +4302,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setSettingGroups( SettingGroups newSettingGroups ) {
         if( newSettingGroups != settingGroups ) {
             NotificationChain msgs = null;
-            if( settingGroups != null ) {
+            if( settingGroups != null )
                 msgs = ( ( InternalEObject ) settingGroups ).eInverseRemove( this,
                         SclPackage.SETTING_GROUPS__PARENT_SERVICES, SettingGroups.class, msgs );
-            }
-            if( newSettingGroups != null ) {
+            if( newSettingGroups != null )
                 msgs = ( ( InternalEObject ) newSettingGroups ).eInverseAdd( this,
                         SclPackage.SETTING_GROUPS__PARENT_SERVICES, SettingGroups.class, msgs );
-            }
             msgs = basicSetSettingGroups( newSettingGroups, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSettingGroupsESet = settingGroupsESet;
             settingGroupsESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SETTING_GROUPS,
                         newSettingGroups, newSettingGroups, !oldSettingGroupsESet ) );
-            }
         }
     }
 
@@ -4643,12 +4333,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__SETTING_GROUPS, oldSettingGroups, null, oldSettingGroupsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4665,17 +4353,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) settingGroups ).eInverseRemove( this,
                     SclPackage.SETTING_GROUPS__PARENT_SERVICES, SettingGroups.class, msgs );
             msgs = basicUnsetSettingGroups( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSettingGroupsESet = settingGroupsESet;
             settingGroupsESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SETTING_GROUPS, null,
                         null, oldSettingGroupsESet ) );
-            }
         }
     }
 
@@ -4712,12 +4397,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__TIME_SYNC_PROT, oldTimeSyncProt, newTimeSyncProt, !oldTimeSyncProtESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4731,26 +4414,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setTimeSyncProt( TimeSyncProt newTimeSyncProt ) {
         if( newTimeSyncProt != timeSyncProt ) {
             NotificationChain msgs = null;
-            if( timeSyncProt != null ) {
+            if( timeSyncProt != null )
                 msgs = ( ( InternalEObject ) timeSyncProt ).eInverseRemove( this,
                         SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, TimeSyncProt.class, msgs );
-            }
-            if( newTimeSyncProt != null ) {
+            if( newTimeSyncProt != null )
                 msgs = ( ( InternalEObject ) newTimeSyncProt ).eInverseAdd( this,
                         SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, TimeSyncProt.class, msgs );
-            }
             msgs = basicSetTimeSyncProt( newTimeSyncProt, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTimeSyncProtESet = timeSyncProtESet;
             timeSyncProtESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__TIME_SYNC_PROT,
                         newTimeSyncProt, newTimeSyncProt, !oldTimeSyncProtESet ) );
-            }
         }
     }
 
@@ -4767,12 +4445,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__TIME_SYNC_PROT, oldTimeSyncProt, null, oldTimeSyncProtESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4789,17 +4465,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) timeSyncProt ).eInverseRemove( this,
                     SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, TimeSyncProt.class, msgs );
             msgs = basicUnsetTimeSyncProt( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTimeSyncProtESet = timeSyncProtESet;
             timeSyncProtESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__TIME_SYNC_PROT, null,
                         null, oldTimeSyncProtESet ) );
-            }
         }
     }
 
@@ -4838,12 +4511,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL, oldTimerActivatedControl, newTimerActivatedControl,
                     !oldTimerActivatedControlESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4857,26 +4528,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setTimerActivatedControl( TimerActivatedControl newTimerActivatedControl ) {
         if( newTimerActivatedControl != timerActivatedControl ) {
             NotificationChain msgs = null;
-            if( timerActivatedControl != null ) {
+            if( timerActivatedControl != null )
                 msgs = ( ( InternalEObject ) timerActivatedControl ).eInverseRemove( this,
                         SclPackage.TIMER_ACTIVATED_CONTROL__PARENT_SERVICES, TimerActivatedControl.class, msgs );
-            }
-            if( newTimerActivatedControl != null ) {
+            if( newTimerActivatedControl != null )
                 msgs = ( ( InternalEObject ) newTimerActivatedControl ).eInverseAdd( this,
                         SclPackage.TIMER_ACTIVATED_CONTROL__PARENT_SERVICES, TimerActivatedControl.class, msgs );
-            }
             msgs = basicSetTimerActivatedControl( newTimerActivatedControl, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTimerActivatedControlESet = timerActivatedControlESet;
             timerActivatedControlESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL,
                         newTimerActivatedControl, newTimerActivatedControl, !oldTimerActivatedControlESet ) );
-            }
         }
     }
 
@@ -4894,12 +4560,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL, oldTimerActivatedControl, null,
                     oldTimerActivatedControlESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4916,17 +4580,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) timerActivatedControl ).eInverseRemove( this,
                     SclPackage.TIMER_ACTIVATED_CONTROL__PARENT_SERVICES, TimerActivatedControl.class, msgs );
             msgs = basicUnsetTimerActivatedControl( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTimerActivatedControlESet = timerActivatedControlESet;
             timerActivatedControlESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL,
                         null, null, oldTimerActivatedControlESet ) );
-            }
         }
     }
 
@@ -4963,12 +4624,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICES__SMV_SETTINGS, oldSMVSettings, newSMVSettings, !oldSMVSettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -4982,26 +4641,21 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void setSMVSettings( SMVSettings newSMVSettings ) {
         if( newSMVSettings != smvSettings ) {
             NotificationChain msgs = null;
-            if( smvSettings != null ) {
+            if( smvSettings != null )
                 msgs = ( ( InternalEObject ) smvSettings ).eInverseRemove( this,
                         SclPackage.SMV_SETTINGS__PARENT_SERVICES, SMVSettings.class, msgs );
-            }
-            if( newSMVSettings != null ) {
+            if( newSMVSettings != null )
                 msgs = ( ( InternalEObject ) newSMVSettings ).eInverseAdd( this,
                         SclPackage.SMV_SETTINGS__PARENT_SERVICES, SMVSettings.class, msgs );
-            }
             msgs = basicSetSMVSettings( newSMVSettings, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSMVSettingsESet = smvSettingsESet;
             smvSettingsESet = true;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SMV_SETTINGS,
                         newSMVSettings, newSMVSettings, !oldSMVSettingsESet ) );
-            }
         }
     }
 
@@ -5018,12 +4672,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICES__SMV_SETTINGS, oldSMVSettings, null, oldSMVSettingsESet );
-            if( msgs == null ) {
+            if( msgs == null )
                 msgs = notification;
-            }
-            else {
+            else
                 msgs.add( notification );
-            }
         }
         return msgs;
     }
@@ -5040,17 +4692,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             msgs = ( ( InternalEObject ) smvSettings ).eInverseRemove( this, SclPackage.SMV_SETTINGS__PARENT_SERVICES,
                     SMVSettings.class, msgs );
             msgs = basicUnsetSMVSettings( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSMVSettingsESet = smvSettingsESet;
             smvSettingsESet = false;
-            if( eNotificationRequired() ) {
+            if( eNotificationRequired() )
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SMV_SETTINGS, null, null,
                         oldSMVSettingsESet ) );
-            }
         }
     }
 
@@ -5070,216 +4719,533 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * @generated
      */
     @Override
+    public MultiAPPerSubNet getMultiAPPerSubNet() {
+        return multiAPPerSubNet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetMultiAPPerSubNet( MultiAPPerSubNet newMultiAPPerSubNet, NotificationChain msgs ) {
+        MultiAPPerSubNet oldMultiAPPerSubNet = multiAPPerSubNet;
+        multiAPPerSubNet = newMultiAPPerSubNet;
+        boolean oldMultiAPPerSubNetESet = multiAPPerSubNetESet;
+        multiAPPerSubNetESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SERVICES__MULTI_AP_PER_SUB_NET, oldMultiAPPerSubNet, newMultiAPPerSubNet,
+                    !oldMultiAPPerSubNetESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setMultiAPPerSubNet( MultiAPPerSubNet newMultiAPPerSubNet ) {
+        if( newMultiAPPerSubNet != multiAPPerSubNet ) {
+            NotificationChain msgs = null;
+            if( multiAPPerSubNet != null )
+                msgs = ( ( InternalEObject ) multiAPPerSubNet ).eInverseRemove( this,
+                        SclPackage.MULTI_AP_PER_SUB_NET__PARENT_SERVICES, MultiAPPerSubNet.class, msgs );
+            if( newMultiAPPerSubNet != null )
+                msgs = ( ( InternalEObject ) newMultiAPPerSubNet ).eInverseAdd( this,
+                        SclPackage.MULTI_AP_PER_SUB_NET__PARENT_SERVICES, MultiAPPerSubNet.class, msgs );
+            msgs = basicSetMultiAPPerSubNet( newMultiAPPerSubNet, msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldMultiAPPerSubNetESet = multiAPPerSubNetESet;
+            multiAPPerSubNetESet = true;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__MULTI_AP_PER_SUB_NET,
+                        newMultiAPPerSubNet, newMultiAPPerSubNet, !oldMultiAPPerSubNetESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetMultiAPPerSubNet( NotificationChain msgs ) {
+        MultiAPPerSubNet oldMultiAPPerSubNet = multiAPPerSubNet;
+        multiAPPerSubNet = null;
+        boolean oldMultiAPPerSubNetESet = multiAPPerSubNetESet;
+        multiAPPerSubNetESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SERVICES__MULTI_AP_PER_SUB_NET, oldMultiAPPerSubNet, null, oldMultiAPPerSubNetESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetMultiAPPerSubNet() {
+        if( multiAPPerSubNet != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) multiAPPerSubNet ).eInverseRemove( this,
+                    SclPackage.MULTI_AP_PER_SUB_NET__PARENT_SERVICES, MultiAPPerSubNet.class, msgs );
+            msgs = basicUnsetMultiAPPerSubNet( msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldMultiAPPerSubNetESet = multiAPPerSubNetESet;
+            multiAPPerSubNetESet = false;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__MULTI_AP_PER_SUB_NET,
+                        null, null, oldMultiAPPerSubNetESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetMultiAPPerSubNet() {
+        return multiAPPerSubNetESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SCSM getSCSM() {
+        return scsm;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSCSM( SCSM newSCSM, NotificationChain msgs ) {
+        SCSM oldSCSM = scsm;
+        scsm = newSCSM;
+        boolean oldSCSMESet = scsmESet;
+        scsmESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SCSM,
+                    oldSCSM, newSCSM, !oldSCSMESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSCSM( SCSM newSCSM ) {
+        if( newSCSM != scsm ) {
+            NotificationChain msgs = null;
+            if( scsm != null )
+                msgs = ( ( InternalEObject ) scsm ).eInverseRemove( this, SclPackage.SCSM__PARENT_SERVICES, SCSM.class,
+                        msgs );
+            if( newSCSM != null )
+                msgs = ( ( InternalEObject ) newSCSM ).eInverseAdd( this, SclPackage.SCSM__PARENT_SERVICES, SCSM.class,
+                        msgs );
+            msgs = basicSetSCSM( newSCSM, msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldSCSMESet = scsmESet;
+            scsmESet = true;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SCSM, newSCSM, newSCSM,
+                        !oldSCSMESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetSCSM( NotificationChain msgs ) {
+        SCSM oldSCSM = scsm;
+        scsm = null;
+        boolean oldSCSMESet = scsmESet;
+        scsmESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SCSM,
+                    oldSCSM, null, oldSCSMESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSCSM() {
+        if( scsm != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) scsm ).eInverseRemove( this, SclPackage.SCSM__PARENT_SERVICES, SCSM.class,
+                    msgs );
+            msgs = basicUnsetSCSM( msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldSCSMESet = scsmESet;
+            scsmESet = false;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SCSM, null, null,
+                        oldSCSMESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSCSM() {
+        return scsmESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Security getSecurity() {
+        return security;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSecurity( Security newSecurity, NotificationChain msgs ) {
+        Security oldSecurity = security;
+        security = newSecurity;
+        boolean oldSecurityESet = securityESet;
+        securityESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SERVICES__SECURITY, oldSecurity, newSecurity, !oldSecurityESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSecurity( Security newSecurity ) {
+        if( newSecurity != security ) {
+            NotificationChain msgs = null;
+            if( security != null )
+                msgs = ( ( InternalEObject ) security ).eInverseRemove( this, SclPackage.SECURITY__PARENT_SERVICES,
+                        Security.class, msgs );
+            if( newSecurity != null )
+                msgs = ( ( InternalEObject ) newSecurity ).eInverseAdd( this, SclPackage.SECURITY__PARENT_SERVICES,
+                        Security.class, msgs );
+            msgs = basicSetSecurity( newSecurity, msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldSecurityESet = securityESet;
+            securityESet = true;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICES__SECURITY, newSecurity,
+                        newSecurity, !oldSecurityESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetSecurity( NotificationChain msgs ) {
+        Security oldSecurity = security;
+        security = null;
+        boolean oldSecurityESet = securityESet;
+        securityESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SERVICES__SECURITY, oldSecurity, null, oldSecurityESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSecurity() {
+        if( security != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) security ).eInverseRemove( this, SclPackage.SECURITY__PARENT_SERVICES,
+                    Security.class, msgs );
+            msgs = basicUnsetSecurity( msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldSecurityESet = securityESet;
+            securityESet = false;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICES__SECURITY, null, null,
+                        oldSecurityESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSecurity() {
+        return securityESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SERVICES__PARENT_ACCESS_POINT:
-            if( eInternalContainer() != null ) {
+            if( eInternalContainer() != null )
                 msgs = eBasicRemoveFromContainer( msgs );
-            }
             return basicSetParentAccessPoint( ( AccessPoint ) otherEnd, msgs );
         case SclPackage.SERVICES__CLIENT_SERVICES:
-            if( clientServices != null ) {
+            if( clientServices != null )
                 msgs = ( ( InternalEObject ) clientServices ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CLIENT_SERVICES, null, msgs );
-            }
             return basicSetClientServices( ( ClientServices ) otherEnd, msgs );
         case SclPackage.SERVICES__COMM_PROT:
-            if( commProt != null ) {
+            if( commProt != null )
                 msgs = ( ( InternalEObject ) commProt ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__COMM_PROT, null, msgs );
-            }
             return basicSetCommProt( ( CommProt ) otherEnd, msgs );
         case SclPackage.SERVICES__CONF_DATA_SET:
-            if( confDataSet != null ) {
+            if( confDataSet != null )
                 msgs = ( ( InternalEObject ) confDataSet ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CONF_DATA_SET, null, msgs );
-            }
             return basicSetConfDataSet( ( ConfDataSet ) otherEnd, msgs );
         case SclPackage.SERVICES__CONF_LNS:
-            if( confLNs != null ) {
+            if( confLNs != null )
                 msgs = ( ( InternalEObject ) confLNs ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CONF_LNS, null, msgs );
-            }
             return basicSetConfLNs( ( ConfLNs ) otherEnd, msgs );
         case SclPackage.SERVICES__CONF_LD_NAME:
-            if( confLdName != null ) {
+            if( confLdName != null )
                 msgs = ( ( InternalEObject ) confLdName ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CONF_LD_NAME, null, msgs );
-            }
             return basicSetConfLdName( ( ConfLdName ) otherEnd, msgs );
         case SclPackage.SERVICES__CONF_LOG_CONTROL:
-            if( confLogControl != null ) {
+            if( confLogControl != null )
                 msgs = ( ( InternalEObject ) confLogControl ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CONF_LOG_CONTROL, null, msgs );
-            }
             return basicSetConfLogControl( ( ConfLogControl ) otherEnd, msgs );
         case SclPackage.SERVICES__CONF_REPORT_CONTROL:
-            if( confReportControl != null ) {
+            if( confReportControl != null )
                 msgs = ( ( InternalEObject ) confReportControl ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CONF_REPORT_CONTROL, null, msgs );
-            }
             return basicSetConfReportControl( ( ConfReportControl ) otherEnd, msgs );
         case SclPackage.SERVICES__CONF_SIG_REF:
-            if( confSigRef != null ) {
+            if( confSigRef != null )
                 msgs = ( ( InternalEObject ) confSigRef ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CONF_SIG_REF, null, msgs );
-            }
             return basicSetConfSigRef( ( ConfSigRef ) otherEnd, msgs );
         case SclPackage.SERVICES__DATA_OBJECT_DIRECTORY:
-            if( dataObjectDirectory != null ) {
+            if( dataObjectDirectory != null )
                 msgs = ( ( InternalEObject ) dataObjectDirectory ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__DATA_OBJECT_DIRECTORY, null, msgs );
-            }
             return basicSetDataObjectDirectory( ( DataObjectDirectory ) otherEnd, msgs );
         case SclPackage.SERVICES__DATA_SET_DIRECTORY:
-            if( dataSetDirectory != null ) {
+            if( dataSetDirectory != null )
                 msgs = ( ( InternalEObject ) dataSetDirectory ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__DATA_SET_DIRECTORY, null, msgs );
-            }
             return basicSetDataSetDirectory( ( DataSetDirectory ) otherEnd, msgs );
         case SclPackage.SERVICES__DYN_ASSOCIATION:
-            if( dynAssociation != null ) {
+            if( dynAssociation != null )
                 msgs = ( ( InternalEObject ) dynAssociation ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__DYN_ASSOCIATION, null, msgs );
-            }
             return basicSetDynAssociation( ( DynAssociation ) otherEnd, msgs );
         case SclPackage.SERVICES__DYN_DATA_SET:
-            if( dynDataSet != null ) {
+            if( dynDataSet != null )
                 msgs = ( ( InternalEObject ) dynDataSet ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__DYN_DATA_SET, null, msgs );
-            }
             return basicSetDynDataSet( ( DynDataSet ) otherEnd, msgs );
         case SclPackage.SERVICES__FILE_HANDLING:
-            if( fileHandling != null ) {
+            if( fileHandling != null )
                 msgs = ( ( InternalEObject ) fileHandling ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__FILE_HANDLING, null, msgs );
-            }
             return basicSetFileHandling( ( FileHandling ) otherEnd, msgs );
         case SclPackage.SERVICES__GOOSE:
-            if( goose != null ) {
+            if( goose != null )
                 msgs = ( ( InternalEObject ) goose ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GOOSE, null, msgs );
-            }
             return basicSetGOOSE( ( GOOSE ) otherEnd, msgs );
         case SclPackage.SERVICES__GSE_DIR:
-            if( gseDir != null ) {
+            if( gseDir != null )
                 msgs = ( ( InternalEObject ) gseDir ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GSE_DIR, null, msgs );
-            }
             return basicSetGSEDir( ( GSEDir ) otherEnd, msgs );
         case SclPackage.SERVICES__GSE_SETTINGS:
-            if( gseSettings != null ) {
+            if( gseSettings != null )
                 msgs = ( ( InternalEObject ) gseSettings ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GSE_SETTINGS, null, msgs );
-            }
             return basicSetGSESettings( ( GSESettings ) otherEnd, msgs );
         case SclPackage.SERVICES__GSSE:
-            if( gsse != null ) {
+            if( gsse != null )
                 msgs = ( ( InternalEObject ) gsse ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GSSE, null, msgs );
-            }
             return basicSetGSSE( ( GSSE ) otherEnd, msgs );
         case SclPackage.SERVICES__GET_CB_VALUES:
-            if( getCBValues != null ) {
+            if( getCBValues != null )
                 msgs = ( ( InternalEObject ) getCBValues ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GET_CB_VALUES, null, msgs );
-            }
             return basicSetGetCBValues( ( GetCBValues ) otherEnd, msgs );
         case SclPackage.SERVICES__GET_DATA_OBJECT_DEFINITION:
-            if( getDataObjectDefinition != null ) {
+            if( getDataObjectDefinition != null )
                 msgs = ( ( InternalEObject ) getDataObjectDefinition ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GET_DATA_OBJECT_DEFINITION, null, msgs );
-            }
             return basicSetGetDataObjectDefinition( ( GetDataObjectDefinition ) otherEnd, msgs );
         case SclPackage.SERVICES__GET_DATA_SET_VALUE:
-            if( getDataSetValue != null ) {
+            if( getDataSetValue != null )
                 msgs = ( ( InternalEObject ) getDataSetValue ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GET_DATA_SET_VALUE, null, msgs );
-            }
             return basicSetGetDataSetValue( ( GetDataSetValue ) otherEnd, msgs );
         case SclPackage.SERVICES__GET_DIRECTORY:
-            if( getDirectory != null ) {
+            if( getDirectory != null )
                 msgs = ( ( InternalEObject ) getDirectory ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GET_DIRECTORY, null, msgs );
-            }
             return basicSetGetDirectory( ( GetDirectory ) otherEnd, msgs );
         case SclPackage.SERVICES__PARENT_IED:
-            if( eInternalContainer() != null ) {
+            if( eInternalContainer() != null )
                 msgs = eBasicRemoveFromContainer( msgs );
-            }
             return basicSetParentIED( ( IED ) otherEnd, msgs );
         case SclPackage.SERVICES__LOG_SETTINGS:
-            if( logSettings != null ) {
+            if( logSettings != null )
                 msgs = ( ( InternalEObject ) logSettings ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__LOG_SETTINGS, null, msgs );
-            }
             return basicSetLogSettings( ( LogSettings ) otherEnd, msgs );
         case SclPackage.SERVICES__READ_WRITE:
-            if( readWrite != null ) {
+            if( readWrite != null )
                 msgs = ( ( InternalEObject ) readWrite ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__READ_WRITE, null, msgs );
-            }
             return basicSetReadWrite( ( ReadWrite ) otherEnd, msgs );
         case SclPackage.SERVICES__RED_PROT:
-            if( redProt != null ) {
+            if( redProt != null )
                 msgs = ( ( InternalEObject ) redProt ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__RED_PROT, null, msgs );
-            }
             return basicSetRedProt( ( RedProt ) otherEnd, msgs );
         case SclPackage.SERVICES__REPORT_SETTINGS:
-            if( reportSettings != null ) {
+            if( reportSettings != null )
                 msgs = ( ( InternalEObject ) reportSettings ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__REPORT_SETTINGS, null, msgs );
-            }
             return basicSetReportSettings( ( ReportSettings ) otherEnd, msgs );
         case SclPackage.SERVICES__SM_VSC:
-            if( smVsc != null ) {
+            if( smVsc != null )
                 msgs = ( ( InternalEObject ) smVsc ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SM_VSC, null, msgs );
-            }
             return basicSetSMVsc( ( SMVsc ) otherEnd, msgs );
         case SclPackage.SERVICES__SUP_SUBSCRIPTION:
-            if( supSubscription != null ) {
+            if( supSubscription != null )
                 msgs = ( ( InternalEObject ) supSubscription ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SUP_SUBSCRIPTION, null, msgs );
-            }
             return basicSetSupSubscription( ( SupSubscription ) otherEnd, msgs );
         case SclPackage.SERVICES__VALUE_HANDLING:
-            if( valueHandling != null ) {
+            if( valueHandling != null )
                 msgs = ( ( InternalEObject ) valueHandling ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__VALUE_HANDLING, null, msgs );
-            }
             return basicSetValueHandling( ( ValueHandling ) otherEnd, msgs );
         case SclPackage.SERVICES__SET_DATA_SET_VALUE:
-            if( setDataSetValue != null ) {
+            if( setDataSetValue != null )
                 msgs = ( ( InternalEObject ) setDataSetValue ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SET_DATA_SET_VALUE, null, msgs );
-            }
             return basicSetSetDataSetValue( ( SetDataSetValue ) otherEnd, msgs );
         case SclPackage.SERVICES__SETTING_GROUPS:
-            if( settingGroups != null ) {
+            if( settingGroups != null )
                 msgs = ( ( InternalEObject ) settingGroups ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SETTING_GROUPS, null, msgs );
-            }
             return basicSetSettingGroups( ( SettingGroups ) otherEnd, msgs );
         case SclPackage.SERVICES__TIME_SYNC_PROT:
-            if( timeSyncProt != null ) {
+            if( timeSyncProt != null )
                 msgs = ( ( InternalEObject ) timeSyncProt ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__TIME_SYNC_PROT, null, msgs );
-            }
             return basicSetTimeSyncProt( ( TimeSyncProt ) otherEnd, msgs );
         case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
-            if( timerActivatedControl != null ) {
+            if( timerActivatedControl != null )
                 msgs = ( ( InternalEObject ) timerActivatedControl ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL, null, msgs );
-            }
             return basicSetTimerActivatedControl( ( TimerActivatedControl ) otherEnd, msgs );
         case SclPackage.SERVICES__SMV_SETTINGS:
-            if( smvSettings != null ) {
+            if( smvSettings != null )
                 msgs = ( ( InternalEObject ) smvSettings ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SMV_SETTINGS, null, msgs );
-            }
             return basicSetSMVSettings( ( SMVSettings ) otherEnd, msgs );
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+            if( multiAPPerSubNet != null )
+                msgs = ( ( InternalEObject ) multiAPPerSubNet ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__MULTI_AP_PER_SUB_NET, null, msgs );
+            return basicSetMultiAPPerSubNet( ( MultiAPPerSubNet ) otherEnd, msgs );
+        case SclPackage.SERVICES__SCSM:
+            if( scsm != null )
+                msgs = ( ( InternalEObject ) scsm ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SCSM, null, msgs );
+            return basicSetSCSM( ( SCSM ) otherEnd, msgs );
+        case SclPackage.SERVICES__SECURITY:
+            if( security != null )
+                msgs = ( ( InternalEObject ) security ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SECURITY, null, msgs );
+            return basicSetSecurity( ( Security ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -5362,6 +5328,12 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             return basicUnsetTimerActivatedControl( msgs );
         case SclPackage.SERVICES__SMV_SETTINGS:
             return basicUnsetSMVSettings( msgs );
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+            return basicUnsetMultiAPPerSubNet( msgs );
+        case SclPackage.SERVICES__SCSM:
+            return basicUnsetSCSM( msgs );
+        case SclPackage.SERVICES__SECURITY:
+            return basicUnsetSecurity( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -5463,6 +5435,12 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             return getTimerActivatedControl();
         case SclPackage.SERVICES__SMV_SETTINGS:
             return getSMVSettings();
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+            return getMultiAPPerSubNet();
+        case SclPackage.SERVICES__SCSM:
+            return getSCSM();
+        case SclPackage.SERVICES__SECURITY:
+            return getSecurity();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -5582,6 +5560,15 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             return;
         case SclPackage.SERVICES__SMV_SETTINGS:
             setSMVSettings( ( SMVSettings ) newValue );
+            return;
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+            setMultiAPPerSubNet( ( MultiAPPerSubNet ) newValue );
+            return;
+        case SclPackage.SERVICES__SCSM:
+            setSCSM( ( SCSM ) newValue );
+            return;
+        case SclPackage.SERVICES__SECURITY:
+            setSecurity( ( Security ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -5703,6 +5690,15 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         case SclPackage.SERVICES__SMV_SETTINGS:
             unsetSMVSettings();
             return;
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+            unsetMultiAPPerSubNet();
+            return;
+        case SclPackage.SERVICES__SCSM:
+            unsetSCSM();
+            return;
+        case SclPackage.SERVICES__SECURITY:
+            unsetSecurity();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -5787,6 +5783,12 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             return isSetTimerActivatedControl();
         case SclPackage.SERVICES__SMV_SETTINGS:
             return isSetSMVSettings();
+        case SclPackage.SERVICES__MULTI_AP_PER_SUB_NET:
+            return isSetMultiAPPerSubNet();
+        case SclPackage.SERVICES__SCSM:
+            return isSetSCSM();
+        case SclPackage.SERVICES__SECURITY:
+            return isSetSecurity();
         }
         return super.eIsSet( featureID );
     }
@@ -5798,18 +5800,14 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) {
-            return super.toString();
-        }
+        if( eIsProxy() ) return super.toString();
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (nameLength: " );
-        if( nameLengthESet ) {
+        if( nameLengthESet )
             result.append( nameLength );
-        }
-        else {
+        else
             result.append( "<unset>" );
-        }
         result.append( ')' );
         return result.toString();
     }

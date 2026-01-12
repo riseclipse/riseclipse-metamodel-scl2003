@@ -22,6 +22,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Conducting Equipment</b></em>'.
@@ -38,6 +41,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine <em>Parent Line</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess <em>Parent Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunctionTemplate <em>Parent Function Template</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunctionTemplate <em>Parent Sub Function Template</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment()
@@ -259,5 +264,53 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @generated
      */
     void setParentProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
+
+    /**
+     * Returns the value of the '<em><b>Parent Function Template</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate#getConductingEquipment <em>Conducting Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent Function Template</em>' container reference.
+     * @see #setParentFunctionTemplate(FunctionTemplate)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentFunctionTemplate()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate#getConductingEquipment
+     * @model opposite="conductingEquipment" unsettable="true" ordered="false"
+     * @generated
+     */
+    FunctionTemplate getParentFunctionTemplate();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunctionTemplate <em>Parent Function Template</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent Function Template</em>' container reference.
+     * @see #getParentFunctionTemplate()
+     * @generated
+     */
+    void setParentFunctionTemplate( FunctionTemplate value );
+
+    /**
+     * Returns the value of the '<em><b>Parent Sub Function Template</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate#getConductingEquipment <em>Conducting Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent Sub Function Template</em>' container reference.
+     * @see #setParentSubFunctionTemplate(SubFunctionTemplate)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentSubFunctionTemplate()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate#getConductingEquipment
+     * @model opposite="conductingEquipment" unsettable="true" ordered="false"
+     * @generated
+     */
+    SubFunctionTemplate getParentSubFunctionTemplate();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunctionTemplate <em>Parent Sub Function Template</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent Sub Function Template</em>' container reference.
+     * @see #getParentSubFunctionTemplate()
+     * @generated
+     */
+    void setParentSubFunctionTemplate( SubFunctionTemplate value );
 
 } // ConductingEquipment

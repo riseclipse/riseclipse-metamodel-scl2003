@@ -69,6 +69,9 @@ public class HeaderItemProvider
             addRevisionPropertyDescriptor( object );
             addToolIDPropertyDescriptor( object );
             addVersionPropertyDescriptor( object );
+            addFileTypePropertyDescriptor( object );
+            addBaseUuidPropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -183,6 +186,71 @@ public class HeaderItemProvider
     }
 
     /**
+     * This adds a property descriptor for the File Type feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addFileTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Header_fileType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Header_fileType_feature",
+                                "_UI_Header_type" ),
+                        SclPackage.eINSTANCE.getHeader_FileType(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Base Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addBaseUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Header_baseUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Header_baseUuid_feature",
+                                "_UI_Header_type" ),
+                        SclPackage.eINSTANCE.getHeader_BaseUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Header_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Header_uuid_feature", "_UI_Header_type" ),
+                        SclPackage.eINSTANCE.getHeader_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -196,6 +264,7 @@ public class HeaderItemProvider
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getHeader_Text() );
             childrenFeatures.add( SclPackage.eINSTANCE.getHeader_History() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getHeader_SourceFiles() );
         }
         return childrenFeatures;
     }
@@ -266,10 +335,14 @@ public class HeaderItemProvider
         case SclPackage.HEADER__REVISION:
         case SclPackage.HEADER__TOOL_ID:
         case SclPackage.HEADER__VERSION:
+        case SclPackage.HEADER__FILE_TYPE:
+        case SclPackage.HEADER__BASE_UUID:
+        case SclPackage.HEADER__UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.HEADER__TEXT:
         case SclPackage.HEADER__HISTORY:
+        case SclPackage.HEADER__SOURCE_FILES:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -292,6 +365,9 @@ public class HeaderItemProvider
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getHeader_History(),
                 SclFactory.eINSTANCE.createHistory() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getHeader_SourceFiles(),
+                SclFactory.eINSTANCE.createSourceFiles() ) );
     }
 
 }

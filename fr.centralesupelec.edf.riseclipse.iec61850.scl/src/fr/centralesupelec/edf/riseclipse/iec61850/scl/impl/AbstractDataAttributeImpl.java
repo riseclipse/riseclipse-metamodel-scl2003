@@ -42,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
@@ -71,6 +72,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredByDAI <em>Referred By DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredBySDI <em>Referred By SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -366,6 +368,25 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @ordered
      */
     protected EList< SDI > referredBySDI;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -1208,6 +1229,130 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS, oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        SclPackage.LABELS__PARENT_ABSTRACT_DATA_ATTRIBUTE, Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this,
+                        SclPackage.LABELS__PARENT_ABSTRACT_DATA_ATTRIBUTE, Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS,
+                        newLabels, newLabels, !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS, oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                    SclPackage.LABELS__PARENT_ABSTRACT_DATA_ATTRIBUTE, Labels.class, msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS,
+                        null, null, oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1238,6 +1383,12 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredBySDI() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1264,6 +1415,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             return ( ( InternalEList< ? > ) getReferredByDAI() ).basicRemove( otherEnd, msgs );
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
             return ( ( InternalEList< ? > ) getReferredBySDI() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1304,6 +1457,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             return getReferredByDAI();
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
             return getReferredBySDI();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1364,6 +1519,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             getReferredBySDI().clear();
             getReferredBySDI().addAll( ( Collection< ? extends SDI > ) newValue );
             return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1418,6 +1576,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
             unsetReferredBySDI();
             return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1458,6 +1619,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             return isSetReferredByDAI();
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
             return isSetReferredBySDI();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }

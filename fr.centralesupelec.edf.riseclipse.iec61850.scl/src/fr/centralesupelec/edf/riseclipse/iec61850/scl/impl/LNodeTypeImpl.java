@@ -42,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -59,6 +60,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getReferredByAnyLN <em>Referred By Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getReferredByLNode <em>Referred By LNode</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,6 +165,25 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     protected EList< LNode > referredByLNode;
 
     /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -243,9 +264,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         iedType = newIedType;
         boolean oldIedTypeESet = iedTypeESet;
         iedTypeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE_TYPE__IED_TYPE, oldIedType,
                     iedType, !oldIedTypeESet ) );
+        }
     }
 
     /**
@@ -259,9 +281,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         boolean oldIedTypeESet = iedTypeESet;
         iedType = IED_TYPE_EDEFAULT;
         iedTypeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE_TYPE__IED_TYPE, oldIedType,
                     IED_TYPE_EDEFAULT, oldIedTypeESet ) );
+        }
     }
 
     /**
@@ -295,9 +318,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE_TYPE__LN_CLASS, oldLnClass,
                     lnClass, !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -311,9 +335,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE_TYPE__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -347,7 +372,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      */
     @Override
     public void unsetDO() {
-        if( do_ != null ) ( ( InternalEList.Unsettable< ? > ) do_ ).unset();
+        if( do_ != null ) {
+            ( ( InternalEList.Unsettable< ? > ) do_ ).unset();
+        }
     }
 
     /**
@@ -367,7 +394,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      */
     @Override
     public DataTypeTemplates getParentDataTypeTemplates() {
-        if( eContainerFeatureID() != SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES ) return null;
+        if( eContainerFeatureID() != SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES ) {
+            return null;
+        }
         return ( DataTypeTemplates ) eInternalContainer();
     }
 
@@ -393,20 +422,26 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         if( newParentDataTypeTemplates != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES
                         && newParentDataTypeTemplates != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) )
+            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDataTypeTemplates != null )
+            }
+            if( newParentDataTypeTemplates != null ) {
                 msgs = ( ( InternalEObject ) newParentDataTypeTemplates ).eInverseAdd( this,
                         SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, DataTypeTemplates.class, msgs );
+            }
             msgs = basicSetParentDataTypeTemplates( newParentDataTypeTemplates, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES,
                     newParentDataTypeTemplates, newParentDataTypeTemplates ) );
+        }
     }
 
     /**
@@ -430,7 +465,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      */
     @Override
     public void unsetReferredByAnyLN() {
-        if( referredByAnyLN != null ) ( ( InternalEList.Unsettable< ? > ) referredByAnyLN ).unset();
+        if( referredByAnyLN != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByAnyLN ).unset();
+        }
     }
 
     /**
@@ -464,7 +501,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      */
     @Override
     public void unsetReferredByLNode() {
-        if( referredByLNode != null ) ( ( InternalEList.Unsettable< ? > ) referredByLNode ).unset();
+        if( referredByLNode != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByLNode ).unset();
+        }
     }
 
     /**
@@ -482,6 +521,130 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.LNODE_TYPE__LABELS, oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LNODE_TYPE,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_LNODE_TYPE,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE_TYPE__LABELS, newLabels,
+                        newLabels, !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.LNODE_TYPE__LABELS, oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LNODE_TYPE,
+                    Labels.class, msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE_TYPE__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -489,8 +652,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         case SclPackage.LNODE_TYPE__DO:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getDO() ).basicAdd( otherEnd, msgs );
         case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
         case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByAnyLN() )
@@ -498,6 +662,12 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLNode() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.LNODE_TYPE__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.LNODE_TYPE__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -518,6 +688,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             return ( ( InternalEList< ? > ) getReferredByAnyLN() ).basicRemove( otherEnd, msgs );
         case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
             return ( ( InternalEList< ? > ) getReferredByLNode() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LNODE_TYPE__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -559,6 +731,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             return getReferredByAnyLN();
         case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
             return getReferredByLNode();
+        case SclPackage.LNODE_TYPE__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -593,6 +767,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             getReferredByLNode().clear();
             getReferredByLNode().addAll( ( Collection< ? extends LNode > ) newValue );
             return;
+        case SclPackage.LNODE_TYPE__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -623,6 +800,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
             unsetReferredByLNode();
             return;
+        case SclPackage.LNODE_TYPE__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -649,6 +829,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             return isSetReferredByAnyLN();
         case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
             return isSetReferredByLNode();
+        case SclPackage.LNODE_TYPE__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }
@@ -696,19 +878,25 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (iedType: " );
-        if( iedTypeESet )
+        if( iedTypeESet ) {
             result.append( iedType );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

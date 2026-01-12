@@ -33,11 +33,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
@@ -52,6 +54,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getClock <em>Clock</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getKdc <em>Kdc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getRouter <em>Router</em>}</li>
@@ -66,11 +70,70 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getReferredByConnectedAP <em>Referred By Connected AP</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getReferredByKDC <em>Referred By KDC</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessPointImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
     /**
      * The default value of the '{@link #getClock() <em>Clock</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -305,6 +368,25 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     protected EList< KDC > referredByKDC;
 
     /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -321,6 +403,114 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getAccessPoint();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__UUID, oldUuid,
+                    UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__TEMPLATE_UUID,
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -1123,6 +1313,130 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ACCESS_POINT__LABELS, oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_ACCESS_POINT,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_ACCESS_POINT,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__LABELS, newLabels,
+                        newLabels, !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ACCESS_POINT__LABELS, oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_ACCESS_POINT,
+                    Labels.class, msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1163,6 +1477,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         case SclPackage.ACCESS_POINT__REFERRED_BY_KDC:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByKDC() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.ACCESS_POINT__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.ACCESS_POINT__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1195,6 +1515,8 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             return ( ( InternalEList< ? > ) getReferredByConnectedAP() ).basicRemove( otherEnd, msgs );
         case SclPackage.ACCESS_POINT__REFERRED_BY_KDC:
             return ( ( InternalEList< ? > ) getReferredByKDC() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ACCESS_POINT__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1221,6 +1543,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.ACCESS_POINT__UUID:
+            return getUuid();
+        case SclPackage.ACCESS_POINT__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.ACCESS_POINT__CLOCK:
             return getClock();
         case SclPackage.ACCESS_POINT__KDC:
@@ -1249,6 +1575,8 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             return getReferredByConnectedAP();
         case SclPackage.ACCESS_POINT__REFERRED_BY_KDC:
             return getReferredByKDC();
+        case SclPackage.ACCESS_POINT__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1262,6 +1590,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.ACCESS_POINT__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.ACCESS_POINT__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.ACCESS_POINT__CLOCK:
             setClock( ( Boolean ) newValue );
             return;
@@ -1310,6 +1644,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             getReferredByKDC().clear();
             getReferredByKDC().addAll( ( Collection< ? extends KDC > ) newValue );
             return;
+        case SclPackage.ACCESS_POINT__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1322,6 +1659,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.ACCESS_POINT__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.ACCESS_POINT__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.ACCESS_POINT__CLOCK:
             unsetClock();
             return;
@@ -1364,6 +1707,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         case SclPackage.ACCESS_POINT__REFERRED_BY_KDC:
             unsetReferredByKDC();
             return;
+        case SclPackage.ACCESS_POINT__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1376,6 +1722,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.ACCESS_POINT__UUID:
+            return isSetUuid();
+        case SclPackage.ACCESS_POINT__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.ACCESS_POINT__CLOCK:
             return isSetClock();
         case SclPackage.ACCESS_POINT__KDC:
@@ -1404,8 +1754,50 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             return isSetReferredByConnectedAP();
         case SclPackage.ACCESS_POINT__REFERRED_BY_KDC:
             return isSetReferredByKDC();
+        case SclPackage.ACCESS_POINT__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.ACCESS_POINT__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.ACCESS_POINT__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.ACCESS_POINT__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.ACCESS_POINT__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -1418,7 +1810,17 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eIsProxy() ) return super.toString();
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (clock: " );
+        result.append( " (uuid: " );
+        if( uuidESet )
+            result.append( uuid );
+        else
+            result.append( "<unset>" );
+        result.append( ", templateUuid: " );
+        if( templateUuidESet )
+            result.append( templateUuid );
+        else
+            result.append( "<unset>" );
+        result.append( ", clock: " );
         if( clockESet )
             result.append( clock );
         else

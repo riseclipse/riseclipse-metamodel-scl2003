@@ -20,6 +20,7 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -46,6 +47,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataSetImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataSetImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataSetImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataSetImpl#getReferredByControl <em>Referred By Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataSetImpl#getFCDA <em>FCDA</em>}</li>
@@ -55,6 +58,64 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * @generated
  */
 public class DataSetImpl extends UnNamingImpl implements DataSet {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
     /**
      * The cached value of the '{@link #getReferredByControl() <em>Referred By Control</em>}' reference list.
      * <!-- begin-user-doc -->
@@ -121,6 +182,110 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getDataSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DATA_SET__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DATA_SET__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -351,6 +516,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.DATA_SET__UUID:
+            return getUuid();
+        case SclPackage.DATA_SET__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.DATA_SET__PARENT_ANY_LN:
             return getParentAnyLN();
         case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
@@ -372,6 +541,12 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.DATA_SET__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.DATA_SET__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.DATA_SET__PARENT_ANY_LN:
             setParentAnyLN( ( AnyLN ) newValue );
             return;
@@ -398,6 +573,12 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.DATA_SET__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.DATA_SET__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.DATA_SET__PARENT_ANY_LN:
             setParentAnyLN( ( AnyLN ) null );
             return;
@@ -422,6 +603,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.DATA_SET__UUID:
+            return isSetUuid();
+        case SclPackage.DATA_SET__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.DATA_SET__PARENT_ANY_LN:
             return getParentAnyLN() != null;
         case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
@@ -440,11 +625,61 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.DATA_SET__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.DATA_SET__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.DATA_SET__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.DATA_SET__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if( eIsProxy() ) return super.toString();
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (name: " );
+        result.append( " (uuid: " );
+        if( uuidESet )
+            result.append( uuid );
+        else
+            result.append( "<unset>" );
+        result.append( ", templateUuid: " );
+        if( templateUuidESet )
+            result.append( templateUuid );
+        else
+            result.append( "<unset>" );
+        result.append( ", name: " );
         if( nameESet )
             result.append( name );
         else

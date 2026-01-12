@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -73,76 +73,24 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
     @Override
     public EObject create( EClass eClass ) {
         switch( eClass.getClassifierID() ) {
-        case SclPackage.HEADER:
-            return createHeader();
-        case SclPackage.HISTORY:
-            return createHistory();
-        case SclPackage.HITEM:
-            return createHitem();
-        case SclPackage.ID_NAMING:
-            return createIDNaming();
-        case SclPackage.LINE:
-            return createLine();
-        case SclPackage.PRIVATE:
-            return createPrivate();
-        case SclPackage.PROCESS:
-            return createProcess();
-        case SclPackage.SCL:
-            return createSCL();
-        case SclPackage.TEXT:
-            return createText();
         case SclPackage.ADDRESS:
             return createAddress();
-        case SclPackage.COMMUNICATION:
-            return createCommunication();
-        case SclPackage.CONNECTED_AP:
-            return createConnectedAP();
-        case SclPackage.GSE:
-            return createGSE();
-        case SclPackage.P:
-            return createP();
-        case SclPackage.PADDR:
-            return createPAddr();
-        case SclPackage.PPHYS_CONN:
-            return createP_PhysConn();
-        case SclPackage.PHYS_CONN:
-            return createPhysConn();
-        case SclPackage.SMV:
-            return createSMV();
-        case SclPackage.SUB_NETWORK:
-            return createSubNetwork();
-        case SclPackage.BDA:
-            return createBDA();
-        case SclPackage.DA:
-            return createDA();
-        case SclPackage.DA_TYPE:
-            return createDAType();
-        case SclPackage.DO:
-            return createDO();
-        case SclPackage.DO_TYPE:
-            return createDOType();
-        case SclPackage.DATA_TYPE_TEMPLATES:
-            return createDataTypeTemplates();
-        case SclPackage.ENUM_TYPE:
-            return createEnumType();
-        case SclPackage.ENUM_VAL:
-            return createEnumVal();
-        case SclPackage.LNODE_TYPE:
-            return createLNodeType();
-        case SclPackage.PROT_NS:
-            return createProtNs();
-        case SclPackage.SDO:
-            return createSDO();
-        case SclPackage.VAL:
-            return createVal();
         case SclPackage.ACCESS_CONTROL:
             return createAccessControl();
         case SclPackage.ACCESS_POINT:
             return createAccessPoint();
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT:
+            return createAbstractConductingEquipment();
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC:
+            return createAbstractEqFuncSubFunc();
         case SclPackage.ASSOCIATION:
             return createAssociation();
         case SclPackage.AUTHENTICATION:
             return createAuthentication();
+        case SclPackage.BAY:
+            return createBay();
+        case SclPackage.BDA:
+            return createBDA();
         case SclPackage.CERTIFICATE:
             return createCertificate();
         case SclPackage.CLIENT_LN:
@@ -151,6 +99,8 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createClientServices();
         case SclPackage.COMM_PROT:
             return createCommProt();
+        case SclPackage.COMMUNICATION:
+            return createCommunication();
         case SclPackage.CONF_DATA_SET:
             return createConfDataSet();
         case SclPackage.CONF_LNS:
@@ -167,6 +117,14 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createConfSigRef();
         case SclPackage.CONTROL_WITH_IED_NAME:
             return createControlWithIEDName();
+        case SclPackage.CONDUCTING_EQUIPMENT:
+            return createConductingEquipment();
+        case SclPackage.CONNECTIVITY_NODE:
+            return createConnectivityNode();
+        case SclPackage.CONNECTED_AP:
+            return createConnectedAP();
+        case SclPackage.DA:
+            return createDA();
         case SclPackage.DAI:
             return createDAI();
         case SclPackage.DOI:
@@ -181,12 +139,36 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createDynAssociation();
         case SclPackage.DYN_DATA_SET:
             return createDynDataSet();
+        case SclPackage.DA_TYPE:
+            return createDAType();
+        case SclPackage.DATA_TYPE_TEMPLATES:
+            return createDataTypeTemplates();
+        case SclPackage.DO:
+            return createDO();
+        case SclPackage.DO_TYPE:
+            return createDOType();
+        case SclPackage.ENUM_VAL:
+            return createEnumVal();
+        case SclPackage.ENUM_TYPE:
+            return createEnumType();
         case SclPackage.EXT_REF:
             return createExtRef();
+        case SclPackage.EQ_FUNCTION:
+            return createEqFunction();
+        case SclPackage.EQ_SUB_FUNCTION:
+            return createEqSubFunction();
+        case SclPackage.EQUIPMENT:
+            return createEquipment();
+        case SclPackage.EQUIPMENT_CONTAINER:
+            return createEquipmentContainer();
         case SclPackage.FCDA:
             return createFCDA();
         case SclPackage.FILE_HANDLING:
             return createFileHandling();
+        case SclPackage.GENERAL_EQUIPMENT:
+            return createGeneralEquipment();
+        case SclPackage.GSE:
+            return createGSE();
         case SclPackage.GOOSE:
             return createGOOSE();
         case SclPackage.GOOSE_SECURITY:
@@ -207,6 +189,14 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createGetDataSetValue();
         case SclPackage.GET_DIRECTORY:
             return createGetDirectory();
+        case SclPackage.HEADER:
+            return createHeader();
+        case SclPackage.HISTORY:
+            return createHistory();
+        case SclPackage.HITEM:
+            return createHitem();
+        case SclPackage.ID_NAMING:
+            return createIDNaming();
         case SclPackage.IED:
             return createIED();
         case SclPackage.IED_NAME:
@@ -217,6 +207,14 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createIssuerName();
         case SclPackage.KDC:
             return createKDC();
+        case SclPackage.LINE:
+            return createLine();
+        case SclPackage.LNODE:
+            return createLNode();
+        case SclPackage.LNODE_TYPE:
+            return createLNodeType();
+        case SclPackage.LNODE_CONTAINER:
+            return createLNodeContainer();
         case SclPackage.LDEVICE:
             return createLDevice();
         case SclPackage.LN:
@@ -231,6 +229,20 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createLogSettings();
         case SclPackage.OPT_FIELDS:
             return createOptFields();
+        case SclPackage.P:
+            return createP();
+        case SclPackage.PADDR:
+            return createPAddr();
+        case SclPackage.PPHYS_CONN:
+            return createP_PhysConn();
+        case SclPackage.PHYS_CONN:
+            return createPhysConn();
+        case SclPackage.PRIVATE:
+            return createPrivate();
+        case SclPackage.PROCESS:
+            return createProcess();
+        case SclPackage.PROT_NS:
+            return createProtNs();
         case SclPackage.PROTOCOL:
             return createProtocol();
         case SclPackage.READ_WRITE:
@@ -243,6 +255,8 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createReportSettings();
         case SclPackage.RPT_ENABLED:
             return createRptEnabled();
+        case SclPackage.SCL:
+            return createSCL();
         case SclPackage.SDI:
             return createSDI();
         case SclPackage.SG_EDIT:
@@ -277,6 +291,16 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createSubject();
         case SclPackage.SUP_SUBSCRIPTION:
             return createSupSubscription();
+        case SclPackage.SMV:
+            return createSMV();
+        case SclPackage.SUB_NETWORK:
+            return createSubNetwork();
+        case SclPackage.SDO:
+            return createSDO();
+        case SclPackage.TEXT:
+            return createText();
+        case SclPackage.VAL:
+            return createVal();
         case SclPackage.TIME_SYNC_PROT:
             return createTimeSyncProt();
         case SclPackage.TIMER_ACTIVATED_CONTROL:
@@ -285,40 +309,46 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createTrgOps();
         case SclPackage.VALUE_HANDLING:
             return createValueHandling();
-        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT:
-            return createAbstractConductingEquipment();
-        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC:
-            return createAbstractEqFuncSubFunc();
-        case SclPackage.BAY:
-            return createBay();
-        case SclPackage.CONDUCTING_EQUIPMENT:
-            return createConductingEquipment();
-        case SclPackage.CONNECTIVITY_NODE:
-            return createConnectivityNode();
-        case SclPackage.EQ_FUNCTION:
-            return createEqFunction();
-        case SclPackage.EQ_SUB_FUNCTION:
-            return createEqSubFunction();
-        case SclPackage.EQUIPMENT:
-            return createEquipment();
-        case SclPackage.EQUIPMENT_CONTAINER:
-            return createEquipmentContainer();
         case SclPackage.FUNCTION:
             return createFunction();
-        case SclPackage.GENERAL_EQUIPMENT:
-            return createGeneralEquipment();
         case SclPackage.GENERAL_EQUIPMENT_CONTAINER:
             return createGeneralEquipmentContainer();
-        case SclPackage.LNODE:
-            return createLNode();
-        case SclPackage.LNODE_CONTAINER:
-            return createLNodeContainer();
         case SclPackage.NEUTRAL_POINT:
             return createNeutralPoint();
         case SclPackage.POWER_SYSTEM_RESOURCE:
             return createPowerSystemResource();
         case SclPackage.POWER_TRANSFORMER:
             return createPowerTransformer();
+        case SclPackage.SERVICE_YES_NO:
+            return createServiceYesNo();
+        case SclPackage.SERVICE_WITH_OPTIONAL_MAX:
+            return createServiceWithOptionalMax();
+        case SclPackage.SERVICE_WITH_MAX_NON_ZERO:
+            return createServiceWithMaxNonZero();
+        case SclPackage.SERVICE_CONF_REPORT_CONTROL:
+            return createServiceConfReportControl();
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES:
+            return createServiceWithMaxAndMaxAttributes();
+        case SclPackage.SERVICE_WITH_MAX_AND_MODIFY:
+            return createServiceWithMaxAndModify();
+        case SclPackage.SERVICE_FOR_CONF_DATA_SET:
+            return createServiceForConfDataSet();
+        case SclPackage.SMP_RATE:
+            return createSmpRate();
+        case SclPackage.SAMPLES_PER_SEC:
+            return createSamplesPerSec();
+        case SclPackage.SEC_PER_SAMPLES:
+            return createSecPerSamples();
+        case SclPackage.SCSM:
+            return createSCSM();
+        case SclPackage.SM_VC_SECURITY:
+            return createSMVcSecurity();
+        case SclPackage.SCL_FILE_REFERENCE:
+            return createSclFileReference();
+        case SclPackage.SECURITY:
+            return createSecurity();
+        case SclPackage.SIGNAL_ROLE:
+            return createSignalRole();
         case SclPackage.SUB_EQUIPMENT:
             return createSubEquipment();
         case SclPackage.SUB_FUNCTION:
@@ -335,20 +365,8 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createVoltage();
         case SclPackage.VOLTAGE_LEVEL:
             return createVoltageLevel();
-        case SclPackage.SERVICE_YES_NO:
-            return createServiceYesNo();
-        case SclPackage.SERVICE_WITH_OPTIONAL_MAX:
-            return createServiceWithOptionalMax();
-        case SclPackage.SERVICE_WITH_MAX_NON_ZERO:
-            return createServiceWithMaxNonZero();
-        case SclPackage.SERVICE_CONF_REPORT_CONTROL:
-            return createServiceConfReportControl();
-        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES:
-            return createServiceWithMaxAndMaxAttributes();
-        case SclPackage.SERVICE_WITH_MAX_AND_MODIFY:
-            return createServiceWithMaxAndModify();
-        case SclPackage.SERVICE_FOR_CONF_DATA_SET:
-            return createServiceForConfDataSet();
+        case SclPackage.SOURCE_FILES:
+            return createSourceFiles();
         case SclPackage.CERT:
             return createCert();
         case SclPackage.VALUE_WITH_UNIT:
@@ -365,18 +383,30 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createMaxTime();
         case SclPackage.BIT_RATE:
             return createBitRate();
-        case SclPackage.SMP_RATE:
-            return createSmpRate();
-        case SclPackage.SAMPLES_PER_SEC:
-            return createSamplesPerSec();
-        case SclPackage.SEC_PER_SAMPLES:
-            return createSecPerSamples();
         case SclPackage.MC_SECURITY:
             return createMcSecurity();
         case SclPackage.AG_AUTHENTICATION:
             return createAgAuthentication();
         case SclPackage.AG_LN_REF:
             return createAgLNRef();
+        case SclPackage.EXT_CTRL:
+            return createExtCtrl();
+        case SclPackage.GOOSE_MC_SECURITY:
+            return createGOOSEMcSecurity();
+        case SclPackage.IED_SOURCE_FILES:
+            return createIEDSourceFiles();
+        case SclPackage.LABEL:
+            return createLabel();
+        case SclPackage.LABELS:
+            return createLabels();
+        case SclPackage.MIN_REQUESTED_SCD_FILE:
+            return createMinRequestedSCDFile();
+        case SclPackage.MIN_REQUESTED_SCD_FILES:
+            return createMinRequestedSCDFiles();
+        case SclPackage.MULTI_AP_PER_SUB_NET:
+            return createMultiAPPerSubNet();
+        case SclPackage.OUTPUTS:
+            return createOutputs();
         default:
             throw new IllegalArgumentException( "The class '" + eClass.getName() + "' is not a valid classifier" );
         }
@@ -416,6 +446,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createValKindEnumFromString( eDataType, initialValue );
         case SclPackage.BUF_MODE_ENUM:
             return createbufModeEnumFromString( eDataType, initialValue );
+        case SclPackage.EXT_CONTROL_CHECK_ENUM:
+            return createExtControlCheckEnumFromString( eDataType, initialValue );
+        case SclPackage.ASSOCIATION_INITIATOR:
+            return createAssociationInitiatorFromString( eDataType, initialValue );
         default:
             throw new IllegalArgumentException(
                     "The datatype '" + eDataType.getName() + "' is not a valid classifier" );
@@ -456,6 +490,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return convertValKindEnumToString( eDataType, instanceValue );
         case SclPackage.BUF_MODE_ENUM:
             return convertbufModeEnumToString( eDataType, instanceValue );
+        case SclPackage.EXT_CONTROL_CHECK_ENUM:
+            return convertExtControlCheckEnumToString( eDataType, instanceValue );
+        case SclPackage.ASSOCIATION_INITIATOR:
+            return convertAssociationInitiatorToString( eDataType, instanceValue );
         default:
             throw new IllegalArgumentException(
                     "The datatype '" + eDataType.getName() + "' is not a valid classifier" );
@@ -886,6 +924,61 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
+    public SCSM createSCSM() {
+        SCSMImpl scsm = new SCSMImpl();
+        return scsm;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SMVcSecurity createSMVcSecurity() {
+        SMVcSecurityImpl smVcSecurity = new SMVcSecurityImpl();
+        return smVcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SclFileReference createSclFileReference() {
+        SclFileReferenceImpl sclFileReference = new SclFileReferenceImpl();
+        return sclFileReference;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Security createSecurity() {
+        SecurityImpl security = new SecurityImpl();
+        return security;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SignalRole createSignalRole() {
+        SignalRoleImpl signalRole = new SignalRoleImpl();
+        return signalRole;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public McSecurity createMcSecurity() {
         McSecurityImpl mcSecurity = new McSecurityImpl();
         return mcSecurity;
@@ -911,6 +1004,105 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
     public AgLNRef createAgLNRef() {
         AgLNRefImpl agLNRef = new AgLNRefImpl();
         return agLNRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public ExtCtrl createExtCtrl() {
+        ExtCtrlImpl extCtrl = new ExtCtrlImpl();
+        return extCtrl;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public GOOSEMcSecurity createGOOSEMcSecurity() {
+        GOOSEMcSecurityImpl gooseMcSecurity = new GOOSEMcSecurityImpl();
+        return gooseMcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public IEDSourceFiles createIEDSourceFiles() {
+        IEDSourceFilesImpl iedSourceFiles = new IEDSourceFilesImpl();
+        return iedSourceFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Label createLabel() {
+        LabelImpl label = new LabelImpl();
+        return label;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Labels createLabels() {
+        LabelsImpl labels = new LabelsImpl();
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public MinRequestedSCDFile createMinRequestedSCDFile() {
+        MinRequestedSCDFileImpl minRequestedSCDFile = new MinRequestedSCDFileImpl();
+        return minRequestedSCDFile;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public MinRequestedSCDFiles createMinRequestedSCDFiles() {
+        MinRequestedSCDFilesImpl minRequestedSCDFiles = new MinRequestedSCDFilesImpl();
+        return minRequestedSCDFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public MultiAPPerSubNet createMultiAPPerSubNet() {
+        MultiAPPerSubNetImpl multiAPPerSubNet = new MultiAPPerSubNetImpl();
+        return multiAPPerSubNet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Outputs createOutputs() {
+        OutputsImpl outputs = new OutputsImpl();
+        return outputs;
     }
 
     /**
@@ -2030,6 +2222,17 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
+    public SourceFiles createSourceFiles() {
+        SourceFilesImpl sourceFiles = new SourceFilesImpl();
+        return sourceFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public ServiceYesNo createServiceYesNo() {
         ServiceYesNoImpl serviceYesNo = new ServiceYesNoImpl();
         return serviceYesNo;
@@ -2141,8 +2344,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public AssociationKindEnum createAssociationKindEnumFromString( EDataType eDataType, String initialValue ) {
         AssociationKindEnum result = AssociationKindEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2162,8 +2367,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public FCEnum createFCEnumFromString( EDataType eDataType, String initialValue ) {
         FCEnum result = FCEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2183,8 +2390,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public GSEControlTypeEnum createGSEControlTypeEnumFromString( EDataType eDataType, String initialValue ) {
         GSEControlTypeEnum result = GSEControlTypeEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2204,8 +2413,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public PhaseEnum createPhaseEnumFromString( EDataType eDataType, String initialValue ) {
         PhaseEnum result = PhaseEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2226,8 +2437,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
     public PredefinedTypeOfSecurityEnum createPredefinedTypeOfSecurityEnumFromString( EDataType eDataType,
             String initialValue ) {
         PredefinedTypeOfSecurityEnum result = PredefinedTypeOfSecurityEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2247,8 +2460,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public SMVDeliveryEnum createSMVDeliveryEnumFromString( EDataType eDataType, String initialValue ) {
         SMVDeliveryEnum result = SMVDeliveryEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2268,8 +2483,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public ServiceSettingsEnum createServiceSettingsEnumFromString( EDataType eDataType, String initialValue ) {
         ServiceSettingsEnum result = ServiceSettingsEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2290,8 +2507,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
     public ServiceSettingsNoDynEnum createServiceSettingsNoDynEnumFromString( EDataType eDataType,
             String initialValue ) {
         ServiceSettingsNoDynEnum result = ServiceSettingsNoDynEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2311,8 +2530,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public ServiceType createServiceTypeFromString( EDataType eDataType, String initialValue ) {
         ServiceType result = ServiceType.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2332,8 +2553,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public SmpMod createSmpModFromString( EDataType eDataType, String initialValue ) {
         SmpMod result = SmpMod.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2353,8 +2576,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public UnitMultiplierEnum createUnitMultiplierEnumFromString( EDataType eDataType, String initialValue ) {
         UnitMultiplierEnum result = UnitMultiplierEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2374,8 +2599,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public ValKindEnum createValKindEnumFromString( EDataType eDataType, String initialValue ) {
         ValKindEnum result = ValKindEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2395,8 +2622,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      */
     public bufModeEnum createbufModeEnumFromString( EDataType eDataType, String initialValue ) {
         bufModeEnum result = bufModeEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -2406,6 +2635,52 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     public String convertbufModeEnumToString( EDataType eDataType, Object instanceValue ) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ExtControlCheckEnum createExtControlCheckEnumFromString( EDataType eDataType, String initialValue ) {
+        ExtControlCheckEnum result = ExtControlCheckEnum.get( initialValue );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertExtControlCheckEnumToString( EDataType eDataType, Object instanceValue ) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public AssociationInitiator createAssociationInitiatorFromString( EDataType eDataType, String initialValue ) {
+        AssociationInitiator result = AssociationInitiator.get( initialValue );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertAssociationInitiatorToString( EDataType eDataType, Object instanceValue ) {
         return instanceValue == null ? null : instanceValue.toString();
     }
 

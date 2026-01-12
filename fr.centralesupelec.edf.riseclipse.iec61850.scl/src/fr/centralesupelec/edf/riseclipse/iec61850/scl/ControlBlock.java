@@ -33,6 +33,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getAddress <em>Address</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getCbUuid <em>Cb Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlBlock()
@@ -162,7 +163,6 @@ public interface ControlBlock extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlBlock_Address()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentControlBlock
      * @model opposite="ParentControlBlock" containment="true" unsettable="true" ordered="false"
-     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Address getAddress();
@@ -256,6 +256,28 @@ public interface ControlBlock extends UnNaming {
      * @generated
      */
     boolean isSetRefersToControlWithIEDName();
+
+    /**
+     * Returns the value of the '<em><b>Cb Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Cb Uuid</em>' attribute.
+     * @see #setCbUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlBlock_CbUuid()
+     * @model
+     * @generated
+     */
+    String getCbUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getCbUuid <em>Cb Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Cb Uuid</em>' attribute.
+     * @see #getCbUuid()
+     * @generated
+     */
+    void setCbUuid( String value );
 
     /**
      * <!-- begin-user-doc -->

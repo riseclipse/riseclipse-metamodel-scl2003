@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -19,6 +19,10 @@
 *************************************************************************
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
+
+import org.eclipse.emf.common.util.EList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +37,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement <em>Parent Base Element</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getAsdObjects <em>Asd Objects</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPrivate()
@@ -180,5 +185,42 @@ public interface Private extends AnyContentFromOtherNamespace {
      * @generated
      */
     String getValue();
+
+    /**
+     * Returns the value of the '<em><b>Asd Objects</b></em>' containment reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject#getParentPrivate <em>Parent Private</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Asd Objects</em>' containment reference list.
+     * @see #isSetAsdObjects()
+     * @see #unsetAsdObjects()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPrivate_AsdObjects()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject#getParentPrivate
+     * @model opposite="ParentPrivate" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    EList< AsdObject > getAsdObjects();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getAsdObjects <em>Asd Objects</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetAsdObjects()
+     * @see #getAsdObjects()
+     * @generated
+     */
+    void unsetAsdObjects();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getAsdObjects <em>Asd Objects</em>}' containment reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Asd Objects</em>' containment reference list is set.
+     * @see #unsetAsdObjects()
+     * @see #getAsdObjects()
+     * @generated
+     */
+    boolean isSetAsdObjects();
 
 } // Private

@@ -60,6 +60,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getLineName <em>Line Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getCNodeUuid <em>CNode Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -315,6 +316,26 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * @ordered
      */
     protected boolean lineNameESet;
+
+    /**
+     * The default value of the '{@link #getCNodeUuid() <em>CNode Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getCNodeUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String CNODE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getCNodeUuid() <em>CNode Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getCNodeUuid()
+     * @generated
+     * @ordered
+     */
+    protected String cNodeUuid = CNODE_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -957,6 +978,31 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getCNodeUuid() {
+        return cNodeUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setCNodeUuid( String newCNodeUuid ) {
+        String oldCNodeUuid = cNodeUuid;
+        cNodeUuid = newCNodeUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TERMINAL__CNODE_UUID, oldCNodeUuid,
+                    cNodeUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -1037,6 +1083,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return getName();
         case SclPackage.TERMINAL__LINE_NAME:
             return getLineName();
+        case SclPackage.TERMINAL__CNODE_UUID:
+            return getCNodeUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1078,6 +1126,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         case SclPackage.TERMINAL__LINE_NAME:
             setLineName( ( String ) newValue );
+            return;
+        case SclPackage.TERMINAL__CNODE_UUID:
+            setCNodeUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -1121,6 +1172,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         case SclPackage.TERMINAL__LINE_NAME:
             unsetLineName();
             return;
+        case SclPackage.TERMINAL__CNODE_UUID:
+            setCNodeUuid( CNODE_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1153,6 +1207,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return isSetName();
         case SclPackage.TERMINAL__LINE_NAME:
             return isSetLineName();
+        case SclPackage.TERMINAL__CNODE_UUID:
+            return CNODE_UUID_EDEFAULT == null ? cNodeUuid != null : !CNODE_UUID_EDEFAULT.equals( cNodeUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -1225,6 +1281,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", cNodeUuid: " );
+        result.append( cNodeUuid );
         result.append( ')' );
         return result.toString();
     }

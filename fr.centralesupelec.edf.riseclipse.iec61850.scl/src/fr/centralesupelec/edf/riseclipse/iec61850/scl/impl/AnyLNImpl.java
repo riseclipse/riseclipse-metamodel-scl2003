@@ -33,9 +33,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
@@ -49,8 +55,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
@@ -66,6 +74,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLnType <em>Ln Type</em>}</li>
@@ -80,6 +90,11 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByAssociation <em>Referred By Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByLNode <em>Referred By LNode</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLabels <em>Labels</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByDOS <em>Referred By DOS</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredBySDS <em>Referred By SDS</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByDAS <em>Referred By DAS</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +109,64 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @ordered
      */
     protected static final String NAMESPACE_EDEFAULT = null;
+
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
 
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
@@ -309,6 +382,74 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @ordered
      */
     protected EList< LNode > referredByLNode;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
+
+    /**
+     * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOutputs()
+     * @generated
+     * @ordered
+     */
+    protected Outputs outputs;
+
+    /**
+     * This is true if the Outputs containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean outputsESet;
+
+    /**
+     * The cached value of the '{@link #getReferredByDOS() <em>Referred By DOS</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByDOS()
+     * @generated
+     * @ordered
+     */
+    protected EList< DOS > referredByDOS;
+
+    /**
+     * The cached value of the '{@link #getReferredBySDS() <em>Referred By SDS</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredBySDS()
+     * @generated
+     * @ordered
+     */
+    protected EList< SDS > referredBySDS;
+
+    /**
+     * The cached value of the '{@link #getReferredByDAS() <em>Referred By DAS</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByDAS()
+     * @generated
+     * @ordered
+     */
+    protected EList< DAS > referredByDAS;
 
     /**
      * <!-- begin-user-doc -->
@@ -1067,6 +1208,362 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_ANY_LN,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_ANY_LN,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__LABELS, newLabels, newLabels,
+                        !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__LABELS,
+                    oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_ANY_LN, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Outputs getOutputs() {
+        return outputs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetOutputs( Outputs newOutputs, NotificationChain msgs ) {
+        Outputs oldOutputs = outputs;
+        outputs = newOutputs;
+        boolean oldOutputsESet = outputsESet;
+        outputsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__OUTPUTS,
+                    oldOutputs, newOutputs, !oldOutputsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setOutputs( Outputs newOutputs ) {
+        if( newOutputs != outputs ) {
+            NotificationChain msgs = null;
+            if( outputs != null ) {
+                msgs = ( ( InternalEObject ) outputs ).eInverseRemove( this, SclPackage.OUTPUTS__PARENT_ANY_LN,
+                        Outputs.class, msgs );
+            }
+            if( newOutputs != null ) {
+                msgs = ( ( InternalEObject ) newOutputs ).eInverseAdd( this, SclPackage.OUTPUTS__PARENT_ANY_LN,
+                        Outputs.class, msgs );
+            }
+            msgs = basicSetOutputs( newOutputs, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldOutputsESet = outputsESet;
+            outputsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__OUTPUTS, newOutputs,
+                        newOutputs, !oldOutputsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetOutputs( NotificationChain msgs ) {
+        Outputs oldOutputs = outputs;
+        outputs = null;
+        boolean oldOutputsESet = outputsESet;
+        outputsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ANY_LN__OUTPUTS, oldOutputs, null, oldOutputsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetOutputs() {
+        if( outputs != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) outputs ).eInverseRemove( this, SclPackage.OUTPUTS__PARENT_ANY_LN,
+                    Outputs.class, msgs );
+            msgs = basicUnsetOutputs( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldOutputsESet = outputsESet;
+            outputsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__OUTPUTS, null, null,
+                        oldOutputsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetOutputs() {
+        return outputsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< DOS > getReferredByDOS() {
+        if( referredByDOS == null ) {
+            referredByDOS = new EObjectWithInverseResolvingEList.Unsettable< >( DOS.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_DOS, AsdPackage.DOS__REFERS_TO_ANY_LN );
+        }
+        return referredByDOS;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByDOS() {
+        if( referredByDOS != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByDOS ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByDOS() {
+        return referredByDOS != null && ( ( InternalEList.Unsettable< ? > ) referredByDOS ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< SDS > getReferredBySDS() {
+        if( referredBySDS == null ) {
+            referredBySDS = new EObjectWithInverseResolvingEList.Unsettable< >( SDS.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_SDS, AsdPackage.SDS__REFERS_TO_ANY_LN );
+        }
+        return referredBySDS;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredBySDS() {
+        if( referredBySDS != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredBySDS ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredBySDS() {
+        return referredBySDS != null && ( ( InternalEList.Unsettable< ? > ) referredBySDS ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< DAS > getReferredByDAS() {
+        if( referredByDAS == null ) {
+            referredByDAS = new EObjectWithInverseResolvingEList.Unsettable< >( DAS.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_DAS, AsdPackage.DAS__REFERS_TO_ANY_LN );
+        }
+        return referredByDAS;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByDAS() {
+        if( referredByDAS != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByDAS ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByDAS() {
+        return referredByDAS != null && ( ( InternalEList.Unsettable< ? > ) referredByDAS ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -1132,6 +1629,114 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__TEMPLATE_UUID, oldTemplateUuid,
+                    TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1173,6 +1778,27 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLNode() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.ANY_LN__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
+        case SclPackage.ANY_LN__OUTPUTS:
+            if( outputs != null ) {
+                msgs = ( ( InternalEObject ) outputs ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.ANY_LN__OUTPUTS, null, msgs );
+            }
+            return basicSetOutputs( ( Outputs ) otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_DOS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByDOS() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_SDS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredBySDS() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_DAS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByDAS() )
+                    .basicAdd( otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1207,6 +1833,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return ( ( InternalEList< ? > ) getReferredByIEDName() ).basicRemove( otherEnd, msgs );
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return ( ( InternalEList< ? > ) getReferredByLNode() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__LABELS:
+            return basicUnsetLabels( msgs );
+        case SclPackage.ANY_LN__OUTPUTS:
+            return basicUnsetOutputs( msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_DOS:
+            return ( ( InternalEList< ? > ) getReferredByDOS() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_SDS:
+            return ( ( InternalEList< ? > ) getReferredBySDS() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_DAS:
+            return ( ( InternalEList< ? > ) getReferredByDAS() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1221,6 +1857,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         switch( featureID ) {
         case SclPackage.ANY_LN__NAMESPACE:
             return getNamespace();
+        case SclPackage.ANY_LN__UUID:
+            return getUuid();
+        case SclPackage.ANY_LN__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.ANY_LN__INST:
             return getInst();
         case SclPackage.ANY_LN__LN_CLASS:
@@ -1249,6 +1889,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return getReferredByIEDName();
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return getReferredByLNode();
+        case SclPackage.ANY_LN__LABELS:
+            return getLabels();
+        case SclPackage.ANY_LN__OUTPUTS:
+            return getOutputs();
+        case SclPackage.ANY_LN__REFERRED_BY_DOS:
+            return getReferredByDOS();
+        case SclPackage.ANY_LN__REFERRED_BY_SDS:
+            return getReferredBySDS();
+        case SclPackage.ANY_LN__REFERRED_BY_DAS:
+            return getReferredByDAS();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1262,6 +1912,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.ANY_LN__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.ANY_LN__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.ANY_LN__INST:
             setInst( ( String ) newValue );
             return;
@@ -1313,6 +1969,24 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             getReferredByLNode().clear();
             getReferredByLNode().addAll( ( Collection< ? extends LNode > ) newValue );
             return;
+        case SclPackage.ANY_LN__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
+        case SclPackage.ANY_LN__OUTPUTS:
+            setOutputs( ( Outputs ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_DOS:
+            getReferredByDOS().clear();
+            getReferredByDOS().addAll( ( Collection< ? extends DOS > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_SDS:
+            getReferredBySDS().clear();
+            getReferredBySDS().addAll( ( Collection< ? extends SDS > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_DAS:
+            getReferredByDAS().clear();
+            getReferredByDAS().addAll( ( Collection< ? extends DAS > ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1325,6 +1999,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.ANY_LN__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.ANY_LN__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.ANY_LN__INST:
             unsetInst();
             return;
@@ -1367,6 +2047,21 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             unsetReferredByLNode();
             return;
+        case SclPackage.ANY_LN__LABELS:
+            unsetLabels();
+            return;
+        case SclPackage.ANY_LN__OUTPUTS:
+            unsetOutputs();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_DOS:
+            unsetReferredByDOS();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_SDS:
+            unsetReferredBySDS();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_DAS:
+            unsetReferredByDAS();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1381,6 +2076,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         switch( featureID ) {
         case SclPackage.ANY_LN__NAMESPACE:
             return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
+        case SclPackage.ANY_LN__UUID:
+            return isSetUuid();
+        case SclPackage.ANY_LN__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.ANY_LN__INST:
             return isSetInst();
         case SclPackage.ANY_LN__LN_CLASS:
@@ -1409,6 +2108,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return isSetReferredByIEDName();
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return isSetReferredByLNode();
+        case SclPackage.ANY_LN__LABELS:
+            return isSetLabels();
+        case SclPackage.ANY_LN__OUTPUTS:
+            return isSetOutputs();
+        case SclPackage.ANY_LN__REFERRED_BY_DOS:
+            return isSetReferredByDOS();
+        case SclPackage.ANY_LN__REFERRED_BY_SDS:
+            return isSetReferredBySDS();
+        case SclPackage.ANY_LN__REFERRED_BY_DAS:
+            return isSetReferredByDAS();
         }
         return super.eIsSet( featureID );
     }
@@ -1428,6 +2137,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return -1;
             }
         }
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.ANY_LN__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.ANY_LN__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
         return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
@@ -1442,6 +2161,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             switch( baseFeatureID ) {
             case SclPackage.INAMESPACE_GETTER__NAMESPACE:
                 return SclPackage.ANY_LN__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.ANY_LN__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.ANY_LN__TEMPLATE_UUID;
             default:
                 return -1;
             }
@@ -1475,7 +2204,21 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (inst: " );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", inst: " );
         if( instESet ) {
             result.append( inst );
         }
@@ -1513,16 +2256,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         // String messagePrefix = "while resolving link from AnyLN on line: ";
 
-        if( ( getLnType() == null ) || getLnType().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "lnType is missing" );
-            return;
+        if( ( getLnType() == null ) || getLnType().isEmpty() ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        	//         messagePrefix, "lnType is missing" );
+        	            return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
-        if( dtt == null ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, "DataTypeTemplates is missing" );
-            return;
+        if( dtt == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        	//         messagePrefix, "DataTypeTemplates is missing" );
+        	            return;
         }
 
         List< LNodeType > res = dtt
@@ -1531,11 +2272,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 .filter( lnt -> getLnType().equals( lnt.getId() ) )
                 .collect( Collectors.toList() );
 
-        if( res.size() != 1 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-            //         " LNodeType( id = ", getLnType(), " )" );
-            return;
+        if( res.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        	//         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+        	            //         " LNodeType( id = ", getLnType(), " )" );
+        	            return;
         }
         setRefersToLNodeType( res.get( 0 ) );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),

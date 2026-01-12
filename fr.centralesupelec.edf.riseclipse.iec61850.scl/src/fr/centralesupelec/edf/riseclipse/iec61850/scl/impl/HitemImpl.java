@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getWho <em>Who</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getWhy <em>Why</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getParentHistory <em>Parent History</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getSourceFiles <em>Source Files</em>}</li>
  * </ul>
  *
  * @generated
@@ -224,6 +226,25 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @ordered
      */
     protected boolean whyESet;
+
+    /**
+     * The cached value of the '{@link #getSourceFiles() <em>Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSourceFiles()
+     * @generated
+     * @ordered
+     */
+    protected SourceFiles sourceFiles;
+
+    /**
+     * This is true if the Source Files containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean sourceFilesESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -626,6 +647,130 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      */
     @Override
+    public SourceFiles getSourceFiles() {
+        return sourceFiles;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSourceFiles( SourceFiles newSourceFiles, NotificationChain msgs ) {
+        SourceFiles oldSourceFiles = sourceFiles;
+        sourceFiles = newSourceFiles;
+        boolean oldSourceFilesESet = sourceFilesESet;
+        sourceFilesESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.HITEM__SOURCE_FILES, oldSourceFiles, newSourceFiles, !oldSourceFilesESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSourceFiles( SourceFiles newSourceFiles ) {
+        if( newSourceFiles != sourceFiles ) {
+            NotificationChain msgs = null;
+            if( sourceFiles != null ) {
+                msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this, SclPackage.SOURCE_FILES__PARENT_HITEM,
+                        SourceFiles.class, msgs );
+            }
+            if( newSourceFiles != null ) {
+                msgs = ( ( InternalEObject ) newSourceFiles ).eInverseAdd( this, SclPackage.SOURCE_FILES__PARENT_HITEM,
+                        SourceFiles.class, msgs );
+            }
+            msgs = basicSetSourceFiles( newSourceFiles, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldSourceFilesESet = sourceFilesESet;
+            sourceFilesESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HITEM__SOURCE_FILES, newSourceFiles,
+                        newSourceFiles, !oldSourceFilesESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetSourceFiles( NotificationChain msgs ) {
+        SourceFiles oldSourceFiles = sourceFiles;
+        sourceFiles = null;
+        boolean oldSourceFilesESet = sourceFilesESet;
+        sourceFilesESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.HITEM__SOURCE_FILES, oldSourceFiles, null, oldSourceFilesESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSourceFiles() {
+        if( sourceFiles != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this, SclPackage.SOURCE_FILES__PARENT_HITEM,
+                    SourceFiles.class, msgs );
+            msgs = basicUnsetSourceFiles( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldSourceFilesESet = sourceFilesESet;
+            sourceFilesESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.HITEM__SOURCE_FILES, null, null,
+                        oldSourceFilesESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSourceFiles() {
+        return sourceFilesESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.HITEM__PARENT_HISTORY:
@@ -633,6 +778,12 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentHistory( ( History ) otherEnd, msgs );
+        case SclPackage.HITEM__SOURCE_FILES:
+            if( sourceFiles != null ) {
+                msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.HITEM__SOURCE_FILES, null, msgs );
+            }
+            return basicSetSourceFiles( ( SourceFiles ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -647,6 +798,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         switch( featureID ) {
         case SclPackage.HITEM__PARENT_HISTORY:
             return basicSetParentHistory( null, msgs );
+        case SclPackage.HITEM__SOURCE_FILES:
+            return basicUnsetSourceFiles( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -687,6 +840,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
             return getWhy();
         case SclPackage.HITEM__PARENT_HISTORY:
             return getParentHistory();
+        case SclPackage.HITEM__SOURCE_FILES:
+            return getSourceFiles();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -719,6 +874,9 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
             return;
         case SclPackage.HITEM__PARENT_HISTORY:
             setParentHistory( ( History ) newValue );
+            return;
+        case SclPackage.HITEM__SOURCE_FILES:
+            setSourceFiles( ( SourceFiles ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -753,6 +911,9 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
         case SclPackage.HITEM__PARENT_HISTORY:
             setParentHistory( ( History ) null );
             return;
+        case SclPackage.HITEM__SOURCE_FILES:
+            unsetSourceFiles();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -779,6 +940,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
             return isSetWhy();
         case SclPackage.HITEM__PARENT_HISTORY:
             return getParentHistory() != null;
+        case SclPackage.HITEM__SOURCE_FILES:
+            return isSetSourceFiles();
         }
         return super.eIsSet( featureID );
     }
