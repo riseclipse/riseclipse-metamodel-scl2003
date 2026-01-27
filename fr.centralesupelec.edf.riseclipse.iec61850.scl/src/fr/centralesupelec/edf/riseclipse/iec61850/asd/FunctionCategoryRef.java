@@ -102,7 +102,7 @@ public interface FunctionCategoryRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionCategoryRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getFunctionCategoryRef
-     * @model opposite="functionCategoryRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionCategoryRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

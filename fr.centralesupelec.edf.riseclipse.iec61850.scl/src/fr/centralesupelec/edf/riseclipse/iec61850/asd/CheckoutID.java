@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,11 +15,11 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
  * @model extendedMetaData="name='CheckoutID' kind='elementOnly'"
  * @generated
  */
-public interface CheckoutID extends SclFileReference {
+public interface CheckoutID extends SclFileUUIDReference {
     /**
      * Returns the value of the '<em><b>Sub Checkout ID</b></em>' containment reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCheckoutID#getParentCheckoutID <em>Parent Checkout ID</em>}'.

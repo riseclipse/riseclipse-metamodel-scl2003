@@ -153,7 +153,7 @@ public interface InputVar extends LogicVarRef {
      * @see #setParentBehaviorDescription(BehaviorDescription)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getInputVar_ParentBehaviorDescription()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getInputVar
-     * @model opposite="inputVar" unsettable="true" ordered="false"
+     * @model opposite="InputVar" unsettable="true" ordered="false"
      * @generated
      */
     BehaviorDescription getParentBehaviorDescription();

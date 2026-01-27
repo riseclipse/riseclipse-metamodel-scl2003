@@ -368,14 +368,14 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass smVcSecurityEClass = null;
+    private EClass svMcSecurityEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass sclFileReferenceEClass = null;
+    private EClass sclFileUUIDReferenceEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -494,7 +494,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass iedSourceFilesEClass = null;
+    private EClass iedSclRefEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -1299,7 +1299,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass sourceFilesEClass = null;
+    private EClass headerSclRefEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -4048,12 +4048,12 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EClass getSMVcSecurity() {
-        if( smVcSecurityEClass == null ) {
-            smVcSecurityEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
+    public EClass getSVMcSecurity() {
+        if( svMcSecurityEClass == null ) {
+            svMcSecurityEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
                     .getEClassifiers().get( 142 );
         }
-        return smVcSecurityEClass;
+        return svMcSecurityEClass;
     }
 
     /**
@@ -4062,8 +4062,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSMVcSecurity_ParentClientServicesFromSMVcSecurity() {
-        return ( EReference ) getSMVcSecurity().getEStructuralFeatures().get( 0 );
+    public EReference getSVMcSecurity_ParentClientServicesFromSVMcSecurity() {
+        return ( EReference ) getSVMcSecurity().getEStructuralFeatures().get( 0 );
     }
 
     /**
@@ -4072,12 +4072,12 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EClass getSclFileReference() {
-        if( sclFileReferenceEClass == null ) {
-            sclFileReferenceEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
+    public EClass getSclFileUUIDReference() {
+        if( sclFileUUIDReferenceEClass == null ) {
+            sclFileUUIDReferenceEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
                     .getEClassifiers().get( 143 );
         }
-        return sclFileReferenceEClass;
+        return sclFileUUIDReferenceEClass;
     }
 
     /**
@@ -4086,8 +4086,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSclFileReference_FileName() {
-        return ( EAttribute ) getSclFileReference().getEStructuralFeatures().get( 0 );
+    public EAttribute getSclFileUUIDReference_FileName() {
+        return ( EAttribute ) getSclFileUUIDReference().getEStructuralFeatures().get( 0 );
     }
 
     /**
@@ -4096,8 +4096,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSclFileReference_FileType() {
-        return ( EAttribute ) getSclFileReference().getEStructuralFeatures().get( 1 );
+    public EAttribute getSclFileUUIDReference_FileType() {
+        return ( EAttribute ) getSclFileUUIDReference().getEStructuralFeatures().get( 1 );
     }
 
     /**
@@ -4106,8 +4106,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSclFileReference_FileUuid() {
-        return ( EAttribute ) getSclFileReference().getEStructuralFeatures().get( 2 );
+    public EAttribute getSclFileUUIDReference_FileUuid() {
+        return ( EAttribute ) getSclFileUUIDReference().getEStructuralFeatures().get( 2 );
     }
 
     /**
@@ -4116,8 +4116,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSclFileReference_Revision() {
-        return ( EAttribute ) getSclFileReference().getEStructuralFeatures().get( 3 );
+    public EAttribute getSclFileUUIDReference_Revision() {
+        return ( EAttribute ) getSclFileUUIDReference().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -4126,8 +4126,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSclFileReference_Version() {
-        return ( EAttribute ) getSclFileReference().getEStructuralFeatures().get( 4 );
+    public EAttribute getSclFileUUIDReference_Version() {
+        return ( EAttribute ) getSclFileUUIDReference().getEStructuralFeatures().get( 4 );
     }
 
     /**
@@ -4136,8 +4136,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSclFileReference_When() {
-        return ( EAttribute ) getSclFileReference().getEStructuralFeatures().get( 5 );
+    public EAttribute getSclFileUUIDReference_When() {
+        return ( EAttribute ) getSclFileUUIDReference().getEStructuralFeatures().get( 5 );
     }
 
     /**
@@ -4146,8 +4146,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSclFileReference_ParentSourceFiles() {
-        return ( EReference ) getSclFileReference().getEStructuralFeatures().get( 6 );
+    public EReference getSclFileUUIDReference_ParentHeaderSclRef() {
+        return ( EReference ) getSclFileUUIDReference().getEStructuralFeatures().get( 6 );
     }
 
     /**
@@ -4156,8 +4156,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSclFileReference_ParentApplicationSclRef() {
-        return ( EReference ) getSclFileReference().getEStructuralFeatures().get( 7 );
+    public EReference getSclFileUUIDReference_ParentApplicationSclRef() {
+        return ( EReference ) getSclFileUUIDReference().getEStructuralFeatures().get( 7 );
     }
 
     /**
@@ -4166,8 +4166,18 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSclFileReference_ParentFunctionSclRef() {
-        return ( EReference ) getSclFileReference().getEStructuralFeatures().get( 8 );
+    public EReference getSclFileUUIDReference_ParentFunctionSclRef() {
+        return ( EReference ) getSclFileUUIDReference().getEStructuralFeatures().get( 8 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSclFileUUIDReference_ParentIEDSclRef() {
+        return ( EReference ) getSclFileUUIDReference().getEStructuralFeatures().get( 9 );
     }
 
     /**
@@ -4960,12 +4970,12 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EClass getIEDSourceFiles() {
-        if( iedSourceFilesEClass == null ) {
-            iedSourceFilesEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
-                    .getEClassifiers().get( 195 );
+    public EClass getIEDSclRef() {
+        if( iedSclRefEClass == null ) {
+            iedSclRefEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()
+                    .get( 195 );
         }
-        return iedSourceFilesEClass;
+        return iedSclRefEClass;
     }
 
     /**
@@ -4974,8 +4984,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getIEDSourceFiles_SclFileReference() {
-        return ( EReference ) getIEDSourceFiles().getEStructuralFeatures().get( 0 );
+    public EReference getIEDSclRef_SclFileReference() {
+        return ( EReference ) getIEDSclRef().getEStructuralFeatures().get( 0 );
     }
 
     /**
@@ -4984,8 +4994,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getIEDSourceFiles_ParentIED() {
-        return ( EReference ) getIEDSourceFiles().getEStructuralFeatures().get( 1 );
+    public EReference getIEDSclRef_ParentIED() {
+        return ( EReference ) getIEDSclRef().getEStructuralFeatures().get( 1 );
     }
 
     /**
@@ -6184,7 +6194,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getClientServices_SMVcSecurity() {
+    public EReference getClientServices_SVMcSecurity() {
         return ( EReference ) getClientServices().getEStructuralFeatures().get( 18 );
     }
 
@@ -12190,12 +12200,12 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EClass getSourceFiles() {
-        if( sourceFilesEClass == null ) {
-            sourceFilesEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
+    public EClass getHeaderSclRef() {
+        if( headerSclRefEClass == null ) {
+            headerSclRefEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )
                     .getEClassifiers().get( 170 );
         }
-        return sourceFilesEClass;
+        return headerSclRefEClass;
     }
 
     /**
@@ -12204,8 +12214,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSourceFiles_SclFileReference() {
-        return ( EReference ) getSourceFiles().getEStructuralFeatures().get( 0 );
+    public EReference getHeaderSclRef_SclFileReference() {
+        return ( EReference ) getHeaderSclRef().getEStructuralFeatures().get( 0 );
     }
 
     /**
@@ -12214,8 +12224,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSourceFiles_ParentHitem() {
-        return ( EReference ) getSourceFiles().getEStructuralFeatures().get( 1 );
+    public EReference getHeaderSclRef_ParentHitem() {
+        return ( EReference ) getHeaderSclRef().getEStructuralFeatures().get( 1 );
     }
 
     /**
@@ -12224,8 +12234,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getSourceFiles_ParentHeader() {
-        return ( EReference ) getSourceFiles().getEStructuralFeatures().get( 2 );
+    public EReference getHeaderSclRef_ParentHeader() {
+        return ( EReference ) getHeaderSclRef().getEStructuralFeatures().get( 2 );
     }
 
     /**

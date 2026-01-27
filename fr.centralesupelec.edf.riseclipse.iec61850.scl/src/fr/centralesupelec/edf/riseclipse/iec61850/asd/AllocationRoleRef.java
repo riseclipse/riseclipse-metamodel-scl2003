@@ -102,7 +102,7 @@ public interface AllocationRoleRef extends FunctionalVariantRefContainer {
      * @see #setParentApplication(Application)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAllocationRoleRef_ParentApplication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getAllocationRoleRef
-     * @model opposite="allocationRoleRef" unsettable="true" ordered="false"
+     * @model opposite="AllocationRoleRef" unsettable="true" ordered="false"
      * @generated
      */
     Application getParentApplication();

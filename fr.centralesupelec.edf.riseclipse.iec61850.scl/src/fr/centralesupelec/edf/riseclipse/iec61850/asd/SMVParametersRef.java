@@ -98,7 +98,7 @@ public interface SMVParametersRef extends ServiceParametersRef {
      * @see #setParentSourceRef(SourceRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSMVParametersRef_ParentSourceRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getSMVParametersRef
-     * @model opposite="sMVParametersRef" unsettable="true" ordered="false"
+     * @model opposite="SMVParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SourceRef getParentSourceRef();
@@ -122,7 +122,7 @@ public interface SMVParametersRef extends ServiceParametersRef {
      * @see #setParentSubscriberLNode(SubscriberLNode)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSMVParametersRef_ParentSubscriberLNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubscriberLNode#getSMVParametersRef
-     * @model opposite="sMVParametersRef" unsettable="true" ordered="false"
+     * @model opposite="SMVParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SubscriberLNode getParentSubscriberLNode();

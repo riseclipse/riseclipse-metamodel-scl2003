@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
@@ -24,29 +24,30 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>File Reference</b></em>'.
+ * A representation of the model object '<em><b>File UUID Reference</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileName <em>File Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileType <em>File Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileUuid <em>File Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getRevision <em>Revision</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getVersion <em>Version</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getWhen <em>When</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles <em>Parent Source Files</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileName <em>File Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileType <em>File Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileUuid <em>File Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getRevision <em>Revision</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getVersion <em>Version</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getWhen <em>When</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentHeaderSclRef <em>Parent Header Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentIEDSclRef <em>Parent IED Scl Ref</em>}</li>
  * </ul>
  *
- * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference()
+ * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference()
  * @model
  * @generated
  */
-public interface SclFileReference extends SclObject {
+public interface SclFileUUIDReference extends SclObject {
     /**
      * Returns the value of the '<em><b>File Name</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -55,14 +56,14 @@ public interface SclFileReference extends SclObject {
      * @see #isSetFileName()
      * @see #unsetFileName()
      * @see #setFileName(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_FileName()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_FileName()
      * @model unsettable="true"
      * @generated
      */
     String getFileName();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileName <em>File Name</em>}' attribute.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileName <em>File Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>File Name</em>' attribute.
@@ -74,7 +75,7 @@ public interface SclFileReference extends SclObject {
     void setFileName( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileName <em>File Name</em>}' attribute.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileName <em>File Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetFileName()
@@ -85,7 +86,7 @@ public interface SclFileReference extends SclObject {
     void unsetFileName();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileName <em>File Name</em>}' attribute is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileName <em>File Name</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>File Name</em>' attribute is set.
@@ -104,14 +105,14 @@ public interface SclFileReference extends SclObject {
      * @see #isSetFileType()
      * @see #unsetFileType()
      * @see #setFileType(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_FileType()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_FileType()
      * @model unsettable="true"
      * @generated
      */
     String getFileType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileType <em>File Type</em>}' attribute.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileType <em>File Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>File Type</em>' attribute.
@@ -123,7 +124,7 @@ public interface SclFileReference extends SclObject {
     void setFileType( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileType <em>File Type</em>}' attribute.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileType <em>File Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetFileType()
@@ -134,7 +135,7 @@ public interface SclFileReference extends SclObject {
     void unsetFileType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileType <em>File Type</em>}' attribute is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileType <em>File Type</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>File Type</em>' attribute is set.
@@ -153,14 +154,14 @@ public interface SclFileReference extends SclObject {
      * @see #isSetFileUuid()
      * @see #unsetFileUuid()
      * @see #setFileUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_FileUuid()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_FileUuid()
      * @model unsettable="true"
      * @generated
      */
     String getFileUuid();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileUuid <em>File Uuid</em>}' attribute.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileUuid <em>File Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>File Uuid</em>' attribute.
@@ -172,7 +173,7 @@ public interface SclFileReference extends SclObject {
     void setFileUuid( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileUuid <em>File Uuid</em>}' attribute.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileUuid <em>File Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetFileUuid()
@@ -183,7 +184,7 @@ public interface SclFileReference extends SclObject {
     void unsetFileUuid();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileUuid <em>File Uuid</em>}' attribute is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileUuid <em>File Uuid</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>File Uuid</em>' attribute is set.
@@ -202,14 +203,14 @@ public interface SclFileReference extends SclObject {
      * @see #isSetRevision()
      * @see #unsetRevision()
      * @see #setRevision(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_Revision()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_Revision()
      * @model unsettable="true"
      * @generated
      */
     String getRevision();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getRevision <em>Revision</em>}' attribute.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getRevision <em>Revision</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Revision</em>' attribute.
@@ -221,7 +222,7 @@ public interface SclFileReference extends SclObject {
     void setRevision( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getRevision <em>Revision</em>}' attribute.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getRevision <em>Revision</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetRevision()
@@ -232,7 +233,7 @@ public interface SclFileReference extends SclObject {
     void unsetRevision();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getRevision <em>Revision</em>}' attribute is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getRevision <em>Revision</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>Revision</em>' attribute is set.
@@ -251,14 +252,14 @@ public interface SclFileReference extends SclObject {
      * @see #isSetVersion()
      * @see #unsetVersion()
      * @see #setVersion(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_Version()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_Version()
      * @model unsettable="true"
      * @generated
      */
     String getVersion();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getVersion <em>Version</em>}' attribute.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getVersion <em>Version</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Version</em>' attribute.
@@ -270,7 +271,7 @@ public interface SclFileReference extends SclObject {
     void setVersion( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getVersion <em>Version</em>}' attribute.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getVersion <em>Version</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetVersion()
@@ -281,7 +282,7 @@ public interface SclFileReference extends SclObject {
     void unsetVersion();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getVersion <em>Version</em>}' attribute is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getVersion <em>Version</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>Version</em>' attribute is set.
@@ -300,14 +301,14 @@ public interface SclFileReference extends SclObject {
      * @see #isSetWhen()
      * @see #unsetWhen()
      * @see #setWhen(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_When()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_When()
      * @model unsettable="true"
      * @generated
      */
     String getWhen();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getWhen <em>When</em>}' attribute.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getWhen <em>When</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>When</em>' attribute.
@@ -319,7 +320,7 @@ public interface SclFileReference extends SclObject {
     void setWhen( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getWhen <em>When</em>}' attribute.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getWhen <em>When</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetWhen()
@@ -330,7 +331,7 @@ public interface SclFileReference extends SclObject {
     void unsetWhen();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getWhen <em>When</em>}' attribute is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getWhen <em>When</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>When</em>' attribute is set.
@@ -342,28 +343,28 @@ public interface SclFileReference extends SclObject {
     boolean isSetWhen();
 
     /**
-     * Returns the value of the '<em><b>Parent Source Files</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference <em>Scl File Reference</em>}'.
+     * Returns the value of the '<em><b>Parent Header Scl Ref</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference <em>Scl File Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Parent Source Files</em>' container reference.
-     * @see #setParentSourceFiles(SourceFiles)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_ParentSourceFiles()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference
+     * @return the value of the '<em>Parent Header Scl Ref</em>' container reference.
+     * @see #setParentHeaderSclRef(HeaderSclRef)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_ParentHeaderSclRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference
      * @model opposite="SclFileReference" unsettable="true" ordered="false"
      * @generated
      */
-    SourceFiles getParentSourceFiles();
+    HeaderSclRef getParentHeaderSclRef();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles <em>Parent Source Files</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentHeaderSclRef <em>Parent Header Scl Ref</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Parent Source Files</em>' container reference.
-     * @see #getParentSourceFiles()
+     * @param value the new value of the '<em>Parent Header Scl Ref</em>' container reference.
+     * @see #getParentHeaderSclRef()
      * @generated
      */
-    void setParentSourceFiles( SourceFiles value );
+    void setParentHeaderSclRef( HeaderSclRef value );
 
     /**
      * Returns the value of the '<em><b>Parent Application Scl Ref</b></em>' container reference.
@@ -372,15 +373,15 @@ public interface SclFileReference extends SclObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Parent Application Scl Ref</em>' container reference.
      * @see #setParentApplicationSclRef(ApplicationSclRef)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_ParentApplicationSclRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_ParentApplicationSclRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef#getSclFileReference
-     * @model opposite="sclFileReference" unsettable="true" ordered="false"
+     * @model opposite="SclFileReference" unsettable="true" ordered="false"
      * @generated
      */
     ApplicationSclRef getParentApplicationSclRef();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Parent Application Scl Ref</em>' container reference.
@@ -396,15 +397,15 @@ public interface SclFileReference extends SclObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Parent Function Scl Ref</em>' container reference.
      * @see #setParentFunctionSclRef(FunctionSclRef)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_ParentFunctionSclRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_ParentFunctionSclRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef#getSclFileReference
-     * @model opposite="sclFileReference" unsettable="true" ordered="false"
+     * @model opposite="SclFileReference" unsettable="true" ordered="false"
      * @generated
      */
     FunctionSclRef getParentFunctionSclRef();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Parent Function Scl Ref</em>' container reference.
@@ -413,4 +414,28 @@ public interface SclFileReference extends SclObject {
      */
     void setParentFunctionSclRef( FunctionSclRef value );
 
-} // SclFileReference
+    /**
+     * Returns the value of the '<em><b>Parent IED Scl Ref</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getSclFileReference <em>Scl File Reference</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent IED Scl Ref</em>' container reference.
+     * @see #setParentIEDSclRef(IEDSclRef)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileUUIDReference_ParentIEDSclRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getSclFileReference
+     * @model opposite="SclFileReference" unsettable="true" ordered="false"
+     * @generated
+     */
+    IEDSclRef getParentIEDSclRef();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentIEDSclRef <em>Parent IED Scl Ref</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent IED Scl Ref</em>' container reference.
+     * @see #getParentIEDSclRef()
+     * @generated
+     */
+    void setParentIEDSclRef( IEDSclRef value );
+
+} // SclFileUUIDReference

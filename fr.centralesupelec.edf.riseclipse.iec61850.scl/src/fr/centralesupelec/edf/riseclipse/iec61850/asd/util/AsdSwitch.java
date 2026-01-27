@@ -109,7 +109,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 
 /**
@@ -459,7 +459,7 @@ public class AsdSwitch< T > extends Switch< T > {
             CheckoutID checkoutID = ( CheckoutID ) theEObject;
             T result = caseCheckoutID( checkoutID );
             if( result == null ) {
-                result = caseSclFileReference( checkoutID );
+                result = caseSclFileUUIDReference( checkoutID );
             }
             if( result == null ) {
                 result = caseSclObject( checkoutID );
@@ -1546,7 +1546,7 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseCheckoutID( subCheckoutID );
             }
             if( result == null ) {
-                result = caseSclFileReference( subCheckoutID );
+                result = caseSclFileUUIDReference( subCheckoutID );
             }
             if( result == null ) {
                 result = caseSclObject( subCheckoutID );
@@ -3006,17 +3006,17 @@ public class AsdSwitch< T > extends Switch< T > {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>File Reference</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>File UUID Reference</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>File Reference</em>'.
+     * @return the result of interpreting the object as an instance of '<em>File UUID Reference</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSclFileReference( SclFileReference object ) {
+    public T caseSclFileUUIDReference( SclFileUUIDReference object ) {
         return null;
     }
 

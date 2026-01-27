@@ -288,7 +288,7 @@ public interface VariableApplyTo extends BaseExtensionElementWithDesc {
      * @see #setParentVariable(Variable)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getVariableApplyTo_ParentVariable()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getVariableApplyTo
-     * @model opposite="variableApplyTo" unsettable="true" ordered="false"
+     * @model opposite="VariableApplyTo" unsettable="true" ordered="false"
      * @generated
      */
     Variable getParentVariable();

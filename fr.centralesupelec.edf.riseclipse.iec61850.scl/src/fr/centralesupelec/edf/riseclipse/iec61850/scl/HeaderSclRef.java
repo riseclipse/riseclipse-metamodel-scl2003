@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
@@ -23,41 +23,41 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Source Files</b></em>'.
+ * A representation of the model object '<em><b>Header Scl Ref</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference <em>Scl File Reference</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem <em>Parent Hitem</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader <em>Parent Header</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference <em>Scl File Reference</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHitem <em>Parent Hitem</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHeader <em>Parent Header</em>}</li>
  * </ul>
  *
- * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSourceFiles()
+ * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeaderSclRef()
  * @model
  * @generated
  */
-public interface SourceFiles extends BaseElement {
+public interface HeaderSclRef extends BaseElement {
     /**
      * Returns the value of the '<em><b>Scl File Reference</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles <em>Parent Source Files</em>}'.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentHeaderSclRef <em>Parent Header Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Scl File Reference</em>' containment reference list.
      * @see #isSetSclFileReference()
      * @see #unsetSclFileReference()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSourceFiles_SclFileReference()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles
-     * @model opposite="ParentSourceFiles" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeaderSclRef_SclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentHeaderSclRef
+     * @model opposite="ParentHeaderSclRef" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList< SclFileReference > getSclFileReference();
+    EList< SclFileUUIDReference > getSclFileReference();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference <em>Scl File Reference</em>}' containment reference list.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference <em>Scl File Reference</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #isSetSclFileReference()
@@ -67,7 +67,7 @@ public interface SourceFiles extends BaseElement {
     void unsetSclFileReference();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference <em>Scl File Reference</em>}' containment reference list is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference <em>Scl File Reference</em>}' containment reference list is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return whether the value of the '<em>Scl File Reference</em>' containment reference list is set.
@@ -84,7 +84,7 @@ public interface SourceFiles extends BaseElement {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Parent Hitem</em>' container reference.
      * @see #setParentHitem(Hitem)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSourceFiles_ParentHitem()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeaderSclRef_ParentHitem()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles
      * @model opposite="SourceFiles" unsettable="true" ordered="false"
      * @generated
@@ -92,7 +92,7 @@ public interface SourceFiles extends BaseElement {
     Hitem getParentHitem();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem <em>Parent Hitem</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHitem <em>Parent Hitem</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Parent Hitem</em>' container reference.
@@ -108,7 +108,7 @@ public interface SourceFiles extends BaseElement {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Parent Header</em>' container reference.
      * @see #setParentHeader(Header)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSourceFiles_ParentHeader()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeaderSclRef_ParentHeader()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSourceFiles
      * @model opposite="SourceFiles" unsettable="true" ordered="false"
      * @generated
@@ -116,7 +116,7 @@ public interface SourceFiles extends BaseElement {
     Header getParentHeader();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader <em>Parent Header</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHeader <em>Parent Header</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Parent Header</em>' container reference.
@@ -125,4 +125,4 @@ public interface SourceFiles extends BaseElement {
      */
     void setParentHeader( Header value );
 
-} // SourceFiles
+} // HeaderSclRef

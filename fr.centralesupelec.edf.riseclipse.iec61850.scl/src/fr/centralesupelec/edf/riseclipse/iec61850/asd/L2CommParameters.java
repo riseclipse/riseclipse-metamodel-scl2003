@@ -76,7 +76,7 @@ public interface L2CommParameters extends CommParameters {
      * @see #setParentGooseParameters(GooseParameters)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getL2CommParameters_ParentGooseParameters()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.GooseParameters#getL2CommParameters
-     * @model opposite="l2CommParameters" unsettable="true" ordered="false"
+     * @model opposite="L2CommParameters" unsettable="true" ordered="false"
      * @generated
      */
     GooseParameters getParentGooseParameters();
@@ -100,7 +100,7 @@ public interface L2CommParameters extends CommParameters {
      * @see #setParentSMVParameters(SMVParameters)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getL2CommParameters_ParentSMVParameters()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SMVParameters#getL2CommParameters
-     * @model opposite="l2CommParameters" unsettable="true" ordered="false"
+     * @model opposite="L2CommParameters" unsettable="true" ordered="false"
      * @generated
      */
     SMVParameters getParentSMVParameters();

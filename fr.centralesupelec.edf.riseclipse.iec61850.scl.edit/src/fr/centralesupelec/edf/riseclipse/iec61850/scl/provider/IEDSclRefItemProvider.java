@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,41 +15,38 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class IEDSourceFilesItemProvider extends BaseElementItemProvider {
+public class IEDSclRefItemProvider extends BaseElementItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public IEDSourceFilesItemProvider( AdapterFactory adapterFactory ) {
+    public IEDSclRefItemProvider( AdapterFactory adapterFactory ) {
         super( adapterFactory );
     }
 
@@ -80,7 +77,7 @@ public class IEDSourceFilesItemProvider extends BaseElementItemProvider {
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( SclPackage.eINSTANCE.getIEDSourceFiles_SclFileReference() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getIEDSclRef_SclFileReference() );
         }
         return childrenFeatures;
     }
@@ -99,14 +96,14 @@ public class IEDSourceFilesItemProvider extends BaseElementItemProvider {
     }
 
     /**
-     * This returns IEDSourceFiles.gif.
+     * This returns IEDSclRef.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public Object getImage( Object object ) {
-        return overlayImage( object, getResourceLocator().getImage( "full/obj16/IEDSourceFiles" ) );
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/IEDSclRef" ) );
     }
 
     /**
@@ -117,9 +114,9 @@ public class IEDSourceFilesItemProvider extends BaseElementItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( IEDSourceFiles ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_IEDSourceFiles_type" )
-                : getString( "_UI_IEDSourceFiles_type" ) + " " + label;
+        String label = ( ( IEDSclRef ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_IEDSclRef_type" )
+                : getString( "_UI_IEDSclRef_type" ) + " " + label;
     }
 
     /**
@@ -133,8 +130,8 @@ public class IEDSourceFilesItemProvider extends BaseElementItemProvider {
     public void notifyChanged( Notification notification ) {
         updateChildren( notification );
 
-        switch( notification.getFeatureID( IEDSourceFiles.class ) ) {
-        case SclPackage.IED_SOURCE_FILES__SCL_FILE_REFERENCE:
+        switch( notification.getFeatureID( IEDSclRef.class ) ) {
+        case SclPackage.IED_SCL_REF__SCL_FILE_REFERENCE:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -152,16 +149,16 @@ public class IEDSourceFilesItemProvider extends BaseElementItemProvider {
     protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
         super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSourceFiles_SclFileReference(),
-                SclFactory.eINSTANCE.createSclFileReference() ) );
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSclRef_SclFileReference(),
+                SclFactory.eINSTANCE.createSclFileUUIDReference() ) );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSourceFiles_SclFileReference(),
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSclRef_SclFileReference(),
                 SclFactory.eINSTANCE.createMinRequestedSCDFile() ) );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSourceFiles_SclFileReference(),
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSclRef_SclFileReference(),
                 AsdFactory.eINSTANCE.createCheckoutID() ) );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSourceFiles_SclFileReference(),
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIEDSclRef_SclFileReference(),
                 AsdFactory.eINSTANCE.createSubCheckoutID() ) );
     }
 

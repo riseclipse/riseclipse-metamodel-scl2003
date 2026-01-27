@@ -36,7 +36,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles;
@@ -461,7 +461,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected IEDSourceFiles iedSourceFiles;
+    protected IEDSclRef iedSourceFiles;
 
     /**
      * This is true if the IED Source Files containment reference has been set.
@@ -1503,7 +1503,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public IEDSourceFiles getIEDSourceFiles() {
+    public IEDSclRef getIEDSourceFiles() {
         return iedSourceFiles;
     }
 
@@ -1512,8 +1512,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetIEDSourceFiles( IEDSourceFiles newIEDSourceFiles, NotificationChain msgs ) {
-        IEDSourceFiles oldIEDSourceFiles = iedSourceFiles;
+    public NotificationChain basicSetIEDSourceFiles( IEDSclRef newIEDSourceFiles, NotificationChain msgs ) {
+        IEDSclRef oldIEDSourceFiles = iedSourceFiles;
         iedSourceFiles = newIEDSourceFiles;
         boolean oldIEDSourceFilesESet = iedSourceFilesESet;
         iedSourceFilesESet = true;
@@ -1536,16 +1536,16 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setIEDSourceFiles( IEDSourceFiles newIEDSourceFiles ) {
+    public void setIEDSourceFiles( IEDSclRef newIEDSourceFiles ) {
         if( newIEDSourceFiles != iedSourceFiles ) {
             NotificationChain msgs = null;
             if( iedSourceFiles != null ) {
-                msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this,
-                        SclPackage.IED_SOURCE_FILES__PARENT_IED, IEDSourceFiles.class, msgs );
+                msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this, SclPackage.IED_SCL_REF__PARENT_IED,
+                        IEDSclRef.class, msgs );
             }
             if( newIEDSourceFiles != null ) {
-                msgs = ( ( InternalEObject ) newIEDSourceFiles ).eInverseAdd( this,
-                        SclPackage.IED_SOURCE_FILES__PARENT_IED, IEDSourceFiles.class, msgs );
+                msgs = ( ( InternalEObject ) newIEDSourceFiles ).eInverseAdd( this, SclPackage.IED_SCL_REF__PARENT_IED,
+                        IEDSclRef.class, msgs );
             }
             msgs = basicSetIEDSourceFiles( newIEDSourceFiles, msgs );
             if( msgs != null ) {
@@ -1568,7 +1568,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     public NotificationChain basicUnsetIEDSourceFiles( NotificationChain msgs ) {
-        IEDSourceFiles oldIEDSourceFiles = iedSourceFiles;
+        IEDSclRef oldIEDSourceFiles = iedSourceFiles;
         iedSourceFiles = null;
         boolean oldIEDSourceFilesESet = iedSourceFilesESet;
         iedSourceFilesESet = false;
@@ -1594,8 +1594,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
     public void unsetIEDSourceFiles() {
         if( iedSourceFiles != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this, SclPackage.IED_SOURCE_FILES__PARENT_IED,
-                    IEDSourceFiles.class, msgs );
+            msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this, SclPackage.IED_SCL_REF__PARENT_IED,
+                    IEDSclRef.class, msgs );
             msgs = basicUnsetIEDSourceFiles( msgs );
             if( msgs != null ) {
                 msgs.dispatch();
@@ -1908,7 +1908,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 msgs = ( ( InternalEObject ) iedSourceFiles ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.IED__IED_SOURCE_FILES, null, msgs );
             }
-            return basicSetIEDSourceFiles( ( IEDSourceFiles ) otherEnd, msgs );
+            return basicSetIEDSourceFiles( ( IEDSclRef ) otherEnd, msgs );
         case SclPackage.IED__LABELS:
             if( labels != null ) {
                 msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
@@ -2077,7 +2077,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
             setReferredByIEDName( ( IEDName ) newValue );
             return;
         case SclPackage.IED__IED_SOURCE_FILES:
-            setIEDSourceFiles( ( IEDSourceFiles ) newValue );
+            setIEDSourceFiles( ( IEDSclRef ) newValue );
             return;
         case SclPackage.IED__LABELS:
             setLabels( ( Labels ) newValue );

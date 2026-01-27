@@ -454,8 +454,7 @@ public interface SDS extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSDS_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();
@@ -479,7 +478,7 @@ public interface SDS extends BaseExtensionElementWithDesc {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSDS_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getSDS
-     * @model opposite="sDS" unsettable="true" ordered="false"
+     * @model opposite="SDS" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();
@@ -503,7 +502,7 @@ public interface SDS extends BaseExtensionElementWithDesc {
      * @see #setParentSDS(SDS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSDS_ParentSDS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getSDS
-     * @model opposite="sDS" unsettable="true" ordered="false"
+     * @model opposite="SDS" unsettable="true" ordered="false"
      * @generated
      */
     SDS getParentSDS();

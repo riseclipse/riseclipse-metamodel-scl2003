@@ -99,7 +99,7 @@ public interface LogParametersRef extends ServiceParametersRef {
      * @see #setParentDAS(DAS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLogParametersRef_ParentDAS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getLogParametersRef
-     * @model opposite="logParametersRef" unsettable="true" ordered="false"
+     * @model opposite="LogParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     DAS getParentDAS();
@@ -123,7 +123,7 @@ public interface LogParametersRef extends ServiceParametersRef {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLogParametersRef_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getLogParametersRef
-     * @model opposite="logParametersRef" unsettable="true" ordered="false"
+     * @model opposite="LogParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();
@@ -147,7 +147,7 @@ public interface LogParametersRef extends ServiceParametersRef {
      * @see #setParentSDS(SDS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLogParametersRef_ParentSDS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getLogParametersRef
-     * @model opposite="logParametersRef" unsettable="true" ordered="false"
+     * @model opposite="LogParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SDS getParentSDS();

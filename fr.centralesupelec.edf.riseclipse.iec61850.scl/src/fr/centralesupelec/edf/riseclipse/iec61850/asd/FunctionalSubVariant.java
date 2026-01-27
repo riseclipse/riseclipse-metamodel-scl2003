@@ -49,7 +49,7 @@ public interface FunctionalSubVariant extends AbstractFunctionalVariant {
      * @see #setParentAbstractFunctionalVariant(AbstractFunctionalVariant)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionalSubVariant_ParentAbstractFunctionalVariant()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getFunctionalSubVariant
-     * @model opposite="functionalSubVariant" unsettable="true" ordered="false"
+     * @model opposite="FunctionalSubVariant" unsettable="true" ordered="false"
      * @generated
      */
     AbstractFunctionalVariant getParentAbstractFunctionalVariant();

@@ -98,7 +98,7 @@ public interface ReportParametersRef extends ServiceParametersRef {
      * @see #setParentSourceRef(SourceRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getReportParametersRef_ParentSourceRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getReportParametersRef
-     * @model opposite="reportParametersRef" unsettable="true" ordered="false"
+     * @model opposite="ReportParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SourceRef getParentSourceRef();
@@ -122,7 +122,7 @@ public interface ReportParametersRef extends ServiceParametersRef {
      * @see #setParentSubscriberLNode(SubscriberLNode)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getReportParametersRef_ParentSubscriberLNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubscriberLNode#getReportParametersRef
-     * @model opposite="reportParametersRef" unsettable="true" ordered="false"
+     * @model opposite="ReportParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SubscriberLNode getParentSubscriberLNode();

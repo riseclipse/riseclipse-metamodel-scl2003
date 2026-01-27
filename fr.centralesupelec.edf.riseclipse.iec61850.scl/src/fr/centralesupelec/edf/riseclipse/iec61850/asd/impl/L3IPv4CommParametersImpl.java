@@ -201,7 +201,7 @@ public class L3IPv4CommParametersImpl extends CommParametersImpl implements L3IP
             }
             if( newParentGooseParameters != null ) {
                 msgs = ( ( InternalEObject ) newParentGooseParameters ).eInverseAdd( this,
-                        AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS, GooseParameters.class, msgs );
+                        AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS, GooseParameters.class, msgs );
             }
             msgs = basicSetParentGooseParameters( newParentGooseParameters, msgs );
             if( msgs != null ) {
@@ -259,7 +259,7 @@ public class L3IPv4CommParametersImpl extends CommParametersImpl implements L3IP
             }
             if( newParentSMVParameters != null ) {
                 msgs = ( ( InternalEObject ) newParentSMVParameters ).eInverseAdd( this,
-                        AsdPackage.SMV_PARAMETERS__L3_IPV4_COMM_PARAMETERS, SMVParameters.class, msgs );
+                        AsdPackage.SMV_PARAMETERS__L3I_PV4_COMM_PARAMETERS, SMVParameters.class, msgs );
             }
             msgs = basicSetParentSMVParameters( newParentSMVParameters, msgs );
             if( msgs != null ) {
@@ -320,10 +320,10 @@ public class L3IPv4CommParametersImpl extends CommParametersImpl implements L3IP
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
         case AsdPackage.L3I_PV4_COMM_PARAMETERS__PARENT_GOOSE_PARAMETERS:
-            return eInternalContainer().eInverseRemove( this, AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS,
+            return eInternalContainer().eInverseRemove( this, AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS,
                     GooseParameters.class, msgs );
         case AsdPackage.L3I_PV4_COMM_PARAMETERS__PARENT_SMV_PARAMETERS:
-            return eInternalContainer().eInverseRemove( this, AsdPackage.SMV_PARAMETERS__L3_IPV4_COMM_PARAMETERS,
+            return eInternalContainer().eInverseRemove( this, AsdPackage.SMV_PARAMETERS__L3I_PV4_COMM_PARAMETERS,
                     SMVParameters.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );

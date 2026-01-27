@@ -106,7 +106,7 @@ public interface AnalogueWiringParameters extends WiringParameters {
      * @see #setParentServiceSpecifications(ServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAnalogueWiringParameters_ParentServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications#getAnalogueWiringParameters
-     * @model opposite="analogueWiringParameters" unsettable="true" ordered="false"
+     * @model opposite="AnalogueWiringParameters" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSpecifications getParentServiceSpecifications();

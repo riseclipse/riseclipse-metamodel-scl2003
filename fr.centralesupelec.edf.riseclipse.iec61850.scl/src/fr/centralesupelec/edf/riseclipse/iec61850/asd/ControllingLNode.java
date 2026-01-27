@@ -172,8 +172,7 @@ public interface ControllingLNode extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Output Name</em>' attribute.
      * @see #setOutputName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getControllingLNode_OutputName()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='outputName'"
+     * @model extendedMetaData="kind='attribute' name='outputName'"
      * @generated
      */
     String getOutputName();
@@ -274,7 +273,7 @@ public interface ControllingLNode extends BaseExtensionElementWithDesc {
      * @see #setParentDAS(DAS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getControllingLNode_ParentDAS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getControllingLNode
-     * @model opposite="controllingLNode" unsettable="true" ordered="false"
+     * @model opposite="ControllingLNode" unsettable="true" ordered="false"
      * @generated
      */
     DAS getParentDAS();
@@ -298,7 +297,7 @@ public interface ControllingLNode extends BaseExtensionElementWithDesc {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getControllingLNode_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getControllingLNode
-     * @model opposite="controllingLNode" unsettable="true" ordered="false"
+     * @model opposite="ControllingLNode" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();

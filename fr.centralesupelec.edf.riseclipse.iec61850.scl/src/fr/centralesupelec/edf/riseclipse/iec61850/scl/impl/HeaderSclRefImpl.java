@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,48 +15,44 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Source Files</b></em>'.
+ * An implementation of the model object '<em><b>Header Scl Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SourceFilesImpl#getSclFileReference <em>Scl File Reference</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SourceFilesImpl#getParentHitem <em>Parent Hitem</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SourceFilesImpl#getParentHeader <em>Parent Header</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderSclRefImpl#getSclFileReference <em>Scl File Reference</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderSclRefImpl#getParentHitem <em>Parent Hitem</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderSclRefImpl#getParentHeader <em>Parent Header</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
+public class HeaderSclRefImpl extends BaseElementImpl implements HeaderSclRef {
     /**
      * The cached value of the '{@link #getSclFileReference() <em>Scl File Reference</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -65,14 +61,14 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      * @generated
      * @ordered
      */
-    protected EList< SclFileReference > sclFileReference;
+    protected EList< SclFileUUIDReference > sclFileReference;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected SourceFilesImpl() {
+    protected HeaderSclRefImpl() {
         super();
     }
 
@@ -83,7 +79,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSourceFiles();
+        return SclPackage.eINSTANCE.getHeaderSclRef();
     }
 
     /**
@@ -92,11 +88,11 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      * @generated
      */
     @Override
-    public EList< SclFileReference > getSclFileReference() {
+    public EList< SclFileUUIDReference > getSclFileReference() {
         if( sclFileReference == null ) {
-            sclFileReference = new EObjectContainmentWithInverseEList.Unsettable< SclFileReference >(
-                    SclFileReference.class, this, SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE,
-                    SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES );
+            sclFileReference = new EObjectContainmentWithInverseEList.Unsettable< >(
+                    SclFileUUIDReference.class, this, SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE,
+                    SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF );
         }
         return sclFileReference;
     }
@@ -130,7 +126,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      */
     @Override
     public Hitem getParentHitem() {
-        if( eContainerFeatureID() != SclPackage.SOURCE_FILES__PARENT_HITEM ) {
+        if( eContainerFeatureID() != SclPackage.HEADER_SCL_REF__PARENT_HITEM ) {
             return null;
         }
         return ( Hitem ) eInternalContainer();
@@ -142,7 +138,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      * @generated
      */
     public NotificationChain basicSetParentHitem( Hitem newParentHitem, NotificationChain msgs ) {
-        msgs = eBasicSetContainer( ( InternalEObject ) newParentHitem, SclPackage.SOURCE_FILES__PARENT_HITEM, msgs );
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentHitem, SclPackage.HEADER_SCL_REF__PARENT_HITEM, msgs );
         return msgs;
     }
 
@@ -154,7 +150,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public void setParentHitem( Hitem newParentHitem ) {
         if( newParentHitem != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SOURCE_FILES__PARENT_HITEM && newParentHitem != null ) ) {
+                || ( eContainerFeatureID() != SclPackage.HEADER_SCL_REF__PARENT_HITEM && newParentHitem != null ) ) {
             if( EcoreUtil.isAncestor( this, newParentHitem ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             }
@@ -172,7 +168,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
             }
         }
         else if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SOURCE_FILES__PARENT_HITEM,
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HEADER_SCL_REF__PARENT_HITEM,
                     newParentHitem, newParentHitem ) );
         }
     }
@@ -184,7 +180,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      */
     @Override
     public Header getParentHeader() {
-        if( eContainerFeatureID() != SclPackage.SOURCE_FILES__PARENT_HEADER ) {
+        if( eContainerFeatureID() != SclPackage.HEADER_SCL_REF__PARENT_HEADER ) {
             return null;
         }
         return ( Header ) eInternalContainer();
@@ -196,7 +192,8 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
      * @generated
      */
     public NotificationChain basicSetParentHeader( Header newParentHeader, NotificationChain msgs ) {
-        msgs = eBasicSetContainer( ( InternalEObject ) newParentHeader, SclPackage.SOURCE_FILES__PARENT_HEADER, msgs );
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentHeader, SclPackage.HEADER_SCL_REF__PARENT_HEADER,
+                msgs );
         return msgs;
     }
 
@@ -208,7 +205,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public void setParentHeader( Header newParentHeader ) {
         if( newParentHeader != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SOURCE_FILES__PARENT_HEADER && newParentHeader != null ) ) {
+                || ( eContainerFeatureID() != SclPackage.HEADER_SCL_REF__PARENT_HEADER && newParentHeader != null ) ) {
             if( EcoreUtil.isAncestor( this, newParentHeader ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             }
@@ -226,7 +223,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
             }
         }
         else if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SOURCE_FILES__PARENT_HEADER,
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HEADER_SCL_REF__PARENT_HEADER,
                     newParentHeader, newParentHeader ) );
         }
     }
@@ -240,15 +237,15 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE:
+        case SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSclFileReference() )
                     .basicAdd( otherEnd, msgs );
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentHitem( ( Hitem ) otherEnd, msgs );
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
@@ -265,11 +262,11 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE:
+        case SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE:
             return ( ( InternalEList< ? > ) getSclFileReference() ).basicRemove( otherEnd, msgs );
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             return basicSetParentHitem( null, msgs );
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             return basicSetParentHeader( null, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
@@ -283,9 +280,9 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             return eInternalContainer().eInverseRemove( this, SclPackage.HITEM__SOURCE_FILES, Hitem.class, msgs );
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             return eInternalContainer().eInverseRemove( this, SclPackage.HEADER__SOURCE_FILES, Header.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );
@@ -299,11 +296,11 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE:
+        case SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE:
             return getSclFileReference();
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             return getParentHitem();
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             return getParentHeader();
         }
         return super.eGet( featureID, resolve, coreType );
@@ -318,14 +315,14 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE:
+        case SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE:
             getSclFileReference().clear();
-            getSclFileReference().addAll( ( Collection< ? extends SclFileReference > ) newValue );
+            getSclFileReference().addAll( ( Collection< ? extends SclFileUUIDReference > ) newValue );
             return;
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             setParentHitem( ( Hitem ) newValue );
             return;
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             setParentHeader( ( Header ) newValue );
             return;
         }
@@ -340,13 +337,13 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE:
+        case SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE:
             unsetSclFileReference();
             return;
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             setParentHitem( ( Hitem ) null );
             return;
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             setParentHeader( ( Header ) null );
             return;
         }
@@ -361,14 +358,14 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE:
+        case SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE:
             return isSetSclFileReference();
-        case SclPackage.SOURCE_FILES__PARENT_HITEM:
+        case SclPackage.HEADER_SCL_REF__PARENT_HITEM:
             return getParentHitem() != null;
-        case SclPackage.SOURCE_FILES__PARENT_HEADER:
+        case SclPackage.HEADER_SCL_REF__PARENT_HEADER:
             return getParentHeader() != null;
         }
         return super.eIsSet( featureID );
     }
 
-} //SourceFilesImpl
+} //HeaderSclRefImpl

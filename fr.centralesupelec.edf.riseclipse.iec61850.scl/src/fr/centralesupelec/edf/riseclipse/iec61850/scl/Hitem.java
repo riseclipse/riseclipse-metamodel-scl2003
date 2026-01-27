@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -388,19 +388,19 @@ public interface Hitem extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Source Files</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem <em>Parent Hitem</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHitem <em>Parent Hitem</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Source Files</em>' containment reference.
      * @see #isSetSourceFiles()
      * @see #unsetSourceFiles()
-     * @see #setSourceFiles(SourceFiles)
+     * @see #setSourceFiles(HeaderSclRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHitem_SourceFiles()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHitem
      * @model opposite="ParentHitem" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    SourceFiles getSourceFiles();
+    HeaderSclRef getSourceFiles();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles <em>Source Files</em>}' containment reference.
@@ -412,7 +412,7 @@ public interface Hitem extends SclObject {
      * @see #getSourceFiles()
      * @generated
      */
-    void setSourceFiles( SourceFiles value );
+    void setSourceFiles( HeaderSclRef value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getSourceFiles <em>Source Files</em>}' containment reference.
@@ -420,7 +420,7 @@ public interface Hitem extends SclObject {
      * <!-- end-user-doc -->
      * @see #isSetSourceFiles()
      * @see #getSourceFiles()
-     * @see #setSourceFiles(SourceFiles)
+     * @see #setSourceFiles(HeaderSclRef)
      * @generated
      */
     void unsetSourceFiles();
@@ -432,7 +432,7 @@ public interface Hitem extends SclObject {
      * @return whether the value of the '<em>Source Files</em>' containment reference is set.
      * @see #unsetSourceFiles()
      * @see #getSourceFiles()
-     * @see #setSourceFiles(SourceFiles)
+     * @see #setSourceFiles(HeaderSclRef)
      * @generated
      */
     boolean isSetSourceFiles();

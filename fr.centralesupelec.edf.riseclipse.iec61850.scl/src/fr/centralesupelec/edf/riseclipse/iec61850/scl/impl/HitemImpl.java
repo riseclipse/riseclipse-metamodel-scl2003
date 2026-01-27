@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
 
 /**
  * <!-- begin-user-doc -->
@@ -235,7 +235,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      * @ordered
      */
-    protected SourceFiles sourceFiles;
+    protected HeaderSclRef sourceFiles;
 
     /**
      * This is true if the Source Files containment reference has been set.
@@ -647,7 +647,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      */
     @Override
-    public SourceFiles getSourceFiles() {
+    public HeaderSclRef getSourceFiles() {
         return sourceFiles;
     }
 
@@ -656,8 +656,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSourceFiles( SourceFiles newSourceFiles, NotificationChain msgs ) {
-        SourceFiles oldSourceFiles = sourceFiles;
+    public NotificationChain basicSetSourceFiles( HeaderSclRef newSourceFiles, NotificationChain msgs ) {
+        HeaderSclRef oldSourceFiles = sourceFiles;
         sourceFiles = newSourceFiles;
         boolean oldSourceFilesESet = sourceFilesESet;
         sourceFilesESet = true;
@@ -680,16 +680,16 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      */
     @Override
-    public void setSourceFiles( SourceFiles newSourceFiles ) {
+    public void setSourceFiles( HeaderSclRef newSourceFiles ) {
         if( newSourceFiles != sourceFiles ) {
             NotificationChain msgs = null;
             if( sourceFiles != null ) {
-                msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this, SclPackage.SOURCE_FILES__PARENT_HITEM,
-                        SourceFiles.class, msgs );
+                msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this,
+                        SclPackage.HEADER_SCL_REF__PARENT_HITEM, HeaderSclRef.class, msgs );
             }
             if( newSourceFiles != null ) {
-                msgs = ( ( InternalEObject ) newSourceFiles ).eInverseAdd( this, SclPackage.SOURCE_FILES__PARENT_HITEM,
-                        SourceFiles.class, msgs );
+                msgs = ( ( InternalEObject ) newSourceFiles ).eInverseAdd( this,
+                        SclPackage.HEADER_SCL_REF__PARENT_HITEM, HeaderSclRef.class, msgs );
             }
             msgs = basicSetSourceFiles( newSourceFiles, msgs );
             if( msgs != null ) {
@@ -712,7 +712,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      */
     public NotificationChain basicUnsetSourceFiles( NotificationChain msgs ) {
-        SourceFiles oldSourceFiles = sourceFiles;
+        HeaderSclRef oldSourceFiles = sourceFiles;
         sourceFiles = null;
         boolean oldSourceFilesESet = sourceFilesESet;
         sourceFilesESet = false;
@@ -738,8 +738,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
     public void unsetSourceFiles() {
         if( sourceFiles != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this, SclPackage.SOURCE_FILES__PARENT_HITEM,
-                    SourceFiles.class, msgs );
+            msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this, SclPackage.HEADER_SCL_REF__PARENT_HITEM,
+                    HeaderSclRef.class, msgs );
             msgs = basicUnsetSourceFiles( msgs );
             if( msgs != null ) {
                 msgs.dispatch();
@@ -783,7 +783,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
                 msgs = ( ( InternalEObject ) sourceFiles ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.HITEM__SOURCE_FILES, null, msgs );
             }
-            return basicSetSourceFiles( ( SourceFiles ) otherEnd, msgs );
+            return basicSetSourceFiles( ( HeaderSclRef ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -876,7 +876,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
             setParentHistory( ( History ) newValue );
             return;
         case SclPackage.HITEM__SOURCE_FILES:
-            setSourceFiles( ( SourceFiles ) newValue );
+            setSourceFiles( ( HeaderSclRef ) newValue );
             return;
         }
         super.eSet( featureID, newValue );

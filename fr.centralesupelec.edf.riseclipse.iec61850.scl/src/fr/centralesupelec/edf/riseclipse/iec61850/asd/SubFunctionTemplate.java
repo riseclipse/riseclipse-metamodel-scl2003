@@ -192,7 +192,7 @@ public interface SubFunctionTemplate extends Abstract6100LNodeContainer {
      * @see #setParentFunctionTemplate(FunctionTemplate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubFunctionTemplate_ParentFunctionTemplate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate#getSubFunctionTemplate
-     * @model opposite="subFunctionTemplate" unsettable="true" ordered="false"
+     * @model opposite="SubFunctionTemplate" unsettable="true" ordered="false"
      * @generated
      */
     FunctionTemplate getParentFunctionTemplate();
@@ -216,7 +216,7 @@ public interface SubFunctionTemplate extends Abstract6100LNodeContainer {
      * @see #setParentSubFunctionTemplate(SubFunctionTemplate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubFunctionTemplate_ParentSubFunctionTemplate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate#getSubFunctionTemplate
-     * @model opposite="subFunctionTemplate" unsettable="true" ordered="false"
+     * @model opposite="SubFunctionTemplate" unsettable="true" ordered="false"
      * @generated
      */
     SubFunctionTemplate getParentSubFunctionTemplate();

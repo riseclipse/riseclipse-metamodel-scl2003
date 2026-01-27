@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -53,7 +53,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
  * @model
  * @generated
  */
-public interface ExtRef extends BaseElement, AgDesc, DORef {
+public interface ExtRef extends DORef {
     /**
      * Returns the value of the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->

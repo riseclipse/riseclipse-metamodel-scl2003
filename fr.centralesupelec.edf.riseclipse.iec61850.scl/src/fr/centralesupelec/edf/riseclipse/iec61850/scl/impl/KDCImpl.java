@@ -21,7 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -192,9 +191,10 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         apName = newApName;
         boolean oldApNameESet = apNameESet;
         apNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.KDC__AP_NAME, oldApName, apName,
                     !oldApNameESet ) );
+        }
     }
 
     /**
@@ -208,9 +208,10 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         boolean oldApNameESet = apNameESet;
         apName = AP_NAME_EDEFAULT;
         apNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.KDC__AP_NAME, oldApName,
                     AP_NAME_EDEFAULT, oldApNameESet ) );
+        }
     }
 
     /**
@@ -244,9 +245,10 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.KDC__IED_NAME, oldIedName, iedName,
                     !oldIedNameESet ) );
+        }
     }
 
     /**
@@ -260,9 +262,10 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.KDC__IED_NAME, oldIedName,
                     IED_NAME_EDEFAULT, oldIedNameESet ) );
+        }
     }
 
     /**
@@ -282,7 +285,9 @@ public class KDCImpl extends SclObjectImpl implements KDC {
      */
     @Override
     public IED getParentIED() {
-        if( eContainerFeatureID() != SclPackage.KDC__PARENT_IED ) return null;
+        if( eContainerFeatureID() != SclPackage.KDC__PARENT_IED ) {
+            return null;
+        }
         return ( IED ) eInternalContainer();
     }
 
@@ -305,19 +310,25 @@ public class KDCImpl extends SclObjectImpl implements KDC {
     public void setParentIED( IED newParentIED ) {
         if( newParentIED != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.KDC__PARENT_IED && newParentIED != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentIED ) )
+            if( EcoreUtil.isAncestor( this, newParentIED ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentIED != null )
+            }
+            if( newParentIED != null ) {
                 msgs = ( ( InternalEObject ) newParentIED ).eInverseAdd( this, SclPackage.IED__KDC, IED.class, msgs );
+            }
             msgs = basicSetParentIED( newParentIED, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.KDC__PARENT_IED, newParentIED,
                     newParentIED ) );
+        }
     }
 
     /**
@@ -344,10 +355,12 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.KDC__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, newRefersToAccessPoint,
                     !oldRefersToAccessPointESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -361,21 +374,26 @@ public class KDCImpl extends SclObjectImpl implements KDC {
     public void setRefersToAccessPoint( AccessPoint newRefersToAccessPoint ) {
         if( newRefersToAccessPoint != refersToAccessPoint ) {
             NotificationChain msgs = null;
-            if( refersToAccessPoint != null )
+            if( refersToAccessPoint != null ) {
                 msgs = ( ( InternalEObject ) refersToAccessPoint ).eInverseRemove( this,
                         SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs );
-            if( newRefersToAccessPoint != null )
+            }
+            if( newRefersToAccessPoint != null ) {
                 msgs = ( ( InternalEObject ) newRefersToAccessPoint ).eInverseAdd( this,
                         SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs );
+            }
             msgs = basicSetRefersToAccessPoint( newRefersToAccessPoint, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAccessPointESet = refersToAccessPointESet;
             refersToAccessPointESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.KDC__REFERS_TO_ACCESS_POINT,
                         newRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet ) );
+            }
         }
     }
 
@@ -392,10 +410,12 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.KDC__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, null, oldRefersToAccessPointESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -412,14 +432,17 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             msgs = ( ( InternalEObject ) refersToAccessPoint ).eInverseRemove( this,
                     SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs );
             msgs = basicUnsetRefersToAccessPoint( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToAccessPointESet = refersToAccessPointESet;
             refersToAccessPointESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, null,
                         null, oldRefersToAccessPointESet ) );
+            }
         }
     }
 
@@ -466,13 +489,15 @@ public class KDCImpl extends SclObjectImpl implements KDC {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.KDC__PARENT_IED:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentIED( ( IED ) otherEnd, msgs );
         case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-            if( refersToAccessPoint != null )
+            if( refersToAccessPoint != null ) {
                 msgs = ( ( InternalEObject ) refersToAccessPoint ).eInverseRemove( this,
                         SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs );
+            }
             return basicSetRefersToAccessPoint( ( AccessPoint ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -613,19 +638,25 @@ public class KDCImpl extends SclObjectImpl implements KDC {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (apName: " );
-        if( apNameESet )
+        if( apNameESet ) {
             result.append( apName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", iedName: " );
-        if( iedNameESet )
+        if( iedNameESet ) {
             result.append( iedName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", apUuid: " );
         result.append( apUuid );
         result.append( ')' );

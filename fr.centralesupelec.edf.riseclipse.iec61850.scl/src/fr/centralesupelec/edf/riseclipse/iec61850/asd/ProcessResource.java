@@ -188,8 +188,7 @@ public interface ProcessResource extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProcessResource_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();

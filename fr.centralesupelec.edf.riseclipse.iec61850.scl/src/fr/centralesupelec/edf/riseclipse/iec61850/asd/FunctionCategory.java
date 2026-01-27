@@ -103,7 +103,7 @@ public interface FunctionCategory extends BaseExtensionElementWithDesc {
      * @see #unsetFunctionCatRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionCategory_FunctionCatRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef#getParentFunctionCategory
-     * @model opposite="ParentFunctionCategory" containment="true" unsettable="true" required="true" ordered="false"
+     * @model opposite="ParentFunctionCategory" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='FunctionCatRef' namespace='##targetNamespace'"
      * @generated
      */
@@ -137,8 +137,7 @@ public interface FunctionCategory extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionCategory_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();

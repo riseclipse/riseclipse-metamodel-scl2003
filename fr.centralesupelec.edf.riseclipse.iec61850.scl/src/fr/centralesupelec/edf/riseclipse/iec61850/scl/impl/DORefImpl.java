@@ -19,28 +19,14 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.BasicFeatureMap;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.FeatureMap;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DORef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,14 +36,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getLineNumber <em>Line Number</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getFilename <em>Filename</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getXpath <em>Xpath</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getPrivate <em>Private</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getText <em>Text</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getAny <em>Any</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getAnyAttribute <em>Any Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getDoName <em>Do Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DORefImpl#getIedName <em>Ied Name</em>}</li>
@@ -72,125 +52,64 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *
  * @generated
  */
-public abstract class DORefImpl extends AgUuidImpl implements DORef {
+public abstract class DORefImpl extends BaseElementImpl implements DORef {
     /**
-     * The default value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLineNumber()
+     * @see #getUuid()
      * @generated
      * @ordered
      */
-    protected static final int LINE_NUMBER_EDEFAULT = -1;
+    protected static final String UUID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLineNumber() <em>Line Number</em>}' attribute.
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLineNumber()
+     * @see #getUuid()
      * @generated
      * @ordered
      */
-    protected int lineNumber = LINE_NUMBER_EDEFAULT;
+    protected String uuid = UUID_EDEFAULT;
 
     /**
-     * The default value of the '{@link #isExplicitLinksBuilt() <em>Explicit Links Built</em>}' attribute.
+     * This is true if the Uuid attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isExplicitLinksBuilt()
      * @generated
      * @ordered
      */
-    protected static final boolean EXPLICIT_LINKS_BUILT_EDEFAULT = false;
+    protected boolean uuidESet;
 
     /**
-     * The cached value of the '{@link #isExplicitLinksBuilt() <em>Explicit Links Built</em>}' attribute.
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isExplicitLinksBuilt()
+     * @see #getTemplateUuid()
      * @generated
      * @ordered
      */
-    protected boolean explicitLinksBuilt = EXPLICIT_LINKS_BUILT_EDEFAULT;
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
 
     /**
-     * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFilename()
+     * @see #getTemplateUuid()
      * @generated
      * @ordered
      */
-    protected static final String FILENAME_EDEFAULT = "";
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getFilename()
-     * @generated
-     * @ordered
-     */
-    protected String filename = FILENAME_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getXpath() <em>Xpath</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getXpath()
-     * @generated
-     * @ordered
-     */
-    protected static final String XPATH_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getPrivate() <em>Private</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPrivate()
-     * @generated
-     * @ordered
-     */
-    protected EList< Private > private_;
-
-    /**
-     * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getText()
-     * @generated
-     * @ordered
-     */
-    protected Text text;
-
-    /**
-     * This is true if the Text containment reference has been set.
+     * This is true if the Template Uuid attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean textESet;
-
-    /**
-     * The cached value of the '{@link #getAny() <em>Any</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getAny()
-     * @generated
-     * @ordered
-     */
-    protected FeatureMap any;
-
-    /**
-     * The cached value of the '{@link #getAnyAttribute() <em>Any Attribute</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getAnyAttribute()
-     * @generated
-     * @ordered
-     */
-    protected FeatureMap anyAttribute;
+    protected boolean templateUuidESet;
 
     /**
      * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -507,8 +426,8 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public int getLineNumber() {
-        return lineNumber;
+    public String getUuid() {
+        return uuid;
     }
 
     /**
@@ -517,12 +436,14 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public void setLineNumber( int newLineNumber ) {
-        int oldLineNumber = lineNumber;
-        lineNumber = newLineNumber;
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__LINE_NUMBER, oldLineNumber,
-                    lineNumber ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
         }
     }
 
@@ -532,22 +453,14 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public boolean isExplicitLinksBuilt() {
-        return explicitLinksBuilt;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setExplicitLinksBuilt( boolean newExplicitLinksBuilt ) {
-        boolean oldExplicitLinksBuilt = explicitLinksBuilt;
-        explicitLinksBuilt = newExplicitLinksBuilt;
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__EXPLICIT_LINKS_BUILT,
-                    oldExplicitLinksBuilt, explicitLinksBuilt ) );
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_REF__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
         }
     }
 
@@ -557,8 +470,8 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public String getFilename() {
-        return filename;
+    public boolean isSetUuid() {
+        return uuidESet;
     }
 
     /**
@@ -567,12 +480,24 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public void setFilename( String newFilename ) {
-        String oldFilename = filename;
-        filename = newFilename;
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__FILENAME, oldFilename,
-                    filename ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
         }
     }
 
@@ -582,159 +507,14 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public String getXpath() {
-        // TODO: implement this method to return the 'Xpath' attribute
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EList< Private > getPrivate() {
-        if( private_ == null ) {
-            private_ = new EObjectContainmentWithInverseEList.Unsettable< >( Private.class, this,
-                    SclPackage.DO_REF__PRIVATE, SclPackage.PRIVATE__PARENT_BASE_ELEMENT );
-        }
-        return private_;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetPrivate() {
-        if( private_ != null ) {
-            ( ( InternalEList.Unsettable< ? > ) private_ ).unset();
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetPrivate() {
-        return private_ != null && ( ( InternalEList.Unsettable< ? > ) private_ ).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Text getText() {
-        return text;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetText( Text newText, NotificationChain msgs ) {
-        Text oldText = text;
-        text = newText;
-        boolean oldTextESet = textESet;
-        textESet = true;
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
         if( eNotificationRequired() ) {
-            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__TEXT,
-                    oldText, newText, !oldTextESet );
-            if( msgs == null ) {
-                msgs = notification;
-            }
-            else {
-                msgs.add( notification );
-            }
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setText( Text newText ) {
-        if( newText != text ) {
-            NotificationChain msgs = null;
-            if( text != null ) {
-                msgs = ( ( InternalEObject ) text ).eInverseRemove( this, SclPackage.TEXT__PARENT_BASE_ELEMENT,
-                        Text.class, msgs );
-            }
-            if( newText != null ) {
-                msgs = ( ( InternalEObject ) newText ).eInverseAdd( this, SclPackage.TEXT__PARENT_BASE_ELEMENT,
-                        Text.class, msgs );
-            }
-            msgs = basicSetText( newText, msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
-        }
-        else {
-            boolean oldTextESet = textESet;
-            textESet = true;
-            if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_REF__TEXT, newText, newText,
-                        !oldTextESet ) );
-            }
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetText( NotificationChain msgs ) {
-        Text oldText = text;
-        text = null;
-        boolean oldTextESet = textESet;
-        textESet = false;
-        if( eNotificationRequired() ) {
-            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_REF__TEXT,
-                    oldText, null, oldTextESet );
-            if( msgs == null ) {
-                msgs = notification;
-            }
-            else {
-                msgs.add( notification );
-            }
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetText() {
-        if( text != null ) {
-            NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) text ).eInverseRemove( this, SclPackage.TEXT__PARENT_BASE_ELEMENT, Text.class,
-                    msgs );
-            msgs = basicUnsetText( msgs );
-            if( msgs != null ) {
-                msgs.dispatch();
-            }
-        }
-        else {
-            boolean oldTextESet = textESet;
-            textESet = false;
-            if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_REF__TEXT, null, null,
-                        oldTextESet ) );
-            }
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_REF__TEMPLATE_UUID, oldTemplateUuid,
+                    TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
         }
     }
 
@@ -744,34 +524,8 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public boolean isSetText() {
-        return textESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public FeatureMap getAny() {
-        if( any == null ) {
-            any = new BasicFeatureMap( this, SclPackage.DO_REF__ANY );
-        }
-        return any;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public FeatureMap getAnyAttribute() {
-        if( anyAttribute == null ) {
-            anyAttribute = new BasicFeatureMap( this, SclPackage.DO_REF__ANY_ATTRIBUTE );
-        }
-        return anyAttribute;
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -1320,84 +1074,12 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public boolean buildExplicitLinks( IRiseClipseConsole console, Boolean forceUpdate ) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @SuppressWarnings( "unchecked" )
-    @Override
-    public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch( featureID ) {
-        case SclPackage.DO_REF__PRIVATE:
-            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getPrivate() ).basicAdd( otherEnd,
-                    msgs );
-        case SclPackage.DO_REF__TEXT:
-            if( text != null ) {
-                msgs = ( ( InternalEObject ) text ).eInverseRemove( this,
-                        EOPPOSITE_FEATURE_BASE - SclPackage.DO_REF__TEXT, null, msgs );
-            }
-            return basicSetText( ( Text ) otherEnd, msgs );
-        }
-        return super.eInverseAdd( otherEnd, featureID, msgs );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch( featureID ) {
-        case SclPackage.DO_REF__PRIVATE:
-            return ( ( InternalEList< ? > ) getPrivate() ).basicRemove( otherEnd, msgs );
-        case SclPackage.DO_REF__TEXT:
-            return basicUnsetText( msgs );
-        case SclPackage.DO_REF__ANY:
-            return ( ( InternalEList< ? > ) getAny() ).basicRemove( otherEnd, msgs );
-        case SclPackage.DO_REF__ANY_ATTRIBUTE:
-            return ( ( InternalEList< ? > ) getAnyAttribute() ).basicRemove( otherEnd, msgs );
-        }
-        return super.eInverseRemove( otherEnd, featureID, msgs );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case SclPackage.DO_REF__LINE_NUMBER:
-            return getLineNumber();
-        case SclPackage.DO_REF__EXPLICIT_LINKS_BUILT:
-            return isExplicitLinksBuilt();
-        case SclPackage.DO_REF__FILENAME:
-            return getFilename();
-        case SclPackage.DO_REF__XPATH:
-            return getXpath();
-        case SclPackage.DO_REF__PRIVATE:
-            return getPrivate();
-        case SclPackage.DO_REF__TEXT:
-            return getText();
-        case SclPackage.DO_REF__ANY:
-            if( coreType ) {
-                return getAny();
-            }
-            return ( ( FeatureMap.Internal ) getAny() ).getWrapper();
-        case SclPackage.DO_REF__ANY_ATTRIBUTE:
-            if( coreType ) {
-                return getAnyAttribute();
-            }
-            return ( ( FeatureMap.Internal ) getAnyAttribute() ).getWrapper();
+        case SclPackage.DO_REF__UUID:
+            return getUuid();
+        case SclPackage.DO_REF__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.DO_REF__DESC:
             return getDesc();
         case SclPackage.DO_REF__DO_NAME:
@@ -1431,27 +1113,11 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case SclPackage.DO_REF__LINE_NUMBER:
-            setLineNumber( ( Integer ) newValue );
+        case SclPackage.DO_REF__UUID:
+            setUuid( ( String ) newValue );
             return;
-        case SclPackage.DO_REF__EXPLICIT_LINKS_BUILT:
-            setExplicitLinksBuilt( ( Boolean ) newValue );
-            return;
-        case SclPackage.DO_REF__FILENAME:
-            setFilename( ( String ) newValue );
-            return;
-        case SclPackage.DO_REF__PRIVATE:
-            getPrivate().clear();
-            getPrivate().addAll( ( Collection< ? extends Private > ) newValue );
-            return;
-        case SclPackage.DO_REF__TEXT:
-            setText( ( Text ) newValue );
-            return;
-        case SclPackage.DO_REF__ANY:
-            ( ( FeatureMap.Internal ) getAny() ).set( newValue );
-            return;
-        case SclPackage.DO_REF__ANY_ATTRIBUTE:
-            ( ( FeatureMap.Internal ) getAnyAttribute() ).set( newValue );
+        case SclPackage.DO_REF__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
             return;
         case SclPackage.DO_REF__DESC:
             setDesc( ( String ) newValue );
@@ -1495,26 +1161,11 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case SclPackage.DO_REF__LINE_NUMBER:
-            setLineNumber( LINE_NUMBER_EDEFAULT );
+        case SclPackage.DO_REF__UUID:
+            unsetUuid();
             return;
-        case SclPackage.DO_REF__EXPLICIT_LINKS_BUILT:
-            setExplicitLinksBuilt( EXPLICIT_LINKS_BUILT_EDEFAULT );
-            return;
-        case SclPackage.DO_REF__FILENAME:
-            setFilename( FILENAME_EDEFAULT );
-            return;
-        case SclPackage.DO_REF__PRIVATE:
-            unsetPrivate();
-            return;
-        case SclPackage.DO_REF__TEXT:
-            unsetText();
-            return;
-        case SclPackage.DO_REF__ANY:
-            getAny().clear();
-            return;
-        case SclPackage.DO_REF__ANY_ATTRIBUTE:
-            getAnyAttribute().clear();
+        case SclPackage.DO_REF__TEMPLATE_UUID:
+            unsetTemplateUuid();
             return;
         case SclPackage.DO_REF__DESC:
             unsetDesc();
@@ -1558,22 +1209,10 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case SclPackage.DO_REF__LINE_NUMBER:
-            return lineNumber != LINE_NUMBER_EDEFAULT;
-        case SclPackage.DO_REF__EXPLICIT_LINKS_BUILT:
-            return explicitLinksBuilt != EXPLICIT_LINKS_BUILT_EDEFAULT;
-        case SclPackage.DO_REF__FILENAME:
-            return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals( filename );
-        case SclPackage.DO_REF__XPATH:
-            return XPATH_EDEFAULT == null ? getXpath() != null : !XPATH_EDEFAULT.equals( getXpath() );
-        case SclPackage.DO_REF__PRIVATE:
-            return isSetPrivate();
-        case SclPackage.DO_REF__TEXT:
-            return isSetText();
-        case SclPackage.DO_REF__ANY:
-            return any != null && !any.isEmpty();
-        case SclPackage.DO_REF__ANY_ATTRIBUTE:
-            return anyAttribute != null && !anyAttribute.isEmpty();
+        case SclPackage.DO_REF__UUID:
+            return isSetUuid();
+        case SclPackage.DO_REF__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.DO_REF__DESC:
             return isSetDesc();
         case SclPackage.DO_REF__DO_NAME:
@@ -1605,30 +1244,12 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      */
     @Override
     public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
-        if( baseClass == SclObject.class ) {
+        if( baseClass == AgUuid.class ) {
             switch( derivedFeatureID ) {
-            case SclPackage.DO_REF__LINE_NUMBER:
-                return SclPackage.SCL_OBJECT__LINE_NUMBER;
-            case SclPackage.DO_REF__EXPLICIT_LINKS_BUILT:
-                return SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT;
-            case SclPackage.DO_REF__FILENAME:
-                return SclPackage.SCL_OBJECT__FILENAME;
-            case SclPackage.DO_REF__XPATH:
-                return SclPackage.SCL_OBJECT__XPATH;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == BaseElement.class ) {
-            switch( derivedFeatureID ) {
-            case SclPackage.DO_REF__PRIVATE:
-                return SclPackage.BASE_ELEMENT__PRIVATE;
-            case SclPackage.DO_REF__TEXT:
-                return SclPackage.BASE_ELEMENT__TEXT;
-            case SclPackage.DO_REF__ANY:
-                return SclPackage.BASE_ELEMENT__ANY;
-            case SclPackage.DO_REF__ANY_ATTRIBUTE:
-                return SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE;
+            case SclPackage.DO_REF__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.DO_REF__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
             default:
                 return -1;
             }
@@ -1651,30 +1272,12 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      */
     @Override
     public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
-        if( baseClass == SclObject.class ) {
+        if( baseClass == AgUuid.class ) {
             switch( baseFeatureID ) {
-            case SclPackage.SCL_OBJECT__LINE_NUMBER:
-                return SclPackage.DO_REF__LINE_NUMBER;
-            case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
-                return SclPackage.DO_REF__EXPLICIT_LINKS_BUILT;
-            case SclPackage.SCL_OBJECT__FILENAME:
-                return SclPackage.DO_REF__FILENAME;
-            case SclPackage.SCL_OBJECT__XPATH:
-                return SclPackage.DO_REF__XPATH;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == BaseElement.class ) {
-            switch( baseFeatureID ) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                return SclPackage.DO_REF__PRIVATE;
-            case SclPackage.BASE_ELEMENT__TEXT:
-                return SclPackage.DO_REF__TEXT;
-            case SclPackage.BASE_ELEMENT__ANY:
-                return SclPackage.DO_REF__ANY;
-            case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-                return SclPackage.DO_REF__ANY_ATTRIBUTE;
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.DO_REF__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.DO_REF__TEMPLATE_UUID;
             default:
                 return -1;
             }
@@ -1696,66 +1299,26 @@ public abstract class DORefImpl extends AgUuidImpl implements DORef {
      * @generated
      */
     @Override
-    public int eDerivedOperationID( int baseOperationID, Class< ? > baseClass ) {
-        if( baseClass == SclObject.class ) {
-            switch( baseOperationID ) {
-            case SclPackage.SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN:
-                return SclPackage.DO_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == BaseElement.class ) {
-            switch( baseOperationID ) {
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == AgDesc.class ) {
-            switch( baseOperationID ) {
-            default:
-                return -1;
-            }
-        }
-        return super.eDerivedOperationID( baseOperationID, baseClass );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
-        switch( operationID ) {
-        case SclPackage.DO_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN:
-            return buildExplicitLinks( ( IRiseClipseConsole ) arguments.get( 0 ), ( Boolean ) arguments.get( 1 ) );
-        }
-        return super.eInvoke( operationID, arguments );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public String toString() {
         if( eIsProxy() ) {
             return super.toString();
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (lineNumber: " );
-        result.append( lineNumber );
-        result.append( ", explicitLinksBuilt: " );
-        result.append( explicitLinksBuilt );
-        result.append( ", filename: " );
-        result.append( filename );
-        result.append( ", any: " );
-        result.append( any );
-        result.append( ", anyAttribute: " );
-        result.append( anyAttribute );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
         result.append( ", desc: " );
         if( descESet ) {
             result.append( desc );

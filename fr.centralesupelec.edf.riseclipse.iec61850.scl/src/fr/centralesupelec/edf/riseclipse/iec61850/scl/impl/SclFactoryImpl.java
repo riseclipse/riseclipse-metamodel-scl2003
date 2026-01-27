@@ -341,10 +341,10 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createSecPerSamples();
         case SclPackage.SCSM:
             return createSCSM();
-        case SclPackage.SM_VC_SECURITY:
-            return createSMVcSecurity();
-        case SclPackage.SCL_FILE_REFERENCE:
-            return createSclFileReference();
+        case SclPackage.SV_MC_SECURITY:
+            return createSVMcSecurity();
+        case SclPackage.SCL_FILE_UUID_REFERENCE:
+            return createSclFileUUIDReference();
         case SclPackage.SECURITY:
             return createSecurity();
         case SclPackage.SIGNAL_ROLE:
@@ -365,8 +365,8 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createVoltage();
         case SclPackage.VOLTAGE_LEVEL:
             return createVoltageLevel();
-        case SclPackage.SOURCE_FILES:
-            return createSourceFiles();
+        case SclPackage.HEADER_SCL_REF:
+            return createHeaderSclRef();
         case SclPackage.CERT:
             return createCert();
         case SclPackage.VALUE_WITH_UNIT:
@@ -393,8 +393,8 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createExtCtrl();
         case SclPackage.GOOSE_MC_SECURITY:
             return createGOOSEMcSecurity();
-        case SclPackage.IED_SOURCE_FILES:
-            return createIEDSourceFiles();
+        case SclPackage.IED_SCL_REF:
+            return createIEDSclRef();
         case SclPackage.LABEL:
             return createLabel();
         case SclPackage.LABELS:
@@ -935,9 +935,9 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
-    public SMVcSecurity createSMVcSecurity() {
-        SMVcSecurityImpl smVcSecurity = new SMVcSecurityImpl();
-        return smVcSecurity;
+    public SVMcSecurity createSVMcSecurity() {
+        SVMcSecurityImpl svMcSecurity = new SVMcSecurityImpl();
+        return svMcSecurity;
     }
 
     /**
@@ -946,9 +946,9 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
-    public SclFileReference createSclFileReference() {
-        SclFileReferenceImpl sclFileReference = new SclFileReferenceImpl();
-        return sclFileReference;
+    public SclFileUUIDReference createSclFileUUIDReference() {
+        SclFileUUIDReferenceImpl sclFileUUIDReference = new SclFileUUIDReferenceImpl();
+        return sclFileUUIDReference;
     }
 
     /**
@@ -1034,9 +1034,9 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
-    public IEDSourceFiles createIEDSourceFiles() {
-        IEDSourceFilesImpl iedSourceFiles = new IEDSourceFilesImpl();
-        return iedSourceFiles;
+    public IEDSclRef createIEDSclRef() {
+        IEDSclRefImpl iedSclRef = new IEDSclRefImpl();
+        return iedSclRef;
     }
 
     /**
@@ -2222,9 +2222,9 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
-    public SourceFiles createSourceFiles() {
-        SourceFilesImpl sourceFiles = new SourceFilesImpl();
-        return sourceFiles;
+    public HeaderSclRef createHeaderSclRef() {
+        HeaderSclRefImpl headerSclRef = new HeaderSclRefImpl();
+        return headerSclRef;
     }
 
     /**

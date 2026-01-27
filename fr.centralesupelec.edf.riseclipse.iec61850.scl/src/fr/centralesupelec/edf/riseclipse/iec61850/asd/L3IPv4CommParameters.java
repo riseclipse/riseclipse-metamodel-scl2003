@@ -102,7 +102,7 @@ public interface L3IPv4CommParameters extends CommParameters {
      * @see #setParentGooseParameters(GooseParameters)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getL3IPv4CommParameters_ParentGooseParameters()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.GooseParameters#getL3IPv4CommParameters
-     * @model opposite="l3IPv4CommParameters" unsettable="true" ordered="false"
+     * @model opposite="L3IPv4CommParameters" unsettable="true" ordered="false"
      * @generated
      */
     GooseParameters getParentGooseParameters();
@@ -126,7 +126,7 @@ public interface L3IPv4CommParameters extends CommParameters {
      * @see #setParentSMVParameters(SMVParameters)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getL3IPv4CommParameters_ParentSMVParameters()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SMVParameters#getL3IPv4CommParameters
-     * @model opposite="l3IPv4CommParameters" unsettable="true" ordered="false"
+     * @model opposite="L3IPv4CommParameters" unsettable="true" ordered="false"
      * @generated
      */
     SMVParameters getParentSMVParameters();

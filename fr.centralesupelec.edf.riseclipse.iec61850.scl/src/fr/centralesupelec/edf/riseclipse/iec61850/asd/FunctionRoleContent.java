@@ -361,7 +361,7 @@ public interface FunctionRoleContent extends BaseExtensionElement {
      * @see #setParentFunctionRole(FunctionRole)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRoleContent_ParentFunctionRole()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getFunctionRoleContent
-     * @model opposite="functionRoleContent" unsettable="true" ordered="false"
+     * @model opposite="FunctionRoleContent" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRole getParentFunctionRole();

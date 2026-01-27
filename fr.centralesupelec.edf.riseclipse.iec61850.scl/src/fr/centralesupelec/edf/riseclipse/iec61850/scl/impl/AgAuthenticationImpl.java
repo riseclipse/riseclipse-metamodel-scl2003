@@ -23,6 +23,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -43,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *
  * @generated
  */
-public class AgAuthenticationImpl extends SclObjectImpl implements AgAuthentication {
+public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implements AgAuthentication {
     /**
      * The default value of the '{@link #getCertificate() <em>Certificate</em>}' attribute.
      * <!-- begin-user-doc -->

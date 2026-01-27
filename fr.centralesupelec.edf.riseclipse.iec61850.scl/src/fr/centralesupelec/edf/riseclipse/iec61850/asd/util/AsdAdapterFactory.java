@@ -110,7 +110,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 
 /**
@@ -599,8 +599,8 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseSclFileReference( SclFileReference object ) {
-            return createSclFileReferenceAdapter();
+        public Adapter caseSclFileUUIDReference( SclFileUUIDReference object ) {
+            return createSclFileUUIDReferenceAdapter();
         }
 
         @Override
@@ -1827,16 +1827,16 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference <em>File Reference</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference <em>File UUID Reference</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference
      * @generated
      */
-    public Adapter createSclFileReferenceAdapter() {
+    public Adapter createSclFileUUIDReferenceAdapter() {
         return null;
     }
 

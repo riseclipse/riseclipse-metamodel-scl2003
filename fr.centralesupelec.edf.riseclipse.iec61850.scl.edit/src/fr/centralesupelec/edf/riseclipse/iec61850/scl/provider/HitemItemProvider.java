@@ -293,7 +293,7 @@ public class HitemItemProvider
         super.collectNewChildDescriptors( newChildDescriptors, object );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getHitem_SourceFiles(),
-                SclFactory.eINSTANCE.createSourceFiles() ) );
+                SclFactory.eINSTANCE.createHeaderSclRef() ) );
     }
 
 }

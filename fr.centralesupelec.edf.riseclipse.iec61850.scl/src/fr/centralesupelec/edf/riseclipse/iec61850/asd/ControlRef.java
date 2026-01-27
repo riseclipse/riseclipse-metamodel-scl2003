@@ -276,8 +276,7 @@ public interface ControlRef extends LinkFCDRef {
      * @return the value of the '<em>Output</em>' attribute.
      * @see #setOutput(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getControlRef_Output()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='output'"
+     * @model extendedMetaData="kind='attribute' name='output'"
      * @generated
      */
     String getOutput();

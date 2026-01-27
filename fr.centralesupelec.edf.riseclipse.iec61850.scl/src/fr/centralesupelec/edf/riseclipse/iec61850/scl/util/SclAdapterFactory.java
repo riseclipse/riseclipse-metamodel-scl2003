@@ -796,13 +796,13 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseSMVcSecurity( SMVcSecurity object ) {
-            return createSMVcSecurityAdapter();
+        public Adapter caseSVMcSecurity( SVMcSecurity object ) {
+            return createSVMcSecurityAdapter();
         }
 
         @Override
-        public Adapter caseSclFileReference( SclFileReference object ) {
-            return createSclFileReferenceAdapter();
+        public Adapter caseSclFileUUIDReference( SclFileUUIDReference object ) {
+            return createSclFileUUIDReferenceAdapter();
         }
 
         @Override
@@ -871,8 +871,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseSourceFiles( SourceFiles object ) {
-            return createSourceFilesAdapter();
+        public Adapter caseHeaderSclRef( HeaderSclRef object ) {
+            return createHeaderSclRefAdapter();
         }
 
         @Override
@@ -991,8 +991,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseIEDSourceFiles( IEDSourceFiles object ) {
-            return createIEDSourceFilesAdapter();
+        public Adapter caseIEDSclRef( IEDSclRef object ) {
+            return createIEDSclRefAdapter();
         }
 
         @Override
@@ -1694,30 +1694,30 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity <em>SM Vc Security</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity <em>SV Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity
      * @generated
      */
-    public Adapter createSMVcSecurityAdapter() {
+    public Adapter createSVMcSecurityAdapter() {
         return null;
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference <em>File Reference</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference <em>File UUID Reference</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference
      * @generated
      */
-    public Adapter createSclFileReferenceAdapter() {
+    public Adapter createSclFileUUIDReferenceAdapter() {
         return null;
     }
 
@@ -1946,16 +1946,16 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles <em>IED Source Files</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef <em>IED Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef
      * @generated
      */
-    public Adapter createIEDSourceFilesAdapter() {
+    public Adapter createIEDSclRefAdapter() {
         return null;
     }
 
@@ -3641,16 +3641,16 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles <em>Source Files</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef <em>Header Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef
      * @generated
      */
-    public Adapter createSourceFilesAdapter() {
+    public Adapter createHeaderSclRefAdapter() {
         return null;
     }
 

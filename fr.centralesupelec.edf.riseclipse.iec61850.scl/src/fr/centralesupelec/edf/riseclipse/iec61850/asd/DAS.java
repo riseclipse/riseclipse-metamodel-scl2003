@@ -399,8 +399,7 @@ public interface DAS extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getDAS_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();
@@ -527,7 +526,7 @@ public interface DAS extends BaseExtensionElementWithDesc {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getDAS_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getDAS
-     * @model opposite="dAS" unsettable="true" ordered="false"
+     * @model opposite="DAS" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();
@@ -551,7 +550,7 @@ public interface DAS extends BaseExtensionElementWithDesc {
      * @see #setParentSDS(SDS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getDAS_ParentSDS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getDAS
-     * @model opposite="dAS" unsettable="true" ordered="false"
+     * @model opposite="DAS" unsettable="true" ordered="false"
      * @generated
      */
     SDS getParentSDS();

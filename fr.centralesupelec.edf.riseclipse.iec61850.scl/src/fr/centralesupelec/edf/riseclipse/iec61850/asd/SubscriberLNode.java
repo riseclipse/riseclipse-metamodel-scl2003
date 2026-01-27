@@ -271,8 +271,7 @@ public interface SubscriberLNode extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Input Name</em>' attribute.
      * @see #setInputName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubscriberLNode_InputName()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='inputName'"
+     * @model extendedMetaData="kind='attribute' name='inputName'"
      * @generated
      */
     String getInputName();
@@ -430,7 +429,7 @@ public interface SubscriberLNode extends BaseExtensionElementWithDesc {
      * @see #setParentDAS(DAS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubscriberLNode_ParentDAS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getSubscriberLNode
-     * @model opposite="subscriberLNode" unsettable="true" ordered="false"
+     * @model opposite="SubscriberLNode" unsettable="true" ordered="false"
      * @generated
      */
     DAS getParentDAS();
@@ -454,7 +453,7 @@ public interface SubscriberLNode extends BaseExtensionElementWithDesc {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubscriberLNode_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getSubscriberLNode
-     * @model opposite="subscriberLNode" unsettable="true" ordered="false"
+     * @model opposite="SubscriberLNode" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();
@@ -478,7 +477,7 @@ public interface SubscriberLNode extends BaseExtensionElementWithDesc {
      * @see #setParentSDS(SDS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubscriberLNode_ParentSDS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getSubscriberLNode
-     * @model opposite="subscriberLNode" unsettable="true" ordered="false"
+     * @model opposite="SubscriberLNode" unsettable="true" ordered="false"
      * @generated
      */
     SDS getParentSDS();

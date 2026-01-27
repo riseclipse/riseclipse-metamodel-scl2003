@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -254,6 +254,7 @@ public interface Association extends BaseElement, AgLNRef {
 
     /**
      * Returns the value of the '<em><b>Initiator</b></em>' attribute.
+     * The default value is <code>"client"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationInitiator}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -261,7 +262,7 @@ public interface Association extends BaseElement, AgLNRef {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationInitiator
      * @see #setInitiator(AssociationInitiator)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAssociation_Initiator()
-     * @model
+     * @model default="client"
      * @generated
      */
     AssociationInitiator getInitiator();

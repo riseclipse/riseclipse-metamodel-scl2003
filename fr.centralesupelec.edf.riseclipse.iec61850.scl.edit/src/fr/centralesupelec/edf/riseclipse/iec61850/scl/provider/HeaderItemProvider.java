@@ -367,7 +367,7 @@ public class HeaderItemProvider
                 SclFactory.eINSTANCE.createHistory() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getHeader_SourceFiles(),
-                SclFactory.eINSTANCE.createSourceFiles() ) );
+                SclFactory.eINSTANCE.createHeaderSclRef() ) );
     }
 
 }

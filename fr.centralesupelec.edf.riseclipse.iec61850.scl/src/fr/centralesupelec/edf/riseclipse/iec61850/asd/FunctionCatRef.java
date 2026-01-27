@@ -104,7 +104,7 @@ public interface FunctionCatRef extends BaseExtensionElement {
      * @see #setParentFunctionCategory(FunctionCategory)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionCatRef_ParentFunctionCategory()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getFunctionCatRef
-     * @model opposite="functionCatRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionCatRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionCategory getParentFunctionCategory();

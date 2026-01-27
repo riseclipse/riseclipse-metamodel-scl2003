@@ -53,7 +53,7 @@ public interface ProcessResources extends BaseExtensionElementWithDesc {
      * @see #unsetProcessResource()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProcessResources_ProcessResource()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getParentProcessResources
-     * @model opposite="ParentProcessResources" containment="true" unsettable="true" required="true" ordered="false"
+     * @model opposite="ParentProcessResources" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='ProcessResource' namespace='##targetNamespace'"
      * @generated
      */

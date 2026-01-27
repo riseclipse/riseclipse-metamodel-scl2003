@@ -150,7 +150,7 @@ public interface FunctionRef extends FunctionalVariantRefContainer {
      * @see #setParentAllocationRole(AllocationRole)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRef_ParentAllocationRole()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getFunctionRef
-     * @model opposite="functionRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionRef" unsettable="true" ordered="false"
      * @generated
      */
     AllocationRole getParentAllocationRole();
@@ -174,7 +174,7 @@ public interface FunctionRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getFunctionRef
-     * @model opposite="functionRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

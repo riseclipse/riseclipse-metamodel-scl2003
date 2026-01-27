@@ -20,6 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ag Authentication</b></em>'.
@@ -40,7 +42,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model
  * @generated
  */
-public interface AgAuthentication extends SclObject {
+public interface AgAuthentication extends EObject {
     /**
      * Returns the value of the '<em><b>Certificate</b></em>' attribute.
      * The default value is <code>"false"</code>.

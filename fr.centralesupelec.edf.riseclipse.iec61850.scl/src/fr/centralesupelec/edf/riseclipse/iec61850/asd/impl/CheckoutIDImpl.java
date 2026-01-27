@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,23 +15,20 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.CheckoutID;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCheckoutID;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +45,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
+public class CheckoutIDImpl extends SclFileUUIDReferenceImpl implements CheckoutID {
     /**
      * The cached value of the '{@link #getSubCheckoutID() <em>Sub Checkout ID</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -160,10 +157,12 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID, oldSubCheckoutID, newSubCheckoutID,
                     !oldSubCheckoutIDESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -177,21 +176,26 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
     public void setSubCheckoutID( SubCheckoutID newSubCheckoutID ) {
         if( newSubCheckoutID != subCheckoutID ) {
             NotificationChain msgs = null;
-            if( subCheckoutID != null )
+            if( subCheckoutID != null ) {
                 msgs = ( ( InternalEObject ) subCheckoutID ).eInverseRemove( this,
                         AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID, SubCheckoutID.class, msgs );
-            if( newSubCheckoutID != null )
+            }
+            if( newSubCheckoutID != null ) {
                 msgs = ( ( InternalEObject ) newSubCheckoutID ).eInverseAdd( this,
                         AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID, SubCheckoutID.class, msgs );
+            }
             msgs = basicSetSubCheckoutID( newSubCheckoutID, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSubCheckoutIDESet = subCheckoutIDESet;
             subCheckoutIDESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID,
                         newSubCheckoutID, newSubCheckoutID, !oldSubCheckoutIDESet ) );
+            }
         }
     }
 
@@ -208,10 +212,12 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID, oldSubCheckoutID, null, oldSubCheckoutIDESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -228,14 +234,17 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
             msgs = ( ( InternalEObject ) subCheckoutID ).eInverseRemove( this,
                     AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID, SubCheckoutID.class, msgs );
             msgs = basicUnsetSubCheckoutID( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSubCheckoutIDESet = subCheckoutIDESet;
             subCheckoutIDESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID, null,
                         null, oldSubCheckoutIDESet ) );
+            }
         }
     }
 
@@ -270,9 +279,10 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
         engRight = newEngRight;
         boolean oldEngRightESet = engRightESet;
         engRightESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.CHECKOUT_ID__ENG_RIGHT, oldEngRight,
                     engRight, !oldEngRightESet ) );
+        }
     }
 
     /**
@@ -286,9 +296,10 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
         boolean oldEngRightESet = engRightESet;
         engRight = ENG_RIGHT_EDEFAULT;
         engRightESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.CHECKOUT_ID__ENG_RIGHT, oldEngRight,
                     ENG_RIGHT_EDEFAULT, oldEngRightESet ) );
+        }
     }
 
     /**
@@ -320,9 +331,10 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
     public void setHeaderId( String newHeaderId ) {
         String oldHeaderId = headerId;
         headerId = newHeaderId;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.CHECKOUT_ID__HEADER_ID, oldHeaderId,
                     headerId ) );
+        }
     }
 
     /**
@@ -334,9 +346,10 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID:
-            if( subCheckoutID != null )
+            if( subCheckoutID != null ) {
                 msgs = ( ( InternalEObject ) subCheckoutID ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID, null, msgs );
+            }
             return basicSetSubCheckoutID( ( SubCheckoutID ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -441,14 +454,18 @@ public class CheckoutIDImpl extends SclFileReferenceImpl implements CheckoutID {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (engRight: " );
-        if( engRightESet )
+        if( engRightESet ) {
             result.append( engRight );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", headerId: " );
         result.append( headerId );
         result.append( ')' );

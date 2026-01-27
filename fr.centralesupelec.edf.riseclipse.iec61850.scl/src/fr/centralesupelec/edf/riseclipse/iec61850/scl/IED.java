@@ -753,19 +753,19 @@ public interface IED extends UnNaming, AgUuid {
 
     /**
      * Returns the value of the '<em><b>IED Source Files</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getParentIED <em>Parent IED</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>IED Source Files</em>' containment reference.
      * @see #isSetIEDSourceFiles()
      * @see #unsetIEDSourceFiles()
-     * @see #setIEDSourceFiles(IEDSourceFiles)
+     * @see #setIEDSourceFiles(IEDSclRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_IEDSourceFiles()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getParentIED
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getParentIED
      * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    IEDSourceFiles getIEDSourceFiles();
+    IEDSclRef getIEDSourceFiles();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getIEDSourceFiles <em>IED Source Files</em>}' containment reference.
@@ -777,7 +777,7 @@ public interface IED extends UnNaming, AgUuid {
      * @see #getIEDSourceFiles()
      * @generated
      */
-    void setIEDSourceFiles( IEDSourceFiles value );
+    void setIEDSourceFiles( IEDSclRef value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getIEDSourceFiles <em>IED Source Files</em>}' containment reference.
@@ -785,7 +785,7 @@ public interface IED extends UnNaming, AgUuid {
      * <!-- end-user-doc -->
      * @see #isSetIEDSourceFiles()
      * @see #getIEDSourceFiles()
-     * @see #setIEDSourceFiles(IEDSourceFiles)
+     * @see #setIEDSourceFiles(IEDSclRef)
      * @generated
      */
     void unsetIEDSourceFiles();
@@ -797,7 +797,7 @@ public interface IED extends UnNaming, AgUuid {
      * @return whether the value of the '<em>IED Source Files</em>' containment reference is set.
      * @see #unsetIEDSourceFiles()
      * @see #getIEDSourceFiles()
-     * @see #setIEDSourceFiles(IEDSourceFiles)
+     * @see #setIEDSourceFiles(IEDSclRef)
      * @generated
      */
     boolean isSetIEDSourceFiles();

@@ -215,7 +215,7 @@ public interface ReportParameters extends ControlBlockParameters {
      * @see #setParentCommServiceSpecifications(CommServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getReportParameters_ParentCommServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.CommServiceSpecifications#getReportParameters
-     * @model opposite="reportParameters" unsettable="true" ordered="false"
+     * @model opposite="ReportParameters" unsettable="true" ordered="false"
      * @generated
      */
     CommServiceSpecifications getParentCommServiceSpecifications();
@@ -239,7 +239,7 @@ public interface ReportParameters extends ControlBlockParameters {
      * @see #setParentServiceSpecifications(ServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getReportParameters_ParentServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications#getReportParameters
-     * @model opposite="reportParameters" unsettable="true" ordered="false"
+     * @model opposite="ReportParameters" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSpecifications getParentServiceSpecifications();

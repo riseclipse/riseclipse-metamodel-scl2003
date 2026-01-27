@@ -19,7 +19,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,20 +45,20 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 public interface ApplicationSclRef extends BaseExtensionElement {
     /**
      * Returns the value of the '<em><b>Scl File Reference</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Scl File Reference</em>' containment reference.
      * @see #isSetSclFileReference()
      * @see #unsetSclFileReference()
-     * @see #setSclFileReference(SclFileReference)
+     * @see #setSclFileReference(SclFileUUIDReference)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplicationSclRef_SclFileReference()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentApplicationSclRef
      * @model opposite="ParentApplicationSclRef" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='SclFileReference' namespace='##targetNamespace'"
      * @generated
      */
-    SclFileReference getSclFileReference();
+    SclFileUUIDReference getSclFileReference();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef#getSclFileReference <em>Scl File Reference</em>}' containment reference.
@@ -70,7 +70,7 @@ public interface ApplicationSclRef extends BaseExtensionElement {
      * @see #getSclFileReference()
      * @generated
      */
-    void setSclFileReference( SclFileReference value );
+    void setSclFileReference( SclFileUUIDReference value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef#getSclFileReference <em>Scl File Reference</em>}' containment reference.
@@ -78,7 +78,7 @@ public interface ApplicationSclRef extends BaseExtensionElement {
      * <!-- end-user-doc -->
      * @see #isSetSclFileReference()
      * @see #getSclFileReference()
-     * @see #setSclFileReference(SclFileReference)
+     * @see #setSclFileReference(SclFileUUIDReference)
      * @generated
      */
     void unsetSclFileReference();
@@ -90,7 +90,7 @@ public interface ApplicationSclRef extends BaseExtensionElement {
      * @return whether the value of the '<em>Scl File Reference</em>' containment reference is set.
      * @see #unsetSclFileReference()
      * @see #getSclFileReference()
-     * @see #setSclFileReference(SclFileReference)
+     * @see #setSclFileReference(SclFileUUIDReference)
      * @generated
      */
     boolean isSetSclFileReference();
@@ -104,7 +104,7 @@ public interface ApplicationSclRef extends BaseExtensionElement {
      * @see #setParentApplication(Application)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplicationSclRef_ParentApplication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getApplicationSclRef
-     * @model opposite="applicationSclRef" unsettable="true" ordered="false"
+     * @model opposite="ApplicationSclRef" unsettable="true" ordered="false"
      * @generated
      */
     Application getParentApplication();

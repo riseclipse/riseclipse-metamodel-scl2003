@@ -184,8 +184,7 @@ public interface FunctionRole extends FunctionalVariantRefContainer {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();
@@ -327,7 +326,7 @@ public interface FunctionRole extends FunctionalVariantRefContainer {
      * @see #setParentApplication(Application)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_ParentApplication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getFunctionRole
-     * @model opposite="functionRole" unsettable="true" ordered="false"
+     * @model opposite="FunctionRole" unsettable="true" ordered="false"
      * @generated
      */
     Application getParentApplication();

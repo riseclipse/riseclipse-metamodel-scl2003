@@ -5425,13 +5425,13 @@ public interface SclPackage extends EPackage {
     int CLIENT_SERVICES__GOOSE_MC_SECURITY = SCL_OBJECT_FEATURE_COUNT + 17;
 
     /**
-     * The feature id for the '<em><b>SM Vc Security</b></em>' containment reference.
+     * The feature id for the '<em><b>SV Mc Security</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_SERVICES__SM_VC_SECURITY = SCL_OBJECT_FEATURE_COUNT + 18;
+    int CLIENT_SERVICES__SV_MC_SECURITY = SCL_OBJECT_FEATURE_COUNT + 18;
 
     /**
      * The feature id for the '<em><b>Security</b></em>' containment reference.
@@ -10555,357 +10555,6 @@ public interface SclPackage extends EPackage {
     int ENUM_TYPE_OPERATION_COUNT = ID_NAMING_OPERATION_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Line Number</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
-
-    /**
-     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
-
-    /**
-     * The feature id for the '<em><b>Filename</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__FILENAME = BASE_ELEMENT__FILENAME;
-
-    /**
-     * The feature id for the '<em><b>Xpath</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__XPATH = BASE_ELEMENT__XPATH;
-
-    /**
-     * The feature id for the '<em><b>Private</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PRIVATE = BASE_ELEMENT__PRIVATE;
-
-    /**
-     * The feature id for the '<em><b>Text</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__TEXT = BASE_ELEMENT__TEXT;
-
-    /**
-     * The feature id for the '<em><b>Any</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__ANY = BASE_ELEMENT__ANY;
-
-    /**
-     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
-
-    /**
-     * The feature id for the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__DESC = BASE_ELEMENT_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__UUID = BASE_ELEMENT_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__TEMPLATE_UUID = BASE_ELEMENT_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Do Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__DO_NAME = BASE_ELEMENT_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Ied Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__IED_NAME = BASE_ELEMENT_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__LD_INST = BASE_ELEMENT_FEATURE_COUNT + 5;
-
-    /**
-     * The feature id for the '<em><b>Ln Class</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 6;
-
-    /**
-     * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__LN_INST = BASE_ELEMENT_FEATURE_COUNT + 7;
-
-    /**
-     * The feature id for the '<em><b>Ln Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__LN_UUID = BASE_ELEMENT_FEATURE_COUNT + 8;
-
-    /**
-     * The feature id for the '<em><b>PDO</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PDO = BASE_ELEMENT_FEATURE_COUNT + 9;
-
-    /**
-     * The feature id for the '<em><b>PLN</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PLN = BASE_ELEMENT_FEATURE_COUNT + 10;
-
-    /**
-     * The feature id for the '<em><b>Prefix</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PREFIX = BASE_ELEMENT_FEATURE_COUNT + 11;
-
-    /**
-     * The feature id for the '<em><b>Da Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__DA_NAME = BASE_ELEMENT_FEATURE_COUNT + 12;
-
-    /**
-     * The feature id for the '<em><b>Int Addr</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__INT_ADDR = BASE_ELEMENT_FEATURE_COUNT + 13;
-
-    /**
-     * The feature id for the '<em><b>Service Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SERVICE_TYPE = BASE_ELEMENT_FEATURE_COUNT + 14;
-
-    /**
-     * The feature id for the '<em><b>Src CB Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SRC_CB_NAME = BASE_ELEMENT_FEATURE_COUNT + 15;
-
-    /**
-     * The feature id for the '<em><b>Src LD Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SRC_LD_INST = BASE_ELEMENT_FEATURE_COUNT + 16;
-
-    /**
-     * The feature id for the '<em><b>Src LN Class</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SRC_LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 17;
-
-    /**
-     * The feature id for the '<em><b>Src LN Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SRC_LN_INST = BASE_ELEMENT_FEATURE_COUNT + 18;
-
-    /**
-     * The feature id for the '<em><b>Src Prefix</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SRC_PREFIX = BASE_ELEMENT_FEATURE_COUNT + 19;
-
-    /**
-     * The feature id for the '<em><b>Parent Inputs</b></em>' container reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PARENT_INPUTS = BASE_ELEMENT_FEATURE_COUNT + 20;
-
-    /**
-     * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = BASE_ELEMENT_FEATURE_COUNT + 21;
-
-    /**
-     * The feature id for the '<em><b>Refers To Abstract Data Object</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT = BASE_ELEMENT_FEATURE_COUNT + 22;
-
-    /**
-     * The feature id for the '<em><b>PServ T</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PSERV_T = BASE_ELEMENT_FEATURE_COUNT + 23;
-
-    /**
-     * The feature id for the '<em><b>PDA</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__PDA = BASE_ELEMENT_FEATURE_COUNT + 24;
-
-    /**
-     * The feature id for the '<em><b>Refers To Control</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__REFERS_TO_CONTROL = BASE_ELEMENT_FEATURE_COUNT + 25;
-
-    /**
-     * The feature id for the '<em><b>Src CB Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__SRC_CB_UUID = BASE_ELEMENT_FEATURE_COUNT + 26;
-
-    /**
-     * The feature id for the '<em><b>Referred By Source Ref</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__REFERRED_BY_SOURCE_REF = BASE_ELEMENT_FEATURE_COUNT + 27;
-
-    /**
-     * The number of structural features of the '<em>Ext Ref</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 28;
-
-    /**
-     * The operation id for the '<em>Build Explicit Links</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
-
-    /**
-     * The number of operations of the '<em>Ext Ref</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF_OPERATION_COUNT = BASE_ELEMENT_OPERATION_COUNT + 0;
-
-    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValueWithUnitImpl <em>Value With Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10914,16 +10563,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     int VALUE_WITH_UNIT = 159;
-
-    /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SourceFilesImpl <em>Source Files</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SourceFilesImpl
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSourceFiles()
-     * @generated
-     */
-    int SOURCE_FILES = 157;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServiceWithMaxAndModifyImpl <em>Service With Max And Modify</em>}' class.
@@ -11004,26 +10643,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     int MC_SECURITY = 166;
-
-    /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVcSecurityImpl <em>SM Vc Security</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVcSecurityImpl
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSMVcSecurity()
-     * @generated
-     */
-    int SM_VC_SECURITY = 142;
-
-    /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl <em>File Reference</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSclFileReference()
-     * @generated
-     */
-    int SCL_FILE_REFERENCE = 143;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SecurityImpl <em>Security</em>}' class.
@@ -11144,6 +10763,614 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     int DO_REF = 178;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SVMcSecurityImpl <em>SV Mc Security</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SVMcSecurityImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSVMcSecurity()
+     * @generated
+     */
+    int SV_MC_SECURITY = 142;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl <em>File UUID Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSclFileUUIDReference()
+     * @generated
+     */
+    int SCL_FILE_UUID_REFERENCE = 143;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderSclRefImpl <em>Header Scl Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderSclRefImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getHeaderSclRef()
+     * @generated
+     */
+    int HEADER_SCL_REF = 157;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole <em>IRise Clipse Console</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getIRiseClipseConsole()
+     * @generated
+     */
+    int IRISE_CLIPSE_CONSOLE = 176;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter <em>INamespace Getter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getINamespaceGetter()
+     * @generated
+     */
+    int INAMESPACE_GETTER = 177;
+
+    /**
+     * The feature id for the '<em><b>Line Number</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__FILENAME = BASE_ELEMENT__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__XPATH = BASE_ELEMENT__XPATH;
+
+    /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__PRIVATE = BASE_ELEMENT__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__TEXT = BASE_ELEMENT__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__ANY = BASE_ELEMENT__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__UUID = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__TEMPLATE_UUID = BASE_ELEMENT_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__DESC = BASE_ELEMENT_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Do Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__DO_NAME = BASE_ELEMENT_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Ied Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__IED_NAME = BASE_ELEMENT_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__LD_INST = BASE_ELEMENT_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Ln Class</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__LN_INST = BASE_ELEMENT_FEATURE_COUNT + 7;
+
+    /**
+     * The feature id for the '<em><b>Ln Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__LN_UUID = BASE_ELEMENT_FEATURE_COUNT + 8;
+
+    /**
+     * The feature id for the '<em><b>PDO</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__PDO = BASE_ELEMENT_FEATURE_COUNT + 9;
+
+    /**
+     * The feature id for the '<em><b>PLN</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__PLN = BASE_ELEMENT_FEATURE_COUNT + 10;
+
+    /**
+     * The feature id for the '<em><b>Prefix</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF__PREFIX = BASE_ELEMENT_FEATURE_COUNT + 11;
+
+    /**
+     * The number of structural features of the '<em>DO Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 12;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The number of operations of the '<em>DO Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_REF_OPERATION_COUNT = BASE_ELEMENT_OPERATION_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Line Number</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__LINE_NUMBER = DO_REF__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__EXPLICIT_LINKS_BUILT = DO_REF__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__FILENAME = DO_REF__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Xpath</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__XPATH = DO_REF__XPATH;
+
+    /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PRIVATE = DO_REF__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__TEXT = DO_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__ANY = DO_REF__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__ANY_ATTRIBUTE = DO_REF__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__UUID = DO_REF__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__TEMPLATE_UUID = DO_REF__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__DESC = DO_REF__DESC;
+
+    /**
+     * The feature id for the '<em><b>Do Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__DO_NAME = DO_REF__DO_NAME;
+
+    /**
+     * The feature id for the '<em><b>Ied Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__IED_NAME = DO_REF__IED_NAME;
+
+    /**
+     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__LD_INST = DO_REF__LD_INST;
+
+    /**
+     * The feature id for the '<em><b>Ln Class</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__LN_CLASS = DO_REF__LN_CLASS;
+
+    /**
+     * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__LN_INST = DO_REF__LN_INST;
+
+    /**
+     * The feature id for the '<em><b>Ln Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__LN_UUID = DO_REF__LN_UUID;
+
+    /**
+     * The feature id for the '<em><b>PDO</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PDO = DO_REF__PDO;
+
+    /**
+     * The feature id for the '<em><b>PLN</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PLN = DO_REF__PLN;
+
+    /**
+     * The feature id for the '<em><b>Prefix</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PREFIX = DO_REF__PREFIX;
+
+    /**
+     * The feature id for the '<em><b>Da Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__DA_NAME = DO_REF_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Int Addr</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__INT_ADDR = DO_REF_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Service Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SERVICE_TYPE = DO_REF_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Src CB Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SRC_CB_NAME = DO_REF_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Src LD Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SRC_LD_INST = DO_REF_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Src LN Class</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SRC_LN_CLASS = DO_REF_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Src LN Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SRC_LN_INST = DO_REF_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Src Prefix</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SRC_PREFIX = DO_REF_FEATURE_COUNT + 7;
+
+    /**
+     * The feature id for the '<em><b>Parent Inputs</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PARENT_INPUTS = DO_REF_FEATURE_COUNT + 8;
+
+    /**
+     * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = DO_REF_FEATURE_COUNT + 9;
+
+    /**
+     * The feature id for the '<em><b>Refers To Abstract Data Object</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT = DO_REF_FEATURE_COUNT + 10;
+
+    /**
+     * The feature id for the '<em><b>PServ T</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PSERV_T = DO_REF_FEATURE_COUNT + 11;
+
+    /**
+     * The feature id for the '<em><b>PDA</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PDA = DO_REF_FEATURE_COUNT + 12;
+
+    /**
+     * The feature id for the '<em><b>Refers To Control</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__REFERS_TO_CONTROL = DO_REF_FEATURE_COUNT + 13;
+
+    /**
+     * The feature id for the '<em><b>Src CB Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__SRC_CB_UUID = DO_REF_FEATURE_COUNT + 14;
+
+    /**
+     * The feature id for the '<em><b>Referred By Source Ref</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__REFERRED_BY_SOURCE_REF = DO_REF_FEATURE_COUNT + 15;
+
+    /**
+     * The number of structural features of the '<em>Ext Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF_FEATURE_COUNT = DO_REF_FEATURE_COUNT + 16;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = DO_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The number of operations of the '<em>Ext Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF_OPERATION_COUNT = DO_REF_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -24067,7 +24294,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__LINE_NUMBER = MC_SECURITY__LINE_NUMBER;
+    int SV_MC_SECURITY__LINE_NUMBER = MC_SECURITY__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -24076,7 +24303,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__EXPLICIT_LINKS_BUILT = MC_SECURITY__EXPLICIT_LINKS_BUILT;
+    int SV_MC_SECURITY__EXPLICIT_LINKS_BUILT = MC_SECURITY__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -24085,7 +24312,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__FILENAME = MC_SECURITY__FILENAME;
+    int SV_MC_SECURITY__FILENAME = MC_SECURITY__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -24094,7 +24321,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__XPATH = MC_SECURITY__XPATH;
+    int SV_MC_SECURITY__XPATH = MC_SECURITY__XPATH;
 
     /**
      * The feature id for the '<em><b>Parent Client Services</b></em>' container reference.
@@ -24103,7 +24330,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__PARENT_CLIENT_SERVICES = MC_SECURITY__PARENT_CLIENT_SERVICES;
+    int SV_MC_SECURITY__PARENT_CLIENT_SERVICES = MC_SECURITY__PARENT_CLIENT_SERVICES;
 
     /**
      * The feature id for the '<em><b>Parent GSE Settings</b></em>' container reference.
@@ -24112,7 +24339,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__PARENT_GSE_SETTINGS = MC_SECURITY__PARENT_GSE_SETTINGS;
+    int SV_MC_SECURITY__PARENT_GSE_SETTINGS = MC_SECURITY__PARENT_GSE_SETTINGS;
 
     /**
      * The feature id for the '<em><b>Parent SMV Settings</b></em>' container reference.
@@ -24121,7 +24348,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__PARENT_SMV_SETTINGS = MC_SECURITY__PARENT_SMV_SETTINGS;
+    int SV_MC_SECURITY__PARENT_SMV_SETTINGS = MC_SECURITY__PARENT_SMV_SETTINGS;
 
     /**
      * The feature id for the '<em><b>Signature</b></em>' attribute.
@@ -24130,7 +24357,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__SIGNATURE = MC_SECURITY__SIGNATURE;
+    int SV_MC_SECURITY__SIGNATURE = MC_SECURITY__SIGNATURE;
 
     /**
      * The feature id for the '<em><b>Encryption</b></em>' attribute.
@@ -24139,25 +24366,25 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__ENCRYPTION = MC_SECURITY__ENCRYPTION;
+    int SV_MC_SECURITY__ENCRYPTION = MC_SECURITY__ENCRYPTION;
 
     /**
-     * The feature id for the '<em><b>Parent Client Services From SM Vc Security</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Client Services From SV Mc Security</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY = MC_SECURITY_FEATURE_COUNT + 0;
+    int SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY = MC_SECURITY_FEATURE_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>SM Vc Security</em>' class.
+     * The number of structural features of the '<em>SV Mc Security</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY_FEATURE_COUNT = MC_SECURITY_FEATURE_COUNT + 1;
+    int SV_MC_SECURITY_FEATURE_COUNT = MC_SECURITY_FEATURE_COUNT + 1;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -24166,16 +24393,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = MC_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int SV_MC_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = MC_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The number of operations of the '<em>SM Vc Security</em>' class.
+     * The number of operations of the '<em>SV Mc Security</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SM_VC_SECURITY_OPERATION_COUNT = MC_SECURITY_OPERATION_COUNT + 0;
+    int SV_MC_SECURITY_OPERATION_COUNT = MC_SECURITY_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -24184,7 +24411,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+    int SCL_FILE_UUID_REFERENCE__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -24193,7 +24420,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+    int SCL_FILE_UUID_REFERENCE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -24202,7 +24429,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILENAME = SCL_OBJECT__FILENAME;
+    int SCL_FILE_UUID_REFERENCE__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -24211,7 +24438,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__XPATH = SCL_OBJECT__XPATH;
+    int SCL_FILE_UUID_REFERENCE__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.
@@ -24220,7 +24447,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILE_NAME = SCL_OBJECT_FEATURE_COUNT + 0;
+    int SCL_FILE_UUID_REFERENCE__FILE_NAME = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>File Type</b></em>' attribute.
@@ -24229,7 +24456,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILE_TYPE = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SCL_FILE_UUID_REFERENCE__FILE_TYPE = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>File Uuid</b></em>' attribute.
@@ -24238,7 +24465,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILE_UUID = SCL_OBJECT_FEATURE_COUNT + 2;
+    int SCL_FILE_UUID_REFERENCE__FILE_UUID = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -24247,7 +24474,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__REVISION = SCL_OBJECT_FEATURE_COUNT + 3;
+    int SCL_FILE_UUID_REFERENCE__REVISION = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -24256,7 +24483,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__VERSION = SCL_OBJECT_FEATURE_COUNT + 4;
+    int SCL_FILE_UUID_REFERENCE__VERSION = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>When</b></em>' attribute.
@@ -24265,16 +24492,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__WHEN = SCL_OBJECT_FEATURE_COUNT + 5;
+    int SCL_FILE_UUID_REFERENCE__WHEN = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Parent Source Files</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Header Scl Ref</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_SOURCE_FILES = SCL_OBJECT_FEATURE_COUNT + 6;
+    int SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Parent Application Scl Ref</b></em>' container reference.
@@ -24283,7 +24510,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 7;
+    int SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Parent Function Scl Ref</b></em>' container reference.
@@ -24292,16 +24519,25 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 8;
+    int SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
-     * The number of structural features of the '<em>File Reference</em>' class.
+     * The feature id for the '<em><b>Parent IED Scl Ref</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 9;
+    int SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 9;
+
+    /**
+     * The number of structural features of the '<em>File UUID Reference</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_FILE_UUID_REFERENCE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -24310,16 +24546,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int SCL_FILE_UUID_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The number of operations of the '<em>File Reference</em>' class.
+     * The number of operations of the '<em>File UUID Reference</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
+    int SCL_FILE_UUID_REFERENCE_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -26038,7 +26274,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+    int HEADER_SCL_REF__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -26047,7 +26283,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
+    int HEADER_SCL_REF__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -26056,7 +26292,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__FILENAME = BASE_ELEMENT__FILENAME;
+    int HEADER_SCL_REF__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -26065,7 +26301,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__XPATH = BASE_ELEMENT__XPATH;
+    int HEADER_SCL_REF__XPATH = BASE_ELEMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -26074,7 +26310,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__PRIVATE = BASE_ELEMENT__PRIVATE;
+    int HEADER_SCL_REF__PRIVATE = BASE_ELEMENT__PRIVATE;
 
     /**
      * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -26083,7 +26319,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__TEXT = BASE_ELEMENT__TEXT;
+    int HEADER_SCL_REF__TEXT = BASE_ELEMENT__TEXT;
 
     /**
      * The feature id for the '<em><b>Any</b></em>' attribute list.
@@ -26092,7 +26328,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__ANY = BASE_ELEMENT__ANY;
+    int HEADER_SCL_REF__ANY = BASE_ELEMENT__ANY;
 
     /**
      * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
@@ -26101,7 +26337,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
+    int HEADER_SCL_REF__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
 
     /**
      * The feature id for the '<em><b>Scl File Reference</b></em>' containment reference list.
@@ -26110,7 +26346,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__SCL_FILE_REFERENCE = BASE_ELEMENT_FEATURE_COUNT + 0;
+    int HEADER_SCL_REF__SCL_FILE_REFERENCE = BASE_ELEMENT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Parent Hitem</b></em>' container reference.
@@ -26119,7 +26355,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__PARENT_HITEM = BASE_ELEMENT_FEATURE_COUNT + 1;
+    int HEADER_SCL_REF__PARENT_HITEM = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Parent Header</b></em>' container reference.
@@ -26128,16 +26364,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES__PARENT_HEADER = BASE_ELEMENT_FEATURE_COUNT + 2;
+    int HEADER_SCL_REF__PARENT_HEADER = BASE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
-     * The number of structural features of the '<em>Source Files</em>' class.
+     * The number of structural features of the '<em>Header Scl Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SOURCE_FILES_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 3;
+    int HEADER_SCL_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -26146,16 +26382,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SOURCE_FILES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int HEADER_SCL_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The number of operations of the '<em>Source Files</em>' class.
+     * The number of operations of the '<em>Header Scl Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SOURCE_FILES_OPERATION_COUNT = BASE_ELEMENT_OPERATION_COUNT + 0;
+    int HEADER_SCL_REF_OPERATION_COUNT = BASE_ELEMENT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -26725,49 +26961,13 @@ public interface SclPackage extends EPackage {
     int BIT_RATE_OPERATION_COUNT = BIT_RATE_IN_MB_PER_SEC_OPERATION_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Line Number</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int AG_AUTHENTICATION__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
-
-    /**
-     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int AG_AUTHENTICATION__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
-
-    /**
-     * The feature id for the '<em><b>Filename</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int AG_AUTHENTICATION__FILENAME = SCL_OBJECT__FILENAME;
-
-    /**
-     * The feature id for the '<em><b>Xpath</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int AG_AUTHENTICATION__XPATH = SCL_OBJECT__XPATH;
-
-    /**
      * The feature id for the '<em><b>Certificate</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION__CERTIFICATE = SCL_OBJECT_FEATURE_COUNT + 0;
+    int AG_AUTHENTICATION__CERTIFICATE = 0;
 
     /**
      * The feature id for the '<em><b>None</b></em>' attribute.
@@ -26776,7 +26976,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION__NONE = SCL_OBJECT_FEATURE_COUNT + 1;
+    int AG_AUTHENTICATION__NONE = 1;
 
     /**
      * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -26785,7 +26985,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION__PASSWORD = SCL_OBJECT_FEATURE_COUNT + 2;
+    int AG_AUTHENTICATION__PASSWORD = 2;
 
     /**
      * The feature id for the '<em><b>Strong</b></em>' attribute.
@@ -26794,7 +26994,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION__STRONG = SCL_OBJECT_FEATURE_COUNT + 3;
+    int AG_AUTHENTICATION__STRONG = 3;
 
     /**
      * The feature id for the '<em><b>Weak</b></em>' attribute.
@@ -26803,7 +27003,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION__WEAK = SCL_OBJECT_FEATURE_COUNT + 4;
+    int AG_AUTHENTICATION__WEAK = 4;
 
     /**
      * The number of structural features of the '<em>Ag Authentication</em>' class.
@@ -26812,16 +27012,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 5;
-
-    /**
-     * The operation id for the '<em>Build Explicit Links</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int AG_AUTHENTICATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int AG_AUTHENTICATION_FEATURE_COUNT = 5;
 
     /**
      * The number of operations of the '<em>Ag Authentication</em>' class.
@@ -26830,7 +27021,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int AG_AUTHENTICATION_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
+    int AG_AUTHENTICATION_OPERATION_COUNT = 0;
 
     /**
      * The feature id for the '<em><b>Data Set</b></em>' attribute.
@@ -27274,16 +27465,6 @@ public interface SclPackage extends EPackage {
     int AG_UUID_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole <em>IRise Clipse Console</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getIRiseClipseConsole()
-     * @generated
-     */
-    int IRISE_CLIPSE_CONSOLE = 176;
-
-    /**
      * The number of structural features of the '<em>IRise Clipse Console</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -27300,16 +27481,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int IRISE_CLIPSE_CONSOLE_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter <em>INamespace Getter</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getINamespaceGetter()
-     * @generated
-     */
-    int INAMESPACE_GETTER = 177;
 
     /**
      * The feature id for the '<em><b>Namespace</b></em>' attribute.
@@ -27339,213 +27510,6 @@ public interface SclPackage extends EPackage {
     int INAMESPACE_GETTER_OPERATION_COUNT = 0;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__UUID = AG_UUID__UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__TEMPLATE_UUID = AG_UUID__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Line Number</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__LINE_NUMBER = AG_UUID_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__EXPLICIT_LINKS_BUILT = AG_UUID_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Filename</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__FILENAME = AG_UUID_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Xpath</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__XPATH = AG_UUID_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Private</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__PRIVATE = AG_UUID_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Text</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__TEXT = AG_UUID_FEATURE_COUNT + 5;
-
-    /**
-     * The feature id for the '<em><b>Any</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__ANY = AG_UUID_FEATURE_COUNT + 6;
-
-    /**
-     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__ANY_ATTRIBUTE = AG_UUID_FEATURE_COUNT + 7;
-
-    /**
-     * The feature id for the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__DESC = AG_UUID_FEATURE_COUNT + 8;
-
-    /**
-     * The feature id for the '<em><b>Do Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__DO_NAME = AG_UUID_FEATURE_COUNT + 9;
-
-    /**
-     * The feature id for the '<em><b>Ied Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__IED_NAME = AG_UUID_FEATURE_COUNT + 10;
-
-    /**
-     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__LD_INST = AG_UUID_FEATURE_COUNT + 11;
-
-    /**
-     * The feature id for the '<em><b>Ln Class</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__LN_CLASS = AG_UUID_FEATURE_COUNT + 12;
-
-    /**
-     * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__LN_INST = AG_UUID_FEATURE_COUNT + 13;
-
-    /**
-     * The feature id for the '<em><b>Ln Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__LN_UUID = AG_UUID_FEATURE_COUNT + 14;
-
-    /**
-     * The feature id for the '<em><b>PDO</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__PDO = AG_UUID_FEATURE_COUNT + 15;
-
-    /**
-     * The feature id for the '<em><b>PLN</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__PLN = AG_UUID_FEATURE_COUNT + 16;
-
-    /**
-     * The feature id for the '<em><b>Prefix</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF__PREFIX = AG_UUID_FEATURE_COUNT + 17;
-
-    /**
-     * The number of structural features of the '<em>DO Ref</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF_FEATURE_COUNT = AG_UUID_FEATURE_COUNT + 18;
-
-    /**
-     * The operation id for the '<em>Build Explicit Links</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = AG_UUID_OPERATION_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>DO Ref</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_REF_OPERATION_COUNT = AG_UUID_OPERATION_COUNT + 1;
-
-    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtCtrlImpl <em>Ext Ctrl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -27554,24 +27518,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     int EXT_CTRL = 179;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_CTRL__UUID = DO_REF__UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_CTRL__TEMPLATE_UUID = DO_REF__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -27644,6 +27590,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EXT_CTRL__ANY_ATTRIBUTE = DO_REF__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_CTRL__UUID = DO_REF__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_CTRL__TEMPLATE_UUID = DO_REF__TEMPLATE_UUID;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -27935,14 +27899,14 @@ public interface SclPackage extends EPackage {
     int GOOSE_MC_SECURITY_OPERATION_COUNT = MC_SECURITY_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDSourceFilesImpl <em>IED Source Files</em>}' class.
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDSclRefImpl <em>IED Scl Ref</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDSourceFilesImpl
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getIEDSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDSclRefImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getIEDSclRef()
      * @generated
      */
-    int IED_SOURCE_FILES = 181;
+    int IED_SCL_REF = 181;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -27951,7 +27915,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+    int IED_SCL_REF__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -27960,7 +27924,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
+    int IED_SCL_REF__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -27969,7 +27933,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__FILENAME = BASE_ELEMENT__FILENAME;
+    int IED_SCL_REF__FILENAME = BASE_ELEMENT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -27978,7 +27942,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__XPATH = BASE_ELEMENT__XPATH;
+    int IED_SCL_REF__XPATH = BASE_ELEMENT__XPATH;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -27987,7 +27951,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__PRIVATE = BASE_ELEMENT__PRIVATE;
+    int IED_SCL_REF__PRIVATE = BASE_ELEMENT__PRIVATE;
 
     /**
      * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -27996,7 +27960,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__TEXT = BASE_ELEMENT__TEXT;
+    int IED_SCL_REF__TEXT = BASE_ELEMENT__TEXT;
 
     /**
      * The feature id for the '<em><b>Any</b></em>' attribute list.
@@ -28005,7 +27969,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__ANY = BASE_ELEMENT__ANY;
+    int IED_SCL_REF__ANY = BASE_ELEMENT__ANY;
 
     /**
      * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
@@ -28014,7 +27978,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
+    int IED_SCL_REF__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
 
     /**
      * The feature id for the '<em><b>Scl File Reference</b></em>' containment reference list.
@@ -28023,7 +27987,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__SCL_FILE_REFERENCE = BASE_ELEMENT_FEATURE_COUNT + 0;
+    int IED_SCL_REF__SCL_FILE_REFERENCE = BASE_ELEMENT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Parent IED</b></em>' container reference.
@@ -28032,16 +27996,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES__PARENT_IED = BASE_ELEMENT_FEATURE_COUNT + 1;
+    int IED_SCL_REF__PARENT_IED = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>IED Source Files</em>' class.
+     * The number of structural features of the '<em>IED Scl Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
+    int IED_SCL_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -28050,16 +28014,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int IED_SCL_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The number of operations of the '<em>IED Source Files</em>' class.
+     * The number of operations of the '<em>IED Scl Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IED_SOURCE_FILES_OPERATION_COUNT = BASE_ELEMENT_OPERATION_COUNT + 0;
+    int IED_SCL_REF_OPERATION_COUNT = BASE_ELEMENT_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LabelImpl <em>Label</em>}' class.
@@ -28458,7 +28422,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__LINE_NUMBER = SCL_FILE_REFERENCE__LINE_NUMBER;
+    int MIN_REQUESTED_SCD_FILE__LINE_NUMBER = SCL_FILE_UUID_REFERENCE__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -28467,7 +28431,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__EXPLICIT_LINKS_BUILT = SCL_FILE_REFERENCE__EXPLICIT_LINKS_BUILT;
+    int MIN_REQUESTED_SCD_FILE__EXPLICIT_LINKS_BUILT = SCL_FILE_UUID_REFERENCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -28476,7 +28440,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__FILENAME = SCL_FILE_REFERENCE__FILENAME;
+    int MIN_REQUESTED_SCD_FILE__FILENAME = SCL_FILE_UUID_REFERENCE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -28485,7 +28449,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__XPATH = SCL_FILE_REFERENCE__XPATH;
+    int MIN_REQUESTED_SCD_FILE__XPATH = SCL_FILE_UUID_REFERENCE__XPATH;
 
     /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.
@@ -28494,7 +28458,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__FILE_NAME = SCL_FILE_REFERENCE__FILE_NAME;
+    int MIN_REQUESTED_SCD_FILE__FILE_NAME = SCL_FILE_UUID_REFERENCE__FILE_NAME;
 
     /**
      * The feature id for the '<em><b>File Type</b></em>' attribute.
@@ -28503,7 +28467,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__FILE_TYPE = SCL_FILE_REFERENCE__FILE_TYPE;
+    int MIN_REQUESTED_SCD_FILE__FILE_TYPE = SCL_FILE_UUID_REFERENCE__FILE_TYPE;
 
     /**
      * The feature id for the '<em><b>File Uuid</b></em>' attribute.
@@ -28512,7 +28476,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__FILE_UUID = SCL_FILE_REFERENCE__FILE_UUID;
+    int MIN_REQUESTED_SCD_FILE__FILE_UUID = SCL_FILE_UUID_REFERENCE__FILE_UUID;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -28521,7 +28485,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__REVISION = SCL_FILE_REFERENCE__REVISION;
+    int MIN_REQUESTED_SCD_FILE__REVISION = SCL_FILE_UUID_REFERENCE__REVISION;
 
     /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -28530,7 +28494,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__VERSION = SCL_FILE_REFERENCE__VERSION;
+    int MIN_REQUESTED_SCD_FILE__VERSION = SCL_FILE_UUID_REFERENCE__VERSION;
 
     /**
      * The feature id for the '<em><b>When</b></em>' attribute.
@@ -28539,16 +28503,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__WHEN = SCL_FILE_REFERENCE__WHEN;
+    int MIN_REQUESTED_SCD_FILE__WHEN = SCL_FILE_UUID_REFERENCE__WHEN;
 
     /**
-     * The feature id for the '<em><b>Parent Source Files</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Header Scl Ref</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__PARENT_SOURCE_FILES = SCL_FILE_REFERENCE__PARENT_SOURCE_FILES;
+    int MIN_REQUESTED_SCD_FILE__PARENT_HEADER_SCL_REF = SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Parent Application Scl Ref</b></em>' container reference.
@@ -28557,7 +28521,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__PARENT_APPLICATION_SCL_REF = SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF;
+    int MIN_REQUESTED_SCD_FILE__PARENT_APPLICATION_SCL_REF = SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Parent Function Scl Ref</b></em>' container reference.
@@ -28566,7 +28530,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__PARENT_FUNCTION_SCL_REF = SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF;
+    int MIN_REQUESTED_SCD_FILE__PARENT_FUNCTION_SCL_REF = SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF;
+
+    /**
+     * The feature id for the '<em><b>Parent IED Scl Ref</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_REQUESTED_SCD_FILE__PARENT_IED_SCL_REF = SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Parent Min Requested SCD Files</b></em>' container reference.
@@ -28575,7 +28548,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE__PARENT_MIN_REQUESTED_SCD_FILES = SCL_FILE_REFERENCE_FEATURE_COUNT + 0;
+    int MIN_REQUESTED_SCD_FILE__PARENT_MIN_REQUESTED_SCD_FILES = SCL_FILE_UUID_REFERENCE_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Min Requested SCD File</em>' class.
@@ -28584,7 +28557,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE_FEATURE_COUNT = SCL_FILE_REFERENCE_FEATURE_COUNT + 1;
+    int MIN_REQUESTED_SCD_FILE_FEATURE_COUNT = SCL_FILE_UUID_REFERENCE_FEATURE_COUNT + 1;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -28593,7 +28566,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_FILE_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int MIN_REQUESTED_SCD_FILE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_FILE_UUID_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Min Requested SCD File</em>' class.
@@ -28602,7 +28575,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int MIN_REQUESTED_SCD_FILE_OPERATION_COUNT = SCL_FILE_REFERENCE_OPERATION_COUNT + 0;
+    int MIN_REQUESTED_SCD_FILE_OPERATION_COUNT = SCL_FILE_UUID_REFERENCE_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.MinRequestedSCDFilesImpl <em>Min Requested SCD Files</em>}' class.
@@ -31607,134 +31580,145 @@ public interface SclPackage extends EPackage {
     EReference getSCSM_ParentServices();
 
     /**
-     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity <em>SM Vc Security</em>}'.
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity <em>SV Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>SM Vc Security</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity
+     * @return the meta object for class '<em>SV Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity
      * @generated
      */
-    EClass getSMVcSecurity();
+    EClass getSVMcSecurity();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity#getParentClientServicesFromSMVcSecurity <em>Parent Client Services From SM Vc Security</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity#getParentClientServicesFromSVMcSecurity <em>Parent Client Services From SV Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Parent Client Services From SM Vc Security</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity#getParentClientServicesFromSMVcSecurity()
-     * @see #getSMVcSecurity()
+     * @return the meta object for the container reference '<em>Parent Client Services From SV Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity#getParentClientServicesFromSVMcSecurity()
+     * @see #getSVMcSecurity()
      * @generated
      */
-    EReference getSMVcSecurity_ParentClientServicesFromSMVcSecurity();
+    EReference getSVMcSecurity_ParentClientServicesFromSVMcSecurity();
 
     /**
-     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference <em>File Reference</em>}'.
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference <em>File UUID Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>File Reference</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference
+     * @return the meta object for class '<em>File UUID Reference</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference
      * @generated
      */
-    EClass getSclFileReference();
+    EClass getSclFileUUIDReference();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileName <em>File Name</em>}'.
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileName <em>File Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>File Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileName()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileName()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EAttribute getSclFileReference_FileName();
+    EAttribute getSclFileUUIDReference_FileName();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileType <em>File Type</em>}'.
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileType <em>File Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>File Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileType()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileType()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EAttribute getSclFileReference_FileType();
+    EAttribute getSclFileUUIDReference_FileType();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileUuid <em>File Uuid</em>}'.
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileUuid <em>File Uuid</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>File Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getFileUuid()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getFileUuid()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EAttribute getSclFileReference_FileUuid();
+    EAttribute getSclFileUUIDReference_FileUuid();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getRevision <em>Revision</em>}'.
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getRevision <em>Revision</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Revision</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getRevision()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getRevision()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EAttribute getSclFileReference_Revision();
+    EAttribute getSclFileUUIDReference_Revision();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getVersion <em>Version</em>}'.
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getVersion <em>Version</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Version</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getVersion()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getVersion()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EAttribute getSclFileReference_Version();
+    EAttribute getSclFileUUIDReference_Version();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getWhen <em>When</em>}'.
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getWhen <em>When</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>When</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getWhen()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getWhen()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EAttribute getSclFileReference_When();
+    EAttribute getSclFileUUIDReference_When();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles <em>Parent Source Files</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentHeaderSclRef <em>Parent Header Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Parent Source Files</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles()
-     * @see #getSclFileReference()
+     * @return the meta object for the container reference '<em>Parent Header Scl Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentHeaderSclRef()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EReference getSclFileReference_ParentSourceFiles();
+    EReference getSclFileUUIDReference_ParentHeaderSclRef();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the container reference '<em>Parent Application Scl Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentApplicationSclRef()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EReference getSclFileReference_ParentApplicationSclRef();
+    EReference getSclFileUUIDReference_ParentApplicationSclRef();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the container reference '<em>Parent Function Scl Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentFunctionSclRef()
-     * @see #getSclFileReference()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentFunctionSclRef()
+     * @see #getSclFileUUIDReference()
      * @generated
      */
-    EReference getSclFileReference_ParentFunctionSclRef();
+    EReference getSclFileUUIDReference_ParentFunctionSclRef();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentIEDSclRef <em>Parent IED Scl Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent IED Scl Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference#getParentIEDSclRef()
+     * @see #getSclFileUUIDReference()
+     * @generated
+     */
+    EReference getSclFileUUIDReference_ParentIEDSclRef();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Security <em>Security</em>}'.
@@ -32514,36 +32498,36 @@ public interface SclPackage extends EPackage {
     EReference getGOOSEMcSecurity_ParentClientServicesFromGooseMcSecurity();
 
     /**
-     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles <em>IED Source Files</em>}'.
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef <em>IED Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>IED Source Files</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles
+     * @return the meta object for class '<em>IED Scl Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef
      * @generated
      */
-    EClass getIEDSourceFiles();
+    EClass getIEDSclRef();
 
     /**
-     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getSclFileReference <em>Scl File Reference</em>}'.
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getSclFileReference <em>Scl File Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Scl File Reference</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getSclFileReference()
-     * @see #getIEDSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getSclFileReference()
+     * @see #getIEDSclRef()
      * @generated
      */
-    EReference getIEDSourceFiles_SclFileReference();
+    EReference getIEDSclRef_SclFileReference();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getParentIED <em>Parent IED</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the container reference '<em>Parent IED</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getParentIED()
-     * @see #getIEDSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef#getParentIED()
+     * @see #getIEDSclRef()
      * @generated
      */
-    EReference getIEDSourceFiles_ParentIED();
+    EReference getIEDSclRef_ParentIED();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Label <em>Label</em>}'.
@@ -33773,15 +33757,15 @@ public interface SclPackage extends EPackage {
     EReference getClientServices_GOOSEMcSecurity();
 
     /**
-     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSMVcSecurity <em>SM Vc Security</em>}'.
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSVMcSecurity <em>SV Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>SM Vc Security</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSMVcSecurity()
+     * @return the meta object for the containment reference '<em>SV Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSVMcSecurity()
      * @see #getClientServices()
      * @generated
      */
-    EReference getClientServices_SMVcSecurity();
+    EReference getClientServices_SVMcSecurity();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSecurity <em>Security</em>}'.
@@ -39843,47 +39827,47 @@ public interface SclPackage extends EPackage {
     EClass getUnNaming();
 
     /**
-     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles <em>Source Files</em>}'.
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef <em>Header Scl Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Source Files</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles
+     * @return the meta object for class '<em>Header Scl Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef
      * @generated
      */
-    EClass getSourceFiles();
+    EClass getHeaderSclRef();
 
     /**
-     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference <em>Scl File Reference</em>}'.
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference <em>Scl File Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Scl File Reference</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getSclFileReference()
-     * @see #getSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getSclFileReference()
+     * @see #getHeaderSclRef()
      * @generated
      */
-    EReference getSourceFiles_SclFileReference();
+    EReference getHeaderSclRef_SclFileReference();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem <em>Parent Hitem</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHitem <em>Parent Hitem</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the container reference '<em>Parent Hitem</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHitem()
-     * @see #getSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHitem()
+     * @see #getHeaderSclRef()
      * @generated
      */
-    EReference getSourceFiles_ParentHitem();
+    EReference getHeaderSclRef_ParentHitem();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader <em>Parent Header</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHeader <em>Parent Header</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the container reference '<em>Parent Header</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader()
-     * @see #getSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHeader()
+     * @see #getHeaderSclRef()
      * @generated
      */
-    EReference getSourceFiles_ParentHeader();
+    EReference getHeaderSclRef_ParentHeader();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceYesNo <em>Service Yes No</em>}'.

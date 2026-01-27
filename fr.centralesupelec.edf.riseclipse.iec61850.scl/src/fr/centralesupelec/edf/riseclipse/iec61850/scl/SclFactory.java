@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -391,22 +391,22 @@ public interface SclFactory extends EFactory {
     SCSM createSCSM();
 
     /**
-     * Returns a new object of class '<em>SM Vc Security</em>'.
+     * Returns a new object of class '<em>SV Mc Security</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>SM Vc Security</em>'.
+     * @return a new object of class '<em>SV Mc Security</em>'.
      * @generated
      */
-    SMVcSecurity createSMVcSecurity();
+    SVMcSecurity createSVMcSecurity();
 
     /**
-     * Returns a new object of class '<em>File Reference</em>'.
+     * Returns a new object of class '<em>File UUID Reference</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>File Reference</em>'.
+     * @return a new object of class '<em>File UUID Reference</em>'.
      * @generated
      */
-    SclFileReference createSclFileReference();
+    SclFileUUIDReference createSclFileUUIDReference();
 
     /**
      * Returns a new object of class '<em>Security</em>'.
@@ -472,13 +472,13 @@ public interface SclFactory extends EFactory {
     GOOSEMcSecurity createGOOSEMcSecurity();
 
     /**
-     * Returns a new object of class '<em>IED Source Files</em>'.
+     * Returns a new object of class '<em>IED Scl Ref</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>IED Source Files</em>'.
+     * @return a new object of class '<em>IED Scl Ref</em>'.
      * @generated
      */
-    IEDSourceFiles createIEDSourceFiles();
+    IEDSclRef createIEDSclRef();
 
     /**
      * Returns a new object of class '<em>Label</em>'.
@@ -1444,13 +1444,13 @@ public interface SclFactory extends EFactory {
     VoltageLevel createVoltageLevel();
 
     /**
-     * Returns a new object of class '<em>Source Files</em>'.
+     * Returns a new object of class '<em>Header Scl Ref</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>Source Files</em>'.
+     * @return a new object of class '<em>Header Scl Ref</em>'.
      * @generated
      */
-    SourceFiles createSourceFiles();
+    HeaderSclRef createHeaderSclRef();
 
     /**
      * Returns a new object of class '<em>Service Yes No</em>'.

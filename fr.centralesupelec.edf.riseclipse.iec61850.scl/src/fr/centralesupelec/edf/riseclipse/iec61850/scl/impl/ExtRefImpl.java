@@ -37,14 +37,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DORef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -64,18 +61,6 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDesc <em>Desc</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getUuid <em>Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDoName <em>Do Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getIedName <em>Ied Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getLdInst <em>Ld Inst</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getLnClass <em>Ln Class</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getLnInst <em>Ln Inst</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getLnUuid <em>Ln Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPDO <em>PDO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPLN <em>PLN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDaName <em>Da Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getIntAddr <em>Int Addr</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getServiceType <em>Service Type</em>}</li>
@@ -96,355 +81,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *
  * @generated
  */
-public class ExtRefImpl extends BaseElementImpl implements ExtRef {
-    /**
-     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
-    protected static final String DESC_EDEFAULT = "";
-
-    /**
-     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
-    protected String desc = DESC_EDEFAULT;
-
-    /**
-     * This is true if the Desc attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean descESet;
-
-    /**
-     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected String uuid = UUID_EDEFAULT;
-
-    /**
-     * This is true if the Uuid attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean uuidESet;
-
-    /**
-     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String TEMPLATE_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
-
-    /**
-     * This is true if the Template Uuid attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean templateUuidESet;
-
-    /**
-     * The default value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDoName()
-     * @generated
-     * @ordered
-     */
-    protected static final String DO_NAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDoName()
-     * @generated
-     * @ordered
-     */
-    protected String doName = DO_NAME_EDEFAULT;
-
-    /**
-     * This is true if the Do Name attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean doNameESet;
-
-    /**
-     * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
-    protected static final String IED_NAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
-    protected String iedName = IED_NAME_EDEFAULT;
-
-    /**
-     * This is true if the Ied Name attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean iedNameESet;
-
-    /**
-     * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
-    protected static final String LD_INST_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
-    protected String ldInst = LD_INST_EDEFAULT;
-
-    /**
-     * This is true if the Ld Inst attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean ldInstESet;
-
-    /**
-     * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
-    protected static final String LN_CLASS_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
-    protected String lnClass = LN_CLASS_EDEFAULT;
-
-    /**
-     * This is true if the Ln Class attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean lnClassESet;
-
-    /**
-     * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
-    protected static final String LN_INST_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
-    protected String lnInst = LN_INST_EDEFAULT;
-
-    /**
-     * This is true if the Ln Inst attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean lnInstESet;
-
-    /**
-     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLnUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String LN_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLnUuid()
-     * @generated
-     * @ordered
-     */
-    protected String lnUuid = LN_UUID_EDEFAULT;
-
-    /**
-     * This is true if the Ln Uuid attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean lnUuidESet;
-
-    /**
-     * The default value of the '{@link #getPDO() <em>PDO</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPDO()
-     * @generated
-     * @ordered
-     */
-    protected static final String PDO_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getPDO() <em>PDO</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPDO()
-     * @generated
-     * @ordered
-     */
-    protected String pDO = PDO_EDEFAULT;
-
-    /**
-     * This is true if the PDO attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean pDOESet;
-
-    /**
-     * The default value of the '{@link #getPLN() <em>PLN</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPLN()
-     * @generated
-     * @ordered
-     */
-    protected static final String PLN_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getPLN() <em>PLN</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPLN()
-     * @generated
-     * @ordered
-     */
-    protected String pLN = PLN_EDEFAULT;
-
-    /**
-     * This is true if the PLN attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean pLNESet;
-
-    /**
-     * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
-    protected static final String PREFIX_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
-    protected String prefix = PREFIX_EDEFAULT;
-
-    /**
-     * This is true if the Prefix attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean prefixESet;
-
+public class ExtRefImpl extends DORefImpl implements ExtRef {
     /**
      * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -723,7 +360,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated NOT
      * @ordered
      */
-    // The default value for a 0..1 attribute should not be a value of the enumeration! 
+    // The default value for a 0..1 attribute should not be a value of the enumeration!
     //protected static final ServiceType PSERV_T_EDEFAULT = ServiceType.POLL;
     protected static final ServiceType PSERV_T_EDEFAULT = null;
 
@@ -912,114 +549,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public String getDoName() {
-        return doName;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setDoName( String newDoName ) {
-        String oldDoName = doName;
-        doName = newDoName;
-        boolean oldDoNameESet = doNameESet;
-        doNameESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__DO_NAME, oldDoName, doName,
-                    !oldDoNameESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetDoName() {
-        String oldDoName = doName;
-        boolean oldDoNameESet = doNameESet;
-        doName = DO_NAME_EDEFAULT;
-        doNameESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__DO_NAME, oldDoName,
-                    DO_NAME_EDEFAULT, oldDoNameESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetDoName() {
-        return doNameESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getIedName() {
-        return iedName;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setIedName( String newIedName ) {
-        String oldIedName = iedName;
-        iedName = newIedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedNameESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__IED_NAME, oldIedName, iedName,
-                    !oldIedNameESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetIedName() {
-        String oldIedName = iedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedName = IED_NAME_EDEFAULT;
-        iedNameESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__IED_NAME, oldIedName,
-                    IED_NAME_EDEFAULT, oldIedNameESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetIedName() {
-        return iedNameESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public String getIntAddr() {
         return intAddr;
     }
@@ -1066,384 +595,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public boolean isSetIntAddr() {
         return intAddrESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getLdInst() {
-        return ldInst;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setLdInst( String newLdInst ) {
-        String oldLdInst = ldInst;
-        ldInst = newLdInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInstESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LD_INST, oldLdInst, ldInst,
-                    !oldLdInstESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetLdInst() {
-        String oldLdInst = ldInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInst = LD_INST_EDEFAULT;
-        ldInstESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LD_INST, oldLdInst,
-                    LD_INST_EDEFAULT, oldLdInstESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetLdInst() {
-        return ldInstESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getLnClass() {
-        return lnClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setLnClass( String newLnClass ) {
-        String oldLnClass = lnClass;
-        lnClass = newLnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClassESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LN_CLASS, oldLnClass, lnClass,
-                    !oldLnClassESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetLnClass() {
-        String oldLnClass = lnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClass = LN_CLASS_EDEFAULT;
-        lnClassESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LN_CLASS, oldLnClass,
-                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetLnClass() {
-        return lnClassESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getLnInst() {
-        return lnInst;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setLnInst( String newLnInst ) {
-        String oldLnInst = lnInst;
-        lnInst = newLnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInstESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LN_INST, oldLnInst, lnInst,
-                    !oldLnInstESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetLnInst() {
-        String oldLnInst = lnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInst = LN_INST_EDEFAULT;
-        lnInstESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LN_INST, oldLnInst,
-                    LN_INST_EDEFAULT, oldLnInstESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetLnInst() {
-        return lnInstESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getLnUuid() {
-        return lnUuid;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setLnUuid( String newLnUuid ) {
-        String oldLnUuid = lnUuid;
-        lnUuid = newLnUuid;
-        boolean oldLnUuidESet = lnUuidESet;
-        lnUuidESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__LN_UUID, oldLnUuid, lnUuid,
-                    !oldLnUuidESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetLnUuid() {
-        String oldLnUuid = lnUuid;
-        boolean oldLnUuidESet = lnUuidESet;
-        lnUuid = LN_UUID_EDEFAULT;
-        lnUuidESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__LN_UUID, oldLnUuid,
-                    LN_UUID_EDEFAULT, oldLnUuidESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetLnUuid() {
-        return lnUuidESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getPDO() {
-        return pDO;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setPDO( String newPDO ) {
-        String oldPDO = pDO;
-        pDO = newPDO;
-        boolean oldPDOESet = pDOESet;
-        pDOESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PDO, oldPDO, pDO,
-                    !oldPDOESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetPDO() {
-        String oldPDO = pDO;
-        boolean oldPDOESet = pDOESet;
-        pDO = PDO_EDEFAULT;
-        pDOESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PDO, oldPDO, PDO_EDEFAULT,
-                    oldPDOESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetPDO() {
-        return pDOESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getPLN() {
-        return pLN;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setPLN( String newPLN ) {
-        String oldPLN = pLN;
-        pLN = newPLN;
-        boolean oldPLNESet = pLNESet;
-        pLNESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PLN, oldPLN, pLN,
-                    !oldPLNESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetPLN() {
-        String oldPLN = pLN;
-        boolean oldPLNESet = pLNESet;
-        pLN = PLN_EDEFAULT;
-        pLNESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PLN, oldPLN, PLN_EDEFAULT,
-                    oldPLNESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetPLN() {
-        return pLNESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getPrefix() {
-        return prefix;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setPrefix( String newPrefix ) {
-        String oldPrefix = prefix;
-        prefix = newPrefix;
-        boolean oldPrefixESet = prefixESet;
-        prefixESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__PREFIX, oldPrefix, prefix,
-                    !oldPrefixESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetPrefix() {
-        String oldPrefix = prefix;
-        boolean oldPrefixESet = prefixESet;
-        prefix = PREFIX_EDEFAULT;
-        prefixESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__PREFIX, oldPrefix,
-                    PREFIX_EDEFAULT, oldPrefixESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetPrefix() {
-        return prefixESet;
     }
 
     /**
@@ -2088,168 +1239,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public String getDesc() {
-        return desc;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setDesc( String newDesc ) {
-        String oldDesc = desc;
-        desc = newDesc;
-        boolean oldDescESet = descESet;
-        descESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__DESC, oldDesc, desc,
-                    !oldDescESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetDesc() {
-        String oldDesc = desc;
-        boolean oldDescESet = descESet;
-        desc = DESC_EDEFAULT;
-        descESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__DESC, oldDesc, DESC_EDEFAULT,
-                    oldDescESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetDesc() {
-        return descESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getUuid() {
-        return uuid;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setUuid( String newUuid ) {
-        String oldUuid = uuid;
-        uuid = newUuid;
-        boolean oldUuidESet = uuidESet;
-        uuidESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__UUID, oldUuid, uuid,
-                    !oldUuidESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetUuid() {
-        String oldUuid = uuid;
-        boolean oldUuidESet = uuidESet;
-        uuid = UUID_EDEFAULT;
-        uuidESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__UUID, oldUuid, UUID_EDEFAULT,
-                    oldUuidESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetUuid() {
-        return uuidESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String getTemplateUuid() {
-        return templateUuid;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setTemplateUuid( String newTemplateUuid ) {
-        String oldTemplateUuid = templateUuid;
-        templateUuid = newTemplateUuid;
-        boolean oldTemplateUuidESet = templateUuidESet;
-        templateUuidESet = true;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EXT_REF__TEMPLATE_UUID, oldTemplateUuid,
-                    templateUuid, !oldTemplateUuidESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetTemplateUuid() {
-        String oldTemplateUuid = templateUuid;
-        boolean oldTemplateUuidESet = templateUuidESet;
-        templateUuid = TEMPLATE_UUID_EDEFAULT;
-        templateUuidESet = false;
-        if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EXT_REF__TEMPLATE_UUID,
-                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetTemplateUuid() {
-        return templateUuidESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public ServiceType getPServT() {
         return pServT;
     }
@@ -2732,30 +1721,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case SclPackage.EXT_REF__DESC:
-            return getDesc();
-        case SclPackage.EXT_REF__UUID:
-            return getUuid();
-        case SclPackage.EXT_REF__TEMPLATE_UUID:
-            return getTemplateUuid();
-        case SclPackage.EXT_REF__DO_NAME:
-            return getDoName();
-        case SclPackage.EXT_REF__IED_NAME:
-            return getIedName();
-        case SclPackage.EXT_REF__LD_INST:
-            return getLdInst();
-        case SclPackage.EXT_REF__LN_CLASS:
-            return getLnClass();
-        case SclPackage.EXT_REF__LN_INST:
-            return getLnInst();
-        case SclPackage.EXT_REF__LN_UUID:
-            return getLnUuid();
-        case SclPackage.EXT_REF__PDO:
-            return getPDO();
-        case SclPackage.EXT_REF__PLN:
-            return getPLN();
-        case SclPackage.EXT_REF__PREFIX:
-            return getPrefix();
         case SclPackage.EXT_REF__DA_NAME:
             return getDaName();
         case SclPackage.EXT_REF__INT_ADDR:
@@ -2803,42 +1768,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case SclPackage.EXT_REF__DESC:
-            setDesc( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__UUID:
-            setUuid( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__TEMPLATE_UUID:
-            setTemplateUuid( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__DO_NAME:
-            setDoName( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__IED_NAME:
-            setIedName( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__LD_INST:
-            setLdInst( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__LN_CLASS:
-            setLnClass( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__LN_INST:
-            setLnInst( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__LN_UUID:
-            setLnUuid( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__PDO:
-            setPDO( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__PLN:
-            setPLN( ( String ) newValue );
-            return;
-        case SclPackage.EXT_REF__PREFIX:
-            setPrefix( ( String ) newValue );
-            return;
         case SclPackage.EXT_REF__DA_NAME:
             setDaName( ( String ) newValue );
             return;
@@ -2899,42 +1828,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case SclPackage.EXT_REF__DESC:
-            unsetDesc();
-            return;
-        case SclPackage.EXT_REF__UUID:
-            unsetUuid();
-            return;
-        case SclPackage.EXT_REF__TEMPLATE_UUID:
-            unsetTemplateUuid();
-            return;
-        case SclPackage.EXT_REF__DO_NAME:
-            unsetDoName();
-            return;
-        case SclPackage.EXT_REF__IED_NAME:
-            unsetIedName();
-            return;
-        case SclPackage.EXT_REF__LD_INST:
-            unsetLdInst();
-            return;
-        case SclPackage.EXT_REF__LN_CLASS:
-            unsetLnClass();
-            return;
-        case SclPackage.EXT_REF__LN_INST:
-            unsetLnInst();
-            return;
-        case SclPackage.EXT_REF__LN_UUID:
-            unsetLnUuid();
-            return;
-        case SclPackage.EXT_REF__PDO:
-            unsetPDO();
-            return;
-        case SclPackage.EXT_REF__PLN:
-            unsetPLN();
-            return;
-        case SclPackage.EXT_REF__PREFIX:
-            unsetPrefix();
-            return;
         case SclPackage.EXT_REF__DA_NAME:
             unsetDaName();
             return;
@@ -2995,30 +1888,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case SclPackage.EXT_REF__DESC:
-            return isSetDesc();
-        case SclPackage.EXT_REF__UUID:
-            return isSetUuid();
-        case SclPackage.EXT_REF__TEMPLATE_UUID:
-            return isSetTemplateUuid();
-        case SclPackage.EXT_REF__DO_NAME:
-            return isSetDoName();
-        case SclPackage.EXT_REF__IED_NAME:
-            return isSetIedName();
-        case SclPackage.EXT_REF__LD_INST:
-            return isSetLdInst();
-        case SclPackage.EXT_REF__LN_CLASS:
-            return isSetLnClass();
-        case SclPackage.EXT_REF__LN_INST:
-            return isSetLnInst();
-        case SclPackage.EXT_REF__LN_UUID:
-            return isSetLnUuid();
-        case SclPackage.EXT_REF__PDO:
-            return isSetPDO();
-        case SclPackage.EXT_REF__PLN:
-            return isSetPLN();
-        case SclPackage.EXT_REF__PREFIX:
-            return isSetPrefix();
         case SclPackage.EXT_REF__DA_NAME:
             return isSetDaName();
         case SclPackage.EXT_REF__INT_ADDR:
@@ -3061,201 +1930,13 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
-        if( baseClass == AgDesc.class ) {
-            switch( derivedFeatureID ) {
-            case SclPackage.EXT_REF__DESC:
-                return SclPackage.AG_DESC__DESC;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == AgUuid.class ) {
-            switch( derivedFeatureID ) {
-            case SclPackage.EXT_REF__UUID:
-                return SclPackage.AG_UUID__UUID;
-            case SclPackage.EXT_REF__TEMPLATE_UUID:
-                return SclPackage.AG_UUID__TEMPLATE_UUID;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == DORef.class ) {
-            switch( derivedFeatureID ) {
-            case SclPackage.EXT_REF__DO_NAME:
-                return SclPackage.DO_REF__DO_NAME;
-            case SclPackage.EXT_REF__IED_NAME:
-                return SclPackage.DO_REF__IED_NAME;
-            case SclPackage.EXT_REF__LD_INST:
-                return SclPackage.DO_REF__LD_INST;
-            case SclPackage.EXT_REF__LN_CLASS:
-                return SclPackage.DO_REF__LN_CLASS;
-            case SclPackage.EXT_REF__LN_INST:
-                return SclPackage.DO_REF__LN_INST;
-            case SclPackage.EXT_REF__LN_UUID:
-                return SclPackage.DO_REF__LN_UUID;
-            case SclPackage.EXT_REF__PDO:
-                return SclPackage.DO_REF__PDO;
-            case SclPackage.EXT_REF__PLN:
-                return SclPackage.DO_REF__PLN;
-            case SclPackage.EXT_REF__PREFIX:
-                return SclPackage.DO_REF__PREFIX;
-            default:
-                return -1;
-            }
-        }
-        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
-        if( baseClass == AgDesc.class ) {
-            switch( baseFeatureID ) {
-            case SclPackage.AG_DESC__DESC:
-                return SclPackage.EXT_REF__DESC;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == AgUuid.class ) {
-            switch( baseFeatureID ) {
-            case SclPackage.AG_UUID__UUID:
-                return SclPackage.EXT_REF__UUID;
-            case SclPackage.AG_UUID__TEMPLATE_UUID:
-                return SclPackage.EXT_REF__TEMPLATE_UUID;
-            default:
-                return -1;
-            }
-        }
-        if( baseClass == DORef.class ) {
-            switch( baseFeatureID ) {
-            case SclPackage.DO_REF__DO_NAME:
-                return SclPackage.EXT_REF__DO_NAME;
-            case SclPackage.DO_REF__IED_NAME:
-                return SclPackage.EXT_REF__IED_NAME;
-            case SclPackage.DO_REF__LD_INST:
-                return SclPackage.EXT_REF__LD_INST;
-            case SclPackage.DO_REF__LN_CLASS:
-                return SclPackage.EXT_REF__LN_CLASS;
-            case SclPackage.DO_REF__LN_INST:
-                return SclPackage.EXT_REF__LN_INST;
-            case SclPackage.DO_REF__LN_UUID:
-                return SclPackage.EXT_REF__LN_UUID;
-            case SclPackage.DO_REF__PDO:
-                return SclPackage.EXT_REF__PDO;
-            case SclPackage.DO_REF__PLN:
-                return SclPackage.EXT_REF__PLN;
-            case SclPackage.DO_REF__PREFIX:
-                return SclPackage.EXT_REF__PREFIX;
-            default:
-                return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public String toString() {
         if( eIsProxy() ) {
             return super.toString();
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (desc: " );
-        if( descESet ) {
-            result.append( desc );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", uuid: " );
-        if( uuidESet ) {
-            result.append( uuid );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", templateUuid: " );
-        if( templateUuidESet ) {
-            result.append( templateUuid );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", doName: " );
-        if( doNameESet ) {
-            result.append( doName );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", iedName: " );
-        if( iedNameESet ) {
-            result.append( iedName );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", ldInst: " );
-        if( ldInstESet ) {
-            result.append( ldInst );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", lnClass: " );
-        if( lnClassESet ) {
-            result.append( lnClass );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", lnInst: " );
-        if( lnInstESet ) {
-            result.append( lnInst );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", lnUuid: " );
-        if( lnUuidESet ) {
-            result.append( lnUuid );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", pDO: " );
-        if( pDOESet ) {
-            result.append( pDO );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", pLN: " );
-        if( pLNESet ) {
-            result.append( pLN );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", prefix: " );
-        if( prefixESet ) {
-            result.append( prefix );
-        }
-        else {
-            result.append( "<unset>" );
-        }
-        result.append( ", daName: " );
+        result.append( " (daName: " );
         if( daNameESet ) {
             result.append( daName );
         }
@@ -3384,9 +2065,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         }
         if( ied.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " IED( name = ", getIedName(), " )" );
-        	            return Pair.of( null, null );
+            //         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " IED( name = ", getIedName(), " )" );
+            return Pair.of( null, null );
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED ( name = ", ied.getLeft().getName(), " ) on line ",
@@ -3394,15 +2075,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         // Only now so that we can give back ied
         if( ( getLdInst() == null ) || getLdInst().isEmpty() || ( getLnClass() == null ) || getLnClass().isEmpty() ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "lnClass is missing" );
-        	            return Pair.of( ied.getLeft(), null );
+            //         messagePrefix, "lnClass is missing" );
+            return Pair.of( ied.getLeft(), null );
         }
 
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " LDevice( inst = ", getLdInst(), " )" );
-        	            return Pair.of( ied.getLeft(), null );
+            //         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " LDevice( inst = ", getLdInst(), " )" );
+            return Pair.of( ied.getLeft(), null );
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
@@ -3421,9 +2102,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         mess );
-        	            return finalRes;
+            //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         mess );
+            return finalRes;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found ", mess, " on line ",
@@ -3455,9 +2136,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
 
         if( res1.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " DO ( name = ", doNames[0], " )" );
-        	            return finalRes;
+            //         messagePrefix, ( ( res1.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " DO ( name = ", doNames[0], " )" );
+            return finalRes;
         }
 
         AbstractDataObject ado = res1.get( 0 );
@@ -3480,9 +2161,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .collect( Collectors.toList() );
 
             if( res2.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            	//         messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
-            	                //         " SDO ( name = ", name, " ) in DOType on line ", doType.getLineNumber() );
-            	                return finalRes;
+                //         messagePrefix, ( ( res2.size() == 0 ) ? "cannot find" : "found several" ),
+                //         " SDO ( name = ", name, " ) in DOType on line ", doType.getLineNumber() );
+                return finalRes;
             }
             ado = res2.get( 0 );
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -3519,9 +2200,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
 
         if( res3.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " DA ( name = ", daNames[0], " ) in DOType" );
-        	            return finalRes;
+            //         messagePrefix, ( ( res3.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " DA ( name = ", daNames[0], " ) in DOType" );
+            return finalRes;
         }
         AbstractDataAttribute da = res3.get( 0 );
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -3540,10 +2221,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .collect( Collectors.toList() );
 
             if( res4.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            	//         messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
-            	                //         " BDA ( name = ", name, " ) in DAType on line ",
-            	                //         da.getRefersToDAType().getLineNumber() );
-            	                return finalRes;
+                //         messagePrefix, ( ( res4.size() == 0 ) ? "cannot find" : "found several" ),
+                //         " BDA ( name = ", name, " ) in DAType on line ",
+                //         da.getRefersToDAType().getLineNumber() );
+                return finalRes;
             }
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                     messagePrefix, "found BDA ( name = ", name, " ) in DAType on line ",
@@ -3586,9 +2267,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( ( getSrcLDInst() != null ) && ( !getSrcLDInst().isEmpty() ) ) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getSrcLDInst() );
             if( lDevice1.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            	//         messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
-            	                //         " LDevice( inst = " + getSrcLDInst() + " )" );
-            	                return;
+                //         messagePrefix, ( ( lDevice1.getRight() == 0 ) ? "cannot find" : "found several" ),
+                //         " LDevice( inst = " + getSrcLDInst() + " )" );
+                return;
             }
             lDevice = lDevice1.getLeft();
             console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -3613,9 +2294,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         mess );
-        	            return;
+            //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         mess );
+            return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found", mess, " on line ", anyLN.getLeft().getLineNumber() );
@@ -3628,9 +2309,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             listControls.addAll( lDevice.getLN0().getSampledValueControl() );
         }
         if( listControls.size() == 0 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "control not found because there are none of them in AnyLN line ",
-        	            //         anyLN.getLeft().getLineNumber() );
-        	            return;
+            //         messagePrefix, "control not found because there are none of them in AnyLN line ",
+            //         anyLN.getLeft().getLineNumber() );
+            return;
         }
 
         List< Control > res = listControls
@@ -3638,9 +2319,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .filter( c -> getSrcCBName().equals( c.getName() ) )
                 .collect( Collectors.toList() );
         if( res.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " Control( name = ", getSrcCBName(), " )" );
-        	            return;
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " Control( name = ", getSrcCBName(), " )" );
+            return;
         }
         setRefersToControl( res.get( 0 ) );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),

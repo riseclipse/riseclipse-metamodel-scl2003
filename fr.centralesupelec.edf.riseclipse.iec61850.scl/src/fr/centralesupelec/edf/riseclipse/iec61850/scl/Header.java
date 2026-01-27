@@ -453,17 +453,17 @@ public interface Header extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Source Files</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader <em>Parent Header</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHeader <em>Parent Header</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Source Files</em>' containment reference.
-     * @see #setSourceFiles(SourceFiles)
+     * @see #setSourceFiles(HeaderSclRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_SourceFiles()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles#getParentHeader
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef#getParentHeader
      * @model opposite="ParentHeader" containment="true"
      * @generated
      */
-    SourceFiles getSourceFiles();
+    HeaderSclRef getSourceFiles();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSourceFiles <em>Source Files</em>}' containment reference.
@@ -473,7 +473,7 @@ public interface Header extends SclObject {
      * @see #getSourceFiles()
      * @generated
      */
-    void setSourceFiles( SourceFiles value );
+    void setSourceFiles( HeaderSclRef value );
 
     /**
      * Returns the value of the '<em><b>File Type</b></em>' attribute.

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,50 +15,48 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.HeaderSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>File Reference</b></em>'.
+ * An implementation of the model object '<em><b>File UUID Reference</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getFileName <em>File Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getFileType <em>File Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getFileUuid <em>File Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getRevision <em>Revision</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getWhen <em>When</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentSourceFiles <em>Parent Source Files</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getFileName <em>File Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getFileType <em>File Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getFileUuid <em>File Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getRevision <em>Revision</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getWhen <em>When</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getParentHeaderSclRef <em>Parent Header Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileUUIDReferenceImpl#getParentIEDSclRef <em>Parent IED Scl Ref</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SclFileReferenceImpl extends SclObjectImpl implements SclFileReference {
+public class SclFileUUIDReferenceImpl extends SclObjectImpl implements SclFileUUIDReference {
     /**
      * The default value of the '{@link #getFileName() <em>File Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -238,7 +236,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      * <!-- end-user-doc -->
      * @generated
      */
-    protected SclFileReferenceImpl() {
+    protected SclFileUUIDReferenceImpl() {
         super();
     }
 
@@ -249,7 +247,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSclFileReference();
+        return SclPackage.eINSTANCE.getSclFileUUIDReference();
     }
 
     /**
@@ -274,7 +272,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         boolean oldFileNameESet = fileNameESet;
         fileNameESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__FILE_NAME,
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME,
                     oldFileName, fileName, !oldFileNameESet ) );
         }
     }
@@ -291,7 +289,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         fileName = FILE_NAME_EDEFAULT;
         fileNameESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_REFERENCE__FILE_NAME,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME,
                     oldFileName, FILE_NAME_EDEFAULT, oldFileNameESet ) );
         }
     }
@@ -328,7 +326,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         boolean oldFileTypeESet = fileTypeESet;
         fileTypeESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__FILE_TYPE,
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE,
                     oldFileType, fileType, !oldFileTypeESet ) );
         }
     }
@@ -345,7 +343,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         fileType = FILE_TYPE_EDEFAULT;
         fileTypeESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_REFERENCE__FILE_TYPE,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE,
                     oldFileType, FILE_TYPE_EDEFAULT, oldFileTypeESet ) );
         }
     }
@@ -382,7 +380,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         boolean oldFileUuidESet = fileUuidESet;
         fileUuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__FILE_UUID,
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID,
                     oldFileUuid, fileUuid, !oldFileUuidESet ) );
         }
     }
@@ -399,7 +397,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         fileUuid = FILE_UUID_EDEFAULT;
         fileUuidESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_REFERENCE__FILE_UUID,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID,
                     oldFileUuid, FILE_UUID_EDEFAULT, oldFileUuidESet ) );
         }
     }
@@ -436,7 +434,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         boolean oldRevisionESet = revisionESet;
         revisionESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__REVISION,
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_UUID_REFERENCE__REVISION,
                     oldRevision, revision, !oldRevisionESet ) );
         }
     }
@@ -453,7 +451,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         revision = REVISION_EDEFAULT;
         revisionESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_REFERENCE__REVISION,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_UUID_REFERENCE__REVISION,
                     oldRevision, REVISION_EDEFAULT, oldRevisionESet ) );
         }
     }
@@ -490,8 +488,8 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         boolean oldVersionESet = versionESet;
         versionESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__VERSION, oldVersion,
-                    version, !oldVersionESet ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_UUID_REFERENCE__VERSION,
+                    oldVersion, version, !oldVersionESet ) );
         }
     }
 
@@ -507,7 +505,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         version = VERSION_EDEFAULT;
         versionESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_REFERENCE__VERSION,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_UUID_REFERENCE__VERSION,
                     oldVersion, VERSION_EDEFAULT, oldVersionESet ) );
         }
     }
@@ -544,8 +542,8 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         boolean oldWhenESet = whenESet;
         whenESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__WHEN, oldWhen, when,
-                    !oldWhenESet ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_UUID_REFERENCE__WHEN, oldWhen,
+                    when, !oldWhenESet ) );
         }
     }
 
@@ -561,7 +559,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         when = WHEN_EDEFAULT;
         whenESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_REFERENCE__WHEN, oldWhen,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL_FILE_UUID_REFERENCE__WHEN, oldWhen,
                     WHEN_EDEFAULT, oldWhenESet ) );
         }
     }
@@ -582,11 +580,11 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      * @generated
      */
     @Override
-    public SourceFiles getParentSourceFiles() {
-        if( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES ) {
+    public HeaderSclRef getParentHeaderSclRef() {
+        if( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF ) {
             return null;
         }
-        return ( SourceFiles ) eInternalContainer();
+        return ( HeaderSclRef ) eInternalContainer();
     }
 
     /**
@@ -594,9 +592,9 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentSourceFiles( SourceFiles newParentSourceFiles, NotificationChain msgs ) {
-        msgs = eBasicSetContainer( ( InternalEObject ) newParentSourceFiles,
-                SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES, msgs );
+    public NotificationChain basicSetParentHeaderSclRef( HeaderSclRef newParentHeaderSclRef, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentHeaderSclRef,
+                SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF, msgs );
         return msgs;
     }
 
@@ -606,29 +604,30 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      * @generated
      */
     @Override
-    public void setParentSourceFiles( SourceFiles newParentSourceFiles ) {
-        if( newParentSourceFiles != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES
-                        && newParentSourceFiles != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSourceFiles ) ) {
+    public void setParentHeaderSclRef( HeaderSclRef newParentHeaderSclRef ) {
+        if( newParentHeaderSclRef != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF
+                        && newParentHeaderSclRef != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentHeaderSclRef ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             }
             NotificationChain msgs = null;
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
-            if( newParentSourceFiles != null ) {
-                msgs = ( ( InternalEObject ) newParentSourceFiles ).eInverseAdd( this,
-                        SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE, SourceFiles.class, msgs );
+            if( newParentHeaderSclRef != null ) {
+                msgs = ( ( InternalEObject ) newParentHeaderSclRef ).eInverseAdd( this,
+                        SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE, HeaderSclRef.class, msgs );
             }
-            msgs = basicSetParentSourceFiles( newParentSourceFiles, msgs );
+            msgs = basicSetParentHeaderSclRef( newParentHeaderSclRef, msgs );
             if( msgs != null ) {
                 msgs.dispatch();
             }
         }
         else if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES,
-                    newParentSourceFiles, newParentSourceFiles ) );
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF, newParentHeaderSclRef,
+                    newParentHeaderSclRef ) );
         }
     }
 
@@ -639,7 +638,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      */
     @Override
     public ApplicationSclRef getParentApplicationSclRef() {
-        if( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF ) {
+        if( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF ) {
             return null;
         }
         return ( ApplicationSclRef ) eInternalContainer();
@@ -653,7 +652,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     public NotificationChain basicSetParentApplicationSclRef( ApplicationSclRef newParentApplicationSclRef,
             NotificationChain msgs ) {
         msgs = eBasicSetContainer( ( InternalEObject ) newParentApplicationSclRef,
-                SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF, msgs );
+                SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF, msgs );
         return msgs;
     }
 
@@ -665,7 +664,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public void setParentApplicationSclRef( ApplicationSclRef newParentApplicationSclRef ) {
         if( newParentApplicationSclRef != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF
+                || ( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF
                         && newParentApplicationSclRef != null ) ) {
             if( EcoreUtil.isAncestor( this, newParentApplicationSclRef ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
@@ -685,7 +684,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         }
         else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
-                    SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF, newParentApplicationSclRef,
+                    SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF, newParentApplicationSclRef,
                     newParentApplicationSclRef ) );
         }
     }
@@ -697,7 +696,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      */
     @Override
     public FunctionSclRef getParentFunctionSclRef() {
-        if( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF ) {
+        if( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF ) {
             return null;
         }
         return ( FunctionSclRef ) eInternalContainer();
@@ -711,7 +710,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     public NotificationChain basicSetParentFunctionSclRef( FunctionSclRef newParentFunctionSclRef,
             NotificationChain msgs ) {
         msgs = eBasicSetContainer( ( InternalEObject ) newParentFunctionSclRef,
-                SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF, msgs );
+                SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF, msgs );
         return msgs;
     }
 
@@ -723,7 +722,7 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public void setParentFunctionSclRef( FunctionSclRef newParentFunctionSclRef ) {
         if( newParentFunctionSclRef != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF
+                || ( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF
                         && newParentFunctionSclRef != null ) ) {
             if( EcoreUtil.isAncestor( this, newParentFunctionSclRef ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
@@ -743,8 +742,64 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         }
         else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
-                    SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF, newParentFunctionSclRef,
+                    SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF, newParentFunctionSclRef,
                     newParentFunctionSclRef ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public IEDSclRef getParentIEDSclRef() {
+        if( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF ) {
+            return null;
+        }
+        return ( IEDSclRef ) eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentIEDSclRef( IEDSclRef newParentIEDSclRef, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentIEDSclRef,
+                SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF, msgs );
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentIEDSclRef( IEDSclRef newParentIEDSclRef ) {
+        if( newParentIEDSclRef != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF
+                        && newParentIEDSclRef != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentIEDSclRef ) ) {
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
+            NotificationChain msgs = null;
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            if( newParentIEDSclRef != null ) {
+                msgs = ( ( InternalEObject ) newParentIEDSclRef ).eInverseAdd( this,
+                        SclPackage.IED_SCL_REF__SCL_FILE_REFERENCE, IEDSclRef.class, msgs );
+            }
+            msgs = basicSetParentIEDSclRef( newParentIEDSclRef, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF, newParentIEDSclRef, newParentIEDSclRef ) );
         }
     }
 
@@ -756,21 +811,26 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
-            return basicSetParentSourceFiles( ( SourceFiles ) otherEnd, msgs );
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+            return basicSetParentHeaderSclRef( ( HeaderSclRef ) otherEnd, msgs );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentApplicationSclRef( ( ApplicationSclRef ) otherEnd, msgs );
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentFunctionSclRef( ( FunctionSclRef ) otherEnd, msgs );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            return basicSetParentIEDSclRef( ( IEDSclRef ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -783,12 +843,14 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
-            return basicSetParentSourceFiles( null, msgs );
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
+            return basicSetParentHeaderSclRef( null, msgs );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             return basicSetParentApplicationSclRef( null, msgs );
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return basicSetParentFunctionSclRef( null, msgs );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            return basicSetParentIEDSclRef( null, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -801,15 +863,18 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
-            return eInternalContainer().eInverseRemove( this, SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE,
-                    SourceFiles.class, msgs );
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
+            return eInternalContainer().eInverseRemove( this, SclPackage.HEADER_SCL_REF__SCL_FILE_REFERENCE,
+                    HeaderSclRef.class, msgs );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             return eInternalContainer().eInverseRemove( this, AsdPackage.APPLICATION_SCL_REF__SCL_FILE_REFERENCE,
                     ApplicationSclRef.class, msgs );
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return eInternalContainer().eInverseRemove( this, AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE,
                     FunctionSclRef.class, msgs );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            return eInternalContainer().eInverseRemove( this, SclPackage.IED_SCL_REF__SCL_FILE_REFERENCE,
+                    IEDSclRef.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );
     }
@@ -822,24 +887,26 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case SclPackage.SCL_FILE_REFERENCE__FILE_NAME:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME:
             return getFileName();
-        case SclPackage.SCL_FILE_REFERENCE__FILE_TYPE:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE:
             return getFileType();
-        case SclPackage.SCL_FILE_REFERENCE__FILE_UUID:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID:
             return getFileUuid();
-        case SclPackage.SCL_FILE_REFERENCE__REVISION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__REVISION:
             return getRevision();
-        case SclPackage.SCL_FILE_REFERENCE__VERSION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__VERSION:
             return getVersion();
-        case SclPackage.SCL_FILE_REFERENCE__WHEN:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__WHEN:
             return getWhen();
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
-            return getParentSourceFiles();
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
+            return getParentHeaderSclRef();
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             return getParentApplicationSclRef();
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return getParentFunctionSclRef();
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            return getParentIEDSclRef();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -852,32 +919,35 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case SclPackage.SCL_FILE_REFERENCE__FILE_NAME:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME:
             setFileName( ( String ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__FILE_TYPE:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE:
             setFileType( ( String ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__FILE_UUID:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID:
             setFileUuid( ( String ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__REVISION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__REVISION:
             setRevision( ( String ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__VERSION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__VERSION:
             setVersion( ( String ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__WHEN:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__WHEN:
             setWhen( ( String ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
-            setParentSourceFiles( ( SourceFiles ) newValue );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
+            setParentHeaderSclRef( ( HeaderSclRef ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             setParentApplicationSclRef( ( ApplicationSclRef ) newValue );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             setParentFunctionSclRef( ( FunctionSclRef ) newValue );
+            return;
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            setParentIEDSclRef( ( IEDSclRef ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -891,32 +961,35 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SCL_FILE_REFERENCE__FILE_NAME:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME:
             unsetFileName();
             return;
-        case SclPackage.SCL_FILE_REFERENCE__FILE_TYPE:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE:
             unsetFileType();
             return;
-        case SclPackage.SCL_FILE_REFERENCE__FILE_UUID:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID:
             unsetFileUuid();
             return;
-        case SclPackage.SCL_FILE_REFERENCE__REVISION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__REVISION:
             unsetRevision();
             return;
-        case SclPackage.SCL_FILE_REFERENCE__VERSION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__VERSION:
             unsetVersion();
             return;
-        case SclPackage.SCL_FILE_REFERENCE__WHEN:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__WHEN:
             unsetWhen();
             return;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
-            setParentSourceFiles( ( SourceFiles ) null );
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
+            setParentHeaderSclRef( ( HeaderSclRef ) null );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             setParentApplicationSclRef( ( ApplicationSclRef ) null );
             return;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             setParentFunctionSclRef( ( FunctionSclRef ) null );
+            return;
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            setParentIEDSclRef( ( IEDSclRef ) null );
             return;
         }
         super.eUnset( featureID );
@@ -930,24 +1003,26 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SCL_FILE_REFERENCE__FILE_NAME:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME:
             return isSetFileName();
-        case SclPackage.SCL_FILE_REFERENCE__FILE_TYPE:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE:
             return isSetFileType();
-        case SclPackage.SCL_FILE_REFERENCE__FILE_UUID:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID:
             return isSetFileUuid();
-        case SclPackage.SCL_FILE_REFERENCE__REVISION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__REVISION:
             return isSetRevision();
-        case SclPackage.SCL_FILE_REFERENCE__VERSION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__VERSION:
             return isSetVersion();
-        case SclPackage.SCL_FILE_REFERENCE__WHEN:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__WHEN:
             return isSetWhen();
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
-            return getParentSourceFiles() != null;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF:
+            return getParentHeaderSclRef() != null;
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF:
             return getParentApplicationSclRef() != null;
-        case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return getParentFunctionSclRef() != null;
+        case SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF:
+            return getParentIEDSclRef() != null;
         }
         return super.eIsSet( featureID );
     }
@@ -1010,4 +1085,4 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         return result.toString();
     }
 
-} //SclFileReferenceImpl
+} //SclFileUUIDReferenceImpl

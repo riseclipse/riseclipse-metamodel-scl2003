@@ -2883,7 +2883,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__LINE_NUMBER = SclPackage.SCL_FILE_REFERENCE__LINE_NUMBER;
+    int CHECKOUT_ID__LINE_NUMBER = SclPackage.SCL_FILE_UUID_REFERENCE__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -2892,7 +2892,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__EXPLICIT_LINKS_BUILT = SclPackage.SCL_FILE_REFERENCE__EXPLICIT_LINKS_BUILT;
+    int CHECKOUT_ID__EXPLICIT_LINKS_BUILT = SclPackage.SCL_FILE_UUID_REFERENCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -2901,7 +2901,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__FILENAME = SclPackage.SCL_FILE_REFERENCE__FILENAME;
+    int CHECKOUT_ID__FILENAME = SclPackage.SCL_FILE_UUID_REFERENCE__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -2910,7 +2910,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__XPATH = SclPackage.SCL_FILE_REFERENCE__XPATH;
+    int CHECKOUT_ID__XPATH = SclPackage.SCL_FILE_UUID_REFERENCE__XPATH;
 
     /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.
@@ -2919,7 +2919,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__FILE_NAME = SclPackage.SCL_FILE_REFERENCE__FILE_NAME;
+    int CHECKOUT_ID__FILE_NAME = SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME;
 
     /**
      * The feature id for the '<em><b>File Type</b></em>' attribute.
@@ -2928,7 +2928,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__FILE_TYPE = SclPackage.SCL_FILE_REFERENCE__FILE_TYPE;
+    int CHECKOUT_ID__FILE_TYPE = SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE;
 
     /**
      * The feature id for the '<em><b>File Uuid</b></em>' attribute.
@@ -2937,7 +2937,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__FILE_UUID = SclPackage.SCL_FILE_REFERENCE__FILE_UUID;
+    int CHECKOUT_ID__FILE_UUID = SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -2946,7 +2946,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__REVISION = SclPackage.SCL_FILE_REFERENCE__REVISION;
+    int CHECKOUT_ID__REVISION = SclPackage.SCL_FILE_UUID_REFERENCE__REVISION;
 
     /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -2955,7 +2955,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__VERSION = SclPackage.SCL_FILE_REFERENCE__VERSION;
+    int CHECKOUT_ID__VERSION = SclPackage.SCL_FILE_UUID_REFERENCE__VERSION;
 
     /**
      * The feature id for the '<em><b>When</b></em>' attribute.
@@ -2964,16 +2964,16 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__WHEN = SclPackage.SCL_FILE_REFERENCE__WHEN;
+    int CHECKOUT_ID__WHEN = SclPackage.SCL_FILE_UUID_REFERENCE__WHEN;
 
     /**
-     * The feature id for the '<em><b>Parent Source Files</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Header Scl Ref</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__PARENT_SOURCE_FILES = SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES;
+    int CHECKOUT_ID__PARENT_HEADER_SCL_REF = SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_HEADER_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Parent Application Scl Ref</b></em>' container reference.
@@ -2982,7 +2982,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__PARENT_APPLICATION_SCL_REF = SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF;
+    int CHECKOUT_ID__PARENT_APPLICATION_SCL_REF = SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Parent Function Scl Ref</b></em>' container reference.
@@ -2991,7 +2991,16 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__PARENT_FUNCTION_SCL_REF = SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF;
+    int CHECKOUT_ID__PARENT_FUNCTION_SCL_REF = SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_FUNCTION_SCL_REF;
+
+    /**
+     * The feature id for the '<em><b>Parent IED Scl Ref</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__PARENT_IED_SCL_REF = SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_IED_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Sub Checkout ID</b></em>' containment reference.
@@ -3000,7 +3009,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__SUB_CHECKOUT_ID = SclPackage.SCL_FILE_REFERENCE_FEATURE_COUNT + 0;
+    int CHECKOUT_ID__SUB_CHECKOUT_ID = SclPackage.SCL_FILE_UUID_REFERENCE_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Eng Right</b></em>' attribute.
@@ -3009,7 +3018,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__ENG_RIGHT = SclPackage.SCL_FILE_REFERENCE_FEATURE_COUNT + 1;
+    int CHECKOUT_ID__ENG_RIGHT = SclPackage.SCL_FILE_UUID_REFERENCE_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Header Id</b></em>' attribute.
@@ -3018,7 +3027,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID__HEADER_ID = SclPackage.SCL_FILE_REFERENCE_FEATURE_COUNT + 2;
+    int CHECKOUT_ID__HEADER_ID = SclPackage.SCL_FILE_UUID_REFERENCE_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Checkout ID</em>' class.
@@ -3027,7 +3036,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID_FEATURE_COUNT = SclPackage.SCL_FILE_REFERENCE_FEATURE_COUNT + 3;
+    int CHECKOUT_ID_FEATURE_COUNT = SclPackage.SCL_FILE_UUID_REFERENCE_FEATURE_COUNT + 3;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -3036,7 +3045,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SclPackage.SCL_FILE_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int CHECKOUT_ID___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SclPackage.SCL_FILE_UUID_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Checkout ID</em>' class.
@@ -3045,7 +3054,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CHECKOUT_ID_OPERATION_COUNT = SclPackage.SCL_FILE_REFERENCE_OPERATION_COUNT + 0;
+    int CHECKOUT_ID_OPERATION_COUNT = SclPackage.SCL_FILE_UUID_REFERENCE_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.LinkFCDRefImpl <em>Link FCD Ref</em>}' class.
@@ -6342,7 +6351,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
+    int GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>L3I Pv6 Comm Parameters</b></em>' containment reference.
@@ -6351,7 +6360,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
+    int GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Go Id</b></em>' attribute.
@@ -11953,13 +11962,13 @@ public interface AsdPackage extends EPackage {
     int SUB_CHECKOUT_ID__WHEN = CHECKOUT_ID__WHEN;
 
     /**
-     * The feature id for the '<em><b>Parent Source Files</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Header Scl Ref</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_CHECKOUT_ID__PARENT_SOURCE_FILES = CHECKOUT_ID__PARENT_SOURCE_FILES;
+    int SUB_CHECKOUT_ID__PARENT_HEADER_SCL_REF = CHECKOUT_ID__PARENT_HEADER_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Parent Application Scl Ref</b></em>' container reference.
@@ -11978,6 +11987,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SUB_CHECKOUT_ID__PARENT_FUNCTION_SCL_REF = CHECKOUT_ID__PARENT_FUNCTION_SCL_REF;
+
+    /**
+     * The feature id for the '<em><b>Parent IED Scl Ref</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__PARENT_IED_SCL_REF = CHECKOUT_ID__PARENT_IED_SCL_REF;
 
     /**
      * The feature id for the '<em><b>Sub Checkout ID</b></em>' containment reference.
@@ -12339,7 +12357,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SMV_PARAMETERS__L3_IPV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
+    int SMV_PARAMETERS__L3I_PV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>L3I Pv6 Comm Parameters</b></em>' containment reference.
@@ -12348,7 +12366,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SMV_PARAMETERS__L3_IPV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
+    int SMV_PARAMETERS__L3I_PV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Multicast</b></em>' attribute.

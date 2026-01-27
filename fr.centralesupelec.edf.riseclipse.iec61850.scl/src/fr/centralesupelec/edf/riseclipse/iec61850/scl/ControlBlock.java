@@ -163,6 +163,7 @@ public interface ControlBlock extends UnNaming {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlBlock_Address()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentControlBlock
      * @model opposite="ParentControlBlock" containment="true" unsettable="true" ordered="false"
+     *        extendedMetaData="namespace='##targetNamespace' kind='element'"
      * @generated
      */
     Address getAddress();

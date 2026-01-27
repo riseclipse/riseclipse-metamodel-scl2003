@@ -274,7 +274,7 @@ public interface GeneralEquipment extends Equipment {
      * @see #setParentFunctionTemplate(FunctionTemplate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_ParentFunctionTemplate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate#getGeneralEquipment
-     * @model opposite="generalEquipment" unsettable="true" ordered="false"
+     * @model opposite="GeneralEquipment" unsettable="true" ordered="false"
      * @generated
      */
     FunctionTemplate getParentFunctionTemplate();
@@ -298,7 +298,7 @@ public interface GeneralEquipment extends Equipment {
      * @see #setParentSubFunctionTemplate(SubFunctionTemplate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_ParentSubFunctionTemplate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate#getGeneralEquipment
-     * @model opposite="generalEquipment" unsettable="true" ordered="false"
+     * @model opposite="GeneralEquipment" unsettable="true" ordered="false"
      * @generated
      */
     SubFunctionTemplate getParentSubFunctionTemplate();

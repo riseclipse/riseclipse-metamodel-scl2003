@@ -472,7 +472,7 @@ public class IEDItemProvider extends UnNamingItemProvider {
                 SclFactory.eINSTANCE.createServices() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIED_IEDSourceFiles(),
-                SclFactory.eINSTANCE.createIEDSourceFiles() ) );
+                SclFactory.eINSTANCE.createIEDSclRef() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIED_Labels(),
                 SclFactory.eINSTANCE.createLabels() ) );

@@ -271,10 +271,10 @@ public class SclSwitch< T > extends Switch< T > {
             Authentication authentication = ( Authentication ) theEObject;
             T result = caseAuthentication( authentication );
             if( result == null ) {
-                result = caseAgAuthentication( authentication );
+                result = caseSclObject( authentication );
             }
             if( result == null ) {
-                result = caseSclObject( authentication );
+                result = caseAgAuthentication( authentication );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -998,13 +998,13 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseBaseElement( extRef );
             }
             if( result == null ) {
-                result = caseSclObject( extRef );
+                result = caseAgUuid( extRef );
             }
             if( result == null ) {
                 result = caseAgDesc( extRef );
             }
             if( result == null ) {
-                result = caseAgUuid( extRef );
+                result = caseSclObject( extRef );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -2719,25 +2719,25 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.SM_VC_SECURITY: {
-            SMVcSecurity smVcSecurity = ( SMVcSecurity ) theEObject;
-            T result = caseSMVcSecurity( smVcSecurity );
+        case SclPackage.SV_MC_SECURITY: {
+            SVMcSecurity svMcSecurity = ( SVMcSecurity ) theEObject;
+            T result = caseSVMcSecurity( svMcSecurity );
             if( result == null ) {
-                result = caseMcSecurity( smVcSecurity );
+                result = caseMcSecurity( svMcSecurity );
             }
             if( result == null ) {
-                result = caseSclObject( smVcSecurity );
+                result = caseSclObject( svMcSecurity );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
             }
             return result;
         }
-        case SclPackage.SCL_FILE_REFERENCE: {
-            SclFileReference sclFileReference = ( SclFileReference ) theEObject;
-            T result = caseSclFileReference( sclFileReference );
+        case SclPackage.SCL_FILE_UUID_REFERENCE: {
+            SclFileUUIDReference sclFileUUIDReference = ( SclFileUUIDReference ) theEObject;
+            T result = caseSclFileUUIDReference( sclFileUUIDReference );
             if( result == null ) {
-                result = caseSclObject( sclFileReference );
+                result = caseSclObject( sclFileUUIDReference );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -3049,14 +3049,14 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.SOURCE_FILES: {
-            SourceFiles sourceFiles = ( SourceFiles ) theEObject;
-            T result = caseSourceFiles( sourceFiles );
+        case SclPackage.HEADER_SCL_REF: {
+            HeaderSclRef headerSclRef = ( HeaderSclRef ) theEObject;
+            T result = caseHeaderSclRef( headerSclRef );
             if( result == null ) {
-                result = caseBaseElement( sourceFiles );
+                result = caseBaseElement( headerSclRef );
             }
             if( result == null ) {
-                result = caseSclObject( sourceFiles );
+                result = caseSclObject( headerSclRef );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -3178,9 +3178,6 @@ public class SclSwitch< T > extends Switch< T > {
             AgAuthentication agAuthentication = ( AgAuthentication ) theEObject;
             T result = caseAgAuthentication( agAuthentication );
             if( result == null ) {
-                result = caseSclObject( agAuthentication );
-            }
-            if( result == null ) {
                 result = defaultCase( theEObject );
             }
             return result;
@@ -3278,10 +3275,10 @@ public class SclSwitch< T > extends Switch< T > {
             DORef doRef = ( DORef ) theEObject;
             T result = caseDORef( doRef );
             if( result == null ) {
-                result = caseAgUuid( doRef );
+                result = caseBaseElement( doRef );
             }
             if( result == null ) {
-                result = caseBaseElement( doRef );
+                result = caseAgUuid( doRef );
             }
             if( result == null ) {
                 result = caseAgDesc( doRef );
@@ -3301,10 +3298,10 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseDORef( extCtrl );
             }
             if( result == null ) {
-                result = caseAgUuid( extCtrl );
+                result = caseBaseElement( extCtrl );
             }
             if( result == null ) {
-                result = caseBaseElement( extCtrl );
+                result = caseAgUuid( extCtrl );
             }
             if( result == null ) {
                 result = caseAgDesc( extCtrl );
@@ -3331,14 +3328,14 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.IED_SOURCE_FILES: {
-            IEDSourceFiles iedSourceFiles = ( IEDSourceFiles ) theEObject;
-            T result = caseIEDSourceFiles( iedSourceFiles );
+        case SclPackage.IED_SCL_REF: {
+            IEDSclRef iedSclRef = ( IEDSclRef ) theEObject;
+            T result = caseIEDSclRef( iedSclRef );
             if( result == null ) {
-                result = caseBaseElement( iedSourceFiles );
+                result = caseBaseElement( iedSclRef );
             }
             if( result == null ) {
-                result = caseSclObject( iedSourceFiles );
+                result = caseSclObject( iedSclRef );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -3380,7 +3377,7 @@ public class SclSwitch< T > extends Switch< T > {
             MinRequestedSCDFile minRequestedSCDFile = ( MinRequestedSCDFile ) theEObject;
             T result = caseMinRequestedSCDFile( minRequestedSCDFile );
             if( result == null ) {
-                result = caseSclFileReference( minRequestedSCDFile );
+                result = caseSclFileUUIDReference( minRequestedSCDFile );
             }
             if( result == null ) {
                 result = caseSclObject( minRequestedSCDFile );
@@ -5589,17 +5586,17 @@ public class SclSwitch< T > extends Switch< T > {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Source Files</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Header Scl Ref</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Source Files</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Header Scl Ref</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSourceFiles( SourceFiles object ) {
+    public T caseHeaderSclRef( HeaderSclRef object ) {
         return null;
     }
 
@@ -5889,32 +5886,32 @@ public class SclSwitch< T > extends Switch< T > {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>SM Vc Security</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>SV Mc Security</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>SM Vc Security</em>'.
+     * @return the result of interpreting the object as an instance of '<em>SV Mc Security</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSMVcSecurity( SMVcSecurity object ) {
+    public T caseSVMcSecurity( SVMcSecurity object ) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>File Reference</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>File UUID Reference</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>File Reference</em>'.
+     * @return the result of interpreting the object as an instance of '<em>File UUID Reference</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSclFileReference( SclFileReference object ) {
+    public T caseSclFileUUIDReference( SclFileUUIDReference object ) {
         return null;
     }
 
@@ -6159,17 +6156,17 @@ public class SclSwitch< T > extends Switch< T > {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>IED Source Files</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>IED Scl Ref</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>IED Source Files</em>'.
+     * @return the result of interpreting the object as an instance of '<em>IED Scl Ref</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIEDSourceFiles( IEDSourceFiles object ) {
+    public T caseIEDSclRef( IEDSclRef object ) {
         return null;
     }
 

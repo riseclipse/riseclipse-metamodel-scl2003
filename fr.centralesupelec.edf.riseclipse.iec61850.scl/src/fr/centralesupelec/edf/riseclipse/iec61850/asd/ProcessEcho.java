@@ -158,7 +158,7 @@ public interface ProcessEcho extends BaseExtensionElementWithDesc {
      * @see #setParentDAS(DAS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProcessEcho_ParentDAS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getProcessEcho
-     * @model opposite="processEcho" unsettable="true" ordered="false"
+     * @model opposite="ProcessEcho" unsettable="true" ordered="false"
      * @generated
      */
     DAS getParentDAS();
@@ -182,7 +182,7 @@ public interface ProcessEcho extends BaseExtensionElementWithDesc {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProcessEcho_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getProcessEcho
-     * @model opposite="processEcho" unsettable="true" ordered="false"
+     * @model opposite="ProcessEcho" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();
@@ -206,7 +206,7 @@ public interface ProcessEcho extends BaseExtensionElementWithDesc {
      * @see #setParentSDS(SDS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProcessEcho_ParentSDS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getProcessEcho
-     * @model opposite="processEcho" unsettable="true" ordered="false"
+     * @model opposite="ProcessEcho" unsettable="true" ordered="false"
      * @generated
      */
     SDS getParentSDS();

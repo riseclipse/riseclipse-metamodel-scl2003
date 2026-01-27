@@ -188,7 +188,7 @@ public interface BehaviorDescriptionRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBehaviorDescriptionRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getBehaviorDescriptionRef
-     * @model opposite="behaviorDescriptionRef" unsettable="true" ordered="false"
+     * @model opposite="BehaviorDescriptionRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

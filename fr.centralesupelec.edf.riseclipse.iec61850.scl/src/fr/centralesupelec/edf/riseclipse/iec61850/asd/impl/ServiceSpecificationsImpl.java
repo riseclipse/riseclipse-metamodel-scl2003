@@ -74,7 +74,7 @@ public class ServiceSpecificationsImpl extends BaseExtensionElementWithDescImpl 
      * @generated
      * @ordered
      */
-    protected EList< SMVParameters > sMVParameters;
+    protected EList< SMVParameters > smvParameters;
 
     /**
      * The cached value of the '{@link #getReportParameters() <em>Report Parameters</em>}' containment reference list.
@@ -179,12 +179,12 @@ public class ServiceSpecificationsImpl extends BaseExtensionElementWithDescImpl 
      */
     @Override
     public EList< SMVParameters > getSMVParameters() {
-        if( sMVParameters == null ) {
-            sMVParameters = new EObjectContainmentWithInverseEList.Unsettable< >( SMVParameters.class,
+        if( smvParameters == null ) {
+            smvParameters = new EObjectContainmentWithInverseEList.Unsettable< >( SMVParameters.class,
                     this, AsdPackage.SERVICE_SPECIFICATIONS__SMV_PARAMETERS,
                     AsdPackage.SMV_PARAMETERS__PARENT_SERVICE_SPECIFICATIONS );
         }
-        return sMVParameters;
+        return smvParameters;
     }
 
     /**
@@ -194,8 +194,8 @@ public class ServiceSpecificationsImpl extends BaseExtensionElementWithDescImpl 
      */
     @Override
     public void unsetSMVParameters() {
-        if( sMVParameters != null ) {
-            ( ( InternalEList.Unsettable< ? > ) sMVParameters ).unset();
+        if( smvParameters != null ) {
+            ( ( InternalEList.Unsettable< ? > ) smvParameters ).unset();
         }
     }
 
@@ -206,7 +206,7 @@ public class ServiceSpecificationsImpl extends BaseExtensionElementWithDescImpl 
      */
     @Override
     public boolean isSetSMVParameters() {
-        return sMVParameters != null && ( ( InternalEList.Unsettable< ? > ) sMVParameters ).isSet();
+        return smvParameters != null && ( ( InternalEList.Unsettable< ? > ) smvParameters ).isSet();
     }
 
     /**

@@ -65,7 +65,7 @@ public interface Application extends BaseExtensionElementWithDesc {
      * @see #unsetFunctionRole()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplication_FunctionRole()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getParentApplication
-     * @model opposite="ParentApplication" containment="true" unsettable="true" required="true" ordered="false"
+     * @model opposite="ParentApplication" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='FunctionRole' namespace='##targetNamespace'"
      * @generated
      */
@@ -280,8 +280,7 @@ public interface Application extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplication_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();

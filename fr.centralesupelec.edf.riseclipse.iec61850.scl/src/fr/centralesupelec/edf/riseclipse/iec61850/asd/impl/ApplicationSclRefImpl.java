@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Application;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -55,7 +55,7 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
      * @generated
      * @ordered
      */
-    protected SclFileReference sclFileReference;
+    protected SclFileUUIDReference sclFileReference;
 
     /**
      * This is true if the Scl File Reference containment reference has been set.
@@ -91,7 +91,7 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
      * @generated
      */
     @Override
-    public SclFileReference getSclFileReference() {
+    public SclFileUUIDReference getSclFileReference() {
         return sclFileReference;
     }
 
@@ -100,8 +100,9 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSclFileReference( SclFileReference newSclFileReference, NotificationChain msgs ) {
-        SclFileReference oldSclFileReference = sclFileReference;
+    public NotificationChain basicSetSclFileReference( SclFileUUIDReference newSclFileReference,
+            NotificationChain msgs ) {
+        SclFileUUIDReference oldSclFileReference = sclFileReference;
         sclFileReference = newSclFileReference;
         boolean oldSclFileReferenceESet = sclFileReferenceESet;
         sclFileReferenceESet = true;
@@ -125,16 +126,18 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
      * @generated
      */
     @Override
-    public void setSclFileReference( SclFileReference newSclFileReference ) {
+    public void setSclFileReference( SclFileUUIDReference newSclFileReference ) {
         if( newSclFileReference != sclFileReference ) {
             NotificationChain msgs = null;
             if( sclFileReference != null ) {
                 msgs = ( ( InternalEObject ) sclFileReference ).eInverseRemove( this,
-                        SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF, SclFileReference.class, msgs );
+                        SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF, SclFileUUIDReference.class,
+                        msgs );
             }
             if( newSclFileReference != null ) {
                 msgs = ( ( InternalEObject ) newSclFileReference ).eInverseAdd( this,
-                        SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF, SclFileReference.class, msgs );
+                        SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF, SclFileUUIDReference.class,
+                        msgs );
             }
             msgs = basicSetSclFileReference( newSclFileReference, msgs );
             if( msgs != null ) {
@@ -158,7 +161,7 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
      * @generated
      */
     public NotificationChain basicUnsetSclFileReference( NotificationChain msgs ) {
-        SclFileReference oldSclFileReference = sclFileReference;
+        SclFileUUIDReference oldSclFileReference = sclFileReference;
         sclFileReference = null;
         boolean oldSclFileReferenceESet = sclFileReferenceESet;
         sclFileReferenceESet = false;
@@ -186,7 +189,7 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
         if( sclFileReference != null ) {
             NotificationChain msgs = null;
             msgs = ( ( InternalEObject ) sclFileReference ).eInverseRemove( this,
-                    SclPackage.SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF, SclFileReference.class, msgs );
+                    SclPackage.SCL_FILE_UUID_REFERENCE__PARENT_APPLICATION_SCL_REF, SclFileUUIDReference.class, msgs );
             msgs = basicUnsetSclFileReference( msgs );
             if( msgs != null ) {
                 msgs.dispatch();
@@ -281,7 +284,7 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
                 msgs = ( ( InternalEObject ) sclFileReference ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - AsdPackage.APPLICATION_SCL_REF__SCL_FILE_REFERENCE, null, msgs );
             }
-            return basicSetSclFileReference( ( SclFileReference ) otherEnd, msgs );
+            return basicSetSclFileReference( ( SclFileUUIDReference ) otherEnd, msgs );
         case AsdPackage.APPLICATION_SCL_REF__PARENT_APPLICATION:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
@@ -347,7 +350,7 @@ public class ApplicationSclRefImpl extends BaseExtensionElementImpl implements A
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
         case AsdPackage.APPLICATION_SCL_REF__SCL_FILE_REFERENCE:
-            setSclFileReference( ( SclFileReference ) newValue );
+            setSclFileReference( ( SclFileUUIDReference ) newValue );
             return;
         case AsdPackage.APPLICATION_SCL_REF__PARENT_APPLICATION:
             setParentApplication( ( Application ) newValue );

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,38 +15,37 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileUUIDReference} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SclFileReferenceItemProvider extends SclObjectItemProvider {
+public class SclFileUUIDReferenceItemProvider extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public SclFileReferenceItemProvider( AdapterFactory adapterFactory ) {
+    public SclFileUUIDReferenceItemProvider( AdapterFactory adapterFactory ) {
         super( adapterFactory );
     }
 
@@ -81,10 +80,10 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclFileReference_fileName_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileReference_fileName_feature",
-                                "_UI_SclFileReference_type" ),
-                        SclPackage.eINSTANCE.getSclFileReference_FileName(),
+                        getString( "_UI_SclFileUUIDReference_fileName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileUUIDReference_fileName_feature",
+                                "_UI_SclFileUUIDReference_type" ),
+                        SclPackage.eINSTANCE.getSclFileUUIDReference_FileName(),
                         true,
                         false,
                         false,
@@ -103,10 +102,10 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclFileReference_fileType_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileReference_fileType_feature",
-                                "_UI_SclFileReference_type" ),
-                        SclPackage.eINSTANCE.getSclFileReference_FileType(),
+                        getString( "_UI_SclFileUUIDReference_fileType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileUUIDReference_fileType_feature",
+                                "_UI_SclFileUUIDReference_type" ),
+                        SclPackage.eINSTANCE.getSclFileUUIDReference_FileType(),
                         true,
                         false,
                         false,
@@ -125,10 +124,10 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclFileReference_fileUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileReference_fileUuid_feature",
-                                "_UI_SclFileReference_type" ),
-                        SclPackage.eINSTANCE.getSclFileReference_FileUuid(),
+                        getString( "_UI_SclFileUUIDReference_fileUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileUUIDReference_fileUuid_feature",
+                                "_UI_SclFileUUIDReference_type" ),
+                        SclPackage.eINSTANCE.getSclFileUUIDReference_FileUuid(),
                         true,
                         false,
                         false,
@@ -147,10 +146,10 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclFileReference_revision_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileReference_revision_feature",
-                                "_UI_SclFileReference_type" ),
-                        SclPackage.eINSTANCE.getSclFileReference_Revision(),
+                        getString( "_UI_SclFileUUIDReference_revision_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileUUIDReference_revision_feature",
+                                "_UI_SclFileUUIDReference_type" ),
+                        SclPackage.eINSTANCE.getSclFileUUIDReference_Revision(),
                         true,
                         false,
                         false,
@@ -169,10 +168,10 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclFileReference_version_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileReference_version_feature",
-                                "_UI_SclFileReference_type" ),
-                        SclPackage.eINSTANCE.getSclFileReference_Version(),
+                        getString( "_UI_SclFileUUIDReference_version_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileUUIDReference_version_feature",
+                                "_UI_SclFileUUIDReference_type" ),
+                        SclPackage.eINSTANCE.getSclFileUUIDReference_Version(),
                         true,
                         false,
                         false,
@@ -191,10 +190,10 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclFileReference_when_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileReference_when_feature",
-                                "_UI_SclFileReference_type" ),
-                        SclPackage.eINSTANCE.getSclFileReference_When(),
+                        getString( "_UI_SclFileUUIDReference_when_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SclFileUUIDReference_when_feature",
+                                "_UI_SclFileUUIDReference_type" ),
+                        SclPackage.eINSTANCE.getSclFileUUIDReference_When(),
                         true,
                         false,
                         false,
@@ -204,14 +203,14 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
     }
 
     /**
-     * This returns SclFileReference.gif.
+     * This returns SclFileUUIDReference.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public Object getImage( Object object ) {
-        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SclFileReference" ) );
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SclFileUUIDReference" ) );
     }
 
     /**
@@ -222,9 +221,9 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( SclFileReference ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_SclFileReference_type" )
-                : getString( "_UI_SclFileReference_type" ) + " " + label;
+        String label = ( ( SclFileUUIDReference ) object ).getFilename();
+        return label == null || label.length() == 0 ? getString( "_UI_SclFileUUIDReference_type" )
+                : getString( "_UI_SclFileUUIDReference_type" ) + " " + label;
     }
 
     /**
@@ -238,13 +237,13 @@ public class SclFileReferenceItemProvider extends SclObjectItemProvider {
     public void notifyChanged( Notification notification ) {
         updateChildren( notification );
 
-        switch( notification.getFeatureID( SclFileReference.class ) ) {
-        case SclPackage.SCL_FILE_REFERENCE__FILE_NAME:
-        case SclPackage.SCL_FILE_REFERENCE__FILE_TYPE:
-        case SclPackage.SCL_FILE_REFERENCE__FILE_UUID:
-        case SclPackage.SCL_FILE_REFERENCE__REVISION:
-        case SclPackage.SCL_FILE_REFERENCE__VERSION:
-        case SclPackage.SCL_FILE_REFERENCE__WHEN:
+        switch( notification.getFeatureID( SclFileUUIDReference.class ) ) {
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_NAME:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_TYPE:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__FILE_UUID:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__REVISION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__VERSION:
+        case SclPackage.SCL_FILE_UUID_REFERENCE__WHEN:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

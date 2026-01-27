@@ -69,7 +69,7 @@ public class CommServiceSpecificationsImpl extends BaseExtensionElementWithDescI
      * @generated
      * @ordered
      */
-    protected EList< SMVParameters > sMVParameters;
+    protected EList< SMVParameters > smvParameters;
 
     /**
      * The cached value of the '{@link #getReportParameters() <em>Report Parameters</em>}' containment reference list.
@@ -144,12 +144,12 @@ public class CommServiceSpecificationsImpl extends BaseExtensionElementWithDescI
      */
     @Override
     public EList< SMVParameters > getSMVParameters() {
-        if( sMVParameters == null ) {
-            sMVParameters = new EObjectContainmentWithInverseEList.Unsettable< >( SMVParameters.class,
+        if( smvParameters == null ) {
+            smvParameters = new EObjectContainmentWithInverseEList.Unsettable< >( SMVParameters.class,
                     this, AsdPackage.COMM_SERVICE_SPECIFICATIONS__SMV_PARAMETERS,
                     AsdPackage.SMV_PARAMETERS__PARENT_COMM_SERVICE_SPECIFICATIONS );
         }
-        return sMVParameters;
+        return smvParameters;
     }
 
     /**
@@ -159,8 +159,8 @@ public class CommServiceSpecificationsImpl extends BaseExtensionElementWithDescI
      */
     @Override
     public void unsetSMVParameters() {
-        if( sMVParameters != null ) {
-            ( ( InternalEList.Unsettable< ? > ) sMVParameters ).unset();
+        if( smvParameters != null ) {
+            ( ( InternalEList.Unsettable< ? > ) smvParameters ).unset();
         }
     }
 
@@ -171,7 +171,7 @@ public class CommServiceSpecificationsImpl extends BaseExtensionElementWithDescI
      */
     @Override
     public boolean isSetSMVParameters() {
-        return sMVParameters != null && ( ( InternalEList.Unsettable< ? > ) sMVParameters ).isSet();
+        return smvParameters != null && ( ( InternalEList.Unsettable< ? > ) smvParameters ).isSet();
     }
 
     /**

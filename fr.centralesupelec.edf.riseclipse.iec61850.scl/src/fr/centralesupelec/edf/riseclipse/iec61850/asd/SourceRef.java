@@ -401,8 +401,7 @@ public interface SourceRef extends LinkFCDARef {
      * @return the value of the '<em>Input</em>' attribute.
      * @see #setInput(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSourceRef_Input()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='input'"
+     * @model extendedMetaData="kind='attribute' name='input'"
      * @generated
      */
     String getInput();
@@ -637,7 +636,7 @@ public interface SourceRef extends LinkFCDARef {
      * @see #setParentLNodeInputs(LNodeInputs)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSourceRef_ParentLNodeInputs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputs#getSourceRef
-     * @model opposite="sourceRef" unsettable="true" ordered="false"
+     * @model opposite="SourceRef" unsettable="true" ordered="false"
      * @generated
      */
     LNodeInputs getParentLNodeInputs();
