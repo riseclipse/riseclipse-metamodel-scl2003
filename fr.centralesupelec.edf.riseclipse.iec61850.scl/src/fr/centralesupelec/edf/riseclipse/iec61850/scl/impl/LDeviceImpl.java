@@ -1070,31 +1070,35 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             
         }
 
-        if( getLN0().getRefersToLNodeType() == null ) return null;
-        List< DO > namPltDo =
-                 getLN0()
-                .getRefersToLNodeType()
-                .getDO()
-                .stream()
-                .filter( do_ -> "NamPlt".equals( do_.getName() ) )
-                .toList();
-        if( namPltDo.size() == 1 ) {
-            if( namPltDo.get( 0 ).getRefersToDOType() == null ) return null;
-            List< DA > ldNsDa =
-                     namPltDo
-                    .get( 0 )
-                    .getRefersToDOType()
-                    .getDA()
+        if( getLN0().getRefersToLNodeType() != null ) {
+            List< DO > namPltDo =
+                     getLN0()
+                    .getRefersToLNodeType()
+                    .getDO()
                     .stream()
-                    .filter( da -> "ldNs".equals( da.getName() ))
+                    .filter( do_ -> "NamPlt".equals( do_.getName() ) )
                     .toList();
-            if( ldNsDa.size() == 1 && ( ldNsDa.get( 0 ).getVal().size() == 1 )
-                                   && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                                   && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
+            if( namPltDo.size() == 1 ) {
+                if( namPltDo.get( 0 ).getRefersToDOType() == null ) return null;
+                List< DA > ldNsDa =
+                         namPltDo
+                        .get( 0 )
+                        .getRefersToDOType()
+                        .getDA()
+                        .stream()
+                        .filter( da -> "ldNs".equals( da.getName() ))
+                        .toList();
+                if( ldNsDa.size() == 1 && ( ldNsDa.get( 0 ).getVal().size() == 1 )
+                                       && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                                       && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                        return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
                 }
-            
+            }
+                
         }
+        
+        // Issue #79
+        if( getRefersToHigherLevelLDevice() != null ) return getRefersToHigherLevelLDevice().getNamespace();
 
         return null;
         
