@@ -1,6 +1,6 @@
 /*
 *************************************************************************
-**  Copyright (c) 2016-2022 CentraleSupélec & EDF.
+**  Copyright (c) 2016-2026 CentraleSupélec & EDF.
 **  All rights reserved. This program and the accompanying materials
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
@@ -24,7 +24,6 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
@@ -36,7 +35,6 @@ import org.xml.sax.SAXException;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdXMLHandler;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
 public class SCLXMLHandler extends SAXXMLHandler {
@@ -44,9 +42,6 @@ public class SCLXMLHandler extends SAXXMLHandler {
     private static final String XML_HANDLER_CATEGORY = "SCL/XMLHandler";
 
     private Stack< Integer > lineNumbers = new Stack< Integer >();
-    private boolean inPrivate = false;
-    private String lastElement;
-    private AsdXMLHandler asdHandler;
     
     public SCLXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
         super( xmiResource, helper, options );
@@ -64,63 +59,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
         }
         
         lineNumbers.push( this.locator.getLineNumber() );
-        
-        if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri ) ) {
-            if( !"eIEC61850-6-100".equals( attributes.getValue( "type" ) ) ) {
-                inPrivate = true;
-            }
-        }
-        else if( inPrivate ) {
-            if( text == null ) text = new StringBuffer();
-            else if( lastElement != null ) {
-                text.append( ">" );
-            }
-            text.append( "<" + qName );
-            lastElement = qName;
-            
-            for( int i = 0; i < attributes.getLength(); ++i ) {
-                text.append( " " + attributes.getQName( i ) + "=\"" + attributes.getValue( i ) + "\"" );
-            }
-            return;
-        }
         super.startElement( uri, localName, qName, attributes );
-    }
-
-    @Override
-    public void characters( char[] ch, int start, int length ) {
-        if(( inPrivate ) && ( lastElement != null )) {
-            text.append( ">" );
-            lastElement = null;
-            text.append( ch, start, length );
-        }
-        else {
-            super.characters( ch, start, length );
-        }
-    }
-
-    @Override
-    public void startCDATA() {
-        if( inPrivate ) {
-            if( lastElement != null ) {
-                text.append( ">" );
-                lastElement = null;
-            }
-            else if( text == null ) text = new StringBuffer();
-            text.append( "<![CDATA[" );
-        }
-        else {
-            super.startCDATA();
-        }
-    }
-
-    @Override
-    public void endCDATA() {
-        if( inPrivate ) {
-            text.append( "]]>" );
-        }
-        else {
-            super.startCDATA();
-        }
     }
 
     @Override
@@ -139,59 +78,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
             lineNumbers.pop();
         }
         
-        if(( "Private".equals( localName )) && SclPackage.eNS_URI.equals( uri )) {
-            inPrivate = false;
-        }
-        else if( inPrivate ) {
-            if( name.equals( lastElement )) {
-                text.append( "/>" );
-                lastElement = null;
-            }
-            else {
-                text.append( "</" + name + ">" );
-            }
-            return;
-        }
-        if( ! SclPackage.eNS_URI.equals( uri )) {
-            // any content is ignored (see getFeature() below) so do not call standard endElement
-            // because no object has been put on the stack
-            return;
-        }
         super.endElement( uri, localName, name );
-    }
-
-    @Override
-    protected EStructuralFeature getFeature( EObject object, String prefix, String name, boolean isElement ) {
-        // XMLHelperImpl.getFeature(EClass eClass, String namespaceURI, String name)
-        // ignore the namespace to find a feature using XMLHelperImpl.getFeatureWithoutMap(EClass eClass, String name)
-        // (checked version in Eclipse 2023-09)
-        //
-        // This lead to the creation of SCL objects if elements from another namespace use existing SCL names.
-        //
-        // To avoid extending XMLHelper class, the namespace is checked here
-        //
-        // See issue https://github.com/riseclipse/riseclipse-metamodel-scl2003/issues/35:
-        // The problem can also arise for attributes
-        //
-        // Before: we give back the any element to store the value
-        // Now: we give back null because there may be several elements/attributes with the same name in different namespaces but
-        //      any/anyAttribute can have only one value.
-        //      The unknown feature message is not emitted in this case (see handleUnknownFeature() below)
-        
-        if(( prefix != null ) && ( ! SclPackage.eNS_URI.equals( helper.getURI( prefix )))) {
-            //return super.getFeature( object, prefix, isElement ? "any" : "anyAttribute", isElement );
-            return null;
-        }
-        return super.getFeature( object, prefix, name, isElement );
-    }
-
-    @Override
-    protected EPackage getPackageForURI( String uriString ) {
-        if( ! SclPackage.eNS_URI.equals( uriString )) {
-//            AbstractRiseClipseConsole.getConsole().info( "ignoring namespace " + uriString );
-            return null;
-        }
-        return super.getPackageForURI( uriString );
     }
 
     @Override
@@ -225,11 +112,6 @@ public class SCLXMLHandler extends SAXXMLHandler {
         
         // feature may be null on invalid attribute/tag
         if( feature == null ) return;
-        
-        if(( inPrivate ) && ( lastElement != null )) {
-            text.append( " " + feature.getName() + "=\"" + value + "\"" );
-            return;
-        }
         
         if(( feature.getUpperBound() == 1 ) && object.eIsSet( feature )) {
             AbstractRiseClipseConsole.getConsole().error(
