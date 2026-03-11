@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,22 +15,22 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BaseExtensionElementImpl#getText <em>Text</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BaseExtensionElementImpl#getAny <em>Any</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +56,16 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
      * @ordered
      */
     protected Text text;
+
+    /**
+     * The cached value of the '{@link #getAny() <em>Any</em>}' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAny()
+     * @generated
+     * @ordered
+     */
+    protected FeatureMap any;
 
     /**
      * <!-- begin-user-doc -->
@@ -96,10 +107,12 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     AsdPackage.BASE_EXTENSION_ELEMENT__TEXT, oldText, newText );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -113,18 +126,36 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
     public void setText( Text newText ) {
         if( newText != text ) {
             NotificationChain msgs = null;
-            if( text != null )
+            if( text != null ) {
                 msgs = ( ( InternalEObject ) text ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - AsdPackage.BASE_EXTENSION_ELEMENT__TEXT, null, msgs );
-            if( newText != null )
+            }
+            if( newText != null ) {
                 msgs = ( ( InternalEObject ) newText ).eInverseAdd( this,
                         EOPPOSITE_FEATURE_BASE - AsdPackage.BASE_EXTENSION_ELEMENT__TEXT, null, msgs );
+            }
             msgs = basicSetText( newText, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BASE_EXTENSION_ELEMENT__TEXT, newText,
                     newText ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public FeatureMap getAny() {
+        if( any == null ) {
+            any = new BasicFeatureMap( this, AsdPackage.BASE_EXTENSION_ELEMENT__ANY );
+        }
+        return any;
     }
 
     /**
@@ -137,6 +168,8 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
         switch( featureID ) {
         case AsdPackage.BASE_EXTENSION_ELEMENT__TEXT:
             return basicSetText( null, msgs );
+        case AsdPackage.BASE_EXTENSION_ELEMENT__ANY:
+            return ( ( InternalEList< ? > ) getAny() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -151,6 +184,11 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
         switch( featureID ) {
         case AsdPackage.BASE_EXTENSION_ELEMENT__TEXT:
             return getText();
+        case AsdPackage.BASE_EXTENSION_ELEMENT__ANY:
+            if( coreType ) {
+                return getAny();
+            }
+            return ( ( FeatureMap.Internal ) getAny() ).getWrapper();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -165,6 +203,9 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
         switch( featureID ) {
         case AsdPackage.BASE_EXTENSION_ELEMENT__TEXT:
             setText( ( Text ) newValue );
+            return;
+        case AsdPackage.BASE_EXTENSION_ELEMENT__ANY:
+            ( ( FeatureMap.Internal ) getAny() ).set( newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -181,6 +222,9 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
         case AsdPackage.BASE_EXTENSION_ELEMENT__TEXT:
             setText( ( Text ) null );
             return;
+        case AsdPackage.BASE_EXTENSION_ELEMENT__ANY:
+            getAny().clear();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -195,8 +239,28 @@ public abstract class BaseExtensionElementImpl extends AsdObjectImpl implements 
         switch( featureID ) {
         case AsdPackage.BASE_EXTENSION_ELEMENT__TEXT:
             return text != null;
+        case AsdPackage.BASE_EXTENSION_ELEMENT__ANY:
+            return any != null && !any.isEmpty();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if( eIsProxy() ) {
+            return super.toString();
+        }
+
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (any: " );
+        result.append( any );
+        result.append( ')' );
+        return result.toString();
     }
 
 } //BaseExtensionElementImpl

@@ -19,6 +19,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
+import org.eclipse.emf.ecore.util.FeatureMap;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
 
 /**
@@ -35,6 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement#getText <em>Text</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement#getAny <em>Any</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBaseExtensionElement()
@@ -64,5 +67,18 @@ public interface BaseExtensionElement extends AsdObject {
      * @generated
      */
     void setText( Text value );
+
+    /**
+     * Returns the value of the '<em><b>Any</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Any</em>' attribute list.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBaseExtensionElement_Any()
+     * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+     *        extendedMetaData="kind='elementWildcard' wildcards='##other' name=':0' processing='lax'"
+     * @generated
+     */
+    FeatureMap getAny();
 
 } // BaseExtensionElement

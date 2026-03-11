@@ -273,13 +273,22 @@ public interface AsdPackage extends EPackage {
     int BASE_EXTENSION_ELEMENT__TEXT = ASD_OBJECT_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_EXTENSION_ELEMENT__ANY = ASD_OBJECT_FEATURE_COUNT + 1;
+
+    /**
      * The number of structural features of the '<em>Base Extension Element</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BASE_EXTENSION_ELEMENT_FEATURE_COUNT = ASD_OBJECT_FEATURE_COUNT + 1;
+    int BASE_EXTENSION_ELEMENT_FEATURE_COUNT = ASD_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -353,6 +362,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_EXTENSION_ELEMENT_WITH_DESC__ANY = BASE_EXTENSION_ELEMENT__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -526,6 +544,15 @@ public interface AsdPackage extends EPackage {
     int ABSTRACT6100_LNODE_CONTAINER__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT6100_LNODE_CONTAINER__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -650,6 +677,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_FUNCTIONAL_VARIANT__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_FUNCTIONAL_VARIANT__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -796,6 +832,15 @@ public interface AsdPackage extends EPackage {
     int ALLOCATION_ROLE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ALLOCATION_ROLE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -931,6 +976,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT_REF_CONTAINER__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1019,6 +1073,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int ALLOCATION_ROLE_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ALLOCATION_ROLE_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -1145,6 +1208,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int APPLICATION__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -1318,6 +1390,15 @@ public interface AsdPackage extends EPackage {
     int SERVICE_PARAMETERS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_PARAMETERS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1406,6 +1487,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int WIRING_PARAMETERS__TEXT = SERVICE_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WIRING_PARAMETERS__ANY = SERVICE_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -1514,6 +1604,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int ANALOGUE_WIRING_PARAMETERS__TEXT = WIRING_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANALOGUE_WIRING_PARAMETERS__ANY = WIRING_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -1670,6 +1769,15 @@ public interface AsdPackage extends EPackage {
     int SERVICE_PARAMETERS_REF__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_PARAMETERS_REF__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1768,6 +1876,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int ANALOGUE_WIRING_PARAMETERS_REF__TEXT = SERVICE_PARAMETERS_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANALOGUE_WIRING_PARAMETERS_REF__ANY = SERVICE_PARAMETERS_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -1904,6 +2021,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int APPLICATION_SCL_REF__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION_SCL_REF__ANY = BASE_EXTENSION_ELEMENT__ANY;
 
     /**
      * The feature id for the '<em><b>Scl File Reference</b></em>' containment reference.
@@ -2086,6 +2212,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int BEHAVIOR_DESCRIPTION__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -2288,6 +2423,15 @@ public interface AsdPackage extends EPackage {
     int BEHAVIOR_DESCRIPTION_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2442,6 +2586,15 @@ public interface AsdPackage extends EPackage {
     int BEHAVIOR_REFERENCE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_REFERENCE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2558,6 +2711,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int BINARY_WIRING_PARAMETERS__TEXT = WIRING_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BINARY_WIRING_PARAMETERS__ANY = WIRING_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -2775,6 +2937,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int BINARY_WIRING_PARAMETERS_REF__TEXT = SERVICE_PARAMETERS_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BINARY_WIRING_PARAMETERS_REF__ANY = SERVICE_PARAMETERS_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -3103,6 +3274,15 @@ public interface AsdPackage extends EPackage {
     int LINK_FCD_REF__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCD_REF__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3255,6 +3435,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int CONTROL_REF__TEXT = LINK_FCD_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_REF__ANY = LINK_FCD_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -3546,6 +3735,15 @@ public interface AsdPackage extends EPackage {
     int COMM_PARAMETERS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_PARAMETERS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3662,6 +3860,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int COMM_SERVICE_SPECIFICATIONS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_SERVICE_SPECIFICATIONS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -3782,6 +3989,15 @@ public interface AsdPackage extends EPackage {
     int CONTROL_BLOCK_PARAMETERS__TEXT = SERVICE_PARAMETERS__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK_PARAMETERS__ANY = SERVICE_PARAMETERS__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3898,6 +4114,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int CONTROLLING_LNODE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROLLING_LNODE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -4088,6 +4313,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int DAS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -4316,6 +4550,15 @@ public interface AsdPackage extends EPackage {
     int DOS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4506,6 +4749,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_CATEGORY__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_CATEGORY__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4660,6 +4912,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_CATEGORY_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_CATEGORY_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4796,6 +5057,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_CAT_REF__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_CAT_REF__ANY = BASE_EXTENSION_ELEMENT__ANY;
+
+    /**
      * The feature id for the '<em><b>Function</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4912,6 +5182,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTION_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -5066,6 +5345,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTION_ROLE__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -5258,6 +5546,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_ROLE_CONTENT__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE_CONTENT__ANY = BASE_EXTENSION_ELEMENT__ANY;
+
+    /**
      * The feature id for the '<em><b>Function Ref</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5412,6 +5709,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_SCL_REF__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_SCL_REF__ANY = BASE_EXTENSION_ELEMENT__ANY;
+
+    /**
      * The feature id for the '<em><b>Scl File Reference</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5501,6 +5807,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTION_TEMPLATE__TEXT = ABSTRACT6100_LNODE_CONTAINER__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_TEMPLATE__ANY = ABSTRACT6100_LNODE_CONTAINER__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -5675,6 +5990,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_SUB_VARIANT__TEXT = ABSTRACT_FUNCTIONAL_VARIANT__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_SUB_VARIANT__ANY = ABSTRACT_FUNCTIONAL_VARIANT__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5836,6 +6160,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTIONAL_VARIANT__TEXT = ABSTRACT_FUNCTIONAL_VARIANT__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT__ANY = ABSTRACT_FUNCTIONAL_VARIANT__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -6019,6 +6352,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_VARIANT_GROUP__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT_GROUP__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6164,6 +6506,15 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_VARIANT_REF__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT_REF__ANY = BASE_EXTENSION_ELEMENT__ANY;
+
+    /**
      * The feature id for the '<em><b>Functional Variant</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6289,6 +6640,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int GOOSE_PARAMETERS__TEXT = CONTROL_BLOCK_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_PARAMETERS__ANY = CONTROL_BLOCK_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -6499,6 +6859,15 @@ public interface AsdPackage extends EPackage {
     int GOOSE_PARAMETERS_REF__TEXT = SERVICE_PARAMETERS_REF__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_PARAMETERS_REF__ANY = SERVICE_PARAMETERS_REF__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6624,6 +6993,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int LOGIC_VAR_REF__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOGIC_VAR_REF__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -6778,6 +7156,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int INPUT_VAR__TEXT = LOGIC_VAR_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUT_VAR__ANY = LOGIC_VAR_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -6970,6 +7357,15 @@ public interface AsdPackage extends EPackage {
     int VARIABLE_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7122,6 +7518,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int INPUT_VAR_REF__TEXT = VARIABLE_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUT_VAR_REF__ANY = VARIABLE_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -7287,6 +7692,15 @@ public interface AsdPackage extends EPackage {
     int L2_COMM_PARAMETERS__TEXT = COMM_PARAMETERS__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int L2_COMM_PARAMETERS__ANY = COMM_PARAMETERS__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7430,6 +7844,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int L3I_PV4_COMM_PARAMETERS__TEXT = COMM_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int L3I_PV4_COMM_PARAMETERS__ANY = COMM_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -7586,6 +8009,15 @@ public interface AsdPackage extends EPackage {
     int L3I_PV6_COMM_PARAMETERS__TEXT = COMM_PARAMETERS__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int L3I_PV6_COMM_PARAMETERS__ANY = COMM_PARAMETERS__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7738,6 +8170,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int LINK_FCDA_REF__TEXT = LINK_FCD_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCDA_REF__ANY = LINK_FCD_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -7903,6 +8344,15 @@ public interface AsdPackage extends EPackage {
     int LNODE_DATA_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_DATA_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8057,6 +8507,15 @@ public interface AsdPackage extends EPackage {
     int LNODE_INPUT_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_INPUT_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8193,6 +8652,15 @@ public interface AsdPackage extends EPackage {
     int LNODE_INPUTS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_INPUTS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8291,6 +8759,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int LNODE_OUTPUT_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_OUTPUT_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -8429,6 +8906,15 @@ public interface AsdPackage extends EPackage {
     int LNODE_OUTPUTS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_OUTPUTS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8527,6 +9013,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int LNODE_SPEC_NAMING__TEXT = BASE_EXTENSION_ELEMENT__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_SPEC_NAMING__ANY = BASE_EXTENSION_ELEMENT__ANY;
 
     /**
      * The feature id for the '<em><b>SIed Name</b></em>' attribute.
@@ -8654,6 +9149,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int LOG_PARAMETERS__TEXT = CONTROL_BLOCK_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_PARAMETERS__ANY = CONTROL_BLOCK_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -8864,6 +9368,15 @@ public interface AsdPackage extends EPackage {
     int LOG_PARAMETERS_REF__TEXT = SERVICE_PARAMETERS_REF__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_PARAMETERS_REF__ANY = SERVICE_PARAMETERS_REF__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8998,6 +9511,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int OUTPUT_VAR__TEXT = LOGIC_VAR_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OUTPUT_VAR__ANY = LOGIC_VAR_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -9190,6 +9712,15 @@ public interface AsdPackage extends EPackage {
     int OUTPUT_VAR_REF__TEXT = VARIABLE_REF__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OUTPUT_VAR_REF__ANY = VARIABLE_REF__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9351,6 +9882,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int POWER_SYSTEM_RELATION__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -9526,6 +10066,15 @@ public interface AsdPackage extends EPackage {
     int POWER_SYSTEM_RELATION_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9662,6 +10211,15 @@ public interface AsdPackage extends EPackage {
     int POWER_SYSTEM_RELATIONS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATIONS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9760,6 +10318,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int PROCESS_ECHO__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_ECHO__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -9923,6 +10490,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int PROCESS_RESOURCE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_RESOURCE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -10142,6 +10718,15 @@ public interface AsdPackage extends EPackage {
     int PROCESS_RESOURCE_REF__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_RESOURCE_REF__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10278,6 +10863,15 @@ public interface AsdPackage extends EPackage {
     int PROCESS_RESOURCES__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_RESOURCES__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10376,6 +10970,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int PROJECT__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROJECT__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -10496,6 +11099,15 @@ public interface AsdPackage extends EPackage {
     int PROJECT_PROCESS_REFERENCE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROJECT_PROCESS_REFERENCE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10612,6 +11224,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int REPORT_PARAMETERS__TEXT = CONTROL_BLOCK_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_PARAMETERS__ANY = CONTROL_BLOCK_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -10784,6 +11405,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int REPORT_PARAMETERS_REF__TEXT = SERVICE_PARAMETERS_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_PARAMETERS_REF__ANY = SERVICE_PARAMETERS_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -11031,6 +11661,15 @@ public interface AsdPackage extends EPackage {
     int SDS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11248,6 +11887,15 @@ public interface AsdPackage extends EPackage {
     int SERVICE_SPECIFICATIONS__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_SPECIFICATIONS__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11391,6 +12039,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SOURCE_REF__TEXT = LINK_FCDA_REF__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SOURCE_REF__ANY = LINK_FCDA_REF__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -11743,6 +12400,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SUB_CATEGORY__TEXT = FUNCTION_CATEGORY__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CATEGORY__ANY = FUNCTION_CATEGORY__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -12098,6 +12764,15 @@ public interface AsdPackage extends EPackage {
     int SUB_FUNCTION_TEMPLATE__TEXT = ABSTRACT6100_LNODE_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION_TEMPLATE__ANY = ABSTRACT6100_LNODE_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12286,6 +12961,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SMV_PARAMETERS__TEXT = CONTROL_BLOCK_PARAMETERS__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_PARAMETERS__ANY = CONTROL_BLOCK_PARAMETERS__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -12514,6 +13198,15 @@ public interface AsdPackage extends EPackage {
     int SMV_PARAMETERS_REF__TEXT = SERVICE_PARAMETERS_REF__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_PARAMETERS_REF__ANY = SERVICE_PARAMETERS_REF__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12639,6 +13332,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SUBSCRIBER_LNODE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSCRIBER_LNODE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -12858,6 +13560,15 @@ public interface AsdPackage extends EPackage {
     int VARIABLE__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13010,6 +13721,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int VARIABLE_APPLY_TO__TEXT = BASE_EXTENSION_ELEMENT_WITH_DESC__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VARIABLE_APPLY_TO__ANY = BASE_EXTENSION_ELEMENT_WITH_DESC__ANY;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -13794,6 +14514,17 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EReference getBaseExtensionElement_Text();
+
+    /**
+     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement#getAny <em>Any</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute list '<em>Any</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement#getAny()
+     * @see #getBaseExtensionElement()
+     * @generated
+     */
+    EAttribute getBaseExtensionElement_Any();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc <em>Base Extension Element With Desc</em>}'.

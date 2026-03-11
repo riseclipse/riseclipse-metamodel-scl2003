@@ -1426,6 +1426,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="SCL.ecore#//asd/BaseExtensionElement">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//asd/BaseExtensionElement/text"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SCL.ecore#//asd/BaseExtensionElement/any"/>
       </genClasses>
       <genClasses image="false" ecoreClass="SCL.ecore#//asd/BaseExtensionElementWithDesc">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//asd/BaseExtensionElementWithDesc/desc"/>

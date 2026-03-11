@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,25 +15,22 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.provider;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement} object.
@@ -80,6 +77,7 @@ public class BaseExtensionElementItemProvider extends AsdObjectItemProvider {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( AsdPackage.eINSTANCE.getBaseExtensionElement_Text() );
+            childrenFeatures.add( AsdPackage.eINSTANCE.getBaseExtensionElement_Any() );
         }
         return childrenFeatures;
     }
@@ -123,6 +121,7 @@ public class BaseExtensionElementItemProvider extends AsdObjectItemProvider {
 
         switch( notification.getFeatureID( BaseExtensionElement.class ) ) {
         case AsdPackage.BASE_EXTENSION_ELEMENT__TEXT:
+        case AsdPackage.BASE_EXTENSION_ELEMENT__ANY:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }

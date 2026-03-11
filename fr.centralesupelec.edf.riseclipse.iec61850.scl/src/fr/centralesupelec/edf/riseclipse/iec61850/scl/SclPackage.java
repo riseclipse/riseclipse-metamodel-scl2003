@@ -24466,6 +24466,15 @@ public interface SclPackage extends EPackage {
     int SIGNAL_ROLE__TEXT = AsdPackage.FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
 
     /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__ANY = AsdPackage.FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
