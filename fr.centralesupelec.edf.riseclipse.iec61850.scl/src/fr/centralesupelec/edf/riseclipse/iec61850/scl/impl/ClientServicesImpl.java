@@ -20,6 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -28,8 +30,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
@@ -38,7 +40,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Security;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -1550,7 +1551,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     @Override
     public EList< McSecurity > getMcSecurity() {
         if( mcSecurity == null ) {
-            mcSecurity = new EObjectContainmentWithInverseEList.Unsettable< McSecurity >( McSecurity.class, this,
+            mcSecurity = new EObjectContainmentWithInverseEList.Unsettable< >( McSecurity.class, this,
                     SclPackage.CLIENT_SERVICES__MC_SECURITY, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES );
         }
         return mcSecurity;

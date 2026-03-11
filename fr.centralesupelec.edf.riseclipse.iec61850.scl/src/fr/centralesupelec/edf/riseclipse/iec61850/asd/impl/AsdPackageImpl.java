@@ -1363,6 +1363,16 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
+    public EAttribute getBaseExtensionElement_Any() {
+        return ( EAttribute ) getBaseExtensionElement().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getBaseExtensionElementWithDesc() {
         if( baseExtensionElementWithDescEClass == null ) {
             baseExtensionElementWithDescEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )

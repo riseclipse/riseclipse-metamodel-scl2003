@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,14 +20,12 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -193,9 +191,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -209,9 +208,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -245,9 +245,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_INST, oldLnInst, lnInst,
                     !oldLnInstESet ) );
+        }
     }
 
     /**
@@ -261,9 +262,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__LN_INST, oldLnInst,
                     LN_INST_EDEFAULT, oldLnInstESet ) );
+        }
     }
 
     /**
@@ -297,9 +299,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__PREFIX, oldPrefix, prefix,
                     !oldPrefixESet ) );
+        }
     }
 
     /**
@@ -313,9 +316,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__PREFIX, oldPrefix,
                     PREFIX_EDEFAULT, oldPrefixESet ) );
+        }
     }
 
     /**
@@ -448,24 +452,32 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnInst: " );
-        if( lnInstESet )
+        if( lnInstESet ) {
             result.append( lnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prefix: " );
-        if( prefixESet )
+        if( prefixESet ) {
             result.append( prefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnUuid: " );
         result.append( lnUuid );
         result.append( ')' );

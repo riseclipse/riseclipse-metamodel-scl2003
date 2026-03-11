@@ -460,7 +460,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     @Override
     public EList< DAI > getDAI() {
         if( dai == null ) {
-            dai = new EObjectContainmentWithInverseEList.Unsettable< DAI >( DAI.class, this, SclPackage.SDI__DAI,
+            dai = new EObjectContainmentWithInverseEList.Unsettable< >( DAI.class, this, SclPackage.SDI__DAI,
                     SclPackage.DAI__PARENT_SDI );
         }
         return dai;
@@ -549,7 +549,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     @Override
     public EList< SDI > getSubSDI() {
         if( subSDI == null ) {
-            subSDI = new EObjectContainmentWithInverseEList.Unsettable< SDI >( SDI.class, this, SclPackage.SDI__SUB_SDI,
+            subSDI = new EObjectContainmentWithInverseEList.Unsettable< >( SDI.class, this, SclPackage.SDI__SUB_SDI,
                     SclPackage.SDI__PARENT_SDI );
         }
         return subSDI;

@@ -1479,9 +1479,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         if( getFc() == null ) {
             return;
         }
-        
+
         getRefersToAbstractDataAttribute().addAll( getAllDAInDOTypeWithFC( doType, getFc(), console ));
-        
+
         if( getRefersToAbstractDataAttribute().size() == 0 ) {
             if( getFc().equals( FCEnum.SG )) {
                 // Issue #66: if fc="SG" in FCDA, look for AbstractDataAttribute with fc="SE"

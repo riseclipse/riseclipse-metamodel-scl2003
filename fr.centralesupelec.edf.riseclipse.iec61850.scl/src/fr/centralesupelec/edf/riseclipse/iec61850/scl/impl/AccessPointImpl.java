@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -534,9 +535,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         clock = newClock;
         boolean oldClockESet = clockESet;
         clockESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__CLOCK, oldClock, clock,
                     !oldClockESet ) );
+        }
     }
 
     /**
@@ -550,9 +552,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         boolean oldClockESet = clockESet;
         clock = CLOCK_EDEFAULT;
         clockESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__CLOCK, oldClock,
                     CLOCK_EDEFAULT, oldClockESet ) );
+        }
     }
 
     /**
@@ -586,9 +589,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         kdc = newKdc;
         boolean oldKdcESet = kdcESet;
         kdcESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__KDC, oldKdc, kdc,
                     !oldKdcESet ) );
+        }
     }
 
     /**
@@ -602,9 +606,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         boolean oldKdcESet = kdcESet;
         kdc = KDC_EDEFAULT;
         kdcESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__KDC, oldKdc,
                     KDC_EDEFAULT, oldKdcESet ) );
+        }
     }
 
     /**
@@ -638,9 +643,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         router = newRouter;
         boolean oldRouterESet = routerESet;
         routerESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__ROUTER, oldRouter, router,
                     !oldRouterESet ) );
+        }
     }
 
     /**
@@ -654,9 +660,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         boolean oldRouterESet = routerESet;
         router = ROUTER_EDEFAULT;
         routerESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__ROUTER, oldRouter,
                     ROUTER_EDEFAULT, oldRouterESet ) );
+        }
     }
 
     /**
@@ -676,7 +683,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public IED getParentIED() {
-        if( eContainerFeatureID() != SclPackage.ACCESS_POINT__PARENT_IED ) return null;
+        if( eContainerFeatureID() != SclPackage.ACCESS_POINT__PARENT_IED ) {
+            return null;
+        }
         return ( IED ) eInternalContainer();
     }
 
@@ -699,20 +708,26 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     public void setParentIED( IED newParentIED ) {
         if( newParentIED != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.ACCESS_POINT__PARENT_IED && newParentIED != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentIED ) )
+            if( EcoreUtil.isAncestor( this, newParentIED ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentIED != null )
+            }
+            if( newParentIED != null ) {
                 msgs = ( ( InternalEObject ) newParentIED ).eInverseAdd( this, SclPackage.IED__ACCESS_POINT, IED.class,
                         msgs );
+            }
             msgs = basicSetParentIED( newParentIED, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__PARENT_IED, newParentIED,
                     newParentIED ) );
+        }
     }
 
     /**
@@ -723,7 +738,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public EList< LN > getLN() {
         if( ln == null ) {
-            ln = new EObjectContainmentWithInverseEList.Unsettable< LN >( LN.class, this, SclPackage.ACCESS_POINT__LN,
+            ln = new EObjectContainmentWithInverseEList.Unsettable< >( LN.class, this, SclPackage.ACCESS_POINT__LN,
                     SclPackage.LN__PARENT_ACCESS_POINT );
         }
         return ln;
@@ -736,7 +751,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public void unsetLN() {
-        if( ln != null ) ( ( InternalEList.Unsettable< ? > ) ln ).unset();
+        if( ln != null ) {
+            ( ( InternalEList.Unsettable< ? > ) ln ).unset();
+        }
     }
 
     /**
@@ -757,7 +774,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public EList< SMVSecurity > getSMVSecurity() {
         if( smvSecurity == null ) {
-            smvSecurity = new EObjectContainmentWithInverseEList.Unsettable< SMVSecurity >( SMVSecurity.class, this,
+            smvSecurity = new EObjectContainmentWithInverseEList.Unsettable< >( SMVSecurity.class, this,
                     SclPackage.ACCESS_POINT__SMV_SECURITY, SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT );
         }
         return smvSecurity;
@@ -770,7 +787,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public void unsetSMVSecurity() {
-        if( smvSecurity != null ) ( ( InternalEList.Unsettable< ? > ) smvSecurity ).unset();
+        if( smvSecurity != null ) {
+            ( ( InternalEList.Unsettable< ? > ) smvSecurity ).unset();
+        }
     }
 
     /**
@@ -806,10 +825,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.ACCESS_POINT__SERVER_AT, oldServerAt, newServerAt, !oldServerAtESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -823,21 +844,26 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     public void setServerAt( ServerAt newServerAt ) {
         if( newServerAt != serverAt ) {
             NotificationChain msgs = null;
-            if( serverAt != null )
+            if( serverAt != null ) {
                 msgs = ( ( InternalEObject ) serverAt ).eInverseRemove( this, SclPackage.SERVER_AT__PARENT_ACCESS_POINT,
                         ServerAt.class, msgs );
-            if( newServerAt != null )
+            }
+            if( newServerAt != null ) {
                 msgs = ( ( InternalEObject ) newServerAt ).eInverseAdd( this, SclPackage.SERVER_AT__PARENT_ACCESS_POINT,
                         ServerAt.class, msgs );
+            }
             msgs = basicSetServerAt( newServerAt, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServerAtESet = serverAtESet;
             serverAtESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__SERVER_AT, newServerAt,
                         newServerAt, !oldServerAtESet ) );
+            }
         }
     }
 
@@ -854,10 +880,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.ACCESS_POINT__SERVER_AT, oldServerAt, null, oldServerAtESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -874,14 +902,17 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             msgs = ( ( InternalEObject ) serverAt ).eInverseRemove( this, SclPackage.SERVER_AT__PARENT_ACCESS_POINT,
                     ServerAt.class, msgs );
             msgs = basicUnsetServerAt( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServerAtESet = serverAtESet;
             serverAtESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__SERVER_AT, null,
                         null, oldServerAtESet ) );
+            }
         }
     }
 
@@ -918,10 +949,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.ACCESS_POINT__SERVER, oldServer, newServer, !oldServerESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -935,21 +968,26 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     public void setServer( Server newServer ) {
         if( newServer != server ) {
             NotificationChain msgs = null;
-            if( server != null )
+            if( server != null ) {
                 msgs = ( ( InternalEObject ) server ).eInverseRemove( this, SclPackage.SERVER__PARENT_ACCESS_POINT,
                         Server.class, msgs );
-            if( newServer != null )
+            }
+            if( newServer != null ) {
                 msgs = ( ( InternalEObject ) newServer ).eInverseAdd( this, SclPackage.SERVER__PARENT_ACCESS_POINT,
                         Server.class, msgs );
+            }
             msgs = basicSetServer( newServer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServerESet = serverESet;
             serverESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__SERVER, newServer,
                         newServer, !oldServerESet ) );
+            }
         }
     }
 
@@ -966,10 +1004,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.ACCESS_POINT__SERVER, oldServer, null, oldServerESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -986,14 +1026,17 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             msgs = ( ( InternalEObject ) server ).eInverseRemove( this, SclPackage.SERVER__PARENT_ACCESS_POINT,
                     Server.class, msgs );
             msgs = basicUnsetServer( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServerESet = serverESet;
             serverESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__SERVER, null, null,
                         oldServerESet ) );
+            }
         }
     }
 
@@ -1030,10 +1073,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.ACCESS_POINT__SERVICES, oldServices, newServices, !oldServicesESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1047,21 +1092,26 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     public void setServices( Services newServices ) {
         if( newServices != services ) {
             NotificationChain msgs = null;
-            if( services != null )
+            if( services != null ) {
                 msgs = ( ( InternalEObject ) services ).eInverseRemove( this, SclPackage.SERVICES__PARENT_ACCESS_POINT,
                         Services.class, msgs );
-            if( newServices != null )
+            }
+            if( newServices != null ) {
                 msgs = ( ( InternalEObject ) newServices ).eInverseAdd( this, SclPackage.SERVICES__PARENT_ACCESS_POINT,
                         Services.class, msgs );
+            }
             msgs = basicSetServices( newServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServicesESet = servicesESet;
             servicesESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__SERVICES, newServices,
                         newServices, !oldServicesESet ) );
+            }
         }
     }
 
@@ -1078,10 +1128,12 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.ACCESS_POINT__SERVICES, oldServices, null, oldServicesESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -1098,14 +1150,17 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             msgs = ( ( InternalEObject ) services ).eInverseRemove( this, SclPackage.SERVICES__PARENT_ACCESS_POINT,
                     Services.class, msgs );
             msgs = basicUnsetServices( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldServicesESet = servicesESet;
             servicesESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__SERVICES, null, null,
                         oldServicesESet ) );
+            }
         }
     }
 
@@ -1127,7 +1182,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public EList< GOOSESecurity > getGOOSESecurity() {
         if( gooseSecurity == null ) {
-            gooseSecurity = new EObjectContainmentWithInverseEList.Unsettable< GOOSESecurity >( GOOSESecurity.class,
+            gooseSecurity = new EObjectContainmentWithInverseEList.Unsettable< >( GOOSESecurity.class,
                     this, SclPackage.ACCESS_POINT__GOOSE_SECURITY, SclPackage.GOOSE_SECURITY__PARENT_ACCESS_POINT );
         }
         return gooseSecurity;
@@ -1140,7 +1195,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public void unsetGOOSESecurity() {
-        if( gooseSecurity != null ) ( ( InternalEList.Unsettable< ? > ) gooseSecurity ).unset();
+        if( gooseSecurity != null ) {
+            ( ( InternalEList.Unsettable< ? > ) gooseSecurity ).unset();
+        }
     }
 
     /**
@@ -1161,7 +1218,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public EList< ServerAt > getReferredByServerAt() {
         if( referredByServerAt == null ) {
-            referredByServerAt = new EObjectWithInverseEList.Unsettable< ServerAt >( ServerAt.class, this,
+            referredByServerAt = new EObjectWithInverseEList.Unsettable< >( ServerAt.class, this,
                     SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT );
         }
         return referredByServerAt;
@@ -1174,7 +1231,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public void unsetReferredByServerAt() {
-        if( referredByServerAt != null ) ( ( InternalEList.Unsettable< ? > ) referredByServerAt ).unset();
+        if( referredByServerAt != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByServerAt ).unset();
+        }
     }
 
     /**
@@ -1208,9 +1267,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_POINT__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -1224,9 +1284,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ACCESS_POINT__NAME, oldName,
                     NAME_EDEFAULT, oldNameESet ) );
+        }
     }
 
     /**
@@ -1247,7 +1308,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public EList< ConnectedAP > getReferredByConnectedAP() {
         if( referredByConnectedAP == null ) {
-            referredByConnectedAP = new EObjectWithInverseEList.Unsettable< ConnectedAP >( ConnectedAP.class, this,
+            referredByConnectedAP = new EObjectWithInverseEList.Unsettable< >( ConnectedAP.class, this,
                     SclPackage.ACCESS_POINT__REFERRED_BY_CONNECTED_AP,
                     SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT );
         }
@@ -1261,7 +1322,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public void unsetReferredByConnectedAP() {
-        if( referredByConnectedAP != null ) ( ( InternalEList.Unsettable< ? > ) referredByConnectedAP ).unset();
+        if( referredByConnectedAP != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByConnectedAP ).unset();
+        }
     }
 
     /**
@@ -1282,7 +1345,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     @Override
     public EList< KDC > getReferredByKDC() {
         if( referredByKDC == null ) {
-            referredByKDC = new EObjectWithInverseEList.Unsettable< KDC >( KDC.class, this,
+            referredByKDC = new EObjectWithInverseEList.Unsettable< >( KDC.class, this,
                     SclPackage.ACCESS_POINT__REFERRED_BY_KDC, SclPackage.KDC__REFERS_TO_ACCESS_POINT );
         }
         return referredByKDC;
@@ -1295,7 +1358,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public void unsetReferredByKDC() {
-        if( referredByKDC != null ) ( ( InternalEList.Unsettable< ? > ) referredByKDC ).unset();
+        if( referredByKDC != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByKDC ).unset();
+        }
     }
 
     /**
@@ -1442,8 +1507,9 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.ACCESS_POINT__PARENT_IED:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentIED( ( IED ) otherEnd, msgs );
         case SclPackage.ACCESS_POINT__LN:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLN() ).basicAdd( otherEnd, msgs );
@@ -1451,19 +1517,22 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSMVSecurity() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.ACCESS_POINT__SERVER_AT:
-            if( serverAt != null )
+            if( serverAt != null ) {
                 msgs = ( ( InternalEObject ) serverAt ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.ACCESS_POINT__SERVER_AT, null, msgs );
+            }
             return basicSetServerAt( ( ServerAt ) otherEnd, msgs );
         case SclPackage.ACCESS_POINT__SERVER:
-            if( server != null )
+            if( server != null ) {
                 msgs = ( ( InternalEObject ) server ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.ACCESS_POINT__SERVER, null, msgs );
+            }
             return basicSetServer( ( Server ) otherEnd, msgs );
         case SclPackage.ACCESS_POINT__SERVICES:
-            if( services != null )
+            if( services != null ) {
                 msgs = ( ( InternalEObject ) services ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.ACCESS_POINT__SERVICES, null, msgs );
+            }
             return basicSetServices( ( Services ) otherEnd, msgs );
         case SclPackage.ACCESS_POINT__GOOSE_SECURITY:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getGOOSESecurity() )
@@ -1807,39 +1876,53 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (uuid: " );
-        if( uuidESet )
+        if( uuidESet ) {
             result.append( uuid );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", templateUuid: " );
-        if( templateUuidESet )
+        if( templateUuidESet ) {
             result.append( templateUuid );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", clock: " );
-        if( clockESet )
+        if( clockESet ) {
             result.append( clock );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", kdc: " );
-        if( kdcESet )
+        if( kdcESet ) {
             result.append( kdc );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", router: " );
-        if( routerESet )
+        if( routerESet ) {
             result.append( router );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

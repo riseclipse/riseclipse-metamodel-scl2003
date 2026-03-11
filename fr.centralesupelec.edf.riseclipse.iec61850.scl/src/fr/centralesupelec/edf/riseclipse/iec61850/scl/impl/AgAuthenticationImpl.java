@@ -23,6 +23,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 

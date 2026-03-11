@@ -688,7 +688,7 @@ public class LNImpl extends AnyLNImpl implements LN {
                         .filter( ld -> ( ld != null ) && ld.getInst().equals( ldInst ))
                         .toList()
                 );
-    
+
             }
             if( lDevices.size() == 0 ) {
                 // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -741,14 +741,7 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .filter( control -> control.getName().equals( controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 )))
                 .toList()
         );
-        if( controls.size() == 0 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no ControlWithIEDName whose name is ",
-            //                  controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
-            //                  " in LN0 on line ", ln0.getLineNumber() );
-            return;
-        }
-        if( controls.size() > 1 ) {
+        if( ( controls.size() == 0 ) || ( controls.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several ControlWithIEDName whose name is ",
             //                  controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -210,12 +210,12 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public String getNamespace() {
         //@formatter:off
-        
+
         // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
         //
         // 1. LNodeType.DO["NamPlt"].DOType.DA["lnNs"].value        if present
         // 2. null                                                  otherwise
-        
+
         List< DO > namPltDo =
                  getDO()
                 .stream()
@@ -359,7 +359,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public EList< DO > getDO() {
         if( do_ == null ) {
-            do_ = new EObjectContainmentWithInverseEList.Unsettable< DO >( DO.class, this, SclPackage.LNODE_TYPE__DO,
+            do_ = new EObjectContainmentWithInverseEList.Unsettable< >( DO.class, this, SclPackage.LNODE_TYPE__DO,
                     SclPackage.DO__PARENT_LNODE_TYPE );
         }
         return do_;
@@ -452,7 +452,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public EList< AnyLN > getReferredByAnyLN() {
         if( referredByAnyLN == null ) {
-            referredByAnyLN = new EObjectWithInverseEList.Unsettable< AnyLN >( AnyLN.class, this,
+            referredByAnyLN = new EObjectWithInverseEList.Unsettable< >( AnyLN.class, this,
                     SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE );
         }
         return referredByAnyLN;
@@ -488,7 +488,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public EList< LNode > getReferredByLNode() {
         if( referredByLNode == null ) {
-            referredByLNode = new EObjectWithInverseEList.Unsettable< LNode >( LNode.class, this,
+            referredByLNode = new EObjectWithInverseEList.Unsettable< >( LNode.class, this,
                     SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, SclPackage.LNODE__REFERS_TO_LNODE_TYPE );
         }
         return referredByLNode;
