@@ -2082,22 +2082,22 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // Resolve only if attribute is not None
         // Default value is None
         if( ( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() ) ) { // console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "link to AnyLN not resolved because iedName is absent or None" );
-        	            return;
+            //         messagePrefix, "link to AnyLN not resolved because iedName is absent or None" );
+            return;
         }
 
         if( ( getLnClass() == null ) || getLnClass().isEmpty() ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "lnClass is missing" );
-        	            return;
+            //         messagePrefix, "lnClass is missing" );
+            return;
         }
 
         // find an IED with
         //   IED.name == LNode.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         if( ied.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " IED( name = ", getIedName(), " )" );
-        	            return;
+            //         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " IED( name = ", getIedName(), " )" );
+            return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found IED( name = ", getIedName(), " ) on line ",
@@ -2107,9 +2107,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //   LDevice.name == LNode.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         if( lDevice.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " LDevice( inst = ", getLdInst(), " )" );
-        	            return;
+            //         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         " LDevice( inst = ", getLdInst(), " )" );
+            return;
         }
         console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 messagePrefix, "found LDevice( inst = ", getLdInst(), " ) on line ",
@@ -2130,9 +2130,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         }
         mess += " )";
         if( anyLN.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
-        	            //         mess );
-        	            return;
+            //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
+            //         mess );
+            return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
@@ -2153,8 +2153,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "DataTypeTemplates is missing" );
-        	            return;
+            //         messagePrefix, "DataTypeTemplates is missing" );
+            return;
         }
 
         List< LNodeType > res = dtt
@@ -2164,9 +2164,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " LNodeType( id = ", getLnType(), " )" );
-        	            return;
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " LNodeType( id = ", getLnType(), " )" );
+            return;
         }
         setRefersToLNodeType( res.get( 0 ) );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),

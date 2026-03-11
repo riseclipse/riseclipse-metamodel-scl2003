@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,36 +15,30 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputRef;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantRefContainerImpl;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -344,7 +338,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public EList< LNodeInputRef > getLNodeInputRef() {
         if( lNodeInputRef == null ) {
-            lNodeInputRef = new EObjectContainmentWithInverseEList.Unsettable< LNodeInputRef >( LNodeInputRef.class,
+            lNodeInputRef = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeInputRef.class,
                     this, SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF, AsdPackage.LNODE_INPUT_REF__PARENT_SIGNAL_ROLE );
         }
         return lNodeInputRef;
@@ -380,7 +374,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public EList< LNodeOutputRef > getLNodeOutputRef() {
         if( lNodeOutputRef == null ) {
-            lNodeOutputRef = new EObjectContainmentWithInverseEList.Unsettable< LNodeOutputRef >( LNodeOutputRef.class,
+            lNodeOutputRef = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeOutputRef.class,
                     this, SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF, AsdPackage.LNODE_OUTPUT_REF__PARENT_SIGNAL_ROLE );
         }
         return lNodeOutputRef;
@@ -416,7 +410,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public EList< LNodeDataRef > getLNodeDataRef() {
         if( lNodeDataRef == null ) {
-            lNodeDataRef = new EObjectContainmentWithInverseEList.Unsettable< LNodeDataRef >( LNodeDataRef.class, this,
+            lNodeDataRef = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeDataRef.class, this,
                     SclPackage.SIGNAL_ROLE__LNODE_DATA_REF, AsdPackage.LNODE_DATA_REF__PARENT_SIGNAL_ROLE );
         }
         return lNodeDataRef;

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,31 +15,27 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,7 +90,7 @@ public class SourceFilesImpl extends BaseElementImpl implements SourceFiles {
     @Override
     public EList< SclFileReference > getSclFileReference() {
         if( sclFileReference == null ) {
-            sclFileReference = new EObjectContainmentWithInverseEList.Unsettable< SclFileReference >(
+            sclFileReference = new EObjectContainmentWithInverseEList.Unsettable< >(
                     SclFileReference.class, this, SclPackage.SOURCE_FILES__SCL_FILE_REFERENCE,
                     SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES );
         }

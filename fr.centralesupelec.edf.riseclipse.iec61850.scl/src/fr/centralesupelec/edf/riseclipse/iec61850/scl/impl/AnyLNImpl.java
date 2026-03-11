@@ -2257,13 +2257,13 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // String messagePrefix = "while resolving link from AnyLN on line: ";
 
         if( ( getLnType() == null ) || getLnType().isEmpty() ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "lnType is missing" );
-        	            return;
+            //         messagePrefix, "lnType is missing" );
+            return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, "DataTypeTemplates is missing" );
-        	            return;
+            //         messagePrefix, "DataTypeTemplates is missing" );
+            return;
         }
 
         List< LNodeType > res = dtt
@@ -2273,9 +2273,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 .collect( Collectors.toList() );
 
         if( res.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-        	//         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
-        	            //         " LNodeType( id = ", getLnType(), " )" );
-        	            return;
+            //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
+            //         " LNodeType( id = ", getLnType(), " )" );
+            return;
         }
         setRefersToLNodeType( res.get( 0 ) );
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),

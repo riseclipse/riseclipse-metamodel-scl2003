@@ -20,8 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -29,6 +27,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;

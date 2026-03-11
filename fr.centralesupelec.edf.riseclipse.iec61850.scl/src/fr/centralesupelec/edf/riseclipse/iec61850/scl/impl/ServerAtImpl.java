@@ -21,7 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.apache.commons.lang3.tuple.Pair;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;

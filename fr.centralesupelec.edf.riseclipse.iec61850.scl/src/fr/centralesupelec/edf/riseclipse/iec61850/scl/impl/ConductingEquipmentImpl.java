@@ -20,9 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -35,6 +32,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction;
@@ -353,7 +353,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
     @Override
     public EList< EqFunction > getEqFunction() {
         if( eqFunction == null ) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< EqFunction >( EqFunction.class, this,
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< >( EqFunction.class, this,
                     SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT );
         }
         return eqFunction;
