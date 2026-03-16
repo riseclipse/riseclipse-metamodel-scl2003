@@ -2793,23 +2793,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentClientServices" ordered="false"
         eType="#//ClientServices" transient="true" unsettable="true" eOpposite="#//ClientServices/Security"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SignalRole" eSuperTypes="#//asd/FunctionalVariantRefContainer">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRef" ordered="false"
-        eType="#//asd/FunctionRef" transient="true" unsettable="true" eOpposite="#//asd/FunctionRef/signalRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeInputRef" ordered="false"
-        upperBound="-1" eType="#//asd/LNodeInputRef" unsettable="true" containment="true"
-        eOpposite="#//asd/LNodeInputRef/ParentSignalRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeOutputRef" ordered="false"
-        upperBound="-1" eType="#//asd/LNodeOutputRef" unsettable="true" containment="true"
-        eOpposite="#//asd/LNodeOutputRef/ParentSignalRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeDataRef" ordered="false"
-        upperBound="-1" eType="#//asd/LNodeDataRef" unsettable="true" containment="true"
-        eOpposite="#//asd/LNodeDataRef/ParentSignalRole"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubEquipment" eSuperTypes="#//PowerSystemResource #//AgVirtual">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//PhaseEnum"
         defaultValueLiteral="none" unsettable="true"/>
@@ -4902,8 +4885,8 @@
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="signalRole" ordered="false"
-          upperBound="-1" eType="#//SignalRole" unsettable="true" containment="true"
-          resolveProxies="false" eOpposite="#//SignalRole/ParentFunctionRef">
+          upperBound="-1" eType="#//asd/SignalRole" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/SignalRole/ParentFunctionRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Signal list attached to the referenced function in the context of the cureent Role definition"/>
         </eAnnotations>
@@ -5660,7 +5643,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLNode" ordered="false"
           eType="#//LNode" transient="true" unsettable="true" eOpposite="#//LNode/ReferredByLNodeDataRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSignalRole" ordered="false"
-          eType="#//SignalRole" transient="true" unsettable="true" eOpposite="#//SignalRole/LNodeDataRef"/>
+          eType="#//asd/SignalRole" transient="true" unsettable="true" eOpposite="#//asd/SignalRole/LNodeDataRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LNodeInputRef" eSuperTypes="#//asd/FunctionalVariantRefContainer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5689,8 +5672,8 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToSourceRef" ordered="false"
           eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/ReferredByLNodeInputRef"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSignalRole" eType="#//SignalRole"
-          transient="true" eOpposite="#//SignalRole/LNodeInputRef"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSignalRole" eType="#//asd/SignalRole"
+          transient="true" eOpposite="#//asd/SignalRole/LNodeInputRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LNodeInputs" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5744,7 +5727,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToControlRef" ordered="false"
           eType="#//asd/ControlRef" transient="true" unsettable="true" eOpposite="#//asd/ControlRef/ReferredByLNodeOutputRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSignalRole" ordered="false"
-          eType="#//SignalRole" transient="true" unsettable="true" eOpposite="#//SignalRole/LNodeOutputRef"/>
+          eType="#//asd/SignalRole" transient="true" unsettable="true" eOpposite="#//asd/SignalRole/LNodeOutputRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LNodeOutputs" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6782,6 +6765,51 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
           <details key="name" value="LogParameters"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SignalRole" eSuperTypes="#//asd/FunctionalVariantRefContainer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Definition of the SignalRole element"/>
+      </eAnnotations>
+      <eAnnotations>
+        <details key="appinfo" value="Definition in IEC 61850-7-6"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="SignalRole"/>
+        <details key="kind" value="elementOnly"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRef" ordered="false"
+          eType="#//asd/FunctionRef" transient="true" unsettable="true" eOpposite="#//asd/FunctionRef/SignalRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeInputRef" ordered="false"
+          upperBound="-1" eType="#//asd/LNodeInputRef" unsettable="true" containment="true"
+          eOpposite="#//asd/LNodeInputRef/ParentSignalRole">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="LNodeInputRef"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeOutputRef" ordered="false"
+          upperBound="-1" eType="#//asd/LNodeOutputRef" unsettable="true" containment="true"
+          eOpposite="#//asd/LNodeOutputRef/ParentSignalRole">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="LNodeOutputRef"/>
+          <details key="namespace" value="##targetNamespace"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeDataRef" ordered="false"
+          upperBound="-1" eType="#//asd/LNodeDataRef" unsettable="true" containment="true"
+          eOpposite="#//asd/LNodeDataRef/ParentSignalRole">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="LNodeDataRef"/>
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
