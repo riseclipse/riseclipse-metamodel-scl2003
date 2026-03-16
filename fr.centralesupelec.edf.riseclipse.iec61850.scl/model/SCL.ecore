@@ -469,8 +469,8 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GOOSEMcSecurity" ordered="false"
         eType="#//GOOSEMcSecurity" unsettable="true" containment="true" eOpposite="#//GOOSEMcSecurity/ParentClientServicesFromGooseMcSecurity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="SMVcSecurity" ordered="false"
-        eType="#//SMVcSecurity" unsettable="true" containment="true" eOpposite="#//SMVcSecurity/ParentClientServicesFromSMVcSecurity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SVMcSecurity" ordered="false"
+        eType="#//SVMcSecurity" unsettable="true" containment="true" eOpposite="#//SVMcSecurity/ParentClientServicesFromSVMcSecurity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Security" ordered="false"
         eType="#//Security" unsettable="true" containment="true" eOpposite="#//Security/ParentClientServices"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptServerInitiatedAssociation"
@@ -2757,10 +2757,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServices" eType="#//Services"
         transient="true" eOpposite="#//Services/SCSM"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SMVcSecurity" eSuperTypes="#//McSecurity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentClientServicesFromSMVcSecurity"
+  <eClassifiers xsi:type="ecore:EClass" name="SVMcSecurity" eSuperTypes="#//McSecurity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentClientServicesFromSVMcSecurity"
         ordered="false" eType="#//ClientServices" transient="true" unsettable="true"
-        eOpposite="#//ClientServices/SMVcSecurity"/>
+        eOpposite="#//ClientServices/SVMcSecurity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SclFileReference" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
