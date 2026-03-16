@@ -3224,7 +3224,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="encryption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false" unsettable="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AgAuthentication" eSuperTypes="#//SclObject">
+  <eClassifiers xsi:type="ecore:EClass" name="AgAuthentication">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="certificate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="none" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -3316,7 +3316,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DORef" abstract="true" eSuperTypes="#//AgUuid #//BaseElement #//AgDesc">
+  <eClassifiers xsi:type="ecore:EClass" name="DORef" abstract="true" eSuperTypes="#//BaseElement #//AgUuid #//AgDesc">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="doName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
