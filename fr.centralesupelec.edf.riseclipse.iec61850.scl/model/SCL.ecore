@@ -942,7 +942,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtRef" eSuperTypes="#//BaseElement #//AgDesc #//DORef">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtRef" eSuperTypes="#//DORef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="daName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
