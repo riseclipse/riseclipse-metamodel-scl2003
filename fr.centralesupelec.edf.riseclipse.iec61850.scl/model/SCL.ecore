@@ -3454,8 +3454,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
@@ -3573,8 +3572,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the role"/>
         </eAnnotations>
@@ -3648,8 +3646,8 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionRole" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//asd/FunctionRole" unsettable="true"
-          containment="true" resolveProxies="false" eOpposite="#//asd/FunctionRole/ParentApplication">
+          upperBound="-1" eType="#//asd/FunctionRole" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/FunctionRole/ParentApplication">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Role attached to the application type"/>
         </eAnnotations>
@@ -3707,8 +3705,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the application"/>
         </eAnnotations>
@@ -3947,8 +3944,7 @@
           <details key="name" value="isSpecification"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the behavior description."/>
         </eAnnotations>
@@ -4305,8 +4301,7 @@
           <details key="name" value="extCtrlUuid"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Identifier of the output, mandatory. Uniqueness of the 'output'+'outputInst&quot; among the LNodeOutputs shall be ensure"/>
         </eAnnotations>
@@ -4474,8 +4469,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="output name to use in ControlRef created to answer to the ControllingLNode"/>
         </eAnnotations>
@@ -4613,8 +4607,7 @@
           <details key="name" value="mappedLnUuid"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
@@ -4741,8 +4734,7 @@
           <details key="name" value="mappedLnUuid"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
@@ -4775,8 +4767,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionCatRef" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//asd/FunctionCatRef" unsettable="true"
-          containment="true" resolveProxies="false" eOpposite="#//asd/FunctionCatRef/ParentFunctionCategory">
+          upperBound="-1" eType="#//asd/FunctionCatRef" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/FunctionCatRef/ParentFunctionCategory">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Reference to a function which is part of the current category"/>
         </eAnnotations>
@@ -4786,8 +4778,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
@@ -4962,8 +4953,7 @@
           <details key="name" value="max"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the role"/>
         </eAnnotations>
@@ -5209,8 +5199,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the group of variant"/>
         </eAnnotations>
@@ -5687,8 +5676,8 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="SourceRef" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//asd/SourceRef" unsettable="true"
-          containment="true" resolveProxies="false" eOpposite="#//asd/SourceRef/ParentLNodeInputs">
+          upperBound="-1" eType="#//asd/SourceRef" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/SourceRef/ParentLNodeInputs">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Reference to a data in the process"/>
         </eAnnotations>
@@ -5741,8 +5730,8 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ControlRef" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//asd/ControlRef" unsettable="true"
-          containment="true" resolveProxies="false" eOpposite="#//asd/ControlRef/ParentLNodeOutputs">
+          upperBound="-1" eType="#//asd/ControlRef" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/ControlRef/ParentLNodeOutputs">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Reference to a control data in the process"/>
         </eAnnotations>
@@ -5957,8 +5946,7 @@
           <details key="name" value="value"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="variable name used in the logic"/>
         </eAnnotations>
@@ -6021,8 +6009,7 @@
         <details key="name" value="tPowerSystemRelation"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="a name used to identify the power system relation in the rest of the SCL elements"/>
         </eAnnotations>
@@ -6133,8 +6120,8 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="PowerSystemRelation"
-          ordered="false" lowerBound="1" upperBound="-1" eType="#//asd/PowerSystemRelation"
-          unsettable="true" containment="true" resolveProxies="false" eOpposite="#//asd/PowerSystemRelation/ParentPowerSystemRelation">
+          ordered="false" upperBound="-1" eType="#//asd/PowerSystemRelation" unsettable="true"
+          containment="true" resolveProxies="false" eOpposite="#//asd/PowerSystemRelation/ParentPowerSystemRelation">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
           <details key="name" value="PowerSystemRelation"/>
@@ -6240,8 +6227,7 @@
           <details key="name" value="max"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="a name used to identify the process resource in the rest of the SCL elements"/>
         </eAnnotations>
@@ -6344,8 +6330,8 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ProcessResource" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//asd/ProcessResource" unsettable="true"
-          containment="true" resolveProxies="false" eOpposite="#//asd/ProcessResource/ParentProcessResources">
+          upperBound="-1" eType="#//asd/ProcessResource" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/ProcessResource/ParentProcessResources">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
           <details key="name" value="ProcessResource"/>
@@ -6376,8 +6362,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the Project"/>
         </eAnnotations>
@@ -6646,8 +6631,7 @@
           <details key="name" value="mappedLnUuid"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
@@ -6672,7 +6656,7 @@
         <details key="name" value="tServiceParameters"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="identification of the service specification"/>
         </eAnnotations>
@@ -6693,7 +6677,7 @@
         <details key="name" value="tServiceParametersRef"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="id of the service specification to use"/>
         </eAnnotations>
@@ -6903,8 +6887,7 @@
           <details key="name" value="extRefUuid"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Identifier of the input, mandatory. Uniqueness of the 'input'+'inputInst&quot; among the LNodeInputs shall be ensure"/>
         </eAnnotations>
@@ -7218,8 +7201,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputName" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="input name to use in SourceRef created to answer to the SubscribingLNode"/>
         </eAnnotations>
@@ -7290,16 +7272,15 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="VariableApplyTo" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//asd/VariableApplyTo" unsettable="true"
-          containment="true" resolveProxies="false" eOpposite="#//asd/VariableApplyTo/ParentVariable">
+          upperBound="-1" eType="#//asd/VariableApplyTo" unsettable="true" containment="true"
+          resolveProxies="false" eOpposite="#//asd/VariableApplyTo/ParentVariable">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
           <details key="name" value="VariableApplyTo"/>
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the variable used to identify it"/>
         </eAnnotations>
