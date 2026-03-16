@@ -460,8 +460,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noIctBinding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="McSecurity" ordered="false"
-        upperBound="-1" eType="#//McSecurity" unsettable="true" containment="true"
-        resolveProxies="false" eOpposite="#//McSecurity/ParentClientServices">
+        eType="#//McSecurity" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//McSecurity/ParentClientServices">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="namespace" value="##targetNamespace"/>
         <details key="kind" value="element"/>
