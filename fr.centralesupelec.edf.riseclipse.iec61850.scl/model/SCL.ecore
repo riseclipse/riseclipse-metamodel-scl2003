@@ -134,7 +134,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySDI" ordered="false"
         upperBound="-1" eType="#//SDI" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//SDI/RefersToAbstractDataAttribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Labels" ordered="false"
         eType="#//Labels" unsettable="true" containment="true" eOpposite="#//Labels/ParentAbstractDataAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractConductingEquipment" eSuperTypes="#//Equipment">
@@ -602,10 +602,10 @@
         eOpposite="#//Process/ConductingEquipment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionTemplate"
         ordered="false" eType="#//asd/FunctionTemplate" transient="true" unsettable="true"
-        eOpposite="#//asd/FunctionTemplate/conductingEquipment"/>
+        eOpposite="#//asd/FunctionTemplate/ConductingEquipment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubFunctionTemplate"
         ordered="false" eType="#//asd/SubFunctionTemplate" transient="true" unsettable="true"
-        eOpposite="#//asd/SubFunctionTemplate/conductingEquipment"/>
+        eOpposite="#//asd/SubFunctionTemplate/ConductingEquipment"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectivityNode" eSuperTypes="#//LNodeContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1088,10 +1088,10 @@
         eOpposite="#//SubFunction/GeneralEquipment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionTemplate"
         ordered="false" eType="#//asd/FunctionTemplate" transient="true" unsettable="true"
-        eOpposite="#//asd/FunctionTemplate/generalEquipment"/>
+        eOpposite="#//asd/FunctionTemplate/GeneralEquipment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubFunctionTemplate"
         ordered="false" eType="#//asd/SubFunctionTemplate" transient="true" unsettable="true"
-        eOpposite="#//asd/SubFunctionTemplate/generalEquipment"/>
+        eOpposite="#//asd/SubFunctionTemplate/GeneralEquipment"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSE" eSuperTypes="#//ControlBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="MinTime" eType="#//MinTime"
@@ -1435,7 +1435,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAbstract6100LNodeContainer"
         ordered="false" eType="#//asd/Abstract6100LNodeContainer" transient="true"
-        unsettable="true" eOpposite="#//asd/Abstract6100LNodeContainer/lNode"/>
+        unsettable="true" eOpposite="#//asd/Abstract6100LNodeContainer/LNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLNodeDataRef"
         ordered="false" upperBound="-1" eType="#//asd/LNodeDataRef" transient="true"
         unsettable="true" eOpposite="#//asd/LNodeDataRef/RefersToLNode"/>
@@ -2536,7 +2536,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDas" ordered="false"
-        eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/val"/>
+        eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/Val"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeSyncProt" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="c37_238" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -2779,9 +2779,9 @@
         eType="#//SourceFiles" transient="true" unsettable="true" eOpposite="#//SourceFiles/SclFileReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplicationSclRef"
         ordered="false" eType="#//asd/ApplicationSclRef" transient="true" unsettable="true"
-        eOpposite="#//asd/ApplicationSclRef/sclFileReference"/>
+        eOpposite="#//asd/ApplicationSclRef/SclFileReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionSclRef" ordered="false"
-        eType="#//asd/FunctionSclRef" transient="true" unsettable="true" eOpposite="#//asd/FunctionSclRef/sclFileReference"/>
+        eType="#//asd/FunctionSclRef" transient="true" unsettable="true" eOpposite="#//asd/FunctionSclRef/SclFileReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Security" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ACSEAuthentication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -3377,7 +3377,7 @@
         upperBound="-1" eType="#//Label" unsettable="true" containment="true" eOpposite="#//Label/ParentLabels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAbstractDataAttribute"
         ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
-        eOpposite="#//AbstractDataAttribute/labels"/>
+        eOpposite="#//AbstractDataAttribute/Labels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAI" ordered="false"
         eType="#//DAI" transient="true" unsettable="true" eOpposite="#//DAI/Labels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAType" ordered="false"
@@ -3403,11 +3403,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentNaming" ordered="false"
         eType="#//Naming" transient="true" unsettable="true" eOpposite="#//Naming/Labels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAS" ordered="false"
-        eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/labels"/>
+        eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/Labels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-        eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/labels"/>
+        eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/Labels"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-        eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/labels"/>
+        eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/Labels"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MinRequestedSCDFile" eSuperTypes="#//SclFileReference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentMinRequestedSCDFiles"
@@ -3445,7 +3445,7 @@
         <details key="name" value="6-100LNodeContainer"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
           upperBound="-1" eType="#//LNode" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//LNode/ParentAbstract6100LNodeContainer">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -3488,7 +3488,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionalSubVariant"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionalSubVariant"
           ordered="false" upperBound="-1" eType="#//asd/FunctionalSubVariant" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionalSubVariant/ParentAbstractFunctionalVariant">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3500,7 +3500,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="variableRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="VariableRef" ordered="false"
           upperBound="-1" eType="#//asd/VariableRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/VariableRef/ParentAbstractFunctionalVariant">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3561,7 +3561,7 @@
         <details key="name" value="AllocationRole"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionRef" ordered="false"
           upperBound="-1" eType="#//asd/FunctionRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/FunctionRef/ParentAllocationRole">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3631,7 +3631,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
-          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/allocationRoleRef"/>
+          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/AllocationRoleRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAllocationRole"
           ordered="false" eType="#//asd/AllocationRole" transient="true" unsettable="true"
           eOpposite="#//asd/AllocationRole/ReferredByAllocationRoleRef"/>
@@ -3647,7 +3647,7 @@
         <details key="name" value="Application"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionRole" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionRole" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//asd/FunctionRole" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionRole/ParentApplication">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3659,7 +3659,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionalVariant" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionalVariant" ordered="false"
           upperBound="-1" eType="#//asd/FunctionalVariant" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/FunctionalVariant/ParentApplication">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3671,7 +3671,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionalVariantGroup"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionalVariantGroup"
           ordered="false" upperBound="-1" eType="#//asd/FunctionalVariantGroup" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionalVariantGroup/ParentApplication">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3683,7 +3683,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="allocationRoleRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AllocationRoleRef" ordered="false"
           upperBound="-1" eType="#//asd/AllocationRoleRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/AllocationRoleRef/ParentApplication">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3695,7 +3695,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationSclRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ApplicationSclRef" ordered="false"
           eType="#//asd/ApplicationSclRef" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/ApplicationSclRef/ParentApplication">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3772,7 +3772,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServiceSpecifications"
           ordered="false" eType="#//asd/ServiceSpecifications" transient="true" unsettable="true"
-          eOpposite="#//asd/ServiceSpecifications/analogueWiringParameters"/>
+          eOpposite="#//asd/ServiceSpecifications/AnalogueWiringParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAnalogueWiringParametersRef"
           ordered="false" upperBound="-1" eType="#//asd/AnalogueWiringParametersRef"
           transient="true" unsettable="true" eOpposite="#//asd/AnalogueWiringParametersRef/RefersToAnalogueWiringParameters"/>
@@ -3782,9 +3782,9 @@
           eType="#//asd/ControlRef" transient="true" unsettable="true" eOpposite="#//asd/ControlRef/AnalogueWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentControllingLNode"
           ordered="false" eType="#//asd/ControllingLNode" transient="true" unsettable="true"
-          eOpposite="#//asd/ControllingLNode/analogueWiringParametersRef"/>
+          eOpposite="#//asd/ControllingLNode/AnalogueWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSourceRef" ordered="false"
-          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/analogueWiringParametersRef"/>
+          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/AnalogueWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnalogueWiringParameters"
           ordered="false" eType="#//asd/AnalogueWiringParameters" transient="true"
           unsettable="true" eOpposite="#//asd/AnalogueWiringParameters/ReferredByAnalogueWiringParametersRef"/>
@@ -3796,7 +3796,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-90-30"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sclFileReference" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SclFileReference" ordered="false"
           eType="#//SclFileReference" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//SclFileReference/ParentApplicationSclRef">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -3806,7 +3806,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
-          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/applicationSclRef"/>
+          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/ApplicationSclRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AsdObject" abstract="true">
       <eOperations name="buildExplicitLinks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -3828,7 +3828,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base element for 6-100 extension"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Text" eType="#//Text"
           containment="true" resolveProxies="false">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
@@ -3873,7 +3873,7 @@
         <details key="name" value="BehaviorDescription"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inputVar" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="InputVar" ordered="false"
           upperBound="-1" eType="#//asd/InputVar" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/InputVar/ParentBehaviorDescription">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3885,7 +3885,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outputVar" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="OutputVar" ordered="false"
           upperBound="-1" eType="#//asd/OutputVar" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/OutputVar/ParentBehaviorDescription">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -3897,7 +3897,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorReference" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BehaviorReference" ordered="false"
           upperBound="-1" eType="#//asd/BehaviorReference" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/BehaviorReference/ParentBehaviorDescription">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4032,7 +4032,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRoleContent"
           ordered="false" eType="#//asd/FunctionRoleContent" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionRoleContent/behaviorDescriptionRef"/>
+          eOpposite="#//asd/FunctionRoleContent/BehaviorDescriptionRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToBehaviorDescription"
           ordered="false" eType="#//asd/BehaviorDescription" transient="true" unsettable="true"
           eOpposite="#//asd/BehaviorDescription/ReferredByBehaviorDescriptionRef"/>
@@ -4064,7 +4064,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBehaviorDescription"
           ordered="false" eType="#//asd/BehaviorDescription" transient="true" unsettable="true"
-          eOpposite="#//asd/BehaviorDescription/behaviorReference"/>
+          eOpposite="#//asd/BehaviorDescription/BehaviorReference"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryWiringParameters" eSuperTypes="#//asd/WiringParameters">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4162,22 +4162,22 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServiceSpecifications"
           ordered="false" eType="#//asd/ServiceSpecifications" transient="true" unsettable="true"
-          eOpposite="#//asd/ServiceSpecifications/binaryWiringParameters"/>
+          eOpposite="#//asd/ServiceSpecifications/BinaryWiringParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByBinaryWiringParametersRef"
           ordered="false" upperBound="-1" eType="#//asd/BinaryWiringParametersRef"
           transient="true" unsettable="true" eOpposite="#//asd/BinaryWiringParametersRef/RefersToBinaryWiringParameters"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryWiringParametersRef" eSuperTypes="#//asd/ServiceParametersRef">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentControlRef" ordered="false"
-          eType="#//asd/ControlRef" transient="true" unsettable="true" eOpposite="#//asd/ControlRef/binaryWiringParametersRef"/>
+          eType="#//asd/ControlRef" transient="true" unsettable="true" eOpposite="#//asd/ControlRef/BinaryWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentControllingLNode"
           ordered="false" eType="#//asd/ControllingLNode" transient="true" unsettable="true"
-          eOpposite="#//asd/ControllingLNode/binaryWiringParametersRef"/>
+          eOpposite="#//asd/ControllingLNode/BinaryWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSourceRef" ordered="false"
-          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/binaryWiringParametersRef"/>
+          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/BinaryWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubscriberLNode"
           ordered="false" eType="#//asd/SubscriberLNode" transient="true" unsettable="true"
-          eOpposite="#//asd/SubscriberLNode/binaryWiringParametersRef"/>
+          eOpposite="#//asd/SubscriberLNode/BinaryWiringParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToBinaryWiringParameters"
           ordered="false" eType="#//asd/BinaryWiringParameters" transient="true" unsettable="true"
           eOpposite="#//asd/BinaryWiringParameters/ReferredByBinaryWiringParametersRef"/>
@@ -4193,7 +4193,7 @@
         <details key="name" value="CheckoutID"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subCheckoutID" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubCheckoutID" ordered="false"
           eType="#//asd/SubCheckoutID" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/SubCheckoutID/ParentCheckoutID">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4235,7 +4235,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-90-30"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="binaryWiringParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BinaryWiringParametersRef"
           ordered="false" upperBound="-1" eType="#//asd/BinaryWiringParametersRef"
           unsettable="true" containment="true" resolveProxies="false" eOpposite="#//asd/BinaryWiringParametersRef/ParentControlRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4326,7 +4326,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLNodeOutputs" ordered="false"
-          eType="#//asd/LNodeOutputs" transient="true" unsettable="true" eOpposite="#//asd/LNodeOutputs/controlRef"/>
+          eType="#//asd/LNodeOutputs" transient="true" unsettable="true" eOpposite="#//asd/LNodeOutputs/ControlRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLNodeOutputRef"
           ordered="false" upperBound="-1" eType="#//asd/LNodeOutputRef" transient="true"
           unsettable="true" eOpposite="#//asd/LNodeOutputRef/RefersToControlRef"/>
@@ -4388,7 +4388,7 @@
         <details key="name" value="CommServiceSpecifications"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="gooseParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="GooseParameters" ordered="false"
           upperBound="-1" eType="#//asd/GooseParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/GooseParameters/ParentCommServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4397,7 +4397,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sMVParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SMVParameters" ordered="false"
           upperBound="-1" eType="#//asd/SMVParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SMVParameters/ParentCommServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4406,7 +4406,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="reportParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ReportParameters" ordered="false"
           upperBound="-1" eType="#//asd/ReportParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ReportParameters/ParentCommServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4450,7 +4450,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-90-30"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="binaryWiringParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BinaryWiringParametersRef"
           ordered="false" eType="#//asd/BinaryWiringParametersRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/BinaryWiringParametersRef/ParentControllingLNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4462,7 +4462,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="analogueWiringParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AnalogueWiringParametersRef"
           ordered="false" eType="#//asd/AnalogueWiringParametersRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/AnalogueWiringParametersRef/ParentControllingLNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4512,11 +4512,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAS" ordered="false"
-          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/controllingLNode"/>
+          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/ControllingLNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/controllingLNode"/>
+          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/ControllingLNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/controllingLNode"/>
+          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/ControllingLNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToProcessResource"
           ordered="false" eType="#//asd/ProcessResource" transient="true" unsettable="true"
           eOpposite="#//asd/ProcessResource/ReferredByControllingLNode"/>
@@ -4531,7 +4531,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-90-30"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberLNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubscriberLNode" ordered="false"
           upperBound="-1" eType="#//asd/SubscriberLNode" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SubscriberLNode/ParentDAS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4540,7 +4540,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="controllingLNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ControllingLNode" ordered="false"
           upperBound="-1" eType="#//asd/ControllingLNode" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ControllingLNode/ParentDAS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4549,7 +4549,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="processEcho" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ProcessEcho" ordered="false"
           upperBound="-1" eType="#//asd/ProcessEcho" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ProcessEcho/ParentDAS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4558,7 +4558,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="logParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LogParametersRef" ordered="false"
           upperBound="-1" eType="#//asd/LogParametersRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/LogParametersRef/ParentDAS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4570,7 +4570,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="val" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Val" ordered="false"
           upperBound="-1" eType="#//Val" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//Val/ParentDas">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4579,7 +4579,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="labels" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Labels" ordered="false"
           upperBound="-1" eType="#//Labels" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//Labels/ParentDAS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4635,9 +4635,9 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/dAS"/>
+          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/DAS"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/dAS"/>
+          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/DAS"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
           eType="#//AnyLN" transient="true" unsettable="true" eOpposite="#//AnyLN/ReferredByDAS"/>
     </eClassifiers>
@@ -4652,7 +4652,7 @@
         <details key="name" value="DOS"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sDS" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SDS" ordered="false"
           upperBound="-1" eType="#//asd/SDS" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SDS/ParentDOS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4664,7 +4664,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="dAS" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="DAS" ordered="false"
           upperBound="-1" eType="#//asd/DAS" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/DAS/ParentDOS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4676,7 +4676,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberLNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubscriberLNode" ordered="false"
           upperBound="-1" eType="#//asd/SubscriberLNode" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SubscriberLNode/ParentDOS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4685,7 +4685,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="controllingLNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ControllingLNode" ordered="false"
           upperBound="-1" eType="#//asd/ControllingLNode" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ControllingLNode/ParentDOS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4694,7 +4694,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="processEcho" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ProcessEcho" ordered="false"
           upperBound="-1" eType="#//asd/ProcessEcho" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ProcessEcho/ParentDOS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -4703,7 +4703,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="logParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LogParametersRef" ordered="false"
           upperBound="-1" eType="#//asd/LogParametersRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/LogParametersRef/ParentDOS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4715,7 +4715,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="labels" eType="#//Labels"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Labels" eType="#//Labels"
           containment="true" resolveProxies="false" eOpposite="#//Labels/ParentDOS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
@@ -4762,7 +4762,7 @@
         <details key="name" value="FunctionCategory"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subCategory" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubCategory" ordered="false"
           upperBound="-1" eType="#//asd/SubCategory" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SubCategory/ParentFunctionCategory">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4774,7 +4774,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionCatRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionCatRef" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//asd/FunctionCatRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionCatRef/ParentFunctionCategory">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4843,7 +4843,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRoleContent"
           ordered="false" eType="#//asd/FunctionRoleContent" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionRoleContent/functionCategoryRef"/>
+          eOpposite="#//asd/FunctionRoleContent/FunctionCategoryRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToFunctionCategory"
           ordered="false" eType="#//asd/FunctionCategory" transient="true" unsettable="true"
           eOpposite="#//asd/FunctionCategory/ReferredByFunctionCategoryRef"/>
@@ -4872,7 +4872,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionCategory"
           ordered="false" eType="#//asd/FunctionCategory" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionCategory/functionCatRef"/>
+          eOpposite="#//asd/FunctionCategory/FunctionCatRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToFunction" ordered="false"
           eType="#//Function" transient="true" unsettable="true" resolveProxies="false"
           eOpposite="#//Function/ReferredByFunctionCatRef"/>
@@ -4884,7 +4884,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="signalRole" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SignalRole" ordered="false"
           upperBound="-1" eType="#//asd/SignalRole" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SignalRole/ParentFunctionRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -4916,10 +4916,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAllocationRole"
           ordered="false" eType="#//asd/AllocationRole" transient="true" unsettable="true"
-          eOpposite="#//asd/AllocationRole/functionRef"/>
+          eOpposite="#//asd/AllocationRole/FunctionRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRoleContent"
           ordered="false" eType="#//asd/FunctionRoleContent" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionRoleContent/functionRef"/>
+          eOpposite="#//asd/FunctionRoleContent/FunctionRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToFunction" ordered="false"
           eType="#//Function" transient="true" unsettable="true" resolveProxies="false"
           eOpposite="#//Function/ReferredByFunctionRef"/>
@@ -4931,7 +4931,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionRoleContent"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionRoleContent"
           ordered="false" upperBound="-1" eType="#//asd/FunctionRoleContent" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionRoleContent/ParentFunctionRole">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5009,7 +5009,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
-          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/functionRole"/>
+          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/FunctionRole"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionRoleContent" eSuperTypes="#//asd/BaseExtensionElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5018,7 +5018,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionRef" ordered="false"
           upperBound="-1" eType="#//asd/FunctionRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/FunctionRef/ParentFunctionRoleContent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5030,7 +5030,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescriptionRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BehaviorDescriptionRef"
           ordered="false" upperBound="-1" eType="#//asd/BehaviorDescriptionRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/BehaviorDescriptionRef/ParentFunctionRoleContent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5042,7 +5042,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="processResourceRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ProcessResourceRef" ordered="false"
           upperBound="-1" eType="#//asd/ProcessResourceRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ProcessResourceRef/ParentFunctionRoleContent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5054,7 +5054,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="variableRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="VariableRef" ordered="false"
           upperBound="-1" eType="#//asd/VariableRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/VariableRef/ParentFunctionRoleContent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5066,7 +5066,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionCategoryRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionCategoryRef"
           ordered="false" upperBound="-1" eType="#//asd/FunctionCategoryRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionCategoryRef/ParentFunctionRoleContent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5078,7 +5078,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="powerSystemRelationRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="PowerSystemRelationRef"
           ordered="false" upperBound="-1" eType="#//asd/PowerSystemRelationRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/PowerSystemRelationRef/ParentFunctionRoleContent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5101,7 +5101,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRole" ordered="false"
-          eType="#//asd/FunctionRole" transient="true" unsettable="true" eOpposite="#//asd/FunctionRole/functionRoleContent"/>
+          eType="#//asd/FunctionRole" transient="true" unsettable="true" eOpposite="#//asd/FunctionRole/FunctionRoleContent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionSclRef" eSuperTypes="#//asd/BaseExtensionElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5114,7 +5114,7 @@
         <details key="name" value="FunctionSclRef"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sclFileReference" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SclFileReference" ordered="false"
           eType="#//SclFileReference" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//SclFileReference/ParentFunctionSclRef">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5129,7 +5129,7 @@
         <details key="name" value="FunctionTemplate"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subFunctionTemplate"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubFunctionTemplate"
           ordered="false" upperBound="-1" eType="#//asd/SubFunctionTemplate" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/SubFunctionTemplate/ParentFunctionTemplate">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5138,7 +5138,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="generalEquipment" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
           upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//GeneralEquipment/ParentFunctionTemplate">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5147,7 +5147,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="conductingEquipment"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment"
           ordered="false" upperBound="-1" eType="#//ConductingEquipment" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//ConductingEquipment/ParentFunctionTemplate">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5172,7 +5172,7 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAbstractFunctionalVariant"
           ordered="false" eType="#//asd/AbstractFunctionalVariant" transient="true"
-          unsettable="true" eOpposite="#//asd/AbstractFunctionalVariant/functionalSubVariant"/>
+          unsettable="true" eOpposite="#//asd/AbstractFunctionalVariant/FunctionalSubVariant"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionalVariant" eSuperTypes="#//asd/AbstractFunctionalVariant">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5182,10 +5182,10 @@
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
-          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/functionalVariant"/>
+          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/FunctionalVariant"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionalVariantGroup"
           ordered="false" eType="#//asd/FunctionalVariantGroup" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionalVariantGroup/functionalVariant"/>
+          eOpposite="#//asd/FunctionalVariantGroup/FunctionalVariant"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFunctionalVariantRef"
           ordered="false" upperBound="-1" eType="#//asd/FunctionalVariantRef" transient="true"
           unsettable="true" eOpposite="#//asd/FunctionalVariantRef/RefersToFunctionalVariant"/>
@@ -5197,7 +5197,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionalVariant" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionalVariant" ordered="false"
           upperBound="-1" eType="#//asd/FunctionalVariant" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/FunctionalVariant/ParentFunctionalVariantGroup">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5238,7 +5238,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
-          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/functionalVariantGroup"/>
+          eType="#//asd/Application" transient="true" unsettable="true" eOpposite="#//asd/Application/FunctionalVariantGroup"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FunctionalVariantRef" eSuperTypes="#//asd/BaseExtensionElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5278,7 +5278,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionalVariantRefContainer"
           ordered="false" eType="#//asd/FunctionalVariantRefContainer" transient="true"
-          unsettable="true" eOpposite="#//asd/FunctionalVariantRefContainer/functionalVariantRef"/>
+          unsettable="true" eOpposite="#//asd/FunctionalVariantRefContainer/FunctionalVariantRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToFunctionalVariant"
           ordered="false" eType="#//asd/FunctionalVariant" transient="true" unsettable="true"
           eOpposite="#//asd/FunctionalVariant/ReferredByFunctionalVariantRef"/>
@@ -5291,7 +5291,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-7-6"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="functionalVariantRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FunctionalVariantRef"
           ordered="false" upperBound="-1" eType="#//asd/FunctionalVariantRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/FunctionalVariantRef/ParentFunctionalVariantRefContainer">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5311,7 +5311,7 @@
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-90-30"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="l2CommParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="L2CommParameters" ordered="false"
           eType="#//asd/L2CommParameters" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/L2CommParameters/ParentGooseParameters">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5320,7 +5320,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="l3IPv4CommParameters"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="L3IPv4CommParameters"
           ordered="false" eType="#//asd/L3IPv4CommParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/L3IPv4CommParameters/ParentGooseParameters">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5329,7 +5329,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="l3IPv6CommParameters"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="L3IPv6CommParameters"
           ordered="false" eType="#//asd/L3IPv6CommParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/L3IPv6CommParameters/ParentGooseParameters">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -5377,10 +5377,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentCommServiceSpecifications"
           ordered="false" eType="#//asd/CommServiceSpecifications" transient="true"
-          unsettable="true" eOpposite="#//asd/CommServiceSpecifications/gooseParameters"/>
+          unsettable="true" eOpposite="#//asd/CommServiceSpecifications/GooseParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServiceSpecifications"
           ordered="false" eType="#//asd/ServiceSpecifications" transient="true" unsettable="true"
-          eOpposite="#//asd/ServiceSpecifications/gooseParameters"/>
+          eOpposite="#//asd/ServiceSpecifications/GooseParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByGooseParametersRef"
           ordered="false" eType="#//asd/GooseParametersRef" transient="true" unsettable="true"
           eOpposite="#//asd/GooseParametersRef/RefersToGooseParameters"/>
@@ -5388,9 +5388,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="GooseParametersRef" eSuperTypes="#//asd/ServiceParametersRef">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubscriberLNode"
           ordered="false" eType="#//asd/SubscriberLNode" transient="true" unsettable="true"
-          eOpposite="#//asd/SubscriberLNode/gooseParametersRef"/>
+          eOpposite="#//asd/SubscriberLNode/GooseParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSourceRef" ordered="false"
-          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/gooseParametersRef"/>
+          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/GooseParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToGooseParameters"
           ordered="false" eType="#//asd/GooseParameters" transient="true" unsettable="true"
           eOpposite="#//asd/GooseParameters/ReferredByGooseParametersRef"/>
@@ -5424,7 +5424,7 @@
           eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/ReferredByInputVar"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBehaviorDescription"
           ordered="false" eType="#//asd/BehaviorDescription" transient="true" unsettable="true"
-          eOpposite="#//asd/BehaviorDescription/inputVar"/>
+          eOpposite="#//asd/BehaviorDescription/InputVar"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InputVarRef" eSuperTypes="#//asd/VariableRef">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBehaviorDescriptionRef"
@@ -5449,10 +5449,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGooseParameters"
           ordered="false" eType="#//asd/GooseParameters" transient="true" unsettable="true"
-          eOpposite="#//asd/GooseParameters/l2CommParameters"/>
+          eOpposite="#//asd/GooseParameters/L2CommParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSMVParameters"
           ordered="false" eType="#//asd/SMVParameters" transient="true" unsettable="true"
-          eOpposite="#//asd/SMVParameters/l2CommParameters"/>
+          eOpposite="#//asd/SMVParameters/L2CommParameters"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="L3IPv4CommParameters" eSuperTypes="#//asd/CommParameters">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5481,10 +5481,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGooseParameters"
           ordered="false" eType="#//asd/GooseParameters" transient="true" unsettable="true"
-          eOpposite="#//asd/GooseParameters/l3IPv4CommParameters"/>
+          eOpposite="#//asd/GooseParameters/L3IPv4CommParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSMVParameters"
           ordered="false" eType="#//asd/SMVParameters" transient="true" unsettable="true"
-          eOpposite="#//asd/SMVParameters/l3IPv4CommParameters"/>
+          eOpposite="#//asd/SMVParameters/L3IPv4CommParameters"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="L3IPv6CommParameters" eSuperTypes="#//asd/CommParameters">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5513,10 +5513,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentGooseParameters"
           ordered="false" eType="#//asd/GooseParameters" transient="true" unsettable="true"
-          eOpposite="#//asd/GooseParameters/l3IPv6CommParameters"/>
+          eOpposite="#//asd/GooseParameters/L3IPv6CommParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSMVParameters"
           ordered="false" eType="#//asd/SMVParameters" transient="true" unsettable="true"
-          eOpposite="#//asd/SMVParameters/l3IPv6CommParameters"/>
+          eOpposite="#//asd/SMVParameters/L3IPv6CommParameters"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LinkFCDARef" abstract="true" eSuperTypes="#//asd/LinkFCDRef">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5686,7 +5686,7 @@
         <details key="name" value="LNodeInputs"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SourceRef" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//asd/SourceRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/SourceRef/ParentLNodeInputs">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5740,7 +5740,7 @@
         <details key="name" value="LNodeOutputs"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="controlRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ControlRef" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//asd/ControlRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/ControlRef/ParentLNodeOutputs">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -5885,7 +5885,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServiceSpecifications"
           ordered="false" eType="#//asd/ServiceSpecifications" transient="true" unsettable="true"
-          eOpposite="#//asd/ServiceSpecifications/logParameters"/>
+          eOpposite="#//asd/ServiceSpecifications/LogParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLogParametersRef"
           ordered="false" upperBound="-1" eType="#//asd/LogParametersRef" transient="true"
           unsettable="true" eOpposite="#//asd/LogParametersRef/RefersToLogParameters"/>
@@ -5895,11 +5895,11 @@
           ordered="false" eType="#//asd/LogParameters" transient="true" unsettable="true"
           eOpposite="#//asd/LogParameters/ReferredByLogParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAS" ordered="false"
-          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/logParametersRef"/>
+          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/LogParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/logParametersRef"/>
+          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/LogParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/logParametersRef"/>
+          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/LogParametersRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LogicVarRef" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6003,7 +6003,7 @@
           eType="#//asd/ControlRef" transient="true" unsettable="true" eOpposite="#//asd/ControlRef/ReferredByOutputVar"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBehaviorDescription"
           ordered="false" eType="#//asd/BehaviorDescription" transient="true" unsettable="true"
-          eOpposite="#//asd/BehaviorDescription/outputVar"/>
+          eOpposite="#//asd/BehaviorDescription/OutputVar"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OutputVarRef" eSuperTypes="#//asd/VariableRef">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBehaviorDescriptionRef"
@@ -6078,7 +6078,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentPowerSystemRelation"
           ordered="false" eType="#//asd/PowerSystemRelations" transient="true" unsettable="true"
-          eOpposite="#//asd/PowerSystemRelations/powerSystemRelation"/>
+          eOpposite="#//asd/PowerSystemRelations/PowerSystemRelation"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByPowerSystemRelationRef"
           ordered="false" upperBound="-1" eType="#//asd/PowerSystemRelationRef" transient="true"
           unsettable="true" eOpposite="#//asd/PowerSystemRelationRef/RefersToPowerSystemRelation"/>
@@ -6116,7 +6116,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRoleContent"
           ordered="false" eType="#//asd/FunctionRoleContent" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionRoleContent/powerSystemRelationRef"/>
+          eOpposite="#//asd/FunctionRoleContent/PowerSystemRelationRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToPowerSystemRelation"
           ordered="false" eType="#//asd/PowerSystemRelation" transient="true" unsettable="true"
           eOpposite="#//asd/PowerSystemRelation/ReferredByPowerSystemRelationRef"/>
@@ -6132,7 +6132,7 @@
         <details key="name" value="PowerSystemRelations"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="powerSystemRelation"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="PowerSystemRelation"
           ordered="false" lowerBound="1" upperBound="-1" eType="#//asd/PowerSystemRelation"
           unsettable="true" containment="true" resolveProxies="false" eOpposite="#//asd/PowerSystemRelation/ParentPowerSystemRelation">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6190,11 +6190,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAS" ordered="false"
-          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/processEcho"/>
+          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/ProcessEcho"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/processEcho"/>
+          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/ProcessEcho"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/processEcho"/>
+          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/ProcessEcho"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLNode" ordered="false"
           eType="#//LNode" transient="true" unsettable="true" eOpposite="#//LNode/ReferredByProcessEcho"/>
     </eClassifiers>
@@ -6209,7 +6209,7 @@
         <details key="name" value="tProcessResource"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resource" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Resource" ordered="false"
           upperBound="-1" eType="#//asd/Resource" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/Resource/ParentProcessResource">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6279,7 +6279,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentProcessResources"
           ordered="false" eType="#//asd/ProcessResources" transient="true" unsettable="true"
-          eOpposite="#//asd/ProcessResources/processResource"/>
+          eOpposite="#//asd/ProcessResources/ProcessResource"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByProcessResourceRef"
           ordered="false" upperBound="-1" eType="#//asd/ProcessResourceRef" transient="true"
           unsettable="true" eOpposite="#//asd/ProcessResourceRef/RefersToProcessResource"/>
@@ -6328,7 +6328,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRoleContent"
           ordered="false" eType="#//asd/FunctionRoleContent" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionRoleContent/processResourceRef"/>
+          eOpposite="#//asd/FunctionRoleContent/ProcessResourceRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToProcessResource"
           eType="#//asd/ProcessResource" transient="true" eOpposite="#//asd/ProcessResource/ReferredByProcessResourceRef"/>
     </eClassifiers>
@@ -6343,7 +6343,7 @@
         <details key="name" value="ProcessResources"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="processResource" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ProcessResource" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//asd/ProcessResource" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/ProcessResource/ParentProcessResources">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6364,7 +6364,7 @@
         <details key="name" value="Project"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="projectProcessReference"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ProjectProcessReference"
           ordered="false" upperBound="-1" eType="#//asd/ProjectProcessReference" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/ProjectProcessReference/ParentProject">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6426,7 +6426,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentProject" ordered="false"
-          eType="#//asd/Project" transient="true" unsettable="true" eOpposite="#//asd/Project/projectProcessReference"/>
+          eType="#//asd/Project" transient="true" unsettable="true" eOpposite="#//asd/Project/ProjectProcessReference"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReportParameters" eSuperTypes="#//asd/ControlBlockParameters">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6471,10 +6471,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentCommServiceSpecifications"
           ordered="false" eType="#//asd/CommServiceSpecifications" transient="true"
-          unsettable="true" eOpposite="#//asd/CommServiceSpecifications/reportParameters"/>
+          unsettable="true" eOpposite="#//asd/CommServiceSpecifications/ReportParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServiceSpecifications"
           ordered="false" eType="#//asd/ServiceSpecifications" transient="true" unsettable="true"
-          eOpposite="#//asd/ServiceSpecifications/reportParameters"/>
+          eOpposite="#//asd/ServiceSpecifications/ReportParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByReportParametersRef"
           ordered="false" upperBound="-1" eType="#//asd/ReportParametersRef" transient="true"
           unsettable="true" eOpposite="#//asd/ReportParametersRef/RefersToReportParameters"/>
@@ -6484,10 +6484,10 @@
           ordered="false" eType="#//asd/ReportParameters" transient="true" unsettable="true"
           eOpposite="#//asd/ReportParameters/ReferredByReportParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSourceRef" ordered="false"
-          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/reportParametersRef"/>
+          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/ReportParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubscriberLNode"
           ordered="false" eType="#//asd/SubscriberLNode" transient="true" unsettable="true"
-          eOpposite="#//asd/SubscriberLNode/reportParametersRef"/>
+          eOpposite="#//asd/SubscriberLNode/ReportParametersRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//asd/AsdObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6536,7 +6536,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentProcessResource"
           ordered="false" eType="#//asd/ProcessResource" transient="true" unsettable="true"
-          eOpposite="#//asd/ProcessResource/resource"/>
+          eOpposite="#//asd/ProcessResource/Resource"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SDS" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6549,7 +6549,7 @@
         <details key="name" value="tSDS"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sDS" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SDS" ordered="false"
           upperBound="-1" eType="#//asd/SDS" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SDS/ParentSDS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6561,7 +6561,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="dAS" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="DAS" ordered="false"
           upperBound="-1" eType="#//asd/DAS" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/DAS/ParentSDS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6573,7 +6573,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberLNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubscriberLNode" ordered="false"
           upperBound="-1" eType="#//asd/SubscriberLNode" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SubscriberLNode/ParentSDS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6582,7 +6582,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="controllingLNode" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ControllingLNode" ordered="false"
           upperBound="-1" eType="#//asd/ControllingLNode" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ControllingLNode/ParentSDS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6591,7 +6591,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="processEcho" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ProcessEcho" ordered="false"
           upperBound="-1" eType="#//asd/ProcessEcho" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ProcessEcho/ParentSDS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6600,7 +6600,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="logParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LogParametersRef" ordered="false"
           upperBound="-1" eType="#//asd/LogParametersRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/LogParametersRef/ParentSDS">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6612,7 +6612,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="labels" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Labels" ordered="false"
           eType="#//Labels" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//Labels/ParentSDS">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6654,9 +6654,9 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/sDS"/>
+          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/SDS"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/sDS"/>
+          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/SDS"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
           eType="#//AnyLN" transient="true" unsettable="true" eOpposite="#//AnyLN/ReferredBySDS"/>
     </eClassifiers>
@@ -6714,7 +6714,7 @@
         <details key="name" value="ServiceSpecifications"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="gooseParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="GooseParameters" ordered="false"
           upperBound="-1" eType="#//asd/GooseParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/GooseParameters/ParentServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6723,7 +6723,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sMVParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SMVParameters" ordered="false"
           upperBound="-1" eType="#//asd/SMVParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/SMVParameters/ParentServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6732,7 +6732,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="reportParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ReportParameters" ordered="false"
           upperBound="-1" eType="#//asd/ReportParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ReportParameters/ParentServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6741,7 +6741,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="binaryWiringParameters"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BinaryWiringParameters"
           ordered="false" upperBound="-1" eType="#//asd/BinaryWiringParameters" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/BinaryWiringParameters/ParentServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6750,7 +6750,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="analogueWiringParameters"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AnalogueWiringParameters"
           ordered="false" upperBound="-1" eType="#//asd/AnalogueWiringParameters"
           unsettable="true" containment="true" resolveProxies="false" eOpposite="#//asd/AnalogueWiringParameters/ParentServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6759,7 +6759,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="logParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="LogParameters" ordered="false"
           upperBound="-1" eType="#//asd/LogParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/LogParameters/ParentServiceSpecifications">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -6825,7 +6825,7 @@
         <details key="name" value="tSourceRef"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="gooseParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="GooseParametersRef" ordered="false"
           eType="#//asd/GooseParametersRef" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/GooseParametersRef/ParentSourceRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6837,7 +6837,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sMVParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SMVParametersRef" ordered="false"
           eType="#//asd/SMVParametersRef" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/SMVParametersRef/ParentSourceRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6849,7 +6849,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="reportParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ReportParametersRef"
           ordered="false" eType="#//asd/ReportParametersRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ReportParametersRef/ParentSourceRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6861,7 +6861,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="binaryWiringParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BinaryWiringParametersRef"
           ordered="false" eType="#//asd/BinaryWiringParametersRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/BinaryWiringParametersRef/ParentSourceRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6873,7 +6873,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="analogueWiringParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="AnalogueWiringParametersRef"
           ordered="false" eType="#//asd/AnalogueWiringParametersRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/AnalogueWiringParametersRef/ParentSourceRef">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -6970,7 +6970,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLNodeInputs" ordered="false"
-          eType="#//asd/LNodeInputs" transient="true" unsettable="true" eOpposite="#//asd/LNodeInputs/sourceRef"/>
+          eType="#//asd/LNodeInputs" transient="true" unsettable="true" eOpposite="#//asd/LNodeInputs/SourceRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByInputVar" ordered="false"
           upperBound="-1" eType="#//asd/InputVar" transient="true" unsettable="true"
           eOpposite="#//asd/InputVar/RefersToSourceRef"/>
@@ -6991,18 +6991,18 @@
     <eClassifiers xsi:type="ecore:EClass" name="SubCategory" eSuperTypes="#//asd/FunctionCategory">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionCategory"
           ordered="false" eType="#//asd/FunctionCategory" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionCategory/subCategory"/>
+          eOpposite="#//asd/FunctionCategory/SubCategory"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SubCheckoutID" eSuperTypes="#//asd/CheckoutID">
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentCheckoutID" ordered="false"
-          eType="#//asd/CheckoutID" transient="true" unsettable="true" eOpposite="#//asd/CheckoutID/subCheckoutID"/>
+          eType="#//asd/CheckoutID" transient="true" unsettable="true" eOpposite="#//asd/CheckoutID/SubCheckoutID"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SubFunctionTemplate" eSuperTypes="#//asd/Abstract6100LNodeContainer">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="tSubFunctionTemplate"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="generalEquipment" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
           upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//GeneralEquipment/ParentSubFunctionTemplate">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7011,7 +7011,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="conductingEquipment"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment"
           ordered="false" upperBound="-1" eType="#//ConductingEquipment" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//ConductingEquipment/ParentSubFunctionTemplate">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7020,7 +7020,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subFunctionTemplate"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SubFunctionTemplate"
           ordered="false" upperBound="-1" eType="#//asd/SubFunctionTemplate" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/SubFunctionTemplate/ParentSubFunctionTemplate">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7037,10 +7037,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionTemplate"
           ordered="false" eType="#//asd/FunctionTemplate" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionTemplate/subFunctionTemplate"/>
+          eOpposite="#//asd/FunctionTemplate/SubFunctionTemplate"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubFunctionTemplate"
           ordered="false" eType="#//asd/SubFunctionTemplate" transient="true" unsettable="true"
-          eOpposite="#//asd/SubFunctionTemplate/subFunctionTemplate"/>
+          eOpposite="#//asd/SubFunctionTemplate/SubFunctionTemplate"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SMVParameters" eSuperTypes="#//asd/ControlBlockParameters">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7053,7 +7053,7 @@
         <details key="name" value="tSMVParameters"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="l2CommParameters" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="L2CommParameters" ordered="false"
           eType="#//asd/L2CommParameters" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/L2CommParameters/ParentSMVParameters">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7062,7 +7062,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="l3IPv4CommParameters"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="L3IPv4CommParameters"
           ordered="false" eType="#//asd/L3IPv4CommParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/L3IPv4CommParameters/ParentSMVParameters">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7071,7 +7071,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="l3IPv6CommParameters"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="L3IPv6CommParameters"
           ordered="false" eType="#//asd/L3IPv6CommParameters" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/L3IPv6CommParameters/ParentSMVParameters">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7141,10 +7141,10 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentCommServiceSpecifications"
           ordered="false" eType="#//asd/CommServiceSpecifications" transient="true"
-          unsettable="true" eOpposite="#//asd/CommServiceSpecifications/sMVParameters"/>
+          unsettable="true" eOpposite="#//asd/CommServiceSpecifications/SMVParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServiceSpecifications"
           ordered="false" eType="#//asd/ServiceSpecifications" transient="true" unsettable="true"
-          eOpposite="#//asd/ServiceSpecifications/sMVParameters"/>
+          eOpposite="#//asd/ServiceSpecifications/SMVParameters"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySMVParametersRef"
           ordered="false" eType="#//asd/SMVParametersRef" transient="true" unsettable="true"
           eOpposite="#//asd/SMVParametersRef/RefersToSMVParameters"/>
@@ -7154,10 +7154,10 @@
           ordered="false" eType="#//asd/SMVParameters" transient="true" unsettable="true"
           eOpposite="#//asd/SMVParameters/ReferredBySMVParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSourceRef" ordered="false"
-          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/sMVParametersRef"/>
+          eType="#//asd/SourceRef" transient="true" unsettable="true" eOpposite="#//asd/SourceRef/SMVParametersRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSubscriberLNode"
           ordered="false" eType="#//asd/SubscriberLNode" transient="true" unsettable="true"
-          eOpposite="#//asd/SubscriberLNode/sMVParametersRef"/>
+          eOpposite="#//asd/SubscriberLNode/SMVParametersRef"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SubscriberLNode" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7170,7 +7170,7 @@
         <details key="name" value="tSubscriberLNode"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="gooseParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="GooseParametersRef" ordered="false"
           upperBound="-1" eType="#//asd/GooseParametersRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/GooseParametersRef/ParentSubscriberLNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7182,7 +7182,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sMVParametersRef" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="SMVParametersRef" ordered="false"
           eType="#//asd/SMVParametersRef" unsettable="true" containment="true" resolveProxies="false"
           eOpposite="#//asd/SMVParametersRef/ParentSubscriberLNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7194,7 +7194,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="reportParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ReportParametersRef"
           ordered="false" eType="#//asd/ReportParametersRef" unsettable="true" containment="true"
           resolveProxies="false" eOpposite="#//asd/ReportParametersRef/ParentSubscriberLNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7206,7 +7206,7 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="binaryWiringParametersRef"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BinaryWiringParametersRef"
           ordered="false" eType="#//asd/BinaryWiringParametersRef" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/BinaryWiringParametersRef/ParentSubscriberLNode">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7266,11 +7266,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAS" ordered="false"
-          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/subscriberLNode"/>
+          eType="#//asd/DAS" transient="true" unsettable="true" eOpposite="#//asd/DAS/SubscriberLNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOS" ordered="false"
-          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/subscriberLNode"/>
+          eType="#//asd/DOS" transient="true" unsettable="true" eOpposite="#//asd/DOS/SubscriberLNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDS" ordered="false"
-          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/subscriberLNode"/>
+          eType="#//asd/SDS" transient="true" unsettable="true" eOpposite="#//asd/SDS/SubscriberLNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToProcessResource"
           ordered="false" eType="#//asd/ProcessResource" transient="true" unsettable="true"
           eOpposite="#//asd/ProcessResource/ReferredBySubscriberLNode"/>
@@ -7289,7 +7289,7 @@
         <details key="name" value="Variable"/>
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="variableApplyTo" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="VariableApplyTo" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//asd/VariableApplyTo" unsettable="true"
           containment="true" resolveProxies="false" eOpposite="#//asd/VariableApplyTo/ParentVariable">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -7424,7 +7424,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentVariable" ordered="false"
-          eType="#//asd/Variable" transient="true" unsettable="true" eOpposite="#//asd/Variable/variableApplyTo"/>
+          eType="#//asd/Variable" transient="true" unsettable="true" eOpposite="#//asd/Variable/VariableApplyTo"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VariableRef" eSuperTypes="#//asd/FunctionalVariantRefContainer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -7458,10 +7458,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAbstractFunctionalVariant"
           ordered="false" eType="#//asd/AbstractFunctionalVariant" transient="true"
-          unsettable="true" eOpposite="#//asd/AbstractFunctionalVariant/variableRef"/>
+          unsettable="true" eOpposite="#//asd/AbstractFunctionalVariant/VariableRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRoleContent"
           ordered="false" eType="#//asd/FunctionRoleContent" transient="true" unsettable="true"
-          eOpposite="#//asd/FunctionRoleContent/variableRef"/>
+          eOpposite="#//asd/FunctionRoleContent/VariableRef"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToVariable" ordered="false"
           eType="#//asd/Variable" transient="true" unsettable="true" eOpposite="#//asd/Variable/ReferredByVariableRef"/>
     </eClassifiers>
