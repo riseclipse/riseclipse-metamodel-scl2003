@@ -42,6 +42,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
     private static final String XML_HANDLER_CATEGORY = "SCL/XMLHandler";
 
     private Stack< Integer > lineNumbers = new Stack< Integer >();
+    private AsdXMLHandler asdHandler;
     
     public SCLXMLHandler( XMLResource xmiResource, XMLHelper helper, Map< ?, ? > options ) {
         super( xmiResource, helper, options );
