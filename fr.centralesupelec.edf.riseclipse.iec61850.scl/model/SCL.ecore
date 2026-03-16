@@ -2782,6 +2782,8 @@
         eOpposite="#//asd/ApplicationSclRef/SclFileReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionSclRef" ordered="false"
         eType="#//asd/FunctionSclRef" transient="true" unsettable="true" eOpposite="#//asd/FunctionSclRef/SclFileReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentIEDSourceFiles" ordered="false"
+        eType="#//IEDSourceFiles" transient="true" unsettable="true" eOpposite="#//IEDSourceFiles/SclFileReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Security" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ACSEAuthentication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -3358,7 +3360,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IEDSourceFiles" eSuperTypes="#//BaseElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="SclFileReference" ordered="false"
-        upperBound="-1" eType="#//SclFileReference" unsettable="true" containment="true"/>
+        upperBound="-1" eType="#//SclFileReference" unsettable="true" containment="true"
+        eOpposite="#//SclFileReference/ParentIEDSourceFiles"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentIED" ordered="false"
         eType="#//IED" transient="true" unsettable="true" eOpposite="#//IED/IEDSourceFiles"/>
   </eClassifiers>
