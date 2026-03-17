@@ -101,7 +101,7 @@ public interface ProjectProcessReference extends BaseExtensionElementWithDesc {
      * @see #setParentProject(Project)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProjectProcessReference_ParentProject()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Project#getProjectProcessReference
-     * @model opposite="projectProcessReference" unsettable="true" ordered="false"
+     * @model opposite="ProjectProcessReference" unsettable="true" ordered="false"
      * @generated
      */
     Project getParentProject();

@@ -592,7 +592,7 @@ public interface LNode extends UnNaming, AgUuid {
      * @see #setParentAbstract6100LNodeContainer(Abstract6100LNodeContainer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ParentAbstract6100LNodeContainer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getLNode
-     * @model opposite="lNode" unsettable="true" ordered="false"
+     * @model opposite="LNode" unsettable="true" ordered="false"
      * @generated
      */
     Abstract6100LNodeContainer getParentAbstract6100LNodeContainer();

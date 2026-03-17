@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
@@ -47,7 +47,7 @@ public interface GooseParametersRef extends ServiceParametersRef {
      * @see #setParentSubscriberLNode(SubscriberLNode)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getGooseParametersRef_ParentSubscriberLNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubscriberLNode#getGooseParametersRef
-     * @model opposite="gooseParametersRef" unsettable="true" ordered="false"
+     * @model opposite="GooseParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SubscriberLNode getParentSubscriberLNode();
@@ -71,7 +71,7 @@ public interface GooseParametersRef extends ServiceParametersRef {
      * @see #setParentSourceRef(SourceRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getGooseParametersRef_ParentSourceRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getGooseParametersRef
-     * @model opposite="gooseParametersRef" unsettable="true" ordered="false"
+     * @model opposite="GooseParametersRef" unsettable="true" ordered="false"
      * @generated
      */
     SourceRef getParentSourceRef();

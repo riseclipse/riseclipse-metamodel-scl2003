@@ -428,7 +428,7 @@ public class ClientServicesItemProvider
             childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_TimeSyncProt() );
             childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_McSecurity() );
             childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_GOOSEMcSecurity() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_SMVcSecurity() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_SVMcSecurity() );
             childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_Security() );
         }
         return childrenFeatures;
@@ -501,7 +501,7 @@ public class ClientServicesItemProvider
         case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
         case SclPackage.CLIENT_SERVICES__SECURITY:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
@@ -527,7 +527,7 @@ public class ClientServicesItemProvider
                 SclFactory.eINSTANCE.createMcSecurity() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_McSecurity(),
-                SclFactory.eINSTANCE.createSMVcSecurity() ) );
+                SclFactory.eINSTANCE.createSVMcSecurity() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_McSecurity(),
                 SclFactory.eINSTANCE.createGOOSEMcSecurity() ) );
@@ -535,8 +535,8 @@ public class ClientServicesItemProvider
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_GOOSEMcSecurity(),
                 SclFactory.eINSTANCE.createGOOSEMcSecurity() ) );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_SMVcSecurity(),
-                SclFactory.eINSTANCE.createSMVcSecurity() ) );
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_SVMcSecurity(),
+                SclFactory.eINSTANCE.createSVMcSecurity() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_Security(),
                 SclFactory.eINSTANCE.createSecurity() ) );
@@ -554,7 +554,7 @@ public class ClientServicesItemProvider
         Object childObject = child;
 
         boolean qualify = childFeature == SclPackage.eINSTANCE.getClientServices_McSecurity() ||
-                childFeature == SclPackage.eINSTANCE.getClientServices_SMVcSecurity() ||
+                childFeature == SclPackage.eINSTANCE.getClientServices_SVMcSecurity() ||
                 childFeature == SclPackage.eINSTANCE.getClientServices_GOOSEMcSecurity();
 
         if( qualify ) {

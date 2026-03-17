@@ -56,7 +56,7 @@ public interface LNodeInputs extends BaseExtensionElementWithDesc {
      * @see #unsetSourceRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLNodeInputs_SourceRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getParentLNodeInputs
-     * @model opposite="ParentLNodeInputs" containment="true" unsettable="true" required="true" ordered="false"
+     * @model opposite="ParentLNodeInputs" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='SourceRef' namespace='##targetNamespace'"
      * @generated
      */

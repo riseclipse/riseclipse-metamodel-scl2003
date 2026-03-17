@@ -102,7 +102,7 @@ public interface ProcessResourceRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getProcessResourceRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getProcessResourceRef
-     * @model opposite="processResourceRef" unsettable="true" ordered="false"
+     * @model opposite="ProcessResourceRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

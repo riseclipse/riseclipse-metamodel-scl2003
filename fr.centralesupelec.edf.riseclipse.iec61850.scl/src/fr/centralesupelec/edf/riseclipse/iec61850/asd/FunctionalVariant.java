@@ -53,7 +53,7 @@ public interface FunctionalVariant extends AbstractFunctionalVariant {
      * @see #setParentApplication(Application)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionalVariant_ParentApplication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getFunctionalVariant
-     * @model opposite="functionalVariant" unsettable="true" ordered="false"
+     * @model opposite="FunctionalVariant" unsettable="true" ordered="false"
      * @generated
      */
     Application getParentApplication();
@@ -77,7 +77,7 @@ public interface FunctionalVariant extends AbstractFunctionalVariant {
      * @see #setParentFunctionalVariantGroup(FunctionalVariantGroup)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionalVariant_ParentFunctionalVariantGroup()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getFunctionalVariant
-     * @model opposite="functionalVariant" unsettable="true" ordered="false"
+     * @model opposite="FunctionalVariant" unsettable="true" ordered="false"
      * @generated
      */
     FunctionalVariantGroup getParentFunctionalVariantGroup();

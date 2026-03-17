@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -391,13 +391,13 @@ public interface SclFactory extends EFactory {
     SCSM createSCSM();
 
     /**
-     * Returns a new object of class '<em>SM Vc Security</em>'.
+     * Returns a new object of class '<em>SV Mc Security</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>SM Vc Security</em>'.
+     * @return a new object of class '<em>SV Mc Security</em>'.
      * @generated
      */
-    SMVcSecurity createSMVcSecurity();
+    SVMcSecurity createSVMcSecurity();
 
     /**
      * Returns a new object of class '<em>File Reference</em>'.
@@ -416,15 +416,6 @@ public interface SclFactory extends EFactory {
      * @generated
      */
     Security createSecurity();
-
-    /**
-     * Returns a new object of class '<em>Signal Role</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Signal Role</em>'.
-     * @generated
-     */
-    SignalRole createSignalRole();
 
     /**
      * Returns a new object of class '<em>Mc Security</em>'.

@@ -37,13 +37,12 @@ import org.eclipse.jdt.annotation.NonNull;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputs;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdUtilities;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -381,7 +380,7 @@ public class LNodeInputRefImpl extends FunctionalVariantRefContainerImpl impleme
             }
             if( newParentSignalRole != null ) {
                 msgs = ( ( InternalEObject ) newParentSignalRole ).eInverseAdd( this,
-                        SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF, SignalRole.class, msgs );
+                        AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF, SignalRole.class, msgs );
             }
             msgs = basicSetParentSignalRole( newParentSignalRole, msgs );
             if( msgs != null ) {
@@ -442,7 +441,7 @@ public class LNodeInputRefImpl extends FunctionalVariantRefContainerImpl impleme
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
         case AsdPackage.LNODE_INPUT_REF__PARENT_SIGNAL_ROLE:
-            return eInternalContainer().eInverseRemove( this, SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF, SignalRole.class,
+            return eInternalContainer().eInverseRemove( this, AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF, SignalRole.class,
                     msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );

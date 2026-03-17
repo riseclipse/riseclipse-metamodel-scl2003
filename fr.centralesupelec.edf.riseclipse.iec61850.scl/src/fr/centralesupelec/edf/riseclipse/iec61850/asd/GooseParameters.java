@@ -347,7 +347,7 @@ public interface GooseParameters extends ControlBlockParameters {
      * @see #setParentCommServiceSpecifications(CommServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getGooseParameters_ParentCommServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.CommServiceSpecifications#getGooseParameters
-     * @model opposite="gooseParameters" unsettable="true" ordered="false"
+     * @model opposite="GooseParameters" unsettable="true" ordered="false"
      * @generated
      */
     CommServiceSpecifications getParentCommServiceSpecifications();
@@ -371,7 +371,7 @@ public interface GooseParameters extends ControlBlockParameters {
      * @see #setParentServiceSpecifications(ServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getGooseParameters_ParentServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications#getGooseParameters
-     * @model opposite="gooseParameters" unsettable="true" ordered="false"
+     * @model opposite="GooseParameters" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSpecifications getParentServiceSpecifications();

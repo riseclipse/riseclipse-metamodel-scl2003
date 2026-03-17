@@ -83,7 +83,7 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      * @generated
      * @ordered
      */
-    protected EList< SDS > sDS;
+    protected EList< SDS > sds;
 
     /**
      * The cached value of the '{@link #getDAS() <em>DAS</em>}' containment reference list.
@@ -93,7 +93,7 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      * @generated
      * @ordered
      */
-    protected EList< DAS > dAS;
+    protected EList< DAS > das;
 
     /**
      * The cached value of the '{@link #getSubscriberLNode() <em>Subscriber LNode</em>}' containment reference list.
@@ -288,11 +288,11 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      */
     @Override
     public EList< SDS > getSDS() {
-        if( sDS == null ) {
-            sDS = new EObjectContainmentWithInverseEList.Unsettable< >( SDS.class, this, AsdPackage.SDS__SDS,
+        if( sds == null ) {
+            sds = new EObjectContainmentWithInverseEList.Unsettable< >( SDS.class, this, AsdPackage.SDS__SDS,
                     AsdPackage.SDS__PARENT_SDS );
         }
-        return sDS;
+        return sds;
     }
 
     /**
@@ -302,8 +302,8 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      */
     @Override
     public void unsetSDS() {
-        if( sDS != null ) {
-            ( ( InternalEList.Unsettable< ? > ) sDS ).unset();
+        if( sds != null ) {
+            ( ( InternalEList.Unsettable< ? > ) sds ).unset();
         }
     }
 
@@ -314,7 +314,7 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      */
     @Override
     public boolean isSetSDS() {
-        return sDS != null && ( ( InternalEList.Unsettable< ? > ) sDS ).isSet();
+        return sds != null && ( ( InternalEList.Unsettable< ? > ) sds ).isSet();
     }
 
     /**
@@ -324,11 +324,11 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      */
     @Override
     public EList< DAS > getDAS() {
-        if( dAS == null ) {
-            dAS = new EObjectContainmentWithInverseEList.Unsettable< >( DAS.class, this, AsdPackage.SDS__DAS,
+        if( das == null ) {
+            das = new EObjectContainmentWithInverseEList.Unsettable< >( DAS.class, this, AsdPackage.SDS__DAS,
                     AsdPackage.DAS__PARENT_SDS );
         }
-        return dAS;
+        return das;
     }
 
     /**
@@ -338,8 +338,8 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      */
     @Override
     public void unsetDAS() {
-        if( dAS != null ) {
-            ( ( InternalEList.Unsettable< ? > ) dAS ).unset();
+        if( das != null ) {
+            ( ( InternalEList.Unsettable< ? > ) das ).unset();
         }
     }
 
@@ -350,7 +350,7 @@ public class SDSImpl extends BaseExtensionElementWithDescImpl implements SDS {
      */
     @Override
     public boolean isSetDAS() {
-        return dAS != null && ( ( InternalEList.Unsettable< ? > ) dAS ).isSet();
+        return das != null && ( ( InternalEList.Unsettable< ? > ) das ).isSet();
     }
 
     /**

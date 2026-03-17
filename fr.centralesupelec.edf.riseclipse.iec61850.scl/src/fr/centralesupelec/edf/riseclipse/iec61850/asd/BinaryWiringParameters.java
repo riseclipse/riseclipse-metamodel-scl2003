@@ -462,7 +462,7 @@ public interface BinaryWiringParameters extends WiringParameters {
      * @see #setParentServiceSpecifications(ServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBinaryWiringParameters_ParentServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications#getBinaryWiringParameters
-     * @model opposite="binaryWiringParameters" unsettable="true" ordered="false"
+     * @model opposite="BinaryWiringParameters" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSpecifications getParentServiceSpecifications();

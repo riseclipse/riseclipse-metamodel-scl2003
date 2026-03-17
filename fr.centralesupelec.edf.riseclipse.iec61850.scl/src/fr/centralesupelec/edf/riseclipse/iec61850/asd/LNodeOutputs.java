@@ -56,7 +56,7 @@ public interface LNodeOutputs extends BaseExtensionElementWithDesc {
      * @see #unsetControlRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLNodeOutputs_ControlRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef#getParentLNodeOutputs
-     * @model opposite="ParentLNodeOutputs" containment="true" unsettable="true" required="true" ordered="false"
+     * @model opposite="ParentLNodeOutputs" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='ControlRef' namespace='##targetNamespace'"
      * @generated
      */

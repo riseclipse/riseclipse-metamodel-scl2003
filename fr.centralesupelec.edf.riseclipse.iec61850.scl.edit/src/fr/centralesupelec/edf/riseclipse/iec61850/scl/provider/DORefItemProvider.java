@@ -24,14 +24,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DORef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -40,7 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DORefItemProvider extends AgUuidItemProvider {
+public class DORefItemProvider extends BaseElementItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -62,10 +60,8 @@ public class DORefItemProvider extends AgUuidItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addLineNumberPropertyDescriptor( object );
-            addExplicitLinksBuiltPropertyDescriptor( object );
-            addFilenamePropertyDescriptor( object );
-            addXpathPropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addDescPropertyDescriptor( object );
             addDoNamePropertyDescriptor( object );
             addIedNamePropertyDescriptor( object );
@@ -81,63 +77,18 @@ public class DORefItemProvider extends AgUuidItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Line Number feature.
+     * This adds a property descriptor for the Uuid feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addLineNumberPropertyDescriptor( Object object ) {
+    protected void addUuidPropertyDescriptor( Object object ) {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclObject_lineNumber_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclObject_lineNumber_feature",
-                                "_UI_SclObject_type" ),
-                        SclPackage.eINSTANCE.getSclObject_LineNumber(),
-                        true,
-                        false,
-                        false,
-                        ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the Explicit Links Built feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addExplicitLinksBuiltPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_SclObject_explicitLinksBuilt_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclObject_explicitLinksBuilt_feature",
-                                "_UI_SclObject_type" ),
-                        SclPackage.eINSTANCE.getSclObject_ExplicitLinksBuilt(),
-                        true,
-                        false,
-                        false,
-                        ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-                        null,
-                        null ) );
-    }
-
-    /**
-     * This adds a property descriptor for the Filename feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addFilenamePropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add(
-                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                        getResourceLocator(),
-                        getString( "_UI_SclObject_filename_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclObject_filename_feature",
-                                "_UI_SclObject_type" ),
-                        SclPackage.eINSTANCE.getSclObject_Filename(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -147,20 +98,20 @@ public class DORefItemProvider extends AgUuidItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Xpath feature.
+     * This adds a property descriptor for the Template Uuid feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addXpathPropertyDescriptor( Object object ) {
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SclObject_xpath_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SclObject_xpath_feature",
-                                "_UI_SclObject_type" ),
-                        SclPackage.eINSTANCE.getSclObject_Xpath(),
-                        false,
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
                         false,
                         false,
                         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -381,39 +332,6 @@ public class DORefItemProvider extends AgUuidItemProvider {
     }
 
     /**
-     * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-     * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-     * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
-        if( childrenFeatures == null ) {
-            super.getChildrenFeatures( object );
-            childrenFeatures.add( SclPackage.eINSTANCE.getBaseElement_Private() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getBaseElement_Text() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getBaseElement_Any() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getBaseElement_AnyAttribute() );
-        }
-        return childrenFeatures;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EStructuralFeature getChildFeature( Object object, Object child ) {
-        // Check the type of the specified child object and return the proper feature to use for
-        // adding (see {@link AddCommand}) it as a child.
-
-        return super.getChildFeature( object, child );
-    }
-
-    /**
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -438,10 +356,8 @@ public class DORefItemProvider extends AgUuidItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( DORef.class ) ) {
-        case SclPackage.DO_REF__LINE_NUMBER:
-        case SclPackage.DO_REF__EXPLICIT_LINKS_BUILT:
-        case SclPackage.DO_REF__FILENAME:
-        case SclPackage.DO_REF__XPATH:
+        case SclPackage.DO_REF__UUID:
+        case SclPackage.DO_REF__TEMPLATE_UUID:
         case SclPackage.DO_REF__DESC:
         case SclPackage.DO_REF__DO_NAME:
         case SclPackage.DO_REF__IED_NAME:
@@ -453,12 +369,6 @@ public class DORefItemProvider extends AgUuidItemProvider {
         case SclPackage.DO_REF__PLN:
         case SclPackage.DO_REF__PREFIX:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
-            return;
-        case SclPackage.DO_REF__PRIVATE:
-        case SclPackage.DO_REF__TEXT:
-        case SclPackage.DO_REF__ANY:
-        case SclPackage.DO_REF__ANY_ATTRIBUTE:
-            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
         super.notifyChanged( notification );
@@ -474,12 +384,6 @@ public class DORefItemProvider extends AgUuidItemProvider {
     @Override
     protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
         super.collectNewChildDescriptors( newChildDescriptors, object );
-
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getBaseElement_Private(),
-                SclFactory.eINSTANCE.createPrivate() ) );
-
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getBaseElement_Text(),
-                SclFactory.eINSTANCE.createText() ) );
     }
 
 }

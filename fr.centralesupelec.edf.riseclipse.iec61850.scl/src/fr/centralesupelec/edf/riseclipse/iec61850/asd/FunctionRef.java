@@ -22,7 +22,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 import org.eclipse.emf.common.util.EList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,8 +51,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 public interface FunctionRef extends FunctionalVariantRefContainer {
     /**
      * Returns the value of the '<em><b>Signal Role</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole#getParentFunctionRef <em>Parent Function Ref</em>}'.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getParentFunctionRef <em>Parent Function Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * <!-- begin-model-doc -->
@@ -63,7 +62,7 @@ public interface FunctionRef extends FunctionalVariantRefContainer {
      * @see #isSetSignalRole()
      * @see #unsetSignalRole()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRef_SignalRole()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole#getParentFunctionRef
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getParentFunctionRef
      * @model opposite="ParentFunctionRef" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='SignalRole' namespace='##targetNamespace'"
      * @generated
@@ -150,7 +149,7 @@ public interface FunctionRef extends FunctionalVariantRefContainer {
      * @see #setParentAllocationRole(AllocationRole)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRef_ParentAllocationRole()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getFunctionRef
-     * @model opposite="functionRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionRef" unsettable="true" ordered="false"
      * @generated
      */
     AllocationRole getParentAllocationRole();
@@ -174,7 +173,7 @@ public interface FunctionRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getFunctionRef
-     * @model opposite="functionRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,15 +15,15 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
+
+import org.eclipse.emf.common.util.EList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS;
-
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,7 +104,7 @@ public interface Labels extends UnNaming {
      * @see #setParentAbstractDataAttribute(AbstractDataAttribute)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLabels_ParentAbstractDataAttribute()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getLabels
-     * @model opposite="labels" unsettable="true" ordered="false"
+     * @model opposite="Labels" unsettable="true" ordered="false"
      * @generated
      */
     AbstractDataAttribute getParentAbstractDataAttribute();
@@ -416,7 +416,7 @@ public interface Labels extends UnNaming {
      * @see #setParentDAS(DAS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLabels_ParentDAS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getLabels
-     * @model opposite="labels" unsettable="true" ordered="false"
+     * @model opposite="Labels" unsettable="true" ordered="false"
      * @generated
      */
     DAS getParentDAS();
@@ -440,7 +440,7 @@ public interface Labels extends UnNaming {
      * @see #setParentDOS(DOS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLabels_ParentDOS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getLabels
-     * @model opposite="labels" unsettable="true" ordered="false"
+     * @model opposite="Labels" unsettable="true" ordered="false"
      * @generated
      */
     DOS getParentDOS();
@@ -464,7 +464,7 @@ public interface Labels extends UnNaming {
      * @see #setParentSDS(SDS)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLabels_ParentSDS()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getLabels
-     * @model opposite="labels" unsettable="true" ordered="false"
+     * @model opposite="Labels" unsettable="true" ordered="false"
      * @generated
      */
     SDS getParentSDS();

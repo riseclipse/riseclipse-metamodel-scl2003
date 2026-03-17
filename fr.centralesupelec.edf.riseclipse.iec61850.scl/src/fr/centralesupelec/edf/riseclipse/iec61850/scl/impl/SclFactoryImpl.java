@@ -341,14 +341,12 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
             return createSecPerSamples();
         case SclPackage.SCSM:
             return createSCSM();
-        case SclPackage.SM_VC_SECURITY:
-            return createSMVcSecurity();
+        case SclPackage.SV_MC_SECURITY:
+            return createSVMcSecurity();
         case SclPackage.SCL_FILE_REFERENCE:
             return createSclFileReference();
         case SclPackage.SECURITY:
             return createSecurity();
-        case SclPackage.SIGNAL_ROLE:
-            return createSignalRole();
         case SclPackage.SUB_EQUIPMENT:
             return createSubEquipment();
         case SclPackage.SUB_FUNCTION:
@@ -935,9 +933,9 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * @generated
      */
     @Override
-    public SMVcSecurity createSMVcSecurity() {
-        SMVcSecurityImpl smVcSecurity = new SMVcSecurityImpl();
-        return smVcSecurity;
+    public SVMcSecurity createSVMcSecurity() {
+        SVMcSecurityImpl svMcSecurity = new SVMcSecurityImpl();
+        return svMcSecurity;
     }
 
     /**
@@ -960,17 +958,6 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
     public Security createSecurity() {
         SecurityImpl security = new SecurityImpl();
         return security;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public SignalRole createSignalRole() {
-        SignalRoleImpl signalRole = new SignalRoleImpl();
-        return signalRole;
     }
 
     /**

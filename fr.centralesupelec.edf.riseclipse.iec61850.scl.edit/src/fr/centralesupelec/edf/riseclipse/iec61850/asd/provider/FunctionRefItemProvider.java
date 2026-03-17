@@ -30,9 +30,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef} object.
@@ -224,7 +224,7 @@ public class FunctionRefItemProvider extends FunctionalVariantRefContainerItemPr
         super.collectNewChildDescriptors( newChildDescriptors, object );
 
         newChildDescriptors.add( createChildParameter( AsdPackage.eINSTANCE.getFunctionRef_SignalRole(),
-                SclFactory.eINSTANCE.createSignalRole() ) );
+                AsdFactory.eINSTANCE.createSignalRole() ) );
     }
 
 }

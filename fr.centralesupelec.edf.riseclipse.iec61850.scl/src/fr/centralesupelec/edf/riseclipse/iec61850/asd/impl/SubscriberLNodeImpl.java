@@ -98,7 +98,7 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      * @generated
      * @ordered
      */
-    protected SMVParametersRef sMVParametersRef;
+    protected SMVParametersRef smvParametersRef;
 
     /**
      * This is true if the SMV Parameters Ref containment reference has been set.
@@ -107,7 +107,7 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      * @generated
      * @ordered
      */
-    protected boolean sMVParametersRefESet;
+    protected boolean smvParametersRefESet;
 
     /**
      * The cached value of the '{@link #getReportParametersRef() <em>Report Parameters Ref</em>}' containment reference.
@@ -348,7 +348,7 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      */
     @Override
     public SMVParametersRef getSMVParametersRef() {
-        return sMVParametersRef;
+        return smvParametersRef;
     }
 
     /**
@@ -357,10 +357,10 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      * @generated
      */
     public NotificationChain basicSetSMVParametersRef( SMVParametersRef newSMVParametersRef, NotificationChain msgs ) {
-        SMVParametersRef oldSMVParametersRef = sMVParametersRef;
-        sMVParametersRef = newSMVParametersRef;
-        boolean oldSMVParametersRefESet = sMVParametersRefESet;
-        sMVParametersRefESet = true;
+        SMVParametersRef oldSMVParametersRef = smvParametersRef;
+        smvParametersRef = newSMVParametersRef;
+        boolean oldSMVParametersRefESet = smvParametersRefESet;
+        smvParametersRefESet = true;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     AsdPackage.SUBSCRIBER_LNODE__SMV_PARAMETERS_REF, oldSMVParametersRef, newSMVParametersRef,
@@ -382,10 +382,10 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      */
     @Override
     public void setSMVParametersRef( SMVParametersRef newSMVParametersRef ) {
-        if( newSMVParametersRef != sMVParametersRef ) {
+        if( newSMVParametersRef != smvParametersRef ) {
             NotificationChain msgs = null;
-            if( sMVParametersRef != null ) {
-                msgs = ( ( InternalEObject ) sMVParametersRef ).eInverseRemove( this,
+            if( smvParametersRef != null ) {
+                msgs = ( ( InternalEObject ) smvParametersRef ).eInverseRemove( this,
                         AsdPackage.SMV_PARAMETERS_REF__PARENT_SUBSCRIBER_LNODE, SMVParametersRef.class, msgs );
             }
             if( newSMVParametersRef != null ) {
@@ -398,8 +398,8 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
             }
         }
         else {
-            boolean oldSMVParametersRefESet = sMVParametersRefESet;
-            sMVParametersRefESet = true;
+            boolean oldSMVParametersRefESet = smvParametersRefESet;
+            smvParametersRefESet = true;
             if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SUBSCRIBER_LNODE__SMV_PARAMETERS_REF,
                         newSMVParametersRef, newSMVParametersRef, !oldSMVParametersRefESet ) );
@@ -413,10 +413,10 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      * @generated
      */
     public NotificationChain basicUnsetSMVParametersRef( NotificationChain msgs ) {
-        SMVParametersRef oldSMVParametersRef = sMVParametersRef;
-        sMVParametersRef = null;
-        boolean oldSMVParametersRefESet = sMVParametersRefESet;
-        sMVParametersRefESet = false;
+        SMVParametersRef oldSMVParametersRef = smvParametersRef;
+        smvParametersRef = null;
+        boolean oldSMVParametersRefESet = smvParametersRefESet;
+        smvParametersRefESet = false;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     AsdPackage.SUBSCRIBER_LNODE__SMV_PARAMETERS_REF, oldSMVParametersRef, null,
@@ -438,9 +438,9 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      */
     @Override
     public void unsetSMVParametersRef() {
-        if( sMVParametersRef != null ) {
+        if( smvParametersRef != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) sMVParametersRef ).eInverseRemove( this,
+            msgs = ( ( InternalEObject ) smvParametersRef ).eInverseRemove( this,
                     AsdPackage.SMV_PARAMETERS_REF__PARENT_SUBSCRIBER_LNODE, SMVParametersRef.class, msgs );
             msgs = basicUnsetSMVParametersRef( msgs );
             if( msgs != null ) {
@@ -448,8 +448,8 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
             }
         }
         else {
-            boolean oldSMVParametersRefESet = sMVParametersRefESet;
-            sMVParametersRefESet = false;
+            boolean oldSMVParametersRefESet = smvParametersRefESet;
+            smvParametersRefESet = false;
             if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         AsdPackage.SUBSCRIBER_LNODE__SMV_PARAMETERS_REF, null, null, oldSMVParametersRefESet ) );
@@ -464,7 +464,7 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      */
     @Override
     public boolean isSetSMVParametersRef() {
-        return sMVParametersRefESet;
+        return smvParametersRefESet;
     }
 
     /**
@@ -1241,8 +1241,8 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getGooseParametersRef() )
                     .basicAdd( otherEnd, msgs );
         case AsdPackage.SUBSCRIBER_LNODE__SMV_PARAMETERS_REF:
-            if( sMVParametersRef != null ) {
-                msgs = ( ( InternalEObject ) sMVParametersRef ).eInverseRemove( this,
+            if( smvParametersRef != null ) {
+                msgs = ( ( InternalEObject ) smvParametersRef ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - AsdPackage.SUBSCRIBER_LNODE__SMV_PARAMETERS_REF, null, msgs );
             }
             return basicSetSMVParametersRef( ( SMVParametersRef ) otherEnd, msgs );

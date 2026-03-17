@@ -20,22 +20,17 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Security;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
@@ -67,7 +62,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getNoIctBinding <em>No Ict Binding</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getMcSecurity <em>Mc Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getGOOSEMcSecurity <em>GOOSE Mc Security</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getSMVcSecurity <em>SM Vc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getSVMcSecurity <em>SV Mc Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#isAcceptServerInitiatedAssociation <em>Accept Server Initiated Association</em>}</li>
  * </ul>
@@ -501,14 +496,23 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     protected boolean noIctBindingESet;
 
     /**
-     * The cached value of the '{@link #getMcSecurity() <em>Mc Security</em>}' containment reference list.
+     * The cached value of the '{@link #getMcSecurity() <em>Mc Security</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getMcSecurity()
      * @generated
      * @ordered
      */
-    protected EList< McSecurity > mcSecurity;
+    protected McSecurity mcSecurity;
+
+    /**
+     * This is true if the Mc Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean mcSecurityESet;
 
     /**
      * The cached value of the '{@link #getGOOSEMcSecurity() <em>GOOSE Mc Security</em>}' containment reference.
@@ -530,23 +534,23 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     protected boolean gooseMcSecurityESet;
 
     /**
-     * The cached value of the '{@link #getSMVcSecurity() <em>SM Vc Security</em>}' containment reference.
+     * The cached value of the '{@link #getSVMcSecurity() <em>SV Mc Security</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSMVcSecurity()
+     * @see #getSVMcSecurity()
      * @generated
      * @ordered
      */
-    protected SMVcSecurity smVcSecurity;
+    protected SVMcSecurity svMcSecurity;
 
     /**
-     * This is true if the SM Vc Security containment reference has been set.
+     * This is true if the SV Mc Security containment reference has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean smVcSecurityESet;
+    protected boolean svMcSecurityESet;
 
     /**
      * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference.
@@ -1549,12 +1553,86 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public EList< McSecurity > getMcSecurity() {
-        if( mcSecurity == null ) {
-            mcSecurity = new EObjectContainmentWithInverseEList.Unsettable< >( McSecurity.class, this,
-                    SclPackage.CLIENT_SERVICES__MC_SECURITY, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES );
-        }
+    public McSecurity getMcSecurity() {
         return mcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetMcSecurity( McSecurity newMcSecurity, NotificationChain msgs ) {
+        McSecurity oldMcSecurity = mcSecurity;
+        mcSecurity = newMcSecurity;
+        boolean oldMcSecurityESet = mcSecurityESet;
+        mcSecurityESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setMcSecurity( McSecurity newMcSecurity ) {
+        if( newMcSecurity != mcSecurity ) {
+            NotificationChain msgs = null;
+            if( mcSecurity != null ) {
+                msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                        SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs );
+            }
+            if( newMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) newMcSecurity ).eInverseAdd( this,
+                        SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs );
+            }
+            msgs = basicSetMcSecurity( newMcSecurity, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldMcSecurityESet = mcSecurityESet;
+            mcSecurityESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__MC_SECURITY,
+                        newMcSecurity, newMcSecurity, !oldMcSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetMcSecurity( NotificationChain msgs ) {
+        McSecurity oldMcSecurity = mcSecurity;
+        mcSecurity = null;
+        boolean oldMcSecurityESet = mcSecurityESet;
+        mcSecurityESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_SERVICES__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
     }
 
     /**
@@ -1565,7 +1643,21 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     @Override
     public void unsetMcSecurity() {
         if( mcSecurity != null ) {
-            ( ( InternalEList.Unsettable< ? > ) mcSecurity ).unset();
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                    SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs );
+            msgs = basicUnsetMcSecurity( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldMcSecurityESet = mcSecurityESet;
+            mcSecurityESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MC_SECURITY, null,
+                        null, oldMcSecurityESet ) );
+            }
         }
     }
 
@@ -1576,7 +1668,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public boolean isSetMcSecurity() {
-        return mcSecurity != null && ( ( InternalEList.Unsettable< ? > ) mcSecurity ).isSet();
+        return mcSecurityESet;
     }
 
     /**
@@ -1713,8 +1805,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public SMVcSecurity getSMVcSecurity() {
-        return smVcSecurity;
+    public SVMcSecurity getSVMcSecurity() {
+        return svMcSecurity;
     }
 
     /**
@@ -1722,15 +1814,15 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSMVcSecurity( SMVcSecurity newSMVcSecurity, NotificationChain msgs ) {
-        SMVcSecurity oldSMVcSecurity = smVcSecurity;
-        smVcSecurity = newSMVcSecurity;
-        boolean oldSMVcSecurityESet = smVcSecurityESet;
-        smVcSecurityESet = true;
+    public NotificationChain basicSetSVMcSecurity( SVMcSecurity newSVMcSecurity, NotificationChain msgs ) {
+        SVMcSecurity oldSVMcSecurity = svMcSecurity;
+        svMcSecurity = newSVMcSecurity;
+        boolean oldSVMcSecurityESet = svMcSecurityESet;
+        svMcSecurityESet = true;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
-                    SclPackage.CLIENT_SERVICES__SM_VC_SECURITY, oldSMVcSecurity, newSMVcSecurity,
-                    !oldSMVcSecurityESet );
+                    SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, oldSVMcSecurity, newSVMcSecurity,
+                    !oldSVMcSecurityESet );
             if( msgs == null ) {
                 msgs = notification;
             }
@@ -1747,30 +1839,30 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void setSMVcSecurity( SMVcSecurity newSMVcSecurity ) {
-        if( newSMVcSecurity != smVcSecurity ) {
+    public void setSVMcSecurity( SVMcSecurity newSVMcSecurity ) {
+        if( newSVMcSecurity != svMcSecurity ) {
             NotificationChain msgs = null;
-            if( smVcSecurity != null ) {
-                msgs = ( ( InternalEObject ) smVcSecurity ).eInverseRemove( this,
-                        SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY, SMVcSecurity.class,
+            if( svMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) svMcSecurity ).eInverseRemove( this,
+                        SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, SVMcSecurity.class,
                         msgs );
             }
-            if( newSMVcSecurity != null ) {
-                msgs = ( ( InternalEObject ) newSMVcSecurity ).eInverseAdd( this,
-                        SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY, SMVcSecurity.class,
+            if( newSVMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) newSVMcSecurity ).eInverseAdd( this,
+                        SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, SVMcSecurity.class,
                         msgs );
             }
-            msgs = basicSetSMVcSecurity( newSMVcSecurity, msgs );
+            msgs = basicSetSVMcSecurity( newSVMcSecurity, msgs );
             if( msgs != null ) {
                 msgs.dispatch();
             }
         }
         else {
-            boolean oldSMVcSecurityESet = smVcSecurityESet;
-            smVcSecurityESet = true;
+            boolean oldSVMcSecurityESet = svMcSecurityESet;
+            svMcSecurityESet = true;
             if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__SM_VC_SECURITY,
-                        newSMVcSecurity, newSMVcSecurity, !oldSMVcSecurityESet ) );
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__SV_MC_SECURITY,
+                        newSVMcSecurity, newSVMcSecurity, !oldSVMcSecurityESet ) );
             }
         }
     }
@@ -1780,14 +1872,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetSMVcSecurity( NotificationChain msgs ) {
-        SMVcSecurity oldSMVcSecurity = smVcSecurity;
-        smVcSecurity = null;
-        boolean oldSMVcSecurityESet = smVcSecurityESet;
-        smVcSecurityESet = false;
+    public NotificationChain basicUnsetSVMcSecurity( NotificationChain msgs ) {
+        SVMcSecurity oldSVMcSecurity = svMcSecurity;
+        svMcSecurity = null;
+        boolean oldSVMcSecurityESet = svMcSecurityESet;
+        svMcSecurityESet = false;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
-                    SclPackage.CLIENT_SERVICES__SM_VC_SECURITY, oldSMVcSecurity, null, oldSMVcSecurityESet );
+                    SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, oldSVMcSecurity, null, oldSVMcSecurityESet );
             if( msgs == null ) {
                 msgs = notification;
             }
@@ -1804,22 +1896,22 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void unsetSMVcSecurity() {
-        if( smVcSecurity != null ) {
+    public void unsetSVMcSecurity() {
+        if( svMcSecurity != null ) {
             NotificationChain msgs = null;
-            msgs = ( ( InternalEObject ) smVcSecurity ).eInverseRemove( this,
-                    SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY, SMVcSecurity.class, msgs );
-            msgs = basicUnsetSMVcSecurity( msgs );
+            msgs = ( ( InternalEObject ) svMcSecurity ).eInverseRemove( this,
+                    SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, SVMcSecurity.class, msgs );
+            msgs = basicUnsetSVMcSecurity( msgs );
             if( msgs != null ) {
                 msgs.dispatch();
             }
         }
         else {
-            boolean oldSMVcSecurityESet = smVcSecurityESet;
-            smVcSecurityESet = false;
+            boolean oldSVMcSecurityESet = svMcSecurityESet;
+            svMcSecurityESet = false;
             if( eNotificationRequired() ) {
-                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SM_VC_SECURITY,
-                        null, null, oldSMVcSecurityESet ) );
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SV_MC_SECURITY,
+                        null, null, oldSVMcSecurityESet ) );
             }
         }
     }
@@ -1830,8 +1922,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public boolean isSetSMVcSecurity() {
-        return smVcSecurityESet;
+    public boolean isSetSVMcSecurity() {
+        return svMcSecurityESet;
     }
 
     /**
@@ -2005,20 +2097,23 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             }
             return basicSetTimeSyncProt( ( TimeSyncProt ) otherEnd, msgs );
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getMcSecurity() ).basicAdd( otherEnd,
-                    msgs );
+            if( mcSecurity != null ) {
+                msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__MC_SECURITY, null, msgs );
+            }
+            return basicSetMcSecurity( ( McSecurity ) otherEnd, msgs );
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
             if( gooseMcSecurity != null ) {
                 msgs = ( ( InternalEObject ) gooseMcSecurity ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY, null, msgs );
             }
             return basicSetGOOSEMcSecurity( ( GOOSEMcSecurity ) otherEnd, msgs );
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
-            if( smVcSecurity != null ) {
-                msgs = ( ( InternalEObject ) smVcSecurity ).eInverseRemove( this,
-                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__SM_VC_SECURITY, null, msgs );
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            if( svMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) svMcSecurity ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, null, msgs );
             }
-            return basicSetSMVcSecurity( ( SMVcSecurity ) otherEnd, msgs );
+            return basicSetSVMcSecurity( ( SVMcSecurity ) otherEnd, msgs );
         case SclPackage.CLIENT_SERVICES__SECURITY:
             if( security != null ) {
                 msgs = ( ( InternalEObject ) security ).eInverseRemove( this,
@@ -2042,11 +2137,11 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
             return basicUnsetTimeSyncProt( msgs );
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-            return ( ( InternalEList< ? > ) getMcSecurity() ).basicRemove( otherEnd, msgs );
+            return basicUnsetMcSecurity( msgs );
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
             return basicUnsetGOOSEMcSecurity( msgs );
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
-            return basicUnsetSMVcSecurity( msgs );
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            return basicUnsetSVMcSecurity( msgs );
         case SclPackage.CLIENT_SERVICES__SECURITY:
             return basicUnsetSecurity( msgs );
         }
@@ -2112,8 +2207,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             return getMcSecurity();
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
             return getGOOSEMcSecurity();
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
-            return getSMVcSecurity();
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            return getSVMcSecurity();
         case SclPackage.CLIENT_SERVICES__SECURITY:
             return getSecurity();
         case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:
@@ -2180,14 +2275,13 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             setNoIctBinding( ( Boolean ) newValue );
             return;
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-            getMcSecurity().clear();
-            getMcSecurity().addAll( ( Collection< ? extends McSecurity > ) newValue );
+            setMcSecurity( ( McSecurity ) newValue );
             return;
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
             setGOOSEMcSecurity( ( GOOSEMcSecurity ) newValue );
             return;
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
-            setSMVcSecurity( ( SMVcSecurity ) newValue );
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            setSVMcSecurity( ( SVMcSecurity ) newValue );
             return;
         case SclPackage.CLIENT_SERVICES__SECURITY:
             setSecurity( ( Security ) newValue );
@@ -2261,8 +2355,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
             unsetGOOSEMcSecurity();
             return;
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
-            unsetSMVcSecurity();
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            unsetSVMcSecurity();
             return;
         case SclPackage.CLIENT_SERVICES__SECURITY:
             unsetSecurity();
@@ -2318,8 +2412,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             return isSetMcSecurity();
         case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
             return isSetGOOSEMcSecurity();
-        case SclPackage.CLIENT_SERVICES__SM_VC_SECURITY:
-            return isSetSMVcSecurity();
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            return isSetSVMcSecurity();
         case SclPackage.CLIENT_SERVICES__SECURITY:
             return isSetSecurity();
         case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:

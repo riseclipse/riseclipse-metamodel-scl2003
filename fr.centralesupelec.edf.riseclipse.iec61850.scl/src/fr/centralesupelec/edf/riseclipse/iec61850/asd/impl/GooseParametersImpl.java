@@ -393,7 +393,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         l3IPv4CommParametersESet = true;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
-                    AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS, oldL3IPv4CommParameters,
+                    AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS, oldL3IPv4CommParameters,
                     newL3IPv4CommParameters, !oldL3IPv4CommParametersESet );
             if( msgs == null ) {
                 msgs = notification;
@@ -432,7 +432,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
             l3IPv4CommParametersESet = true;
             if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
-                        AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS, newL3IPv4CommParameters,
+                        AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS, newL3IPv4CommParameters,
                         newL3IPv4CommParameters, !oldL3IPv4CommParametersESet ) );
             }
         }
@@ -450,7 +450,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         l3IPv4CommParametersESet = false;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
-                    AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS, oldL3IPv4CommParameters, null,
+                    AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS, oldL3IPv4CommParameters, null,
                     oldL3IPv4CommParametersESet );
             if( msgs == null ) {
                 msgs = notification;
@@ -483,7 +483,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
             l3IPv4CommParametersESet = false;
             if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
-                        AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS, null, null,
+                        AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS, null, null,
                         oldL3IPv4CommParametersESet ) );
             }
         }
@@ -522,7 +522,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         l3IPv6CommParametersESet = true;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
-                    AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS, oldL3IPv6CommParameters,
+                    AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS, oldL3IPv6CommParameters,
                     newL3IPv6CommParameters, !oldL3IPv6CommParametersESet );
             if( msgs == null ) {
                 msgs = notification;
@@ -561,7 +561,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
             l3IPv6CommParametersESet = true;
             if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
-                        AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS, newL3IPv6CommParameters,
+                        AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS, newL3IPv6CommParameters,
                         newL3IPv6CommParameters, !oldL3IPv6CommParametersESet ) );
             }
         }
@@ -579,7 +579,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         l3IPv6CommParametersESet = false;
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
-                    AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS, oldL3IPv6CommParameters, null,
+                    AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS, oldL3IPv6CommParameters, null,
                     oldL3IPv6CommParametersESet );
             if( msgs == null ) {
                 msgs = notification;
@@ -612,7 +612,7 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
             l3IPv6CommParametersESet = false;
             if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
-                        AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS, null, null,
+                        AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS, null, null,
                         oldL3IPv6CommParametersESet ) );
             }
         }
@@ -1037,16 +1037,16 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
                         EOPPOSITE_FEATURE_BASE - AsdPackage.GOOSE_PARAMETERS__L2_COMM_PARAMETERS, null, msgs );
             }
             return basicSetL2CommParameters( ( L2CommParameters ) otherEnd, msgs );
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
             if( l3IPv4CommParameters != null ) {
                 msgs = ( ( InternalEObject ) l3IPv4CommParameters ).eInverseRemove( this,
-                        EOPPOSITE_FEATURE_BASE - AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS, null, msgs );
+                        EOPPOSITE_FEATURE_BASE - AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS, null, msgs );
             }
             return basicSetL3IPv4CommParameters( ( L3IPv4CommParameters ) otherEnd, msgs );
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             if( l3IPv6CommParameters != null ) {
                 msgs = ( ( InternalEObject ) l3IPv6CommParameters ).eInverseRemove( this,
-                        EOPPOSITE_FEATURE_BASE - AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS, null, msgs );
+                        EOPPOSITE_FEATURE_BASE - AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS, null, msgs );
             }
             return basicSetL3IPv6CommParameters( ( L3IPv6CommParameters ) otherEnd, msgs );
         case AsdPackage.GOOSE_PARAMETERS__PARENT_COMM_SERVICE_SPECIFICATIONS:
@@ -1079,9 +1079,9 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         switch( featureID ) {
         case AsdPackage.GOOSE_PARAMETERS__L2_COMM_PARAMETERS:
             return basicUnsetL2CommParameters( msgs );
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
             return basicUnsetL3IPv4CommParameters( msgs );
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             return basicUnsetL3IPv6CommParameters( msgs );
         case AsdPackage.GOOSE_PARAMETERS__PARENT_COMM_SERVICE_SPECIFICATIONS:
             return basicSetParentCommServiceSpecifications( null, msgs );
@@ -1121,9 +1121,9 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         switch( featureID ) {
         case AsdPackage.GOOSE_PARAMETERS__L2_COMM_PARAMETERS:
             return getL2CommParameters();
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
             return getL3IPv4CommParameters();
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             return getL3IPv6CommParameters();
         case AsdPackage.GOOSE_PARAMETERS__GO_ID:
             return getGoId();
@@ -1157,10 +1157,10 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         case AsdPackage.GOOSE_PARAMETERS__L2_COMM_PARAMETERS:
             setL2CommParameters( ( L2CommParameters ) newValue );
             return;
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
             setL3IPv4CommParameters( ( L3IPv4CommParameters ) newValue );
             return;
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             setL3IPv6CommParameters( ( L3IPv6CommParameters ) newValue );
             return;
         case AsdPackage.GOOSE_PARAMETERS__GO_ID:
@@ -1199,10 +1199,10 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         case AsdPackage.GOOSE_PARAMETERS__L2_COMM_PARAMETERS:
             unsetL2CommParameters();
             return;
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
             unsetL3IPv4CommParameters();
             return;
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             unsetL3IPv6CommParameters();
             return;
         case AsdPackage.GOOSE_PARAMETERS__GO_ID:
@@ -1240,9 +1240,9 @@ public class GooseParametersImpl extends ControlBlockParametersImpl implements G
         switch( featureID ) {
         case AsdPackage.GOOSE_PARAMETERS__L2_COMM_PARAMETERS:
             return isSetL2CommParameters();
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
             return isSetL3IPv4CommParameters();
-        case AsdPackage.GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             return isSetL3IPv6CommParameters();
         case AsdPackage.GOOSE_PARAMETERS__GO_ID:
             return GO_ID_EDEFAULT == null ? goId != null : !GO_ID_EDEFAULT.equals( goId );

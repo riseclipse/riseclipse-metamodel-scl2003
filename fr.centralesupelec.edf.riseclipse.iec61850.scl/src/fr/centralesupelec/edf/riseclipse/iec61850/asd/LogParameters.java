@@ -344,7 +344,7 @@ public interface LogParameters extends ControlBlockParameters {
      * @see #setParentServiceSpecifications(ServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLogParameters_ParentServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications#getLogParameters
-     * @model opposite="logParameters" unsettable="true" ordered="false"
+     * @model opposite="LogParameters" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSpecifications getParentServiceSpecifications();

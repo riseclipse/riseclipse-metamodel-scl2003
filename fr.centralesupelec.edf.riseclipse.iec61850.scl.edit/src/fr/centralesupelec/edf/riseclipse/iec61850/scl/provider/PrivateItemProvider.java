@@ -33,7 +33,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -240,9 +239,6 @@ public class PrivateItemProvider
         super.collectNewChildDescriptors( newChildDescriptors, object );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPrivate_AsdObjects(),
-                SclFactory.eINSTANCE.createSignalRole() ) );
-
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPrivate_AsdObjects(),
                 AsdFactory.eINSTANCE.createAllocationRole() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPrivate_AsdObjects(),
@@ -433,6 +429,9 @@ public class PrivateItemProvider
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPrivate_AsdObjects(),
                 AsdFactory.eINSTANCE.createServiceSpecifications() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPrivate_AsdObjects(),
+                AsdFactory.eINSTANCE.createSignalRole() ) );
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPrivate_AsdObjects(),
                 AsdFactory.eINSTANCE.createSourceRef() ) );

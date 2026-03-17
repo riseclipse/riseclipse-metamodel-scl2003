@@ -101,8 +101,7 @@ public interface FunctionalVariantGroup extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionalVariantGroup_Name()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='name'"
+     * @model extendedMetaData="kind='attribute' name='name'"
      * @generated
      */
     String getName();
@@ -192,7 +191,7 @@ public interface FunctionalVariantGroup extends BaseExtensionElementWithDesc {
      * @see #setParentApplication(Application)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionalVariantGroup_ParentApplication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getFunctionalVariantGroup
-     * @model opposite="functionalVariantGroup" unsettable="true" ordered="false"
+     * @model opposite="FunctionalVariantGroup" unsettable="true" ordered="false"
      * @generated
      */
     Application getParentApplication();

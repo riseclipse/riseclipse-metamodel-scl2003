@@ -27,29 +27,29 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>SM Vc Security</b></em>'.
+ * An implementation of the model object '<em><b>SV Mc Security</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVcSecurityImpl#getParentClientServicesFromSMVcSecurity <em>Parent Client Services From SM Vc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SVMcSecurityImpl#getParentClientServicesFromSVMcSecurity <em>Parent Client Services From SV Mc Security</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
+public class SVMcSecurityImpl extends McSecurityImpl implements SVMcSecurity {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected SMVcSecurityImpl() {
+    protected SVMcSecurityImpl() {
         super();
     }
 
@@ -60,7 +60,7 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
      */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSMVcSecurity();
+        return SclPackage.eINSTANCE.getSVMcSecurity();
     }
 
     /**
@@ -69,8 +69,8 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
      * @generated
      */
     @Override
-    public ClientServices getParentClientServicesFromSMVcSecurity() {
-        if( eContainerFeatureID() != SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY ) {
+    public ClientServices getParentClientServicesFromSVMcSecurity() {
+        if( eContainerFeatureID() != SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY ) {
             return null;
         }
         return ( ClientServices ) eInternalContainer();
@@ -81,10 +81,10 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentClientServicesFromSMVcSecurity(
-            ClientServices newParentClientServicesFromSMVcSecurity, NotificationChain msgs ) {
-        msgs = eBasicSetContainer( ( InternalEObject ) newParentClientServicesFromSMVcSecurity,
-                SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY, msgs );
+    public NotificationChain basicSetParentClientServicesFromSVMcSecurity(
+            ClientServices newParentClientServicesFromSVMcSecurity, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentClientServicesFromSVMcSecurity,
+                SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, msgs );
         return msgs;
     }
 
@@ -94,30 +94,30 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
      * @generated
      */
     @Override
-    public void setParentClientServicesFromSMVcSecurity( ClientServices newParentClientServicesFromSMVcSecurity ) {
-        if( newParentClientServicesFromSMVcSecurity != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY
-                        && newParentClientServicesFromSMVcSecurity != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentClientServicesFromSMVcSecurity ) ) {
+    public void setParentClientServicesFromSVMcSecurity( ClientServices newParentClientServicesFromSVMcSecurity ) {
+        if( newParentClientServicesFromSVMcSecurity != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY
+                        && newParentClientServicesFromSVMcSecurity != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentClientServicesFromSVMcSecurity ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             }
             NotificationChain msgs = null;
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
-            if( newParentClientServicesFromSMVcSecurity != null ) {
-                msgs = ( ( InternalEObject ) newParentClientServicesFromSMVcSecurity ).eInverseAdd( this,
-                        SclPackage.CLIENT_SERVICES__SM_VC_SECURITY, ClientServices.class, msgs );
+            if( newParentClientServicesFromSVMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) newParentClientServicesFromSVMcSecurity ).eInverseAdd( this,
+                        SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, ClientServices.class, msgs );
             }
-            msgs = basicSetParentClientServicesFromSMVcSecurity( newParentClientServicesFromSMVcSecurity, msgs );
+            msgs = basicSetParentClientServicesFromSVMcSecurity( newParentClientServicesFromSVMcSecurity, msgs );
             if( msgs != null ) {
                 msgs.dispatch();
             }
         }
         else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
-                    SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY,
-                    newParentClientServicesFromSMVcSecurity, newParentClientServicesFromSMVcSecurity ) );
+                    SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY,
+                    newParentClientServicesFromSVMcSecurity, newParentClientServicesFromSVMcSecurity ) );
         }
     }
 
@@ -129,11 +129,11 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
-            return basicSetParentClientServicesFromSMVcSecurity( ( ClientServices ) otherEnd, msgs );
+            return basicSetParentClientServicesFromSVMcSecurity( ( ClientServices ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -146,8 +146,8 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
-            return basicSetParentClientServicesFromSMVcSecurity( null, msgs );
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
+            return basicSetParentClientServicesFromSVMcSecurity( null, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -160,8 +160,8 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
-            return eInternalContainer().eInverseRemove( this, SclPackage.CLIENT_SERVICES__SM_VC_SECURITY,
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CLIENT_SERVICES__SV_MC_SECURITY,
                     ClientServices.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );
@@ -175,8 +175,8 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
-            return getParentClientServicesFromSMVcSecurity();
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
+            return getParentClientServicesFromSVMcSecurity();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -189,8 +189,8 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
-            setParentClientServicesFromSMVcSecurity( ( ClientServices ) newValue );
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
+            setParentClientServicesFromSVMcSecurity( ( ClientServices ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -204,8 +204,8 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
-            setParentClientServicesFromSMVcSecurity( ( ClientServices ) null );
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
+            setParentClientServicesFromSVMcSecurity( ( ClientServices ) null );
             return;
         }
         super.eUnset( featureID );
@@ -219,10 +219,10 @@ public class SMVcSecurityImpl extends McSecurityImpl implements SMVcSecurity {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SM_VC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SM_VC_SECURITY:
-            return getParentClientServicesFromSMVcSecurity() != null;
+        case SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY:
+            return getParentClientServicesFromSVMcSecurity() != null;
         }
         return super.eIsSet( featureID );
     }
 
-} //SMVcSecurityImpl
+} //SVMcSecurityImpl

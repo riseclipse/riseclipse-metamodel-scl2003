@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
@@ -50,6 +51,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentSourceFiles <em>Parent Source Files</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclFileReferenceImpl#getParentIEDSourceFiles <em>Parent IED Source Files</em>}</li>
  * </ul>
  *
  * @generated
@@ -750,6 +752,64 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
      * @generated
      */
     @Override
+    public IEDSourceFiles getParentIEDSourceFiles() {
+        if( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES ) {
+            return null;
+        }
+        return ( IEDSourceFiles ) eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentIEDSourceFiles( IEDSourceFiles newParentIEDSourceFiles,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentIEDSourceFiles,
+                SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES, msgs );
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentIEDSourceFiles( IEDSourceFiles newParentIEDSourceFiles ) {
+        if( newParentIEDSourceFiles != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES
+                        && newParentIEDSourceFiles != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentIEDSourceFiles ) ) {
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
+            NotificationChain msgs = null;
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            if( newParentIEDSourceFiles != null ) {
+                msgs = ( ( InternalEObject ) newParentIEDSourceFiles ).eInverseAdd( this,
+                        SclPackage.IED_SOURCE_FILES__SCL_FILE_REFERENCE, IEDSourceFiles.class, msgs );
+            }
+            msgs = basicSetParentIEDSourceFiles( newParentIEDSourceFiles, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES, newParentIEDSourceFiles,
+                    newParentIEDSourceFiles ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SCL_FILE_REFERENCE__PARENT_SOURCE_FILES:
@@ -767,6 +827,11 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentFunctionSclRef( ( FunctionSclRef ) otherEnd, msgs );
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            return basicSetParentIEDSourceFiles( ( IEDSourceFiles ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -785,6 +850,8 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
             return basicSetParentApplicationSclRef( null, msgs );
         case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return basicSetParentFunctionSclRef( null, msgs );
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            return basicSetParentIEDSourceFiles( null, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -806,6 +873,9 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return eInternalContainer().eInverseRemove( this, AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE,
                     FunctionSclRef.class, msgs );
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.IED_SOURCE_FILES__SCL_FILE_REFERENCE,
+                    IEDSourceFiles.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );
     }
@@ -836,6 +906,8 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
             return getParentApplicationSclRef();
         case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return getParentFunctionSclRef();
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            return getParentIEDSourceFiles();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -874,6 +946,9 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
             return;
         case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
             setParentFunctionSclRef( ( FunctionSclRef ) newValue );
+            return;
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            setParentIEDSourceFiles( ( IEDSourceFiles ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -914,6 +989,9 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
         case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
             setParentFunctionSclRef( ( FunctionSclRef ) null );
             return;
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            setParentIEDSourceFiles( ( IEDSourceFiles ) null );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -944,6 +1022,8 @@ public class SclFileReferenceImpl extends SclObjectImpl implements SclFileRefere
             return getParentApplicationSclRef() != null;
         case SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF:
             return getParentFunctionSclRef() != null;
+        case SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES:
+            return getParentIEDSourceFiles() != null;
         }
         return super.eIsSet( featureID );
     }

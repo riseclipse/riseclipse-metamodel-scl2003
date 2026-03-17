@@ -37,13 +37,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdUtilities;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -162,7 +162,7 @@ public class FunctionRefImpl extends FunctionalVariantRefContainerImpl implement
     public EList< SignalRole > getSignalRole() {
         if( signalRole == null ) {
             signalRole = new EObjectContainmentWithInverseEList.Unsettable< >( SignalRole.class, this,
-                    AsdPackage.FUNCTION_REF__SIGNAL_ROLE, SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF );
+                    AsdPackage.FUNCTION_REF__SIGNAL_ROLE, AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF );
         }
         return signalRole;
     }

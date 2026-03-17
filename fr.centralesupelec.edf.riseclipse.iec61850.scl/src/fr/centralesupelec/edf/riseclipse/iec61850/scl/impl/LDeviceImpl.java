@@ -1881,12 +1881,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                    .filter( ied -> higherLevelLDeviceReference.startsWith( ied.getName() ))
                    .toList();
 
-           if( lIEDs.isEmpty() ) {
-               // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-               //                  messagePrefix, "found no IED with name is a prefix of ", higherLevelLDeviceName );
-               return;
-           }
-           if( lIEDs.size() > 1 ) {
+           if( lIEDs.isEmpty() || ( lIEDs.size() > 1 ) ) {
                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                //                  messagePrefix, "found several IEDd with name is a prefix of ", higherLevelLDeviceName );
                return;
@@ -1912,12 +1907,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                    .toList();
         }
 
-        if( lDevices.isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no LDevice named ", higherLevelLDeviceName );
-            return;
-        }
-        if( lDevices.size() > 1 ) {
+        if( lDevices.isEmpty() || ( lDevices.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several LDevice ", higherLevelLDeviceName );
             return;

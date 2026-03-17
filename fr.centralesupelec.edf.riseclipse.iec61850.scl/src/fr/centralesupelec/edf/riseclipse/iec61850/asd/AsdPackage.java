@@ -476,7 +476,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getWiringParameters()
      * @generated
      */
-    int WIRING_PARAMETERS = 84;
+    int WIRING_PARAMETERS = 85;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AnalogueWiringParametersImpl <em>Analogue Wiring Parameters</em>}' class.
@@ -3163,6 +3163,15 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int CHECKOUT_ID__PARENT_FUNCTION_SCL_REF = SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF;
+
+    /**
+     * The feature id for the '<em><b>Parent IED Source Files</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__PARENT_IED_SOURCE_FILES = SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES;
 
     /**
      * The feature id for the '<em><b>Sub Checkout ID</b></em>' containment reference.
@@ -6702,7 +6711,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int GOOSE_PARAMETERS__L3_IPV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
+    int GOOSE_PARAMETERS__L3I_PV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>L3I Pv6 Comm Parameters</b></em>' containment reference.
@@ -6711,7 +6720,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int GOOSE_PARAMETERS__L3_IPV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
+    int GOOSE_PARAMETERS__L3I_PV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Go Id</b></em>' attribute.
@@ -7309,7 +7318,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getVariableRef()
      * @generated
      */
-    int VARIABLE_REF = 83;
+    int VARIABLE_REF = 84;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -11986,6 +11995,169 @@ public interface AsdPackage extends EPackage {
     int SERVICE_SPECIFICATIONS_OPERATION_COUNT = BASE_EXTENSION_ELEMENT_WITH_DESC_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl <em>Signal Role</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSignalRole()
+     * @generated
+     */
+    int SIGNAL_ROLE = 74;
+
+    /**
+     * The feature id for the '<em><b>Filename</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__FILENAME = FUNCTIONAL_VARIANT_REF_CONTAINER__FILENAME;
+
+    /**
+     * The feature id for the '<em><b>Line Number</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__LINE_NUMBER = FUNCTIONAL_VARIANT_REF_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__EXPLICIT_LINKS_BUILT = FUNCTIONAL_VARIANT_REF_CONTAINER__EXPLICIT_LINKS_BUILT;
+
+    /**
+     * The feature id for the '<em><b>Parent Private</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__PARENT_PRIVATE = FUNCTIONAL_VARIANT_REF_CONTAINER__PARENT_PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__TEXT = FUNCTIONAL_VARIANT_REF_CONTAINER__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__ANY = FUNCTIONAL_VARIANT_REF_CONTAINER__ANY;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__DESC = FUNCTIONAL_VARIANT_REF_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Functional Variant Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__FUNCTIONAL_VARIANT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER__FUNCTIONAL_VARIANT_REF;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__NAME = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__ORIGIN_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Parent Function Ref</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__PARENT_FUNCTION_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>LNode Input Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__LNODE_INPUT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>LNode Output Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__LNODE_OUTPUT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>LNode Data Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__LNODE_DATA_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 5;
+
+    /**
+     * The number of structural features of the '<em>Signal Role</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE_FEATURE_COUNT = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 6;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = FUNCTIONAL_VARIANT_REF_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The number of operations of the '<em>Signal Role</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE_OPERATION_COUNT = FUNCTIONAL_VARIANT_REF_CONTAINER_OPERATION_COUNT + 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SourceRefImpl <em>Source Ref</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11993,7 +12165,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSourceRef()
      * @generated
      */
-    int SOURCE_REF = 74;
+    int SOURCE_REF = 75;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -12354,7 +12526,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSubCategory()
      * @generated
      */
-    int SUB_CATEGORY = 75;
+    int SUB_CATEGORY = 76;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -12526,7 +12698,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSubCheckoutID()
      * @generated
      */
-    int SUB_CHECKOUT_ID = 76;
+    int SUB_CHECKOUT_ID = 77;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -12646,6 +12818,15 @@ public interface AsdPackage extends EPackage {
     int SUB_CHECKOUT_ID__PARENT_FUNCTION_SCL_REF = CHECKOUT_ID__PARENT_FUNCTION_SCL_REF;
 
     /**
+     * The feature id for the '<em><b>Parent IED Source Files</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__PARENT_IED_SOURCE_FILES = CHECKOUT_ID__PARENT_IED_SOURCE_FILES;
+
+    /**
      * The feature id for the '<em><b>Sub Checkout ID</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12716,7 +12897,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSubFunctionTemplate()
      * @generated
      */
-    int SUB_FUNCTION_TEMPLATE = 77;
+    int SUB_FUNCTION_TEMPLATE = 78;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -12915,7 +13096,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSMVParameters()
      * @generated
      */
-    int SMV_PARAMETERS = 78;
+    int SMV_PARAMETERS = 79;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -13023,7 +13204,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SMV_PARAMETERS__L3_IPV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
+    int SMV_PARAMETERS__L3I_PV4_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>L3I Pv6 Comm Parameters</b></em>' containment reference.
@@ -13032,7 +13213,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SMV_PARAMETERS__L3_IPV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
+    int SMV_PARAMETERS__L3I_PV6_COMM_PARAMETERS = CONTROL_BLOCK_PARAMETERS_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Multicast</b></em>' attribute.
@@ -13150,7 +13331,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSMVParametersRef()
      * @generated
      */
-    int SMV_PARAMETERS_REF = 79;
+    int SMV_PARAMETERS_REF = 80;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -13286,7 +13467,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSubscriberLNode()
      * @generated
      */
-    int SUBSCRIBER_LNODE = 80;
+    int SUBSCRIBER_LNODE = 81;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -13512,7 +13693,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getVariable()
      * @generated
      */
-    int VARIABLE = 81;
+    int VARIABLE = 82;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -13675,7 +13856,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getVariableApplyTo()
      * @generated
      */
-    int VARIABLE_APPLY_TO = 82;
+    int VARIABLE_APPLY_TO = 83;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -13856,7 +14037,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getCardinalityEnum()
      * @generated
      */
-    int CARDINALITY_ENUM = 85;
+    int CARDINALITY_ENUM = 86;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.OutTypEnum <em>Out Typ Enum</em>}' enum.
@@ -13866,7 +14047,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getOutTypEnum()
      * @generated
      */
-    int OUT_TYP_ENUM = 86;
+    int OUT_TYP_ENUM = 87;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.UpdateEnum <em>Update Enum</em>}' enum.
@@ -13876,7 +14057,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getUpdateEnum()
      * @generated
      */
-    int UPDATE_ENUM = 87;
+    int UPDATE_ENUM = 88;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SpecServiceEnum <em>Spec Service Enum</em>}' enum.
@@ -13886,7 +14067,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSpecServiceEnum()
      * @generated
      */
-    int SPEC_SERVICE_ENUM = 88;
+    int SPEC_SERVICE_ENUM = 89;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant <em>Abstract Functional Variant</em>}'.
@@ -18784,6 +18965,82 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EReference getServiceSpecifications_LogParameters();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole <em>Signal Role</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Signal Role</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole
+     * @generated
+     */
+    EClass getSignalRole();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getName()
+     * @see #getSignalRole()
+     * @generated
+     */
+    EAttribute getSignalRole_Name();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid <em>Origin Uuid</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid()
+     * @see #getSignalRole()
+     * @generated
+     */
+    EAttribute getSignalRole_OriginUuid();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getParentFunctionRef <em>Parent Function Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent Function Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getParentFunctionRef()
+     * @see #getSignalRole()
+     * @generated
+     */
+    EReference getSignalRole_ParentFunctionRef();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeInputRef <em>LNode Input Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>LNode Input Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeInputRef()
+     * @see #getSignalRole()
+     * @generated
+     */
+    EReference getSignalRole_LNodeInputRef();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeOutputRef <em>LNode Output Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>LNode Output Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeOutputRef()
+     * @see #getSignalRole()
+     * @generated
+     */
+    EReference getSignalRole_LNodeOutputRef();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeDataRef <em>LNode Data Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>LNode Data Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeDataRef()
+     * @see #getSignalRole()
+     * @generated
+     */
+    EReference getSignalRole_LNodeDataRef();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef <em>Source Ref</em>}'.

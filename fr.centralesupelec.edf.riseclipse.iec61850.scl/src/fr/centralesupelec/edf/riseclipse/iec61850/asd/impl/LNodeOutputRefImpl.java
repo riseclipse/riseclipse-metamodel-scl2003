@@ -38,12 +38,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputs;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdUtilities;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -381,7 +380,7 @@ public class LNodeOutputRefImpl extends FunctionalVariantRefContainerImpl implem
             }
             if( newParentSignalRole != null ) {
                 msgs = ( ( InternalEObject ) newParentSignalRole ).eInverseAdd( this,
-                        SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF, SignalRole.class, msgs );
+                        AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF, SignalRole.class, msgs );
             }
             msgs = basicSetParentSignalRole( newParentSignalRole, msgs );
             if( msgs != null ) {
@@ -442,7 +441,7 @@ public class LNodeOutputRefImpl extends FunctionalVariantRefContainerImpl implem
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
         case AsdPackage.LNODE_OUTPUT_REF__PARENT_SIGNAL_ROLE:
-            return eInternalContainer().eInverseRemove( this, SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF,
+            return eInternalContainer().eInverseRemove( this, AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF,
                     SignalRole.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );

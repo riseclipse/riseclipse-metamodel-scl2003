@@ -20,7 +20,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -201,13 +200,13 @@ public interface LNodeDataRef extends FunctionalVariantRefContainer {
 
     /**
      * Returns the value of the '<em><b>Parent Signal Role</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole#getLNodeDataRef <em>LNode Data Ref</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeDataRef <em>LNode Data Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Parent Signal Role</em>' container reference.
      * @see #setParentSignalRole(SignalRole)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLNodeDataRef_ParentSignalRole()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole#getLNodeDataRef
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeDataRef
      * @model opposite="LNodeDataRef" unsettable="true" ordered="false"
      * @generated
      */

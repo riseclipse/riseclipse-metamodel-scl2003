@@ -127,7 +127,7 @@ public interface VariableRef extends FunctionalVariantRefContainer {
      * @see #setParentAbstractFunctionalVariant(AbstractFunctionalVariant)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getVariableRef_ParentAbstractFunctionalVariant()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getVariableRef
-     * @model opposite="variableRef" unsettable="true" ordered="false"
+     * @model opposite="VariableRef" unsettable="true" ordered="false"
      * @generated
      */
     AbstractFunctionalVariant getParentAbstractFunctionalVariant();
@@ -151,7 +151,7 @@ public interface VariableRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getVariableRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getVariableRef
-     * @model opposite="variableRef" unsettable="true" ordered="false"
+     * @model opposite="VariableRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

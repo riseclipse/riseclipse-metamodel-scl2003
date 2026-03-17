@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
@@ -604,6 +604,15 @@ public interface AsdFactory extends EFactory {
      * @generated
      */
     ServiceSpecifications createServiceSpecifications();
+
+    /**
+     * Returns a new object of class '<em>Signal Role</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Signal Role</em>'.
+     * @generated
+     */
+    SignalRole createSignalRole();
 
     /**
      * Returns a new object of class '<em>Source Ref</em>'.

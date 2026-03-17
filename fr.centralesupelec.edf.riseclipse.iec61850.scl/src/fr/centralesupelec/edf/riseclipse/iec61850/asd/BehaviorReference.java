@@ -101,7 +101,7 @@ public interface BehaviorReference extends BaseExtensionElementWithDesc {
      * @see #setParentBehaviorDescription(BehaviorDescription)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBehaviorReference_ParentBehaviorDescription()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getBehaviorReference
-     * @model opposite="behaviorReference" unsettable="true" ordered="false"
+     * @model opposite="BehaviorReference" unsettable="true" ordered="false"
      * @generated
      */
     BehaviorDescription getParentBehaviorDescription();

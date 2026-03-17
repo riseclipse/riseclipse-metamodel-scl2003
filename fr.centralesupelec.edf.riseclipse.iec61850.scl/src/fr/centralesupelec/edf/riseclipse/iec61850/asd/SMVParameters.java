@@ -512,7 +512,7 @@ public interface SMVParameters extends ControlBlockParameters {
      * @see #setParentCommServiceSpecifications(CommServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSMVParameters_ParentCommServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.CommServiceSpecifications#getSMVParameters
-     * @model opposite="sMVParameters" unsettable="true" ordered="false"
+     * @model opposite="SMVParameters" unsettable="true" ordered="false"
      * @generated
      */
     CommServiceSpecifications getParentCommServiceSpecifications();
@@ -536,7 +536,7 @@ public interface SMVParameters extends ControlBlockParameters {
      * @see #setParentServiceSpecifications(ServiceSpecifications)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSMVParameters_ParentServiceSpecifications()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications#getSMVParameters
-     * @model opposite="sMVParameters" unsettable="true" ordered="false"
+     * @model opposite="SMVParameters" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSpecifications getParentServiceSpecifications();

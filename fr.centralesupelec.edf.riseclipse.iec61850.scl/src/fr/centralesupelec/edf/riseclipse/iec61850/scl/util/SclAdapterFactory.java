@@ -25,10 +25,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.*;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
@@ -796,8 +792,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseSMVcSecurity( SMVcSecurity object ) {
-            return createSMVcSecurityAdapter();
+        public Adapter caseSVMcSecurity( SVMcSecurity object ) {
+            return createSVMcSecurityAdapter();
         }
 
         @Override
@@ -808,11 +804,6 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseSecurity( Security object ) {
             return createSecurityAdapter();
-        }
-
-        @Override
-        public Adapter caseSignalRole( SignalRole object ) {
-            return createSignalRoleAdapter();
         }
 
         @Override
@@ -1023,26 +1014,6 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseOutputs( Outputs object ) {
             return createOutputsAdapter();
-        }
-
-        @Override
-        public Adapter caseAsdObject( AsdObject object ) {
-            return createAsdObjectAdapter();
-        }
-
-        @Override
-        public Adapter caseBaseExtensionElement( BaseExtensionElement object ) {
-            return createBaseExtensionElementAdapter();
-        }
-
-        @Override
-        public Adapter caseBaseExtensionElementWithDesc( BaseExtensionElementWithDesc object ) {
-            return createBaseExtensionElementWithDescAdapter();
-        }
-
-        @Override
-        public Adapter caseFunctionalVariantRefContainer( FunctionalVariantRefContainer object ) {
-            return createFunctionalVariantRefContainerAdapter();
         }
 
         @Override
@@ -1694,16 +1665,16 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity <em>SM Vc Security</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity <em>SV Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVcSecurity
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity
      * @generated
      */
-    public Adapter createSMVcSecurityAdapter() {
+    public Adapter createSVMcSecurityAdapter() {
         return null;
     }
 
@@ -1732,20 +1703,6 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createSecurityAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole <em>Signal Role</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole
-     * @generated
-     */
-    public Adapter createSignalRoleAdapter() {
         return null;
     }
 
@@ -2040,62 +1997,6 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createOutputsAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject <em>Object</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject
-     * @generated
-     */
-    public Adapter createAsdObjectAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement <em>Base Extension Element</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement
-     * @generated
-     */
-    public Adapter createBaseExtensionElementAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc <em>Base Extension Element With Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc
-     * @generated
-     */
-    public Adapter createBaseExtensionElementWithDescAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer <em>Functional Variant Ref Container</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer
-     * @generated
-     */
-    public Adapter createFunctionalVariantRefContainerAdapter() {
         return null;
     }
 

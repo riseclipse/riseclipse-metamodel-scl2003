@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
@@ -45,7 +45,7 @@ public interface SubCheckoutID extends CheckoutID {
      * @see #setParentCheckoutID(CheckoutID)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubCheckoutID_ParentCheckoutID()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.CheckoutID#getSubCheckoutID
-     * @model opposite="subCheckoutID" unsettable="true" ordered="false"
+     * @model opposite="SubCheckoutID" unsettable="true" ordered="false"
      * @generated
      */
     CheckoutID getParentCheckoutID();

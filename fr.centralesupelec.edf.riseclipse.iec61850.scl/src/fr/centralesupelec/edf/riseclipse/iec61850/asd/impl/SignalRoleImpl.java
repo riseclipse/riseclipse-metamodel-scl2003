@@ -17,7 +17,7 @@
  *      https://riseclipse.github.io/
  *
  */
-package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
+package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
 
 import java.util.Collection;
 
@@ -36,9 +36,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantRefContainerImpl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,12 +46,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SignalRoleImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SignalRoleImpl#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SignalRoleImpl#getParentFunctionRef <em>Parent Function Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SignalRoleImpl#getLNodeInputRef <em>LNode Input Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SignalRoleImpl#getLNodeOutputRef <em>LNode Output Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SignalRoleImpl#getLNodeDataRef <em>LNode Data Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getOriginUuid <em>Origin Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getParentFunctionRef <em>Parent Function Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getLNodeInputRef <em>LNode Input Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getLNodeOutputRef <em>LNode Output Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getLNodeDataRef <em>LNode Data Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,7 +161,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
      */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSignalRole();
+        return AsdPackage.eINSTANCE.getSignalRole();
     }
 
     /**
@@ -188,7 +186,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
         boolean oldNameESet = nameESet;
         nameESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SIGNAL_ROLE__NAME, oldName, name,
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SIGNAL_ROLE__NAME, oldName, name,
                     !oldNameESet ) );
         }
     }
@@ -205,7 +203,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
         name = NAME_EDEFAULT;
         nameESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SIGNAL_ROLE__NAME, oldName,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.SIGNAL_ROLE__NAME, oldName,
                     NAME_EDEFAULT, oldNameESet ) );
         }
     }
@@ -242,7 +240,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
         boolean oldOriginUuidESet = originUuidESet;
         originUuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SIGNAL_ROLE__ORIGIN_UUID, oldOriginUuid,
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SIGNAL_ROLE__ORIGIN_UUID, oldOriginUuid,
                     originUuid, !oldOriginUuidESet ) );
         }
     }
@@ -259,7 +257,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
         originUuid = ORIGIN_UUID_EDEFAULT;
         originUuidESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SIGNAL_ROLE__ORIGIN_UUID,
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.SIGNAL_ROLE__ORIGIN_UUID,
                     oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
         }
     }
@@ -281,7 +279,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
      */
     @Override
     public FunctionRef getParentFunctionRef() {
-        if( eContainerFeatureID() != SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF ) {
+        if( eContainerFeatureID() != AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF ) {
             return null;
         }
         return ( FunctionRef ) eInternalContainer();
@@ -294,7 +292,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
      */
     public NotificationChain basicSetParentFunctionRef( FunctionRef newParentFunctionRef, NotificationChain msgs ) {
         msgs = eBasicSetContainer( ( InternalEObject ) newParentFunctionRef,
-                SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF, msgs );
+                AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF, msgs );
         return msgs;
     }
 
@@ -306,7 +304,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public void setParentFunctionRef( FunctionRef newParentFunctionRef ) {
         if( newParentFunctionRef != eInternalContainer()
-                || ( eContainerFeatureID() != SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF
+                || ( eContainerFeatureID() != AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF
                         && newParentFunctionRef != null ) ) {
             if( EcoreUtil.isAncestor( this, newParentFunctionRef ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
@@ -325,7 +323,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
             }
         }
         else if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF,
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF,
                     newParentFunctionRef, newParentFunctionRef ) );
         }
     }
@@ -339,7 +337,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     public EList< LNodeInputRef > getLNodeInputRef() {
         if( lNodeInputRef == null ) {
             lNodeInputRef = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeInputRef.class,
-                    this, SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF, AsdPackage.LNODE_INPUT_REF__PARENT_SIGNAL_ROLE );
+                    this, AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF, AsdPackage.LNODE_INPUT_REF__PARENT_SIGNAL_ROLE );
         }
         return lNodeInputRef;
     }
@@ -375,7 +373,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     public EList< LNodeOutputRef > getLNodeOutputRef() {
         if( lNodeOutputRef == null ) {
             lNodeOutputRef = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeOutputRef.class,
-                    this, SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF, AsdPackage.LNODE_OUTPUT_REF__PARENT_SIGNAL_ROLE );
+                    this, AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF, AsdPackage.LNODE_OUTPUT_REF__PARENT_SIGNAL_ROLE );
         }
         return lNodeOutputRef;
     }
@@ -411,7 +409,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     public EList< LNodeDataRef > getLNodeDataRef() {
         if( lNodeDataRef == null ) {
             lNodeDataRef = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeDataRef.class, this,
-                    SclPackage.SIGNAL_ROLE__LNODE_DATA_REF, AsdPackage.LNODE_DATA_REF__PARENT_SIGNAL_ROLE );
+                    AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF, AsdPackage.LNODE_DATA_REF__PARENT_SIGNAL_ROLE );
         }
         return lNodeDataRef;
     }
@@ -447,18 +445,18 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
             }
             return basicSetParentFunctionRef( ( FunctionRef ) otherEnd, msgs );
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLNodeInputRef() )
                     .basicAdd( otherEnd, msgs );
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLNodeOutputRef() )
                     .basicAdd( otherEnd, msgs );
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLNodeDataRef() ).basicAdd( otherEnd,
                     msgs );
         }
@@ -473,13 +471,13 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             return basicSetParentFunctionRef( null, msgs );
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
             return ( ( InternalEList< ? > ) getLNodeInputRef() ).basicRemove( otherEnd, msgs );
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
             return ( ( InternalEList< ? > ) getLNodeOutputRef() ).basicRemove( otherEnd, msgs );
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             return ( ( InternalEList< ? > ) getLNodeDataRef() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
@@ -493,7 +491,7 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             return eInternalContainer().eInverseRemove( this, AsdPackage.FUNCTION_REF__SIGNAL_ROLE, FunctionRef.class,
                     msgs );
         }
@@ -508,17 +506,17 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case SclPackage.SIGNAL_ROLE__NAME:
+        case AsdPackage.SIGNAL_ROLE__NAME:
             return getName();
-        case SclPackage.SIGNAL_ROLE__ORIGIN_UUID:
+        case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             return getOriginUuid();
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             return getParentFunctionRef();
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
             return getLNodeInputRef();
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
             return getLNodeOutputRef();
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             return getLNodeDataRef();
         }
         return super.eGet( featureID, resolve, coreType );
@@ -533,24 +531,24 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case SclPackage.SIGNAL_ROLE__NAME:
+        case AsdPackage.SIGNAL_ROLE__NAME:
             setName( ( String ) newValue );
             return;
-        case SclPackage.SIGNAL_ROLE__ORIGIN_UUID:
+        case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             setOriginUuid( ( String ) newValue );
             return;
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             setParentFunctionRef( ( FunctionRef ) newValue );
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
             getLNodeInputRef().clear();
             getLNodeInputRef().addAll( ( Collection< ? extends LNodeInputRef > ) newValue );
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
             getLNodeOutputRef().clear();
             getLNodeOutputRef().addAll( ( Collection< ? extends LNodeOutputRef > ) newValue );
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             getLNodeDataRef().clear();
             getLNodeDataRef().addAll( ( Collection< ? extends LNodeDataRef > ) newValue );
             return;
@@ -566,22 +564,22 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SIGNAL_ROLE__NAME:
+        case AsdPackage.SIGNAL_ROLE__NAME:
             unsetName();
             return;
-        case SclPackage.SIGNAL_ROLE__ORIGIN_UUID:
+        case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             unsetOriginUuid();
             return;
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             setParentFunctionRef( ( FunctionRef ) null );
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
             unsetLNodeInputRef();
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
             unsetLNodeOutputRef();
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             unsetLNodeDataRef();
             return;
         }
@@ -596,17 +594,17 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case SclPackage.SIGNAL_ROLE__NAME:
+        case AsdPackage.SIGNAL_ROLE__NAME:
             return isSetName();
-        case SclPackage.SIGNAL_ROLE__ORIGIN_UUID:
+        case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             return isSetOriginUuid();
-        case SclPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
+        case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             return getParentFunctionRef() != null;
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
             return isSetLNodeInputRef();
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
             return isSetLNodeOutputRef();
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             return isSetLNodeDataRef();
         }
         return super.eIsSet( featureID );

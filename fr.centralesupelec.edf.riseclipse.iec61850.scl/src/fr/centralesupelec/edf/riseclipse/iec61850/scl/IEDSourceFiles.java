@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
@@ -42,13 +42,15 @@ public interface IEDSourceFiles extends BaseElement {
     /**
      * Returns the value of the '<em><b>Scl File Reference</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentIEDSourceFiles <em>Parent IED Source Files</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Scl File Reference</em>' containment reference list.
      * @see #isSetSclFileReference()
      * @see #unsetSclFileReference()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDSourceFiles_SclFileReference()
-     * @model containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentIEDSourceFiles
+     * @model opposite="ParentIEDSourceFiles" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList< SclFileReference > getSclFileReference();

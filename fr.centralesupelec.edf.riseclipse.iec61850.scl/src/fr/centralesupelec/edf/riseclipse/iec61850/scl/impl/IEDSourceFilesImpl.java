@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -88,8 +88,9 @@ public class IEDSourceFilesImpl extends BaseElementImpl implements IEDSourceFile
     @Override
     public EList< SclFileReference > getSclFileReference() {
         if( sclFileReference == null ) {
-            sclFileReference = new EObjectContainmentEList.Unsettable< >( SclFileReference.class, this,
-                    SclPackage.IED_SOURCE_FILES__SCL_FILE_REFERENCE );
+            sclFileReference = new EObjectContainmentWithInverseEList.Unsettable< >(
+                    SclFileReference.class, this, SclPackage.IED_SOURCE_FILES__SCL_FILE_REFERENCE,
+                    SclPackage.SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES );
         }
         return sclFileReference;
     }
@@ -175,9 +176,13 @@ public class IEDSourceFilesImpl extends BaseElementImpl implements IEDSourceFile
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
+        case SclPackage.IED_SOURCE_FILES__SCL_FILE_REFERENCE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSclFileReference() )
+                    .basicAdd( otherEnd, msgs );
         case SclPackage.IED_SOURCE_FILES__PARENT_IED:
             if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );

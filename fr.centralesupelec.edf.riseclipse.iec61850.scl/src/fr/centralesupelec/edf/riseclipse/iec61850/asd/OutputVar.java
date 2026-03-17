@@ -153,7 +153,7 @@ public interface OutputVar extends LogicVarRef {
      * @see #setParentBehaviorDescription(BehaviorDescription)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getOutputVar_ParentBehaviorDescription()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getOutputVar
-     * @model opposite="outputVar" unsettable="true" ordered="false"
+     * @model opposite="OutputVar" unsettable="true" ordered="false"
      * @generated
      */
     BehaviorDescription getParentBehaviorDescription();

@@ -59,7 +59,7 @@ public interface Variable extends BaseExtensionElementWithDesc {
      * @see #unsetVariableApplyTo()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getVariable_VariableApplyTo()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo#getParentVariable
-     * @model opposite="ParentVariable" containment="true" unsettable="true" required="true" ordered="false"
+     * @model opposite="ParentVariable" containment="true" unsettable="true" ordered="false"
      *        extendedMetaData="kind='element' name='VariableApplyTo' namespace='##targetNamespace'"
      * @generated
      */
@@ -96,7 +96,7 @@ public interface Variable extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getVariable_Name()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString" required="true"
+     * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString"
      *        extendedMetaData="kind='attribute' name='name'"
      * @generated
      */

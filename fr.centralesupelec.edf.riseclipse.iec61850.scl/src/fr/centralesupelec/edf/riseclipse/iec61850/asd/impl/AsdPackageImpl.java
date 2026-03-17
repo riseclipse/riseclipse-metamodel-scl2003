@@ -564,6 +564,13 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass signalRoleEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass sourceRefEClass = null;
 
     /**
@@ -5559,10 +5566,84 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
+    public EClass getSignalRole() {
+        if( signalRoleEClass == null ) {
+            signalRoleEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
+                    .get( 74 );
+        }
+        return signalRoleEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getSignalRole_Name() {
+        return ( EAttribute ) getSignalRole().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getSignalRole_OriginUuid() {
+        return ( EAttribute ) getSignalRole().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSignalRole_ParentFunctionRef() {
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 2 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSignalRole_LNodeInputRef() {
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 3 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSignalRole_LNodeOutputRef() {
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 4 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSignalRole_LNodeDataRef() {
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 5 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getSourceRef() {
         if( sourceRefEClass == null ) {
             sourceRefEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
-                    .get( 74 );
+                    .get( 75 );
         }
         return sourceRefEClass;
     }
@@ -5786,7 +5867,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getSubCategory() {
         if( subCategoryEClass == null ) {
             subCategoryEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 75 );
+                    .getEClassifiers().get( 76 );
         }
         return subCategoryEClass;
     }
@@ -5810,7 +5891,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getSubCheckoutID() {
         if( subCheckoutIDEClass == null ) {
             subCheckoutIDEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 76 );
+                    .getEClassifiers().get( 77 );
         }
         return subCheckoutIDEClass;
     }
@@ -5834,7 +5915,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getSubFunctionTemplate() {
         if( subFunctionTemplateEClass == null ) {
             subFunctionTemplateEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 77 );
+                    .getEClassifiers().get( 78 );
         }
         return subFunctionTemplateEClass;
     }
@@ -5908,7 +5989,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getSMVParameters() {
         if( smvParametersEClass == null ) {
             smvParametersEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 78 );
+                    .getEClassifiers().get( 79 );
         }
         return smvParametersEClass;
     }
@@ -6042,7 +6123,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getSMVParametersRef() {
         if( smvParametersRefEClass == null ) {
             smvParametersRefEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 79 );
+                    .getEClassifiers().get( 80 );
         }
         return smvParametersRefEClass;
     }
@@ -6086,7 +6167,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getSubscriberLNode() {
         if( subscriberLNodeEClass == null ) {
             subscriberLNodeEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 80 );
+                    .getEClassifiers().get( 81 );
         }
         return subscriberLNodeEClass;
     }
@@ -6240,7 +6321,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getVariable() {
         if( variableEClass == null ) {
             variableEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
-                    .get( 81 );
+                    .get( 82 );
         }
         return variableEClass;
     }
@@ -6324,7 +6405,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getVariableApplyTo() {
         if( variableApplyToEClass == null ) {
             variableApplyToEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 82 );
+                    .getEClassifiers().get( 83 );
         }
         return variableApplyToEClass;
     }
@@ -6428,7 +6509,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getVariableRef() {
         if( variableRefEClass == null ) {
             variableRefEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 83 );
+                    .getEClassifiers().get( 84 );
         }
         return variableRefEClass;
     }
@@ -6502,7 +6583,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EClass getWiringParameters() {
         if( wiringParametersEClass == null ) {
             wiringParametersEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 84 );
+                    .getEClassifiers().get( 85 );
         }
         return wiringParametersEClass;
     }
@@ -6536,7 +6617,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EEnum getCardinalityEnum() {
         if( cardinalityEnumEEnum == null ) {
             cardinalityEnumEEnum = ( EEnum ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 85 );
+                    .getEClassifiers().get( 86 );
         }
         return cardinalityEnumEEnum;
     }
@@ -6550,7 +6631,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EEnum getOutTypEnum() {
         if( outTypEnumEEnum == null ) {
             outTypEnumEEnum = ( EEnum ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
-                    .get( 86 );
+                    .get( 87 );
         }
         return outTypEnumEEnum;
     }
@@ -6564,7 +6645,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EEnum getUpdateEnum() {
         if( updateEnumEEnum == null ) {
             updateEnumEEnum = ( EEnum ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
-                    .get( 87 );
+                    .get( 88 );
         }
         return updateEnumEEnum;
     }
@@ -6578,7 +6659,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     public EEnum getSpecServiceEnum() {
         if( specServiceEnumEEnum == null ) {
             specServiceEnumEEnum = ( EEnum ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
-                    .getEClassifiers().get( 88 );
+                    .getEClassifiers().get( 89 );
         }
         return specServiceEnumEEnum;
     }

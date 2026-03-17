@@ -43,7 +43,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model abstract="true"
  * @generated
  */
-public interface DORef extends AgUuid, BaseElement, AgDesc {
+public interface DORef extends BaseElement, AgUuid, AgDesc {
     /**
      * Returns the value of the '<em><b>Do Name</b></em>' attribute.
      * <!-- begin-user-doc -->

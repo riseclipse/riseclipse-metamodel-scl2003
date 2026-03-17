@@ -104,7 +104,7 @@ public interface ApplicationSclRef extends BaseExtensionElement {
      * @see #setParentApplication(Application)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplicationSclRef_ParentApplication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getApplicationSclRef
-     * @model opposite="applicationSclRef" unsettable="true" ordered="false"
+     * @model opposite="ApplicationSclRef" unsettable="true" ordered="false"
      * @generated
      */
     Application getParentApplication();

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
@@ -40,6 +40,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentSourceFiles <em>Parent Source Files</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentApplicationSclRef <em>Parent Application Scl Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentFunctionSclRef <em>Parent Function Scl Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentIEDSourceFiles <em>Parent IED Source Files</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference()
@@ -374,7 +375,7 @@ public interface SclFileReference extends SclObject {
      * @see #setParentApplicationSclRef(ApplicationSclRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_ParentApplicationSclRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef#getSclFileReference
-     * @model opposite="sclFileReference" unsettable="true" ordered="false"
+     * @model opposite="SclFileReference" unsettable="true" ordered="false"
      * @generated
      */
     ApplicationSclRef getParentApplicationSclRef();
@@ -398,7 +399,7 @@ public interface SclFileReference extends SclObject {
      * @see #setParentFunctionSclRef(FunctionSclRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_ParentFunctionSclRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef#getSclFileReference
-     * @model opposite="sclFileReference" unsettable="true" ordered="false"
+     * @model opposite="SclFileReference" unsettable="true" ordered="false"
      * @generated
      */
     FunctionSclRef getParentFunctionSclRef();
@@ -412,5 +413,29 @@ public interface SclFileReference extends SclObject {
      * @generated
      */
     void setParentFunctionSclRef( FunctionSclRef value );
+
+    /**
+     * Returns the value of the '<em><b>Parent IED Source Files</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getSclFileReference <em>Scl File Reference</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent IED Source Files</em>' container reference.
+     * @see #setParentIEDSourceFiles(IEDSourceFiles)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclFileReference_ParentIEDSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getSclFileReference
+     * @model opposite="SclFileReference" unsettable="true" ordered="false"
+     * @generated
+     */
+    IEDSourceFiles getParentIEDSourceFiles();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference#getParentIEDSourceFiles <em>Parent IED Source Files</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent IED Source Files</em>' container reference.
+     * @see #getParentIEDSourceFiles()
+     * @generated
+     */
+    void setParentIEDSourceFiles( IEDSourceFiles value );
 
 } // SclFileReference

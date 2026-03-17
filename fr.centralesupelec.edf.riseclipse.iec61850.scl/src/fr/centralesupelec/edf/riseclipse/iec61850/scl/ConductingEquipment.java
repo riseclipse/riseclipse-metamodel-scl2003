@@ -274,7 +274,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #setParentFunctionTemplate(FunctionTemplate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentFunctionTemplate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate#getConductingEquipment
-     * @model opposite="conductingEquipment" unsettable="true" ordered="false"
+     * @model opposite="ConductingEquipment" unsettable="true" ordered="false"
      * @generated
      */
     FunctionTemplate getParentFunctionTemplate();
@@ -298,7 +298,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #setParentSubFunctionTemplate(SubFunctionTemplate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentSubFunctionTemplate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate#getConductingEquipment
-     * @model opposite="conductingEquipment" unsettable="true" ordered="false"
+     * @model opposite="ConductingEquipment" unsettable="true" ordered="false"
      * @generated
      */
     SubFunctionTemplate getParentSubFunctionTemplate();

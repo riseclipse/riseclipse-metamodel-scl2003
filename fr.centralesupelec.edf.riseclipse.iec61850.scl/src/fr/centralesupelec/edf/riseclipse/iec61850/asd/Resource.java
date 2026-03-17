@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
@@ -181,7 +181,7 @@ public interface Resource extends AsdObject {
      * @see #setParentProcessResource(ProcessResource)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getResource_ParentProcessResource()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getResource
-     * @model opposite="resource" unsettable="true" ordered="false"
+     * @model opposite="Resource" unsettable="true" ordered="false"
      * @generated
      */
     ProcessResource getParentProcessResource();

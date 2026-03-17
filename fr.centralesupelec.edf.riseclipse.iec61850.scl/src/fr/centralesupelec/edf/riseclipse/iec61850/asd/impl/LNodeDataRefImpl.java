@@ -33,11 +33,11 @@ import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdUtilities;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -463,7 +463,7 @@ public class LNodeDataRefImpl extends FunctionalVariantRefContainerImpl implemen
             }
             if( newParentSignalRole != null ) {
                 msgs = ( ( InternalEObject ) newParentSignalRole ).eInverseAdd( this,
-                        SclPackage.SIGNAL_ROLE__LNODE_DATA_REF, SignalRole.class, msgs );
+                        AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF, SignalRole.class, msgs );
             }
             msgs = basicSetParentSignalRole( newParentSignalRole, msgs );
             if( msgs != null ) {
@@ -524,7 +524,7 @@ public class LNodeDataRefImpl extends FunctionalVariantRefContainerImpl implemen
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch( eContainerFeatureID() ) {
         case AsdPackage.LNODE_DATA_REF__PARENT_SIGNAL_ROLE:
-            return eInternalContainer().eInverseRemove( this, SclPackage.SIGNAL_ROLE__LNODE_DATA_REF, SignalRole.class,
+            return eInternalContainer().eInverseRemove( this, AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF, SignalRole.class,
                     msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );

@@ -101,6 +101,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.SMVParametersRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceParameters;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceParametersRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCategory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCheckoutID;
@@ -536,6 +537,11 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseServiceSpecifications( ServiceSpecifications object ) {
             return createServiceSpecificationsAdapter();
+        }
+
+        @Override
+        public Adapter caseSignalRole( SignalRole object ) {
+            return createSignalRoleAdapter();
         }
 
         @Override
@@ -1655,6 +1661,20 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createServiceSpecificationsAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole <em>Signal Role</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole
+     * @generated
+     */
+    public Adapter createSignalRoleAdapter() {
         return null;
     }
 

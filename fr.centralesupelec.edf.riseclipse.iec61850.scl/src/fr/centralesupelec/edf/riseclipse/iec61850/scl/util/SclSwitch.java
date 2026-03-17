@@ -24,10 +24,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElement;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.*;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
@@ -271,10 +267,10 @@ public class SclSwitch< T > extends Switch< T > {
             Authentication authentication = ( Authentication ) theEObject;
             T result = caseAuthentication( authentication );
             if( result == null ) {
-                result = caseAgAuthentication( authentication );
+                result = caseSclObject( authentication );
             }
             if( result == null ) {
-                result = caseSclObject( authentication );
+                result = caseAgAuthentication( authentication );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -998,13 +994,13 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseBaseElement( extRef );
             }
             if( result == null ) {
-                result = caseSclObject( extRef );
+                result = caseAgUuid( extRef );
             }
             if( result == null ) {
                 result = caseAgDesc( extRef );
             }
             if( result == null ) {
-                result = caseAgUuid( extRef );
+                result = caseSclObject( extRef );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -2719,14 +2715,14 @@ public class SclSwitch< T > extends Switch< T > {
             }
             return result;
         }
-        case SclPackage.SM_VC_SECURITY: {
-            SMVcSecurity smVcSecurity = ( SMVcSecurity ) theEObject;
-            T result = caseSMVcSecurity( smVcSecurity );
+        case SclPackage.SV_MC_SECURITY: {
+            SVMcSecurity svMcSecurity = ( SVMcSecurity ) theEObject;
+            T result = caseSVMcSecurity( svMcSecurity );
             if( result == null ) {
-                result = caseMcSecurity( smVcSecurity );
+                result = caseMcSecurity( svMcSecurity );
             }
             if( result == null ) {
-                result = caseSclObject( smVcSecurity );
+                result = caseSclObject( svMcSecurity );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -2749,26 +2745,6 @@ public class SclSwitch< T > extends Switch< T > {
             T result = caseSecurity( security );
             if( result == null ) {
                 result = caseSclObject( security );
-            }
-            if( result == null ) {
-                result = defaultCase( theEObject );
-            }
-            return result;
-        }
-        case SclPackage.SIGNAL_ROLE: {
-            SignalRole signalRole = ( SignalRole ) theEObject;
-            T result = caseSignalRole( signalRole );
-            if( result == null ) {
-                result = caseFunctionalVariantRefContainer( signalRole );
-            }
-            if( result == null ) {
-                result = caseBaseExtensionElementWithDesc( signalRole );
-            }
-            if( result == null ) {
-                result = caseBaseExtensionElement( signalRole );
-            }
-            if( result == null ) {
-                result = caseAsdObject( signalRole );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -3178,9 +3154,6 @@ public class SclSwitch< T > extends Switch< T > {
             AgAuthentication agAuthentication = ( AgAuthentication ) theEObject;
             T result = caseAgAuthentication( agAuthentication );
             if( result == null ) {
-                result = caseSclObject( agAuthentication );
-            }
-            if( result == null ) {
                 result = defaultCase( theEObject );
             }
             return result;
@@ -3278,10 +3251,10 @@ public class SclSwitch< T > extends Switch< T > {
             DORef doRef = ( DORef ) theEObject;
             T result = caseDORef( doRef );
             if( result == null ) {
-                result = caseAgUuid( doRef );
+                result = caseBaseElement( doRef );
             }
             if( result == null ) {
-                result = caseBaseElement( doRef );
+                result = caseAgUuid( doRef );
             }
             if( result == null ) {
                 result = caseAgDesc( doRef );
@@ -3301,10 +3274,10 @@ public class SclSwitch< T > extends Switch< T > {
                 result = caseDORef( extCtrl );
             }
             if( result == null ) {
-                result = caseAgUuid( extCtrl );
+                result = caseBaseElement( extCtrl );
             }
             if( result == null ) {
-                result = caseBaseElement( extCtrl );
+                result = caseAgUuid( extCtrl );
             }
             if( result == null ) {
                 result = caseAgDesc( extCtrl );
@@ -5889,17 +5862,17 @@ public class SclSwitch< T > extends Switch< T > {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>SM Vc Security</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>SV Mc Security</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>SM Vc Security</em>'.
+     * @return the result of interpreting the object as an instance of '<em>SV Mc Security</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseSMVcSecurity( SMVcSecurity object ) {
+    public T caseSVMcSecurity( SVMcSecurity object ) {
         return null;
     }
 
@@ -5930,21 +5903,6 @@ public class SclSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseSecurity( Security object ) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Signal Role</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Signal Role</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseSignalRole( SignalRole object ) {
         return null;
     }
 
@@ -6260,66 +6218,6 @@ public class SclSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseOutputs( Outputs object ) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Object</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Object</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseAsdObject( AsdObject object ) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Base Extension Element</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Base Extension Element</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseBaseExtensionElement( BaseExtensionElement object ) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Base Extension Element With Desc</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Base Extension Element With Desc</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseBaseExtensionElementWithDesc( BaseExtensionElementWithDesc object ) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Functional Variant Ref Container</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Functional Variant Ref Container</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseFunctionalVariantRefContainer( FunctionalVariantRefContainer object ) {
         return null;
     }
 

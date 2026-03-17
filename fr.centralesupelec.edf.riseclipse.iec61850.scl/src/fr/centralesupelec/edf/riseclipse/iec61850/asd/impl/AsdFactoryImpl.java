@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,20 +15,98 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRoleRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Application;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BayType;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescriptionRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BinaryWiringParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.BinaryWiringParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.CheckoutID;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.CommServiceSpecifications;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ControllingLNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCatRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategoryRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionTemplate;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalSubVariant;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariant;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.GooseParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.GooseParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.InputVar;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.InputVarRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.L2CommParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.L3IPv4CommParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.L3IPv6CommParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputs;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputs;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeSpecNaming;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LogParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LogParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LogicVarRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.OutTypEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.OutputVar;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.OutputVarRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelationRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelations;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessEcho;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResourceRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResources;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Project;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProjectProcessReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ReportParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ReportParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Resource;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SMVParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SMVParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceParametersRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SpecServiceEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCategory;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCheckoutID;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubFunctionTemplate;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubscriberLNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.UpdateEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
 
 /**
  * <!-- begin-user-doc -->
@@ -200,6 +278,8 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
             return createServiceParametersRef();
         case AsdPackage.SERVICE_SPECIFICATIONS:
             return createServiceSpecifications();
+        case AsdPackage.SIGNAL_ROLE:
+            return createSignalRole();
         case AsdPackage.SOURCE_REF:
             return createSourceRef();
         case AsdPackage.SUB_CATEGORY:
@@ -970,6 +1050,17 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
      * @generated
      */
     @Override
+    public SignalRole createSignalRole() {
+        SignalRoleImpl signalRole = new SignalRoleImpl();
+        return signalRole;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public SourceRef createSourceRef() {
         SourceRefImpl sourceRef = new SourceRefImpl();
         return sourceRef;
@@ -1092,8 +1183,10 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
      */
     public CardinalityEnum createCardinalityEnumFromString( EDataType eDataType, String initialValue ) {
         CardinalityEnum result = CardinalityEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -1113,8 +1206,10 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
      */
     public OutTypEnum createOutTypEnumFromString( EDataType eDataType, String initialValue ) {
         OutTypEnum result = OutTypEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -1134,8 +1229,10 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
      */
     public UpdateEnum createUpdateEnumFromString( EDataType eDataType, String initialValue ) {
         UpdateEnum result = UpdateEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 
@@ -1155,8 +1252,10 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
      */
     public SpecServiceEnum createSpecServiceEnumFromString( EDataType eDataType, String initialValue ) {
         SpecServiceEnum result = SpecServiceEnum.get( initialValue );
-        if( result == null ) throw new IllegalArgumentException(
-                "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        if( result == null ) {
+            throw new IllegalArgumentException(
+                    "The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'" );
+        }
         return result;
     }
 

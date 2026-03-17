@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,34 +15,27 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
-package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.provider.FunctionalVariantRefContainerItemProvider;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole;
+package fr.centralesupelec.edf.riseclipse.iec61850.asd.provider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
+
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SignalRole} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -88,7 +81,7 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
                         getString( "_UI_SignalRole_name_feature" ),
                         getString( "_UI_PropertyDescriptor_description", "_UI_SignalRole_name_feature",
                                 "_UI_SignalRole_type" ),
-                        SclPackage.eINSTANCE.getSignalRole_Name(),
+                        AsdPackage.eINSTANCE.getSignalRole_Name(),
                         true,
                         false,
                         false,
@@ -110,7 +103,7 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
                         getString( "_UI_SignalRole_originUuid_feature" ),
                         getString( "_UI_PropertyDescriptor_description", "_UI_SignalRole_originUuid_feature",
                                 "_UI_SignalRole_type" ),
-                        SclPackage.eINSTANCE.getSignalRole_OriginUuid(),
+                        AsdPackage.eINSTANCE.getSignalRole_OriginUuid(),
                         true,
                         false,
                         false,
@@ -131,9 +124,9 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
     public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
-            childrenFeatures.add( SclPackage.eINSTANCE.getSignalRole_LNodeInputRef() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getSignalRole_LNodeOutputRef() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getSignalRole_LNodeDataRef() );
+            childrenFeatures.add( AsdPackage.eINSTANCE.getSignalRole_LNodeInputRef() );
+            childrenFeatures.add( AsdPackage.eINSTANCE.getSignalRole_LNodeOutputRef() );
+            childrenFeatures.add( AsdPackage.eINSTANCE.getSignalRole_LNodeDataRef() );
         }
         return childrenFeatures;
     }
@@ -187,13 +180,13 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
         updateChildren( notification );
 
         switch( notification.getFeatureID( SignalRole.class ) ) {
-        case SclPackage.SIGNAL_ROLE__NAME:
-        case SclPackage.SIGNAL_ROLE__ORIGIN_UUID:
+        case AsdPackage.SIGNAL_ROLE__NAME:
+        case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
-        case SclPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
-        case SclPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
-        case SclPackage.SIGNAL_ROLE__LNODE_DATA_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_OUTPUT_REF:
+        case AsdPackage.SIGNAL_ROLE__LNODE_DATA_REF:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -211,25 +204,14 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
     protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
         super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSignalRole_LNodeInputRef(),
+        newChildDescriptors.add( createChildParameter( AsdPackage.eINSTANCE.getSignalRole_LNodeInputRef(),
                 AsdFactory.eINSTANCE.createLNodeInputRef() ) );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSignalRole_LNodeOutputRef(),
+        newChildDescriptors.add( createChildParameter( AsdPackage.eINSTANCE.getSignalRole_LNodeOutputRef(),
                 AsdFactory.eINSTANCE.createLNodeOutputRef() ) );
 
-        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSignalRole_LNodeDataRef(),
+        newChildDescriptors.add( createChildParameter( AsdPackage.eINSTANCE.getSignalRole_LNodeDataRef(),
                 AsdFactory.eINSTANCE.createLNodeDataRef() ) );
-    }
-
-    /**
-     * Return the resource locator for this item provider's resources.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public ResourceLocator getResourceLocator() {
-        return SCLEditPlugin.INSTANCE;
     }
 
 }

@@ -183,7 +183,7 @@ public interface LogicVarRef extends BaseExtensionElementWithDesc {
      * @return the value of the '<em>Var Name</em>' attribute.
      * @see #setVarName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLogicVarRef_VarName()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString" required="true"
+     * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString"
      *        extendedMetaData="kind='attribute' name='varName'"
      * @generated
      */

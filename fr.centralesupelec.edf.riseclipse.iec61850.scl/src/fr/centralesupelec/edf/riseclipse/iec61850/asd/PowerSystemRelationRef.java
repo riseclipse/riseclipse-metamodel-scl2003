@@ -102,7 +102,7 @@ public interface PowerSystemRelationRef extends FunctionalVariantRefContainer {
      * @see #setParentFunctionRoleContent(FunctionRoleContent)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getPowerSystemRelationRef_ParentFunctionRoleContent()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent#getPowerSystemRelationRef
-     * @model opposite="powerSystemRelationRef" unsettable="true" ordered="false"
+     * @model opposite="PowerSystemRelationRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionRoleContent getParentFunctionRoleContent();

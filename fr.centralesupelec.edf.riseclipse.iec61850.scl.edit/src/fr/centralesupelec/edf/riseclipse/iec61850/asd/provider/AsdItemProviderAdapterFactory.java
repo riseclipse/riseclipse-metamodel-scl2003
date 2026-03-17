@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,11 +15,9 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.provider;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,7 +25,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -39,6 +36,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.util.AsdAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -73,7 +72,7 @@ public class AsdItemProviderAdapterFactory extends AsdAdapterFactory
      * <!-- end-user-doc -->
      * @generated
      */
-    protected Collection< Object > supportedTypes = new ArrayList< Object >();
+    protected Collection< Object > supportedTypes = new ArrayList< >();
 
     /**
      * This constructs an instance.
@@ -1539,6 +1538,29 @@ public class AsdItemProviderAdapterFactory extends AsdAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected SignalRoleItemProvider signalRoleItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createSignalRoleAdapter() {
+        if( signalRoleItemProvider == null ) {
+            signalRoleItemProvider = new SignalRoleItemProvider( this );
+        }
+
+        return signalRoleItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1889,87 +1911,238 @@ public class AsdItemProviderAdapterFactory extends AsdAdapterFactory
     }
 
     /**
-     * This disposes all of the item providers created by this factory. 
+     * This disposes all of the item providers created by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public void dispose() {
-        if( allocationRoleItemProvider != null ) allocationRoleItemProvider.dispose();
-        if( allocationRoleRefItemProvider != null ) allocationRoleRefItemProvider.dispose();
-        if( applicationItemProvider != null ) applicationItemProvider.dispose();
-        if( analogueWiringParametersItemProvider != null ) analogueWiringParametersItemProvider.dispose();
-        if( analogueWiringParametersRefItemProvider != null ) analogueWiringParametersRefItemProvider.dispose();
-        if( applicationSclRefItemProvider != null ) applicationSclRefItemProvider.dispose();
-        if( bayTypeItemProvider != null ) bayTypeItemProvider.dispose();
-        if( behaviorDescriptionItemProvider != null ) behaviorDescriptionItemProvider.dispose();
-        if( behaviorDescriptionRefItemProvider != null ) behaviorDescriptionRefItemProvider.dispose();
-        if( behaviorReferenceItemProvider != null ) behaviorReferenceItemProvider.dispose();
-        if( binaryWiringParametersItemProvider != null ) binaryWiringParametersItemProvider.dispose();
-        if( binaryWiringParametersRefItemProvider != null ) binaryWiringParametersRefItemProvider.dispose();
-        if( checkoutIDItemProvider != null ) checkoutIDItemProvider.dispose();
-        if( controlRefItemProvider != null ) controlRefItemProvider.dispose();
-        if( commServiceSpecificationsItemProvider != null ) commServiceSpecificationsItemProvider.dispose();
-        if( controllingLNodeItemProvider != null ) controllingLNodeItemProvider.dispose();
-        if( dasItemProvider != null ) dasItemProvider.dispose();
-        if( dosItemProvider != null ) dosItemProvider.dispose();
-        if( functionCategoryItemProvider != null ) functionCategoryItemProvider.dispose();
-        if( functionCategoryRefItemProvider != null ) functionCategoryRefItemProvider.dispose();
-        if( functionCatRefItemProvider != null ) functionCatRefItemProvider.dispose();
-        if( functionRefItemProvider != null ) functionRefItemProvider.dispose();
-        if( functionRoleItemProvider != null ) functionRoleItemProvider.dispose();
-        if( functionRoleContentItemProvider != null ) functionRoleContentItemProvider.dispose();
-        if( functionSclRefItemProvider != null ) functionSclRefItemProvider.dispose();
-        if( functionTemplateItemProvider != null ) functionTemplateItemProvider.dispose();
-        if( functionalSubVariantItemProvider != null ) functionalSubVariantItemProvider.dispose();
-        if( functionalVariantItemProvider != null ) functionalVariantItemProvider.dispose();
-        if( functionalVariantGroupItemProvider != null ) functionalVariantGroupItemProvider.dispose();
-        if( functionalVariantRefItemProvider != null ) functionalVariantRefItemProvider.dispose();
-        if( gooseParametersItemProvider != null ) gooseParametersItemProvider.dispose();
-        if( gooseParametersRefItemProvider != null ) gooseParametersRefItemProvider.dispose();
-        if( inputVarItemProvider != null ) inputVarItemProvider.dispose();
-        if( inputVarRefItemProvider != null ) inputVarRefItemProvider.dispose();
-        if( l2CommParametersItemProvider != null ) l2CommParametersItemProvider.dispose();
-        if( l3IPv4CommParametersItemProvider != null ) l3IPv4CommParametersItemProvider.dispose();
-        if( l3IPv6CommParametersItemProvider != null ) l3IPv6CommParametersItemProvider.dispose();
-        if( lNodeDataRefItemProvider != null ) lNodeDataRefItemProvider.dispose();
-        if( lNodeInputRefItemProvider != null ) lNodeInputRefItemProvider.dispose();
-        if( lNodeInputsItemProvider != null ) lNodeInputsItemProvider.dispose();
-        if( lNodeOutputRefItemProvider != null ) lNodeOutputRefItemProvider.dispose();
-        if( lNodeOutputsItemProvider != null ) lNodeOutputsItemProvider.dispose();
-        if( lNodeSpecNamingItemProvider != null ) lNodeSpecNamingItemProvider.dispose();
-        if( logParametersItemProvider != null ) logParametersItemProvider.dispose();
-        if( logParametersRefItemProvider != null ) logParametersRefItemProvider.dispose();
-        if( logicVarRefItemProvider != null ) logicVarRefItemProvider.dispose();
-        if( outputVarItemProvider != null ) outputVarItemProvider.dispose();
-        if( outputVarRefItemProvider != null ) outputVarRefItemProvider.dispose();
-        if( powerSystemRelationItemProvider != null ) powerSystemRelationItemProvider.dispose();
-        if( powerSystemRelationRefItemProvider != null ) powerSystemRelationRefItemProvider.dispose();
-        if( powerSystemRelationsItemProvider != null ) powerSystemRelationsItemProvider.dispose();
-        if( processEchoItemProvider != null ) processEchoItemProvider.dispose();
-        if( processResourceItemProvider != null ) processResourceItemProvider.dispose();
-        if( processResourceRefItemProvider != null ) processResourceRefItemProvider.dispose();
-        if( processResourcesItemProvider != null ) processResourcesItemProvider.dispose();
-        if( projectItemProvider != null ) projectItemProvider.dispose();
-        if( projectProcessReferenceItemProvider != null ) projectProcessReferenceItemProvider.dispose();
-        if( reportParametersItemProvider != null ) reportParametersItemProvider.dispose();
-        if( reportParametersRefItemProvider != null ) reportParametersRefItemProvider.dispose();
-        if( resourceItemProvider != null ) resourceItemProvider.dispose();
-        if( sdsItemProvider != null ) sdsItemProvider.dispose();
-        if( serviceParametersRefItemProvider != null ) serviceParametersRefItemProvider.dispose();
-        if( serviceSpecificationsItemProvider != null ) serviceSpecificationsItemProvider.dispose();
-        if( sourceRefItemProvider != null ) sourceRefItemProvider.dispose();
-        if( subCategoryItemProvider != null ) subCategoryItemProvider.dispose();
-        if( subCheckoutIDItemProvider != null ) subCheckoutIDItemProvider.dispose();
-        if( subFunctionTemplateItemProvider != null ) subFunctionTemplateItemProvider.dispose();
-        if( smvParametersItemProvider != null ) smvParametersItemProvider.dispose();
-        if( smvParametersRefItemProvider != null ) smvParametersRefItemProvider.dispose();
-        if( subscriberLNodeItemProvider != null ) subscriberLNodeItemProvider.dispose();
-        if( variableItemProvider != null ) variableItemProvider.dispose();
-        if( variableApplyToItemProvider != null ) variableApplyToItemProvider.dispose();
-        if( variableRefItemProvider != null ) variableRefItemProvider.dispose();
-        if( wiringParametersItemProvider != null ) wiringParametersItemProvider.dispose();
+        if( allocationRoleItemProvider != null ) {
+            allocationRoleItemProvider.dispose();
+        }
+        if( allocationRoleRefItemProvider != null ) {
+            allocationRoleRefItemProvider.dispose();
+        }
+        if( applicationItemProvider != null ) {
+            applicationItemProvider.dispose();
+        }
+        if( analogueWiringParametersItemProvider != null ) {
+            analogueWiringParametersItemProvider.dispose();
+        }
+        if( analogueWiringParametersRefItemProvider != null ) {
+            analogueWiringParametersRefItemProvider.dispose();
+        }
+        if( applicationSclRefItemProvider != null ) {
+            applicationSclRefItemProvider.dispose();
+        }
+        if( bayTypeItemProvider != null ) {
+            bayTypeItemProvider.dispose();
+        }
+        if( behaviorDescriptionItemProvider != null ) {
+            behaviorDescriptionItemProvider.dispose();
+        }
+        if( behaviorDescriptionRefItemProvider != null ) {
+            behaviorDescriptionRefItemProvider.dispose();
+        }
+        if( behaviorReferenceItemProvider != null ) {
+            behaviorReferenceItemProvider.dispose();
+        }
+        if( binaryWiringParametersItemProvider != null ) {
+            binaryWiringParametersItemProvider.dispose();
+        }
+        if( binaryWiringParametersRefItemProvider != null ) {
+            binaryWiringParametersRefItemProvider.dispose();
+        }
+        if( checkoutIDItemProvider != null ) {
+            checkoutIDItemProvider.dispose();
+        }
+        if( controlRefItemProvider != null ) {
+            controlRefItemProvider.dispose();
+        }
+        if( commServiceSpecificationsItemProvider != null ) {
+            commServiceSpecificationsItemProvider.dispose();
+        }
+        if( controllingLNodeItemProvider != null ) {
+            controllingLNodeItemProvider.dispose();
+        }
+        if( dasItemProvider != null ) {
+            dasItemProvider.dispose();
+        }
+        if( dosItemProvider != null ) {
+            dosItemProvider.dispose();
+        }
+        if( functionCategoryItemProvider != null ) {
+            functionCategoryItemProvider.dispose();
+        }
+        if( functionCategoryRefItemProvider != null ) {
+            functionCategoryRefItemProvider.dispose();
+        }
+        if( functionCatRefItemProvider != null ) {
+            functionCatRefItemProvider.dispose();
+        }
+        if( functionRefItemProvider != null ) {
+            functionRefItemProvider.dispose();
+        }
+        if( functionRoleItemProvider != null ) {
+            functionRoleItemProvider.dispose();
+        }
+        if( functionRoleContentItemProvider != null ) {
+            functionRoleContentItemProvider.dispose();
+        }
+        if( functionSclRefItemProvider != null ) {
+            functionSclRefItemProvider.dispose();
+        }
+        if( functionTemplateItemProvider != null ) {
+            functionTemplateItemProvider.dispose();
+        }
+        if( functionalSubVariantItemProvider != null ) {
+            functionalSubVariantItemProvider.dispose();
+        }
+        if( functionalVariantItemProvider != null ) {
+            functionalVariantItemProvider.dispose();
+        }
+        if( functionalVariantGroupItemProvider != null ) {
+            functionalVariantGroupItemProvider.dispose();
+        }
+        if( functionalVariantRefItemProvider != null ) {
+            functionalVariantRefItemProvider.dispose();
+        }
+        if( gooseParametersItemProvider != null ) {
+            gooseParametersItemProvider.dispose();
+        }
+        if( gooseParametersRefItemProvider != null ) {
+            gooseParametersRefItemProvider.dispose();
+        }
+        if( inputVarItemProvider != null ) {
+            inputVarItemProvider.dispose();
+        }
+        if( inputVarRefItemProvider != null ) {
+            inputVarRefItemProvider.dispose();
+        }
+        if( l2CommParametersItemProvider != null ) {
+            l2CommParametersItemProvider.dispose();
+        }
+        if( l3IPv4CommParametersItemProvider != null ) {
+            l3IPv4CommParametersItemProvider.dispose();
+        }
+        if( l3IPv6CommParametersItemProvider != null ) {
+            l3IPv6CommParametersItemProvider.dispose();
+        }
+        if( lNodeDataRefItemProvider != null ) {
+            lNodeDataRefItemProvider.dispose();
+        }
+        if( lNodeInputRefItemProvider != null ) {
+            lNodeInputRefItemProvider.dispose();
+        }
+        if( lNodeInputsItemProvider != null ) {
+            lNodeInputsItemProvider.dispose();
+        }
+        if( lNodeOutputRefItemProvider != null ) {
+            lNodeOutputRefItemProvider.dispose();
+        }
+        if( lNodeOutputsItemProvider != null ) {
+            lNodeOutputsItemProvider.dispose();
+        }
+        if( lNodeSpecNamingItemProvider != null ) {
+            lNodeSpecNamingItemProvider.dispose();
+        }
+        if( logParametersItemProvider != null ) {
+            logParametersItemProvider.dispose();
+        }
+        if( logParametersRefItemProvider != null ) {
+            logParametersRefItemProvider.dispose();
+        }
+        if( logicVarRefItemProvider != null ) {
+            logicVarRefItemProvider.dispose();
+        }
+        if( outputVarItemProvider != null ) {
+            outputVarItemProvider.dispose();
+        }
+        if( outputVarRefItemProvider != null ) {
+            outputVarRefItemProvider.dispose();
+        }
+        if( powerSystemRelationItemProvider != null ) {
+            powerSystemRelationItemProvider.dispose();
+        }
+        if( powerSystemRelationRefItemProvider != null ) {
+            powerSystemRelationRefItemProvider.dispose();
+        }
+        if( powerSystemRelationsItemProvider != null ) {
+            powerSystemRelationsItemProvider.dispose();
+        }
+        if( processEchoItemProvider != null ) {
+            processEchoItemProvider.dispose();
+        }
+        if( processResourceItemProvider != null ) {
+            processResourceItemProvider.dispose();
+        }
+        if( processResourceRefItemProvider != null ) {
+            processResourceRefItemProvider.dispose();
+        }
+        if( processResourcesItemProvider != null ) {
+            processResourcesItemProvider.dispose();
+        }
+        if( projectItemProvider != null ) {
+            projectItemProvider.dispose();
+        }
+        if( projectProcessReferenceItemProvider != null ) {
+            projectProcessReferenceItemProvider.dispose();
+        }
+        if( reportParametersItemProvider != null ) {
+            reportParametersItemProvider.dispose();
+        }
+        if( reportParametersRefItemProvider != null ) {
+            reportParametersRefItemProvider.dispose();
+        }
+        if( resourceItemProvider != null ) {
+            resourceItemProvider.dispose();
+        }
+        if( sdsItemProvider != null ) {
+            sdsItemProvider.dispose();
+        }
+        if( serviceParametersRefItemProvider != null ) {
+            serviceParametersRefItemProvider.dispose();
+        }
+        if( serviceSpecificationsItemProvider != null ) {
+            serviceSpecificationsItemProvider.dispose();
+        }
+        if( signalRoleItemProvider != null ) {
+            signalRoleItemProvider.dispose();
+        }
+        if( sourceRefItemProvider != null ) {
+            sourceRefItemProvider.dispose();
+        }
+        if( subCategoryItemProvider != null ) {
+            subCategoryItemProvider.dispose();
+        }
+        if( subCheckoutIDItemProvider != null ) {
+            subCheckoutIDItemProvider.dispose();
+        }
+        if( subFunctionTemplateItemProvider != null ) {
+            subFunctionTemplateItemProvider.dispose();
+        }
+        if( smvParametersItemProvider != null ) {
+            smvParametersItemProvider.dispose();
+        }
+        if( smvParametersRefItemProvider != null ) {
+            smvParametersRefItemProvider.dispose();
+        }
+        if( subscriberLNodeItemProvider != null ) {
+            subscriberLNodeItemProvider.dispose();
+        }
+        if( variableItemProvider != null ) {
+            variableItemProvider.dispose();
+        }
+        if( variableApplyToItemProvider != null ) {
+            variableApplyToItemProvider.dispose();
+        }
+        if( variableRefItemProvider != null ) {
+            variableRefItemProvider.dispose();
+        }
+        if( wiringParametersItemProvider != null ) {
+            wiringParametersItemProvider.dispose();
+        }
     }
 
 }

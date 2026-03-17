@@ -160,7 +160,7 @@ public interface FunctionalVariantRef extends BaseExtensionElement {
      * @see #setParentFunctionalVariantRefContainer(FunctionalVariantRefContainer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionalVariantRef_ParentFunctionalVariantRefContainer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantRefContainer#getFunctionalVariantRef
-     * @model opposite="functionalVariantRef" unsettable="true" ordered="false"
+     * @model opposite="FunctionalVariantRef" unsettable="true" ordered="false"
      * @generated
      */
     FunctionalVariantRefContainer getParentFunctionalVariantRefContainer();

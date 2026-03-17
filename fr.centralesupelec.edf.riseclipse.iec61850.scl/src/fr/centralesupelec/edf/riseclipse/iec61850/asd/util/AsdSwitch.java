@@ -100,6 +100,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.SMVParametersRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceParameters;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceParametersRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ServiceSpecifications;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCategory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCheckoutID;
@@ -1496,6 +1497,26 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             return result;
         }
+        case AsdPackage.SIGNAL_ROLE: {
+            SignalRole signalRole = ( SignalRole ) theEObject;
+            T result = caseSignalRole( signalRole );
+            if( result == null ) {
+                result = caseFunctionalVariantRefContainer( signalRole );
+            }
+            if( result == null ) {
+                result = caseBaseExtensionElementWithDesc( signalRole );
+            }
+            if( result == null ) {
+                result = caseBaseExtensionElement( signalRole );
+            }
+            if( result == null ) {
+                result = caseAsdObject( signalRole );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
         case AsdPackage.SOURCE_REF: {
             SourceRef sourceRef = ( SourceRef ) theEObject;
             T result = caseSourceRef( sourceRef );
@@ -2822,6 +2843,21 @@ public class AsdSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseServiceSpecifications( ServiceSpecifications object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Signal Role</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Signal Role</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSignalRole( SignalRole object ) {
         return null;
     }
 

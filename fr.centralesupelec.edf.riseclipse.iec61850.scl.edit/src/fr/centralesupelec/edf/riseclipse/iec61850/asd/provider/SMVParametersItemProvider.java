@@ -304,8 +304,8 @@ public class SMVParametersItemProvider extends ControlBlockParametersItemProvide
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.SMV_PARAMETERS__L2_COMM_PARAMETERS:
-        case AsdPackage.SMV_PARAMETERS__L3_IPV4_COMM_PARAMETERS:
-        case AsdPackage.SMV_PARAMETERS__L3_IPV6_COMM_PARAMETERS:
+        case AsdPackage.SMV_PARAMETERS__L3I_PV4_COMM_PARAMETERS:
+        case AsdPackage.SMV_PARAMETERS__L3I_PV6_COMM_PARAMETERS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
