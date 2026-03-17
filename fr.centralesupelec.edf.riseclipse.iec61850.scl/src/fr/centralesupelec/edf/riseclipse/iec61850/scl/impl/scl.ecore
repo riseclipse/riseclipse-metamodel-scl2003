@@ -1682,8 +1682,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentBaseElement" ordered="false"
         eType="#//BaseElement" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//BaseElement/Private"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AsdObjects" ordered="false"
         upperBound="-1" eType="#//asd/AsdObject" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//asd/AsdObject/ParentPrivate"/>

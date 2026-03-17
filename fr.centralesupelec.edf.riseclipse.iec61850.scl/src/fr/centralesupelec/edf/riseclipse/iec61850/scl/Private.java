@@ -36,7 +36,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdObject;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getSource <em>Source</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement <em>Parent Base Element</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getValue <em>Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getAsdObjects <em>Asd Objects</em>}</li>
  * </ul>
  *
@@ -174,17 +173,6 @@ public interface Private extends AnyContentFromOtherNamespace {
      * @generated
      */
     void setParentBaseElement( BaseElement value );
-
-    /**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPrivate_Value()
-     * @model transient="true" changeable="false" volatile="true" derived="true"
-     * @generated
-     */
-    String getValue();
 
     /**
      * Returns the value of the '<em><b>Asd Objects</b></em>' containment reference list.
