@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -58,15 +58,26 @@ public class SclResourceImpl extends XMLResourceImpl implements IRiseClipseResou
 
     @Override
     protected XMLHelper createXMLHelper() {
+        // XMLHelperImpl.getFeature(EClass eClass, String namespaceURI, String name)
+        // ignore the namespace to find a feature using XMLHelperImpl.getFeatureWithoutMap(EClass eClass, String name)
+        // (checked version in Eclipse 2023-09)
+        //
+        // This lead to the creation of SCL objects if elements from another namespace use existing SCL names.
+        //
+        // See issue https://github.com/riseclipse/riseclipse-metamodel-scl2003/issues/35:
+        // The problem can also arise for attributes
+        //
         return new XMLHelperImpl( this ) {
             private boolean otherNamespace = true;
-            
+
             @Override
             public EStructuralFeature getFeature( EClass eClass, String namespaceURI, String name ) {
-                otherNamespace = ( namespaceURI != null ) && ( ! namespaceURI.isEmpty() ) && ( ! SclPackage.eNS_URI.equals( namespaceURI ));
+                otherNamespace = ( namespaceURI != null )
+                            && ( ! namespaceURI.isEmpty() )
+                            && ( ! SclPackage.eNS_URI.equals( namespaceURI ));
                 return super.getFeature( eClass, namespaceURI, name );
             }
-            
+
             @Override
             protected EStructuralFeature getFeatureWithoutMap( EClass eClass, String name ) {
                 return otherNamespace ? null : super.getFeatureWithoutMap( eClass, name );
