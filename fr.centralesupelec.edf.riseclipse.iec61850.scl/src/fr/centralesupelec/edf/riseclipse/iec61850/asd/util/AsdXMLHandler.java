@@ -79,6 +79,9 @@ public class AsdXMLHandler extends SAXXMLHandler {
         if ( object instanceof Private && "eIEC61850-6-100".equals( ( ( Private ) object ).getType() ) ) {
             privateRootName = prefix + ":" + name;
             name = "AsdObjects";
+            // The namespace of AsdObjects in Private is scl, not e61850-6-100
+            // Here, we assume that the default namespace is always scl!
+            prefix = "";
         }
         
         return super.getFeature( object, prefix, name, isElement );
