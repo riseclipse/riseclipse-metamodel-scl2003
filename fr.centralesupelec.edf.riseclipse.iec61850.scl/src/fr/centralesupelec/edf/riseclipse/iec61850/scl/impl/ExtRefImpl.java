@@ -293,7 +293,7 @@ public class ExtRefImpl extends DORefImpl implements ExtRef {
      * @generated
      * @ordered
      */
-    protected static final String SRC_PREFIX_EDEFAULT = null;
+    protected static final String SRC_PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getSrcPrefix() <em>Src Prefix</em>}' attribute.

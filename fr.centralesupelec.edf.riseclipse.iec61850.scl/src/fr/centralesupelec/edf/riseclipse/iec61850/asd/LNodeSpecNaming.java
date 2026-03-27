@@ -163,12 +163,14 @@ public interface LNodeSpecNaming extends BaseExtensionElement {
 
     /**
      * Returns the value of the '<em><b>SPrefix</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>SPrefix</em>' attribute.
      * @see #setSPrefix(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLNodeSpecNaming_SPrefix()
-     * @model extendedMetaData="kind='attribute' name='sPrefix'"
+     * @model default=""
+     *        extendedMetaData="kind='attribute' name='sPrefix'"
      * @generated
      */
     String getSPrefix();

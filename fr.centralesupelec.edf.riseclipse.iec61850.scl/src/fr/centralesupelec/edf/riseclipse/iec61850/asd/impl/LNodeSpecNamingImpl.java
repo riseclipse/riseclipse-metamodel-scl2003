@@ -141,7 +141,7 @@ public class LNodeSpecNamingImpl extends BaseExtensionElementImpl implements LNo
      * @generated
      * @ordered
      */
-    protected static final String SPREFIX_EDEFAULT = null;
+    protected static final String SPREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getSPrefix() <em>SPrefix</em>}' attribute.

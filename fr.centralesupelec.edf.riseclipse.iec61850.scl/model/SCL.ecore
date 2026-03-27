@@ -958,7 +958,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcLNInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentInputs" ordered="false"
         eType="#//Inputs" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Inputs/ExtRef"/>
@@ -3332,7 +3332,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pLN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ExtControlCheckEnum">
     <eLiterals name="Conserve"/>
@@ -5780,7 +5780,7 @@
           <details key="name" value="sLnInst"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="sPrefix"/>
@@ -5854,7 +5854,7 @@
           <details key="name" value="logName"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="if logName is provided, indication of the LNode prefix to locate the Log"/>
         </eAnnotations>

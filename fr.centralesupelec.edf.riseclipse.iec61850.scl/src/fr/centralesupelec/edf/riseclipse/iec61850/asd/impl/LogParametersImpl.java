@@ -205,7 +205,7 @@ public class LogParametersImpl extends ControlBlockParametersImpl implements Log
      * @generated
      * @ordered
      */
-    protected static final String LOG_PREFIX_EDEFAULT = null;
+    protected static final String LOG_PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getLogPrefix() <em>Log Prefix</em>}' attribute.

@@ -259,6 +259,7 @@ public interface LogParameters extends ControlBlockParameters {
 
     /**
      * Returns the value of the '<em><b>Log Prefix</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * <!-- begin-model-doc -->
@@ -267,7 +268,8 @@ public interface LogParameters extends ControlBlockParameters {
      * @return the value of the '<em>Log Prefix</em>' attribute.
      * @see #setLogPrefix(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLogParameters_LogPrefix()
-     * @model extendedMetaData="kind='attribute' name='logPrefix'"
+     * @model default=""
+     *        extendedMetaData="kind='attribute' name='logPrefix'"
      * @generated
      */
     String getLogPrefix();
