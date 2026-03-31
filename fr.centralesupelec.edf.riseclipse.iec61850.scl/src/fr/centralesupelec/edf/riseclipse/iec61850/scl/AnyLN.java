@@ -22,6 +22,10 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Any LN</b></em>'.
@@ -45,13 +49,18 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByAssociation <em>Referred By Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLabels <em>Labels</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByDOS <em>Referred By DOS</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredBySDS <em>Referred By SDS</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByDAS <em>Referred By DAS</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN()
  * @model abstract="true"
  * @generated
  */
-public interface AnyLN extends UnNaming, INamespaceGetter {
+public interface AnyLN extends UnNaming, INamespaceGetter, AgUuid {
     /**
      * Returns the value of the '<em><b>Inst</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -687,6 +696,219 @@ public interface AnyLN extends UnNaming, INamespaceGetter {
      * @generated
      */
     boolean isSetReferredByLNode();
+
+    /**
+     * Returns the value of the '<em><b>Labels</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentAnyLN <em>Parent Any LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #setLabels(Labels)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Labels()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Labels getLabels();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @generated
+     */
+    void setLabels( Labels value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    void unsetLabels();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLabels <em>Labels</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Labels</em>' containment reference is set.
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    boolean isSetLabels();
+
+    /**
+     * Returns the value of the '<em><b>Outputs</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs#getParentAnyLN <em>Parent Any LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Outputs</em>' containment reference.
+     * @see #isSetOutputs()
+     * @see #unsetOutputs()
+     * @see #setOutputs(Outputs)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Outputs()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Outputs#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Outputs getOutputs();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getOutputs <em>Outputs</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Outputs</em>' containment reference.
+     * @see #isSetOutputs()
+     * @see #unsetOutputs()
+     * @see #getOutputs()
+     * @generated
+     */
+    void setOutputs( Outputs value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getOutputs <em>Outputs</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetOutputs()
+     * @see #getOutputs()
+     * @see #setOutputs(Outputs)
+     * @generated
+     */
+    void unsetOutputs();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getOutputs <em>Outputs</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Outputs</em>' containment reference is set.
+     * @see #unsetOutputs()
+     * @see #getOutputs()
+     * @see #setOutputs(Outputs)
+     * @generated
+     */
+    boolean isSetOutputs();
+
+    /**
+     * Returns the value of the '<em><b>Referred By DOS</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getRefersToAnyLN <em>Refers To Any LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By DOS</em>' reference list.
+     * @see #isSetReferredByDOS()
+     * @see #unsetReferredByDOS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReferredByDOS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DOS#getRefersToAnyLN
+     * @model opposite="RefersToAnyLN" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< DOS > getReferredByDOS();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByDOS <em>Referred By DOS</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByDOS()
+     * @see #getReferredByDOS()
+     * @generated
+     */
+    void unsetReferredByDOS();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByDOS <em>Referred By DOS</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By DOS</em>' reference list is set.
+     * @see #unsetReferredByDOS()
+     * @see #getReferredByDOS()
+     * @generated
+     */
+    boolean isSetReferredByDOS();
+
+    /**
+     * Returns the value of the '<em><b>Referred By SDS</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getRefersToAnyLN <em>Refers To Any LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By SDS</em>' reference list.
+     * @see #isSetReferredBySDS()
+     * @see #unsetReferredBySDS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReferredBySDS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SDS#getRefersToAnyLN
+     * @model opposite="RefersToAnyLN" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< SDS > getReferredBySDS();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredBySDS <em>Referred By SDS</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredBySDS()
+     * @see #getReferredBySDS()
+     * @generated
+     */
+    void unsetReferredBySDS();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredBySDS <em>Referred By SDS</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By SDS</em>' reference list is set.
+     * @see #unsetReferredBySDS()
+     * @see #getReferredBySDS()
+     * @generated
+     */
+    boolean isSetReferredBySDS();
+
+    /**
+     * Returns the value of the '<em><b>Referred By DAS</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getRefersToAnyLN <em>Refers To Any LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By DAS</em>' reference list.
+     * @see #isSetReferredByDAS()
+     * @see #unsetReferredByDAS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReferredByDAS()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.DAS#getRefersToAnyLN
+     * @model opposite="RefersToAnyLN" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< DAS > getReferredByDAS();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByDAS <em>Referred By DAS</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByDAS()
+     * @see #getReferredByDAS()
+     * @generated
+     */
+    void unsetReferredByDAS();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByDAS <em>Referred By DAS</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By DAS</em>' reference list is set.
+     * @see #unsetReferredByDAS()
+     * @see #getReferredByDAS()
+     * @generated
+     */
+    boolean isSetReferredByDAS();
 
     /**
      * <!-- begin-user-doc -->

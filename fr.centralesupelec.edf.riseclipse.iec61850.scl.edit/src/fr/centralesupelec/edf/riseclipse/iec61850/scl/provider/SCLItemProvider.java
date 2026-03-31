@@ -66,6 +66,9 @@ public class SCLItemProvider extends BaseElementItemProvider {
             addRevisionPropertyDescriptor( object );
             addVersionPropertyDescriptor( object );
             addReleasePropertyDescriptor( object );
+            addRevisionASDPropertyDescriptor( object );
+            addVersionASDPropertyDescriptor( object );
+            addReleaseASDPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -125,6 +128,70 @@ public class SCLItemProvider extends BaseElementItemProvider {
                         getString( "_UI_SCL_release_feature" ),
                         getString( "_UI_PropertyDescriptor_description", "_UI_SCL_release_feature", "_UI_SCL_type" ),
                         SclPackage.eINSTANCE.getSCL_Release(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Revision ASD feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRevisionASDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SCL_revisionASD_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SCL_revisionASD_feature",
+                                "_UI_SCL_type" ),
+                        SclPackage.eINSTANCE.getSCL_RevisionASD(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Version ASD feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addVersionASDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SCL_versionASD_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SCL_versionASD_feature", "_UI_SCL_type" ),
+                        SclPackage.eINSTANCE.getSCL_VersionASD(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Release ASD feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReleaseASDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SCL_releaseASD_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SCL_releaseASD_feature", "_UI_SCL_type" ),
+                        SclPackage.eINSTANCE.getSCL_ReleaseASD(),
                         true,
                         false,
                         false,
@@ -206,6 +273,9 @@ public class SCLItemProvider extends BaseElementItemProvider {
         case SclPackage.SCL__REVISION:
         case SclPackage.SCL__VERSION:
         case SclPackage.SCL__RELEASE:
+        case SclPackage.SCL__REVISION_ASD:
+        case SclPackage.SCL__VERSION_ASD:
+        case SclPackage.SCL__RELEASE_ASD:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.SCL__HEADER:

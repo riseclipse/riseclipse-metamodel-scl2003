@@ -33,6 +33,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getKind <em>Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer <em>Parent Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getApRef <em>Ap Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getInitiator <em>Initiator</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAssociation()
@@ -227,5 +229,52 @@ public interface Association extends BaseElement, AgLNRef {
      * @generated
      */
     boolean isSetRefersToAnyLN();
+
+    /**
+     * Returns the value of the '<em><b>Ap Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ap Ref</em>' attribute.
+     * @see #setApRef(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAssociation_ApRef()
+     * @model
+     * @generated
+     */
+    String getApRef();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getApRef <em>Ap Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Ap Ref</em>' attribute.
+     * @see #getApRef()
+     * @generated
+     */
+    void setApRef( String value );
+
+    /**
+     * Returns the value of the '<em><b>Initiator</b></em>' attribute.
+     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationInitiator}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Initiator</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationInitiator
+     * @see #setInitiator(AssociationInitiator)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAssociation_Initiator()
+     * @model
+     * @generated
+     */
+    AssociationInitiator getInitiator();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getInitiator <em>Initiator</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Initiator</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationInitiator
+     * @see #getInitiator()
+     * @generated
+     */
+    void setInitiator( AssociationInitiator value );
 
 } // Association

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
@@ -47,6 +48,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
@@ -61,6 +63,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAccessControl <em>Access Control</em>}</li>
@@ -70,6 +74,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +89,64 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @ordered
      */
     protected static final String NAMESPACE_EDEFAULT = null;
+
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
 
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
@@ -240,6 +303,25 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     protected EList< LDevice > refersToLowerLevelLDevices;
 
     /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -279,9 +361,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         inst = newInst;
         boolean oldInstESet = instESet;
         instESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__INST, oldInst, inst,
                     !oldInstESet ) );
+        }
     }
 
     /**
@@ -295,9 +378,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         boolean oldInstESet = instESet;
         inst = INST_EDEFAULT;
         instESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__INST, oldInst, INST_EDEFAULT,
                     oldInstESet ) );
+        }
     }
 
     /**
@@ -335,9 +419,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         ldName = newLdName;
         boolean oldLdNameESet = ldNameESet;
         ldNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LD_NAME, oldLdName, ldName,
                     !oldLdNameESet ) );
+        }
     }
 
     /**
@@ -351,9 +436,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         boolean oldLdNameESet = ldNameESet;
         ldName = LD_NAME_EDEFAULT;
         ldNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__LD_NAME, oldLdName,
                     LD_NAME_EDEFAULT, oldLdNameESet ) );
+        }
     }
 
     /**
@@ -389,10 +475,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.LDEVICE__ACCESS_CONTROL, oldAccessControl, newAccessControl, !oldAccessControlESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -406,21 +494,26 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public void setAccessControl( AccessControl newAccessControl ) {
         if( newAccessControl != accessControl ) {
             NotificationChain msgs = null;
-            if( accessControl != null )
+            if( accessControl != null ) {
                 msgs = ( ( InternalEObject ) accessControl ).eInverseRemove( this,
                         SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, AccessControl.class, msgs );
-            if( newAccessControl != null )
+            }
+            if( newAccessControl != null ) {
                 msgs = ( ( InternalEObject ) newAccessControl ).eInverseAdd( this,
                         SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, AccessControl.class, msgs );
+            }
             msgs = basicSetAccessControl( newAccessControl, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldAccessControlESet = accessControlESet;
             accessControlESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__ACCESS_CONTROL,
                         newAccessControl, newAccessControl, !oldAccessControlESet ) );
+            }
         }
     }
 
@@ -437,10 +530,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.LDEVICE__ACCESS_CONTROL, oldAccessControl, null, oldAccessControlESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -457,14 +552,17 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             msgs = ( ( InternalEObject ) accessControl ).eInverseRemove( this,
                     SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, AccessControl.class, msgs );
             msgs = basicUnsetAccessControl( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldAccessControlESet = accessControlESet;
             accessControlESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__ACCESS_CONTROL, null,
                         null, oldAccessControlESet ) );
+            }
         }
     }
 
@@ -485,7 +583,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public Server getParentServer() {
-        if( eContainerFeatureID() != SclPackage.LDEVICE__PARENT_SERVER ) return null;
+        if( eContainerFeatureID() != SclPackage.LDEVICE__PARENT_SERVER ) {
+            return null;
+        }
         return ( Server ) eInternalContainer();
     }
 
@@ -508,20 +608,26 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public void setParentServer( Server newParentServer ) {
         if( newParentServer != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.LDEVICE__PARENT_SERVER && newParentServer != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServer ) )
+            if( EcoreUtil.isAncestor( this, newParentServer ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServer != null )
+            }
+            if( newParentServer != null ) {
                 msgs = ( ( InternalEObject ) newParentServer ).eInverseAdd( this, SclPackage.SERVER__LDEVICE,
                         Server.class, msgs );
+            }
             msgs = basicSetParentServer( newParentServer, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__PARENT_SERVER, newParentServer,
                     newParentServer ) );
+        }
     }
 
     /**
@@ -532,7 +638,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public EList< LN > getLN() {
         if( ln == null ) {
-            ln = new EObjectContainmentWithInverseEList.Unsettable< LN >( LN.class, this, SclPackage.LDEVICE__LN,
+            ln = new EObjectContainmentWithInverseEList.Unsettable< >( LN.class, this, SclPackage.LDEVICE__LN,
                     SclPackage.LN__PARENT_LDEVICE );
         }
         return ln;
@@ -545,7 +651,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public void unsetLN() {
-        if( ln != null ) ( ( InternalEList.Unsettable< ? > ) ln ).unset();
+        if( ln != null ) {
+            ( ( InternalEList.Unsettable< ? > ) ln ).unset();
+        }
     }
 
     /**
@@ -582,10 +690,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.LDEVICE__REFERRED_BY_IED_NAME, oldReferredByIEDName, newReferredByIEDName,
                     !oldReferredByIEDNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -599,21 +709,26 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public void setReferredByIEDName( IEDName newReferredByIEDName ) {
         if( newReferredByIEDName != referredByIEDName ) {
             NotificationChain msgs = null;
-            if( referredByIEDName != null )
+            if( referredByIEDName != null ) {
                 msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
                         SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs );
-            if( newReferredByIEDName != null )
+            }
+            if( newReferredByIEDName != null ) {
                 msgs = ( ( InternalEObject ) newReferredByIEDName ).eInverseAdd( this,
                         SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs );
+            }
             msgs = basicSetReferredByIEDName( newReferredByIEDName, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldReferredByIEDNameESet = referredByIEDNameESet;
             referredByIEDNameESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__REFERRED_BY_IED_NAME,
                         newReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet ) );
+            }
         }
     }
 
@@ -630,10 +745,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.LDEVICE__REFERRED_BY_IED_NAME, oldReferredByIEDName, null, oldReferredByIEDNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -650,14 +767,17 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
                     SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs );
             msgs = basicUnsetReferredByIEDName( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldReferredByIEDNameESet = referredByIEDNameESet;
             referredByIEDNameESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__REFERRED_BY_IED_NAME,
                         null, null, oldReferredByIEDNameESet ) );
+            }
         }
     }
 
@@ -696,10 +816,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, oldRefersToHigherLevelLDevice,
                     newRefersToHigherLevelLDevice, !oldRefersToHigherLevelLDeviceESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -713,22 +835,27 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public void setRefersToHigherLevelLDevice( LDevice newRefersToHigherLevelLDevice ) {
         if( newRefersToHigherLevelLDevice != refersToHigherLevelLDevice ) {
             NotificationChain msgs = null;
-            if( refersToHigherLevelLDevice != null )
+            if( refersToHigherLevelLDevice != null ) {
                 msgs = ( ( InternalEObject ) refersToHigherLevelLDevice ).eInverseRemove( this,
                         SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
-            if( newRefersToHigherLevelLDevice != null )
+            }
+            if( newRefersToHigherLevelLDevice != null ) {
                 msgs = ( ( InternalEObject ) newRefersToHigherLevelLDevice ).eInverseAdd( this,
                         SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
+            }
             msgs = basicSetRefersToHigherLevelLDevice( newRefersToHigherLevelLDevice, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToHigherLevelLDeviceESet = refersToHigherLevelLDeviceESet;
             refersToHigherLevelLDeviceESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET,
                         SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, newRefersToHigherLevelLDevice,
                         newRefersToHigherLevelLDevice, !oldRefersToHigherLevelLDeviceESet ) );
+            }
         }
     }
 
@@ -746,10 +873,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, oldRefersToHigherLevelLDevice, null,
                     oldRefersToHigherLevelLDeviceESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -766,15 +895,18 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             msgs = ( ( InternalEObject ) refersToHigherLevelLDevice ).eInverseRemove( this,
                     SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
             msgs = basicUnsetRefersToHigherLevelLDevice( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRefersToHigherLevelLDeviceESet = refersToHigherLevelLDeviceESet;
             refersToHigherLevelLDeviceESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, null, null,
                         oldRefersToHigherLevelLDeviceESet ) );
+            }
         }
     }
 
@@ -796,7 +928,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public EList< LDevice > getRefersToLowerLevelLDevices() {
         if( refersToLowerLevelLDevices == null ) {
-            refersToLowerLevelLDevices = new EObjectWithInverseEList.Unsettable< LDevice >( LDevice.class, this,
+            refersToLowerLevelLDevices = new EObjectWithInverseEList.Unsettable< >( LDevice.class, this,
                     SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES,
                     SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE );
         }
@@ -810,8 +942,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public void unsetRefersToLowerLevelLDevices() {
-        if( refersToLowerLevelLDevices != null )
+        if( refersToLowerLevelLDevices != null ) {
             ( ( InternalEList.Unsettable< ? > ) refersToLowerLevelLDevices ).unset();
+        }
     }
 
     /**
@@ -823,6 +956,130 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public boolean isSetRefersToLowerLevelLDevices() {
         return refersToLowerLevelLDevices != null
                 && ( ( InternalEList.Unsettable< ? > ) refersToLowerLevelLDevices ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LDEVICE,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_LDEVICE,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LABELS, newLabels,
+                        newLabels, !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.LDEVICE__LABELS, oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LDEVICE, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
     }
 
     /**
@@ -840,8 +1097,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         // 1.  LDevice.LN0.DOI["NamPlt"].DAI["ldNs"].value                 if present
         // 2.  LDevice.LN0.LNodeType.DO["NamPlt"].DOType.DA["ldNs"].value  if present
         // 3.  null (should not occur in a valid SCL file)                 otherwise
-        
-        if( getLN0() == null ) return null;
+
+        if( getLN0() == null ) {
+            return null;
+        }
         List< DOI > namPltDoi =
                  getLN0()
                 .getDOI()
@@ -861,38 +1120,154 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                                     && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 ) ) {
                     return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
                 }
-            
+
         }
 
-        if( getLN0().getRefersToLNodeType() == null ) return null;
-        List< DO > namPltDo =
-                 getLN0()
-                .getRefersToLNodeType()
-                .getDO()
-                .stream()
-                .filter( do_ -> "NamPlt".equals( do_.getName() ) )
-                .toList();
-        if( namPltDo.size() == 1 ) {
-            if( namPltDo.get( 0 ).getRefersToDOType() == null ) return null;
-            List< DA > ldNsDa =
-                     namPltDo
-                    .get( 0 )
-                    .getRefersToDOType()
-                    .getDA()
+        if( getLN0().getRefersToLNodeType() != null ) {
+            List< DO > namPltDo =
+                     getLN0()
+                    .getRefersToLNodeType()
+                    .getDO()
                     .stream()
-                    .filter( da -> "ldNs".equals( da.getName() ))
+                    .filter( do_ -> "NamPlt".equals( do_.getName() ) )
                     .toList();
-            if( ldNsDa.size() == 1 && ( ldNsDa.get( 0 ).getVal().size() == 1 )
-                                   && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                                   && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
+            if( namPltDo.size() == 1 ) {
+                if( namPltDo.get( 0 ).getRefersToDOType() == null ) {
+                    return null;
                 }
-            
+                List< DA > ldNsDa =
+                         namPltDo
+                        .get( 0 )
+                        .getRefersToDOType()
+                        .getDA()
+                        .stream()
+                        .filter( da -> "ldNs".equals( da.getName() ))
+                        .toList();
+                if( ldNsDa.size() == 1 && ( ldNsDa.get( 0 ).getVal().size() == 1 )
+                                       && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                                       && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                        return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                }
+            }
+
+        }
+
+        // Issue #79
+        if( getRefersToHigherLevelLDevice() != null ) {
+            return getRefersToHigherLevelLDevice().getNamespace();
         }
 
         return null;
-        
+
         //@formatter:on
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -918,10 +1293,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LN0,
                     oldLN0, newLN0, !oldLN0ESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -935,21 +1312,26 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public void setLN0( LN0 newLN0 ) {
         if( newLN0 != ln0 ) {
             NotificationChain msgs = null;
-            if( ln0 != null )
+            if( ln0 != null ) {
                 msgs = ( ( InternalEObject ) ln0 ).eInverseRemove( this, SclPackage.LN0__PARENT_LDEVICE, LN0.class,
                         msgs );
-            if( newLN0 != null )
+            }
+            if( newLN0 != null ) {
                 msgs = ( ( InternalEObject ) newLN0 ).eInverseAdd( this, SclPackage.LN0__PARENT_LDEVICE, LN0.class,
                         msgs );
+            }
             msgs = basicSetLN0( newLN0, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldLN0ESet = ln0ESet;
             ln0ESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LDEVICE__LN0, newLN0, newLN0,
                         !oldLN0ESet ) );
+            }
         }
     }
 
@@ -966,10 +1348,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__LN0,
                     oldLN0, null, oldLN0ESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -985,14 +1369,17 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             NotificationChain msgs = null;
             msgs = ( ( InternalEObject ) ln0 ).eInverseRemove( this, SclPackage.LN0__PARENT_LDEVICE, LN0.class, msgs );
             msgs = basicUnsetLN0( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldLN0ESet = ln0ESet;
             ln0ESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LDEVICE__LN0, null, null,
                         oldLN0ESet ) );
+            }
         }
     }
 
@@ -1016,34 +1403,45 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.LDEVICE__ACCESS_CONTROL:
-            if( accessControl != null )
+            if( accessControl != null ) {
                 msgs = ( ( InternalEObject ) accessControl ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.LDEVICE__ACCESS_CONTROL, null, msgs );
+            }
             return basicSetAccessControl( ( AccessControl ) otherEnd, msgs );
         case SclPackage.LDEVICE__PARENT_SERVER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServer( ( Server ) otherEnd, msgs );
         case SclPackage.LDEVICE__LN0:
-            if( ln0 != null )
+            if( ln0 != null ) {
                 msgs = ( ( InternalEObject ) ln0 ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.LDEVICE__LN0, null, msgs );
+            }
             return basicSetLN0( ( LN0 ) otherEnd, msgs );
         case SclPackage.LDEVICE__LN:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLN() ).basicAdd( otherEnd, msgs );
         case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
-            if( referredByIEDName != null )
+            if( referredByIEDName != null ) {
                 msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
                         SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs );
+            }
             return basicSetReferredByIEDName( ( IEDName ) otherEnd, msgs );
         case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
-            if( refersToHigherLevelLDevice != null )
+            if( refersToHigherLevelLDevice != null ) {
                 msgs = ( ( InternalEObject ) refersToHigherLevelLDevice ).eInverseRemove( this,
                         SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
+            }
             return basicSetRefersToHigherLevelLDevice( ( LDevice ) otherEnd, msgs );
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getRefersToLowerLevelLDevices() )
                     .basicAdd( otherEnd, msgs );
+        case SclPackage.LDEVICE__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.LDEVICE__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1070,6 +1468,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return basicUnsetRefersToHigherLevelLDevice( msgs );
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return ( ( InternalEList< ? > ) getRefersToLowerLevelLDevices() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LDEVICE__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1098,6 +1498,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         switch( featureID ) {
         case SclPackage.LDEVICE__NAMESPACE:
             return getNamespace();
+        case SclPackage.LDEVICE__UUID:
+            return getUuid();
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.LDEVICE__INST:
             return getInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1116,6 +1520,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return getRefersToHigherLevelLDevice();
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return getRefersToLowerLevelLDevices();
+        case SclPackage.LDEVICE__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1129,6 +1535,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.LDEVICE__INST:
             setInst( ( String ) newValue );
             return;
@@ -1158,6 +1570,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             getRefersToLowerLevelLDevices().clear();
             getRefersToLowerLevelLDevices().addAll( ( Collection< ? extends LDevice > ) newValue );
             return;
+        case SclPackage.LDEVICE__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1170,6 +1585,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.LDEVICE__INST:
             unsetInst();
             return;
@@ -1197,6 +1618,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             unsetRefersToLowerLevelLDevices();
             return;
+        case SclPackage.LDEVICE__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1211,6 +1635,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         switch( featureID ) {
         case SclPackage.LDEVICE__NAMESPACE:
             return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
+        case SclPackage.LDEVICE__UUID:
+            return isSetUuid();
+        case SclPackage.LDEVICE__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.LDEVICE__INST:
             return isSetInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1229,6 +1657,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return isSetRefersToHigherLevelLDevice();
         case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
             return isSetRefersToLowerLevelLDevices();
+        case SclPackage.LDEVICE__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }
@@ -1244,6 +1674,16 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             switch( derivedFeatureID ) {
             case SclPackage.LDEVICE__NAMESPACE:
                 return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.LDEVICE__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.LDEVICE__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
             default:
                 return -1;
             }
@@ -1266,6 +1706,16 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return -1;
             }
         }
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.LDEVICE__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.LDEVICE__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
         return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
@@ -1276,19 +1726,39 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (inst: " );
-        if( instESet )
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", inst: " );
+        if( instESet ) {
             result.append( inst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldName: " );
-        if( ldNameESet )
+        if( ldNameESet ) {
             result.append( ldName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
@@ -1308,10 +1778,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         super.doBuildExplicitLinks( console );
 
         // String messagePrefix = "while resolving link from LDevice: ";
-        
+
         // TODO: warning message ?
-        if( getLN0() == null ) return;
-        
+        if( getLN0() == null ) {
+            return;
+        }
+
         // Look for DOI name="GrRef" in LN0
         List< DOI > grRef =
                  getLN0()
@@ -1332,7 +1804,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return;
         }
         // Look for DAI name="setSrcRef" in GrRef
-        // When we try to get 
+        // When we try to get
         List< DAI > setSrcRef =
                  grRef
                 .get( 0 )
@@ -1340,18 +1812,13 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 .stream()
                 .filter( dai -> "setSrcRef".equals( dai.getName() ))
                 .toList();
-        
-        if( setSrcRef.isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
-            return;
-        }
-        if( setSrcRef.size() > 1 ) {
+
+        if( setSrcRef.isEmpty() || ( setSrcRef.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
             return;
         }
-        
+
         EList< Val > val = setSrcRef.get( 0 ).getVal();
         if( val.isEmpty() ) {
             // We look for Val in DataTypeTemplates
@@ -1361,25 +1828,20 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 val = setSrcRef.get( 0 ).getRefersToAbstractDataAttribute().getVal();
             }
         }
-        
-        if( val.isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
-            return;
-        }
-        if( val.size() > 1 ) {
+
+        if( val.isEmpty() || ( val.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
-        
-        String higherLevelLDeviceReference = val.get( 0 ).getValue();;
+
+        String higherLevelLDeviceReference = val.get( 0 ).getValue();
         if(( higherLevelLDeviceReference == null ) || ( higherLevelLDeviceReference.length() <= 1 )) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found no Val or empty Val in setSrcRef on line ", setSrcRef.get( 0 ).getLineNumber() );
             return;
         }
-        
+
         List< LDevice > lDevices = null;
 
         if( higherLevelLDeviceReference.startsWith( "@" )) {
@@ -1395,7 +1857,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                     .toList();
 
         }
-            
+
         if( lDevices == null ) {
             // Issue #63
             // Look for LDevice in same Server with "LDevice.ldName" higherLevelLDeviceName
@@ -1409,7 +1871,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
 
        if( lDevices.isEmpty() ) {
            // look for "IED.name" concatenated with "LDevice.inst"
-           List< IED > lIEDs = 
+           List< IED > lIEDs =
                     getParentServer()
                    .getParentAccessPoint()
                    .getParentIED()
@@ -1418,20 +1880,15 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                    .stream()
                    .filter( ied -> higherLevelLDeviceReference.startsWith( ied.getName() ))
                    .toList();
-               
-           if( lIEDs.isEmpty() ) {
-               // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-               //                  messagePrefix, "found no IED with name is a prefix of ", higherLevelLDeviceName );
-               return;
-           }
-           if( lIEDs.size() > 1 ) {
+
+           if( lIEDs.isEmpty() || ( lIEDs.size() > 1 ) ) {
                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                //                  messagePrefix, "found several IEDd with name is a prefix of ", higherLevelLDeviceName );
                return;
            }
            IED ied = lIEDs.get( 0 );
            String ldInst = higherLevelLDeviceReference.substring( ied.getName().length() );
-           
+
            lDevices =
                    ied
                    .getAccessPoint()
@@ -1440,7 +1897,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                        if( ap.getServer() == null ) {
                            return Stream.of();
                        }
-                       return 
+                       return
                                ap
                                .getServer()
                                .getLDevice()
@@ -1449,18 +1906,13 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                    })
                    .toList();
         }
-        
-        if( lDevices.isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no LDevice named ", higherLevelLDeviceName );
-            return;
-        }
-        if( lDevices.size() > 1 ) {
+
+        if( lDevices.isEmpty() || ( lDevices.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several LDevice ", higherLevelLDeviceName );
             return;
         }
-        
+
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                       "LDevice ", getInst(), " has ", lDevices.get( 0 ).getInst(), " for higher level LDevice" );
         setRefersToHigherLevelLDevice( lDevices.get( 0 ));

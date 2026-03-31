@@ -56,6 +56,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLnUuid <em>Ln Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getApRef <em>Ap Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getParentRptEnabled <em>Parent Rpt Enabled</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
@@ -237,6 +238,26 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * @ordered
      */
     protected boolean prefixESet;
+
+    /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
 
     /**
      * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
@@ -691,6 +712,31 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * @generated
      */
     @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LN_UUID, oldLnUuid,
+                    lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String getDesc() {
         return desc;
     }
@@ -937,6 +983,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return getLnInst();
         case SclPackage.CLIENT_LN__PREFIX:
             return getPrefix();
+        case SclPackage.CLIENT_LN__LN_UUID:
+            return getLnUuid();
         case SclPackage.CLIENT_LN__AP_REF:
             return getApRef();
         case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
@@ -972,6 +1020,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         case SclPackage.CLIENT_LN__PREFIX:
             setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__LN_UUID:
+            setLnUuid( ( String ) newValue );
             return;
         case SclPackage.CLIENT_LN__AP_REF:
             setApRef( ( String ) newValue );
@@ -1012,6 +1063,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         case SclPackage.CLIENT_LN__PREFIX:
             unsetPrefix();
             return;
+        case SclPackage.CLIENT_LN__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
         case SclPackage.CLIENT_LN__AP_REF:
             unsetApRef();
             return;
@@ -1045,6 +1099,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return isSetLnInst();
         case SclPackage.CLIENT_LN__PREFIX:
             return isSetPrefix();
+        case SclPackage.CLIENT_LN__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
         case SclPackage.CLIENT_LN__AP_REF:
             return isSetApRef();
         case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
@@ -1088,6 +1144,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                 return SclPackage.AG_LN_REF__LN_INST;
             case SclPackage.CLIENT_LN__PREFIX:
                 return SclPackage.AG_LN_REF__PREFIX;
+            case SclPackage.CLIENT_LN__LN_UUID:
+                return SclPackage.AG_LN_REF__LN_UUID;
             default:
                 return -1;
             }
@@ -1128,6 +1186,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                 return SclPackage.CLIENT_LN__LN_INST;
             case SclPackage.AG_LN_REF__PREFIX:
                 return SclPackage.CLIENT_LN__PREFIX;
+            case SclPackage.AG_LN_REF__LN_UUID:
+                return SclPackage.CLIENT_LN__LN_UUID;
             default:
                 return -1;
             }
@@ -1189,6 +1249,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ", apRef: " );
         if( apRefESet ) {
             result.append( apRef );

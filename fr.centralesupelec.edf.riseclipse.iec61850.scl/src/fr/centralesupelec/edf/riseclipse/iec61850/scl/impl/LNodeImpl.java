@@ -20,18 +20,30 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.jdt.annotation.NonNull;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.LogicVarRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessEcho;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -39,6 +51,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
@@ -51,6 +64,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getLnClass <em>Ln Class</em>}</li>
@@ -60,11 +75,77 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getParentLNodeContainer <em>Parent LNode Container</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getRefersToLNodeType <em>Refers To LNode Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getLabels <em>Labels</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getLnUuid <em>Ln Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getParentAbstract6100LNodeContainer <em>Parent Abstract6100 LNode Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getReferredByLNodeDataRef <em>Referred By LNode Data Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getReferredByLogicVarRef <em>Referred By Logic Var Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getReferredByProcessEcho <em>Referred By Process Echo</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getReferredByControlRef <em>Referred By Control Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getReferredBySourceRef <em>Referred By Source Ref</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LNodeImpl extends UnNamingImpl implements LNode {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
     /**
      * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -278,6 +359,95 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     protected boolean refersToLNodeTypeESet;
 
     /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
+
+    /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
+
+    /**
+     * The cached value of the '{@link #getReferredByLNodeDataRef() <em>Referred By LNode Data Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByLNodeDataRef()
+     * @generated
+     * @ordered
+     */
+    protected EList< LNodeDataRef > referredByLNodeDataRef;
+
+    /**
+     * The cached value of the '{@link #getReferredByLogicVarRef() <em>Referred By Logic Var Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByLogicVarRef()
+     * @generated
+     * @ordered
+     */
+    protected EList< LogicVarRef > referredByLogicVarRef;
+
+    /**
+     * The cached value of the '{@link #getReferredByProcessEcho() <em>Referred By Process Echo</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByProcessEcho()
+     * @generated
+     * @ordered
+     */
+    protected EList< ProcessEcho > referredByProcessEcho;
+
+    /**
+     * The cached value of the '{@link #getReferredByControlRef() <em>Referred By Control Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByControlRef()
+     * @generated
+     * @ordered
+     */
+    protected EList< ControlRef > referredByControlRef;
+
+    /**
+     * The cached value of the '{@link #getReferredBySourceRef() <em>Referred By Source Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredBySourceRef()
+     * @generated
+     * @ordered
+     */
+    protected EList< SourceRef > referredBySourceRef;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -294,6 +464,114 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getLNode();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__UUID, oldUuid, UUID_EDEFAULT,
+                    oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__TEMPLATE_UUID, oldTemplateUuid,
+                    templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__TEMPLATE_UUID, oldTemplateUuid,
+                    TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -932,6 +1210,394 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      */
     @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LNODE,
+                        Labels.class, msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_LNODE,
+                        Labels.class, msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LABELS, newLabels, newLabels,
+                        !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__LABELS,
+                    oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_LNODE, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LNODE__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LNODE__LN_UUID, oldLnUuid, lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Abstract6100LNodeContainer getParentAbstract6100LNodeContainer() {
+        if( eContainerFeatureID() != SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER ) {
+            return null;
+        }
+        return ( Abstract6100LNodeContainer ) eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentAbstract6100LNodeContainer(
+            Abstract6100LNodeContainer newParentAbstract6100LNodeContainer, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAbstract6100LNodeContainer,
+                SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER, msgs );
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentAbstract6100LNodeContainer( Abstract6100LNodeContainer newParentAbstract6100LNodeContainer ) {
+        if( newParentAbstract6100LNodeContainer != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER
+                        && newParentAbstract6100LNodeContainer != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAbstract6100LNodeContainer ) ) {
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
+            NotificationChain msgs = null;
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            if( newParentAbstract6100LNodeContainer != null ) {
+                msgs = ( ( InternalEObject ) newParentAbstract6100LNodeContainer ).eInverseAdd( this,
+                        AsdPackage.ABSTRACT6100_LNODE_CONTAINER__LNODE, Abstract6100LNodeContainer.class, msgs );
+            }
+            msgs = basicSetParentAbstract6100LNodeContainer( newParentAbstract6100LNodeContainer, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER, newParentAbstract6100LNodeContainer,
+                    newParentAbstract6100LNodeContainer ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< LNodeDataRef > getReferredByLNodeDataRef() {
+        if( referredByLNodeDataRef == null ) {
+            referredByLNodeDataRef = new EObjectWithInverseResolvingEList.Unsettable< >(
+                    LNodeDataRef.class, this, SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF,
+                    AsdPackage.LNODE_DATA_REF__REFERS_TO_LNODE );
+        }
+        return referredByLNodeDataRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByLNodeDataRef() {
+        if( referredByLNodeDataRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByLNodeDataRef ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByLNodeDataRef() {
+        return referredByLNodeDataRef != null && ( ( InternalEList.Unsettable< ? > ) referredByLNodeDataRef ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< LogicVarRef > getReferredByLogicVarRef() {
+        if( referredByLogicVarRef == null ) {
+            referredByLogicVarRef = new EObjectWithInverseResolvingEList.Unsettable< >( LogicVarRef.class,
+                    this, SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF, AsdPackage.LOGIC_VAR_REF__REFERS_TO_LNODE );
+        }
+        return referredByLogicVarRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByLogicVarRef() {
+        if( referredByLogicVarRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByLogicVarRef ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByLogicVarRef() {
+        return referredByLogicVarRef != null && ( ( InternalEList.Unsettable< ? > ) referredByLogicVarRef ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< ProcessEcho > getReferredByProcessEcho() {
+        if( referredByProcessEcho == null ) {
+            referredByProcessEcho = new EObjectWithInverseResolvingEList.Unsettable< >( ProcessEcho.class,
+                    this, SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO, AsdPackage.PROCESS_ECHO__REFERS_TO_LNODE );
+        }
+        return referredByProcessEcho;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByProcessEcho() {
+        if( referredByProcessEcho != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByProcessEcho ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByProcessEcho() {
+        return referredByProcessEcho != null && ( ( InternalEList.Unsettable< ? > ) referredByProcessEcho ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< ControlRef > getReferredByControlRef() {
+        if( referredByControlRef == null ) {
+            referredByControlRef = new EObjectWithInverseResolvingEList.Unsettable< >( ControlRef.class,
+                    this, SclPackage.LNODE__REFERRED_BY_CONTROL_REF, AsdPackage.CONTROL_REF__REFERS_TO_LNODE );
+        }
+        return referredByControlRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByControlRef() {
+        if( referredByControlRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByControlRef ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByControlRef() {
+        return referredByControlRef != null && ( ( InternalEList.Unsettable< ? > ) referredByControlRef ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< SourceRef > getReferredBySourceRef() {
+        if( referredBySourceRef == null ) {
+            referredBySourceRef = new EObjectWithInverseResolvingEList.Unsettable< >( SourceRef.class, this,
+                    SclPackage.LNODE__REFERRED_BY_SOURCE_REF, AsdPackage.SOURCE_REF__REFERS_TO_LNODE );
+        }
+        return referredBySourceRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredBySourceRef() {
+        if( referredBySourceRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredBySourceRef ).unset();
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredBySourceRef() {
+        return referredBySourceRef != null && ( ( InternalEList.Unsettable< ? > ) referredBySourceRef ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings( "unchecked" )
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.LNODE__REFERS_TO_ANY_LN:
@@ -951,6 +1617,32 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                         SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs );
             }
             return basicSetRefersToLNodeType( ( LNodeType ) otherEnd, msgs );
+        case SclPackage.LNODE__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.LNODE__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            if( eInternalContainer() != null ) {
+                msgs = eBasicRemoveFromContainer( msgs );
+            }
+            return basicSetParentAbstract6100LNodeContainer( ( Abstract6100LNodeContainer ) otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLNodeDataRef() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLogicVarRef() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByProcessEcho() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_CONTROL_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByControlRef() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_SOURCE_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredBySourceRef() )
+                    .basicAdd( otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -969,6 +1661,20 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return basicSetParentLNodeContainer( null, msgs );
         case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
             return basicUnsetRefersToLNodeType( msgs );
+        case SclPackage.LNODE__LABELS:
+            return basicUnsetLabels( msgs );
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            return basicSetParentAbstract6100LNodeContainer( null, msgs );
+        case SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF:
+            return ( ( InternalEList< ? > ) getReferredByLNodeDataRef() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF:
+            return ( ( InternalEList< ? > ) getReferredByLogicVarRef() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO:
+            return ( ( InternalEList< ? > ) getReferredByProcessEcho() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_CONTROL_REF:
+            return ( ( InternalEList< ? > ) getReferredByControlRef() ).basicRemove( otherEnd, msgs );
+        case SclPackage.LNODE__REFERRED_BY_SOURCE_REF:
+            return ( ( InternalEList< ? > ) getReferredBySourceRef() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -984,6 +1690,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
             return eInternalContainer().eInverseRemove( this, SclPackage.LNODE_CONTAINER__LNODE, LNodeContainer.class,
                     msgs );
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            return eInternalContainer().eInverseRemove( this, AsdPackage.ABSTRACT6100_LNODE_CONTAINER__LNODE,
+                    Abstract6100LNodeContainer.class, msgs );
         }
         return super.eBasicRemoveFromContainerFeature( msgs );
     }
@@ -996,6 +1705,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.LNODE__UUID:
+            return getUuid();
+        case SclPackage.LNODE__TEMPLATE_UUID:
+            return getTemplateUuid();
         case SclPackage.LNODE__IED_NAME:
             return getIedName();
         case SclPackage.LNODE__LD_INST:
@@ -1014,6 +1727,22 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return getParentLNodeContainer();
         case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
             return getRefersToLNodeType();
+        case SclPackage.LNODE__LABELS:
+            return getLabels();
+        case SclPackage.LNODE__LN_UUID:
+            return getLnUuid();
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            return getParentAbstract6100LNodeContainer();
+        case SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF:
+            return getReferredByLNodeDataRef();
+        case SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF:
+            return getReferredByLogicVarRef();
+        case SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO:
+            return getReferredByProcessEcho();
+        case SclPackage.LNODE__REFERRED_BY_CONTROL_REF:
+            return getReferredByControlRef();
+        case SclPackage.LNODE__REFERRED_BY_SOURCE_REF:
+            return getReferredBySourceRef();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1023,9 +1752,16 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case SclPackage.LNODE__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case SclPackage.LNODE__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
         case SclPackage.LNODE__IED_NAME:
             setIedName( ( String ) newValue );
             return;
@@ -1053,6 +1789,35 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
             setRefersToLNodeType( ( LNodeType ) newValue );
             return;
+        case SclPackage.LNODE__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
+        case SclPackage.LNODE__LN_UUID:
+            setLnUuid( ( String ) newValue );
+            return;
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            setParentAbstract6100LNodeContainer( ( Abstract6100LNodeContainer ) newValue );
+            return;
+        case SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF:
+            getReferredByLNodeDataRef().clear();
+            getReferredByLNodeDataRef().addAll( ( Collection< ? extends LNodeDataRef > ) newValue );
+            return;
+        case SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF:
+            getReferredByLogicVarRef().clear();
+            getReferredByLogicVarRef().addAll( ( Collection< ? extends LogicVarRef > ) newValue );
+            return;
+        case SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO:
+            getReferredByProcessEcho().clear();
+            getReferredByProcessEcho().addAll( ( Collection< ? extends ProcessEcho > ) newValue );
+            return;
+        case SclPackage.LNODE__REFERRED_BY_CONTROL_REF:
+            getReferredByControlRef().clear();
+            getReferredByControlRef().addAll( ( Collection< ? extends ControlRef > ) newValue );
+            return;
+        case SclPackage.LNODE__REFERRED_BY_SOURCE_REF:
+            getReferredBySourceRef().clear();
+            getReferredBySourceRef().addAll( ( Collection< ? extends SourceRef > ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1065,6 +1830,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LNODE__UUID:
+            unsetUuid();
+            return;
+        case SclPackage.LNODE__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
         case SclPackage.LNODE__IED_NAME:
             unsetIedName();
             return;
@@ -1092,6 +1863,30 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
             unsetRefersToLNodeType();
             return;
+        case SclPackage.LNODE__LABELS:
+            unsetLabels();
+            return;
+        case SclPackage.LNODE__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            setParentAbstract6100LNodeContainer( ( Abstract6100LNodeContainer ) null );
+            return;
+        case SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF:
+            unsetReferredByLNodeDataRef();
+            return;
+        case SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF:
+            unsetReferredByLogicVarRef();
+            return;
+        case SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO:
+            unsetReferredByProcessEcho();
+            return;
+        case SclPackage.LNODE__REFERRED_BY_CONTROL_REF:
+            unsetReferredByControlRef();
+            return;
+        case SclPackage.LNODE__REFERRED_BY_SOURCE_REF:
+            unsetReferredBySourceRef();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1104,6 +1899,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LNODE__UUID:
+            return isSetUuid();
+        case SclPackage.LNODE__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case SclPackage.LNODE__IED_NAME:
             return isSetIedName();
         case SclPackage.LNODE__LD_INST:
@@ -1122,8 +1921,64 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return getParentLNodeContainer() != null;
         case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
             return isSetRefersToLNodeType();
+        case SclPackage.LNODE__LABELS:
+            return isSetLabels();
+        case SclPackage.LNODE__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
+        case SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER:
+            return getParentAbstract6100LNodeContainer() != null;
+        case SclPackage.LNODE__REFERRED_BY_LNODE_DATA_REF:
+            return isSetReferredByLNodeDataRef();
+        case SclPackage.LNODE__REFERRED_BY_LOGIC_VAR_REF:
+            return isSetReferredByLogicVarRef();
+        case SclPackage.LNODE__REFERRED_BY_PROCESS_ECHO:
+            return isSetReferredByProcessEcho();
+        case SclPackage.LNODE__REFERRED_BY_CONTROL_REF:
+            return isSetReferredByControlRef();
+        case SclPackage.LNODE__REFERRED_BY_SOURCE_REF:
+            return isSetReferredBySourceRef();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.LNODE__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case SclPackage.LNODE__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return SclPackage.LNODE__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return SclPackage.LNODE__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -1138,7 +1993,21 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (iedName: " );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", iedName: " );
         if( iedNameESet ) {
             result.append( iedName );
         }
@@ -1180,6 +2049,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ')' );
         return result.toString();
     }
@@ -1210,14 +2081,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
 
         // Resolve only if attribute is not None
         // Default value is None
-        if( ( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() ) ) {
-            // console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( ( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() ) ) { // console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "link to AnyLN not resolved because iedName is absent or None" );
             return;
         }
 
-        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "lnClass is missing" );
             return;
         }
@@ -1225,8 +2094,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // find an IED with
         //   IED.name == LNode.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
-        if( ied.getLeft() == null ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( ied.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, ( ( ied.getRight() == 0 ) ? "cannot find" : "found several" ),
             //         " IED( name = ", getIedName(), " )" );
             return;
@@ -1238,8 +2106,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // find inside an LDevice with
         //   LDevice.name == LNode.ldInst
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
-        if( lDevice.getLeft() == null ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( lDevice.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, ( ( lDevice.getRight() == 0 ) ? "cannot find" : "found several" ),
             //         " LDevice( inst = ", getLdInst(), " )" );
             return;
@@ -1262,8 +2129,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             }
         }
         mess += " )";
-        if( anyLN.getLeft() == null ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( anyLN.getLeft() == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, ( ( anyLN.getRight() == 0 ) ? "cannot find" : "found several" ),
             //         mess );
             return;
@@ -1286,8 +2152,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
-        if( dtt == null ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( dtt == null ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
@@ -1298,8 +2163,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 .filter( lnt -> getLnType().equals( lnt.getId() ) )
                 .collect( Collectors.toList() );
 
-        if( res.size() != 1 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+        if( res.size() != 1 ) { // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //         messagePrefix, ( ( res.size() == 0 ) ? "cannot find" : "found several" ),
             //         " LNodeType( id = ", getLnType(), " )" );
             return;

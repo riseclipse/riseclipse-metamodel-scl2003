@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,6 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ext Ref</b></em>'.
@@ -30,13 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDaName <em>Da Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDoName <em>Do Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getIntAddr <em>Int Addr</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLdInst <em>Ld Inst</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnClass <em>Ln Class</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnInst <em>Ln Inst</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getServiceType <em>Service Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcCBName <em>Src CB Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcLDInst <em>Src LD Inst</em>}</li>
@@ -47,17 +43,17 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcCBUuid <em>Src CB Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getReferredBySourceRef <em>Referred By Source Ref</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef()
  * @model
  * @generated
  */
-public interface ExtRef extends BaseElement, AgDesc {
+public interface ExtRef extends DORef {
     /**
      * Returns the value of the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -112,112 +108,6 @@ public interface ExtRef extends BaseElement, AgDesc {
     boolean isSetDaName();
 
     /**
-     * Returns the value of the '<em><b>Do Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Do Name</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Do Name</em>' attribute.
-     * @see #isSetDoName()
-     * @see #unsetDoName()
-     * @see #setDoName(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_DoName()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getDoName();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDoName <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Do Name</em>' attribute.
-     * @see #isSetDoName()
-     * @see #unsetDoName()
-     * @see #getDoName()
-     * @generated
-     */
-    void setDoName( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDoName <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetDoName()
-     * @see #getDoName()
-     * @see #setDoName(String)
-     * @generated
-     */
-    void unsetDoName();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDoName <em>Do Name</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Do Name</em>' attribute is set.
-     * @see #unsetDoName()
-     * @see #getDoName()
-     * @see #setDoName(String)
-     * @generated
-     */
-    boolean isSetDoName();
-
-    /**
-     * Returns the value of the '<em><b>Ied Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Ied Name</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Ied Name</em>' attribute.
-     * @see #isSetIedName()
-     * @see #unsetIedName()
-     * @see #setIedName(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_IedName()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getIedName();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getIedName <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ied Name</em>' attribute.
-     * @see #isSetIedName()
-     * @see #unsetIedName()
-     * @see #getIedName()
-     * @generated
-     */
-    void setIedName( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getIedName <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetIedName()
-     * @see #getIedName()
-     * @see #setIedName(String)
-     * @generated
-     */
-    void unsetIedName();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getIedName <em>Ied Name</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ied Name</em>' attribute is set.
-     * @see #unsetIedName()
-     * @see #getIedName()
-     * @see #setIedName(String)
-     * @generated
-     */
-    boolean isSetIedName();
-
-    /**
      * Returns the value of the '<em><b>Int Addr</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
@@ -269,219 +159,6 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @generated
      */
     boolean isSetIntAddr();
-
-    /**
-     * Returns the value of the '<em><b>Ld Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Ld Inst</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Ld Inst</em>' attribute.
-     * @see #isSetLdInst()
-     * @see #unsetLdInst()
-     * @see #setLdInst(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_LdInst()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getLdInst();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLdInst <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ld Inst</em>' attribute.
-     * @see #isSetLdInst()
-     * @see #unsetLdInst()
-     * @see #getLdInst()
-     * @generated
-     */
-    void setLdInst( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLdInst <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetLdInst()
-     * @see #getLdInst()
-     * @see #setLdInst(String)
-     * @generated
-     */
-    void unsetLdInst();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLdInst <em>Ld Inst</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ld Inst</em>' attribute is set.
-     * @see #unsetLdInst()
-     * @see #getLdInst()
-     * @see #setLdInst(String)
-     * @generated
-     */
-    boolean isSetLdInst();
-
-    /**
-     * Returns the value of the '<em><b>Ln Class</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Ln Class</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Ln Class</em>' attribute.
-     * @see #isSetLnClass()
-     * @see #unsetLnClass()
-     * @see #setLnClass(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_LnClass()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getLnClass();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnClass <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ln Class</em>' attribute.
-     * @see #isSetLnClass()
-     * @see #unsetLnClass()
-     * @see #getLnClass()
-     * @generated
-     */
-    void setLnClass( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnClass <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetLnClass()
-     * @see #getLnClass()
-     * @see #setLnClass(String)
-     * @generated
-     */
-    void unsetLnClass();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnClass <em>Ln Class</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ln Class</em>' attribute is set.
-     * @see #unsetLnClass()
-     * @see #getLnClass()
-     * @see #setLnClass(String)
-     * @generated
-     */
-    boolean isSetLnClass();
-
-    /**
-     * Returns the value of the '<em><b>Ln Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Ln Inst</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Ln Inst</em>' attribute.
-     * @see #isSetLnInst()
-     * @see #unsetLnInst()
-     * @see #setLnInst(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_LnInst()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getLnInst();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnInst <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ln Inst</em>' attribute.
-     * @see #isSetLnInst()
-     * @see #unsetLnInst()
-     * @see #getLnInst()
-     * @generated
-     */
-    void setLnInst( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnInst <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetLnInst()
-     * @see #getLnInst()
-     * @see #setLnInst(String)
-     * @generated
-     */
-    void unsetLnInst();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getLnInst <em>Ln Inst</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ln Inst</em>' attribute is set.
-     * @see #unsetLnInst()
-     * @see #getLnInst()
-     * @see #setLnInst(String)
-     * @generated
-     */
-    boolean isSetLnInst();
-
-    /**
-     * Returns the value of the '<em><b>Prefix</b></em>' attribute.
-     * The default value is <code>""</code>.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Prefix</em>' attribute.
-     * @see #isSetPrefix()
-     * @see #unsetPrefix()
-     * @see #setPrefix(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_Prefix()
-     * @model default="" unsettable="true"
-     * @generated
-     */
-    String getPrefix();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPrefix <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Prefix</em>' attribute.
-     * @see #isSetPrefix()
-     * @see #unsetPrefix()
-     * @see #getPrefix()
-     * @generated
-     */
-    void setPrefix( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPrefix <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetPrefix()
-     * @see #getPrefix()
-     * @see #setPrefix(String)
-     * @generated
-     */
-    void unsetPrefix();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPrefix <em>Prefix</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Prefix</em>' attribute is set.
-     * @see #unsetPrefix()
-     * @see #getPrefix()
-     * @see #setPrefix(String)
-     * @generated
-     */
-    boolean isSetPrefix();
 
     /**
      * Returns the value of the '<em><b>Service Type</b></em>' attribute.
@@ -753,6 +430,7 @@ public interface ExtRef extends BaseElement, AgDesc {
 
     /**
      * Returns the value of the '<em><b>Src Prefix</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Src Prefix</em>' attribute isn't clear,
@@ -764,7 +442,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #unsetSrcPrefix()
      * @see #setSrcPrefix(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_SrcPrefix()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getSrcPrefix();
@@ -987,112 +665,6 @@ public interface ExtRef extends BaseElement, AgDesc {
     boolean isSetPServT();
 
     /**
-     * Returns the value of the '<em><b>PLN</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>PLN</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>PLN</em>' attribute.
-     * @see #isSetPLN()
-     * @see #unsetPLN()
-     * @see #setPLN(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_PLN()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getPLN();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>PLN</em>' attribute.
-     * @see #isSetPLN()
-     * @see #unsetPLN()
-     * @see #getPLN()
-     * @generated
-     */
-    void setPLN( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetPLN()
-     * @see #getPLN()
-     * @see #setPLN(String)
-     * @generated
-     */
-    void unsetPLN();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>PLN</em>' attribute is set.
-     * @see #unsetPLN()
-     * @see #getPLN()
-     * @see #setPLN(String)
-     * @generated
-     */
-    boolean isSetPLN();
-
-    /**
-     * Returns the value of the '<em><b>PDO</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>PDO</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>PDO</em>' attribute.
-     * @see #isSetPDO()
-     * @see #unsetPDO()
-     * @see #setPDO(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_PDO()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getPDO();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>PDO</em>' attribute.
-     * @see #isSetPDO()
-     * @see #unsetPDO()
-     * @see #getPDO()
-     * @generated
-     */
-    void setPDO( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetPDO()
-     * @see #getPDO()
-     * @see #setPDO(String)
-     * @generated
-     */
-    void unsetPDO();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>PDO</em>' attribute is set.
-     * @see #unsetPDO()
-     * @see #getPDO()
-     * @see #setPDO(String)
-     * @generated
-     */
-    boolean isSetPDO();
-
-    /**
      * Returns the value of the '<em><b>PDA</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
@@ -1195,5 +767,78 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @generated
      */
     boolean isSetRefersToControl();
+
+    /**
+     * Returns the value of the '<em><b>Src CB Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Src CB Uuid</em>' attribute.
+     * @see #setSrcCBUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_SrcCBUuid()
+     * @model
+     * @generated
+     */
+    String getSrcCBUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcCBUuid <em>Src CB Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Src CB Uuid</em>' attribute.
+     * @see #getSrcCBUuid()
+     * @generated
+     */
+    void setSrcCBUuid( String value );
+
+    /**
+     * Returns the value of the '<em><b>Referred By Source Ref</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getRefersToExtRef <em>Refers To Ext Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Source Ref</em>' reference.
+     * @see #isSetReferredBySourceRef()
+     * @see #unsetReferredBySourceRef()
+     * @see #setReferredBySourceRef(SourceRef)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_ReferredBySourceRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SourceRef#getRefersToExtRef
+     * @model opposite="RefersToExtRef" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    SourceRef getReferredBySourceRef();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getReferredBySourceRef <em>Referred By Source Ref</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Referred By Source Ref</em>' reference.
+     * @see #isSetReferredBySourceRef()
+     * @see #unsetReferredBySourceRef()
+     * @see #getReferredBySourceRef()
+     * @generated
+     */
+    void setReferredBySourceRef( SourceRef value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getReferredBySourceRef <em>Referred By Source Ref</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredBySourceRef()
+     * @see #getReferredBySourceRef()
+     * @see #setReferredBySourceRef(SourceRef)
+     * @generated
+     */
+    void unsetReferredBySourceRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getReferredBySourceRef <em>Referred By Source Ref</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Source Ref</em>' reference is set.
+     * @see #unsetReferredBySourceRef()
+     * @see #getReferredBySourceRef()
+     * @see #setReferredBySourceRef(SourceRef)
+     * @generated
+     */
+    boolean isSetReferredBySourceRef();
 
 } // ExtRef

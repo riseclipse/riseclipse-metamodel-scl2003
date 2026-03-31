@@ -192,6 +192,7 @@ public class DOIItemProvider extends UnNamingItemProvider {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getDOI_DAI() );
             childrenFeatures.add( SclPackage.eINSTANCE.getDOI_SDI() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDOI_Labels() );
         }
         return childrenFeatures;
     }
@@ -253,6 +254,7 @@ public class DOIItemProvider extends UnNamingItemProvider {
             return;
         case SclPackage.DOI__DAI:
         case SclPackage.DOI__SDI:
+        case SclPackage.DOI__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -275,6 +277,9 @@ public class DOIItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDOI_SDI(),
                 SclFactory.eINSTANCE.createSDI() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDOI_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

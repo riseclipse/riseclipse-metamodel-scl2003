@@ -57,6 +57,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getCbUuid <em>Cb Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -157,6 +158,26 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * @ordered
      */
     protected boolean refersToControlWithIEDNameESet;
+
+    /**
+     * The default value of the '{@link #getCbUuid() <em>Cb Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getCbUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String CB_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getCbUuid() <em>Cb Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getCbUuid()
+     * @generated
+     * @ordered
+     */
+    protected String cbUuid = CB_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -541,6 +562,31 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getCbUuid() {
+        return cbUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setCbUuid( String newCbUuid ) {
+        String oldCbUuid = cbUuid;
+        cbUuid = newCbUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_BLOCK__CB_UUID, oldCbUuid,
+                    cbUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -606,6 +652,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return getAddress();
         case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
             return getRefersToControlWithIEDName();
+        case SclPackage.CONTROL_BLOCK__CB_UUID:
+            return getCbUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -629,6 +677,9 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return;
         case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
             setRefersToControlWithIEDName( ( ControlWithIEDName ) newValue );
+            return;
+        case SclPackage.CONTROL_BLOCK__CB_UUID:
+            setCbUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -654,6 +705,9 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
             unsetRefersToControlWithIEDName();
             return;
+        case SclPackage.CONTROL_BLOCK__CB_UUID:
+            setCbUuid( CB_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -674,6 +728,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return isSetAddress();
         case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
             return isSetRefersToControlWithIEDName();
+        case SclPackage.CONTROL_BLOCK__CB_UUID:
+            return CB_UUID_EDEFAULT == null ? cbUuid != null : !CB_UUID_EDEFAULT.equals( cbUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -718,6 +774,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         else {
             result.append( "<unset>" );
         }
+        result.append( ", cbUuid: " );
+        result.append( cbUuid );
         result.append( ')' );
         return result.toString();
     }

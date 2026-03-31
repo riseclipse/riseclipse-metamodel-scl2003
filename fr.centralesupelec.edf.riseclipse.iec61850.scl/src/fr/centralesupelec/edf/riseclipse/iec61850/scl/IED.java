@@ -45,13 +45,16 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRelease <em>Original Scl Release</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getIEDSourceFiles <em>IED Source Files</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLabels <em>Labels</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getMinRequestedSCDFiles <em>Min Requested SCD Files</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED()
  * @model
  * @generated
  */
-public interface IED extends UnNaming {
+public interface IED extends UnNaming, AgUuid {
     /**
      * Returns the value of the '<em><b>Config Version</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -747,5 +750,158 @@ public interface IED extends UnNaming {
      * @generated
      */
     boolean isSetReferredByIEDName();
+
+    /**
+     * Returns the value of the '<em><b>IED Source Files</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getParentIED <em>Parent IED</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>IED Source Files</em>' containment reference.
+     * @see #isSetIEDSourceFiles()
+     * @see #unsetIEDSourceFiles()
+     * @see #setIEDSourceFiles(IEDSourceFiles)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_IEDSourceFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDSourceFiles#getParentIED
+     * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    IEDSourceFiles getIEDSourceFiles();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getIEDSourceFiles <em>IED Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>IED Source Files</em>' containment reference.
+     * @see #isSetIEDSourceFiles()
+     * @see #unsetIEDSourceFiles()
+     * @see #getIEDSourceFiles()
+     * @generated
+     */
+    void setIEDSourceFiles( IEDSourceFiles value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getIEDSourceFiles <em>IED Source Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetIEDSourceFiles()
+     * @see #getIEDSourceFiles()
+     * @see #setIEDSourceFiles(IEDSourceFiles)
+     * @generated
+     */
+    void unsetIEDSourceFiles();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getIEDSourceFiles <em>IED Source Files</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>IED Source Files</em>' containment reference is set.
+     * @see #unsetIEDSourceFiles()
+     * @see #getIEDSourceFiles()
+     * @see #setIEDSourceFiles(IEDSourceFiles)
+     * @generated
+     */
+    boolean isSetIEDSourceFiles();
+
+    /**
+     * Returns the value of the '<em><b>Labels</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentIED <em>Parent IED</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #setLabels(Labels)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_Labels()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentIED
+     * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Labels getLabels();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @generated
+     */
+    void setLabels( Labels value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    void unsetLabels();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLabels <em>Labels</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Labels</em>' containment reference is set.
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    boolean isSetLabels();
+
+    /**
+     * Returns the value of the '<em><b>Min Requested SCD Files</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles#getParentIED <em>Parent IED</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Min Requested SCD Files</em>' containment reference.
+     * @see #isSetMinRequestedSCDFiles()
+     * @see #unsetMinRequestedSCDFiles()
+     * @see #setMinRequestedSCDFiles(MinRequestedSCDFiles)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_MinRequestedSCDFiles()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.MinRequestedSCDFiles#getParentIED
+     * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    MinRequestedSCDFiles getMinRequestedSCDFiles();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getMinRequestedSCDFiles <em>Min Requested SCD Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Min Requested SCD Files</em>' containment reference.
+     * @see #isSetMinRequestedSCDFiles()
+     * @see #unsetMinRequestedSCDFiles()
+     * @see #getMinRequestedSCDFiles()
+     * @generated
+     */
+    void setMinRequestedSCDFiles( MinRequestedSCDFiles value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getMinRequestedSCDFiles <em>Min Requested SCD Files</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetMinRequestedSCDFiles()
+     * @see #getMinRequestedSCDFiles()
+     * @see #setMinRequestedSCDFiles(MinRequestedSCDFiles)
+     * @generated
+     */
+    void unsetMinRequestedSCDFiles();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getMinRequestedSCDFiles <em>Min Requested SCD Files</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Min Requested SCD Files</em>' containment reference is set.
+     * @see #unsetMinRequestedSCDFiles()
+     * @see #getMinRequestedSCDFiles()
+     * @see #setMinRequestedSCDFiles(MinRequestedSCDFiles)
+     * @generated
+     */
+    boolean isSetMinRequestedSCDFiles();
 
 } // IED

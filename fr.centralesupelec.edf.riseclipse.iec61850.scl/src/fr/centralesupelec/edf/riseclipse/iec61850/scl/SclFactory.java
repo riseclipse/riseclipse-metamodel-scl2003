@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -382,6 +382,42 @@ public interface SclFactory extends EFactory {
     SecPerSamples createSecPerSamples();
 
     /**
+     * Returns a new object of class '<em>SCSM</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>SCSM</em>'.
+     * @generated
+     */
+    SCSM createSCSM();
+
+    /**
+     * Returns a new object of class '<em>SV Mc Security</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>SV Mc Security</em>'.
+     * @generated
+     */
+    SVMcSecurity createSVMcSecurity();
+
+    /**
+     * Returns a new object of class '<em>File Reference</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>File Reference</em>'.
+     * @generated
+     */
+    SclFileReference createSclFileReference();
+
+    /**
+     * Returns a new object of class '<em>Security</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Security</em>'.
+     * @generated
+     */
+    Security createSecurity();
+
+    /**
      * Returns a new object of class '<em>Mc Security</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -407,6 +443,87 @@ public interface SclFactory extends EFactory {
      * @generated
      */
     AgLNRef createAgLNRef();
+
+    /**
+     * Returns a new object of class '<em>Ext Ctrl</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ext Ctrl</em>'.
+     * @generated
+     */
+    ExtCtrl createExtCtrl();
+
+    /**
+     * Returns a new object of class '<em>GOOSE Mc Security</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>GOOSE Mc Security</em>'.
+     * @generated
+     */
+    GOOSEMcSecurity createGOOSEMcSecurity();
+
+    /**
+     * Returns a new object of class '<em>IED Source Files</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>IED Source Files</em>'.
+     * @generated
+     */
+    IEDSourceFiles createIEDSourceFiles();
+
+    /**
+     * Returns a new object of class '<em>Label</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Label</em>'.
+     * @generated
+     */
+    Label createLabel();
+
+    /**
+     * Returns a new object of class '<em>Labels</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Labels</em>'.
+     * @generated
+     */
+    Labels createLabels();
+
+    /**
+     * Returns a new object of class '<em>Min Requested SCD File</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Min Requested SCD File</em>'.
+     * @generated
+     */
+    MinRequestedSCDFile createMinRequestedSCDFile();
+
+    /**
+     * Returns a new object of class '<em>Min Requested SCD Files</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Min Requested SCD Files</em>'.
+     * @generated
+     */
+    MinRequestedSCDFiles createMinRequestedSCDFiles();
+
+    /**
+     * Returns a new object of class '<em>Multi AP Per Sub Net</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Multi AP Per Sub Net</em>'.
+     * @generated
+     */
+    MultiAPPerSubNet createMultiAPPerSubNet();
+
+    /**
+     * Returns a new object of class '<em>Outputs</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Outputs</em>'.
+     * @generated
+     */
+    Outputs createOutputs();
 
     /**
      * Returns a new object of class '<em>Duration In Milli Sec</em>'.
@@ -1316,6 +1433,15 @@ public interface SclFactory extends EFactory {
      * @generated
      */
     VoltageLevel createVoltageLevel();
+
+    /**
+     * Returns a new object of class '<em>Source Files</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Source Files</em>'.
+     * @generated
+     */
+    SourceFiles createSourceFiles();
 
     /**
      * Returns a new object of class '<em>Service Yes No</em>'.

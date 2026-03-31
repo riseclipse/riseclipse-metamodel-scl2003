@@ -195,6 +195,7 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getLNodeType_DO() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getLNodeType_Labels() );
         }
         return childrenFeatures;
     }
@@ -266,6 +267,7 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.LNODE_TYPE__DO:
+        case SclPackage.LNODE_TYPE__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -285,6 +287,9 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLNodeType_DO(),
                 SclFactory.eINSTANCE.createDO() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLNodeType_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

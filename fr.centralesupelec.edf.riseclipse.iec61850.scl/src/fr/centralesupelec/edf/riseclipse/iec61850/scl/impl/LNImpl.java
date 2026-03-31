@@ -20,6 +20,7 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -665,38 +666,40 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .stream()
                 .filter( ied -> controlWithIEDName.startsWith( ied.getName() ))
                 .toList();
-        if( ieds.size() > 1 ) {
-             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                              messagePrefix, "found several IED whose name is the start of ",
-                              controlWithIEDName, " on line ", val.getLineNumber() );
-            return;
-        }
+        // Issue #77: the setSrcRef value can be the beginning of several IEDs
+//        if( ieds.size() > 1 ) {
+//             console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+//                              messagePrefix, "found several IED whose name is the start of ",
+//                              controlWithIEDName, " on line ", val.getLineNumber() );
+//            return;
+//        }
         List< LDevice > lDevices = null;
-        if( ieds.size() == 1 ) {
-            String ldInst = controlWithIEDName.substring( ieds.get( 0 ).getName().length(), controlWithIEDName.indexOf( '/' ));
-            lDevices =
-                     ieds
-                    .get( 0 )
-                    .getAccessPoint()
-                    .stream()
-                    .map( ap -> ap.getServer() )
-                    .filter(  s -> s != null  )
-                    .flatMap( s -> s.getLDevice().stream() )
-                    .filter( ld -> ( ld != null ) && ld.getInst().equals( ldInst ))
-                    .toList();
+        if( ieds.size() >= 1 ) {
+            lDevices = new ArrayList<>();
+            for( IED ied : ieds ) {
+                String ldInst = controlWithIEDName.substring( ied.getName().length(), controlWithIEDName.indexOf( '/' ));
+                lDevices.addAll(
+                         ied
+                        .getAccessPoint()
+                        .stream()
+                        .map( ap -> ap.getServer() )
+                        .filter(  s -> s != null  )
+                        .flatMap( s -> s.getLDevice().stream() )
+                        .filter( ld -> ( ld != null ) && ld.getInst().equals( ldInst ))
+                        .toList()
+                );
+
+            }
             if( lDevices.size() == 0 ) {
                 // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                //                  messagePrefix, "found no LDevice whose inst is ", ldInst,
-                //                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
+                //                  messagePrefix, "found no IED/LDevice for setSrcRef value ", controlWithIEDName );
                 return;
             }
             if( lDevices.size() > 1 ) {
-                 console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                                  messagePrefix, "found several LDevice whose inst is ", ldInst,
-                                  " in IED on line ", ieds.get( 0 ).getLineNumber() );
-                return;
-            }
-
+                console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                                 messagePrefix, "found several IED/LDevice for setSrcRef value ", controlWithIEDName );
+               return;
+           }
         }
         else {
             // look for ldName which should be unique (see issue #38)
@@ -738,14 +741,7 @@ public class LNImpl extends AnyLNImpl implements LN {
                 .filter( control -> control.getName().equals( controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 )))
                 .toList()
         );
-        if( controls.size() == 0 ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found no ControlWithIEDName whose name is ",
-            //                  controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),
-            //                  " in LN0 on line ", ln0.getLineNumber() );
-            return;
-        }
-        if( controls.size() > 1 ) {
+        if( ( controls.size() == 0 ) || ( controls.size() > 1 ) ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several ControlWithIEDName whose name is ",
             //                  controlWithIEDName.substring( controlWithIEDName.indexOf( '.' ) + 1 ),

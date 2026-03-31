@@ -212,6 +212,7 @@ public class DAIItemProvider extends UnNamingItemProvider {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getDAI_Val() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDAI_Labels() );
         }
         return childrenFeatures;
     }
@@ -273,6 +274,7 @@ public class DAIItemProvider extends UnNamingItemProvider {
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.DAI__VAL:
+        case SclPackage.DAI__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -292,6 +294,9 @@ public class DAIItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDAI_Val(),
                 SclFactory.eINSTANCE.createVal() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDAI_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

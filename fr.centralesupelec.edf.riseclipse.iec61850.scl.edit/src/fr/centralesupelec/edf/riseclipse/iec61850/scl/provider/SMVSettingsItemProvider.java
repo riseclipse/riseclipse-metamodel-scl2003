@@ -374,6 +374,12 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_McSecurity(),
                 SclFactory.eINSTANCE.createMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_McSecurity(),
+                SclFactory.eINSTANCE.createSVMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_McSecurity(),
+                SclFactory.eINSTANCE.createGOOSEMcSecurity() ) );
     }
 
 }

@@ -65,6 +65,7 @@ public class KDCItemProvider
             addApNamePropertyDescriptor( object );
             addIedNamePropertyDescriptor( object );
             addRefersToAccessPointPropertyDescriptor( object );
+            addApUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -134,6 +135,27 @@ public class KDCItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Ap Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addApUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_KDC_apUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_KDC_apUuid_feature", "_UI_KDC_type" ),
+                        SclPackage.eINSTANCE.getKDC_ApUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns KDC.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -169,6 +191,7 @@ public class KDCItemProvider
         switch( notification.getFeatureID( KDC.class ) ) {
         case SclPackage.KDC__AP_NAME:
         case SclPackage.KDC__IED_NAME:
+        case SclPackage.KDC__AP_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

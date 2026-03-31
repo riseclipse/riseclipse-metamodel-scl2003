@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,14 +20,12 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +38,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl#getLnUuid <em>Ln Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -133,6 +132,26 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
     protected boolean prefixESet;
 
     /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
+
+    /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -172,9 +191,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass, lnClass,
                     !oldLnClassESet ) );
+        }
     }
 
     /**
@@ -188,9 +208,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass,
                     LN_CLASS_EDEFAULT, oldLnClassESet ) );
+        }
     }
 
     /**
@@ -224,9 +245,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_INST, oldLnInst, lnInst,
                     !oldLnInstESet ) );
+        }
     }
 
     /**
@@ -240,9 +262,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__LN_INST, oldLnInst,
                     LN_INST_EDEFAULT, oldLnInstESet ) );
+        }
     }
 
     /**
@@ -276,9 +299,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__PREFIX, oldPrefix, prefix,
                     !oldPrefixESet ) );
+        }
     }
 
     /**
@@ -292,9 +316,10 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__PREFIX, oldPrefix,
                     PREFIX_EDEFAULT, oldPrefixESet ) );
+        }
     }
 
     /**
@@ -313,6 +338,31 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_UUID, oldLnUuid,
+                    lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
         case SclPackage.AG_LN_REF__LN_CLASS:
@@ -321,6 +371,8 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             return getLnInst();
         case SclPackage.AG_LN_REF__PREFIX:
             return getPrefix();
+        case SclPackage.AG_LN_REF__LN_UUID:
+            return getLnUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -341,6 +393,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             return;
         case SclPackage.AG_LN_REF__PREFIX:
             setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.AG_LN_REF__LN_UUID:
+            setLnUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -363,6 +418,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         case SclPackage.AG_LN_REF__PREFIX:
             unsetPrefix();
             return;
+        case SclPackage.AG_LN_REF__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -381,6 +439,8 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
             return isSetLnInst();
         case SclPackage.AG_LN_REF__PREFIX:
             return isSetPrefix();
+        case SclPackage.AG_LN_REF__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -392,24 +452,34 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (lnClass: " );
-        if( lnClassESet )
+        if( lnClassESet ) {
             result.append( lnClass );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", lnInst: " );
-        if( lnInstESet )
+        if( lnInstESet ) {
             result.append( lnInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", prefix: " );
-        if( prefixESet )
+        if( prefixESet ) {
             result.append( prefix );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ')' );
         return result.toString();
     }

@@ -74,6 +74,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getParentDataSet <em>Parent Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getOrdNb <em>Ord Nb</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnUuid <em>Ln Uuid</em>}</li>
  * </ul>
  *
  * @generated
@@ -330,6 +331,26 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * @ordered
      */
     protected static final int ORD_NB_EDEFAULT = -1;
+
+    /**
+     * The default value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String LN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLnUuid() <em>Ln Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLnUuid()
+     * @generated
+     * @ordered
+     */
+    protected String lnUuid = LN_UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -890,6 +911,30 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getLnUuid() {
+        return lnUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLnUuid( String newLnUuid ) {
+        String oldLnUuid = lnUuid;
+        lnUuid = newLnUuid;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LN_UUID, oldLnUuid, lnUuid ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -966,6 +1011,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             return getRefersToAbstractDataAttribute();
         case SclPackage.FCDA__ORD_NB:
             return getOrdNb();
+        case SclPackage.FCDA__LN_UUID:
+            return getLnUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1010,6 +1057,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             getRefersToAbstractDataAttribute().clear();
             getRefersToAbstractDataAttribute().addAll( ( Collection< ? extends AbstractDataAttribute > ) newValue );
             return;
+        case SclPackage.FCDA__LN_UUID:
+            setLnUuid( ( String ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1052,6 +1102,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             unsetRefersToAbstractDataAttribute();
             return;
+        case SclPackage.FCDA__LN_UUID:
+            setLnUuid( LN_UUID_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1086,6 +1139,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             return isSetRefersToAbstractDataAttribute();
         case SclPackage.FCDA__ORD_NB:
             return getOrdNb() != ORD_NB_EDEFAULT;
+        case SclPackage.FCDA__LN_UUID:
+            return LN_UUID_EDEFAULT == null ? lnUuid != null : !LN_UUID_EDEFAULT.equals( lnUuid );
         }
         return super.eIsSet( featureID );
     }
@@ -1158,6 +1213,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         else {
             result.append( "<unset>" );
         }
+        result.append( ", lnUuid: " );
+        result.append( lnUuid );
         result.append( ')' );
         return result.toString();
     }
@@ -1422,9 +1479,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         if( getFc() == null ) {
             return;
         }
-        
+
         getRefersToAbstractDataAttribute().addAll( getAllDAInDOTypeWithFC( doType, getFc(), console ));
-        
+
         if( getRefersToAbstractDataAttribute().size() == 0 ) {
             if( getFc().equals( FCEnum.SG )) {
                 // Issue #66: if fc="SG" in FCDA, look for AbstractDataAttribute with fc="SE"

@@ -39,6 +39,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNodeUuid <em>CNode Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal()
@@ -549,5 +550,27 @@ public interface Terminal extends UnNaming {
      * @generated
      */
     boolean isSetLineName();
+
+    /**
+     * Returns the value of the '<em><b>CNode Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>CNode Uuid</em>' attribute.
+     * @see #setCNodeUuid(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_CNodeUuid()
+     * @model
+     * @generated
+     */
+    String getCNodeUuid();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNodeUuid <em>CNode Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>CNode Uuid</em>' attribute.
+     * @see #getCNodeUuid()
+     * @generated
+     */
+    void setCNodeUuid( String value );
 
 } // Terminal

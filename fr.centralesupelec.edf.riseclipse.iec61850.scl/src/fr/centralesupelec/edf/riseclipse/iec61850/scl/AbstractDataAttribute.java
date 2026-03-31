@@ -45,6 +45,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI <em>Referred By DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute()
@@ -391,7 +392,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @see #setRefersToEnumType(EnumType)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_RefersToEnumType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getReferredByAbstractDataAttribute
-     * @model opposite="ReferredByAbstractDataAttribute" resolveProxies="false" unsettable="true" ordered="false"
+     * @model opposite="ReferredByAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
     EnumType getRefersToEnumType();
@@ -720,5 +721,56 @@ public interface AbstractDataAttribute extends UnNaming {
      * @generated
      */
     boolean isSetReferredBySDI();
+
+    /**
+     * Returns the value of the '<em><b>Labels</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #setLabels(Labels)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_Labels()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels#getParentAbstractDataAttribute
+     * @model opposite="ParentAbstractDataAttribute" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    Labels getLabels();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Labels</em>' containment reference.
+     * @see #isSetLabels()
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @generated
+     */
+    void setLabels( Labels value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getLabels <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    void unsetLabels();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getLabels <em>Labels</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Labels</em>' containment reference is set.
+     * @see #unsetLabels()
+     * @see #getLabels()
+     * @see #setLabels(Labels)
+     * @generated
+     */
+    boolean isSetLabels();
 
 } // AbstractDataAttribute

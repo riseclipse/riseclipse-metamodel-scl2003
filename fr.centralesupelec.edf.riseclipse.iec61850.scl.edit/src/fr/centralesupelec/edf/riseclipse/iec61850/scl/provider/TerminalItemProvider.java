@@ -69,6 +69,7 @@ public class TerminalItemProvider extends UnNamingItemProvider {
             addRefersToConnectivityNodePropertyDescriptor( object );
             addNamePropertyDescriptor( object );
             addLineNamePropertyDescriptor( object );
+            addCNodeUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -272,6 +273,28 @@ public class TerminalItemProvider extends UnNamingItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the CNode Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addCNodeUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_cNodeUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_cNodeUuid_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_CNodeUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This returns Terminal.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -315,6 +338,7 @@ public class TerminalItemProvider extends UnNamingItemProvider {
         case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
         case SclPackage.TERMINAL__NAME:
         case SclPackage.TERMINAL__LINE_NAME:
+        case SclPackage.TERMINAL__CNODE_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

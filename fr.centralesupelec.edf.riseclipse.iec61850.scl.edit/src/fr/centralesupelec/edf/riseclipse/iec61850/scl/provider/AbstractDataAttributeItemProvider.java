@@ -378,6 +378,7 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
         if( childrenFeatures == null ) {
             super.getChildrenFeatures( object );
             childrenFeatures.add( SclPackage.eINSTANCE.getAbstractDataAttribute_Val() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAbstractDataAttribute_Labels() );
         }
         return childrenFeatures;
     }
@@ -441,6 +442,7 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__LABELS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
@@ -460,6 +462,9 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAbstractDataAttribute_Val(),
                 SclFactory.eINSTANCE.createVal() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAbstractDataAttribute_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

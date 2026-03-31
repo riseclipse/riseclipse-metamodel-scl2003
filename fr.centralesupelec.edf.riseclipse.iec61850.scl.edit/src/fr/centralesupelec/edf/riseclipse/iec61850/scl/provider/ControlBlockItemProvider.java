@@ -66,6 +66,7 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
             addCbNamePropertyDescriptor( object );
             addLdInstPropertyDescriptor( object );
             addRefersToControlWithIEDNamePropertyDescriptor( object );
+            addCbUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -137,6 +138,28 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Cb Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addCbUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ControlBlock_cbUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ControlBlock_cbUuid_feature",
+                                "_UI_ControlBlock_type" ),
+                        SclPackage.eINSTANCE.getControlBlock_CbUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -202,6 +225,7 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
         switch( notification.getFeatureID( ControlBlock.class ) ) {
         case SclPackage.CONTROL_BLOCK__CB_NAME:
         case SclPackage.CONTROL_BLOCK__LD_INST:
+        case SclPackage.CONTROL_BLOCK__CB_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case SclPackage.CONTROL_BLOCK__ADDRESS:

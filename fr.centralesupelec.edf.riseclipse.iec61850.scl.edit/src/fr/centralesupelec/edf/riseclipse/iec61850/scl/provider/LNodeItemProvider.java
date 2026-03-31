@@ -25,12 +25,14 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -61,6 +63,8 @@ public class LNodeItemProvider extends UnNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addIedNamePropertyDescriptor( object );
             addLdInstPropertyDescriptor( object );
             addLnClassPropertyDescriptor( object );
@@ -69,8 +73,57 @@ public class LNodeItemProvider extends UnNamingItemProvider {
             addPrefixPropertyDescriptor( object );
             addRefersToAnyLNPropertyDescriptor( object );
             addRefersToLNodeTypePropertyDescriptor( object );
+            addLnUuidPropertyDescriptor( object );
+            addReferredByLNodeDataRefPropertyDescriptor( object );
+            addReferredByLogicVarRefPropertyDescriptor( object );
+            addReferredByProcessEchoPropertyDescriptor( object );
+            addReferredByControlRefPropertyDescriptor( object );
+            addReferredBySourceRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -246,6 +299,167 @@ public class LNodeItemProvider extends UnNamingItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Ln Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addLnUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LNode_lnUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LNode_lnUuid_feature", "_UI_LNode_type" ),
+                        SclPackage.eINSTANCE.getLNode_LnUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By LNode Data Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByLNodeDataRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LNode_ReferredByLNodeDataRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LNode_ReferredByLNodeDataRef_feature",
+                                "_UI_LNode_type" ),
+                        SclPackage.eINSTANCE.getLNode_ReferredByLNodeDataRef(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Logic Var Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByLogicVarRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LNode_ReferredByLogicVarRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LNode_ReferredByLogicVarRef_feature",
+                                "_UI_LNode_type" ),
+                        SclPackage.eINSTANCE.getLNode_ReferredByLogicVarRef(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Process Echo feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByProcessEchoPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LNode_ReferredByProcessEcho_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LNode_ReferredByProcessEcho_feature",
+                                "_UI_LNode_type" ),
+                        SclPackage.eINSTANCE.getLNode_ReferredByProcessEcho(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Control Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByControlRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LNode_ReferredByControlRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LNode_ReferredByControlRef_feature",
+                                "_UI_LNode_type" ),
+                        SclPackage.eINSTANCE.getLNode_ReferredByControlRef(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Source Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredBySourceRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LNode_ReferredBySourceRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LNode_ReferredBySourceRef_feature",
+                                "_UI_LNode_type" ),
+                        SclPackage.eINSTANCE.getLNode_ReferredBySourceRef(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+     * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+     * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getLNode_Labels() );
+        }
+        return childrenFeatures;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
+        // Check the type of the specified child object and return the proper feature to use for
+        // adding (see {@link AddCommand}) it as a child.
+
+        return super.getChildFeature( object, child );
+    }
+
+    /**
      * This returns LNode.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -303,13 +517,19 @@ public class LNodeItemProvider extends UnNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( LNode.class ) ) {
+        case SclPackage.LNODE__UUID:
+        case SclPackage.LNODE__TEMPLATE_UUID:
         case SclPackage.LNODE__IED_NAME:
         case SclPackage.LNODE__LD_INST:
         case SclPackage.LNODE__LN_CLASS:
         case SclPackage.LNODE__LN_INST:
         case SclPackage.LNODE__LN_TYPE:
         case SclPackage.LNODE__PREFIX:
+        case SclPackage.LNODE__LN_UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.LNODE__LABELS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }
         super.notifyChanged( notification );
@@ -325,6 +545,9 @@ public class LNodeItemProvider extends UnNamingItemProvider {
     @Override
     protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
         super.collectNewChildDescriptors( newChildDescriptors, object );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLNode_Labels(),
+                SclFactory.eINSTANCE.createLabels() ) );
     }
 
 }

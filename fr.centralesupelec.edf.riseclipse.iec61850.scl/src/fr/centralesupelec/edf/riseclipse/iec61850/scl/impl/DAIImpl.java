@@ -42,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -66,6 +67,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getParentSDI <em>Parent SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @generated
@@ -244,6 +246,25 @@ public class DAIImpl extends UnNamingImpl implements DAI {
      * @ordered
      */
     protected boolean refersToAbstractDataAttributeESet;
+
+    /**
+     * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLabels()
+     * @generated
+     * @ordered
+     */
+    protected Labels labels;
+
+    /**
+     * This is true if the Labels containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean labelsESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -809,6 +830,130 @@ public class DAIImpl extends UnNamingImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public Labels getLabels() {
+        return labels;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetLabels( Labels newLabels, NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = newLabels;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.DAI__LABELS,
+                    oldLabels, newLabels, !oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLabels( Labels newLabels ) {
+        if( newLabels != labels ) {
+            NotificationChain msgs = null;
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_DAI, Labels.class,
+                        msgs );
+            }
+            if( newLabels != null ) {
+                msgs = ( ( InternalEObject ) newLabels ).eInverseAdd( this, SclPackage.LABELS__PARENT_DAI, Labels.class,
+                        msgs );
+            }
+            msgs = basicSetLabels( newLabels, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DAI__LABELS, newLabels, newLabels,
+                        !oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetLabels( NotificationChain msgs ) {
+        Labels oldLabels = labels;
+        labels = null;
+        boolean oldLabelsESet = labelsESet;
+        labelsESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__LABELS,
+                    oldLabels, null, oldLabelsESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetLabels() {
+        if( labels != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) labels ).eInverseRemove( this, SclPackage.LABELS__PARENT_DAI, Labels.class,
+                    msgs );
+            msgs = basicUnsetLabels( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldLabelsESet = labelsESet;
+            labelsESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DAI__LABELS, null, null,
+                        oldLabelsESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetLabels() {
+        return labelsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -831,6 +976,12 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                         SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, AbstractDataAttribute.class, msgs );
             }
             return basicSetRefersToAbstractDataAttribute( ( AbstractDataAttribute ) otherEnd, msgs );
+        case SclPackage.DAI__LABELS:
+            if( labels != null ) {
+                msgs = ( ( InternalEObject ) labels ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.DAI__LABELS, null, msgs );
+            }
+            return basicSetLabels( ( Labels ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -851,6 +1002,8 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return basicSetParentSDI( null, msgs );
         case SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             return basicUnsetRefersToAbstractDataAttribute( msgs );
+        case SclPackage.DAI__LABELS:
+            return basicUnsetLabels( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -897,6 +1050,8 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return getName();
         case SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             return getRefersToAbstractDataAttribute();
+        case SclPackage.DAI__LABELS:
+            return getLabels();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -938,6 +1093,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         case SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             setRefersToAbstractDataAttribute( ( AbstractDataAttribute ) newValue );
             return;
+        case SclPackage.DAI__LABELS:
+            setLabels( ( Labels ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -977,6 +1135,9 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         case SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             unsetRefersToAbstractDataAttribute();
             return;
+        case SclPackage.DAI__LABELS:
+            unsetLabels();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1007,6 +1168,8 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return isSetName();
         case SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
             return isSetRefersToAbstractDataAttribute();
+        case SclPackage.DAI__LABELS:
+            return isSetLabels();
         }
         return super.eIsSet( featureID );
     }

@@ -35,7 +35,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtocol()
- * @model
+ * @model extendedMetaData="kind='simple'"
  * @generated
  */
 public interface Protocol extends SclObject {

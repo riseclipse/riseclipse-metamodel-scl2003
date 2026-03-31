@@ -28,8 +28,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSEMcSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SVMcSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Security;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
 
@@ -58,6 +61,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getRSV <em>RSV</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getNoIctBinding <em>No Ict Binding</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getMcSecurity <em>Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getGOOSEMcSecurity <em>GOOSE Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getSVMcSecurity <em>SV Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getSecurity <em>Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#isAcceptServerInitiatedAssociation <em>Accept Server Initiated Association</em>}</li>
  * </ul>
  *
  * @generated
@@ -506,6 +513,83 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @ordered
      */
     protected boolean mcSecurityESet;
+
+    /**
+     * The cached value of the '{@link #getGOOSEMcSecurity() <em>GOOSE Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getGOOSEMcSecurity()
+     * @generated
+     * @ordered
+     */
+    protected GOOSEMcSecurity gooseMcSecurity;
+
+    /**
+     * This is true if the GOOSE Mc Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean gooseMcSecurityESet;
+
+    /**
+     * The cached value of the '{@link #getSVMcSecurity() <em>SV Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSVMcSecurity()
+     * @generated
+     * @ordered
+     */
+    protected SVMcSecurity svMcSecurity;
+
+    /**
+     * This is true if the SV Mc Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean svMcSecurityESet;
+
+    /**
+     * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSecurity()
+     * @generated
+     * @ordered
+     */
+    protected Security security;
+
+    /**
+     * This is true if the Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean securityESet;
+
+    /**
+     * The default value of the '{@link #isAcceptServerInitiatedAssociation() <em>Accept Server Initiated Association</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isAcceptServerInitiatedAssociation()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean ACCEPT_SERVER_INITIATED_ASSOCIATION_EDEFAULT = false;
+
+    /**
+     * The cached value of the '{@link #isAcceptServerInitiatedAssociation() <em>Accept Server Initiated Association</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isAcceptServerInitiatedAssociation()
+     * @generated
+     * @ordered
+     */
+    protected boolean acceptServerInitiatedAssociation = ACCEPT_SERVER_INITIATED_ASSOCIATION_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -1593,6 +1677,411 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
+    public GOOSEMcSecurity getGOOSEMcSecurity() {
+        return gooseMcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetGOOSEMcSecurity( GOOSEMcSecurity newGOOSEMcSecurity, NotificationChain msgs ) {
+        GOOSEMcSecurity oldGOOSEMcSecurity = gooseMcSecurity;
+        gooseMcSecurity = newGOOSEMcSecurity;
+        boolean oldGOOSEMcSecurityESet = gooseMcSecurityESet;
+        gooseMcSecurityESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY, oldGOOSEMcSecurity, newGOOSEMcSecurity,
+                    !oldGOOSEMcSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setGOOSEMcSecurity( GOOSEMcSecurity newGOOSEMcSecurity ) {
+        if( newGOOSEMcSecurity != gooseMcSecurity ) {
+            NotificationChain msgs = null;
+            if( gooseMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) gooseMcSecurity ).eInverseRemove( this,
+                        SclPackage.GOOSE_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_GOOSE_MC_SECURITY,
+                        GOOSEMcSecurity.class, msgs );
+            }
+            if( newGOOSEMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) newGOOSEMcSecurity ).eInverseAdd( this,
+                        SclPackage.GOOSE_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_GOOSE_MC_SECURITY,
+                        GOOSEMcSecurity.class, msgs );
+            }
+            msgs = basicSetGOOSEMcSecurity( newGOOSEMcSecurity, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldGOOSEMcSecurityESet = gooseMcSecurityESet;
+            gooseMcSecurityESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY,
+                        newGOOSEMcSecurity, newGOOSEMcSecurity, !oldGOOSEMcSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetGOOSEMcSecurity( NotificationChain msgs ) {
+        GOOSEMcSecurity oldGOOSEMcSecurity = gooseMcSecurity;
+        gooseMcSecurity = null;
+        boolean oldGOOSEMcSecurityESet = gooseMcSecurityESet;
+        gooseMcSecurityESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY, oldGOOSEMcSecurity, null, oldGOOSEMcSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetGOOSEMcSecurity() {
+        if( gooseMcSecurity != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) gooseMcSecurity ).eInverseRemove( this,
+                    SclPackage.GOOSE_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_GOOSE_MC_SECURITY, GOOSEMcSecurity.class,
+                    msgs );
+            msgs = basicUnsetGOOSEMcSecurity( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldGOOSEMcSecurityESet = gooseMcSecurityESet;
+            gooseMcSecurityESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY,
+                        null, null, oldGOOSEMcSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetGOOSEMcSecurity() {
+        return gooseMcSecurityESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SVMcSecurity getSVMcSecurity() {
+        return svMcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSVMcSecurity( SVMcSecurity newSVMcSecurity, NotificationChain msgs ) {
+        SVMcSecurity oldSVMcSecurity = svMcSecurity;
+        svMcSecurity = newSVMcSecurity;
+        boolean oldSVMcSecurityESet = svMcSecurityESet;
+        svMcSecurityESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, oldSVMcSecurity, newSVMcSecurity,
+                    !oldSVMcSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSVMcSecurity( SVMcSecurity newSVMcSecurity ) {
+        if( newSVMcSecurity != svMcSecurity ) {
+            NotificationChain msgs = null;
+            if( svMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) svMcSecurity ).eInverseRemove( this,
+                        SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, SVMcSecurity.class,
+                        msgs );
+            }
+            if( newSVMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) newSVMcSecurity ).eInverseAdd( this,
+                        SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, SVMcSecurity.class,
+                        msgs );
+            }
+            msgs = basicSetSVMcSecurity( newSVMcSecurity, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldSVMcSecurityESet = svMcSecurityESet;
+            svMcSecurityESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__SV_MC_SECURITY,
+                        newSVMcSecurity, newSVMcSecurity, !oldSVMcSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetSVMcSecurity( NotificationChain msgs ) {
+        SVMcSecurity oldSVMcSecurity = svMcSecurity;
+        svMcSecurity = null;
+        boolean oldSVMcSecurityESet = svMcSecurityESet;
+        svMcSecurityESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, oldSVMcSecurity, null, oldSVMcSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSVMcSecurity() {
+        if( svMcSecurity != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) svMcSecurity ).eInverseRemove( this,
+                    SclPackage.SV_MC_SECURITY__PARENT_CLIENT_SERVICES_FROM_SV_MC_SECURITY, SVMcSecurity.class, msgs );
+            msgs = basicUnsetSVMcSecurity( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldSVMcSecurityESet = svMcSecurityESet;
+            svMcSecurityESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SV_MC_SECURITY,
+                        null, null, oldSVMcSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSVMcSecurity() {
+        return svMcSecurityESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Security getSecurity() {
+        return security;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSecurity( Security newSecurity, NotificationChain msgs ) {
+        Security oldSecurity = security;
+        security = newSecurity;
+        boolean oldSecurityESet = securityESet;
+        securityESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__SECURITY, oldSecurity, newSecurity, !oldSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSecurity( Security newSecurity ) {
+        if( newSecurity != security ) {
+            NotificationChain msgs = null;
+            if( security != null ) {
+                msgs = ( ( InternalEObject ) security ).eInverseRemove( this,
+                        SclPackage.SECURITY__PARENT_CLIENT_SERVICES, Security.class, msgs );
+            }
+            if( newSecurity != null ) {
+                msgs = ( ( InternalEObject ) newSecurity ).eInverseAdd( this,
+                        SclPackage.SECURITY__PARENT_CLIENT_SERVICES, Security.class, msgs );
+            }
+            msgs = basicSetSecurity( newSecurity, msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldSecurityESet = securityESet;
+            securityESet = true;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__SECURITY,
+                        newSecurity, newSecurity, !oldSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetSecurity( NotificationChain msgs ) {
+        Security oldSecurity = security;
+        security = null;
+        boolean oldSecurityESet = securityESet;
+        securityESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_SERVICES__SECURITY, oldSecurity, null, oldSecurityESet );
+            if( msgs == null ) {
+                msgs = notification;
+            }
+            else {
+                msgs.add( notification );
+            }
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSecurity() {
+        if( security != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) security ).eInverseRemove( this, SclPackage.SECURITY__PARENT_CLIENT_SERVICES,
+                    Security.class, msgs );
+            msgs = basicUnsetSecurity( msgs );
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
+        }
+        else {
+            boolean oldSecurityESet = securityESet;
+            securityESet = false;
+            if( eNotificationRequired() ) {
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SECURITY, null,
+                        null, oldSecurityESet ) );
+            }
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSecurity() {
+        return securityESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isAcceptServerInitiatedAssociation() {
+        return acceptServerInitiatedAssociation;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setAcceptServerInitiatedAssociation( boolean newAcceptServerInitiatedAssociation ) {
+        boolean oldAcceptServerInitiatedAssociation = acceptServerInitiatedAssociation;
+        acceptServerInitiatedAssociation = newAcceptServerInitiatedAssociation;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION,
+                    oldAcceptServerInitiatedAssociation, acceptServerInitiatedAssociation ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
@@ -1612,6 +2101,24 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
                         EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__MC_SECURITY, null, msgs );
             }
             return basicSetMcSecurity( ( McSecurity ) otherEnd, msgs );
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+            if( gooseMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) gooseMcSecurity ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY, null, msgs );
+            }
+            return basicSetGOOSEMcSecurity( ( GOOSEMcSecurity ) otherEnd, msgs );
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            if( svMcSecurity != null ) {
+                msgs = ( ( InternalEObject ) svMcSecurity ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__SV_MC_SECURITY, null, msgs );
+            }
+            return basicSetSVMcSecurity( ( SVMcSecurity ) otherEnd, msgs );
+        case SclPackage.CLIENT_SERVICES__SECURITY:
+            if( security != null ) {
+                msgs = ( ( InternalEObject ) security ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__SECURITY, null, msgs );
+            }
+            return basicSetSecurity( ( Security ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -1630,6 +2137,12 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             return basicUnsetTimeSyncProt( msgs );
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
             return basicUnsetMcSecurity( msgs );
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+            return basicUnsetGOOSEMcSecurity( msgs );
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            return basicUnsetSVMcSecurity( msgs );
+        case SclPackage.CLIENT_SERVICES__SECURITY:
+            return basicUnsetSecurity( msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1691,6 +2204,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             return getNoIctBinding();
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
             return getMcSecurity();
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+            return getGOOSEMcSecurity();
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            return getSVMcSecurity();
+        case SclPackage.CLIENT_SERVICES__SECURITY:
+            return getSecurity();
+        case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:
+            return isAcceptServerInitiatedAssociation();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1753,6 +2274,18 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             return;
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
             setMcSecurity( ( McSecurity ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+            setGOOSEMcSecurity( ( GOOSEMcSecurity ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            setSVMcSecurity( ( SVMcSecurity ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__SECURITY:
+            setSecurity( ( Security ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:
+            setAcceptServerInitiatedAssociation( ( Boolean ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -1817,6 +2350,18 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
             unsetMcSecurity();
             return;
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+            unsetGOOSEMcSecurity();
+            return;
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            unsetSVMcSecurity();
+            return;
+        case SclPackage.CLIENT_SERVICES__SECURITY:
+            unsetSecurity();
+            return;
+        case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:
+            setAcceptServerInitiatedAssociation( ACCEPT_SERVER_INITIATED_ASSOCIATION_EDEFAULT );
+            return;
         }
         super.eUnset( featureID );
     }
@@ -1863,6 +2408,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             return isSetNoIctBinding();
         case SclPackage.CLIENT_SERVICES__MC_SECURITY:
             return isSetMcSecurity();
+        case SclPackage.CLIENT_SERVICES__GOOSE_MC_SECURITY:
+            return isSetGOOSEMcSecurity();
+        case SclPackage.CLIENT_SERVICES__SV_MC_SECURITY:
+            return isSetSVMcSecurity();
+        case SclPackage.CLIENT_SERVICES__SECURITY:
+            return isSetSecurity();
+        case SclPackage.CLIENT_SERVICES__ACCEPT_SERVER_INITIATED_ASSOCIATION:
+            return acceptServerInitiatedAssociation != ACCEPT_SERVER_INITIATED_ASSOCIATION_EDEFAULT;
         }
         return super.eIsSet( featureID );
     }
@@ -1977,6 +2530,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         else {
             result.append( "<unset>" );
         }
+        result.append( ", acceptServerInitiatedAssociation: " );
+        result.append( acceptServerInitiatedAssociation );
         result.append( ')' );
         return result.toString();
     }

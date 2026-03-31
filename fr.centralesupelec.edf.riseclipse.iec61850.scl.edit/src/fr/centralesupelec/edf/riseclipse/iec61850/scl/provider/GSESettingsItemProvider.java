@@ -239,6 +239,12 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
 
         newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getGSESettings_McSecurity(),
                 SclFactory.eINSTANCE.createMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getGSESettings_McSecurity(),
+                SclFactory.eINSTANCE.createSVMcSecurity() ) );
+
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getGSESettings_McSecurity(),
+                SclFactory.eINSTANCE.createGOOSEMcSecurity() ) );
     }
 
 }
