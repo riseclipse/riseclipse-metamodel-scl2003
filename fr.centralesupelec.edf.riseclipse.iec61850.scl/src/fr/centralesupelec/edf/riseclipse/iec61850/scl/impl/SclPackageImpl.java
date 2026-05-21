@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl;
@@ -1517,6 +1518,9 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
                 : new SclPackageImpl();
 
         isInited = true;
+
+        // Initialize simple dependencies
+        XMLTypePackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI );
@@ -12415,6 +12419,36 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
                     .getEClassifiers().get( 172 );
         }
         return durationInSecEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getDurationInSec_Value() {
+        return ( EAttribute ) getDurationInSec().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getDurationInSec_Multiplier() {
+        return ( EAttribute ) getDurationInSec().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getDurationInSec_Unit() {
+        return ( EAttribute ) getDurationInSec().getEStructuralFeatures().get( 2 );
     }
 
     /**

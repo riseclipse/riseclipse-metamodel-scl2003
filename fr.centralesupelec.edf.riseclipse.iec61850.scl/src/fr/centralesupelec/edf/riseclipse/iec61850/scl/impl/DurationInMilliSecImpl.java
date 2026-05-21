@@ -20,8 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.math.BigDecimal;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -54,7 +52,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      * @ordered
      */
-    protected static final BigDecimal VALUE_EDEFAULT = null;
+    protected static final long VALUE_EDEFAULT = 0L;
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -63,7 +61,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      * @ordered
      */
-    protected BigDecimal value = VALUE_EDEFAULT;
+    protected long value = VALUE_EDEFAULT;
     /**
      * The default value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -99,7 +97,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      * @ordered
      */
-    protected static final String UNIT_EDEFAULT = "";
+    protected static final String UNIT_EDEFAULT = "s";
     /**
      * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -143,7 +141,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public BigDecimal getValue() {
+    public long getValue() {
         return value;
     }
 
@@ -153,8 +151,8 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public void setValue( BigDecimal newValue ) {
-        BigDecimal oldValue = value;
+    public void setValue( long newValue ) {
+        long oldValue = value;
         value = newValue;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__VALUE, oldValue,
@@ -297,7 +295,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
         case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
-            setValue( ( BigDecimal ) newValue );
+            setValue( ( Long ) newValue );
             return;
         case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
             setMultiplier( ( UnitMultiplierEnum ) newValue );
@@ -339,7 +337,7 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
         case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
-            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
+            return value != VALUE_EDEFAULT;
         case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
             return isSetMultiplier();
         case SclPackage.DURATION_IN_MILLI_SEC__UNIT:

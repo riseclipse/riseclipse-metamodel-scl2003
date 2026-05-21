@@ -26235,7 +26235,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__LINE_NUMBER = VALUE_WITH_UNIT__LINE_NUMBER;
+    int DURATION_IN_SEC__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -26244,7 +26244,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__EXPLICIT_LINKS_BUILT = VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT;
+    int DURATION_IN_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -26253,7 +26253,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__FILENAME = VALUE_WITH_UNIT__FILENAME;
+    int DURATION_IN_SEC__FILENAME = SCL_OBJECT__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -26262,7 +26262,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__XPATH = VALUE_WITH_UNIT__XPATH;
+    int DURATION_IN_SEC__XPATH = SCL_OBJECT__XPATH;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -26271,7 +26271,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__VALUE = VALUE_WITH_UNIT__VALUE;
+    int DURATION_IN_SEC__VALUE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Multiplier</b></em>' attribute.
@@ -26280,7 +26280,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__MULTIPLIER = VALUE_WITH_UNIT__MULTIPLIER;
+    int DURATION_IN_SEC__MULTIPLIER = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -26289,7 +26289,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC__UNIT = VALUE_WITH_UNIT__UNIT;
+    int DURATION_IN_SEC__UNIT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Duration In Sec</em>' class.
@@ -26298,7 +26298,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 0;
+    int DURATION_IN_SEC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -26307,7 +26307,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int DURATION_IN_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Duration In Sec</em>' class.
@@ -26316,7 +26316,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DURATION_IN_SEC_OPERATION_COUNT = VALUE_WITH_UNIT_OPERATION_COUNT + 0;
+    int DURATION_IN_SEC_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -39859,6 +39859,39 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getDurationInSec();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec#getValue()
+     * @see #getDurationInSec()
+     * @generated
+     */
+    EAttribute getDurationInSec_Value();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec#getMultiplier <em>Multiplier</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Multiplier</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec#getMultiplier()
+     * @see #getDurationInSec()
+     * @generated
+     */
+    EAttribute getDurationInSec_Multiplier();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec#getUnit <em>Unit</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Unit</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec#getUnit()
+     * @see #getDurationInSec()
+     * @generated
+     */
+    EAttribute getDurationInSec_Unit();
 
     /**
      * Returns the meta object for enum '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum <em>Association Kind Enum</em>}'.

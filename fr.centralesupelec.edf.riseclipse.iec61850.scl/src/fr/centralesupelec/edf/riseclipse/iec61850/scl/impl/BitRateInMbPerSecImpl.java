@@ -20,7 +20,7 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -54,7 +54,7 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      * @ordered
      */
-    protected static final BigDecimal VALUE_EDEFAULT = null;
+    protected static final BigInteger VALUE_EDEFAULT = null;
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      * @ordered
      */
-    protected BigDecimal value = VALUE_EDEFAULT;
+    protected BigInteger value = VALUE_EDEFAULT;
     /**
      * The default value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -99,7 +99,7 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      * @ordered
      */
-    protected static final String UNIT_EDEFAULT = "";
+    protected static final String UNIT_EDEFAULT = "b/s";
     /**
      * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -143,7 +143,7 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public BigDecimal getValue() {
+    public BigInteger getValue() {
         return value;
     }
 
@@ -153,8 +153,8 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public void setValue( BigDecimal newValue ) {
-        BigDecimal oldValue = value;
+    public void setValue( BigInteger newValue ) {
+        BigInteger oldValue = value;
         value = newValue;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE, oldValue,
@@ -297,7 +297,7 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
         case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
-            setValue( ( BigDecimal ) newValue );
+            setValue( ( BigInteger ) newValue );
             return;
         case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
             setMultiplier( ( UnitMultiplierEnum ) newValue );

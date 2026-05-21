@@ -3065,9 +3065,6 @@ public class SclSwitch< T > extends Switch< T > {
             DurationInSec durationInSec = ( DurationInSec ) theEObject;
             T result = caseDurationInSec( durationInSec );
             if( result == null ) {
-                result = caseValueWithUnit( durationInSec );
-            }
-            if( result == null ) {
                 result = caseSclObject( durationInSec );
             }
             if( result == null ) {

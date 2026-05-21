@@ -20,8 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-import java.math.BigDecimal;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Duration In Milli Sec</b></em>'.
@@ -51,13 +49,13 @@ public interface DurationInMilliSec extends SclObject {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Value</em>' attribute.
-     * @see #setValue(BigDecimal)
+     * @see #setValue(long)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDurationInMilliSec_Value()
-     * @model required="true"
+     * @model dataType="org.eclipse.emf.ecore.xml.type.UnsignedInt" required="true"
      *        extendedMetaData="kind='simple'"
      * @generated
      */
-    BigDecimal getValue();
+    long getValue();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec#getValue <em>Value</em>}' attribute.
@@ -67,11 +65,11 @@ public interface DurationInMilliSec extends SclObject {
      * @see #getValue()
      * @generated
      */
-    void setValue( BigDecimal value );
+    void setValue( long value );
 
     /**
      * Returns the value of the '<em><b>Multiplier</b></em>' attribute.
-     * The default value is <code>""</code>.
+     * The default value is <code>"m"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -85,7 +83,7 @@ public interface DurationInMilliSec extends SclObject {
      * @see #unsetMultiplier()
      * @see #setMultiplier(UnitMultiplierEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDurationInMilliSec_Multiplier()
-     * @model default="" unsettable="true"
+     * @model default="m" unsettable="true"
      * @generated
      */
     UnitMultiplierEnum getMultiplier();
@@ -128,7 +126,7 @@ public interface DurationInMilliSec extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Unit</b></em>' attribute.
-     * The default value is <code>""</code>.
+     * The default value is <code>"s"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Unit</em>' attribute isn't clear,
@@ -140,7 +138,7 @@ public interface DurationInMilliSec extends SclObject {
      * @see #unsetUnit()
      * @see #setUnit(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDurationInMilliSec_Unit()
-     * @model default="" unsettable="true"
+     * @model default="s" unsettable="true"
      * @generated
      */
     String getUnit();

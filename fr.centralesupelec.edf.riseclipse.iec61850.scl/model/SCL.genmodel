@@ -1171,7 +1171,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueWithUnit/multiplier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueWithUnit/unit"/>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//DurationInSec"/>
+    <genClasses ecoreClass="SCL.ecore#//DurationInSec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInSec/value"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInSec/multiplier"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInSec/unit"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DurationInMilliSec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInMilliSec/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInMilliSec/multiplier"/>

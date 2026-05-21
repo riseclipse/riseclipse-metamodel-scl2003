@@ -25,7 +25,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec} object.
@@ -33,7 +39,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DurationInSecItemProvider extends ValueWithUnitItemProvider {
+public class DurationInSecItemProvider extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -55,8 +61,77 @@ public class DurationInSecItemProvider extends ValueWithUnitItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addValuePropertyDescriptor( object );
+            addMultiplierPropertyDescriptor( object );
+            addUnitPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Value feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addValuePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DurationInSec_value_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DurationInSec_value_feature",
+                                "_UI_DurationInSec_type" ),
+                        SclPackage.eINSTANCE.getDurationInSec_Value(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Multiplier feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addMultiplierPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DurationInSec_multiplier_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DurationInSec_multiplier_feature",
+                                "_UI_DurationInSec_type" ),
+                        SclPackage.eINSTANCE.getDurationInSec_Multiplier(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Unit feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUnitPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DurationInSec_unit_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DurationInSec_unit_feature",
+                                "_UI_DurationInSec_type" ),
+                        SclPackage.eINSTANCE.getDurationInSec_Unit(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -91,6 +166,14 @@ public class DurationInSecItemProvider extends ValueWithUnitItemProvider {
     @Override
     public void notifyChanged( Notification notification ) {
         updateChildren( notification );
+
+        switch( notification.getFeatureID( DurationInSec.class ) ) {
+        case SclPackage.DURATION_IN_SEC__VALUE:
+        case SclPackage.DURATION_IN_SEC__MULTIPLIER:
+        case SclPackage.DURATION_IN_SEC__UNIT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        }
         super.notifyChanged( notification );
     }
 
