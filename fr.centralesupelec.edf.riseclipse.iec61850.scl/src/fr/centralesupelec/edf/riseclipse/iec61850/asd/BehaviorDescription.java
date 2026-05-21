@@ -210,12 +210,12 @@ public interface BehaviorDescription extends BaseExtensionElementWithDesc {
      * Identification of the behavior description format
      * <!-- end-model-doc -->
      * @return the value of the '<em>Format</em>' attribute.
-     * @see #setFormat(int)
+     * @see #setFormat(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBehaviorDescription_Format()
      * @model extendedMetaData="kind='attribute' name='format'"
      * @generated
      */
-    int getFormat();
+    String getFormat();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getFormat <em>Format</em>}' attribute.
@@ -225,7 +225,7 @@ public interface BehaviorDescription extends BaseExtensionElementWithDesc {
      * @see #getFormat()
      * @generated
      */
-    void setFormat( int value );
+    void setFormat( String value );
 
     /**
      * Returns the value of the '<em><b>Is Simulation</b></em>' attribute.

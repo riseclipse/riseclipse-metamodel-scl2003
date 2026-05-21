@@ -121,7 +121,7 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
      * @generated
      * @ordered
      */
-    protected static final int FORMAT_EDEFAULT = 0;
+    protected static final String FORMAT_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
@@ -131,7 +131,7 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
      * @generated
      * @ordered
      */
-    protected int format = FORMAT_EDEFAULT;
+    protected String format = FORMAT_EDEFAULT;
 
     /**
      * The default value of the '{@link #isIsSimulation() <em>Is Simulation</em>}' attribute.
@@ -440,7 +440,7 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
      * @generated
      */
     @Override
-    public int getFormat() {
+    public String getFormat() {
         return format;
     }
 
@@ -450,8 +450,8 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
      * @generated
      */
     @Override
-    public void setFormat( int newFormat ) {
-        int oldFormat = format;
+    public void setFormat( String newFormat ) {
+        String oldFormat = format;
         format = newFormat;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BEHAVIOR_DESCRIPTION__FORMAT, oldFormat,
@@ -812,7 +812,7 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
             setFileReference( ( String ) newValue );
             return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__FORMAT:
-            setFormat( ( Integer ) newValue );
+            setFormat( ( String ) newValue );
             return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__IS_SIMULATION:
             setIsSimulation( ( Boolean ) newValue );
@@ -906,7 +906,7 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
             return FILE_REFERENCE_EDEFAULT == null ? fileReference != null
                     : !FILE_REFERENCE_EDEFAULT.equals( fileReference );
         case AsdPackage.BEHAVIOR_DESCRIPTION__FORMAT:
-            return format != FORMAT_EDEFAULT;
+            return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals( format );
         case AsdPackage.BEHAVIOR_DESCRIPTION__IS_SIMULATION:
             return isSetIsSimulation();
         case AsdPackage.BEHAVIOR_DESCRIPTION__IS_SPECIFICATION:
