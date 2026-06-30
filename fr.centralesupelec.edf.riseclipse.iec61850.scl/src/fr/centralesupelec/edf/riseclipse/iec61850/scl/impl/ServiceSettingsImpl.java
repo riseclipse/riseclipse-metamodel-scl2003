@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -142,9 +142,10 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         cbName = newCbName == null ? CB_NAME_EDEFAULT : newCbName;
         boolean oldCbNameESet = cbNameESet;
         cbNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_SETTINGS__CB_NAME, oldCbName,
                     cbName, !oldCbNameESet ) );
+        }
     }
 
     /**
@@ -158,9 +159,10 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         boolean oldCbNameESet = cbNameESet;
         cbName = CB_NAME_EDEFAULT;
         cbNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_SETTINGS__CB_NAME, oldCbName,
                     CB_NAME_EDEFAULT, oldCbNameESet ) );
+        }
     }
 
     /**
@@ -194,9 +196,10 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         datSet = newDatSet == null ? DAT_SET_EDEFAULT : newDatSet;
         boolean oldDatSetESet = datSetESet;
         datSetESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_SETTINGS__DAT_SET, oldDatSet,
                     datSet, !oldDatSetESet ) );
+        }
     }
 
     /**
@@ -210,9 +213,10 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         boolean oldDatSetESet = datSetESet;
         datSet = DAT_SET_EDEFAULT;
         datSetESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_SETTINGS__DAT_SET, oldDatSet,
                     DAT_SET_EDEFAULT, oldDatSetESet ) );
+        }
     }
 
     /**
@@ -300,19 +304,25 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (cbName: " );
-        if( cbNameESet )
+        if( cbNameESet ) {
             result.append( cbName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", datSet: " );
-        if( datSetESet )
+        if( datSetESet ) {
             result.append( datSet );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

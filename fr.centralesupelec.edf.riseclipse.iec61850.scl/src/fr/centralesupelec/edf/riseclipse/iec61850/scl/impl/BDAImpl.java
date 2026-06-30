@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,15 +20,16 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +71,9 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
      */
     @Override
     public DAType getParentDAType() {
-        if( eContainerFeatureID() != SclPackage.BDA__PARENT_DA_TYPE ) return null;
+        if( eContainerFeatureID() != SclPackage.BDA__PARENT_DA_TYPE ) {
+            return null;
+        }
         return ( DAType ) eInternalContainer();
     }
 
@@ -93,20 +96,26 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     public void setParentDAType( DAType newParentDAType ) {
         if( newParentDAType != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.BDA__PARENT_DA_TYPE && newParentDAType != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDAType ) )
+            if( EcoreUtil.isAncestor( this, newParentDAType ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDAType != null )
+            }
+            if( newParentDAType != null ) {
                 msgs = ( ( InternalEObject ) newParentDAType ).eInverseAdd( this, SclPackage.DA_TYPE__BDA, DAType.class,
                         msgs );
+            }
             msgs = basicSetParentDAType( newParentDAType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BDA__PARENT_DA_TYPE, newParentDAType,
                     newParentDAType ) );
+        }
     }
 
     /**
@@ -118,8 +127,9 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.BDA__PARENT_DA_TYPE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDAType( ( DAType ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -110,9 +110,10 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
         max = newMax;
         boolean oldMaxESet = maxESet;
         maxESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_WITH_MAX__MAX, oldMax, max,
                     !oldMaxESet ) );
+        }
     }
 
     /**
@@ -126,9 +127,10 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
         boolean oldMaxESet = maxESet;
         max = MAX_EDEFAULT;
         maxESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_WITH_MAX__MAX, oldMax,
                     MAX_EDEFAULT, oldMaxESet ) );
+        }
     }
 
     /**
@@ -206,14 +208,18 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (max: " );
-        if( maxESet )
+        if( maxESet ) {
             result.append( max );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,9 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Cert;
@@ -142,9 +140,10 @@ public class CertImpl extends SclObjectImpl implements Cert {
         commonName = newCommonName;
         boolean oldCommonNameESet = commonNameESet;
         commonNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERT__COMMON_NAME, oldCommonName,
                     commonName, !oldCommonNameESet ) );
+        }
     }
 
     /**
@@ -158,9 +157,10 @@ public class CertImpl extends SclObjectImpl implements Cert {
         boolean oldCommonNameESet = commonNameESet;
         commonName = COMMON_NAME_EDEFAULT;
         commonNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERT__COMMON_NAME, oldCommonName,
                     COMMON_NAME_EDEFAULT, oldCommonNameESet ) );
+        }
     }
 
     /**
@@ -194,9 +194,10 @@ public class CertImpl extends SclObjectImpl implements Cert {
         idHierarchy = newIdHierarchy;
         boolean oldIdHierarchyESet = idHierarchyESet;
         idHierarchyESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERT__ID_HIERARCHY, oldIdHierarchy,
                     idHierarchy, !oldIdHierarchyESet ) );
+        }
     }
 
     /**
@@ -210,9 +211,10 @@ public class CertImpl extends SclObjectImpl implements Cert {
         boolean oldIdHierarchyESet = idHierarchyESet;
         idHierarchy = ID_HIERARCHY_EDEFAULT;
         idHierarchyESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERT__ID_HIERARCHY, oldIdHierarchy,
                     ID_HIERARCHY_EDEFAULT, oldIdHierarchyESet ) );
+        }
     }
 
     /**
@@ -300,19 +302,25 @@ public class CertImpl extends SclObjectImpl implements Cert {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (commonName: " );
-        if( commonNameESet )
+        if( commonNameESet ) {
             result.append( commonName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", idHierarchy: " );
-        if( idHierarchyESet )
+        if( idHierarchyESet ) {
             result.append( idHierarchy );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

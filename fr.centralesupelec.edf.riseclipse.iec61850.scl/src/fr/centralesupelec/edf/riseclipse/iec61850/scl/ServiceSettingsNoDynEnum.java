@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -115,8 +115,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum get( String literal ) {
-        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
-            ServiceSettingsNoDynEnum result = VALUES_ARRAY[i];
+        for( ServiceSettingsNoDynEnum result : VALUES_ARRAY ) {
             if( result.toString().equals( literal ) ) {
                 return result;
             }
@@ -133,8 +132,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum getByName( String name ) {
-        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
-            ServiceSettingsNoDynEnum result = VALUES_ARRAY[i];
+        for( ServiceSettingsNoDynEnum result : VALUES_ARRAY ) {
             if( result.getName().equals( name ) ) {
                 return result;
             }

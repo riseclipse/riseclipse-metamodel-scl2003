@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,23 +15,20 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.CheckoutID;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCheckoutID;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +70,9 @@ public class SubCheckoutIDImpl extends CheckoutIDImpl implements SubCheckoutID {
      */
     @Override
     public CheckoutID getParentCheckoutID() {
-        if( eContainerFeatureID() != AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID ) return null;
+        if( eContainerFeatureID() != AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID ) {
+            return null;
+        }
         return ( CheckoutID ) eInternalContainer();
     }
 
@@ -98,20 +97,26 @@ public class SubCheckoutIDImpl extends CheckoutIDImpl implements SubCheckoutID {
         if( newParentCheckoutID != eInternalContainer()
                 || ( eContainerFeatureID() != AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID
                         && newParentCheckoutID != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentCheckoutID ) )
+            if( EcoreUtil.isAncestor( this, newParentCheckoutID ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentCheckoutID != null )
+            }
+            if( newParentCheckoutID != null ) {
                 msgs = ( ( InternalEObject ) newParentCheckoutID ).eInverseAdd( this,
                         AsdPackage.CHECKOUT_ID__SUB_CHECKOUT_ID, CheckoutID.class, msgs );
+            }
             msgs = basicSetParentCheckoutID( newParentCheckoutID, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID,
                     newParentCheckoutID, newParentCheckoutID ) );
+        }
     }
 
     /**
@@ -123,8 +128,9 @@ public class SubCheckoutIDImpl extends CheckoutIDImpl implements SubCheckoutID {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case AsdPackage.SUB_CHECKOUT_ID__PARENT_CHECKOUT_ID:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentCheckoutID( ( CheckoutID ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

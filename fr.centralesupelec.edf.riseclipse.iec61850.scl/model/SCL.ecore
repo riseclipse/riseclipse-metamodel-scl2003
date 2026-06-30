@@ -6919,7 +6919,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" eType="#//asd/SpecServiceEnum"
-          defaultValueLiteral="GOOSE" unsettable="true">
+          unsettable="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Service to be used on implementation"/>
         </eAnnotations>

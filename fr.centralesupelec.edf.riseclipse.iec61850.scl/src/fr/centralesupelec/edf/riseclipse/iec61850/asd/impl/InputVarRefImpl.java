@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,23 +15,20 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescriptionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.InputVarRef;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +70,9 @@ public class InputVarRefImpl extends VariableRefImpl implements InputVarRef {
      */
     @Override
     public BehaviorDescriptionRef getParentBehaviorDescriptionRef() {
-        if( eContainerFeatureID() != AsdPackage.INPUT_VAR_REF__PARENT_BEHAVIOR_DESCRIPTION_REF ) return null;
+        if( eContainerFeatureID() != AsdPackage.INPUT_VAR_REF__PARENT_BEHAVIOR_DESCRIPTION_REF ) {
+            return null;
+        }
         return ( BehaviorDescriptionRef ) eInternalContainer();
     }
 
@@ -99,21 +98,27 @@ public class InputVarRefImpl extends VariableRefImpl implements InputVarRef {
         if( newParentBehaviorDescriptionRef != eInternalContainer()
                 || ( eContainerFeatureID() != AsdPackage.INPUT_VAR_REF__PARENT_BEHAVIOR_DESCRIPTION_REF
                         && newParentBehaviorDescriptionRef != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentBehaviorDescriptionRef ) )
+            if( EcoreUtil.isAncestor( this, newParentBehaviorDescriptionRef ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentBehaviorDescriptionRef != null )
+            }
+            if( newParentBehaviorDescriptionRef != null ) {
                 msgs = ( ( InternalEObject ) newParentBehaviorDescriptionRef ).eInverseAdd( this,
                         AsdPackage.BEHAVIOR_DESCRIPTION_REF__INPUT_VAR_REF, BehaviorDescriptionRef.class, msgs );
+            }
             msgs = basicSetParentBehaviorDescriptionRef( newParentBehaviorDescriptionRef, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     AsdPackage.INPUT_VAR_REF__PARENT_BEHAVIOR_DESCRIPTION_REF, newParentBehaviorDescriptionRef,
                     newParentBehaviorDescriptionRef ) );
+        }
     }
 
     /**
@@ -125,8 +130,9 @@ public class InputVarRefImpl extends VariableRefImpl implements InputVarRef {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case AsdPackage.INPUT_VAR_REF__PARENT_BEHAVIOR_DESCRIPTION_REF:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentBehaviorDescriptionRef( ( BehaviorDescriptionRef ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

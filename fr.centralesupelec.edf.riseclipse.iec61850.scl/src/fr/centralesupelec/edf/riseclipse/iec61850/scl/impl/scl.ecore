@@ -6166,7 +6166,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" eType="#//asd/SpecServiceEnum"
-          defaultValueLiteral="GOOSE" unsettable="true">
+          unsettable="true">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="service"/>

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,30 +15,25 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -176,7 +171,7 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
     @Override
     public EList< LNode > getLNode() {
         if( lNode == null ) {
-            lNode = new EObjectContainmentWithInverseEList.Unsettable< LNode >( LNode.class, this,
+            lNode = new EObjectContainmentWithInverseEList.Unsettable< >( LNode.class, this,
                     AsdPackage.ABSTRACT6100_LNODE_CONTAINER__LNODE,
                     SclPackage.LNODE__PARENT_ABSTRACT6100_LNODE_CONTAINER );
         }
@@ -190,7 +185,9 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
      */
     @Override
     public void unsetLNode() {
-        if( lNode != null ) ( ( InternalEList.Unsettable< ? > ) lNode ).unset();
+        if( lNode != null ) {
+            ( ( InternalEList.Unsettable< ? > ) lNode ).unset();
+        }
     }
 
     /**
@@ -222,9 +219,10 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
     public void setName( String newName ) {
         String oldName = name;
         name = newName;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.ABSTRACT6100_LNODE_CONTAINER__NAME,
                     oldName, name ) );
+        }
     }
 
     /**
@@ -246,9 +244,10 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
     public void setOriginUuid( String newOriginUuid ) {
         String oldOriginUuid = originUuid;
         originUuid = newOriginUuid;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     AsdPackage.ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID, oldOriginUuid, originUuid ) );
+        }
     }
 
     /**
@@ -270,9 +269,10 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
     public void setTemplateUuid( String newTemplateUuid ) {
         String oldTemplateUuid = templateUuid;
         templateUuid = newTemplateUuid;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     AsdPackage.ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID, oldTemplateUuid, templateUuid ) );
+        }
     }
 
     /**
@@ -294,9 +294,10 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
     public void setUuid( String newUuid ) {
         String oldUuid = uuid;
         uuid = newUuid;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.ABSTRACT6100_LNODE_CONTAINER__UUID,
                     oldUuid, uuid ) );
+        }
     }
 
     /**
@@ -437,7 +438,9 @@ public abstract class Abstract6100LNodeContainerImpl extends BaseExtensionElemen
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (name: " );

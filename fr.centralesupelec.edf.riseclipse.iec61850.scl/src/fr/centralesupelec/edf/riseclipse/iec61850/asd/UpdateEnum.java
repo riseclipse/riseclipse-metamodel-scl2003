@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,7 +15,7 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
@@ -105,8 +105,7 @@ public enum UpdateEnum implements Enumerator {
      * @generated
      */
     public static UpdateEnum get( String literal ) {
-        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
-            UpdateEnum result = VALUES_ARRAY[i];
+        for( UpdateEnum result : VALUES_ARRAY ) {
             if( result.toString().equals( literal ) ) {
                 return result;
             }
@@ -123,8 +122,7 @@ public enum UpdateEnum implements Enumerator {
      * @generated
      */
     public static UpdateEnum getByName( String name ) {
-        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
-            UpdateEnum result = VALUES_ARRAY[i];
+        for( UpdateEnum result : VALUES_ARRAY ) {
             if( result.getName().equals( name ) ) {
                 return result;
             }

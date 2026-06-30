@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public PhysConn getParentPhysConn() {
-        if( eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN ) return null;
+        if( eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN ) {
+            return null;
+        }
         return ( PhysConn ) eInternalContainer();
     }
 
@@ -95,20 +97,26 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
     public void setParentPhysConn( PhysConn newParentPhysConn ) {
         if( newParentPhysConn != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN && newParentPhysConn != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentPhysConn ) )
+            if( EcoreUtil.isAncestor( this, newParentPhysConn ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentPhysConn != null )
+            }
+            if( newParentPhysConn != null ) {
                 msgs = ( ( InternalEObject ) newParentPhysConn ).eInverseAdd( this, SclPackage.PHYS_CONN__P,
                         PhysConn.class, msgs );
+            }
             msgs = basicSetParentPhysConn( newParentPhysConn, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PPHYS_CONN__PARENT_PHYS_CONN,
                     newParentPhysConn, newParentPhysConn ) );
+        }
     }
 
     /**
@@ -120,8 +128,9 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentPhysConn( ( PhysConn ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -23,12 +23,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -99,7 +96,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
     @Override
     public EList< SubEquipment > getSubEquipment() {
         if( subEquipment == null ) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable< SubEquipment >( SubEquipment.class, this,
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable< >( SubEquipment.class, this,
                     SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT,
                     SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT );
         }
@@ -113,7 +110,9 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public void unsetSubEquipment() {
-        if( subEquipment != null ) ( ( InternalEList.Unsettable< ? > ) subEquipment ).unset();
+        if( subEquipment != null ) {
+            ( ( InternalEList.Unsettable< ? > ) subEquipment ).unset();
+        }
     }
 
     /**
@@ -134,7 +133,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
     @Override
     public EList< Terminal > getTerminal() {
         if( terminal == null ) {
-            terminal = new EObjectContainmentWithInverseEList.Unsettable< Terminal >( Terminal.class, this,
+            terminal = new EObjectContainmentWithInverseEList.Unsettable< >( Terminal.class, this,
                     SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL,
                     SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT );
         }
@@ -148,7 +147,9 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public void unsetTerminal() {
-        if( terminal != null ) ( ( InternalEList.Unsettable< ? > ) terminal ).unset();
+        if( terminal != null ) {
+            ( ( InternalEList.Unsettable< ? > ) terminal ).unset();
+        }
     }
 
     /**

@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,18 +15,16 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,9 +110,10 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC,
                     oldDesc, desc, !oldDescESet ) );
+        }
     }
 
     /**
@@ -128,9 +127,10 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC,
                     oldDesc, DESC_EDEFAULT, oldDescESet ) );
+        }
     }
 
     /**
@@ -208,14 +208,18 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (desc: " );
-        if( descESet )
+        if( descESet ) {
             result.append( desc );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

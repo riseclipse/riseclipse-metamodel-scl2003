@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -28,6 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -167,9 +167,10 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         ord = newOrd;
         boolean oldOrdESet = ordESet;
         ordESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__ORD, oldOrd, ord,
                     !oldOrdESet ) );
+        }
     }
 
     /**
@@ -183,9 +184,10 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         boolean oldOrdESet = ordESet;
         ord = ORD_EDEFAULT;
         ordESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ENUM_VAL__ORD, oldOrd, ORD_EDEFAULT,
                     oldOrdESet ) );
+        }
     }
 
     /**
@@ -205,7 +207,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public EnumType getParentEnumType() {
-        if( eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE ) return null;
+        if( eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE ) {
+            return null;
+        }
         return ( EnumType ) eInternalContainer();
     }
 
@@ -228,20 +232,26 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     public void setParentEnumType( EnumType newParentEnumType ) {
         if( newParentEnumType != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE && newParentEnumType != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentEnumType ) )
+            if( EcoreUtil.isAncestor( this, newParentEnumType ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentEnumType != null )
+            }
+            if( newParentEnumType != null ) {
                 msgs = ( ( InternalEObject ) newParentEnumType ).eInverseAdd( this, SclPackage.ENUM_TYPE__ENUM_VAL,
                         EnumType.class, msgs );
+            }
             msgs = basicSetParentEnumType( newParentEnumType, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE,
                     newParentEnumType, newParentEnumType ) );
+        }
     }
 
     /**
@@ -263,8 +273,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__VALUE, oldValue, value ) );
+        }
     }
 
     /**
@@ -288,9 +299,10 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__DESC, oldDesc, desc,
                     !oldDescESet ) );
+        }
     }
 
     /**
@@ -304,9 +316,10 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ENUM_VAL__DESC, oldDesc, DESC_EDEFAULT,
                     oldDescESet ) );
+        }
     }
 
     /**
@@ -328,8 +341,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentEnumType( ( EnumType ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -494,19 +508,25 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (desc: " );
-        if( descESet )
+        if( descESet ) {
             result.append( desc );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ord: " );
-        if( ordESet )
+        if( ordESet ) {
             result.append( ord );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", value: " );
         result.append( value );
         result.append( ')' );

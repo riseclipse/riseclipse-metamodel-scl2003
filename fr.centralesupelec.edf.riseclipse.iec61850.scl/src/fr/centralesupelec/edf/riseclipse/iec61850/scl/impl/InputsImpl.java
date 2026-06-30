@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -87,7 +88,9 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if( eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN ) return null;
+        if( eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN ) {
+            return null;
+        }
         return ( AnyLN ) eInternalContainer();
     }
 
@@ -110,20 +113,26 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
     public void setParentAnyLN( AnyLN newParentAnyLN ) {
         if( newParentAnyLN != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN && newParentAnyLN != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAnyLN != null )
+            }
+            if( newParentAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__INPUTS, AnyLN.class,
                         msgs );
+            }
             msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.INPUTS__PARENT_ANY_LN, newParentAnyLN,
                     newParentAnyLN ) );
+        }
     }
 
     /**
@@ -134,7 +143,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
     @Override
     public EList< ExtRef > getExtRef() {
         if( extRef == null ) {
-            extRef = new EObjectContainmentWithInverseEList.Unsettable< ExtRef >( ExtRef.class, this,
+            extRef = new EObjectContainmentWithInverseEList.Unsettable< >( ExtRef.class, this,
                     SclPackage.INPUTS__EXT_REF, SclPackage.EXT_REF__PARENT_INPUTS );
         }
         return extRef;
@@ -147,7 +156,9 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public void unsetExtRef() {
-        if( extRef != null ) ( ( InternalEList.Unsettable< ? > ) extRef ).unset();
+        if( extRef != null ) {
+            ( ( InternalEList.Unsettable< ? > ) extRef ).unset();
+        }
     }
 
     /**
@@ -170,8 +181,9 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.INPUTS__PARENT_ANY_LN:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.INPUTS__EXT_REF:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getExtRef() ).basicAdd( otherEnd,

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -175,9 +175,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         actSG = newActSG;
         boolean oldActSGESet = actSGESet;
         actSGESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_CONTROL__ACT_SG, oldActSG, actSG,
                     !oldActSGESet ) );
+        }
     }
 
     /**
@@ -191,9 +192,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         boolean oldActSGESet = actSGESet;
         actSG = ACT_SG_EDEFAULT;
         actSGESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_CONTROL__ACT_SG, oldActSG,
                     ACT_SG_EDEFAULT, oldActSGESet ) );
+        }
     }
 
     /**
@@ -227,9 +229,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         numOfSGs = newNumOfSGs;
         boolean oldNumOfSGsESet = numOfSGsESet;
         numOfSGsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_CONTROL__NUM_OF_SGS, oldNumOfSGs,
                     numOfSGs, !oldNumOfSGsESet ) );
+        }
     }
 
     /**
@@ -243,9 +246,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         boolean oldNumOfSGsESet = numOfSGsESet;
         numOfSGs = NUM_OF_SGS_EDEFAULT;
         numOfSGsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_CONTROL__NUM_OF_SGS,
                     oldNumOfSGs, NUM_OF_SGS_EDEFAULT, oldNumOfSGsESet ) );
+        }
     }
 
     /**
@@ -279,9 +283,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         resvTms = newResvTms;
         boolean oldResvTmsESet = resvTmsESet;
         resvTmsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_CONTROL__RESV_TMS, oldResvTms,
                     resvTms, !oldResvTmsESet ) );
+        }
     }
 
     /**
@@ -295,9 +300,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
         boolean oldResvTmsESet = resvTmsESet;
         resvTms = RESV_TMS_EDEFAULT;
         resvTmsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_CONTROL__RESV_TMS, oldResvTms,
                     RESV_TMS_EDEFAULT, oldResvTmsESet ) );
+        }
     }
 
     /**
@@ -317,7 +323,9 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      */
     @Override
     public LN0 getParentLN0() {
-        if( eContainerFeatureID() != SclPackage.SETTING_CONTROL__PARENT_LN0 ) return null;
+        if( eContainerFeatureID() != SclPackage.SETTING_CONTROL__PARENT_LN0 ) {
+            return null;
+        }
         return ( LN0 ) eInternalContainer();
     }
 
@@ -340,20 +348,26 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     public void setParentLN0( LN0 newParentLN0 ) {
         if( newParentLN0 != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SETTING_CONTROL__PARENT_LN0 && newParentLN0 != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLN0 ) )
+            if( EcoreUtil.isAncestor( this, newParentLN0 ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLN0 != null )
+            }
+            if( newParentLN0 != null ) {
                 msgs = ( ( InternalEObject ) newParentLN0 ).eInverseAdd( this, SclPackage.LN0__SETTING_CONTROL,
                         LN0.class, msgs );
+            }
             msgs = basicSetParentLN0( newParentLN0, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_CONTROL__PARENT_LN0,
                     newParentLN0, newParentLN0 ) );
+        }
     }
 
     /**
@@ -365,8 +379,9 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SETTING_CONTROL__PARENT_LN0:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLN0( ( LN0 ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -495,24 +510,32 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (actSG: " );
-        if( actSGESet )
+        if( actSGESet ) {
             result.append( actSG );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", numOfSGs: " );
-        if( numOfSGsESet )
+        if( numOfSGsESet ) {
             result.append( numOfSGs );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", resvTms: " );
-        if( resvTmsESet )
+        if( resvTmsESet ) {
             result.append( resvTms );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

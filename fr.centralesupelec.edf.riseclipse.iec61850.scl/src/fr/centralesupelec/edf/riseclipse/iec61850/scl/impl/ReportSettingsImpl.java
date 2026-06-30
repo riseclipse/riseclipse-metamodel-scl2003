@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -296,9 +296,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         bufTime = newBufTime == null ? BUF_TIME_EDEFAULT : newBufTime;
         boolean oldBufTimeESet = bufTimeESet;
         bufTimeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__BUF_TIME, oldBufTime,
                     bufTime, !oldBufTimeESet ) );
+        }
     }
 
     /**
@@ -312,9 +313,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldBufTimeESet = bufTimeESet;
         bufTime = BUF_TIME_EDEFAULT;
         bufTimeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__BUF_TIME, oldBufTime,
                     BUF_TIME_EDEFAULT, oldBufTimeESet ) );
+        }
     }
 
     /**
@@ -348,9 +350,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
         boolean oldIntgPdESet = intgPdESet;
         intgPdESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__INTG_PD, oldIntgPd,
                     intgPd, !oldIntgPdESet ) );
+        }
     }
 
     /**
@@ -364,9 +367,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldIntgPdESet = intgPdESet;
         intgPd = INTG_PD_EDEFAULT;
         intgPdESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__INTG_PD, oldIntgPd,
                     INTG_PD_EDEFAULT, oldIntgPdESet ) );
+        }
     }
 
     /**
@@ -400,9 +404,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         optFields = newOptFields == null ? OPT_FIELDS_EDEFAULT : newOptFields;
         boolean oldOptFieldsESet = optFieldsESet;
         optFieldsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__OPT_FIELDS,
                     oldOptFields, optFields, !oldOptFieldsESet ) );
+        }
     }
 
     /**
@@ -416,9 +421,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldOptFieldsESet = optFieldsESet;
         optFields = OPT_FIELDS_EDEFAULT;
         optFieldsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__OPT_FIELDS,
                     oldOptFields, OPT_FIELDS_EDEFAULT, oldOptFieldsESet ) );
+        }
     }
 
     /**
@@ -452,9 +458,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         owner = newOwner;
         boolean oldOwnerESet = ownerESet;
         ownerESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__OWNER, oldOwner, owner,
                     !oldOwnerESet ) );
+        }
     }
 
     /**
@@ -468,9 +475,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldOwnerESet = ownerESet;
         owner = OWNER_EDEFAULT;
         ownerESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__OWNER, oldOwner,
                     OWNER_EDEFAULT, oldOwnerESet ) );
+        }
     }
 
     /**
@@ -504,9 +512,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         resvTms = newResvTms;
         boolean oldResvTmsESet = resvTmsESet;
         resvTmsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__RESV_TMS, oldResvTms,
                     resvTms, !oldResvTmsESet ) );
+        }
     }
 
     /**
@@ -520,9 +529,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldResvTmsESet = resvTmsESet;
         resvTms = RESV_TMS_EDEFAULT;
         resvTmsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__RESV_TMS, oldResvTms,
                     RESV_TMS_EDEFAULT, oldResvTmsESet ) );
+        }
     }
 
     /**
@@ -556,9 +566,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         rptID = newRptID == null ? RPT_ID_EDEFAULT : newRptID;
         boolean oldRptIDESet = rptIDESet;
         rptIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__RPT_ID, oldRptID, rptID,
                     !oldRptIDESet ) );
+        }
     }
 
     /**
@@ -572,9 +583,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldRptIDESet = rptIDESet;
         rptID = RPT_ID_EDEFAULT;
         rptIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__RPT_ID, oldRptID,
                     RPT_ID_EDEFAULT, oldRptIDESet ) );
+        }
     }
 
     /**
@@ -608,9 +620,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
         boolean oldTrgOpsESet = trgOpsESet;
         trgOpsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__TRG_OPS, oldTrgOps,
                     trgOps, !oldTrgOpsESet ) );
+        }
     }
 
     /**
@@ -624,9 +637,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         boolean oldTrgOpsESet = trgOpsESet;
         trgOps = TRG_OPS_EDEFAULT;
         trgOpsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_SETTINGS__TRG_OPS, oldTrgOps,
                     TRG_OPS_EDEFAULT, oldTrgOpsESet ) );
+        }
     }
 
     /**
@@ -646,7 +660,9 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.REPORT_SETTINGS__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.REPORT_SETTINGS__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -671,20 +687,26 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.REPORT_SETTINGS__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this,
                         SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_SETTINGS__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -696,8 +718,9 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -867,44 +890,60 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (bufTime: " );
-        if( bufTimeESet )
+        if( bufTimeESet ) {
             result.append( bufTime );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", intgPd: " );
-        if( intgPdESet )
+        if( intgPdESet ) {
             result.append( intgPd );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", optFields: " );
-        if( optFieldsESet )
+        if( optFieldsESet ) {
             result.append( optFields );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", owner: " );
-        if( ownerESet )
+        if( ownerESet ) {
             result.append( owner );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", resvTms: " );
-        if( resvTmsESet )
+        if( resvTmsESet ) {
             result.append( resvTms );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", rptID: " );
-        if( rptIDESet )
+        if( rptIDESet ) {
             result.append( rptID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", trgOps: " );
-        if( trgOpsESet )
+        if( trgOpsESet ) {
             result.append( trgOps );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

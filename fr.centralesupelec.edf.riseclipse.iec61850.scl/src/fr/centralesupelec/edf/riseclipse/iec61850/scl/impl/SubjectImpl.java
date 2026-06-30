@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class SubjectImpl extends CertImpl implements Subject {
      */
     @Override
     public Certificate getParentCertificate() {
-        if( eContainerFeatureID() != SclPackage.SUBJECT__PARENT_CERTIFICATE ) return null;
+        if( eContainerFeatureID() != SclPackage.SUBJECT__PARENT_CERTIFICATE ) {
+            return null;
+        }
         return ( Certificate ) eInternalContainer();
     }
 
@@ -96,20 +98,26 @@ public class SubjectImpl extends CertImpl implements Subject {
         if( newParentCertificate != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SUBJECT__PARENT_CERTIFICATE
                         && newParentCertificate != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentCertificate ) )
+            if( EcoreUtil.isAncestor( this, newParentCertificate ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentCertificate != null )
+            }
+            if( newParentCertificate != null ) {
                 msgs = ( ( InternalEObject ) newParentCertificate ).eInverseAdd( this, SclPackage.CERTIFICATE__SUBJECT,
                         Certificate.class, msgs );
+            }
             msgs = basicSetParentCertificate( newParentCertificate, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SUBJECT__PARENT_CERTIFICATE,
                     newParentCertificate, newParentCertificate ) );
+        }
     }
 
     /**
@@ -121,8 +129,9 @@ public class SubjectImpl extends CertImpl implements Subject {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SUBJECT__PARENT_CERTIFICATE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentCertificate( ( Certificate ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

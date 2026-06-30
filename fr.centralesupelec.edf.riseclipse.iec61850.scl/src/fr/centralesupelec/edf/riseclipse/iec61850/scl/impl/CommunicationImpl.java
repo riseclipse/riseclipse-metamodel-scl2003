@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -88,7 +89,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
     @Override
     public EList< SubNetwork > getSubNetwork() {
         if( subNetwork == null ) {
-            subNetwork = new EObjectContainmentWithInverseEList.Unsettable< SubNetwork >( SubNetwork.class, this,
+            subNetwork = new EObjectContainmentWithInverseEList.Unsettable< >( SubNetwork.class, this,
                     SclPackage.COMMUNICATION__SUB_NETWORK, SclPackage.SUB_NETWORK__PARENT_COMMUNICATION );
         }
         return subNetwork;
@@ -101,7 +102,9 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public void unsetSubNetwork() {
-        if( subNetwork != null ) ( ( InternalEList.Unsettable< ? > ) subNetwork ).unset();
+        if( subNetwork != null ) {
+            ( ( InternalEList.Unsettable< ? > ) subNetwork ).unset();
+        }
     }
 
     /**
@@ -121,7 +124,9 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public SCL getParentSCL() {
-        if( eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL ) return null;
+        if( eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL ) {
+            return null;
+        }
         return ( SCL ) eInternalContainer();
     }
 
@@ -144,20 +149,26 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
     public void setParentSCL( SCL newParentSCL ) {
         if( newParentSCL != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL && newParentSCL != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSCL ) )
+            if( EcoreUtil.isAncestor( this, newParentSCL ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSCL != null )
+            }
+            if( newParentSCL != null ) {
                 msgs = ( ( InternalEObject ) newParentSCL ).eInverseAdd( this, SclPackage.SCL__COMMUNICATION, SCL.class,
                         msgs );
+            }
             msgs = basicSetParentSCL( newParentSCL, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.COMMUNICATION__PARENT_SCL, newParentSCL,
                     newParentSCL ) );
+        }
     }
 
     /**
@@ -173,8 +184,9 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubNetwork() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.COMMUNICATION__PARENT_SCL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSCL( ( SCL ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

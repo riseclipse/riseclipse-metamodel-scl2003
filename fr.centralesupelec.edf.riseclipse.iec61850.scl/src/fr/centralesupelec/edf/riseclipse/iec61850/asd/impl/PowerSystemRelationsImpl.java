@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,25 +15,22 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelations;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelations;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,7 +83,7 @@ public class PowerSystemRelationsImpl extends BaseExtensionElementWithDescImpl i
     @Override
     public EList< PowerSystemRelation > getPowerSystemRelation() {
         if( powerSystemRelation == null ) {
-            powerSystemRelation = new EObjectContainmentWithInverseEList.Unsettable< PowerSystemRelation >(
+            powerSystemRelation = new EObjectContainmentWithInverseEList.Unsettable< >(
                     PowerSystemRelation.class, this, AsdPackage.POWER_SYSTEM_RELATIONS__POWER_SYSTEM_RELATION,
                     AsdPackage.POWER_SYSTEM_RELATION__PARENT_POWER_SYSTEM_RELATION );
         }
@@ -100,7 +97,9 @@ public class PowerSystemRelationsImpl extends BaseExtensionElementWithDescImpl i
      */
     @Override
     public void unsetPowerSystemRelation() {
-        if( powerSystemRelation != null ) ( ( InternalEList.Unsettable< ? > ) powerSystemRelation ).unset();
+        if( powerSystemRelation != null ) {
+            ( ( InternalEList.Unsettable< ? > ) powerSystemRelation ).unset();
+        }
     }
 
     /**

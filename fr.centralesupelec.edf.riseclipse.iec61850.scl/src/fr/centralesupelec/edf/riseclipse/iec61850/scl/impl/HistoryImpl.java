@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -87,7 +88,9 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public Header getParentHeader() {
-        if( eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER ) return null;
+        if( eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER ) {
+            return null;
+        }
         return ( Header ) eInternalContainer();
     }
 
@@ -110,20 +113,26 @@ public class HistoryImpl extends SclObjectImpl implements History {
     public void setParentHeader( Header newParentHeader ) {
         if( newParentHeader != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER && newParentHeader != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentHeader ) )
+            if( EcoreUtil.isAncestor( this, newParentHeader ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentHeader != null )
+            }
+            if( newParentHeader != null ) {
                 msgs = ( ( InternalEObject ) newParentHeader ).eInverseAdd( this, SclPackage.HEADER__HISTORY,
                         Header.class, msgs );
+            }
             msgs = basicSetParentHeader( newParentHeader, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HISTORY__PARENT_HEADER, newParentHeader,
                     newParentHeader ) );
+        }
     }
 
     /**
@@ -134,7 +143,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
     @Override
     public EList< Hitem > getHitem() {
         if( hitem == null ) {
-            hitem = new EObjectContainmentWithInverseEList.Unsettable< Hitem >( Hitem.class, this,
+            hitem = new EObjectContainmentWithInverseEList.Unsettable< >( Hitem.class, this,
                     SclPackage.HISTORY__HITEM, SclPackage.HITEM__PARENT_HISTORY );
         }
         return hitem;
@@ -147,7 +156,9 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public void unsetHitem() {
-        if( hitem != null ) ( ( InternalEList.Unsettable< ? > ) hitem ).unset();
+        if( hitem != null ) {
+            ( ( InternalEList.Unsettable< ? > ) hitem ).unset();
+        }
     }
 
     /**
@@ -170,8 +181,9 @@ public class HistoryImpl extends SclObjectImpl implements History {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.HISTORY__PARENT_HEADER:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentHeader( ( Header ) otherEnd, msgs );
         case SclPackage.HISTORY__HITEM:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getHitem() ).basicAdd( otherEnd,

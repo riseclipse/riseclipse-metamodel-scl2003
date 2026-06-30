@@ -72,9 +72,11 @@ public class SclResourceImpl extends XMLResourceImpl implements IRiseClipseResou
 
             @Override
             public EStructuralFeature getFeature( EClass eClass, String namespaceURI, String name ) {
+                //@formatter:off
                 otherNamespace = ( namespaceURI != null )
                             && ( ! namespaceURI.isEmpty() )
                             && ( ! SclPackage.eNS_URI.equals( namespaceURI ));
+                //@formatter:on
                 return super.getFeature( eClass, namespaceURI, name );
             }
 

@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -176,9 +176,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
         boolean oldIntgPdESet = intgPdESet;
         intgPdESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__INTG_PD, oldIntgPd, intgPd,
                     !oldIntgPdESet ) );
+        }
     }
 
     /**
@@ -192,9 +193,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         boolean oldIntgPdESet = intgPdESet;
         intgPd = INTG_PD_EDEFAULT;
         intgPdESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_SETTINGS__INTG_PD, oldIntgPd,
                     INTG_PD_EDEFAULT, oldIntgPdESet ) );
+        }
     }
 
     /**
@@ -228,9 +230,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         logEna = newLogEna == null ? LOG_ENA_EDEFAULT : newLogEna;
         boolean oldLogEnaESet = logEnaESet;
         logEnaESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__LOG_ENA, oldLogEna, logEna,
                     !oldLogEnaESet ) );
+        }
     }
 
     /**
@@ -244,9 +247,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         boolean oldLogEnaESet = logEnaESet;
         logEna = LOG_ENA_EDEFAULT;
         logEnaESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_SETTINGS__LOG_ENA, oldLogEna,
                     LOG_ENA_EDEFAULT, oldLogEnaESet ) );
+        }
     }
 
     /**
@@ -280,9 +284,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
         boolean oldTrgOpsESet = trgOpsESet;
         trgOpsESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__TRG_OPS, oldTrgOps, trgOps,
                     !oldTrgOpsESet ) );
+        }
     }
 
     /**
@@ -296,9 +301,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         boolean oldTrgOpsESet = trgOpsESet;
         trgOps = TRG_OPS_EDEFAULT;
         trgOpsESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_SETTINGS__TRG_OPS, oldTrgOps,
                     TRG_OPS_EDEFAULT, oldTrgOpsESet ) );
+        }
     }
 
     /**
@@ -318,7 +324,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -343,20 +351,26 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__LOG_SETTINGS,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -368,8 +382,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -498,24 +513,32 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (intgPd: " );
-        if( intgPdESet )
+        if( intgPdESet ) {
             result.append( intgPd );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", logEna: " );
-        if( logEnaESet )
+        if( logEnaESet ) {
             result.append( logEna );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", trgOps: " );
-        if( trgOpsESet )
+        if( trgOpsESet ) {
             result.append( trgOps );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

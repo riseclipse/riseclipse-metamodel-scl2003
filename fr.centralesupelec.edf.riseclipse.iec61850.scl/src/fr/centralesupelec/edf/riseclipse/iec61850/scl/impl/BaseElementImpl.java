@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -130,7 +131,7 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
     @Override
     public EList< Private > getPrivate() {
         if( private_ == null ) {
-            private_ = new EObjectContainmentWithInverseEList.Unsettable< Private >( Private.class, this,
+            private_ = new EObjectContainmentWithInverseEList.Unsettable< >( Private.class, this,
                     SclPackage.BASE_ELEMENT__PRIVATE, SclPackage.PRIVATE__PARENT_BASE_ELEMENT );
         }
         return private_;
@@ -143,7 +144,9 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
      */
     @Override
     public void unsetPrivate() {
-        if( private_ != null ) ( ( InternalEList.Unsettable< ? > ) private_ ).unset();
+        if( private_ != null ) {
+            ( ( InternalEList.Unsettable< ? > ) private_ ).unset();
+        }
     }
 
     /**
@@ -179,10 +182,12 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.BASE_ELEMENT__TEXT, oldText, newText, !oldTextESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -196,21 +201,26 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
     public void setText( Text newText ) {
         if( newText != text ) {
             NotificationChain msgs = null;
-            if( text != null )
+            if( text != null ) {
                 msgs = ( ( InternalEObject ) text ).eInverseRemove( this, SclPackage.TEXT__PARENT_BASE_ELEMENT,
                         Text.class, msgs );
-            if( newText != null )
+            }
+            if( newText != null ) {
                 msgs = ( ( InternalEObject ) newText ).eInverseAdd( this, SclPackage.TEXT__PARENT_BASE_ELEMENT,
                         Text.class, msgs );
+            }
             msgs = basicSetText( newText, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldTextESet = textESet;
             textESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BASE_ELEMENT__TEXT, newText, newText,
                         !oldTextESet ) );
+            }
         }
     }
 
@@ -227,10 +237,12 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.BASE_ELEMENT__TEXT, oldText, null, oldTextESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -247,14 +259,17 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
             msgs = ( ( InternalEObject ) text ).eInverseRemove( this, SclPackage.TEXT__PARENT_BASE_ELEMENT, Text.class,
                     msgs );
             msgs = basicUnsetText( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldTextESet = textESet;
             textESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.BASE_ELEMENT__TEXT, null, null,
                         oldTextESet ) );
+            }
         }
     }
 
@@ -307,9 +322,10 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getPrivate() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.BASE_ELEMENT__TEXT:
-            if( text != null )
+            if( text != null ) {
                 msgs = ( ( InternalEObject ) text ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.BASE_ELEMENT__TEXT, null, msgs );
+            }
             return basicSetText( ( Text ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -348,10 +364,14 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
         case SclPackage.BASE_ELEMENT__TEXT:
             return getText();
         case SclPackage.BASE_ELEMENT__ANY:
-            if( coreType ) return getAny();
+            if( coreType ) {
+                return getAny();
+            }
             return ( ( FeatureMap.Internal ) getAny() ).getWrapper();
         case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-            if( coreType ) return getAnyAttribute();
+            if( coreType ) {
+                return getAnyAttribute();
+            }
             return ( ( FeatureMap.Internal ) getAnyAttribute() ).getWrapper();
         }
         return super.eGet( featureID, resolve, coreType );
@@ -434,7 +454,9 @@ public abstract class BaseElementImpl extends SclObjectImpl implements BaseEleme
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (any: " );

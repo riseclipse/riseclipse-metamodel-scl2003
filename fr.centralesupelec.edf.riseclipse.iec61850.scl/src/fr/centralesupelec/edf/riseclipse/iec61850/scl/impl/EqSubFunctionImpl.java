@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
      */
     @Override
     public AbstractEqFuncSubFunc getParentAbstractEqFuncSubFunc() {
-        if( eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC ) return null;
+        if( eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC ) {
+            return null;
+        }
         return ( AbstractEqFuncSubFunc ) eInternalContainer();
     }
 
@@ -97,21 +99,27 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
         if( newParentAbstractEqFuncSubFunc != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC
                         && newParentAbstractEqFuncSubFunc != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAbstractEqFuncSubFunc ) )
+            if( EcoreUtil.isAncestor( this, newParentAbstractEqFuncSubFunc ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAbstractEqFuncSubFunc != null )
+            }
+            if( newParentAbstractEqFuncSubFunc != null ) {
                 msgs = ( ( InternalEObject ) newParentAbstractEqFuncSubFunc ).eInverseAdd( this,
                         SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, AbstractEqFuncSubFunc.class, msgs );
+            }
             msgs = basicSetParentAbstractEqFuncSubFunc( newParentAbstractEqFuncSubFunc, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC, newParentAbstractEqFuncSubFunc,
                     newParentAbstractEqFuncSubFunc ) );
+        }
     }
 
     /**
@@ -123,8 +131,9 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAbstractEqFuncSubFunc( ( AbstractEqFuncSubFunc ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
