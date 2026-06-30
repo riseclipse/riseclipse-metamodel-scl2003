@@ -484,8 +484,8 @@ public interface SourceRef extends LinkFCDARef {
      * @see #unsetService()
      * @see #setService(SpecServiceEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSourceRef_Service()
-     *        extendedMetaData="kind='attribute' name='service'"
      * @model unsettable="true"
+     *        extendedMetaData="kind='attribute' name='service'"
      * @generated
      */
     SpecServiceEnum getService();
