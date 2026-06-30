@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,23 +15,20 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Resource;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -178,8 +175,9 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.RESOURCE__VALUE, oldValue, value ) );
+        }
     }
 
     /**
@@ -203,9 +201,10 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
         resInst = newResInst;
         boolean oldResInstESet = resInstESet;
         resInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.RESOURCE__RES_INST, oldResInst, resInst,
                     !oldResInstESet ) );
+        }
     }
 
     /**
@@ -219,9 +218,10 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
         boolean oldResInstESet = resInstESet;
         resInst = RES_INST_EDEFAULT;
         resInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.RESOURCE__RES_INST, oldResInst,
                     RES_INST_EDEFAULT, oldResInstESet ) );
+        }
     }
 
     /**
@@ -253,8 +253,9 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
     public void setSource( String newSource ) {
         String oldSource = source;
         source = newSource;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.RESOURCE__SOURCE, oldSource, source ) );
+        }
     }
 
     /**
@@ -276,9 +277,10 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
     public void setSourceUuid( String newSourceUuid ) {
         String oldSourceUuid = sourceUuid;
         sourceUuid = newSourceUuid;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.RESOURCE__SOURCE_UUID, oldSourceUuid,
                     sourceUuid ) );
+        }
     }
 
     /**
@@ -288,7 +290,9 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
      */
     @Override
     public ProcessResource getParentProcessResource() {
-        if( eContainerFeatureID() != AsdPackage.RESOURCE__PARENT_PROCESS_RESOURCE ) return null;
+        if( eContainerFeatureID() != AsdPackage.RESOURCE__PARENT_PROCESS_RESOURCE ) {
+            return null;
+        }
         return ( ProcessResource ) eInternalContainer();
     }
 
@@ -314,20 +318,26 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
         if( newParentProcessResource != eInternalContainer()
                 || ( eContainerFeatureID() != AsdPackage.RESOURCE__PARENT_PROCESS_RESOURCE
                         && newParentProcessResource != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentProcessResource ) )
+            if( EcoreUtil.isAncestor( this, newParentProcessResource ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentProcessResource != null )
+            }
+            if( newParentProcessResource != null ) {
                 msgs = ( ( InternalEObject ) newParentProcessResource ).eInverseAdd( this,
                         AsdPackage.PROCESS_RESOURCE__RESOURCE, ProcessResource.class, msgs );
+            }
             msgs = basicSetParentProcessResource( newParentProcessResource, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.RESOURCE__PARENT_PROCESS_RESOURCE,
                     newParentProcessResource, newParentProcessResource ) );
+        }
     }
 
     /**
@@ -339,8 +349,9 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case AsdPackage.RESOURCE__PARENT_PROCESS_RESOURCE:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentProcessResource( ( ProcessResource ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -480,16 +491,20 @@ public class ResourceImpl extends AsdObjectImpl implements Resource {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (value: " );
         result.append( value );
         result.append( ", resInst: " );
-        if( resInstESet )
+        if( resInstESet ) {
             result.append( resInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", source: " );
         result.append( source );
         result.append( ", sourceUuid: " );

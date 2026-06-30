@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,18 +15,16 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ControlBlockParameters;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,9 +119,10 @@ public abstract class ControlBlockParametersImpl extends ServiceParametersImpl i
     public void setCbName( String newCbName ) {
         String oldCbName = cbName;
         cbName = newCbName;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.CONTROL_BLOCK_PARAMETERS__CB_NAME,
                     oldCbName, cbName ) );
+        }
     }
 
     /**
@@ -145,9 +144,10 @@ public abstract class ControlBlockParametersImpl extends ServiceParametersImpl i
     public void setDsName( String newDsName ) {
         String oldDsName = dsName;
         dsName = newDsName;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.CONTROL_BLOCK_PARAMETERS__DS_NAME,
                     oldDsName, dsName ) );
+        }
     }
 
     /**
@@ -225,7 +225,9 @@ public abstract class ControlBlockParametersImpl extends ServiceParametersImpl i
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (cbName: " );

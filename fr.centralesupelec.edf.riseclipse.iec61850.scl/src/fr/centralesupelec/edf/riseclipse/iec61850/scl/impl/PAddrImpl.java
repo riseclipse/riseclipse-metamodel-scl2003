@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -140,9 +140,10 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PADDR__TYPE, oldType, type,
                     !oldTypeESet ) );
+        }
     }
 
     /**
@@ -156,9 +157,10 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PADDR__TYPE, oldType, TYPE_EDEFAULT,
                     oldTypeESet ) );
+        }
     }
 
     /**
@@ -192,9 +194,10 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         value = newValue;
         boolean oldValueESet = valueESet;
         valueESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PADDR__VALUE, oldValue, value,
                     !oldValueESet ) );
+        }
     }
 
     /**
@@ -208,9 +211,10 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         boolean oldValueESet = valueESet;
         value = VALUE_EDEFAULT;
         valueESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PADDR__VALUE, oldValue, VALUE_EDEFAULT,
                     oldValueESet ) );
+        }
     }
 
     /**
@@ -298,19 +302,25 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", value: " );
-        if( valueESet )
+        if( valueESet ) {
             result.append( value );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

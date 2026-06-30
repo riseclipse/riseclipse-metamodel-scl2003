@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -101,7 +102,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     @Override
     public EList< Function > getFunction() {
         if( function == null ) {
-            function = new EObjectContainmentWithInverseEList.Unsettable< Function >( Function.class, this,
+            function = new EObjectContainmentWithInverseEList.Unsettable< >( Function.class, this,
                     SclPackage.SUBSTATION__FUNCTION, SclPackage.FUNCTION__PARENT_SUBSTATION );
         }
         return function;
@@ -114,7 +115,9 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      */
     @Override
     public void unsetFunction() {
-        if( function != null ) ( ( InternalEList.Unsettable< ? > ) function ).unset();
+        if( function != null ) {
+            ( ( InternalEList.Unsettable< ? > ) function ).unset();
+        }
     }
 
     /**
@@ -135,7 +138,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     @Override
     public EList< VoltageLevel > getVoltageLevel() {
         if( voltageLevel == null ) {
-            voltageLevel = new EObjectContainmentWithInverseEList.Unsettable< VoltageLevel >( VoltageLevel.class, this,
+            voltageLevel = new EObjectContainmentWithInverseEList.Unsettable< >( VoltageLevel.class, this,
                     SclPackage.SUBSTATION__VOLTAGE_LEVEL, SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION );
         }
         return voltageLevel;
@@ -148,7 +151,9 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      */
     @Override
     public void unsetVoltageLevel() {
-        if( voltageLevel != null ) ( ( InternalEList.Unsettable< ? > ) voltageLevel ).unset();
+        if( voltageLevel != null ) {
+            ( ( InternalEList.Unsettable< ? > ) voltageLevel ).unset();
+        }
     }
 
     /**
@@ -168,7 +173,9 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      */
     @Override
     public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess() {
-        if( eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_PROCESS ) return null;
+        if( eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_PROCESS ) {
+            return null;
+        }
         return ( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process ) eInternalContainer();
     }
 
@@ -192,20 +199,26 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     public void setParentProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess ) {
         if( newParentProcess != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_PROCESS && newParentProcess != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentProcess ) )
+            if( EcoreUtil.isAncestor( this, newParentProcess ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentProcess != null )
+            }
+            if( newParentProcess != null ) {
                 msgs = ( ( InternalEObject ) newParentProcess ).eInverseAdd( this, SclPackage.PROCESS__SUBSTATION,
                         fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs );
+            }
             msgs = basicSetParentProcess( newParentProcess, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SUBSTATION__PARENT_PROCESS,
                     newParentProcess, newParentProcess ) );
+        }
     }
 
     /**
@@ -215,7 +228,9 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      */
     @Override
     public SCL getParentSCL() {
-        if( eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_SCL ) return null;
+        if( eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_SCL ) {
+            return null;
+        }
         return ( SCL ) eInternalContainer();
     }
 
@@ -238,20 +253,26 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     public void setParentSCL( SCL newParentSCL ) {
         if( newParentSCL != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_SCL && newParentSCL != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSCL ) )
+            if( EcoreUtil.isAncestor( this, newParentSCL ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSCL != null )
+            }
+            if( newParentSCL != null ) {
                 msgs = ( ( InternalEObject ) newParentSCL ).eInverseAdd( this, SclPackage.SCL__SUBSTATION, SCL.class,
                         msgs );
+            }
             msgs = basicSetParentSCL( newParentSCL, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SUBSTATION__PARENT_SCL, newParentSCL,
                     newParentSCL ) );
+        }
     }
 
     /**
@@ -270,12 +291,14 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getVoltageLevel() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.SUBSTATION__PARENT_PROCESS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentProcess( ( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process ) otherEnd, msgs );
         case SclPackage.SUBSTATION__PARENT_SCL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSCL( ( SCL ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

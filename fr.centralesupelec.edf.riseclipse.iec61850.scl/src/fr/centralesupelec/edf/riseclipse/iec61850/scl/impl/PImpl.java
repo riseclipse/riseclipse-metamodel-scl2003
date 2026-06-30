@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -71,7 +71,9 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public Address getParentAddress() {
-        if( eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS ) return null;
+        if( eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS ) {
+            return null;
+        }
         return ( Address ) eInternalContainer();
     }
 
@@ -94,20 +96,26 @@ public class PImpl extends PAddrImpl implements P {
     public void setParentAddress( Address newParentAddress ) {
         if( newParentAddress != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS && newParentAddress != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAddress ) )
+            if( EcoreUtil.isAncestor( this, newParentAddress ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAddress != null )
+            }
+            if( newParentAddress != null ) {
                 msgs = ( ( InternalEObject ) newParentAddress ).eInverseAdd( this, SclPackage.ADDRESS__P, Address.class,
                         msgs );
+            }
             msgs = basicSetParentAddress( newParentAddress, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.P__PARENT_ADDRESS, newParentAddress,
                     newParentAddress ) );
+        }
     }
 
     /**
@@ -119,8 +127,9 @@ public class PImpl extends PAddrImpl implements P {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.P__PARENT_ADDRESS:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAddress( ( Address ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

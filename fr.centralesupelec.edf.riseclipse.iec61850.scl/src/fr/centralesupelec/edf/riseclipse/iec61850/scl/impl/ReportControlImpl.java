@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -277,9 +277,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         buffered = newBuffered;
         boolean oldBufferedESet = bufferedESet;
         bufferedESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__BUFFERED, oldBuffered,
                     buffered, !oldBufferedESet ) );
+        }
     }
 
     /**
@@ -293,9 +294,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         boolean oldBufferedESet = bufferedESet;
         buffered = BUFFERED_EDEFAULT;
         bufferedESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__BUFFERED, oldBuffered,
                     BUFFERED_EDEFAULT, oldBufferedESet ) );
+        }
     }
 
     /**
@@ -329,9 +331,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         bufTime = newBufTime;
         boolean oldBufTimeESet = bufTimeESet;
         bufTimeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__BUF_TIME, oldBufTime,
                     bufTime, !oldBufTimeESet ) );
+        }
     }
 
     /**
@@ -345,9 +348,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         boolean oldBufTimeESet = bufTimeESet;
         bufTime = BUF_TIME_EDEFAULT;
         bufTimeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__BUF_TIME, oldBufTime,
                     BUF_TIME_EDEFAULT, oldBufTimeESet ) );
+        }
     }
 
     /**
@@ -381,9 +385,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         confRev = newConfRev;
         boolean oldConfRevESet = confRevESet;
         confRevESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__CONF_REV, oldConfRev,
                     confRev, !oldConfRevESet ) );
+        }
     }
 
     /**
@@ -397,9 +402,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         boolean oldConfRevESet = confRevESet;
         confRev = CONF_REV_EDEFAULT;
         confRevESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__CONF_REV, oldConfRev,
                     CONF_REV_EDEFAULT, oldConfRevESet ) );
+        }
     }
 
     /**
@@ -433,9 +439,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         indexed = newIndexed;
         boolean oldIndexedESet = indexedESet;
         indexedESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__INDEXED, oldIndexed,
                     indexed, !oldIndexedESet ) );
+        }
     }
 
     /**
@@ -449,9 +456,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         boolean oldIndexedESet = indexedESet;
         indexed = INDEXED_EDEFAULT;
         indexedESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__INDEXED, oldIndexed,
                     INDEXED_EDEFAULT, oldIndexedESet ) );
+        }
     }
 
     /**
@@ -485,9 +493,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         rptID = newRptID;
         boolean oldRptIDESet = rptIDESet;
         rptIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ID, oldRptID, rptID,
                     !oldRptIDESet ) );
+        }
     }
 
     /**
@@ -501,9 +510,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         boolean oldRptIDESet = rptIDESet;
         rptID = RPT_ID_EDEFAULT;
         rptIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ID, oldRptID,
                     RPT_ID_EDEFAULT, oldRptIDESet ) );
+        }
     }
 
     /**
@@ -523,7 +533,9 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if( eContainerFeatureID() != SclPackage.REPORT_CONTROL__PARENT_ANY_LN ) return null;
+        if( eContainerFeatureID() != SclPackage.REPORT_CONTROL__PARENT_ANY_LN ) {
+            return null;
+        }
         return ( AnyLN ) eInternalContainer();
     }
 
@@ -546,20 +558,26 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     public void setParentAnyLN( AnyLN newParentAnyLN ) {
         if( newParentAnyLN != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.REPORT_CONTROL__PARENT_ANY_LN && newParentAnyLN != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAnyLN != null )
+            }
+            if( newParentAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__REPORT_CONTROL,
                         AnyLN.class, msgs );
+            }
             msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__PARENT_ANY_LN,
                     newParentAnyLN, newParentAnyLN ) );
+        }
     }
 
     /**
@@ -585,10 +603,12 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.REPORT_CONTROL__OPT_FIELDS, oldOptFields, newOptFields, !oldOptFieldsESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -602,21 +622,26 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     public void setOptFields( OptFields newOptFields ) {
         if( newOptFields != optFields ) {
             NotificationChain msgs = null;
-            if( optFields != null )
+            if( optFields != null ) {
                 msgs = ( ( InternalEObject ) optFields ).eInverseRemove( this,
                         SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL, OptFields.class, msgs );
-            if( newOptFields != null )
+            }
+            if( newOptFields != null ) {
                 msgs = ( ( InternalEObject ) newOptFields ).eInverseAdd( this,
                         SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL, OptFields.class, msgs );
+            }
             msgs = basicSetOptFields( newOptFields, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldOptFieldsESet = optFieldsESet;
             optFieldsESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__OPT_FIELDS,
                         newOptFields, newOptFields, !oldOptFieldsESet ) );
+            }
         }
     }
 
@@ -633,10 +658,12 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.REPORT_CONTROL__OPT_FIELDS, oldOptFields, null, oldOptFieldsESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -653,14 +680,17 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
             msgs = ( ( InternalEObject ) optFields ).eInverseRemove( this, SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL,
                     OptFields.class, msgs );
             msgs = basicUnsetOptFields( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldOptFieldsESet = optFieldsESet;
             optFieldsESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__OPT_FIELDS, null,
                         null, oldOptFieldsESet ) );
+            }
         }
     }
 
@@ -697,10 +727,12 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.REPORT_CONTROL__RPT_ENABLED, oldRptEnabled, newRptEnabled, !oldRptEnabledESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -714,21 +746,26 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     public void setRptEnabled( RptEnabled newRptEnabled ) {
         if( newRptEnabled != rptEnabled ) {
             NotificationChain msgs = null;
-            if( rptEnabled != null )
+            if( rptEnabled != null ) {
                 msgs = ( ( InternalEObject ) rptEnabled ).eInverseRemove( this,
                         SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL, RptEnabled.class, msgs );
-            if( newRptEnabled != null )
+            }
+            if( newRptEnabled != null ) {
                 msgs = ( ( InternalEObject ) newRptEnabled ).eInverseAdd( this,
                         SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL, RptEnabled.class, msgs );
+            }
             msgs = basicSetRptEnabled( newRptEnabled, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRptEnabledESet = rptEnabledESet;
             rptEnabledESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ENABLED,
                         newRptEnabled, newRptEnabled, !oldRptEnabledESet ) );
+            }
         }
     }
 
@@ -745,10 +782,12 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.REPORT_CONTROL__RPT_ENABLED, oldRptEnabled, null, oldRptEnabledESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -765,14 +804,17 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
             msgs = ( ( InternalEObject ) rptEnabled ).eInverseRemove( this,
                     SclPackage.RPT_ENABLED__PARENT_REPORT_CONTROL, RptEnabled.class, msgs );
             msgs = basicUnsetRptEnabled( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldRptEnabledESet = rptEnabledESet;
             rptEnabledESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ENABLED, null,
                         null, oldRptEnabledESet ) );
+            }
         }
     }
 
@@ -795,18 +837,21 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.REPORT_CONTROL__PARENT_ANY_LN:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-            if( optFields != null )
+            if( optFields != null ) {
                 msgs = ( ( InternalEObject ) optFields ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.REPORT_CONTROL__OPT_FIELDS, null, msgs );
+            }
             return basicSetOptFields( ( OptFields ) otherEnd, msgs );
         case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-            if( rptEnabled != null )
+            if( rptEnabled != null ) {
                 msgs = ( ( InternalEObject ) rptEnabled ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.REPORT_CONTROL__RPT_ENABLED, null, msgs );
+            }
             return basicSetRptEnabled( ( RptEnabled ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -979,34 +1024,46 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (buffered: " );
-        if( bufferedESet )
+        if( bufferedESet ) {
             result.append( buffered );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", bufTime: " );
-        if( bufTimeESet )
+        if( bufTimeESet ) {
             result.append( bufTime );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", confRev: " );
-        if( confRevESet )
+        if( confRevESet ) {
             result.append( confRev );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", indexed: " );
-        if( indexedESet )
+        if( indexedESet ) {
             result.append( indexed );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", rptID: " );
-        if( rptIDESet )
+        if( rptIDESet ) {
             result.append( rptID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

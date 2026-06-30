@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -23,12 +23,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -87,7 +84,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
     @Override
     public EList< LNode > getLNode() {
         if( lNode == null ) {
-            lNode = new EObjectContainmentWithInverseEList.Unsettable< LNode >( LNode.class, this,
+            lNode = new EObjectContainmentWithInverseEList.Unsettable< >( LNode.class, this,
                     SclPackage.LNODE_CONTAINER__LNODE, SclPackage.LNODE__PARENT_LNODE_CONTAINER );
         }
         return lNode;
@@ -100,7 +97,9 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public void unsetLNode() {
-        if( lNode != null ) ( ( InternalEList.Unsettable< ? > ) lNode ).unset();
+        if( lNode != null ) {
+            ( ( InternalEList.Unsettable< ? > ) lNode ).unset();
+        }
     }
 
     /**

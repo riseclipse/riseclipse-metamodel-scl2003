@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -163,16 +163,24 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
         case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
-            if( coreType ) return getMixed();
+            if( coreType ) {
+                return getMixed();
+            }
             return ( ( FeatureMap.Internal ) getMixed() ).getWrapper();
         case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
-            if( coreType ) return getGroup();
+            if( coreType ) {
+                return getGroup();
+            }
             return ( ( FeatureMap.Internal ) getGroup() ).getWrapper();
         case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
-            if( coreType ) return getAny();
+            if( coreType ) {
+                return getAny();
+            }
             return ( ( FeatureMap.Internal ) getAny() ).getWrapper();
         case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
-            if( coreType ) return getAnyAttribute();
+            if( coreType ) {
+                return getAnyAttribute();
+            }
             return ( ( FeatureMap.Internal ) getAnyAttribute() ).getWrapper();
         }
         return super.eGet( featureID, resolve, coreType );
@@ -253,7 +261,9 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (mixed: " );

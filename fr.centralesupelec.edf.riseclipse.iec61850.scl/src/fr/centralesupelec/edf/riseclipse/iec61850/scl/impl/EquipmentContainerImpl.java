@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -23,12 +23,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -99,7 +96,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
     @Override
     public EList< PowerTransformer > getPowerTransformer() {
         if( powerTransformer == null ) {
-            powerTransformer = new EObjectContainmentWithInverseEList.Unsettable< PowerTransformer >(
+            powerTransformer = new EObjectContainmentWithInverseEList.Unsettable< >(
                     PowerTransformer.class, this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER,
                     SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER );
         }
@@ -113,7 +110,9 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      */
     @Override
     public void unsetPowerTransformer() {
-        if( powerTransformer != null ) ( ( InternalEList.Unsettable< ? > ) powerTransformer ).unset();
+        if( powerTransformer != null ) {
+            ( ( InternalEList.Unsettable< ? > ) powerTransformer ).unset();
+        }
     }
 
     /**
@@ -134,7 +133,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
     @Override
     public EList< GeneralEquipment > getGeneralEquipment() {
         if( generalEquipment == null ) {
-            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable< GeneralEquipment >(
+            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable< >(
                     GeneralEquipment.class, this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT,
                     SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER );
         }
@@ -148,7 +147,9 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      */
     @Override
     public void unsetGeneralEquipment() {
-        if( generalEquipment != null ) ( ( InternalEList.Unsettable< ? > ) generalEquipment ).unset();
+        if( generalEquipment != null ) {
+            ( ( InternalEList.Unsettable< ? > ) generalEquipment ).unset();
+        }
     }
 
     /**

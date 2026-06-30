@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -124,7 +125,7 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
     @Override
     public EList< DAType > getDAType() {
         if( daType == null ) {
-            daType = new EObjectContainmentWithInverseEList.Unsettable< DAType >( DAType.class, this,
+            daType = new EObjectContainmentWithInverseEList.Unsettable< >( DAType.class, this,
                     SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES );
         }
         return daType;
@@ -137,7 +138,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
      */
     @Override
     public void unsetDAType() {
-        if( daType != null ) ( ( InternalEList.Unsettable< ? > ) daType ).unset();
+        if( daType != null ) {
+            ( ( InternalEList.Unsettable< ? > ) daType ).unset();
+        }
     }
 
     /**
@@ -158,7 +161,7 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
     @Override
     public EList< DOType > getDOType() {
         if( doType == null ) {
-            doType = new EObjectContainmentWithInverseEList.Unsettable< DOType >( DOType.class, this,
+            doType = new EObjectContainmentWithInverseEList.Unsettable< >( DOType.class, this,
                     SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES );
         }
         return doType;
@@ -171,7 +174,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
      */
     @Override
     public void unsetDOType() {
-        if( doType != null ) ( ( InternalEList.Unsettable< ? > ) doType ).unset();
+        if( doType != null ) {
+            ( ( InternalEList.Unsettable< ? > ) doType ).unset();
+        }
     }
 
     /**
@@ -192,7 +197,7 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
     @Override
     public EList< EnumType > getEnumType() {
         if( enumType == null ) {
-            enumType = new EObjectContainmentWithInverseEList.Unsettable< EnumType >( EnumType.class, this,
+            enumType = new EObjectContainmentWithInverseEList.Unsettable< >( EnumType.class, this,
                     SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES );
         }
         return enumType;
@@ -205,7 +210,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
      */
     @Override
     public void unsetEnumType() {
-        if( enumType != null ) ( ( InternalEList.Unsettable< ? > ) enumType ).unset();
+        if( enumType != null ) {
+            ( ( InternalEList.Unsettable< ? > ) enumType ).unset();
+        }
     }
 
     /**
@@ -226,7 +233,7 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
     @Override
     public EList< LNodeType > getLNodeType() {
         if( lNodeType == null ) {
-            lNodeType = new EObjectContainmentWithInverseEList.Unsettable< LNodeType >( LNodeType.class, this,
+            lNodeType = new EObjectContainmentWithInverseEList.Unsettable< >( LNodeType.class, this,
                     SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES );
         }
         return lNodeType;
@@ -239,7 +246,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
      */
     @Override
     public void unsetLNodeType() {
-        if( lNodeType != null ) ( ( InternalEList.Unsettable< ? > ) lNodeType ).unset();
+        if( lNodeType != null ) {
+            ( ( InternalEList.Unsettable< ? > ) lNodeType ).unset();
+        }
     }
 
     /**
@@ -259,7 +268,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
      */
     @Override
     public SCL getParentSCL() {
-        if( eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL ) return null;
+        if( eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL ) {
+            return null;
+        }
         return ( SCL ) eInternalContainer();
     }
 
@@ -282,20 +293,26 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
     public void setParentSCL( SCL newParentSCL ) {
         if( newParentSCL != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL && newParentSCL != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSCL ) )
+            if( EcoreUtil.isAncestor( this, newParentSCL ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSCL != null )
+            }
+            if( newParentSCL != null ) {
                 msgs = ( ( InternalEObject ) newParentSCL ).eInverseAdd( this, SclPackage.SCL__DATA_TYPE_TEMPLATES,
                         SCL.class, msgs );
+            }
             msgs = basicSetParentSCL( newParentSCL, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL,
                     newParentSCL, newParentSCL ) );
+        }
     }
 
     /**
@@ -320,8 +337,9 @@ public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemp
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLNodeType() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSCL( ( SCL ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

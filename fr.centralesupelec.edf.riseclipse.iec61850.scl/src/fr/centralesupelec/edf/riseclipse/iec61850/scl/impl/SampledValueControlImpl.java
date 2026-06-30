@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -289,9 +289,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         multicast = newMulticast;
         boolean oldMulticastESet = multicastESet;
         multicastESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__MULTICAST,
                     oldMulticast, multicast, !oldMulticastESet ) );
+        }
     }
 
     /**
@@ -305,9 +306,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         boolean oldMulticastESet = multicastESet;
         multicast = MULTICAST_EDEFAULT;
         multicastESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__MULTICAST,
                     oldMulticast, MULTICAST_EDEFAULT, oldMulticastESet ) );
+        }
     }
 
     /**
@@ -341,9 +343,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         nofASDU = newNofASDU;
         boolean oldNofASDUESet = nofASDUESet;
         nofASDUESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__NOF_ASDU,
                     oldNofASDU, nofASDU, !oldNofASDUESet ) );
+        }
     }
 
     /**
@@ -357,9 +360,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         boolean oldNofASDUESet = nofASDUESet;
         nofASDU = NOF_ASDU_EDEFAULT;
         nofASDUESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__NOF_ASDU,
                     oldNofASDU, NOF_ASDU_EDEFAULT, oldNofASDUESet ) );
+        }
     }
 
     /**
@@ -393,9 +397,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         securityEnable = newSecurityEnable == null ? SECURITY_ENABLE_EDEFAULT : newSecurityEnable;
         boolean oldSecurityEnableESet = securityEnableESet;
         securityEnableESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__SECURITY_ENABLE,
                     oldSecurityEnable, securityEnable, !oldSecurityEnableESet ) );
+        }
     }
 
     /**
@@ -409,9 +414,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         boolean oldSecurityEnableESet = securityEnableESet;
         securityEnable = SECURITY_ENABLE_EDEFAULT;
         securityEnableESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__SECURITY_ENABLE,
                     oldSecurityEnable, SECURITY_ENABLE_EDEFAULT, oldSecurityEnableESet ) );
+        }
     }
 
     /**
@@ -445,9 +451,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         smpMod = newSmpMod == null ? SMP_MOD_EDEFAULT : newSmpMod;
         boolean oldSmpModESet = smpModESet;
         smpModESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__SMP_MOD,
                     oldSmpMod, smpMod, !oldSmpModESet ) );
+        }
     }
 
     /**
@@ -461,9 +468,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         boolean oldSmpModESet = smpModESet;
         smpMod = SMP_MOD_EDEFAULT;
         smpModESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__SMP_MOD,
                     oldSmpMod, SMP_MOD_EDEFAULT, oldSmpModESet ) );
+        }
     }
 
     /**
@@ -497,9 +505,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         smpRate = newSmpRate;
         boolean oldSmpRateESet = smpRateESet;
         smpRateESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__SMP_RATE,
                     oldSmpRate, smpRate, !oldSmpRateESet ) );
+        }
     }
 
     /**
@@ -513,9 +522,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         boolean oldSmpRateESet = smpRateESet;
         smpRate = SMP_RATE_EDEFAULT;
         smpRateESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__SMP_RATE,
                     oldSmpRate, SMP_RATE_EDEFAULT, oldSmpRateESet ) );
+        }
     }
 
     /**
@@ -549,9 +559,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         smvID = newSmvID;
         boolean oldSmvIDESet = smvIDESet;
         smvIDESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID, oldSmvID,
                     smvID, !oldSmvIDESet ) );
+        }
     }
 
     /**
@@ -565,9 +576,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         boolean oldSmvIDESet = smvIDESet;
         smvID = SMV_ID_EDEFAULT;
         smvIDESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID,
                     oldSmvID, SMV_ID_EDEFAULT, oldSmvIDESet ) );
+        }
     }
 
     /**
@@ -587,7 +599,9 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      */
     @Override
     public LN0 getParentLN0() {
-        if( eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0 ) return null;
+        if( eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0 ) {
+            return null;
+        }
         return ( LN0 ) eInternalContainer();
     }
 
@@ -611,20 +625,26 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     public void setParentLN0( LN0 newParentLN0 ) {
         if( newParentLN0 != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0 && newParentLN0 != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentLN0 ) )
+            if( EcoreUtil.isAncestor( this, newParentLN0 ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentLN0 != null )
+            }
+            if( newParentLN0 != null ) {
                 msgs = ( ( InternalEObject ) newParentLN0 ).eInverseAdd( this, SclPackage.LN0__SAMPLED_VALUE_CONTROL,
                         LN0.class, msgs );
+            }
             msgs = basicSetParentLN0( newParentLN0, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0,
                     newParentLN0, newParentLN0 ) );
+        }
     }
 
     /**
@@ -650,10 +670,12 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, oldSmvOpts, newSmvOpts, !oldSmvOptsESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -667,21 +689,26 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     public void setSmvOpts( SmvOpts newSmvOpts ) {
         if( newSmvOpts != smvOpts ) {
             NotificationChain msgs = null;
-            if( smvOpts != null )
+            if( smvOpts != null ) {
                 msgs = ( ( InternalEObject ) smvOpts ).eInverseRemove( this,
                         SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs );
-            if( newSmvOpts != null )
+            }
+            if( newSmvOpts != null ) {
                 msgs = ( ( InternalEObject ) newSmvOpts ).eInverseAdd( this,
                         SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs );
+            }
             msgs = basicSetSmvOpts( newSmvOpts, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSmvOptsESet = smvOptsESet;
             smvOptsESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS,
                         newSmvOpts, newSmvOpts, !oldSmvOptsESet ) );
+            }
         }
     }
 
@@ -698,10 +725,12 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, oldSmvOpts, null, oldSmvOptsESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -718,14 +747,17 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
             msgs = ( ( InternalEObject ) smvOpts ).eInverseRemove( this,
                     SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs );
             msgs = basicUnsetSmvOpts( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSmvOptsESet = smvOptsESet;
             smvOptsESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS,
                         null, null, oldSmvOptsESet ) );
+            }
         }
     }
 
@@ -748,13 +780,15 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentLN0( ( LN0 ) otherEnd, msgs );
         case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
-            if( smvOpts != null )
+            if( smvOpts != null ) {
                 msgs = ( ( InternalEObject ) smvOpts ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, null, msgs );
+            }
             return basicSetSmvOpts( ( SmvOpts ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -925,39 +959,53 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (multicast: " );
-        if( multicastESet )
+        if( multicastESet ) {
             result.append( multicast );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", nofASDU: " );
-        if( nofASDUESet )
+        if( nofASDUESet ) {
             result.append( nofASDU );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", securityEnable: " );
-        if( securityEnableESet )
+        if( securityEnableESet ) {
             result.append( securityEnable );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", smpMod: " );
-        if( smpModESet )
+        if( smpModESet ) {
             result.append( smpMod );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", smpRate: " );
-        if( smpRateESet )
+        if( smpRateESet ) {
             result.append( smpRate );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", smvID: " );
-        if( smvIDESet )
+        if( smvIDESet ) {
             result.append( smvID );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

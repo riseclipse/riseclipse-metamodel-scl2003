@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,14 +20,12 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,9 +140,10 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LD_REF__IED_NAME, oldIedName, iedName,
                     !oldIedNameESet ) );
+        }
     }
 
     /**
@@ -158,9 +157,10 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LD_REF__IED_NAME, oldIedName,
                     IED_NAME_EDEFAULT, oldIedNameESet ) );
+        }
     }
 
     /**
@@ -194,9 +194,10 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LD_REF__LD_INST, oldLdInst, ldInst,
                     !oldLdInstESet ) );
+        }
     }
 
     /**
@@ -210,9 +211,10 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LD_REF__LD_INST, oldLdInst,
                     LD_INST_EDEFAULT, oldLdInstESet ) );
+        }
     }
 
     /**
@@ -300,19 +302,25 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (iedName: " );
-        if( iedNameESet )
+        if( iedNameESet ) {
             result.append( iedName );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", ldInst: " );
-        if( ldInstESet )
+        if( ldInstESet ) {
             result.append( ldInst );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

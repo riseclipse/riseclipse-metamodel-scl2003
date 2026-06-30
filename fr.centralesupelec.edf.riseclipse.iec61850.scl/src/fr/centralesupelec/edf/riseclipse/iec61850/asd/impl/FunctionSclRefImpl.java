@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,23 +15,20 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,10 +106,12 @@ public class FunctionSclRefImpl extends BaseExtensionElementImpl implements Func
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE, oldSclFileReference, newSclFileReference,
                     !oldSclFileReferenceESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -126,21 +125,26 @@ public class FunctionSclRefImpl extends BaseExtensionElementImpl implements Func
     public void setSclFileReference( SclFileReference newSclFileReference ) {
         if( newSclFileReference != sclFileReference ) {
             NotificationChain msgs = null;
-            if( sclFileReference != null )
+            if( sclFileReference != null ) {
                 msgs = ( ( InternalEObject ) sclFileReference ).eInverseRemove( this,
                         SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF, SclFileReference.class, msgs );
-            if( newSclFileReference != null )
+            }
+            if( newSclFileReference != null ) {
                 msgs = ( ( InternalEObject ) newSclFileReference ).eInverseAdd( this,
                         SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF, SclFileReference.class, msgs );
+            }
             msgs = basicSetSclFileReference( newSclFileReference, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSclFileReferenceESet = sclFileReferenceESet;
             sclFileReferenceESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE,
                         newSclFileReference, newSclFileReference, !oldSclFileReferenceESet ) );
+            }
         }
     }
 
@@ -158,10 +162,12 @@ public class FunctionSclRefImpl extends BaseExtensionElementImpl implements Func
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE, oldSclFileReference, null,
                     oldSclFileReferenceESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -178,14 +184,17 @@ public class FunctionSclRefImpl extends BaseExtensionElementImpl implements Func
             msgs = ( ( InternalEObject ) sclFileReference ).eInverseRemove( this,
                     SclPackage.SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF, SclFileReference.class, msgs );
             msgs = basicUnsetSclFileReference( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSclFileReferenceESet = sclFileReferenceESet;
             sclFileReferenceESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET,
                         AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE, null, null, oldSclFileReferenceESet ) );
+            }
         }
     }
 
@@ -208,9 +217,10 @@ public class FunctionSclRefImpl extends BaseExtensionElementImpl implements Func
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE:
-            if( sclFileReference != null )
+            if( sclFileReference != null ) {
                 msgs = ( ( InternalEObject ) sclFileReference ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - AsdPackage.FUNCTION_SCL_REF__SCL_FILE_REFERENCE, null, msgs );
+            }
             return basicSetSclFileReference( ( SclFileReference ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

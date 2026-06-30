@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,16 +20,16 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +71,9 @@ public class BitRateImpl extends BitRateInMbPerSecImpl implements BitRate {
      */
     @Override
     public SubNetwork getParentSubNetwork() {
-        if( eContainerFeatureID() != SclPackage.BIT_RATE__PARENT_SUB_NETWORK ) return null;
+        if( eContainerFeatureID() != SclPackage.BIT_RATE__PARENT_SUB_NETWORK ) {
+            return null;
+        }
         return ( SubNetwork ) eInternalContainer();
     }
 
@@ -96,20 +98,26 @@ public class BitRateImpl extends BitRateInMbPerSecImpl implements BitRate {
         if( newParentSubNetwork != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.BIT_RATE__PARENT_SUB_NETWORK
                         && newParentSubNetwork != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSubNetwork ) )
+            if( EcoreUtil.isAncestor( this, newParentSubNetwork ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSubNetwork != null )
+            }
+            if( newParentSubNetwork != null ) {
                 msgs = ( ( InternalEObject ) newParentSubNetwork ).eInverseAdd( this, SclPackage.SUB_NETWORK__BIT_RATE,
                         SubNetwork.class, msgs );
+            }
             msgs = basicSetParentSubNetwork( newParentSubNetwork, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BIT_RATE__PARENT_SUB_NETWORK,
                     newParentSubNetwork, newParentSubNetwork ) );
+        }
     }
 
     /**
@@ -121,8 +129,9 @@ public class BitRateImpl extends BitRateInMbPerSecImpl implements BitRate {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.BIT_RATE__PARENT_SUB_NETWORK:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSubNetwork( ( SubNetwork ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

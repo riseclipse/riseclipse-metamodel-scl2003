@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,23 +15,20 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SubCategory;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +70,9 @@ public class SubCategoryImpl extends FunctionCategoryImpl implements SubCategory
      */
     @Override
     public FunctionCategory getParentFunctionCategory() {
-        if( eContainerFeatureID() != AsdPackage.SUB_CATEGORY__PARENT_FUNCTION_CATEGORY ) return null;
+        if( eContainerFeatureID() != AsdPackage.SUB_CATEGORY__PARENT_FUNCTION_CATEGORY ) {
+            return null;
+        }
         return ( FunctionCategory ) eInternalContainer();
     }
 
@@ -99,20 +98,26 @@ public class SubCategoryImpl extends FunctionCategoryImpl implements SubCategory
         if( newParentFunctionCategory != eInternalContainer()
                 || ( eContainerFeatureID() != AsdPackage.SUB_CATEGORY__PARENT_FUNCTION_CATEGORY
                         && newParentFunctionCategory != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentFunctionCategory ) )
+            if( EcoreUtil.isAncestor( this, newParentFunctionCategory ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentFunctionCategory != null )
+            }
+            if( newParentFunctionCategory != null ) {
                 msgs = ( ( InternalEObject ) newParentFunctionCategory ).eInverseAdd( this,
                         AsdPackage.FUNCTION_CATEGORY__SUB_CATEGORY, FunctionCategory.class, msgs );
+            }
             msgs = basicSetParentFunctionCategory( newParentFunctionCategory, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SUB_CATEGORY__PARENT_FUNCTION_CATEGORY,
                     newParentFunctionCategory, newParentFunctionCategory ) );
+        }
     }
 
     /**
@@ -124,8 +129,9 @@ public class SubCategoryImpl extends FunctionCategoryImpl implements SubCategory
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case AsdPackage.SUB_CATEGORY__PARENT_FUNCTION_CATEGORY:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentFunctionCategory( ( FunctionCategory ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

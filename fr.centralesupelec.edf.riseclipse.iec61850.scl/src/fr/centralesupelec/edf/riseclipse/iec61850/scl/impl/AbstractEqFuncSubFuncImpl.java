@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -24,14 +24,10 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -145,9 +141,10 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType,
                     type, !oldTypeESet ) );
+        }
     }
 
     /**
@@ -161,9 +158,10 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE,
                     oldType, TYPE_EDEFAULT, oldTypeESet ) );
+        }
     }
 
     /**
@@ -184,7 +182,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
     @Override
     public EList< EqSubFunction > getEqSubFunction() {
         if( eqSubFunction == null ) {
-            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable< EqSubFunction >( EqSubFunction.class,
+            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable< >( EqSubFunction.class,
                     this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION,
                     SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC );
         }
@@ -198,7 +196,9 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public void unsetEqSubFunction() {
-        if( eqSubFunction != null ) ( ( InternalEList.Unsettable< ? > ) eqSubFunction ).unset();
+        if( eqSubFunction != null ) {
+            ( ( InternalEList.Unsettable< ? > ) eqSubFunction ).unset();
+        }
     }
 
     /**
@@ -219,7 +219,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
     @Override
     public EList< GeneralEquipment > getSubGeneralEquipment() {
         if( subGeneralEquipment == null ) {
-            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable< GeneralEquipment >(
+            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable< >(
                     GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT,
                     SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC );
         }
@@ -233,7 +233,9 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public void unsetSubGeneralEquipment() {
-        if( subGeneralEquipment != null ) ( ( InternalEList.Unsettable< ? > ) subGeneralEquipment ).unset();
+        if( subGeneralEquipment != null ) {
+            ( ( InternalEList.Unsettable< ? > ) subGeneralEquipment ).unset();
+        }
     }
 
     /**
@@ -369,14 +371,18 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (type: " );
-        if( typeESet )
+        if( typeESet ) {
             result.append( type );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

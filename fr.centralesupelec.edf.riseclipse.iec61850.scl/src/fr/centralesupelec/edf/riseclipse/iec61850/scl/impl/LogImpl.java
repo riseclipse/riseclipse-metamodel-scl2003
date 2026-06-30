@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,6 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -28,13 +30,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,7 +116,9 @@ public class LogImpl extends UnNamingImpl implements Log {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if( eContainerFeatureID() != SclPackage.LOG__PARENT_ANY_LN ) return null;
+        if( eContainerFeatureID() != SclPackage.LOG__PARENT_ANY_LN ) {
+            return null;
+        }
         return ( AnyLN ) eInternalContainer();
     }
 
@@ -138,20 +141,26 @@ public class LogImpl extends UnNamingImpl implements Log {
     public void setParentAnyLN( AnyLN newParentAnyLN ) {
         if( newParentAnyLN != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.LOG__PARENT_ANY_LN && newParentAnyLN != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAnyLN != null )
+            }
+            if( newParentAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__LOG, AnyLN.class,
                         msgs );
+            }
             msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG__PARENT_ANY_LN, newParentAnyLN,
                     newParentAnyLN ) );
+        }
     }
 
     /**
@@ -175,9 +184,10 @@ public class LogImpl extends UnNamingImpl implements Log {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -191,9 +201,10 @@ public class LogImpl extends UnNamingImpl implements Log {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -214,7 +225,7 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public EList< LogControl > getReferredByLogControl() {
         if( referredByLogControl == null ) {
-            referredByLogControl = new EObjectWithInverseEList.Unsettable< LogControl >( LogControl.class, this,
+            referredByLogControl = new EObjectWithInverseEList.Unsettable< >( LogControl.class, this,
                     SclPackage.LOG__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_LOG );
         }
         return referredByLogControl;
@@ -227,7 +238,9 @@ public class LogImpl extends UnNamingImpl implements Log {
      */
     @Override
     public void unsetReferredByLogControl() {
-        if( referredByLogControl != null ) ( ( InternalEList.Unsettable< ? > ) referredByLogControl ).unset();
+        if( referredByLogControl != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByLogControl ).unset();
+        }
     }
 
     /**
@@ -250,8 +263,9 @@ public class LogImpl extends UnNamingImpl implements Log {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.LOG__PARENT_ANY_LN:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLogControl() )
@@ -377,21 +391,27 @@ public class LogImpl extends UnNamingImpl implements Log {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
 
     @Override
     public String getXpath() {
-        if( getParentAnyLN().getLog().size() == 1 ) return getParentAnyLN().getXpath() + "/scl:Log";
+        if( getParentAnyLN().getLog().size() == 1 ) {
+            return getParentAnyLN().getXpath() + "/scl:Log";
+        }
         return getParentAnyLN().getXpath() + "/scl:Log[@name='" + getName() + "']";
     }
 

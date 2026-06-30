@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -101,7 +102,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
     @Override
     public EList< AbstractDataAttribute > getReferredByAbstractDataAttribute() {
         if( referredByAbstractDataAttribute == null ) {
-            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable< AbstractDataAttribute >(
+            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable< >(
                     AbstractDataAttribute.class, this, SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE,
                     SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE );
         }
@@ -115,8 +116,9 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      */
     @Override
     public void unsetReferredByAbstractDataAttribute() {
-        if( referredByAbstractDataAttribute != null )
+        if( referredByAbstractDataAttribute != null ) {
             ( ( InternalEList.Unsettable< ? > ) referredByAbstractDataAttribute ).unset();
+        }
     }
 
     /**
@@ -137,7 +139,9 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      */
     @Override
     public DataTypeTemplates getParentDataTypeTemplates() {
-        if( eContainerFeatureID() != SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES ) return null;
+        if( eContainerFeatureID() != SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES ) {
+            return null;
+        }
         return ( DataTypeTemplates ) eInternalContainer();
     }
 
@@ -163,20 +167,26 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
         if( newParentDataTypeTemplates != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES
                         && newParentDataTypeTemplates != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) )
+            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentDataTypeTemplates != null )
+            }
+            if( newParentDataTypeTemplates != null ) {
                 msgs = ( ( InternalEObject ) newParentDataTypeTemplates ).eInverseAdd( this,
                         SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, DataTypeTemplates.class, msgs );
+            }
             msgs = basicSetParentDataTypeTemplates( newParentDataTypeTemplates, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES,
                     newParentDataTypeTemplates, newParentDataTypeTemplates ) );
+        }
     }
 
     /**
@@ -187,7 +197,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
     @Override
     public EList< EnumVal > getEnumVal() {
         if( enumVal == null ) {
-            enumVal = new EObjectContainmentWithInverseEList.Unsettable< EnumVal >( EnumVal.class, this,
+            enumVal = new EObjectContainmentWithInverseEList.Unsettable< >( EnumVal.class, this,
                     SclPackage.ENUM_TYPE__ENUM_VAL, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE );
         }
         return enumVal;
@@ -200,7 +210,9 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      */
     @Override
     public void unsetEnumVal() {
-        if( enumVal != null ) ( ( InternalEList.Unsettable< ? > ) enumVal ).unset();
+        if( enumVal != null ) {
+            ( ( InternalEList.Unsettable< ? > ) enumVal ).unset();
+        }
     }
 
     /**
@@ -226,8 +238,9 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByAbstractDataAttribute() )
                     .basicAdd( otherEnd, msgs );
         case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
         case SclPackage.ENUM_TYPE__ENUM_VAL:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getEnumVal() ).basicAdd( otherEnd,

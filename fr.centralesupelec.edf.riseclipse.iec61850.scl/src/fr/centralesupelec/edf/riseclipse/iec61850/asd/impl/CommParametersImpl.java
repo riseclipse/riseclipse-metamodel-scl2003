@@ -4,9 +4,9 @@
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
  *  https://www.eclipse.org/legal/epl-v20.html
- * 
+ *
  *  This file is part of the RiseClipse tool
- *  
+ *
  *  Contributors:
  *      Computer Science Department, CentraleSupélec
  *      EDF R&D
@@ -15,18 +15,16 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      https://riseclipse.github.io/
- * 
+ *
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.CommParameters;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,9 +140,10 @@ public abstract class CommParametersImpl extends BaseExtensionElementWithDescImp
     public void setAppId( String newAppId ) {
         String oldAppId = appId;
         appId = newAppId;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.COMM_PARAMETERS__APP_ID, oldAppId,
                     appId ) );
+        }
     }
 
     /**
@@ -166,9 +165,10 @@ public abstract class CommParametersImpl extends BaseExtensionElementWithDescImp
     public void setVlanId( String newVlanId ) {
         String oldVlanId = vlanId;
         vlanId = newVlanId;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.COMM_PARAMETERS__VLAN_ID, oldVlanId,
                     vlanId ) );
+        }
     }
 
     /**
@@ -190,9 +190,10 @@ public abstract class CommParametersImpl extends BaseExtensionElementWithDescImp
     public void setVlanPriority( String newVlanPriority ) {
         String oldVlanPriority = vlanPriority;
         vlanPriority = newVlanPriority;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.COMM_PARAMETERS__VLAN_PRIORITY,
                     oldVlanPriority, vlanPriority ) );
+        }
     }
 
     /**
@@ -281,7 +282,9 @@ public abstract class CommParametersImpl extends BaseExtensionElementWithDescImp
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (appId: " );

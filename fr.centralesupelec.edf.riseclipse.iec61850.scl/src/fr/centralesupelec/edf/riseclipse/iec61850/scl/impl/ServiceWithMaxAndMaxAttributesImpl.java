@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,9 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -112,10 +110,11 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
         maxAttributes = newMaxAttributes;
         boolean oldMaxAttributesESet = maxAttributesESet;
         maxAttributesESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET,
                     SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES, oldMaxAttributes, maxAttributes,
                     !oldMaxAttributesESet ) );
+        }
     }
 
     /**
@@ -129,10 +128,11 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
         boolean oldMaxAttributesESet = maxAttributesESet;
         maxAttributes = MAX_ATTRIBUTES_EDEFAULT;
         maxAttributesESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES, oldMaxAttributes,
                     MAX_ATTRIBUTES_EDEFAULT, oldMaxAttributesESet ) );
+        }
     }
 
     /**
@@ -210,14 +210,18 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (maxAttributes: " );
-        if( maxAttributesESet )
+        if( maxAttributesESet ) {
             result.append( maxAttributes );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

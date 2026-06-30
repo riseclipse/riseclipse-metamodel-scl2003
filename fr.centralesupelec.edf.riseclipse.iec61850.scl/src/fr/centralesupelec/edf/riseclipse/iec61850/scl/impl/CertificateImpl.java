@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,10 +22,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate;
@@ -186,9 +184,10 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         serialNumber = newSerialNumber;
         boolean oldSerialNumberESet = serialNumberESet;
         serialNumberESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERTIFICATE__SERIAL_NUMBER,
                     oldSerialNumber, serialNumber, !oldSerialNumberESet ) );
+        }
     }
 
     /**
@@ -202,9 +201,10 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         boolean oldSerialNumberESet = serialNumberESet;
         serialNumber = SERIAL_NUMBER_EDEFAULT;
         serialNumberESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERTIFICATE__SERIAL_NUMBER,
                     oldSerialNumber, SERIAL_NUMBER_EDEFAULT, oldSerialNumberESet ) );
+        }
     }
 
     /**
@@ -238,9 +238,10 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         xferNumber = newXferNumber;
         boolean oldXferNumberESet = xferNumberESet;
         xferNumberESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERTIFICATE__XFER_NUMBER, oldXferNumber,
                     xferNumber, !oldXferNumberESet ) );
+        }
     }
 
     /**
@@ -254,9 +255,10 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         boolean oldXferNumberESet = xferNumberESet;
         xferNumber = XFER_NUMBER_EDEFAULT;
         xferNumberESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERTIFICATE__XFER_NUMBER,
                     oldXferNumber, XFER_NUMBER_EDEFAULT, oldXferNumberESet ) );
+        }
     }
 
     /**
@@ -292,10 +294,12 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.CERTIFICATE__SUBJECT, oldSubject, newSubject, !oldSubjectESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -309,21 +313,26 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     public void setSubject( Subject newSubject ) {
         if( newSubject != subject ) {
             NotificationChain msgs = null;
-            if( subject != null )
+            if( subject != null ) {
                 msgs = ( ( InternalEObject ) subject ).eInverseRemove( this, SclPackage.SUBJECT__PARENT_CERTIFICATE,
                         Subject.class, msgs );
-            if( newSubject != null )
+            }
+            if( newSubject != null ) {
                 msgs = ( ( InternalEObject ) newSubject ).eInverseAdd( this, SclPackage.SUBJECT__PARENT_CERTIFICATE,
                         Subject.class, msgs );
+            }
             msgs = basicSetSubject( newSubject, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSubjectESet = subjectESet;
             subjectESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERTIFICATE__SUBJECT, newSubject,
                         newSubject, !oldSubjectESet ) );
+            }
         }
     }
 
@@ -340,10 +349,12 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.CERTIFICATE__SUBJECT, oldSubject, null, oldSubjectESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -360,14 +371,17 @@ public class CertificateImpl extends NamingImpl implements Certificate {
             msgs = ( ( InternalEObject ) subject ).eInverseRemove( this, SclPackage.SUBJECT__PARENT_CERTIFICATE,
                     Subject.class, msgs );
             msgs = basicUnsetSubject( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSubjectESet = subjectESet;
             subjectESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERTIFICATE__SUBJECT, null, null,
                         oldSubjectESet ) );
+            }
         }
     }
 
@@ -404,10 +418,12 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.CERTIFICATE__ISSUER_NAME, oldIssuerName, newIssuerName, !oldIssuerNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -421,21 +437,26 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     public void setIssuerName( IssuerName newIssuerName ) {
         if( newIssuerName != issuerName ) {
             NotificationChain msgs = null;
-            if( issuerName != null )
+            if( issuerName != null ) {
                 msgs = ( ( InternalEObject ) issuerName ).eInverseRemove( this,
                         SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, IssuerName.class, msgs );
-            if( newIssuerName != null )
+            }
+            if( newIssuerName != null ) {
                 msgs = ( ( InternalEObject ) newIssuerName ).eInverseAdd( this,
                         SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, IssuerName.class, msgs );
+            }
             msgs = basicSetIssuerName( newIssuerName, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldIssuerNameESet = issuerNameESet;
             issuerNameESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERTIFICATE__ISSUER_NAME,
                         newIssuerName, newIssuerName, !oldIssuerNameESet ) );
+            }
         }
     }
 
@@ -452,10 +473,12 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.CERTIFICATE__ISSUER_NAME, oldIssuerName, null, oldIssuerNameESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -472,14 +495,17 @@ public class CertificateImpl extends NamingImpl implements Certificate {
             msgs = ( ( InternalEObject ) issuerName ).eInverseRemove( this, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE,
                     IssuerName.class, msgs );
             msgs = basicUnsetIssuerName( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldIssuerNameESet = issuerNameESet;
             issuerNameESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERTIFICATE__ISSUER_NAME, null,
                         null, oldIssuerNameESet ) );
+            }
         }
     }
 
@@ -502,14 +528,16 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.CERTIFICATE__SUBJECT:
-            if( subject != null )
+            if( subject != null ) {
                 msgs = ( ( InternalEObject ) subject ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.CERTIFICATE__SUBJECT, null, msgs );
+            }
             return basicSetSubject( ( Subject ) otherEnd, msgs );
         case SclPackage.CERTIFICATE__ISSUER_NAME:
-            if( issuerName != null )
+            if( issuerName != null ) {
                 msgs = ( ( InternalEObject ) issuerName ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.CERTIFICATE__ISSUER_NAME, null, msgs );
+            }
             return basicSetIssuerName( ( IssuerName ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -626,19 +654,25 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (serialNumber: " );
-        if( serialNumberESet )
+        if( serialNumberESet ) {
             result.append( serialNumber );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", xferNumber: " );
-        if( xferNumberESet )
+        if( xferNumberESet ) {
             result.append( xferNumber );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

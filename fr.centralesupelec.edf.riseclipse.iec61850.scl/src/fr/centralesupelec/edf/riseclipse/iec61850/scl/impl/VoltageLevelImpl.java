@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -22,6 +22,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.math.BigDecimal;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -195,9 +196,10 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         nomFreq = newNomFreq;
         boolean oldNomFreqESet = nomFreqESet;
         nomFreqESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VOLTAGE_LEVEL__NOM_FREQ, oldNomFreq,
                     nomFreq, !oldNomFreqESet ) );
+        }
     }
 
     /**
@@ -211,9 +213,10 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         boolean oldNomFreqESet = nomFreqESet;
         nomFreq = NOM_FREQ_EDEFAULT;
         nomFreqESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VOLTAGE_LEVEL__NOM_FREQ, oldNomFreq,
                     NOM_FREQ_EDEFAULT, oldNomFreqESet ) );
+        }
     }
 
     /**
@@ -247,9 +250,10 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         numPhases = newNumPhases;
         boolean oldNumPhasesESet = numPhasesESet;
         numPhasesESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VOLTAGE_LEVEL__NUM_PHASES, oldNumPhases,
                     numPhases, !oldNumPhasesESet ) );
+        }
     }
 
     /**
@@ -263,9 +267,10 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         boolean oldNumPhasesESet = numPhasesESet;
         numPhases = NUM_PHASES_EDEFAULT;
         numPhasesESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VOLTAGE_LEVEL__NUM_PHASES,
                     oldNumPhases, NUM_PHASES_EDEFAULT, oldNumPhasesESet ) );
+        }
     }
 
     /**
@@ -286,7 +291,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
     @Override
     public EList< Bay > getBay() {
         if( bay == null ) {
-            bay = new EObjectContainmentWithInverseEList.Unsettable< Bay >( Bay.class, this,
+            bay = new EObjectContainmentWithInverseEList.Unsettable< >( Bay.class, this,
                     SclPackage.VOLTAGE_LEVEL__BAY, SclPackage.BAY__PARENT_VOLTAGE_LEVEL );
         }
         return bay;
@@ -299,7 +304,9 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      */
     @Override
     public void unsetBay() {
-        if( bay != null ) ( ( InternalEList.Unsettable< ? > ) bay ).unset();
+        if( bay != null ) {
+            ( ( InternalEList.Unsettable< ? > ) bay ).unset();
+        }
     }
 
     /**
@@ -320,7 +327,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
     @Override
     public EList< Function > getFunction() {
         if( function == null ) {
-            function = new EObjectContainmentWithInverseEList.Unsettable< Function >( Function.class, this,
+            function = new EObjectContainmentWithInverseEList.Unsettable< >( Function.class, this,
                     SclPackage.VOLTAGE_LEVEL__FUNCTION, SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL );
         }
         return function;
@@ -333,7 +340,9 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      */
     @Override
     public void unsetFunction() {
-        if( function != null ) ( ( InternalEList.Unsettable< ? > ) function ).unset();
+        if( function != null ) {
+            ( ( InternalEList.Unsettable< ? > ) function ).unset();
+        }
     }
 
     /**
@@ -353,7 +362,9 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      */
     @Override
     public Substation getParentSubstation() {
-        if( eContainerFeatureID() != SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION ) return null;
+        if( eContainerFeatureID() != SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION ) {
+            return null;
+        }
         return ( Substation ) eInternalContainer();
     }
 
@@ -378,20 +389,26 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         if( newParentSubstation != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION
                         && newParentSubstation != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentSubstation ) )
+            if( EcoreUtil.isAncestor( this, newParentSubstation ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentSubstation != null )
+            }
+            if( newParentSubstation != null ) {
                 msgs = ( ( InternalEObject ) newParentSubstation ).eInverseAdd( this,
                         SclPackage.SUBSTATION__VOLTAGE_LEVEL, Substation.class, msgs );
+            }
             msgs = basicSetParentSubstation( newParentSubstation, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION,
                     newParentSubstation, newParentSubstation ) );
+        }
     }
 
     /**
@@ -417,10 +434,12 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.VOLTAGE_LEVEL__VOLTAGE, oldVoltage, newVoltage, !oldVoltageESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -434,21 +453,26 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
     public void setVoltage( Voltage newVoltage ) {
         if( newVoltage != voltage ) {
             NotificationChain msgs = null;
-            if( voltage != null )
+            if( voltage != null ) {
                 msgs = ( ( InternalEObject ) voltage ).eInverseRemove( this, SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL,
                         Voltage.class, msgs );
-            if( newVoltage != null )
+            }
+            if( newVoltage != null ) {
                 msgs = ( ( InternalEObject ) newVoltage ).eInverseAdd( this, SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL,
                         Voltage.class, msgs );
+            }
             msgs = basicSetVoltage( newVoltage, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldVoltageESet = voltageESet;
             voltageESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VOLTAGE_LEVEL__VOLTAGE, newVoltage,
                         newVoltage, !oldVoltageESet ) );
+            }
         }
     }
 
@@ -465,10 +489,12 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.VOLTAGE_LEVEL__VOLTAGE, oldVoltage, null, oldVoltageESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -485,14 +511,17 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
             msgs = ( ( InternalEObject ) voltage ).eInverseRemove( this, SclPackage.VOLTAGE__PARENT_VOLTAGE_LEVEL,
                     Voltage.class, msgs );
             msgs = basicUnsetVoltage( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldVoltageESet = voltageESet;
             voltageESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VOLTAGE_LEVEL__VOLTAGE, null, null,
                         oldVoltageESet ) );
+            }
         }
     }
 
@@ -521,13 +550,15 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getFunction() ).basicAdd( otherEnd,
                     msgs );
         case SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentSubstation( ( Substation ) otherEnd, msgs );
         case SclPackage.VOLTAGE_LEVEL__VOLTAGE:
-            if( voltage != null )
+            if( voltage != null ) {
                 msgs = ( ( InternalEObject ) voltage ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.VOLTAGE_LEVEL__VOLTAGE, null, msgs );
+            }
             return basicSetVoltage( ( Voltage ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -686,19 +717,25 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (nomFreq: " );
-        if( nomFreqESet )
+        if( nomFreqESet ) {
             result.append( nomFreq );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", numPhases: " );
-        if( numPhasesESet )
+        if( numPhasesESet ) {
             result.append( numPhases );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

@@ -9,8 +9,8 @@
     testSuiteClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.tests.SCLAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
     editPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.edit" editorPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.editor"
-    runtimeVersion="2.40" operationReflection="true" importOrganizing="true" cleanup="true"
-    eclipsePlatformVersion="2024-12">
+    runtimeVersion="2.46" operationReflection="true" importOrganizing="true" cleanup="true"
+    eclipsePlatformVersion="2026-06">
   <genPackages prefix="Scl" basePackage="fr.centralesupelec.edf.riseclipse.iec61850"
       resource="XML" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
       fileExtensions="scl,scd,xml" ecorePackage="SCL.ecore#/">

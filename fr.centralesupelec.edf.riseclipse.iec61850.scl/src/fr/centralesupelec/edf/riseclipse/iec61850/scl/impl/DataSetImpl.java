@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -20,8 +20,8 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
@@ -205,9 +206,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         uuid = newUuid;
         boolean oldUuidESet = uuidESet;
         uuidESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__UUID, oldUuid, uuid,
                     !oldUuidESet ) );
+        }
     }
 
     /**
@@ -221,9 +223,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         boolean oldUuidESet = uuidESet;
         uuid = UUID_EDEFAULT;
         uuidESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DATA_SET__UUID, oldUuid, UUID_EDEFAULT,
                     oldUuidESet ) );
+        }
     }
 
     /**
@@ -257,9 +260,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         templateUuid = newTemplateUuid;
         boolean oldTemplateUuidESet = templateUuidESet;
         templateUuidESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__TEMPLATE_UUID, oldTemplateUuid,
                     templateUuid, !oldTemplateUuidESet ) );
+        }
     }
 
     /**
@@ -273,9 +277,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         boolean oldTemplateUuidESet = templateUuidESet;
         templateUuid = TEMPLATE_UUID_EDEFAULT;
         templateUuidESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DATA_SET__TEMPLATE_UUID,
                     oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
     }
 
     /**
@@ -295,7 +300,9 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if( eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN ) return null;
+        if( eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN ) {
+            return null;
+        }
         return ( AnyLN ) eInternalContainer();
     }
 
@@ -318,20 +325,26 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     public void setParentAnyLN( AnyLN newParentAnyLN ) {
         if( newParentAnyLN != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN && newParentAnyLN != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentAnyLN != null )
+            }
+            if( newParentAnyLN != null ) {
                 msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__DATA_SET,
                         AnyLN.class, msgs );
+            }
             msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__PARENT_ANY_LN, newParentAnyLN,
                     newParentAnyLN ) );
+        }
     }
 
     /**
@@ -342,7 +355,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     public EList< Control > getReferredByControl() {
         if( referredByControl == null ) {
-            referredByControl = new EObjectWithInverseEList.Unsettable< Control >( Control.class, this,
+            referredByControl = new EObjectWithInverseEList.Unsettable< >( Control.class, this,
                     SclPackage.DATA_SET__REFERRED_BY_CONTROL, SclPackage.CONTROL__REFERS_TO_DATA_SET );
         }
         return referredByControl;
@@ -355,7 +368,9 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public void unsetReferredByControl() {
-        if( referredByControl != null ) ( ( InternalEList.Unsettable< ? > ) referredByControl ).unset();
+        if( referredByControl != null ) {
+            ( ( InternalEList.Unsettable< ? > ) referredByControl ).unset();
+        }
     }
 
     /**
@@ -376,7 +391,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @Override
     public EList< FCDA > getFCDA() {
         if( fcda == null ) {
-            fcda = new EObjectContainmentWithInverseEList.Unsettable< FCDA >( FCDA.class, this,
+            fcda = new EObjectContainmentWithInverseEList.Unsettable< >( FCDA.class, this,
                     SclPackage.DATA_SET__FCDA, SclPackage.FCDA__PARENT_DATA_SET );
         }
         return fcda;
@@ -389,7 +404,9 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public void unsetFCDA() {
-        if( fcda != null ) ( ( InternalEList.Unsettable< ? > ) fcda ).unset();
+        if( fcda != null ) {
+            ( ( InternalEList.Unsettable< ? > ) fcda ).unset();
+        }
     }
 
     /**
@@ -423,9 +440,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__NAME, oldName, name,
                     !oldNameESet ) );
+        }
     }
 
     /**
@@ -439,9 +457,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DATA_SET__NAME, oldName, NAME_EDEFAULT,
                     oldNameESet ) );
+        }
     }
 
     /**
@@ -464,8 +483,9 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.DATA_SET__PARENT_ANY_LN:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
         case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByControl() )
@@ -666,24 +686,32 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (uuid: " );
-        if( uuidESet )
+        if( uuidESet ) {
             result.append( uuid );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", templateUuid: " );
-        if( templateUuidESet )
+        if( templateUuidESet ) {
             result.append( templateUuid );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", name: " );
-        if( nameESet )
+        if( nameESet ) {
             result.append( name );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }

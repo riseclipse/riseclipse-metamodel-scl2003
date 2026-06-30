@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -129,10 +129,12 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, newConfSG, !oldConfSGESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -146,21 +148,26 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
     public void setConfSG( ConfSG newConfSG ) {
         if( newConfSG != confSG ) {
             NotificationChain msgs = null;
-            if( confSG != null )
+            if( confSG != null ) {
                 msgs = ( ( InternalEObject ) confSG ).eInverseRemove( this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS,
                         ConfSG.class, msgs );
-            if( newConfSG != null )
+            }
+            if( newConfSG != null ) {
                 msgs = ( ( InternalEObject ) newConfSG ).eInverseAdd( this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS,
                         ConfSG.class, msgs );
+            }
             msgs = basicSetConfSG( newConfSG, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldConfSGESet = confSGESet;
             confSGESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, newConfSG,
                         newConfSG, !oldConfSGESet ) );
+            }
         }
     }
 
@@ -177,10 +184,12 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, null, oldConfSGESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -197,14 +206,17 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
             msgs = ( ( InternalEObject ) confSG ).eInverseRemove( this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS,
                     ConfSG.class, msgs );
             msgs = basicUnsetConfSG( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldConfSGESet = confSGESet;
             confSGESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, null,
                         null, oldConfSGESet ) );
+            }
         }
     }
 
@@ -241,10 +253,12 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
                     SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, newSGEdit, !oldSGEditESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -258,21 +272,26 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
     public void setSGEdit( SGEdit newSGEdit ) {
         if( newSGEdit != sgEdit ) {
             NotificationChain msgs = null;
-            if( sgEdit != null )
+            if( sgEdit != null ) {
                 msgs = ( ( InternalEObject ) sgEdit ).eInverseRemove( this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
                         SGEdit.class, msgs );
-            if( newSGEdit != null )
+            }
+            if( newSGEdit != null ) {
                 msgs = ( ( InternalEObject ) newSGEdit ).eInverseAdd( this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
                         SGEdit.class, msgs );
+            }
             msgs = basicSetSGEdit( newSGEdit, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSGEditESet = sgEditESet;
             sgEditESet = true;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, newSGEdit,
                         newSGEdit, !oldSGEditESet ) );
+            }
         }
     }
 
@@ -289,10 +308,12 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         if( eNotificationRequired() ) {
             ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
                     SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, null, oldSGEditESet );
-            if( msgs == null )
+            if( msgs == null ) {
                 msgs = notification;
-            else
+            }
+            else {
                 msgs.add( notification );
+            }
         }
         return msgs;
     }
@@ -309,14 +330,17 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
             msgs = ( ( InternalEObject ) sgEdit ).eInverseRemove( this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
                     SGEdit.class, msgs );
             msgs = basicUnsetSGEdit( msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
         else {
             boolean oldSGEditESet = sgEditESet;
             sgEditESet = false;
-            if( eNotificationRequired() )
+            if( eNotificationRequired() ) {
                 eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, null,
                         null, oldSGEditESet ) );
+            }
         }
     }
 
@@ -337,7 +361,9 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -362,20 +388,26 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__SETTING_GROUPS,
                         Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_GROUPS__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -387,18 +419,21 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SETTING_GROUPS__CONF_SG:
-            if( confSG != null )
+            if( confSG != null ) {
                 msgs = ( ( InternalEObject ) confSG ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__CONF_SG, null, msgs );
+            }
             return basicSetConfSG( ( ConfSG ) otherEnd, msgs );
         case SclPackage.SETTING_GROUPS__SG_EDIT:
-            if( sgEdit != null )
+            if( sgEdit != null ) {
                 msgs = ( ( InternalEObject ) sgEdit ).eInverseRemove( this,
                         EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__SG_EDIT, null, msgs );
+            }
             return basicSetSGEdit( ( SGEdit ) otherEnd, msgs );
         case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );

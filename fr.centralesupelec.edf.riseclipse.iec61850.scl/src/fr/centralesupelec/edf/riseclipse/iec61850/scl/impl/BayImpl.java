@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -111,7 +112,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public VoltageLevel getParentVoltageLevel() {
-        if( eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL ) return null;
+        if( eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL ) {
+            return null;
+        }
         return ( VoltageLevel ) eInternalContainer();
     }
 
@@ -136,20 +139,26 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
         if( newParentVoltageLevel != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL
                         && newParentVoltageLevel != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentVoltageLevel ) )
+            if( EcoreUtil.isAncestor( this, newParentVoltageLevel ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentVoltageLevel != null )
+            }
+            if( newParentVoltageLevel != null ) {
                 msgs = ( ( InternalEObject ) newParentVoltageLevel ).eInverseAdd( this, SclPackage.VOLTAGE_LEVEL__BAY,
                         VoltageLevel.class, msgs );
+            }
             msgs = basicSetParentVoltageLevel( newParentVoltageLevel, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BAY__PARENT_VOLTAGE_LEVEL,
                     newParentVoltageLevel, newParentVoltageLevel ) );
+        }
     }
 
     /**
@@ -160,7 +169,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
     @Override
     public EList< Function > getFunction() {
         if( function == null ) {
-            function = new EObjectContainmentWithInverseEList.Unsettable< Function >( Function.class, this,
+            function = new EObjectContainmentWithInverseEList.Unsettable< >( Function.class, this,
                     SclPackage.BAY__FUNCTION, SclPackage.FUNCTION__PARENT_BAY );
         }
         return function;
@@ -173,7 +182,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void unsetFunction() {
-        if( function != null ) ( ( InternalEList.Unsettable< ? > ) function ).unset();
+        if( function != null ) {
+            ( ( InternalEList.Unsettable< ? > ) function ).unset();
+        }
     }
 
     /**
@@ -194,7 +205,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
     @Override
     public EList< ConnectivityNode > getConnectivityNode() {
         if( connectivityNode == null ) {
-            connectivityNode = new EObjectContainmentWithInverseEList.Unsettable< ConnectivityNode >(
+            connectivityNode = new EObjectContainmentWithInverseEList.Unsettable< >(
                     ConnectivityNode.class, this, SclPackage.BAY__CONNECTIVITY_NODE,
                     SclPackage.CONNECTIVITY_NODE__PARENT_BAY );
         }
@@ -208,7 +219,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void unsetConnectivityNode() {
-        if( connectivityNode != null ) ( ( InternalEList.Unsettable< ? > ) connectivityNode ).unset();
+        if( connectivityNode != null ) {
+            ( ( InternalEList.Unsettable< ? > ) connectivityNode ).unset();
+        }
     }
 
     /**
@@ -229,7 +242,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
     @Override
     public EList< ConductingEquipment > getConductingEquipment() {
         if( conductingEquipment == null ) {
-            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable< ConductingEquipment >(
+            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable< >(
                     ConductingEquipment.class, this, SclPackage.BAY__CONDUCTING_EQUIPMENT,
                     SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY );
         }
@@ -243,7 +256,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void unsetConductingEquipment() {
-        if( conductingEquipment != null ) ( ( InternalEList.Unsettable< ? > ) conductingEquipment ).unset();
+        if( conductingEquipment != null ) {
+            ( ( InternalEList.Unsettable< ? > ) conductingEquipment ).unset();
+        }
     }
 
     /**
@@ -266,8 +281,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentVoltageLevel( ( VoltageLevel ) otherEnd, msgs );
         case SclPackage.BAY__FUNCTION:
             return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getFunction() ).basicAdd( otherEnd,

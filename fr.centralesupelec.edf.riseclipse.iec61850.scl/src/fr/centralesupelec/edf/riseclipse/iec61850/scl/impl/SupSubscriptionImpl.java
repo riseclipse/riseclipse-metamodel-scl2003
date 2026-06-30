@@ -5,9 +5,9 @@
 **  are made available under the terms of the Eclipse Public License v2.0
 **  which accompanies this distribution, and is available at
 **  https://www.eclipse.org/legal/epl-v20.html
-** 
+**
 **  This file is part of the RiseClipse tool
-**  
+**
 **  Contributors:
 **      Computer Science Department, CentraleSupélec
 **      EDF R&D
@@ -145,9 +145,10 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
         maxGo = newMaxGo;
         boolean oldMaxGoESet = maxGoESet;
         maxGoESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SUP_SUBSCRIPTION__MAX_GO, oldMaxGo,
                     maxGo, !oldMaxGoESet ) );
+        }
     }
 
     /**
@@ -161,9 +162,10 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
         boolean oldMaxGoESet = maxGoESet;
         maxGo = MAX_GO_EDEFAULT;
         maxGoESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SUP_SUBSCRIPTION__MAX_GO, oldMaxGo,
                     MAX_GO_EDEFAULT, oldMaxGoESet ) );
+        }
     }
 
     /**
@@ -197,9 +199,10 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
         maxSv = newMaxSv;
         boolean oldMaxSvESet = maxSvESet;
         maxSvESet = true;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SUP_SUBSCRIPTION__MAX_SV, oldMaxSv,
                     maxSv, !oldMaxSvESet ) );
+        }
     }
 
     /**
@@ -213,9 +216,10 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
         boolean oldMaxSvESet = maxSvESet;
         maxSv = MAX_SV_EDEFAULT;
         maxSvESet = false;
-        if( eNotificationRequired() )
+        if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SUP_SUBSCRIPTION__MAX_SV, oldMaxSv,
                     MAX_SV_EDEFAULT, oldMaxSvESet ) );
+        }
     }
 
     /**
@@ -235,7 +239,9 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      */
     @Override
     public Services getParentServices() {
-        if( eContainerFeatureID() != SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES ) return null;
+        if( eContainerFeatureID() != SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES ) {
+            return null;
+        }
         return ( Services ) eInternalContainer();
     }
 
@@ -260,20 +266,26 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
         if( newParentServices != eInternalContainer()
                 || ( eContainerFeatureID() != SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES
                         && newParentServices != null ) ) {
-            if( EcoreUtil.isAncestor( this, newParentServices ) )
+            if( EcoreUtil.isAncestor( this, newParentServices ) ) {
                 throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
+            }
             NotificationChain msgs = null;
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
-            if( newParentServices != null )
+            }
+            if( newParentServices != null ) {
                 msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this,
                         SclPackage.SERVICES__SUP_SUBSCRIPTION, Services.class, msgs );
+            }
             msgs = basicSetParentServices( newParentServices, msgs );
-            if( msgs != null ) msgs.dispatch();
+            if( msgs != null ) {
+                msgs.dispatch();
+            }
         }
-        else if( eNotificationRequired() )
+        else if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES,
                     newParentServices, newParentServices ) );
+        }
     }
 
     /**
@@ -285,8 +297,9 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch( featureID ) {
         case SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES:
-            if( eInternalContainer() != null )
+            if( eInternalContainer() != null ) {
                 msgs = eBasicRemoveFromContainer( msgs );
+            }
             return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
@@ -406,19 +419,25 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      */
     @Override
     public String toString() {
-        if( eIsProxy() ) return super.toString();
+        if( eIsProxy() ) {
+            return super.toString();
+        }
 
         StringBuilder result = new StringBuilder( super.toString() );
         result.append( " (maxGo: " );
-        if( maxGoESet )
+        if( maxGoESet ) {
             result.append( maxGo );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ", maxSv: " );
-        if( maxSvESet )
+        if( maxSvESet ) {
             result.append( maxSv );
-        else
+        }
+        else {
             result.append( "<unset>" );
+        }
         result.append( ')' );
         return result.toString();
     }
