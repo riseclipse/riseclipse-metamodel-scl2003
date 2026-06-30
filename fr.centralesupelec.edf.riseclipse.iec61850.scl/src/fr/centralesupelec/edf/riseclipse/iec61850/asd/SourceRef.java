@@ -472,7 +472,6 @@ public interface SourceRef extends LinkFCDARef {
 
     /**
      * Returns the value of the '<em><b>Service</b></em>' attribute.
-     * The default value is <code>"GOOSE"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SpecServiceEnum}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -485,8 +484,8 @@ public interface SourceRef extends LinkFCDARef {
      * @see #unsetService()
      * @see #setService(SpecServiceEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSourceRef_Service()
-     * @model default="GOOSE" unsettable="true"
      *        extendedMetaData="kind='attribute' name='service'"
+     * @model unsettable="true"
      * @generated
      */
     SpecServiceEnum getService();
