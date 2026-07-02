@@ -235,7 +235,7 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      * @generated
      * @ordered
      */
-    protected static final SpecServiceEnum SERVICE_EDEFAULT = SpecServiceEnum.GOOSE;
+    protected static final SpecServiceEnum SERVICE_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getService() <em>Service</em>}' attribute.
