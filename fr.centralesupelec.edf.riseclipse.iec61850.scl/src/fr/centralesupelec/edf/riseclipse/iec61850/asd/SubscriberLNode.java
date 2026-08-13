@@ -365,7 +365,6 @@ public interface SubscriberLNode extends BaseExtensionElementWithDesc {
 
     /**
      * Returns the value of the '<em><b>Service</b></em>' attribute.
-     * The default value is <code>"GOOSE"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SpecServiceEnum}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -378,7 +377,7 @@ public interface SubscriberLNode extends BaseExtensionElementWithDesc {
      * @see #unsetService()
      * @see #setService(SpecServiceEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSubscriberLNode_Service()
-     * @model default="GOOSE" unsettable="true"
+     * @model unsettable="true"
      *        extendedMetaData="kind='attribute' name='service'"
      * @generated
      */

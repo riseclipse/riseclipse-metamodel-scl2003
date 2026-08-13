@@ -232,10 +232,10 @@ public class SubscriberLNodeImpl extends BaseExtensionElementWithDescImpl implem
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getService()
-     * @generated
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
-    protected static final SpecServiceEnum SERVICE_EDEFAULT = SpecServiceEnum.GOOSE;
+    protected static final SpecServiceEnum SERVICE_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getService() <em>Service</em>}' attribute.
