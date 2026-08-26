@@ -2760,7 +2760,7 @@
         ordered="false" eType="#//ClientServices" transient="true" unsettable="true"
         eOpposite="#//ClientServices/SVMcSecurity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SclFileReference" eSuperTypes="#//SclObject">
+  <eClassifiers xsi:type="ecore:EClass" name="SclFileReference" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

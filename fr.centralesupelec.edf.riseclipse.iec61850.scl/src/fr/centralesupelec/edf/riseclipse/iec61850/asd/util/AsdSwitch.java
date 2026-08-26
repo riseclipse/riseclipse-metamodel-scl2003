@@ -110,8 +110,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming;
 
 /**
  * <!-- begin-user-doc -->
@@ -461,6 +464,15 @@ public class AsdSwitch< T > extends Switch< T > {
             T result = caseCheckoutID( checkoutID );
             if( result == null ) {
                 result = caseSclFileReference( checkoutID );
+            }
+            if( result == null ) {
+                result = caseUnNaming( checkoutID );
+            }
+            if( result == null ) {
+                result = caseBaseElement( checkoutID );
+            }
+            if( result == null ) {
+                result = caseAgDesc( checkoutID );
             }
             if( result == null ) {
                 result = caseSclObject( checkoutID );
@@ -1568,6 +1580,15 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseSclFileReference( subCheckoutID );
+            }
+            if( result == null ) {
+                result = caseUnNaming( subCheckoutID );
+            }
+            if( result == null ) {
+                result = caseBaseElement( subCheckoutID );
+            }
+            if( result == null ) {
+                result = caseAgDesc( subCheckoutID );
             }
             if( result == null ) {
                 result = caseSclObject( subCheckoutID );
@@ -3038,6 +3059,51 @@ public class AsdSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseSclObject( SclObject object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Base Element</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Base Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBaseElement( BaseElement object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Desc</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Desc</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgDesc( AgDesc object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Un Naming</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Un Naming</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseUnNaming( UnNaming object ) {
         return null;
     }
 

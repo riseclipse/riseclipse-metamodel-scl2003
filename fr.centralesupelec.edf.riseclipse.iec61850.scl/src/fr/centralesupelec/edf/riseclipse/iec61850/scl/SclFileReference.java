@@ -47,7 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionSclRef;
  * @model
  * @generated
  */
-public interface SclFileReference extends SclObject {
+public interface SclFileReference extends UnNaming {
     /**
      * Returns the value of the '<em><b>File Name</b></em>' attribute.
      * <!-- begin-user-doc -->

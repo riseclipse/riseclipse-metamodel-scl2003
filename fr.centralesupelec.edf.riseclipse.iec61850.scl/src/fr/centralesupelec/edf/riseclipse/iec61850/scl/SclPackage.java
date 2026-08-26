@@ -24390,7 +24390,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+    int SCL_FILE_REFERENCE__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
 
     /**
      * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
@@ -24399,7 +24399,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+    int SCL_FILE_REFERENCE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -24408,7 +24408,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILENAME = SCL_OBJECT__FILENAME;
+    int SCL_FILE_REFERENCE__FILENAME = UN_NAMING__FILENAME;
 
     /**
      * The feature id for the '<em><b>Xpath</b></em>' attribute.
@@ -24417,7 +24417,52 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__XPATH = SCL_OBJECT__XPATH;
+    int SCL_FILE_REFERENCE__XPATH = UN_NAMING__XPATH;
+
+    /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_FILE_REFERENCE__PRIVATE = UN_NAMING__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_FILE_REFERENCE__TEXT = UN_NAMING__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_FILE_REFERENCE__ANY = UN_NAMING__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_FILE_REFERENCE__ANY_ATTRIBUTE = UN_NAMING__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_FILE_REFERENCE__DESC = UN_NAMING__DESC;
 
     /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.
@@ -24426,7 +24471,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILE_NAME = SCL_OBJECT_FEATURE_COUNT + 0;
+    int SCL_FILE_REFERENCE__FILE_NAME = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>File Type</b></em>' attribute.
@@ -24435,7 +24480,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILE_TYPE = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SCL_FILE_REFERENCE__FILE_TYPE = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>File Uuid</b></em>' attribute.
@@ -24444,7 +24489,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__FILE_UUID = SCL_OBJECT_FEATURE_COUNT + 2;
+    int SCL_FILE_REFERENCE__FILE_UUID = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -24453,7 +24498,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__REVISION = SCL_OBJECT_FEATURE_COUNT + 3;
+    int SCL_FILE_REFERENCE__REVISION = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -24462,7 +24507,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__VERSION = SCL_OBJECT_FEATURE_COUNT + 4;
+    int SCL_FILE_REFERENCE__VERSION = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>When</b></em>' attribute.
@@ -24471,7 +24516,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__WHEN = SCL_OBJECT_FEATURE_COUNT + 5;
+    int SCL_FILE_REFERENCE__WHEN = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Parent Source Files</b></em>' container reference.
@@ -24480,7 +24525,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_SOURCE_FILES = SCL_OBJECT_FEATURE_COUNT + 6;
+    int SCL_FILE_REFERENCE__PARENT_SOURCE_FILES = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Parent Application Scl Ref</b></em>' container reference.
@@ -24489,7 +24534,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 7;
+    int SCL_FILE_REFERENCE__PARENT_APPLICATION_SCL_REF = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Parent Function Scl Ref</b></em>' container reference.
@@ -24498,7 +24543,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF = SCL_OBJECT_FEATURE_COUNT + 8;
+    int SCL_FILE_REFERENCE__PARENT_FUNCTION_SCL_REF = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Parent IED Source Files</b></em>' container reference.
@@ -24507,7 +24552,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES = SCL_OBJECT_FEATURE_COUNT + 9;
+    int SCL_FILE_REFERENCE__PARENT_IED_SOURCE_FILES = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>File Reference</em>' class.
@@ -24516,7 +24561,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
+    int SCL_FILE_REFERENCE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -24525,7 +24570,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+    int SCL_FILE_REFERENCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>File Reference</em>' class.
@@ -24534,7 +24579,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_FILE_REFERENCE_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
+    int SCL_FILE_REFERENCE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -28285,6 +28330,51 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MIN_REQUESTED_SCD_FILE__XPATH = SCL_FILE_REFERENCE__XPATH;
+
+    /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_REQUESTED_SCD_FILE__PRIVATE = SCL_FILE_REFERENCE__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_REQUESTED_SCD_FILE__TEXT = SCL_FILE_REFERENCE__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_REQUESTED_SCD_FILE__ANY = SCL_FILE_REFERENCE__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_REQUESTED_SCD_FILE__ANY_ATTRIBUTE = SCL_FILE_REFERENCE__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_REQUESTED_SCD_FILE__DESC = SCL_FILE_REFERENCE__DESC;
 
     /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.

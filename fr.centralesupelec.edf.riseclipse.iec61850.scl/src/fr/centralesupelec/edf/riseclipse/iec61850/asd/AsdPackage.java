@@ -3084,6 +3084,51 @@ public interface AsdPackage extends EPackage {
     int CHECKOUT_ID__XPATH = SclPackage.SCL_FILE_REFERENCE__XPATH;
 
     /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__PRIVATE = SclPackage.SCL_FILE_REFERENCE__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__TEXT = SclPackage.SCL_FILE_REFERENCE__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__ANY = SclPackage.SCL_FILE_REFERENCE__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__ANY_ATTRIBUTE = SclPackage.SCL_FILE_REFERENCE__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CHECKOUT_ID__DESC = SclPackage.SCL_FILE_REFERENCE__DESC;
+
+    /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12735,6 +12780,51 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SUB_CHECKOUT_ID__XPATH = CHECKOUT_ID__XPATH;
+
+    /**
+     * The feature id for the '<em><b>Private</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__PRIVATE = CHECKOUT_ID__PRIVATE;
+
+    /**
+     * The feature id for the '<em><b>Text</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__TEXT = CHECKOUT_ID__TEXT;
+
+    /**
+     * The feature id for the '<em><b>Any</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__ANY = CHECKOUT_ID__ANY;
+
+    /**
+     * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__ANY_ATTRIBUTE = CHECKOUT_ID__ANY_ATTRIBUTE;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CHECKOUT_ID__DESC = CHECKOUT_ID__DESC;
 
     /**
      * The feature id for the '<em><b>File Name</b></em>' attribute.

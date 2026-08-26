@@ -56,7 +56,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SourceFiles;
  *
  * @generated
  */
-public class SclFileReferenceImpl extends SclObjectImpl implements SclFileReference {
+public class SclFileReferenceImpl extends UnNamingImpl implements SclFileReference {
     /**
      * The default value of the '{@link #getFileName() <em>File Name</em>}' attribute.
      * <!-- begin-user-doc -->
