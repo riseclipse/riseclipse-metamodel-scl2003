@@ -111,8 +111,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming;
 
 /**
  * <!-- begin-user-doc -->
@@ -602,6 +605,21 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseSclObject( SclObject object ) {
             return createSclObjectAdapter();
+        }
+
+        @Override
+        public Adapter caseBaseElement( BaseElement object ) {
+            return createBaseElementAdapter();
+        }
+
+        @Override
+        public Adapter caseAgDesc( AgDesc object ) {
+            return createAgDescAdapter();
+        }
+
+        @Override
+        public Adapter caseUnNaming( UnNaming object ) {
+            return createUnNamingAdapter();
         }
 
         @Override
@@ -1843,6 +1861,48 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createSclObjectAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement <em>Base Element</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement
+     * @generated
+     */
+    public Adapter createBaseElementAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc <em>Ag Desc</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc
+     * @generated
+     */
+    public Adapter createAgDescAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming <em>Un Naming</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming
+     * @generated
+     */
+    public Adapter createUnNamingAdapter() {
         return null;
     }
 

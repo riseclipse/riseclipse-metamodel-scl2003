@@ -2733,6 +2733,15 @@ public class SclSwitch< T > extends Switch< T > {
             SclFileReference sclFileReference = ( SclFileReference ) theEObject;
             T result = caseSclFileReference( sclFileReference );
             if( result == null ) {
+                result = caseUnNaming( sclFileReference );
+            }
+            if( result == null ) {
+                result = caseBaseElement( sclFileReference );
+            }
+            if( result == null ) {
+                result = caseAgDesc( sclFileReference );
+            }
+            if( result == null ) {
                 result = caseSclObject( sclFileReference );
             }
             if( result == null ) {
@@ -3351,6 +3360,15 @@ public class SclSwitch< T > extends Switch< T > {
             T result = caseMinRequestedSCDFile( minRequestedSCDFile );
             if( result == null ) {
                 result = caseSclFileReference( minRequestedSCDFile );
+            }
+            if( result == null ) {
+                result = caseUnNaming( minRequestedSCDFile );
+            }
+            if( result == null ) {
+                result = caseBaseElement( minRequestedSCDFile );
+            }
+            if( result == null ) {
+                result = caseAgDesc( minRequestedSCDFile );
             }
             if( result == null ) {
                 result = caseSclObject( minRequestedSCDFile );
