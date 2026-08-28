@@ -31,10 +31,13 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Application;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariant;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,17 +47,104 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getTemplateUuid <em>Template Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getFunctionalVariant <em>Functional Variant</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionalVariantGroupImpl#getParentApplication <em>Parent Application</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl implements FunctionalVariantGroup {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
+    /**
+     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String ORIGIN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected String originUuid = ORIGIN_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Origin Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean originUuidESet;
+
     /**
      * The cached value of the '{@link #getFunctionalVariant() <em>Functional Variant</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -84,66 +174,6 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
      * @ordered
      */
     protected String name = NAME_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String ORIGIN_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected String originUuid = ORIGIN_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String TEMPLATE_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected String uuid = UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -245,10 +275,39 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     public void setOriginUuid( String newOriginUuid ) {
         String oldOriginUuid = originUuid;
         originUuid = newOriginUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID,
-                    oldOriginUuid, originUuid ) );
+                    oldOriginUuid, originUuid, !oldOriginUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetOriginUuid() {
+        String oldOriginUuid = originUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuid = ORIGIN_UUID_EDEFAULT;
+        originUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID,
+                    oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetOriginUuid() {
+        return originUuidESet;
     }
 
     /**
@@ -270,10 +329,40 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     public void setTemplateUuid( String newTemplateUuid ) {
         String oldTemplateUuid = templateUuid;
         templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID,
-                    oldTemplateUuid, templateUuid ) );
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET,
+                    AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID, oldTemplateUuid, TEMPLATE_UUID_EDEFAULT,
+                    oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -295,10 +384,39 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     public void setUuid( String newUuid ) {
         String oldUuid = uuid;
         uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID, oldUuid,
-                    uuid ) );
+                    uuid, !oldUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID,
+                    oldUuid, UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
     }
 
     /**
@@ -418,16 +536,16 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
+            return getUuid();
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
+            return getTemplateUuid();
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
+            return getOriginUuid();
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT:
             return getFunctionalVariant();
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__NAME:
             return getName();
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
-            return getOriginUuid();
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
-            return getTemplateUuid();
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
-            return getUuid();
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__PARENT_APPLICATION:
             return getParentApplication();
         }
@@ -443,21 +561,21 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
+            setOriginUuid( ( String ) newValue );
+            return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT:
             getFunctionalVariant().clear();
             getFunctionalVariant().addAll( ( Collection< ? extends FunctionalVariant > ) newValue );
             return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__NAME:
             setName( ( String ) newValue );
-            return;
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
-            setOriginUuid( ( String ) newValue );
-            return;
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
-            setTemplateUuid( ( String ) newValue );
-            return;
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
-            setUuid( ( String ) newValue );
             return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__PARENT_APPLICATION:
             setParentApplication( ( Application ) newValue );
@@ -474,20 +592,20 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
+            unsetUuid();
+            return;
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
+            unsetOriginUuid();
+            return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT:
             unsetFunctionalVariant();
             return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__NAME:
             setName( NAME_EDEFAULT );
-            return;
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
-            setOriginUuid( ORIGIN_UUID_EDEFAULT );
-            return;
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
-            setTemplateUuid( TEMPLATE_UUID_EDEFAULT );
-            return;
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
-            setUuid( UUID_EDEFAULT );
             return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__PARENT_APPLICATION:
             setParentApplication( ( Application ) null );
@@ -504,21 +622,76 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
+            return isSetUuid();
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
+            return isSetTemplateUuid();
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
+            return isSetOriginUuid();
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT:
             return isSetFunctionalVariant();
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals( name );
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
-            return ORIGIN_UUID_EDEFAULT == null ? originUuid != null : !ORIGIN_UUID_EDEFAULT.equals( originUuid );
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
-            return TEMPLATE_UUID_EDEFAULT == null ? templateUuid != null
-                    : !TEMPLATE_UUID_EDEFAULT.equals( templateUuid );
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
-            return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals( uuid );
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__PARENT_APPLICATION:
             return getParentApplication() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
+                return AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+                return AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -533,14 +706,29 @@ public class FunctionalVariantGroupImpl extends BaseExtensionElementWithDescImpl
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (name: " );
-        result.append( name );
-        result.append( ", originUuid: " );
-        result.append( originUuid );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
         result.append( ", templateUuid: " );
-        result.append( templateUuid );
-        result.append( ", uuid: " );
-        result.append( uuid );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", originUuid: " );
+        if( originUuidESet ) {
+            result.append( originUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", name: " );
+        result.append( name );
         result.append( ')' );
         return result.toString();
     }

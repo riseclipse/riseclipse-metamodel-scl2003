@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole} object.
@@ -62,10 +63,55 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Template Uuid feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTemplateUuidPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -100,10 +146,10 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_SignalRole_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_SignalRole_originUuid_feature",
-                                "_UI_SignalRole_type" ),
-                        AsdPackage.eINSTANCE.getSignalRole_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -180,8 +226,10 @@ public class SignalRoleItemProvider extends FunctionalVariantRefContainerItemPro
         updateChildren( notification );
 
         switch( notification.getFeatureID( SignalRole.class ) ) {
-        case AsdPackage.SIGNAL_ROLE__NAME:
+        case AsdPackage.SIGNAL_ROLE__UUID:
+        case AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID:
         case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
+        case AsdPackage.SIGNAL_ROLE__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:

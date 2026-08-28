@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole} object.
@@ -62,10 +63,10 @@ public class AllocationRoleItemProvider extends BaseExtensionElementWithDescItem
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
             addReferredByAllocationRoleRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
@@ -103,10 +104,10 @@ public class AllocationRoleItemProvider extends BaseExtensionElementWithDescItem
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_AllocationRole_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AllocationRole_originUuid_feature",
-                                "_UI_AllocationRole_type" ),
-                        AsdPackage.eINSTANCE.getAllocationRole_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -125,10 +126,10 @@ public class AllocationRoleItemProvider extends BaseExtensionElementWithDescItem
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_AllocationRole_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AllocationRole_templateUuid_feature",
-                                "_UI_AllocationRole_type" ),
-                        AsdPackage.eINSTANCE.getAllocationRole_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -147,10 +148,9 @@ public class AllocationRoleItemProvider extends BaseExtensionElementWithDescItem
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_AllocationRole_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AllocationRole_uuid_feature",
-                                "_UI_AllocationRole_type" ),
-                        AsdPackage.eINSTANCE.getAllocationRole_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -247,10 +247,10 @@ public class AllocationRoleItemProvider extends BaseExtensionElementWithDescItem
         updateChildren( notification );
 
         switch( notification.getFeatureID( AllocationRole.class ) ) {
-        case AsdPackage.ALLOCATION_ROLE__NAME:
-        case AsdPackage.ALLOCATION_ROLE__ORIGIN_UUID:
-        case AsdPackage.ALLOCATION_ROLE__TEMPLATE_UUID:
         case AsdPackage.ALLOCATION_ROLE__UUID:
+        case AsdPackage.ALLOCATION_ROLE__TEMPLATE_UUID:
+        case AsdPackage.ALLOCATION_ROLE__ORIGIN_UUID:
+        case AsdPackage.ALLOCATION_ROLE__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.ALLOCATION_ROLE__FUNCTION_REF:

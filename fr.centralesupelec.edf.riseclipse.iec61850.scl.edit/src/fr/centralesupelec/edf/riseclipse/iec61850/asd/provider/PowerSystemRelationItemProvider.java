@@ -31,6 +31,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation} object.
@@ -60,13 +61,13 @@ public class PowerSystemRelationItemProvider extends BaseExtensionElementWithDes
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
+            addSelectorPropertyDescriptor( object );
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
             addRelationPropertyDescriptor( object );
             addRelationUuidPropertyDescriptor( object );
-            addSelectorPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
-            addUuidPropertyDescriptor( object );
             addReferredByPowerSystemRelationRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
@@ -104,10 +105,10 @@ public class PowerSystemRelationItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_PowerSystemRelation_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_PowerSystemRelation_originUuid_feature",
-                                "_UI_PowerSystemRelation_type" ),
-                        AsdPackage.eINSTANCE.getPowerSystemRelation_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -170,10 +171,10 @@ public class PowerSystemRelationItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_PowerSystemRelation_selector_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_PowerSystemRelation_selector_feature",
-                                "_UI_PowerSystemRelation_type" ),
-                        AsdPackage.eINSTANCE.getPowerSystemRelation_Selector(),
+                        getString( "_UI_AgSelector_selector_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSelector_selector_feature",
+                                "_UI_AgSelector_type" ),
+                        AsdPackage.eINSTANCE.getAgSelector_Selector(),
                         true,
                         false,
                         false,
@@ -192,10 +193,10 @@ public class PowerSystemRelationItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_PowerSystemRelation_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_PowerSystemRelation_templateUuid_feature",
-                                "_UI_PowerSystemRelation_type" ),
-                        AsdPackage.eINSTANCE.getPowerSystemRelation_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -214,10 +215,9 @@ public class PowerSystemRelationItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_PowerSystemRelation_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_PowerSystemRelation_uuid_feature",
-                                "_UI_PowerSystemRelation_type" ),
-                        AsdPackage.eINSTANCE.getPowerSystemRelation_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -285,13 +285,13 @@ public class PowerSystemRelationItemProvider extends BaseExtensionElementWithDes
         updateChildren( notification );
 
         switch( notification.getFeatureID( PowerSystemRelation.class ) ) {
-        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
+        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
+        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
+        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
         case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
+        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION:
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION_UUID:
-        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
-        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
-        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

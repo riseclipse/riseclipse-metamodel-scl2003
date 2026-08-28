@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole} object.
@@ -62,14 +63,14 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addSelectorPropertyDescriptor( object );
             addCardinalityPropertyDescriptor( object );
             addMaxPropertyDescriptor( object );
             addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addSelectorPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addTypePropertyDescriptor( object );
-            addUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -84,10 +85,10 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionRole_cardinality_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionRole_cardinality_feature",
-                                "_UI_FunctionRole_type" ),
-                        AsdPackage.eINSTANCE.getFunctionRole_Cardinality(),
+                        getString( "_UI_AgCardinality_cardinality_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgCardinality_cardinality_feature",
+                                "_UI_AgCardinality_type" ),
+                        AsdPackage.eINSTANCE.getAgCardinality_Cardinality(),
                         true,
                         false,
                         false,
@@ -106,10 +107,10 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionRole_max_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionRole_max_feature",
-                                "_UI_FunctionRole_type" ),
-                        AsdPackage.eINSTANCE.getFunctionRole_Max(),
+                        getString( "_UI_AgCardinality_max_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgCardinality_max_feature",
+                                "_UI_AgCardinality_type" ),
+                        AsdPackage.eINSTANCE.getAgCardinality_Max(),
                         true,
                         false,
                         false,
@@ -150,10 +151,10 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionRole_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionRole_originUuid_feature",
-                                "_UI_FunctionRole_type" ),
-                        AsdPackage.eINSTANCE.getFunctionRole_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -172,10 +173,10 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionRole_selector_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionRole_selector_feature",
-                                "_UI_FunctionRole_type" ),
-                        AsdPackage.eINSTANCE.getFunctionRole_Selector(),
+                        getString( "_UI_AgSelector_selector_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSelector_selector_feature",
+                                "_UI_AgSelector_type" ),
+                        AsdPackage.eINSTANCE.getAgSelector_Selector(),
                         true,
                         false,
                         false,
@@ -194,10 +195,10 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionRole_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionRole_templateUuid_feature",
-                                "_UI_FunctionRole_type" ),
-                        AsdPackage.eINSTANCE.getFunctionRole_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -238,10 +239,9 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionRole_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionRole_uuid_feature",
-                                "_UI_FunctionRole_type" ),
-                        AsdPackage.eINSTANCE.getFunctionRole_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -316,14 +316,14 @@ public class FunctionRoleItemProvider extends FunctionalVariantRefContainerItemP
         updateChildren( notification );
 
         switch( notification.getFeatureID( FunctionRole.class ) ) {
+        case AsdPackage.FUNCTION_ROLE__UUID:
+        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
+        case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
+        case AsdPackage.FUNCTION_ROLE__SELECTOR:
         case AsdPackage.FUNCTION_ROLE__CARDINALITY:
         case AsdPackage.FUNCTION_ROLE__MAX:
         case AsdPackage.FUNCTION_ROLE__NAME:
-        case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
-        case AsdPackage.FUNCTION_ROLE__SELECTOR:
-        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
         case AsdPackage.FUNCTION_ROLE__TYPE:
-        case AsdPackage.FUNCTION_ROLE__UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:

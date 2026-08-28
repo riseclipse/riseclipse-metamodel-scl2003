@@ -712,7 +712,6 @@ public class LNImpl extends AnyLNImpl implements LN {
                    .map( ap -> ap.getServer() )
                    .filter( s -> s != null )
                    .flatMap( s -> s.getLDevice().stream() )
-                   .peek( ld -> System.out.println( ))
                    .filter( ld -> ldName.equals( ld.getLdName() ))
                    .toList();
             if( lDevices.size() == 0 ) {
@@ -750,7 +749,7 @@ public class LNImpl extends AnyLNImpl implements LN {
         }
 
         console.info( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                "LN ", getLnClass(), " supervises ControlWithIEDName ", controls.get( 0 ), " at line ", controls.get( 0 ).getLineNumber() );
+                "LN ", getLnClass(), " supervises ControlWithIEDName ", controls.get( 0 ).getName(), " at line ", controls.get( 0 ).getLineNumber() );
         setRefersToControlWithIEDName( controls.get( 0 ));
 
         //@formatter:on

@@ -19,22 +19,15 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.asd;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
-
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Base Extension Element With Desc</b></em>'.
+ * A representation of the model object '<em><b>Ag Cardinality With Selector</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * Base element for 6-100 extension with description attribute
- * <!-- end-model-doc -->
  *
- *
- * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getBaseExtensionElementWithDesc()
- * @model abstract="true"
+ * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAgCardinalityWithSelector()
+ * @model
  * @generated
  */
-public interface BaseExtensionElementWithDesc extends BaseExtensionElement, AgDesc {
-
-} // BaseExtensionElementWithDesc
+public interface AgCardinalityWithSelector extends AgSelector, AgCardinality {
+} // AgCardinalityWithSelector

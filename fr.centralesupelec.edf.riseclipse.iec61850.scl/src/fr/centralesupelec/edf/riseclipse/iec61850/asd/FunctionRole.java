@@ -35,14 +35,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getFunctionRoleContent <em>Function Role Content</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getMax <em>Max</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getSelector <em>Selector</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getUuid <em>Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getParentApplication <em>Parent Application</em>}</li>
  * </ul>
  *
@@ -50,7 +44,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FunctionRole extends FunctionalVariantRefContainer {
+public interface FunctionRole extends FunctionalVariantRefContainer, AgUuidWithOrigin, AgCardinalityWithSelector {
     /**
      * Returns the value of the '<em><b>Function Role Content</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent}.
@@ -93,88 +87,6 @@ public interface FunctionRole extends FunctionalVariantRefContainer {
     boolean isSetFunctionRoleContent();
 
     /**
-     * Returns the value of the '<em><b>Cardinality</b></em>' attribute.
-     * The default value is <code>"1..1"</code>.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * <!-- begin-model-doc -->
-     * This attribute indicates the multiple instances allowed for the current element.
-     * <!-- end-model-doc -->
-     * @return the value of the '<em>Cardinality</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum
-     * @see #isSetCardinality()
-     * @see #unsetCardinality()
-     * @see #setCardinality(CardinalityEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_Cardinality()
-     * @model default="1..1" unsettable="true"
-     *        extendedMetaData="kind='attribute' name='cardinality'"
-     * @generated
-     */
-    CardinalityEnum getCardinality();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getCardinality <em>Cardinality</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Cardinality</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum
-     * @see #isSetCardinality()
-     * @see #unsetCardinality()
-     * @see #getCardinality()
-     * @generated
-     */
-    void setCardinality( CardinalityEnum value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getCardinality <em>Cardinality</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetCardinality()
-     * @see #getCardinality()
-     * @see #setCardinality(CardinalityEnum)
-     * @generated
-     */
-    void unsetCardinality();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getCardinality <em>Cardinality</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Cardinality</em>' attribute is set.
-     * @see #unsetCardinality()
-     * @see #getCardinality()
-     * @see #setCardinality(CardinalityEnum)
-     * @generated
-     */
-    boolean isSetCardinality();
-
-    /**
-     * Returns the value of the '<em><b>Max</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * <!-- begin-model-doc -->
-     * This attribute indicates the maximum number of an element in case of cardinality allowing multiple instances. If not defined, there is no limit
-     * <!-- end-model-doc -->
-     * @return the value of the '<em>Max</em>' attribute.
-     * @see #setMax(int)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_Max()
-     * @model extendedMetaData="kind='attribute' name='max'"
-     * @generated
-     */
-    int getMax();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getMax <em>Max</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Max</em>' attribute.
-     * @see #getMax()
-     * @generated
-     */
-    void setMax( int value );
-
-    /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -198,76 +110,6 @@ public interface FunctionRole extends FunctionalVariantRefContainer {
      * @generated
      */
     void setName( String value );
-
-    /**
-     * Returns the value of the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Origin Uuid</em>' attribute.
-     * @see #setOriginUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_OriginUuid()
-     * @model extendedMetaData="kind='attribute' name='originUuid'"
-     * @generated
-     */
-    String getOriginUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Origin Uuid</em>' attribute.
-     * @see #getOriginUuid()
-     * @generated
-     */
-    void setOriginUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Selector</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * <!-- begin-model-doc -->
-     * Selector is used to give a searching rule to help user to select a target. It is represented by an XPath
-     * <!-- end-model-doc -->
-     * @return the value of the '<em>Selector</em>' attribute.
-     * @see #setSelector(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_Selector()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString"
-     *        extendedMetaData="kind='attribute' name='selector'"
-     * @generated
-     */
-    String getSelector();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getSelector <em>Selector</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Selector</em>' attribute.
-     * @see #getSelector()
-     * @generated
-     */
-    void setSelector( String value );
-
-    /**
-     * Returns the value of the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Template Uuid</em>' attribute.
-     * @see #setTemplateUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_TemplateUuid()
-     * @model extendedMetaData="kind='attribute' name='templateUuid'"
-     * @generated
-     */
-    String getTemplateUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getTemplateUuid <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Template Uuid</em>' attribute.
-     * @see #getTemplateUuid()
-     * @generated
-     */
-    void setTemplateUuid( String value );
 
     /**
      * Returns the value of the '<em><b>Type</b></em>' attribute.
@@ -294,28 +136,6 @@ public interface FunctionRole extends FunctionalVariantRefContainer {
      * @generated
      */
     void setType( String value );
-
-    /**
-     * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Uuid</em>' attribute.
-     * @see #setUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getFunctionRole_Uuid()
-     * @model extendedMetaData="kind='attribute' name='uuid'"
-     * @generated
-     */
-    String getUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getUuid <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Uuid</em>' attribute.
-     * @see #getUuid()
-     * @generated
-     */
-    void setUuid( String value );
 
     /**
      * Returns the value of the '<em><b>Parent Application</b></em>' container reference.

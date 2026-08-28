@@ -31,12 +31,15 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescriptionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.InputVar;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.OutputVar;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +49,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.OutputVar;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getTemplateUuid <em>Template Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getInputVar <em>Input Var</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getOutputVar <em>Output Var</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getBehaviorReference <em>Behavior Reference</em>}</li>
@@ -54,15 +60,99 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.OutputVar;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#isIsSimulation <em>Is Simulation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#isIsSpecification <em>Is Specification</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BehaviorDescriptionImpl#getReferredByBehaviorDescriptionRef <em>Referred By Behavior Description Ref</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl implements BehaviorDescription {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
+    /**
+     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String ORIGIN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected String originUuid = ORIGIN_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Origin Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean originUuidESet;
+
     /**
      * The cached value of the '{@link #getInputVar() <em>Input Var</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -210,66 +300,6 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
      * @ordered
      */
     protected String name = NAME_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String ORIGIN_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected String originUuid = ORIGIN_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String TEMPLATE_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected String uuid = UUID_EDEFAULT;
 
     /**
      * The cached value of the '{@link #getReferredByBehaviorDescriptionRef() <em>Referred By Behavior Description Ref</em>}' reference list.
@@ -611,10 +641,39 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     public void setOriginUuid( String newOriginUuid ) {
         String oldOriginUuid = originUuid;
         originUuid = newOriginUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID,
-                    oldOriginUuid, originUuid ) );
+                    oldOriginUuid, originUuid, !oldOriginUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetOriginUuid() {
+        String oldOriginUuid = originUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuid = ORIGIN_UUID_EDEFAULT;
+        originUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID,
+                    oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetOriginUuid() {
+        return originUuidESet;
     }
 
     /**
@@ -636,10 +695,39 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     public void setTemplateUuid( String newTemplateUuid ) {
         String oldTemplateUuid = templateUuid;
         templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID,
-                    oldTemplateUuid, templateUuid ) );
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -661,10 +749,39 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     public void setUuid( String newUuid ) {
         String oldUuid = uuid;
         uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BEHAVIOR_DESCRIPTION__UUID, oldUuid,
-                    uuid ) );
+                    uuid, !oldUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.BEHAVIOR_DESCRIPTION__UUID, oldUuid,
+                    UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
     }
 
     /**
@@ -759,6 +876,12 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
+            return getUuid();
+        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
+            return getTemplateUuid();
+        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
+            return getOriginUuid();
         case AsdPackage.BEHAVIOR_DESCRIPTION__INPUT_VAR:
             return getInputVar();
         case AsdPackage.BEHAVIOR_DESCRIPTION__OUTPUT_VAR:
@@ -775,12 +898,6 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
             return isIsSpecification();
         case AsdPackage.BEHAVIOR_DESCRIPTION__NAME:
             return getName();
-        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
-            return getOriginUuid();
-        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
-            return getTemplateUuid();
-        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
-            return getUuid();
         case AsdPackage.BEHAVIOR_DESCRIPTION__REFERRED_BY_BEHAVIOR_DESCRIPTION_REF:
             return getReferredByBehaviorDescriptionRef();
         }
@@ -796,6 +913,15 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
+        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
+            setOriginUuid( ( String ) newValue );
+            return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__INPUT_VAR:
             getInputVar().clear();
             getInputVar().addAll( ( Collection< ? extends InputVar > ) newValue );
@@ -823,15 +949,6 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
         case AsdPackage.BEHAVIOR_DESCRIPTION__NAME:
             setName( ( String ) newValue );
             return;
-        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
-            setOriginUuid( ( String ) newValue );
-            return;
-        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
-            setTemplateUuid( ( String ) newValue );
-            return;
-        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
-            setUuid( ( String ) newValue );
-            return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__REFERRED_BY_BEHAVIOR_DESCRIPTION_REF:
             getReferredByBehaviorDescriptionRef().clear();
             getReferredByBehaviorDescriptionRef().addAll( ( Collection< ? extends BehaviorDescriptionRef > ) newValue );
@@ -848,6 +965,15 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
+            unsetUuid();
+            return;
+        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
+        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
+            unsetOriginUuid();
+            return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__INPUT_VAR:
             unsetInputVar();
             return;
@@ -872,15 +998,6 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
         case AsdPackage.BEHAVIOR_DESCRIPTION__NAME:
             setName( NAME_EDEFAULT );
             return;
-        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
-            setOriginUuid( ORIGIN_UUID_EDEFAULT );
-            return;
-        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
-            setTemplateUuid( TEMPLATE_UUID_EDEFAULT );
-            return;
-        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
-            setUuid( UUID_EDEFAULT );
-            return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__REFERRED_BY_BEHAVIOR_DESCRIPTION_REF:
             unsetReferredByBehaviorDescriptionRef();
             return;
@@ -896,6 +1013,12 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
+            return isSetUuid();
+        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
+            return isSetTemplateUuid();
+        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
+            return isSetOriginUuid();
         case AsdPackage.BEHAVIOR_DESCRIPTION__INPUT_VAR:
             return isSetInputVar();
         case AsdPackage.BEHAVIOR_DESCRIPTION__OUTPUT_VAR:
@@ -913,17 +1036,66 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
             return isSetIsSpecification();
         case AsdPackage.BEHAVIOR_DESCRIPTION__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals( name );
-        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
-            return ORIGIN_UUID_EDEFAULT == null ? originUuid != null : !ORIGIN_UUID_EDEFAULT.equals( originUuid );
-        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
-            return TEMPLATE_UUID_EDEFAULT == null ? templateUuid != null
-                    : !TEMPLATE_UUID_EDEFAULT.equals( templateUuid );
-        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
-            return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals( uuid );
         case AsdPackage.BEHAVIOR_DESCRIPTION__REFERRED_BY_BEHAVIOR_DESCRIPTION_REF:
             return isSetReferredByBehaviorDescriptionRef();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
+                return AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return AsdPackage.BEHAVIOR_DESCRIPTION__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+                return AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -938,7 +1110,28 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (fileReference: " );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", originUuid: " );
+        if( originUuidESet ) {
+            result.append( originUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", fileReference: " );
         result.append( fileReference );
         result.append( ", format: " );
         result.append( format );
@@ -958,12 +1151,6 @@ public class BehaviorDescriptionImpl extends BaseExtensionElementWithDescImpl im
         }
         result.append( ", name: " );
         result.append( name );
-        result.append( ", originUuid: " );
-        result.append( originUuid );
-        result.append( ", templateUuid: " );
-        result.append( templateUuid );
-        result.append( ", uuid: " );
-        result.append( uuid );
         result.append( ')' );
         return result.toString();
     }

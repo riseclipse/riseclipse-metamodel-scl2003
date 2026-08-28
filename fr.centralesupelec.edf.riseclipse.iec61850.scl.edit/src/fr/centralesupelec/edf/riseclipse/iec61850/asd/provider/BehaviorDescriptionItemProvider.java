@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription} object.
@@ -62,14 +63,14 @@ public class BehaviorDescriptionItemProvider extends BaseExtensionElementWithDes
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
             addFileReferencePropertyDescriptor( object );
             addFormatPropertyDescriptor( object );
             addIsSimulationPropertyDescriptor( object );
             addIsSpecificationPropertyDescriptor( object );
             addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
-            addUuidPropertyDescriptor( object );
             addReferredByBehaviorDescriptionRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
@@ -195,10 +196,10 @@ public class BehaviorDescriptionItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_BehaviorDescription_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_BehaviorDescription_originUuid_feature",
-                                "_UI_BehaviorDescription_type" ),
-                        AsdPackage.eINSTANCE.getBehaviorDescription_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -217,10 +218,10 @@ public class BehaviorDescriptionItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_BehaviorDescription_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_BehaviorDescription_templateUuid_feature",
-                                "_UI_BehaviorDescription_type" ),
-                        AsdPackage.eINSTANCE.getBehaviorDescription_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -239,10 +240,9 @@ public class BehaviorDescriptionItemProvider extends BaseExtensionElementWithDes
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_BehaviorDescription_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_BehaviorDescription_uuid_feature",
-                                "_UI_BehaviorDescription_type" ),
-                        AsdPackage.eINSTANCE.getBehaviorDescription_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -342,14 +342,14 @@ public class BehaviorDescriptionItemProvider extends BaseExtensionElementWithDes
         updateChildren( notification );
 
         switch( notification.getFeatureID( BehaviorDescription.class ) ) {
+        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
+        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
+        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
         case AsdPackage.BEHAVIOR_DESCRIPTION__FILE_REFERENCE:
         case AsdPackage.BEHAVIOR_DESCRIPTION__FORMAT:
         case AsdPackage.BEHAVIOR_DESCRIPTION__IS_SIMULATION:
         case AsdPackage.BEHAVIOR_DESCRIPTION__IS_SPECIFICATION:
         case AsdPackage.BEHAVIOR_DESCRIPTION__NAME:
-        case AsdPackage.BEHAVIOR_DESCRIPTION__ORIGIN_UUID:
-        case AsdPackage.BEHAVIOR_DESCRIPTION__TEMPLATE_UUID:
-        case AsdPackage.BEHAVIOR_DESCRIPTION__UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.BEHAVIOR_DESCRIPTION__INPUT_VAR:

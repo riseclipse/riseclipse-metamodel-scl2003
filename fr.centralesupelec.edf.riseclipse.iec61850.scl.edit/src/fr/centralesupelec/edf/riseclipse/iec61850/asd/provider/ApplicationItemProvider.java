@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Application;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application} object.
@@ -62,11 +63,11 @@ public class ApplicationItemProvider extends BaseExtensionElementWithDescItemPro
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
-            addTypePropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
+            addTypePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -103,10 +104,10 @@ public class ApplicationItemProvider extends BaseExtensionElementWithDescItemPro
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Application_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Application_originUuid_feature",
-                                "_UI_Application_type" ),
-                        AsdPackage.eINSTANCE.getApplication_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -125,10 +126,10 @@ public class ApplicationItemProvider extends BaseExtensionElementWithDescItemPro
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Application_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Application_templateUuid_feature",
-                                "_UI_Application_type" ),
-                        AsdPackage.eINSTANCE.getApplication_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -169,10 +170,9 @@ public class ApplicationItemProvider extends BaseExtensionElementWithDescItemPro
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Application_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Application_uuid_feature",
-                                "_UI_Application_type" ),
-                        AsdPackage.eINSTANCE.getApplication_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -251,11 +251,11 @@ public class ApplicationItemProvider extends BaseExtensionElementWithDescItemPro
         updateChildren( notification );
 
         switch( notification.getFeatureID( Application.class ) ) {
-        case AsdPackage.APPLICATION__NAME:
-        case AsdPackage.APPLICATION__ORIGIN_UUID:
-        case AsdPackage.APPLICATION__TEMPLATE_UUID:
-        case AsdPackage.APPLICATION__TYPE:
         case AsdPackage.APPLICATION__UUID:
+        case AsdPackage.APPLICATION__TEMPLATE_UUID:
+        case AsdPackage.APPLICATION__ORIGIN_UUID:
+        case AsdPackage.APPLICATION__NAME:
+        case AsdPackage.APPLICATION__TYPE:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.APPLICATION__FUNCTION_ROLE:

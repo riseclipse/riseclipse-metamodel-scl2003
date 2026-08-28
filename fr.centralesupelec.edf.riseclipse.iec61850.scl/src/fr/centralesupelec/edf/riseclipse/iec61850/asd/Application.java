@@ -40,17 +40,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getAllocationRoleRef <em>Allocation Role Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getApplicationSclRef <em>Application Scl Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplication()
  * @model extendedMetaData="name='Application' kind='elementOnly'"
  * @generated
  */
-public interface Application extends BaseExtensionElementWithDesc {
+public interface Application extends BaseExtensionElementWithDesc, AgUuidWithOrigin {
     /**
      * Returns the value of the '<em><b>Function Role</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole}.
@@ -296,50 +293,6 @@ public interface Application extends BaseExtensionElementWithDesc {
     void setName( String value );
 
     /**
-     * Returns the value of the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Origin Uuid</em>' attribute.
-     * @see #setOriginUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplication_OriginUuid()
-     * @model extendedMetaData="kind='attribute' name='originUuid'"
-     * @generated
-     */
-    String getOriginUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Origin Uuid</em>' attribute.
-     * @see #getOriginUuid()
-     * @generated
-     */
-    void setOriginUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Template Uuid</em>' attribute.
-     * @see #setTemplateUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplication_TemplateUuid()
-     * @model extendedMetaData="kind='attribute' name='templateUuid'"
-     * @generated
-     */
-    String getTemplateUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getTemplateUuid <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Template Uuid</em>' attribute.
-     * @see #getTemplateUuid()
-     * @generated
-     */
-    void setTemplateUuid( String value );
-
-    /**
      * Returns the value of the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -363,27 +316,5 @@ public interface Application extends BaseExtensionElementWithDesc {
      * @generated
      */
     void setType( String value );
-
-    /**
-     * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Uuid</em>' attribute.
-     * @see #setUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getApplication_Uuid()
-     * @model extendedMetaData="kind='attribute' name='uuid'"
-     * @generated
-     */
-    String getUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getUuid <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Uuid</em>' attribute.
-     * @see #getUuid()
-     * @generated
-     */
-    void setUuid( String value );
 
 } // Application

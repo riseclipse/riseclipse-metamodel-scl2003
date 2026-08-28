@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory} object.
@@ -62,10 +63,10 @@ public class FunctionCategoryItemProvider extends BaseExtensionElementWithDescIt
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
             addReferredByFunctionCategoryRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
@@ -103,10 +104,10 @@ public class FunctionCategoryItemProvider extends BaseExtensionElementWithDescIt
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionCategory_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionCategory_originUuid_feature",
-                                "_UI_FunctionCategory_type" ),
-                        AsdPackage.eINSTANCE.getFunctionCategory_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -125,10 +126,10 @@ public class FunctionCategoryItemProvider extends BaseExtensionElementWithDescIt
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionCategory_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionCategory_templateUuid_feature",
-                                "_UI_FunctionCategory_type" ),
-                        AsdPackage.eINSTANCE.getFunctionCategory_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -147,10 +148,9 @@ public class FunctionCategoryItemProvider extends BaseExtensionElementWithDescIt
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionCategory_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionCategory_uuid_feature",
-                                "_UI_FunctionCategory_type" ),
-                        AsdPackage.eINSTANCE.getFunctionCategory_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -248,10 +248,10 @@ public class FunctionCategoryItemProvider extends BaseExtensionElementWithDescIt
         updateChildren( notification );
 
         switch( notification.getFeatureID( FunctionCategory.class ) ) {
-        case AsdPackage.FUNCTION_CATEGORY__NAME:
-        case AsdPackage.FUNCTION_CATEGORY__ORIGIN_UUID:
-        case AsdPackage.FUNCTION_CATEGORY__TEMPLATE_UUID:
         case AsdPackage.FUNCTION_CATEGORY__UUID:
+        case AsdPackage.FUNCTION_CATEGORY__TEMPLATE_UUID:
+        case AsdPackage.FUNCTION_CATEGORY__ORIGIN_UUID:
+        case AsdPackage.FUNCTION_CATEGORY__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.FUNCTION_CATEGORY__SUB_CATEGORY:

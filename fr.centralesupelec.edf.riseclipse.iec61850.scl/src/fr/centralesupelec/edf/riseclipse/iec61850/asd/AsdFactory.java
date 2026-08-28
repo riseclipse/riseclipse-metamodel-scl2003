@@ -714,6 +714,42 @@ public interface AsdFactory extends EFactory {
     WiringParameters createWiringParameters();
 
     /**
+     * Returns a new object of class '<em>Ag Uuid With Origin</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ag Uuid With Origin</em>'.
+     * @generated
+     */
+    AgUuidWithOrigin createAgUuidWithOrigin();
+
+    /**
+     * Returns a new object of class '<em>Ag Cardinality</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ag Cardinality</em>'.
+     * @generated
+     */
+    AgCardinality createAgCardinality();
+
+    /**
+     * Returns a new object of class '<em>Ag Selector</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ag Selector</em>'.
+     * @generated
+     */
+    AgSelector createAgSelector();
+
+    /**
+     * Returns a new object of class '<em>Ag Cardinality With Selector</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ag Cardinality With Selector</em>'.
+     * @generated
+     */
+    AgCardinalityWithSelector createAgCardinalityWithSelector();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

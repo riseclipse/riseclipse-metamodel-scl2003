@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant} object.
@@ -62,11 +63,11 @@ public class AbstractFunctionalVariantItemProvider extends BaseExtensionElementW
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
             addIsBaselinePropertyDescriptor( object );
             addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
-            addUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -122,19 +123,19 @@ public class AbstractFunctionalVariantItemProvider extends BaseExtensionElementW
      * @generated
      */
     protected void addOriginUuidPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add( createItemPropertyDescriptor(
-                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString( "_UI_AbstractFunctionalVariant_originUuid_feature" ),
-                getString( "_UI_PropertyDescriptor_description", "_UI_AbstractFunctionalVariant_originUuid_feature",
-                        "_UI_AbstractFunctionalVariant_type" ),
-                AsdPackage.eINSTANCE.getAbstractFunctionalVariant_OriginUuid(),
-                true,
-                false,
-                false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                null,
-                null ) );
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -144,19 +145,19 @@ public class AbstractFunctionalVariantItemProvider extends BaseExtensionElementW
      * @generated
      */
     protected void addTemplateUuidPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add( createItemPropertyDescriptor(
-                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString( "_UI_AbstractFunctionalVariant_templateUuid_feature" ),
-                getString( "_UI_PropertyDescriptor_description", "_UI_AbstractFunctionalVariant_templateUuid_feature",
-                        "_UI_AbstractFunctionalVariant_type" ),
-                AsdPackage.eINSTANCE.getAbstractFunctionalVariant_TemplateUuid(),
-                true,
-                false,
-                false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                null,
-                null ) );
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -169,10 +170,9 @@ public class AbstractFunctionalVariantItemProvider extends BaseExtensionElementW
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_AbstractFunctionalVariant_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractFunctionalVariant_uuid_feature",
-                                "_UI_AbstractFunctionalVariant_type" ),
-                        AsdPackage.eINSTANCE.getAbstractFunctionalVariant_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -237,11 +237,11 @@ public class AbstractFunctionalVariantItemProvider extends BaseExtensionElementW
         updateChildren( notification );
 
         switch( notification.getFeatureID( AbstractFunctionalVariant.class ) ) {
+        case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__UUID:
+        case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID:
+        case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID:
         case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__IS_BASELINE:
         case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__NAME:
-        case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID:
-        case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID:
-        case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.ABSTRACT_FUNCTIONAL_VARIANT__FUNCTIONAL_SUB_VARIANT:

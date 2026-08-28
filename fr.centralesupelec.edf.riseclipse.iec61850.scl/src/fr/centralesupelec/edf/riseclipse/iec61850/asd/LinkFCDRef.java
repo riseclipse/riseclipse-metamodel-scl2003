@@ -32,42 +32,17 @@ package fr.centralesupelec.edf.riseclipse.iec61850.asd;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getPDO <em>PDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getPLN <em>PLN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getResourceName <em>Resource Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getResourceUuid <em>Resource Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLinkFCDRef()
  * @model abstract="true"
  * @generated
  */
-public interface LinkFCDRef extends BaseExtensionElementWithDesc {
-    /**
-     * Returns the value of the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Origin Uuid</em>' attribute.
-     * @see #setOriginUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLinkFCDRef_OriginUuid()
-     * @model extendedMetaData="kind='attribute' name='originUuid'"
-     * @generated
-     */
-    String getOriginUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Origin Uuid</em>' attribute.
-     * @see #getOriginUuid()
-     * @generated
-     */
-    void setOriginUuid( String value );
-
+public interface LinkFCDRef extends BaseExtensionElementWithDesc, AgUuidWithOrigin {
     /**
      * Returns the value of the '<em><b>PDO</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -174,49 +149,5 @@ public interface LinkFCDRef extends BaseExtensionElementWithDesc {
      * @generated
      */
     void setResourceUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Template Uuid</em>' attribute.
-     * @see #setTemplateUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLinkFCDRef_TemplateUuid()
-     * @model extendedMetaData="kind='attribute' name='templateUuid'"
-     * @generated
-     */
-    String getTemplateUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getTemplateUuid <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Template Uuid</em>' attribute.
-     * @see #getTemplateUuid()
-     * @generated
-     */
-    void setTemplateUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Uuid</em>' attribute.
-     * @see #setUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getLinkFCDRef_Uuid()
-     * @model extendedMetaData="kind='attribute' name='uuid'"
-     * @generated
-     */
-    String getUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getUuid <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Uuid</em>' attribute.
-     * @see #getUuid()
-     * @generated
-     */
-    void setUuid( String value );
 
 } // LinkFCDRef

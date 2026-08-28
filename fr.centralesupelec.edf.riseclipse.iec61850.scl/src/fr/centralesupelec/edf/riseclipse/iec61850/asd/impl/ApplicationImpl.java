@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRoleRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Application;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ApplicationSclRef;
@@ -37,6 +38,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariant;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,21 +49,108 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getTemplateUuid <em>Template Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getFunctionRole <em>Function Role</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getFunctionalVariant <em>Functional Variant</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getFunctionalVariantGroup <em>Functional Variant Group</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getAllocationRoleRef <em>Allocation Role Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getApplicationSclRef <em>Application Scl Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.ApplicationImpl#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements Application {
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
+    /**
+     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String ORIGIN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected String originUuid = ORIGIN_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Origin Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean originUuidESet;
+
     /**
      * The cached value of the '{@link #getFunctionRole() <em>Function Role</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -141,46 +231,6 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String ORIGIN_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected String originUuid = ORIGIN_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String TEMPLATE_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
-
-    /**
      * The default value of the '{@link #getType() <em>Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -199,26 +249,6 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
      * @ordered
      */
     protected String type = TYPE_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected String uuid = UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -555,10 +585,39 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     public void setOriginUuid( String newOriginUuid ) {
         String oldOriginUuid = originUuid;
         originUuid = newOriginUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.APPLICATION__ORIGIN_UUID, oldOriginUuid,
-                    originUuid ) );
+                    originUuid, !oldOriginUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetOriginUuid() {
+        String oldOriginUuid = originUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuid = ORIGIN_UUID_EDEFAULT;
+        originUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.APPLICATION__ORIGIN_UUID,
+                    oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetOriginUuid() {
+        return originUuidESet;
     }
 
     /**
@@ -580,10 +639,39 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     public void setTemplateUuid( String newTemplateUuid ) {
         String oldTemplateUuid = templateUuid;
         templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.APPLICATION__TEMPLATE_UUID,
-                    oldTemplateUuid, templateUuid ) );
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.APPLICATION__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -629,9 +717,39 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     public void setUuid( String newUuid ) {
         String oldUuid = uuid;
         uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.APPLICATION__UUID, oldUuid, uuid ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.APPLICATION__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.APPLICATION__UUID, oldUuid,
+                    UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
     }
 
     /**
@@ -695,6 +813,12 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case AsdPackage.APPLICATION__UUID:
+            return getUuid();
+        case AsdPackage.APPLICATION__TEMPLATE_UUID:
+            return getTemplateUuid();
+        case AsdPackage.APPLICATION__ORIGIN_UUID:
+            return getOriginUuid();
         case AsdPackage.APPLICATION__FUNCTION_ROLE:
             return getFunctionRole();
         case AsdPackage.APPLICATION__FUNCTIONAL_VARIANT:
@@ -707,14 +831,8 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
             return getApplicationSclRef();
         case AsdPackage.APPLICATION__NAME:
             return getName();
-        case AsdPackage.APPLICATION__ORIGIN_UUID:
-            return getOriginUuid();
-        case AsdPackage.APPLICATION__TEMPLATE_UUID:
-            return getTemplateUuid();
         case AsdPackage.APPLICATION__TYPE:
             return getType();
-        case AsdPackage.APPLICATION__UUID:
-            return getUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -728,6 +846,15 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
+        case AsdPackage.APPLICATION__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case AsdPackage.APPLICATION__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
+            return;
+        case AsdPackage.APPLICATION__ORIGIN_UUID:
+            setOriginUuid( ( String ) newValue );
+            return;
         case AsdPackage.APPLICATION__FUNCTION_ROLE:
             getFunctionRole().clear();
             getFunctionRole().addAll( ( Collection< ? extends FunctionRole > ) newValue );
@@ -750,17 +877,8 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
         case AsdPackage.APPLICATION__NAME:
             setName( ( String ) newValue );
             return;
-        case AsdPackage.APPLICATION__ORIGIN_UUID:
-            setOriginUuid( ( String ) newValue );
-            return;
-        case AsdPackage.APPLICATION__TEMPLATE_UUID:
-            setTemplateUuid( ( String ) newValue );
-            return;
         case AsdPackage.APPLICATION__TYPE:
             setType( ( String ) newValue );
-            return;
-        case AsdPackage.APPLICATION__UUID:
-            setUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -774,6 +892,15 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.APPLICATION__UUID:
+            unsetUuid();
+            return;
+        case AsdPackage.APPLICATION__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
+        case AsdPackage.APPLICATION__ORIGIN_UUID:
+            unsetOriginUuid();
+            return;
         case AsdPackage.APPLICATION__FUNCTION_ROLE:
             unsetFunctionRole();
             return;
@@ -792,17 +919,8 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
         case AsdPackage.APPLICATION__NAME:
             setName( NAME_EDEFAULT );
             return;
-        case AsdPackage.APPLICATION__ORIGIN_UUID:
-            setOriginUuid( ORIGIN_UUID_EDEFAULT );
-            return;
-        case AsdPackage.APPLICATION__TEMPLATE_UUID:
-            setTemplateUuid( TEMPLATE_UUID_EDEFAULT );
-            return;
         case AsdPackage.APPLICATION__TYPE:
             setType( TYPE_EDEFAULT );
-            return;
-        case AsdPackage.APPLICATION__UUID:
-            setUuid( UUID_EDEFAULT );
             return;
         }
         super.eUnset( featureID );
@@ -816,6 +934,12 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.APPLICATION__UUID:
+            return isSetUuid();
+        case AsdPackage.APPLICATION__TEMPLATE_UUID:
+            return isSetTemplateUuid();
+        case AsdPackage.APPLICATION__ORIGIN_UUID:
+            return isSetOriginUuid();
         case AsdPackage.APPLICATION__FUNCTION_ROLE:
             return isSetFunctionRole();
         case AsdPackage.APPLICATION__FUNCTIONAL_VARIANT:
@@ -828,17 +952,66 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
             return isSetApplicationSclRef();
         case AsdPackage.APPLICATION__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals( name );
-        case AsdPackage.APPLICATION__ORIGIN_UUID:
-            return ORIGIN_UUID_EDEFAULT == null ? originUuid != null : !ORIGIN_UUID_EDEFAULT.equals( originUuid );
-        case AsdPackage.APPLICATION__TEMPLATE_UUID:
-            return TEMPLATE_UUID_EDEFAULT == null ? templateUuid != null
-                    : !TEMPLATE_UUID_EDEFAULT.equals( templateUuid );
         case AsdPackage.APPLICATION__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals( type );
-        case AsdPackage.APPLICATION__UUID:
-            return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals( uuid );
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.APPLICATION__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case AsdPackage.APPLICATION__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.APPLICATION__ORIGIN_UUID:
+                return AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return AsdPackage.APPLICATION__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return AsdPackage.APPLICATION__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+                return AsdPackage.APPLICATION__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -853,16 +1026,31 @@ public class ApplicationImpl extends BaseExtensionElementWithDescImpl implements
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (name: " );
-        result.append( name );
-        result.append( ", originUuid: " );
-        result.append( originUuid );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
         result.append( ", templateUuid: " );
-        result.append( templateUuid );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", originUuid: " );
+        if( originUuidESet ) {
+            result.append( originUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", name: " );
+        result.append( name );
         result.append( ", type: " );
         result.append( type );
-        result.append( ", uuid: " );
-        result.append( uuid );
         result.append( ')' );
         return result.toString();
     }

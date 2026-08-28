@@ -562,22 +562,22 @@ public interface AsdPackage extends EPackage {
     int ABSTRACT6100_LNODE_CONTAINER__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>LNode</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT6100_LNODE_CONTAINER__LNODE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
+    int ABSTRACT6100_LNODE_CONTAINER__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT6100_LNODE_CONTAINER__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
+    int ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
@@ -589,22 +589,22 @@ public interface AsdPackage extends EPackage {
     int ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>LNode</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+    int ABSTRACT6100_LNODE_CONTAINER__LNODE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT6100_LNODE_CONTAINER__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int ABSTRACT6100_LNODE_CONTAINER__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Abstract6100 LNode Container</em>' class.
@@ -697,49 +697,13 @@ public interface AsdPackage extends EPackage {
     int ABSTRACT_FUNCTIONAL_VARIANT__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Functional Sub Variant</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_FUNCTIONAL_VARIANT__FUNCTIONAL_SUB_VARIANT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Variable Ref</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_FUNCTIONAL_VARIANT__VARIABLE_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Is Baseline</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_FUNCTIONAL_VARIANT__IS_BASELINE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_FUNCTIONAL_VARIANT__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int ABSTRACT_FUNCTIONAL_VARIANT__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -748,16 +712,52 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+    int ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_FUNCTIONAL_VARIANT__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+    int ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Functional Sub Variant</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_FUNCTIONAL_VARIANT__FUNCTIONAL_SUB_VARIANT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Variable Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_FUNCTIONAL_VARIANT__VARIABLE_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Is Baseline</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_FUNCTIONAL_VARIANT__IS_BASELINE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_FUNCTIONAL_VARIANT__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>Abstract Functional Variant</em>' class.
@@ -850,22 +850,22 @@ public interface AsdPackage extends EPackage {
     int ALLOCATION_ROLE__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Function Ref</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ALLOCATION_ROLE__FUNCTION_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
+    int ALLOCATION_ROLE__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ALLOCATION_ROLE__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
+    int ALLOCATION_ROLE__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
@@ -877,22 +877,22 @@ public interface AsdPackage extends EPackage {
     int ALLOCATION_ROLE__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Function Ref</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ALLOCATION_ROLE__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+    int ALLOCATION_ROLE__FUNCTION_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ALLOCATION_ROLE__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int ALLOCATION_ROLE__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Referred By Allocation Role Ref</b></em>' reference list.
@@ -1228,67 +1228,13 @@ public interface AsdPackage extends EPackage {
     int APPLICATION__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Function Role</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int APPLICATION__FUNCTION_ROLE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Functional Variant</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__FUNCTIONAL_VARIANT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Functional Variant Group</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__FUNCTIONAL_VARIANT_GROUP = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Allocation Role Ref</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__ALLOCATION_ROLE_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Application Scl Ref</b></em>' containment reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__APPLICATION_SCL_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+    int APPLICATION__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -1297,7 +1243,70 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int APPLICATION__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 7;
+    int APPLICATION__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Function Role</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__FUNCTION_ROLE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Functional Variant</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__FUNCTIONAL_VARIANT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Functional Variant Group</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__FUNCTIONAL_VARIANT_GROUP = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Allocation Role Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__ALLOCATION_ROLE_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Application Scl Ref</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__APPLICATION_SCL_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 7;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int APPLICATION__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1306,16 +1315,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int APPLICATION__TYPE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 8;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int APPLICATION__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 9;
+    int APPLICATION__TYPE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>Application</em>' class.
@@ -2232,85 +2232,13 @@ public interface AsdPackage extends EPackage {
     int BEHAVIOR_DESCRIPTION__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Input Var</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BEHAVIOR_DESCRIPTION__INPUT_VAR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Output Var</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__OUTPUT_VAR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Behavior Reference</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__BEHAVIOR_REFERENCE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>File Reference</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__FILE_REFERENCE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Format</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__FORMAT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Is Simulation</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__IS_SIMULATION = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
-
-    /**
-     * The feature id for the '<em><b>Is Specification</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__IS_SPECIFICATION = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 7;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BEHAVIOR_DESCRIPTION__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 8;
+    int BEHAVIOR_DESCRIPTION__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -2319,16 +2247,88 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BEHAVIOR_DESCRIPTION__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 9;
+    int BEHAVIOR_DESCRIPTION__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BEHAVIOR_DESCRIPTION__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 10;
+    int BEHAVIOR_DESCRIPTION__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Input Var</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__INPUT_VAR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Output Var</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__OUTPUT_VAR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Behavior Reference</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__BEHAVIOR_REFERENCE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>File Reference</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__FILE_REFERENCE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Format</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__FORMAT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 7;
+
+    /**
+     * The feature id for the '<em><b>Is Simulation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__IS_SIMULATION = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 8;
+
+    /**
+     * The feature id for the '<em><b>Is Specification</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__IS_SPECIFICATION = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 9;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BEHAVIOR_DESCRIPTION__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Referred By Behavior Description Ref</b></em>' reference list.
@@ -3346,49 +3346,13 @@ public interface AsdPackage extends EPackage {
     int LINK_FCD_REF__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINK_FCD_REF__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>PDO</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINK_FCD_REF__PDO = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>PLN</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINK_FCD_REF__PLN = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Resource Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINK_FCD_REF__RESOURCE_NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Resource Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINK_FCD_REF__RESOURCE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int LINK_FCD_REF__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -3397,16 +3361,52 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LINK_FCD_REF__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+    int LINK_FCD_REF__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINK_FCD_REF__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+    int LINK_FCD_REF__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>PDO</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCD_REF__PDO = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>PLN</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCD_REF__PLN = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Resource Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCD_REF__RESOURCE_NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Resource Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCD_REF__RESOURCE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>Link FCD Ref</em>' class.
@@ -3509,6 +3509,24 @@ public interface AsdPackage extends EPackage {
     int CONTROL_REF__DESC = LINK_FCD_REF__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_REF__UUID = LINK_FCD_REF__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_REF__TEMPLATE_UUID = LINK_FCD_REF__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3552,24 +3570,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int CONTROL_REF__RESOURCE_UUID = LINK_FCD_REF__RESOURCE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_REF__TEMPLATE_UUID = LINK_FCD_REF__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONTROL_REF__UUID = LINK_FCD_REF__UUID;
 
     /**
      * The feature id for the '<em><b>Binary Wiring Parameters Ref</b></em>' containment reference list.
@@ -4821,40 +4821,13 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_CATEGORY__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Sub Category</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION_CATEGORY__SUB_CATEGORY = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Function Cat Ref</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_CATEGORY__FUNCTION_CAT_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_CATEGORY__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_CATEGORY__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+    int FUNCTION_CATEGORY__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -4863,16 +4836,43 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FUNCTION_CATEGORY__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int FUNCTION_CATEGORY__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION_CATEGORY__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+    int FUNCTION_CATEGORY__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Sub Category</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_CATEGORY__SUB_CATEGORY = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Function Cat Ref</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_CATEGORY__FUNCTION_CAT_REF = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_CATEGORY__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Referred By Function Category Ref</b></em>' reference list.
@@ -5428,58 +5428,13 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_ROLE__FUNCTIONAL_VARIANT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER__FUNCTIONAL_VARIANT_REF;
 
     /**
-     * The feature id for the '<em><b>Function Role Content</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION_ROLE__FUNCTION_ROLE_CONTENT = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Cardinality</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_ROLE__CARDINALITY = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Max</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_ROLE__MAX = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_ROLE__NAME = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_ROLE__ORIGIN_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Selector</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_ROLE__SELECTOR = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 5;
+    int FUNCTION_ROLE__UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -5488,7 +5443,61 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FUNCTION_ROLE__TEMPLATE_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 6;
+    int FUNCTION_ROLE__TEMPLATE_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__ORIGIN_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Selector</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__SELECTOR = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__CARDINALITY = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Max</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__MAX = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Function Role Content</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__FUNCTION_ROLE_CONTENT = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_ROLE__NAME = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -5497,16 +5506,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FUNCTION_ROLE__TYPE = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 7;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_ROLE__UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 8;
+    int FUNCTION_ROLE__TYPE = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Parent Application</b></em>' container reference.
@@ -5881,6 +5881,33 @@ public interface AsdPackage extends EPackage {
     int FUNCTION_TEMPLATE__DESC = ABSTRACT6100_LNODE_CONTAINER__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_TEMPLATE__UUID = ABSTRACT6100_LNODE_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_TEMPLATE__TEMPLATE_UUID = ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION_TEMPLATE__ORIGIN_UUID = ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID;
+
+    /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5897,33 +5924,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTION_TEMPLATE__NAME = ABSTRACT6100_LNODE_CONTAINER__NAME;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_TEMPLATE__ORIGIN_UUID = ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_TEMPLATE__TEMPLATE_UUID = ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION_TEMPLATE__UUID = ABSTRACT6100_LNODE_CONTAINER__UUID;
 
     /**
      * The feature id for the '<em><b>Sub Function Template</b></em>' containment reference list.
@@ -6062,6 +6062,33 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_SUB_VARIANT__DESC = ABSTRACT_FUNCTIONAL_VARIANT__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_SUB_VARIANT__UUID = ABSTRACT_FUNCTIONAL_VARIANT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_SUB_VARIANT__TEMPLATE_UUID = ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_SUB_VARIANT__ORIGIN_UUID = ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID;
+
+    /**
      * The feature id for the '<em><b>Functional Sub Variant</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6096,33 +6123,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTIONAL_SUB_VARIANT__NAME = ABSTRACT_FUNCTIONAL_VARIANT__NAME;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTIONAL_SUB_VARIANT__ORIGIN_UUID = ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTIONAL_SUB_VARIANT__TEMPLATE_UUID = ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTIONAL_SUB_VARIANT__UUID = ABSTRACT_FUNCTIONAL_VARIANT__UUID;
 
     /**
      * The feature id for the '<em><b>Parent Abstract Functional Variant</b></em>' container reference.
@@ -6234,6 +6234,33 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_VARIANT__DESC = ABSTRACT_FUNCTIONAL_VARIANT__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT__UUID = ABSTRACT_FUNCTIONAL_VARIANT__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT__TEMPLATE_UUID = ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTIONAL_VARIANT__ORIGIN_UUID = ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID;
+
+    /**
      * The feature id for the '<em><b>Functional Sub Variant</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6268,33 +6295,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int FUNCTIONAL_VARIANT__NAME = ABSTRACT_FUNCTIONAL_VARIANT__NAME;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTIONAL_VARIANT__ORIGIN_UUID = ABSTRACT_FUNCTIONAL_VARIANT__ORIGIN_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTIONAL_VARIANT__TEMPLATE_UUID = ABSTRACT_FUNCTIONAL_VARIANT__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTIONAL_VARIANT__UUID = ABSTRACT_FUNCTIONAL_VARIANT__UUID;
 
     /**
      * The feature id for the '<em><b>Parent Application</b></em>' container reference.
@@ -6424,22 +6424,22 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_VARIANT_GROUP__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Functional Variant</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
+    int FUNCTIONAL_VARIANT_GROUP__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTIONAL_VARIANT_GROUP__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
+    int FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
@@ -6451,22 +6451,22 @@ public interface AsdPackage extends EPackage {
     int FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Functional Variant</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+    int FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTIONAL_VARIANT_GROUP__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int FUNCTIONAL_VARIANT_GROUP__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Parent Application</b></em>' container reference.
@@ -8244,6 +8244,24 @@ public interface AsdPackage extends EPackage {
     int LINK_FCDA_REF__DESC = LINK_FCD_REF__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCDA_REF__UUID = LINK_FCD_REF__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINK_FCDA_REF__TEMPLATE_UUID = LINK_FCD_REF__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8287,24 +8305,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int LINK_FCDA_REF__RESOURCE_UUID = LINK_FCD_REF__RESOURCE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINK_FCDA_REF__TEMPLATE_UUID = LINK_FCD_REF__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINK_FCDA_REF__UUID = LINK_FCD_REF__UUID;
 
     /**
      * The feature id for the '<em><b>PDA</b></em>' attribute.
@@ -9956,58 +9956,13 @@ public interface AsdPackage extends EPackage {
     int POWER_SYSTEM_RELATION__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_SYSTEM_RELATION__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_SYSTEM_RELATION__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
-
-    /**
-     * The feature id for the '<em><b>Relation</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_SYSTEM_RELATION__RELATION = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Relation Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_SYSTEM_RELATION__RELATION_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
-
-    /**
      * The feature id for the '<em><b>Selector</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int POWER_SYSTEM_RELATION__SELECTOR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_SYSTEM_RELATION__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+    int POWER_SYSTEM_RELATION__SELECTOR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -10016,7 +9971,52 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POWER_SYSTEM_RELATION__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+    int POWER_SYSTEM_RELATION__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Relation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION__RELATION = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Relation Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RELATION__RELATION_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Parent Power System Relation</b></em>' container reference.
@@ -10564,13 +10564,13 @@ public interface AsdPackage extends EPackage {
     int PROCESS_RESOURCE__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Resource</b></em>' containment reference list.
+     * The feature id for the '<em><b>Selector</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROCESS_RESOURCE__RESOURCE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
+    int PROCESS_RESOURCE__SELECTOR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -10591,31 +10591,13 @@ public interface AsdPackage extends EPackage {
     int PROCESS_RESOURCE__MAX = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROCESS_RESOURCE__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS_RESOURCE__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
-
-    /**
-     * The feature id for the '<em><b>Selector</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS_RESOURCE__SELECTOR = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+    int PROCESS_RESOURCE__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
@@ -10624,16 +10606,34 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int PROCESS_RESOURCE__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+    int PROCESS_RESOURCE__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROCESS_RESOURCE__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 7;
+    int PROCESS_RESOURCE__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Resource</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_RESOURCE__RESOURCE = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS_RESOURCE__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Parent Process Resources</b></em>' container reference.
@@ -12122,13 +12122,22 @@ public interface AsdPackage extends EPackage {
     int SIGNAL_ROLE__FUNCTIONAL_VARIANT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER__FUNCTIONAL_VARIANT_REF;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE__NAME = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 0;
+    int SIGNAL_ROLE__UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__TEMPLATE_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
@@ -12137,7 +12146,16 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE__ORIGIN_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 1;
+    int SIGNAL_ROLE__ORIGIN_UUID = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SIGNAL_ROLE__NAME = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Parent Function Ref</b></em>' container reference.
@@ -12146,7 +12164,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE__PARENT_FUNCTION_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 2;
+    int SIGNAL_ROLE__PARENT_FUNCTION_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>LNode Input Ref</b></em>' containment reference list.
@@ -12155,7 +12173,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE__LNODE_INPUT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 3;
+    int SIGNAL_ROLE__LNODE_INPUT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>LNode Output Ref</b></em>' containment reference list.
@@ -12164,7 +12182,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE__LNODE_OUTPUT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 4;
+    int SIGNAL_ROLE__LNODE_OUTPUT_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>LNode Data Ref</b></em>' containment reference list.
@@ -12173,7 +12191,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE__LNODE_DATA_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 5;
+    int SIGNAL_ROLE__LNODE_DATA_REF = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>Signal Role</em>' class.
@@ -12182,7 +12200,7 @@ public interface AsdPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIGNAL_ROLE_FEATURE_COUNT = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 6;
+    int SIGNAL_ROLE_FEATURE_COUNT = FUNCTIONAL_VARIANT_REF_CONTAINER_FEATURE_COUNT + 8;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12276,6 +12294,24 @@ public interface AsdPackage extends EPackage {
     int SOURCE_REF__DESC = LINK_FCDA_REF__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SOURCE_REF__UUID = LINK_FCDA_REF__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SOURCE_REF__TEMPLATE_UUID = LINK_FCDA_REF__TEMPLATE_UUID;
+
+    /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12319,24 +12355,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SOURCE_REF__RESOURCE_UUID = LINK_FCDA_REF__RESOURCE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SOURCE_REF__TEMPLATE_UUID = LINK_FCDA_REF__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SOURCE_REF__UUID = LINK_FCDA_REF__UUID;
 
     /**
      * The feature id for the '<em><b>PDA</b></em>' attribute.
@@ -12637,6 +12655,33 @@ public interface AsdPackage extends EPackage {
     int SUB_CATEGORY__DESC = FUNCTION_CATEGORY__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CATEGORY__UUID = FUNCTION_CATEGORY__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CATEGORY__TEMPLATE_UUID = FUNCTION_CATEGORY__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_CATEGORY__ORIGIN_UUID = FUNCTION_CATEGORY__ORIGIN_UUID;
+
+    /**
      * The feature id for the '<em><b>Sub Category</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12662,33 +12707,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SUB_CATEGORY__NAME = FUNCTION_CATEGORY__NAME;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_CATEGORY__ORIGIN_UUID = FUNCTION_CATEGORY__ORIGIN_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_CATEGORY__TEMPLATE_UUID = FUNCTION_CATEGORY__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_CATEGORY__UUID = FUNCTION_CATEGORY__UUID;
 
     /**
      * The feature id for the '<em><b>Referred By Function Category Ref</b></em>' reference list.
@@ -13053,6 +13071,33 @@ public interface AsdPackage extends EPackage {
     int SUB_FUNCTION_TEMPLATE__DESC = ABSTRACT6100_LNODE_CONTAINER__DESC;
 
     /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION_TEMPLATE__UUID = ABSTRACT6100_LNODE_CONTAINER__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION_TEMPLATE__TEMPLATE_UUID = ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION_TEMPLATE__ORIGIN_UUID = ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID;
+
+    /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13069,33 +13114,6 @@ public interface AsdPackage extends EPackage {
      * @ordered
      */
     int SUB_FUNCTION_TEMPLATE__NAME = ABSTRACT6100_LNODE_CONTAINER__NAME;
-
-    /**
-     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_FUNCTION_TEMPLATE__ORIGIN_UUID = ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID;
-
-    /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_FUNCTION_TEMPLATE__TEMPLATE_UUID = ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID;
-
-    /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_FUNCTION_TEMPLATE__UUID = ABSTRACT6100_LNODE_CONTAINER__UUID;
 
     /**
      * The feature id for the '<em><b>General Equipment</b></em>' containment reference list.
@@ -13849,22 +13867,22 @@ public interface AsdPackage extends EPackage {
     int VARIABLE__DESC = BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
 
     /**
-     * The feature id for the '<em><b>Variable Apply To</b></em>' containment reference list.
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VARIABLE__VARIABLE_APPLY_TO = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
+    int VARIABLE__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VARIABLE__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
+    int VARIABLE__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
@@ -13876,22 +13894,22 @@ public interface AsdPackage extends EPackage {
     int VARIABLE__ORIGIN_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Variable Apply To</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VARIABLE__TEMPLATE_UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
+    int VARIABLE__VARIABLE_APPLY_TO = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VARIABLE__UUID = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
+    int VARIABLE__NAME = BASE_EXTENSION_ELEMENT_WITH_DESC_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -14120,6 +14138,199 @@ public interface AsdPackage extends EPackage {
     int VARIABLE_APPLY_TO_OPERATION_COUNT = BASE_EXTENSION_ELEMENT_WITH_DESC_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgUuidWithOriginImpl <em>Ag Uuid With Origin</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgUuidWithOriginImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getAgUuidWithOrigin()
+     * @generated
+     */
+    int AG_UUID_WITH_ORIGIN = 86;
+
+    /**
+     * The feature id for the '<em><b>Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_WITH_ORIGIN__UUID = SclPackage.AG_UUID__UUID;
+
+    /**
+     * The feature id for the '<em><b>Template Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_WITH_ORIGIN__TEMPLATE_UUID = SclPackage.AG_UUID__TEMPLATE_UUID;
+
+    /**
+     * The feature id for the '<em><b>Origin Uuid</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_WITH_ORIGIN__ORIGIN_UUID = SclPackage.AG_UUID_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Ag Uuid With Origin</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_WITH_ORIGIN_FEATURE_COUNT = SclPackage.AG_UUID_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>Ag Uuid With Origin</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_UUID_WITH_ORIGIN_OPERATION_COUNT = SclPackage.AG_UUID_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgCardinalityImpl <em>Ag Cardinality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgCardinalityImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getAgCardinality()
+     * @generated
+     */
+    int AG_CARDINALITY = 87;
+
+    /**
+     * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY__CARDINALITY = 0;
+
+    /**
+     * The feature id for the '<em><b>Max</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY__MAX = 1;
+
+    /**
+     * The number of structural features of the '<em>Ag Cardinality</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>Ag Cardinality</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgSelectorImpl <em>Ag Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgSelectorImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getAgSelector()
+     * @generated
+     */
+    int AG_SELECTOR = 88;
+
+    /**
+     * The feature id for the '<em><b>Selector</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SELECTOR__SELECTOR = 0;
+
+    /**
+     * The number of structural features of the '<em>Ag Selector</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SELECTOR_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Ag Selector</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SELECTOR_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgCardinalityWithSelectorImpl <em>Ag Cardinality With Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgCardinalityWithSelectorImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getAgCardinalityWithSelector()
+     * @generated
+     */
+    int AG_CARDINALITY_WITH_SELECTOR = 89;
+
+    /**
+     * The feature id for the '<em><b>Selector</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_WITH_SELECTOR__SELECTOR = AG_SELECTOR__SELECTOR;
+
+    /**
+     * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_WITH_SELECTOR__CARDINALITY = AG_SELECTOR_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Max</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_WITH_SELECTOR__MAX = AG_SELECTOR_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Ag Cardinality With Selector</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_WITH_SELECTOR_FEATURE_COUNT = AG_SELECTOR_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>Ag Cardinality With Selector</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_CARDINALITY_WITH_SELECTOR_OPERATION_COUNT = AG_SELECTOR_OPERATION_COUNT + 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum <em>Cardinality Enum</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14127,7 +14338,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getCardinalityEnum()
      * @generated
      */
-    int CARDINALITY_ENUM = 86;
+    int CARDINALITY_ENUM = 90;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.OutTypEnum <em>Out Typ Enum</em>}' enum.
@@ -14137,7 +14348,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getOutTypEnum()
      * @generated
      */
-    int OUT_TYP_ENUM = 87;
+    int OUT_TYP_ENUM = 91;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.UpdateEnum <em>Update Enum</em>}' enum.
@@ -14147,7 +14358,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getUpdateEnum()
      * @generated
      */
-    int UPDATE_ENUM = 88;
+    int UPDATE_ENUM = 92;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SpecServiceEnum <em>Spec Service Enum</em>}' enum.
@@ -14157,7 +14368,7 @@ public interface AsdPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AsdPackageImpl#getSpecServiceEnum()
      * @generated
      */
-    int SPEC_SERVICE_ENUM = 89;
+    int SPEC_SERVICE_ENUM = 93;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant <em>Abstract Functional Variant</em>}'.
@@ -14214,39 +14425,6 @@ public interface AsdPackage extends EPackage {
     EAttribute getAbstractFunctionalVariant_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getOriginUuid()
-     * @see #getAbstractFunctionalVariant()
-     * @generated
-     */
-    EAttribute getAbstractFunctionalVariant_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getTemplateUuid()
-     * @see #getAbstractFunctionalVariant()
-     * @generated
-     */
-    EAttribute getAbstractFunctionalVariant_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant#getUuid()
-     * @see #getAbstractFunctionalVariant()
-     * @generated
-     */
-    EAttribute getAbstractFunctionalVariant_Uuid();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole <em>Allocation Role</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14277,39 +14455,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getAllocationRole_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getOriginUuid()
-     * @see #getAllocationRole()
-     * @generated
-     */
-    EAttribute getAllocationRole_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getTemplateUuid()
-     * @see #getAllocationRole()
-     * @generated
-     */
-    EAttribute getAllocationRole_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getUuid()
-     * @see #getAllocationRole()
-     * @generated
-     */
-    EAttribute getAllocationRole_Uuid();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole#getReferredByAllocationRoleRef <em>Referred By Allocation Role Ref</em>}'.
@@ -14453,28 +14598,6 @@ public interface AsdPackage extends EPackage {
     EAttribute getApplication_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getOriginUuid()
-     * @see #getApplication()
-     * @generated
-     */
-    EAttribute getApplication_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getTemplateUuid()
-     * @see #getApplication()
-     * @generated
-     */
-    EAttribute getApplication_TemplateUuid();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getType <em>Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14484,17 +14607,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getApplication_Type();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Application#getUuid()
-     * @see #getApplication()
-     * @generated
-     */
-    EAttribute getApplication_Uuid();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParameters <em>Analogue Wiring Parameters</em>}'.
@@ -14581,39 +14693,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getAbstract6100LNodeContainer_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getOriginUuid()
-     * @see #getAbstract6100LNodeContainer()
-     * @generated
-     */
-    EAttribute getAbstract6100LNodeContainer_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getTemplateUuid()
-     * @see #getAbstract6100LNodeContainer()
-     * @generated
-     */
-    EAttribute getAbstract6100LNodeContainer_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getUuid()
-     * @see #getAbstract6100LNodeContainer()
-     * @generated
-     */
-    EAttribute getAbstract6100LNodeContainer_Uuid();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParametersRef <em>Analogue Wiring Parameters Ref</em>}'.
@@ -14808,17 +14887,6 @@ public interface AsdPackage extends EPackage {
     EClass getBaseExtensionElementWithDesc();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc#getDesc()
-     * @see #getBaseExtensionElementWithDesc()
-     * @generated
-     */
-    EAttribute getBaseExtensionElementWithDesc_Desc();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BayType <em>Bay Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14936,39 +15004,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getBehaviorDescription_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getOriginUuid()
-     * @see #getBehaviorDescription()
-     * @generated
-     */
-    EAttribute getBehaviorDescription_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getTemplateUuid()
-     * @see #getBehaviorDescription()
-     * @generated
-     */
-    EAttribute getBehaviorDescription_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getUuid()
-     * @see #getBehaviorDescription()
-     * @generated
-     */
-    EAttribute getBehaviorDescription_Uuid();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BehaviorDescription#getReferredByBehaviorDescriptionRef <em>Referred By Behavior Description Ref</em>}'.
@@ -16113,39 +16148,6 @@ public interface AsdPackage extends EPackage {
     EAttribute getFunctionCategory_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getOriginUuid()
-     * @see #getFunctionCategory()
-     * @generated
-     */
-    EAttribute getFunctionCategory_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getTemplateUuid()
-     * @see #getFunctionCategory()
-     * @generated
-     */
-    EAttribute getFunctionCategory_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getUuid()
-     * @see #getFunctionCategory()
-     * @generated
-     */
-    EAttribute getFunctionCategory_Uuid();
-
-    /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionCategory#getReferredByFunctionCategoryRef <em>Referred By Function Category Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16362,28 +16364,6 @@ public interface AsdPackage extends EPackage {
     EReference getFunctionRole_FunctionRoleContent();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getCardinality <em>Cardinality</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Cardinality</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getCardinality()
-     * @see #getFunctionRole()
-     * @generated
-     */
-    EAttribute getFunctionRole_Cardinality();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getMax <em>Max</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Max</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getMax()
-     * @see #getFunctionRole()
-     * @generated
-     */
-    EAttribute getFunctionRole_Max();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getName <em>Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16395,39 +16375,6 @@ public interface AsdPackage extends EPackage {
     EAttribute getFunctionRole_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getOriginUuid()
-     * @see #getFunctionRole()
-     * @generated
-     */
-    EAttribute getFunctionRole_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getSelector <em>Selector</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selector</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getSelector()
-     * @see #getFunctionRole()
-     * @generated
-     */
-    EAttribute getFunctionRole_Selector();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getTemplateUuid()
-     * @see #getFunctionRole()
-     * @generated
-     */
-    EAttribute getFunctionRole_TemplateUuid();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getType <em>Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16437,17 +16384,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getFunctionRole_Type();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getUuid()
-     * @see #getFunctionRole()
-     * @generated
-     */
-    EAttribute getFunctionRole_Uuid();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole#getParentApplication <em>Parent Application</em>}'.
@@ -16728,39 +16664,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getFunctionalVariantGroup_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getOriginUuid()
-     * @see #getFunctionalVariantGroup()
-     * @generated
-     */
-    EAttribute getFunctionalVariantGroup_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getTemplateUuid()
-     * @see #getFunctionalVariantGroup()
-     * @generated
-     */
-    EAttribute getFunctionalVariantGroup_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getUuid()
-     * @see #getFunctionalVariantGroup()
-     * @generated
-     */
-    EAttribute getFunctionalVariantGroup_Uuid();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup#getParentApplication <em>Parent Application</em>}'.
@@ -17280,17 +17183,6 @@ public interface AsdPackage extends EPackage {
     EClass getLinkFCDRef();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getOriginUuid()
-     * @see #getLinkFCDRef()
-     * @generated
-     */
-    EAttribute getLinkFCDRef_OriginUuid();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getPDO <em>PDO</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17333,28 +17225,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getLinkFCDRef_ResourceUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getTemplateUuid()
-     * @see #getLinkFCDRef()
-     * @generated
-     */
-    EAttribute getLinkFCDRef_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef#getUuid()
-     * @see #getLinkFCDRef()
-     * @generated
-     */
-    EAttribute getLinkFCDRef_Uuid();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef <em>LNode Data Ref</em>}'.
@@ -18005,17 +17875,6 @@ public interface AsdPackage extends EPackage {
     EAttribute getPowerSystemRelation_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getOriginUuid()
-     * @see #getPowerSystemRelation()
-     * @generated
-     */
-    EAttribute getPowerSystemRelation_OriginUuid();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getRelation <em>Relation</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18036,39 +17895,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getPowerSystemRelation_RelationUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getSelector <em>Selector</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selector</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getSelector()
-     * @see #getPowerSystemRelation()
-     * @generated
-     */
-    EAttribute getPowerSystemRelation_Selector();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getTemplateUuid()
-     * @see #getPowerSystemRelation()
-     * @generated
-     */
-    EAttribute getPowerSystemRelation_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getUuid()
-     * @see #getPowerSystemRelation()
-     * @generated
-     */
-    EAttribute getPowerSystemRelation_Uuid();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getParentPowerSystemRelation <em>Parent Power System Relation</em>}'.
@@ -18287,28 +18113,6 @@ public interface AsdPackage extends EPackage {
     EReference getProcessResource_Resource();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getCardinality <em>Cardinality</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Cardinality</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getCardinality()
-     * @see #getProcessResource()
-     * @generated
-     */
-    EAttribute getProcessResource_Cardinality();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getMax <em>Max</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Max</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getMax()
-     * @see #getProcessResource()
-     * @generated
-     */
-    EAttribute getProcessResource_Max();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getName <em>Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18318,50 +18122,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getProcessResource_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getOriginUuid()
-     * @see #getProcessResource()
-     * @generated
-     */
-    EAttribute getProcessResource_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getSelector <em>Selector</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selector</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getSelector()
-     * @see #getProcessResource()
-     * @generated
-     */
-    EAttribute getProcessResource_Selector();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getTemplateUuid()
-     * @see #getProcessResource()
-     * @generated
-     */
-    EAttribute getProcessResource_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getUuid()
-     * @see #getProcessResource()
-     * @generated
-     */
-    EAttribute getProcessResource_Uuid();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource#getParentProcessResources <em>Parent Process Resources</em>}'.
@@ -19076,17 +18836,6 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getSignalRole_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid()
-     * @see #getSignalRole()
-     * @generated
-     */
-    EAttribute getSignalRole_OriginUuid();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getParentFunctionRef <em>Parent Function Ref</em>}'.
@@ -19873,39 +19622,6 @@ public interface AsdPackage extends EPackage {
     EAttribute getVariable_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getOriginUuid <em>Origin Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getOriginUuid()
-     * @see #getVariable()
-     * @generated
-     */
-    EAttribute getVariable_OriginUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getTemplateUuid <em>Template Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Template Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getTemplateUuid()
-     * @see #getVariable()
-     * @generated
-     */
-    EAttribute getVariable_TemplateUuid();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getUuid <em>Uuid</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Uuid</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getUuid()
-     * @see #getVariable()
-     * @generated
-     */
-    EAttribute getVariable_Uuid();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable#getValue <em>Value</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20143,6 +19859,90 @@ public interface AsdPackage extends EPackage {
      * @generated
      */
     EAttribute getWiringParameters_InpRef();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin <em>Ag Uuid With Origin</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Uuid With Origin</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin
+     * @generated
+     */
+    EClass getAgUuidWithOrigin();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin#getOriginUuid <em>Origin Uuid</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Origin Uuid</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin#getOriginUuid()
+     * @see #getAgUuidWithOrigin()
+     * @generated
+     */
+    EAttribute getAgUuidWithOrigin_OriginUuid();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality <em>Ag Cardinality</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Cardinality</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality
+     * @generated
+     */
+    EClass getAgCardinality();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality#getCardinality <em>Cardinality</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Cardinality</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality#getCardinality()
+     * @see #getAgCardinality()
+     * @generated
+     */
+    EAttribute getAgCardinality_Cardinality();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality#getMax <em>Max</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Max</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality#getMax()
+     * @see #getAgCardinality()
+     * @generated
+     */
+    EAttribute getAgCardinality_Max();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector <em>Ag Selector</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Selector</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector
+     * @generated
+     */
+    EClass getAgSelector();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector#getSelector <em>Selector</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Selector</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector#getSelector()
+     * @see #getAgSelector()
+     * @generated
+     */
+    EAttribute getAgSelector_Selector();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector <em>Ag Cardinality With Selector</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Cardinality With Selector</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector
+     * @generated
+     */
+    EClass getAgCardinalityWithSelector();
 
     /**
      * Returns the meta object for enum '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum <em>Cardinality Enum</em>}'.

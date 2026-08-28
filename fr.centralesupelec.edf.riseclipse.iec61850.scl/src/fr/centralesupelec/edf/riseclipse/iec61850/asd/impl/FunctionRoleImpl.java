@@ -31,11 +31,17 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Application;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.CardinalityEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,15 +51,15 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getFunctionRoleContent <em>Function Role Content</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getMax <em>Max</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getSelector <em>Selector</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getTemplateUuid <em>Template Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getMax <em>Max</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getFunctionRoleContent <em>Function Role Content</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.FunctionRoleImpl#getParentApplication <em>Parent Application</em>}</li>
  * </ul>
  *
@@ -61,14 +67,111 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRoleContent;
  */
 public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implements FunctionRole {
     /**
-     * The cached value of the '{@link #getFunctionRoleContent() <em>Function Role Content</em>}' containment reference list.
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFunctionRoleContent()
+     * @see #getUuid()
      * @generated
      * @ordered
      */
-    protected EList< FunctionRoleContent > functionRoleContent;
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
+
+    /**
+     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String ORIGIN_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOriginUuid()
+     * @generated
+     * @ordered
+     */
+    protected String originUuid = ORIGIN_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Origin Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean originUuidESet;
+
+    /**
+     * The default value of the '{@link #getSelector() <em>Selector</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSelector()
+     * @generated
+     * @ordered
+     */
+    protected static final String SELECTOR_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getSelector() <em>Selector</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSelector()
+     * @generated
+     * @ordered
+     */
+    protected String selector = SELECTOR_EDEFAULT;
 
     /**
      * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
@@ -120,6 +223,16 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     protected int max = MAX_EDEFAULT;
 
     /**
+     * The cached value of the '{@link #getFunctionRoleContent() <em>Function Role Content</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFunctionRoleContent()
+     * @generated
+     * @ordered
+     */
+    protected EList< FunctionRoleContent > functionRoleContent;
+
+    /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -140,66 +253,6 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String ORIGIN_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getOriginUuid()
-     * @generated
-     * @ordered
-     */
-    protected String originUuid = ORIGIN_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getSelector() <em>Selector</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSelector()
-     * @generated
-     * @ordered
-     */
-    protected static final String SELECTOR_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getSelector() <em>Selector</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSelector()
-     * @generated
-     * @ordered
-     */
-    protected String selector = SELECTOR_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String TEMPLATE_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
-
-    /**
      * The default value of the '{@link #getType() <em>Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -218,26 +271,6 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
      * @ordered
      */
     protected String type = TYPE_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected String uuid = UUID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -416,10 +449,39 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     public void setOriginUuid( String newOriginUuid ) {
         String oldOriginUuid = originUuid;
         originUuid = newOriginUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTION_ROLE__ORIGIN_UUID,
-                    oldOriginUuid, originUuid ) );
+                    oldOriginUuid, originUuid, !oldOriginUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetOriginUuid() {
+        String oldOriginUuid = originUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuid = ORIGIN_UUID_EDEFAULT;
+        originUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.FUNCTION_ROLE__ORIGIN_UUID,
+                    oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetOriginUuid() {
+        return originUuidESet;
     }
 
     /**
@@ -466,10 +528,39 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     public void setTemplateUuid( String newTemplateUuid ) {
         String oldTemplateUuid = templateUuid;
         templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID,
-                    oldTemplateUuid, templateUuid ) );
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -515,9 +606,39 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     public void setUuid( String newUuid ) {
         String oldUuid = uuid;
         uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTION_ROLE__UUID, oldUuid, uuid ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.FUNCTION_ROLE__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.FUNCTION_ROLE__UUID, oldUuid,
+                    UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
     }
 
     /**
@@ -636,24 +757,24 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
-            return getFunctionRoleContent();
-        case AsdPackage.FUNCTION_ROLE__CARDINALITY:
-            return getCardinality();
-        case AsdPackage.FUNCTION_ROLE__MAX:
-            return getMax();
-        case AsdPackage.FUNCTION_ROLE__NAME:
-            return getName();
+        case AsdPackage.FUNCTION_ROLE__UUID:
+            return getUuid();
+        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
+            return getTemplateUuid();
         case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
             return getOriginUuid();
         case AsdPackage.FUNCTION_ROLE__SELECTOR:
             return getSelector();
-        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
-            return getTemplateUuid();
+        case AsdPackage.FUNCTION_ROLE__CARDINALITY:
+            return getCardinality();
+        case AsdPackage.FUNCTION_ROLE__MAX:
+            return getMax();
+        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
+            return getFunctionRoleContent();
+        case AsdPackage.FUNCTION_ROLE__NAME:
+            return getName();
         case AsdPackage.FUNCTION_ROLE__TYPE:
             return getType();
-        case AsdPackage.FUNCTION_ROLE__UUID:
-            return getUuid();
         case AsdPackage.FUNCTION_ROLE__PARENT_APPLICATION:
             return getParentApplication();
         }
@@ -669,18 +790,11 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
-            getFunctionRoleContent().clear();
-            getFunctionRoleContent().addAll( ( Collection< ? extends FunctionRoleContent > ) newValue );
+        case AsdPackage.FUNCTION_ROLE__UUID:
+            setUuid( ( String ) newValue );
             return;
-        case AsdPackage.FUNCTION_ROLE__CARDINALITY:
-            setCardinality( ( CardinalityEnum ) newValue );
-            return;
-        case AsdPackage.FUNCTION_ROLE__MAX:
-            setMax( ( Integer ) newValue );
-            return;
-        case AsdPackage.FUNCTION_ROLE__NAME:
-            setName( ( String ) newValue );
+        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
             return;
         case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
             setOriginUuid( ( String ) newValue );
@@ -688,14 +802,21 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
         case AsdPackage.FUNCTION_ROLE__SELECTOR:
             setSelector( ( String ) newValue );
             return;
-        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
-            setTemplateUuid( ( String ) newValue );
+        case AsdPackage.FUNCTION_ROLE__CARDINALITY:
+            setCardinality( ( CardinalityEnum ) newValue );
+            return;
+        case AsdPackage.FUNCTION_ROLE__MAX:
+            setMax( ( Integer ) newValue );
+            return;
+        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
+            getFunctionRoleContent().clear();
+            getFunctionRoleContent().addAll( ( Collection< ? extends FunctionRoleContent > ) newValue );
+            return;
+        case AsdPackage.FUNCTION_ROLE__NAME:
+            setName( ( String ) newValue );
             return;
         case AsdPackage.FUNCTION_ROLE__TYPE:
             setType( ( String ) newValue );
-            return;
-        case AsdPackage.FUNCTION_ROLE__UUID:
-            setUuid( ( String ) newValue );
             return;
         case AsdPackage.FUNCTION_ROLE__PARENT_APPLICATION:
             setParentApplication( ( Application ) newValue );
@@ -712,8 +833,17 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
-            unsetFunctionRoleContent();
+        case AsdPackage.FUNCTION_ROLE__UUID:
+            unsetUuid();
+            return;
+        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
+            unsetTemplateUuid();
+            return;
+        case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
+            unsetOriginUuid();
+            return;
+        case AsdPackage.FUNCTION_ROLE__SELECTOR:
+            setSelector( SELECTOR_EDEFAULT );
             return;
         case AsdPackage.FUNCTION_ROLE__CARDINALITY:
             unsetCardinality();
@@ -721,23 +851,14 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
         case AsdPackage.FUNCTION_ROLE__MAX:
             setMax( MAX_EDEFAULT );
             return;
+        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
+            unsetFunctionRoleContent();
+            return;
         case AsdPackage.FUNCTION_ROLE__NAME:
             setName( NAME_EDEFAULT );
             return;
-        case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
-            setOriginUuid( ORIGIN_UUID_EDEFAULT );
-            return;
-        case AsdPackage.FUNCTION_ROLE__SELECTOR:
-            setSelector( SELECTOR_EDEFAULT );
-            return;
-        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
-            setTemplateUuid( TEMPLATE_UUID_EDEFAULT );
-            return;
         case AsdPackage.FUNCTION_ROLE__TYPE:
             setType( TYPE_EDEFAULT );
-            return;
-        case AsdPackage.FUNCTION_ROLE__UUID:
-            setUuid( UUID_EDEFAULT );
             return;
         case AsdPackage.FUNCTION_ROLE__PARENT_APPLICATION:
             setParentApplication( ( Application ) null );
@@ -754,29 +875,132 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
-            return isSetFunctionRoleContent();
+        case AsdPackage.FUNCTION_ROLE__UUID:
+            return isSetUuid();
+        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
+            return isSetTemplateUuid();
+        case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
+            return isSetOriginUuid();
+        case AsdPackage.FUNCTION_ROLE__SELECTOR:
+            return SELECTOR_EDEFAULT == null ? selector != null : !SELECTOR_EDEFAULT.equals( selector );
         case AsdPackage.FUNCTION_ROLE__CARDINALITY:
             return isSetCardinality();
         case AsdPackage.FUNCTION_ROLE__MAX:
             return max != MAX_EDEFAULT;
+        case AsdPackage.FUNCTION_ROLE__FUNCTION_ROLE_CONTENT:
+            return isSetFunctionRoleContent();
         case AsdPackage.FUNCTION_ROLE__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals( name );
-        case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
-            return ORIGIN_UUID_EDEFAULT == null ? originUuid != null : !ORIGIN_UUID_EDEFAULT.equals( originUuid );
-        case AsdPackage.FUNCTION_ROLE__SELECTOR:
-            return SELECTOR_EDEFAULT == null ? selector != null : !SELECTOR_EDEFAULT.equals( selector );
-        case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
-            return TEMPLATE_UUID_EDEFAULT == null ? templateUuid != null
-                    : !TEMPLATE_UUID_EDEFAULT.equals( templateUuid );
         case AsdPackage.FUNCTION_ROLE__TYPE:
             return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals( type );
-        case AsdPackage.FUNCTION_ROLE__UUID:
-            return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals( uuid );
         case AsdPackage.FUNCTION_ROLE__PARENT_APPLICATION:
             return getParentApplication() != null;
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.FUNCTION_ROLE__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.FUNCTION_ROLE__ORIGIN_UUID:
+                return AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgSelector.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.FUNCTION_ROLE__SELECTOR:
+                return AsdPackage.AG_SELECTOR__SELECTOR;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgCardinality.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.FUNCTION_ROLE__CARDINALITY:
+                return AsdPackage.AG_CARDINALITY__CARDINALITY;
+            case AsdPackage.FUNCTION_ROLE__MAX:
+                return AsdPackage.AG_CARDINALITY__MAX;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgCardinalityWithSelector.class ) {
+            switch( derivedFeatureID ) {
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return AsdPackage.FUNCTION_ROLE__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return AsdPackage.FUNCTION_ROLE__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+                return AsdPackage.FUNCTION_ROLE__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgSelector.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_SELECTOR__SELECTOR:
+                return AsdPackage.FUNCTION_ROLE__SELECTOR;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgCardinality.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_CARDINALITY__CARDINALITY:
+                return AsdPackage.FUNCTION_ROLE__CARDINALITY;
+            case AsdPackage.AG_CARDINALITY__MAX:
+                return AsdPackage.FUNCTION_ROLE__MAX;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgCardinalityWithSelector.class ) {
+            switch( baseFeatureID ) {
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -791,7 +1015,30 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (cardinality: " );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", originUuid: " );
+        if( originUuidESet ) {
+            result.append( originUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", selector: " );
+        result.append( selector );
+        result.append( ", cardinality: " );
         if( cardinalityESet ) {
             result.append( cardinality );
         }
@@ -802,16 +1049,8 @@ public class FunctionRoleImpl extends FunctionalVariantRefContainerImpl implemen
         result.append( max );
         result.append( ", name: " );
         result.append( name );
-        result.append( ", originUuid: " );
-        result.append( originUuid );
-        result.append( ", selector: " );
-        result.append( selector );
-        result.append( ", templateUuid: " );
-        result.append( templateUuid );
         result.append( ", type: " );
         result.append( type );
-        result.append( ", uuid: " );
-        result.append( uuid );
         result.append( ')' );
         return result.toString();
     }

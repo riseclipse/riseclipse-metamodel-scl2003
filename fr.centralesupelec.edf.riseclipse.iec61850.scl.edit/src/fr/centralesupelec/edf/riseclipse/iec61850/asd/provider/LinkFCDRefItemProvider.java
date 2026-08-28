@@ -31,6 +31,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.LinkFCDRef} object.
@@ -60,13 +61,13 @@ public class LinkFCDRefItemProvider extends BaseExtensionElementWithDescItemProv
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
             addOriginUuidPropertyDescriptor( object );
             addPDOPropertyDescriptor( object );
             addPLNPropertyDescriptor( object );
             addResourceNamePropertyDescriptor( object );
             addResourceUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
-            addUuidPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -81,10 +82,10 @@ public class LinkFCDRefItemProvider extends BaseExtensionElementWithDescItemProv
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_LinkFCDRef_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_LinkFCDRef_originUuid_feature",
-                                "_UI_LinkFCDRef_type" ),
-                        AsdPackage.eINSTANCE.getLinkFCDRef_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -191,10 +192,10 @@ public class LinkFCDRefItemProvider extends BaseExtensionElementWithDescItemProv
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_LinkFCDRef_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_LinkFCDRef_templateUuid_feature",
-                                "_UI_LinkFCDRef_type" ),
-                        AsdPackage.eINSTANCE.getLinkFCDRef_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -213,10 +214,9 @@ public class LinkFCDRefItemProvider extends BaseExtensionElementWithDescItemProv
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_LinkFCDRef_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_LinkFCDRef_uuid_feature",
-                                "_UI_LinkFCDRef_type" ),
-                        AsdPackage.eINSTANCE.getLinkFCDRef_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -250,13 +250,13 @@ public class LinkFCDRefItemProvider extends BaseExtensionElementWithDescItemProv
         updateChildren( notification );
 
         switch( notification.getFeatureID( LinkFCDRef.class ) ) {
+        case AsdPackage.LINK_FCD_REF__UUID:
+        case AsdPackage.LINK_FCD_REF__TEMPLATE_UUID:
         case AsdPackage.LINK_FCD_REF__ORIGIN_UUID:
         case AsdPackage.LINK_FCD_REF__PDO:
         case AsdPackage.LINK_FCD_REF__PLN:
         case AsdPackage.LINK_FCD_REF__RESOURCE_NAME:
         case AsdPackage.LINK_FCD_REF__RESOURCE_UUID:
-        case AsdPackage.LINK_FCD_REF__TEMPLATE_UUID:
-        case AsdPackage.LINK_FCD_REF__UUID:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

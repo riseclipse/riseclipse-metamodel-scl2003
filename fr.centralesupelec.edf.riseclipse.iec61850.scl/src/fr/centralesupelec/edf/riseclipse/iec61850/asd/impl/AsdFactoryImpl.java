@@ -26,6 +26,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRoleRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParameters;
@@ -302,6 +306,14 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
             return createVariableRef();
         case AsdPackage.WIRING_PARAMETERS:
             return createWiringParameters();
+        case AsdPackage.AG_UUID_WITH_ORIGIN:
+            return createAgUuidWithOrigin();
+        case AsdPackage.AG_CARDINALITY:
+            return createAgCardinality();
+        case AsdPackage.AG_SELECTOR:
+            return createAgSelector();
+        case AsdPackage.AG_CARDINALITY_WITH_SELECTOR:
+            return createAgCardinalityWithSelector();
         default:
             throw new IllegalArgumentException( "The class '" + eClass.getName() + "' is not a valid classifier" );
         }
@@ -1174,6 +1186,50 @@ public class AsdFactoryImpl extends EFactoryImpl implements AsdFactory {
     public WiringParameters createWiringParameters() {
         WiringParametersImpl wiringParameters = new WiringParametersImpl();
         return wiringParameters;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public AgUuidWithOrigin createAgUuidWithOrigin() {
+        AgUuidWithOriginImpl agUuidWithOrigin = new AgUuidWithOriginImpl();
+        return agUuidWithOrigin;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public AgCardinality createAgCardinality() {
+        AgCardinalityImpl agCardinality = new AgCardinalityImpl();
+        return agCardinality;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public AgSelector createAgSelector() {
+        AgSelectorImpl agSelector = new AgSelectorImpl();
+        return agSelector;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public AgCardinalityWithSelector createAgCardinalityWithSelector() {
+        AgCardinalityWithSelectorImpl agCardinalityWithSelector = new AgCardinalityWithSelectorImpl();
+        return agCardinalityWithSelector;
     }
 
     /**

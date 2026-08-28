@@ -35,7 +35,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getParentFunctionRef <em>Parent Function Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeInputRef <em>LNode Input Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getLNodeOutputRef <em>LNode Output Ref</em>}</li>
@@ -46,7 +45,7 @@ import org.eclipse.emf.common.util.EList;
  * @model extendedMetaData="name='SignalRole' kind='elementOnly'"
  * @generated
  */
-public interface SignalRole extends FunctionalVariantRefContainer {
+public interface SignalRole extends FunctionalVariantRefContainer, AgUuidWithOrigin {
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -95,55 +94,6 @@ public interface SignalRole extends FunctionalVariantRefContainer {
      * @generated
      */
     boolean isSetName();
-
-    /**
-     * Returns the value of the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Origin Uuid</em>' attribute.
-     * @see #isSetOriginUuid()
-     * @see #unsetOriginUuid()
-     * @see #setOriginUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getSignalRole_OriginUuid()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getOriginUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Origin Uuid</em>' attribute.
-     * @see #isSetOriginUuid()
-     * @see #unsetOriginUuid()
-     * @see #getOriginUuid()
-     * @generated
-     */
-    void setOriginUuid( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetOriginUuid()
-     * @see #getOriginUuid()
-     * @see #setOriginUuid(String)
-     * @generated
-     */
-    void unsetOriginUuid();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole#getOriginUuid <em>Origin Uuid</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Origin Uuid</em>' attribute is set.
-     * @see #unsetOriginUuid()
-     * @see #getOriginUuid()
-     * @see #setOriginUuid(String)
-     * @generated
-     */
-    boolean isSetOriginUuid();
 
     /**
      * Returns the value of the '<em><b>Parent Function Ref</b></em>' container reference.

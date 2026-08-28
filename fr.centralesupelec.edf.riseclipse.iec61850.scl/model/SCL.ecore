@@ -3450,7 +3450,7 @@
       <details key="documentation" value="&#xA;            COPYRIGHT (c) IEC, 2024. This XSD schema is part of IEC 61850-90-30:2022 ed1 and IEC 61850-7-6:2020 ed2; see the IEC 61850-90-30:2022 ed1 and IEC 61850-7-6:2020 ed2 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;See www.iec.ch/CCv1 for copyright details.&#xA;        &#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;Implemented Ed. 2.1 TISSUEs (since &quot;2007B4&quot;): 1672, 1674, 1675, 1708, 1734, 1768, 1874.&#xA;&#x9;&#x9;&#x9;TISSUEs not relevant for the SCL schema (since &quot;2007B4&quot;): 1669, 1683, 1729, 1740, 1745, 1787, 1808, 1813, 1823, 1832, 1834.&#xA;&#x9;&#x9;&#x9;TISSUEs not applicable: 1628, 1695, 1723, 1725, 1746, 1750, 1772, 1791, 1812, 1872.&#xA;&#x9;&#x9;&#x9;TISSUEs for Ed. 3: 1673, 1727, 1794, 1799.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;COPYRIGHT (c) IEC, 2023. This version of this XSD is part of IEC 61850-6:2009/AMD2:2023; see the IEC 61850-6:2009/AMD2:2023 for full legal notices. In case of any differences between the here-below code and the IEC published content, the here-below definition supersedes the IEC publication; it may contain updates. See history files. The whole document has to be taken into account to have a full description of this code component.&#xA;&#x9;&#x9;&#x9;See www.iec.ch/CCv1 for copyright details.&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;SCL schema version &quot;2007&quot; revision &quot;C&quot; release 5,  for IEC 61850-6 Ed. 2.2. 2024-02-02&#xA;&#x9;&#x9;"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Abstract6100LNodeContainer" abstract="true"
-        eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+        eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="6-100LNodeContainer"/>
         <details key="kind" value="elementOnly"/>
@@ -3470,27 +3470,9 @@
           <details key="name" value="name"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractFunctionalVariant" abstract="true"
-        eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+        eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of a functional variant of the Application"/>
       </eAnnotations>
@@ -3540,26 +3522,8 @@
           <details key="name" value="name"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AllocationRole" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="AllocationRole" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of the Allocation Role element"/>
       </eAnnotations>
@@ -3589,24 +3553,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAllocationRoleRef"
@@ -3644,7 +3590,7 @@
           ordered="false" eType="#//asd/AllocationRole" transient="true" unsettable="true"
           eOpposite="#//asd/AllocationRole/ReferredByAllocationRoleRef"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of the Application element"/>
       </eAnnotations>
@@ -3724,18 +3670,6 @@
           <details key="name" value="name"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Identification of the application type if any"/>
@@ -3743,12 +3677,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="type"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -3854,22 +3782,15 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BaseExtensionElementWithDesc" abstract="true"
-        eSuperTypes="#//asd/BaseExtensionElement">
+        eSuperTypes="#//asd/BaseExtensionElement #//AgDesc">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Base element for 6-100 extension with description attribute"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString"
-          defaultValueLiteral="" unsettable="true">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="desc"/>
-        </eAnnotations>
-      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BayType" eSuperTypes="#//asd/AsdObject">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BehaviorDescription" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="BehaviorDescription" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of the BehaviorDescription element"/>
       </eAnnotations>
@@ -3961,24 +3882,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByBehaviorDescriptionRef"
@@ -4753,7 +4656,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
           eType="#//AnyLN" transient="true" unsettable="true" eOpposite="#//AnyLN/ReferredByDOS"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionCategory" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionCategory" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Category of functions, used to group functions by common category, independetly of the process allocation"/>
       </eAnnotations>
@@ -4792,24 +4695,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFunctionCategoryRef"
@@ -4925,7 +4810,7 @@
           eType="#//Function" transient="true" unsettable="true" resolveProxies="false"
           eOpposite="#//Function/ReferredByFunctionRef"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionRole" eSuperTypes="#//asd/FunctionalVariantRefContainer">
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionRole" eSuperTypes="#//asd/FunctionalVariantRefContainer #//asd/AgUuidWithOrigin #//asd/AgCardinalityWithSelector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of the Function Role element"/>
       </eAnnotations>
@@ -4944,25 +4829,6 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//asd/CardinalityEnum"
-          defaultValueLiteral="1..1" unsettable="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute indicates the multiple instances allowed for the current element."/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="cardinality"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute indicates the maximum number of an element in case of cardinality allowing multiple instances. If not defined, there is no limit"/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="max"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Name of the role"/>
@@ -4972,27 +4838,6 @@
           <details key="name" value="name"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Selector is used to give a searching rule to help user to select a target. It is represented by an XPath"/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="selector"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Type of the role (Predefined value = EXTERNAL)"/>
@@ -5000,12 +4845,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="type"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
@@ -5190,7 +5029,7 @@
           ordered="false" upperBound="-1" eType="#//asd/FunctionalVariantRef" transient="true"
           unsettable="true" eOpposite="#//asd/FunctionalVariantRef/RefersToFunctionalVariant"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FunctionalVariantGroup" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="FunctionalVariantGroup" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="&#xA;&#x9;&#x9;&#x9;Definition of a group of functional variant which are exclusive to each other. &#xA;&#x9;&#x9;&#x9;But an application may contains multiple groups which can be combined together&#xA;&#x9;&#x9;&#x9;"/>
       </eAnnotations>
@@ -5216,24 +5055,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentApplication" ordered="false"
@@ -5534,19 +5355,13 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="LinkFCDRef" abstract="true" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="LinkFCDRef" abstract="true" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Specification of a link to data (down to DO) required by a LNode"/>
       </eAnnotations>
       <eAnnotations>
         <details key="appinfo" value="Definition in IEC 61850-90-30"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="pDO" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Data object to be used on binding, if any"/>
@@ -5581,18 +5396,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="resourceUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -6010,7 +5813,7 @@
           ordered="false" eType="#//asd/BehaviorDescriptionRef" transient="true" unsettable="true"
           eOpposite="#//asd/BehaviorDescriptionRef/OutputVarRef"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PowerSystemRelation" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerSystemRelation" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgSelector #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Relation to a power system element. Could refer any named process element"/>
       </eAnnotations>
@@ -6030,12 +5833,6 @@
           <details key="name" value="name"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="relation" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="reference to an element of the Power System functionally related to function"/>
@@ -6052,27 +5849,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="relationUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Selector is used to give a searching rule to help user to select a target. It is represented by an XPath"/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="selector"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentPowerSystemRelation"
@@ -6197,7 +5973,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLNode" ordered="false"
           eType="#//LNode" transient="true" unsettable="true" eOpposite="#//LNode/ReferredByProcessEcho"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProcessResource" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessResource" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgCardinalityWithSelector #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Reference to resources. Could refer any named process element or LNode"/>
       </eAnnotations>
@@ -6220,25 +5996,6 @@
           <details key="namespace" value="##targetNamespace"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//asd/CardinalityEnum"
-          defaultValueLiteral="1..1" unsettable="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute indicates the multiple instances allowed for the current element."/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="cardinality"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute indicates the maximum number of an element in case of cardinality allowing multiple instances. If not defined, there is no limit"/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="max"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="a name used to identify the process resource in the rest of the SCL elements"/>
@@ -6246,33 +6003,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Selector is used to give a searching rule to help user to select a target. It is represented by an XPath"/>
-        </eAnnotations>
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="selector"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentProcessResources"
@@ -6765,7 +6495,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SignalRole" eSuperTypes="#//asd/FunctionalVariantRefContainer">
+    <eClassifiers xsi:type="ecore:EClass" name="SignalRole" eSuperTypes="#//asd/FunctionalVariantRefContainer #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of the SignalRole element"/>
       </eAnnotations>
@@ -6777,8 +6507,6 @@
         <details key="kind" value="elementOnly"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          unsettable="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           unsettable="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ParentFunctionRef" ordered="false"
           eType="#//asd/FunctionRef" transient="true" unsettable="true" eOpposite="#//asd/FunctionRef/SignalRole"/>
@@ -7272,7 +7000,7 @@
           ordered="false" upperBound="-1" eType="#//asd/SourceRef" transient="true"
           unsettable="true" eOpposite="#//asd/SourceRef/RefersToSubscriberLNode"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//asd/BaseExtensionElementWithDesc">
+    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//asd/BaseExtensionElementWithDesc #//asd/AgUuidWithOrigin">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Definition of a Variable"/>
       </eAnnotations>
@@ -7299,24 +7027,6 @@
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="name"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="originUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="templateUuid"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="attribute"/>
-          <details key="name" value="uuid"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
@@ -7536,5 +7246,42 @@
       <eLiterals name="SMV" value="5"/>
       <eLiterals name="Wired" value="6"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AgUuidWithOrigin" eSuperTypes="#//AgUuid">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originUuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          unsettable="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AgCardinality">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//asd/CardinalityEnum"
+          defaultValueLiteral="1..1" unsettable="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute indicates the multiple instances allowed for the current element."/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="cardinality"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute indicates the maximum number of an element in case of cardinality allowing multiple instances. If not defined, there is no limit"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="max"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AgSelector">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selector" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//NormalizedString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Selector is used to give a searching rule to help user to select a target. It is represented by an XPath"/>
+        </eAnnotations>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="attribute"/>
+          <details key="name" value="selector"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AgCardinalityWithSelector" eSuperTypes="#//asd/AgSelector #//asd/AgCardinality"/>
   </eSubpackages>
 </ecore:EPackage>

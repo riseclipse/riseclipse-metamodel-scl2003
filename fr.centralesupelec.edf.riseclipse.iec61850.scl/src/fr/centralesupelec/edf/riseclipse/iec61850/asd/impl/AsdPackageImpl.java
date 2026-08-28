@@ -648,6 +648,34 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass agUuidWithOriginEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass agCardinalityEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass agSelectorEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass agCardinalityWithSelectorEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EEnum cardinalityEnumEEnum = null;
 
     /**
@@ -804,36 +832,6 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getAbstractFunctionalVariant_OriginUuid() {
-        return ( EAttribute ) getAbstractFunctionalVariant().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAbstractFunctionalVariant_TemplateUuid() {
-        return ( EAttribute ) getAbstractFunctionalVariant().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAbstractFunctionalVariant_Uuid() {
-        return ( EAttribute ) getAbstractFunctionalVariant().getEStructuralFeatures().get( 6 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EClass getAllocationRole() {
         if( allocationRoleEClass == null ) {
             allocationRoleEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
@@ -868,38 +866,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getAllocationRole_OriginUuid() {
-        return ( EAttribute ) getAllocationRole().getEStructuralFeatures().get( 2 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAllocationRole_TemplateUuid() {
-        return ( EAttribute ) getAllocationRole().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAllocationRole_Uuid() {
-        return ( EAttribute ) getAllocationRole().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getAllocationRole_ReferredByAllocationRoleRef() {
-        return ( EReference ) getAllocationRole().getEStructuralFeatures().get( 5 );
+        return ( EReference ) getAllocationRole().getEStructuralFeatures().get( 2 );
     }
 
     /**
@@ -1036,38 +1004,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getApplication_OriginUuid() {
-        return ( EAttribute ) getApplication().getEStructuralFeatures().get( 6 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getApplication_TemplateUuid() {
-        return ( EAttribute ) getApplication().getEStructuralFeatures().get( 7 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EAttribute getApplication_Type() {
-        return ( EAttribute ) getApplication().getEStructuralFeatures().get( 8 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getApplication_Uuid() {
-        return ( EAttribute ) getApplication().getEStructuralFeatures().get( 9 );
+        return ( EAttribute ) getApplication().getEStructuralFeatures().get( 6 );
     }
 
     /**
@@ -1156,36 +1094,6 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     @Override
     public EAttribute getAbstract6100LNodeContainer_Name() {
         return ( EAttribute ) getAbstract6100LNodeContainer().getEStructuralFeatures().get( 1 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAbstract6100LNodeContainer_OriginUuid() {
-        return ( EAttribute ) getAbstract6100LNodeContainer().getEStructuralFeatures().get( 2 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAbstract6100LNodeContainer_TemplateUuid() {
-        return ( EAttribute ) getAbstract6100LNodeContainer().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getAbstract6100LNodeContainer_Uuid() {
-        return ( EAttribute ) getAbstract6100LNodeContainer().getEStructuralFeatures().get( 4 );
     }
 
     /**
@@ -1394,16 +1302,6 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getBaseExtensionElementWithDesc_Desc() {
-        return ( EAttribute ) getBaseExtensionElementWithDesc().getEStructuralFeatures().get( 0 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EClass getBayType() {
         if( bayTypeEClass == null ) {
             bayTypeEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
@@ -1522,38 +1420,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getBehaviorDescription_OriginUuid() {
-        return ( EAttribute ) getBehaviorDescription().getEStructuralFeatures().get( 8 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getBehaviorDescription_TemplateUuid() {
-        return ( EAttribute ) getBehaviorDescription().getEStructuralFeatures().get( 9 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getBehaviorDescription_Uuid() {
-        return ( EAttribute ) getBehaviorDescription().getEStructuralFeatures().get( 10 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getBehaviorDescription_ReferredByBehaviorDescriptionRef() {
-        return ( EReference ) getBehaviorDescription().getEStructuralFeatures().get( 11 );
+        return ( EReference ) getBehaviorDescription().getEStructuralFeatures().get( 8 );
     }
 
     /**
@@ -2654,38 +2522,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getFunctionCategory_OriginUuid() {
-        return ( EAttribute ) getFunctionCategory().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionCategory_TemplateUuid() {
-        return ( EAttribute ) getFunctionCategory().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionCategory_Uuid() {
-        return ( EAttribute ) getFunctionCategory().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getFunctionCategory_ReferredByFunctionCategoryRef() {
-        return ( EReference ) getFunctionCategory().getEStructuralFeatures().get( 6 );
+        return ( EReference ) getFunctionCategory().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -2900,7 +2738,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getFunctionRole_Cardinality() {
+    public EAttribute getFunctionRole_Name() {
         return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 1 );
     }
 
@@ -2910,7 +2748,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getFunctionRole_Max() {
+    public EAttribute getFunctionRole_Type() {
         return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 2 );
     }
 
@@ -2920,68 +2758,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getFunctionRole_Name() {
-        return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionRole_OriginUuid() {
-        return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionRole_Selector() {
-        return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionRole_TemplateUuid() {
-        return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 6 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionRole_Type() {
-        return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 7 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionRole_Uuid() {
-        return ( EAttribute ) getFunctionRole().getEStructuralFeatures().get( 8 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getFunctionRole_ParentApplication() {
-        return ( EReference ) getFunctionRole().getEStructuralFeatures().get( 9 );
+        return ( EReference ) getFunctionRole().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -3264,38 +3042,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getFunctionalVariantGroup_OriginUuid() {
-        return ( EAttribute ) getFunctionalVariantGroup().getEStructuralFeatures().get( 2 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionalVariantGroup_TemplateUuid() {
-        return ( EAttribute ) getFunctionalVariantGroup().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getFunctionalVariantGroup_Uuid() {
-        return ( EAttribute ) getFunctionalVariantGroup().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getFunctionalVariantGroup_ParentApplication() {
-        return ( EReference ) getFunctionalVariantGroup().getEStructuralFeatures().get( 5 );
+        return ( EReference ) getFunctionalVariantGroup().getEStructuralFeatures().get( 2 );
     }
 
     /**
@@ -3818,7 +3566,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getLinkFCDRef_OriginUuid() {
+    public EAttribute getLinkFCDRef_PDO() {
         return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 0 );
     }
 
@@ -3828,7 +3576,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getLinkFCDRef_PDO() {
+    public EAttribute getLinkFCDRef_PLN() {
         return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 1 );
     }
 
@@ -3838,7 +3586,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getLinkFCDRef_PLN() {
+    public EAttribute getLinkFCDRef_ResourceName() {
         return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 2 );
     }
 
@@ -3848,38 +3596,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getLinkFCDRef_ResourceName() {
-        return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EAttribute getLinkFCDRef_ResourceUuid() {
-        return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getLinkFCDRef_TemplateUuid() {
-        return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getLinkFCDRef_Uuid() {
-        return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 6 );
+        return ( EAttribute ) getLinkFCDRef().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -4536,7 +4254,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getPowerSystemRelation_OriginUuid() {
+    public EAttribute getPowerSystemRelation_Relation() {
         return ( EAttribute ) getPowerSystemRelation().getEStructuralFeatures().get( 1 );
     }
 
@@ -4546,7 +4264,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getPowerSystemRelation_Relation() {
+    public EAttribute getPowerSystemRelation_RelationUuid() {
         return ( EAttribute ) getPowerSystemRelation().getEStructuralFeatures().get( 2 );
     }
 
@@ -4556,48 +4274,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getPowerSystemRelation_RelationUuid() {
-        return ( EAttribute ) getPowerSystemRelation().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getPowerSystemRelation_Selector() {
-        return ( EAttribute ) getPowerSystemRelation().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getPowerSystemRelation_TemplateUuid() {
-        return ( EAttribute ) getPowerSystemRelation().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getPowerSystemRelation_Uuid() {
-        return ( EAttribute ) getPowerSystemRelation().getEStructuralFeatures().get( 6 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getPowerSystemRelation_ParentPowerSystemRelation() {
-        return ( EReference ) getPowerSystemRelation().getEStructuralFeatures().get( 7 );
+        return ( EReference ) getPowerSystemRelation().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -4607,7 +4285,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getPowerSystemRelation_ReferredByPowerSystemRelationRef() {
-        return ( EReference ) getPowerSystemRelation().getEStructuralFeatures().get( 8 );
+        return ( EReference ) getPowerSystemRelation().getEStructuralFeatures().get( 4 );
     }
 
     /**
@@ -4812,7 +4490,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getProcessResource_Cardinality() {
+    public EAttribute getProcessResource_Name() {
         return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 1 );
     }
 
@@ -4822,68 +4500,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getProcessResource_Max() {
-        return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 2 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getProcessResource_Name() {
-        return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getProcessResource_OriginUuid() {
-        return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getProcessResource_Selector() {
-        return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getProcessResource_TemplateUuid() {
-        return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 6 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getProcessResource_Uuid() {
-        return ( EAttribute ) getProcessResource().getEStructuralFeatures().get( 7 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getProcessResource_ParentProcessResources() {
-        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 8 );
+        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 2 );
     }
 
     /**
@@ -4893,7 +4511,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getProcessResource_ReferredByProcessResourceRef() {
-        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 9 );
+        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -4903,7 +4521,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getProcessResource_ReferredByControllingLNode() {
-        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 10 );
+        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 4 );
     }
 
     /**
@@ -4913,7 +4531,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getProcessResource_ReferredBySubscriberLNode() {
-        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 11 );
+        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 5 );
     }
 
     /**
@@ -4923,7 +4541,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getProcessResource_ReferredByControlRef() {
-        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 12 );
+        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 6 );
     }
 
     /**
@@ -4933,7 +4551,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getProcessResource_ReferredbySourceRef() {
-        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 13 );
+        return ( EReference ) getProcessResource().getEStructuralFeatures().get( 7 );
     }
 
     /**
@@ -5590,18 +5208,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getSignalRole_OriginUuid() {
-        return ( EAttribute ) getSignalRole().getEStructuralFeatures().get( 1 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getSignalRole_ParentFunctionRef() {
-        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 2 );
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 1 );
     }
 
     /**
@@ -5611,7 +5219,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getSignalRole_LNodeInputRef() {
-        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 3 );
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 2 );
     }
 
     /**
@@ -5621,7 +5229,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getSignalRole_LNodeOutputRef() {
-        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 4 );
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -5631,7 +5239,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      */
     @Override
     public EReference getSignalRole_LNodeDataRef() {
-        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 5 );
+        return ( EReference ) getSignalRole().getEStructuralFeatures().get( 4 );
     }
 
     /**
@@ -6352,7 +5960,7 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getVariable_OriginUuid() {
+    public EAttribute getVariable_Value() {
         return ( EAttribute ) getVariable().getEStructuralFeatures().get( 2 );
     }
 
@@ -6362,38 +5970,8 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
      * @generated
      */
     @Override
-    public EAttribute getVariable_TemplateUuid() {
-        return ( EAttribute ) getVariable().getEStructuralFeatures().get( 3 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getVariable_Uuid() {
-        return ( EAttribute ) getVariable().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getVariable_Value() {
-        return ( EAttribute ) getVariable().getEStructuralFeatures().get( 5 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getVariable_ReferredByVariableRef() {
-        return ( EReference ) getVariable().getEStructuralFeatures().get( 6 );
+        return ( EReference ) getVariable().getEStructuralFeatures().get( 3 );
     }
 
     /**
@@ -6606,6 +6184,102 @@ public class AsdPackageImpl extends EPackageImpl implements AsdPackage {
     @Override
     public EAttribute getWiringParameters_InpRef() {
         return ( EAttribute ) getWiringParameters().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getAgUuidWithOrigin() {
+        if( agUuidWithOriginEClass == null ) {
+            agUuidWithOriginEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
+                    .getEClassifiers().get( 90 );
+        }
+        return agUuidWithOriginEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgUuidWithOrigin_OriginUuid() {
+        return ( EAttribute ) getAgUuidWithOrigin().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getAgCardinality() {
+        if( agCardinalityEClass == null ) {
+            agCardinalityEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
+                    .getEClassifiers().get( 91 );
+        }
+        return agCardinalityEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgCardinality_Cardinality() {
+        return ( EAttribute ) getAgCardinality().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgCardinality_Max() {
+        return ( EAttribute ) getAgCardinality().getEStructuralFeatures().get( 1 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getAgSelector() {
+        if( agSelectorEClass == null ) {
+            agSelectorEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI ).getEClassifiers()
+                    .get( 92 );
+        }
+        return agSelectorEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgSelector_Selector() {
+        return ( EAttribute ) getAgSelector().getEStructuralFeatures().get( 0 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getAgCardinalityWithSelector() {
+        if( agCardinalityWithSelectorEClass == null ) {
+            agCardinalityWithSelectorEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( AsdPackage.eNS_URI )
+                    .getEClassifiers().get( 93 );
+        }
+        return agCardinalityWithSelectorEClass;
     }
 
     /**
