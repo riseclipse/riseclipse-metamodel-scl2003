@@ -29,24 +29,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BaseExtensionElementWithDescItemProvider extends BaseExtensionElementItemProvider {
+public class AgCardinalityWithSelectorItemProvider extends AgSelectorItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public BaseExtensionElementWithDescItemProvider( AdapterFactory adapterFactory ) {
+    public AgCardinalityWithSelectorItemProvider( AdapterFactory adapterFactory ) {
         super( adapterFactory );
     }
 
@@ -61,30 +60,65 @@ public class BaseExtensionElementWithDescItemProvider extends BaseExtensionEleme
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addDescPropertyDescriptor( object );
+            addCardinalityPropertyDescriptor( object );
+            addMaxPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
 
     /**
-     * This adds a property descriptor for the Desc feature.
+     * This adds a property descriptor for the Cardinality feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDescPropertyDescriptor( Object object ) {
+    protected void addCardinalityPropertyDescriptor( Object object ) {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_AgDesc_desc_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type" ),
-                        SclPackage.eINSTANCE.getAgDesc_Desc(),
+                        getString( "_UI_AgCardinality_cardinality_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgCardinality_cardinality_feature",
+                                "_UI_AgCardinality_type" ),
+                        AsdPackage.eINSTANCE.getAgCardinality_Cardinality(),
                         true,
                         false,
                         false,
                         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
                         null,
                         null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Max feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addMaxPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgCardinality_max_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgCardinality_max_feature",
+                                "_UI_AgCardinality_type" ),
+                        AsdPackage.eINSTANCE.getAgCardinality_Max(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This returns AgCardinalityWithSelector.gif.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/AgCardinalityWithSelector" ) );
     }
 
     /**
@@ -95,9 +129,9 @@ public class BaseExtensionElementWithDescItemProvider extends BaseExtensionEleme
      */
     @Override
     public String getText( Object object ) {
-        String label = ( ( BaseExtensionElementWithDesc ) object ).getFilename();
-        return label == null || label.length() == 0 ? getString( "_UI_BaseExtensionElementWithDesc_type" )
-                : getString( "_UI_BaseExtensionElementWithDesc_type" ) + " " + label;
+        String label = ( ( AgCardinalityWithSelector ) object ).getSelector();
+        return label == null || label.length() == 0 ? getString( "_UI_AgCardinalityWithSelector_type" )
+                : getString( "_UI_AgCardinalityWithSelector_type" ) + " " + label;
     }
 
     /**
@@ -111,8 +145,9 @@ public class BaseExtensionElementWithDescItemProvider extends BaseExtensionEleme
     public void notifyChanged( Notification notification ) {
         updateChildren( notification );
 
-        switch( notification.getFeatureID( BaseExtensionElementWithDesc.class ) ) {
-        case AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC:
+        switch( notification.getFeatureID( AgCardinalityWithSelector.class ) ) {
+        case AsdPackage.AG_CARDINALITY_WITH_SELECTOR__CARDINALITY:
+        case AsdPackage.AG_CARDINALITY_WITH_SELECTOR__MAX:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         }

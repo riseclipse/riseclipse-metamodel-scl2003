@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.ProcessResource} object.
@@ -62,13 +63,13 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addSelectorPropertyDescriptor( object );
             addCardinalityPropertyDescriptor( object );
             addMaxPropertyDescriptor( object );
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addSelectorPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
             addReferredByProcessResourceRefPropertyDescriptor( object );
             addReferredByControllingLNodePropertyDescriptor( object );
             addReferredBySubscriberLNodePropertyDescriptor( object );
@@ -88,10 +89,10 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ProcessResource_cardinality_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ProcessResource_cardinality_feature",
-                                "_UI_ProcessResource_type" ),
-                        AsdPackage.eINSTANCE.getProcessResource_Cardinality(),
+                        getString( "_UI_AgCardinality_cardinality_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgCardinality_cardinality_feature",
+                                "_UI_AgCardinality_type" ),
+                        AsdPackage.eINSTANCE.getAgCardinality_Cardinality(),
                         true,
                         false,
                         false,
@@ -110,10 +111,10 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ProcessResource_max_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ProcessResource_max_feature",
-                                "_UI_ProcessResource_type" ),
-                        AsdPackage.eINSTANCE.getProcessResource_Max(),
+                        getString( "_UI_AgCardinality_max_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgCardinality_max_feature",
+                                "_UI_AgCardinality_type" ),
+                        AsdPackage.eINSTANCE.getAgCardinality_Max(),
                         true,
                         false,
                         false,
@@ -154,10 +155,10 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ProcessResource_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ProcessResource_originUuid_feature",
-                                "_UI_ProcessResource_type" ),
-                        AsdPackage.eINSTANCE.getProcessResource_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -176,10 +177,10 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ProcessResource_selector_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ProcessResource_selector_feature",
-                                "_UI_ProcessResource_type" ),
-                        AsdPackage.eINSTANCE.getProcessResource_Selector(),
+                        getString( "_UI_AgSelector_selector_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSelector_selector_feature",
+                                "_UI_AgSelector_type" ),
+                        AsdPackage.eINSTANCE.getAgSelector_Selector(),
                         true,
                         false,
                         false,
@@ -198,10 +199,10 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ProcessResource_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ProcessResource_templateUuid_feature",
-                                "_UI_ProcessResource_type" ),
-                        AsdPackage.eINSTANCE.getProcessResource_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -220,10 +221,9 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_ProcessResource_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_ProcessResource_uuid_feature",
-                                "_UI_ProcessResource_type" ),
-                        AsdPackage.eINSTANCE.getProcessResource_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -408,13 +408,13 @@ public class ProcessResourceItemProvider extends BaseExtensionElementWithDescIte
         updateChildren( notification );
 
         switch( notification.getFeatureID( ProcessResource.class ) ) {
+        case AsdPackage.PROCESS_RESOURCE__SELECTOR:
         case AsdPackage.PROCESS_RESOURCE__CARDINALITY:
         case AsdPackage.PROCESS_RESOURCE__MAX:
-        case AsdPackage.PROCESS_RESOURCE__NAME:
-        case AsdPackage.PROCESS_RESOURCE__ORIGIN_UUID:
-        case AsdPackage.PROCESS_RESOURCE__SELECTOR:
-        case AsdPackage.PROCESS_RESOURCE__TEMPLATE_UUID:
         case AsdPackage.PROCESS_RESOURCE__UUID:
+        case AsdPackage.PROCESS_RESOURCE__TEMPLATE_UUID:
+        case AsdPackage.PROCESS_RESOURCE__ORIGIN_UUID:
+        case AsdPackage.PROCESS_RESOURCE__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.PROCESS_RESOURCE__RESOURCE:

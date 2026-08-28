@@ -35,12 +35,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getOriginUuid <em>Origin Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getRelation <em>Relation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getRelationUuid <em>Relation Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getSelector <em>Selector</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getUuid <em>Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getParentPowerSystemRelation <em>Parent Power System Relation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getReferredByPowerSystemRelationRef <em>Referred By Power System Relation Ref</em>}</li>
  * </ul>
@@ -49,7 +45,7 @@ import org.eclipse.emf.common.util.EList;
  * @model extendedMetaData="name='tPowerSystemRelation' kind='elementOnly'"
  * @generated
  */
-public interface PowerSystemRelation extends BaseExtensionElementWithDesc {
+public interface PowerSystemRelation extends BaseExtensionElementWithDesc, AgSelector, AgUuidWithOrigin {
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -74,28 +70,6 @@ public interface PowerSystemRelation extends BaseExtensionElementWithDesc {
      * @generated
      */
     void setName( String value );
-
-    /**
-     * Returns the value of the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Origin Uuid</em>' attribute.
-     * @see #setOriginUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getPowerSystemRelation_OriginUuid()
-     * @model extendedMetaData="kind='attribute' name='originUuid'"
-     * @generated
-     */
-    String getOriginUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Origin Uuid</em>' attribute.
-     * @see #getOriginUuid()
-     * @generated
-     */
-    void setOriginUuid( String value );
 
     /**
      * Returns the value of the '<em><b>Relation</b></em>' attribute.
@@ -147,76 +121,6 @@ public interface PowerSystemRelation extends BaseExtensionElementWithDesc {
      * @generated
      */
     void setRelationUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Selector</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * <!-- begin-model-doc -->
-     * Selector is used to give a searching rule to help user to select a target. It is represented by an XPath
-     * <!-- end-model-doc -->
-     * @return the value of the '<em>Selector</em>' attribute.
-     * @see #setSelector(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getPowerSystemRelation_Selector()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.NormalizedString"
-     *        extendedMetaData="kind='attribute' name='selector'"
-     * @generated
-     */
-    String getSelector();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getSelector <em>Selector</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Selector</em>' attribute.
-     * @see #getSelector()
-     * @generated
-     */
-    void setSelector( String value );
-
-    /**
-     * Returns the value of the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Template Uuid</em>' attribute.
-     * @see #setTemplateUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getPowerSystemRelation_TemplateUuid()
-     * @model extendedMetaData="kind='attribute' name='templateUuid'"
-     * @generated
-     */
-    String getTemplateUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getTemplateUuid <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Template Uuid</em>' attribute.
-     * @see #getTemplateUuid()
-     * @generated
-     */
-    void setTemplateUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Uuid</em>' attribute.
-     * @see #setUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getPowerSystemRelation_Uuid()
-     * @model extendedMetaData="kind='attribute' name='uuid'"
-     * @generated
-     */
-    String getUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation#getUuid <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Uuid</em>' attribute.
-     * @see #getUuid()
-     * @generated
-     */
-    void setUuid( String value );
 
     /**
      * Returns the value of the '<em><b>Parent Power System Relation</b></em>' container reference.

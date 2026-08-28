@@ -1814,6 +1814,98 @@ public class AsdItemProviderAdapterFactory extends AsdAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AgUuidWithOriginItemProvider agUuidWithOriginItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createAgUuidWithOriginAdapter() {
+        if( agUuidWithOriginItemProvider == null ) {
+            agUuidWithOriginItemProvider = new AgUuidWithOriginItemProvider( this );
+        }
+
+        return agUuidWithOriginItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AgCardinalityItemProvider agCardinalityItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createAgCardinalityAdapter() {
+        if( agCardinalityItemProvider == null ) {
+            agCardinalityItemProvider = new AgCardinalityItemProvider( this );
+        }
+
+        return agCardinalityItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AgSelectorItemProvider agSelectorItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createAgSelectorAdapter() {
+        if( agSelectorItemProvider == null ) {
+            agSelectorItemProvider = new AgSelectorItemProvider( this );
+        }
+
+        return agSelectorItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AgCardinalityWithSelectorItemProvider agCardinalityWithSelectorItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createAgCardinalityWithSelectorAdapter() {
+        if( agCardinalityWithSelectorItemProvider == null ) {
+            agCardinalityWithSelectorItemProvider = new AgCardinalityWithSelectorItemProvider( this );
+        }
+
+        return agCardinalityWithSelectorItemProvider;
+    }
+
+    /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2142,6 +2234,18 @@ public class AsdItemProviderAdapterFactory extends AsdAdapterFactory
         }
         if( wiringParametersItemProvider != null ) {
             wiringParametersItemProvider.dispose();
+        }
+        if( agUuidWithOriginItemProvider != null ) {
+            agUuidWithOriginItemProvider.dispose();
+        }
+        if( agCardinalityItemProvider != null ) {
+            agCardinalityItemProvider.dispose();
+        }
+        if( agSelectorItemProvider != null ) {
+            agSelectorItemProvider.dispose();
+        }
+        if( agCardinalityWithSelectorItemProvider != null ) {
+            agCardinalityWithSelectorItemProvider.dispose();
         }
     }
 

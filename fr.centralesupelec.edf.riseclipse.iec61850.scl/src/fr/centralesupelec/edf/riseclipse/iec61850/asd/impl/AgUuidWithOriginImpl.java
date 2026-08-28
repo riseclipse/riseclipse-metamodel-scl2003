@@ -23,61 +23,59 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.asd.BaseExtensionElementWithDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgUuidImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Base Extension Element With Desc</b></em>'.
+ * An implementation of the model object '<em><b>Ag Uuid With Origin</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.BaseExtensionElementWithDescImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.AgUuidWithOriginImpl#getOriginUuid <em>Origin Uuid</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElementImpl
-        implements BaseExtensionElementWithDesc {
+public class AgUuidWithOriginImpl extends AgUuidImpl implements AgUuidWithOrigin {
     /**
-     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDesc()
+     * @see #getOriginUuid()
      * @generated
      * @ordered
      */
-    protected static final String DESC_EDEFAULT = "";
+    protected static final String ORIGIN_UUID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * The cached value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDesc()
+     * @see #getOriginUuid()
      * @generated
      * @ordered
      */
-    protected String desc = DESC_EDEFAULT;
+    protected String originUuid = ORIGIN_UUID_EDEFAULT;
 
     /**
-     * This is true if the Desc attribute has been set.
+     * This is true if the Origin Uuid attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean descESet;
+    protected boolean originUuidESet;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected BaseExtensionElementWithDescImpl() {
+    protected AgUuidWithOriginImpl() {
         super();
     }
 
@@ -88,7 +86,7 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
      */
     @Override
     protected EClass eStaticClass() {
-        return AsdPackage.eINSTANCE.getBaseExtensionElementWithDesc();
+        return AsdPackage.eINSTANCE.getAgUuidWithOrigin();
     }
 
     /**
@@ -97,8 +95,8 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
      * @generated
      */
     @Override
-    public String getDesc() {
-        return desc;
+    public String getOriginUuid() {
+        return originUuid;
     }
 
     /**
@@ -107,14 +105,14 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
      * @generated
      */
     @Override
-    public void setDesc( String newDesc ) {
-        String oldDesc = desc;
-        desc = newDesc;
-        boolean oldDescESet = descESet;
-        descESet = true;
+    public void setOriginUuid( String newOriginUuid ) {
+        String oldOriginUuid = originUuid;
+        originUuid = newOriginUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuidESet = true;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC,
-                    oldDesc, desc, !oldDescESet ) );
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID,
+                    oldOriginUuid, originUuid, !oldOriginUuidESet ) );
         }
     }
 
@@ -124,14 +122,14 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
      * @generated
      */
     @Override
-    public void unsetDesc() {
-        String oldDesc = desc;
-        boolean oldDescESet = descESet;
-        desc = DESC_EDEFAULT;
-        descESet = false;
+    public void unsetOriginUuid() {
+        String oldOriginUuid = originUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuid = ORIGIN_UUID_EDEFAULT;
+        originUuidESet = false;
         if( eNotificationRequired() ) {
-            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC,
-                    oldDesc, DESC_EDEFAULT, oldDescESet ) );
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID,
+                    oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
         }
     }
 
@@ -141,8 +139,8 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
      * @generated
      */
     @Override
-    public boolean isSetDesc() {
-        return descESet;
+    public boolean isSetOriginUuid() {
+        return originUuidESet;
     }
 
     /**
@@ -153,8 +151,8 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC:
-            return getDesc();
+        case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+            return getOriginUuid();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -167,8 +165,8 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC:
-            setDesc( ( String ) newValue );
+        case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+            setOriginUuid( ( String ) newValue );
             return;
         }
         super.eSet( featureID, newValue );
@@ -182,8 +180,8 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC:
-            unsetDesc();
+        case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+            unsetOriginUuid();
             return;
         }
         super.eUnset( featureID );
@@ -197,46 +195,10 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC:
-            return isSetDesc();
+        case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+            return isSetOriginUuid();
         }
         return super.eIsSet( featureID );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
-        if( baseClass == AgDesc.class ) {
-            switch( derivedFeatureID ) {
-            case AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC:
-                return SclPackage.AG_DESC__DESC;
-            default:
-                return -1;
-            }
-        }
-        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
-        if( baseClass == AgDesc.class ) {
-            switch( baseFeatureID ) {
-            case SclPackage.AG_DESC__DESC:
-                return AsdPackage.BASE_EXTENSION_ELEMENT_WITH_DESC__DESC;
-            default:
-                return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -251,9 +213,9 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (desc: " );
-        if( descESet ) {
-            result.append( desc );
+        result.append( " (originUuid: " );
+        if( originUuidESet ) {
+            result.append( originUuid );
         }
         else {
             result.append( "<unset>" );
@@ -262,4 +224,4 @@ public abstract class BaseExtensionElementWithDescImpl extends BaseExtensionElem
         return result.toString();
     }
 
-} //BaseExtensionElementWithDescImpl
+} //AgUuidWithOriginImpl

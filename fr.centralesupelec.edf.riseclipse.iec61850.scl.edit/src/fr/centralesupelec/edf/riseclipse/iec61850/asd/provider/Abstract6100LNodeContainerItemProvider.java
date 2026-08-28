@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer} object.
@@ -62,10 +63,10 @@ public class Abstract6100LNodeContainerItemProvider extends BaseExtensionElement
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -99,19 +100,19 @@ public class Abstract6100LNodeContainerItemProvider extends BaseExtensionElement
      * @generated
      */
     protected void addOriginUuidPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add( createItemPropertyDescriptor(
-                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString( "_UI_Abstract6100LNodeContainer_originUuid_feature" ),
-                getString( "_UI_PropertyDescriptor_description", "_UI_Abstract6100LNodeContainer_originUuid_feature",
-                        "_UI_Abstract6100LNodeContainer_type" ),
-                AsdPackage.eINSTANCE.getAbstract6100LNodeContainer_OriginUuid(),
-                true,
-                false,
-                false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                null,
-                null ) );
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -121,19 +122,19 @@ public class Abstract6100LNodeContainerItemProvider extends BaseExtensionElement
      * @generated
      */
     protected void addTemplateUuidPropertyDescriptor( Object object ) {
-        itemPropertyDescriptors.add( createItemPropertyDescriptor(
-                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
-                getResourceLocator(),
-                getString( "_UI_Abstract6100LNodeContainer_templateUuid_feature" ),
-                getString( "_UI_PropertyDescriptor_description", "_UI_Abstract6100LNodeContainer_templateUuid_feature",
-                        "_UI_Abstract6100LNodeContainer_type" ),
-                AsdPackage.eINSTANCE.getAbstract6100LNodeContainer_TemplateUuid(),
-                true,
-                false,
-                false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                null,
-                null ) );
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -146,10 +147,9 @@ public class Abstract6100LNodeContainerItemProvider extends BaseExtensionElement
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Abstract6100LNodeContainer_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Abstract6100LNodeContainer_uuid_feature",
-                                "_UI_Abstract6100LNodeContainer_type" ),
-                        AsdPackage.eINSTANCE.getAbstract6100LNodeContainer_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -213,10 +213,10 @@ public class Abstract6100LNodeContainerItemProvider extends BaseExtensionElement
         updateChildren( notification );
 
         switch( notification.getFeatureID( Abstract6100LNodeContainer.class ) ) {
-        case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__NAME:
-        case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID:
-        case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID:
         case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__UUID:
+        case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__TEMPLATE_UUID:
+        case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__ORIGIN_UUID:
+        case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.ABSTRACT6100_LNODE_CONTAINER__LNODE:

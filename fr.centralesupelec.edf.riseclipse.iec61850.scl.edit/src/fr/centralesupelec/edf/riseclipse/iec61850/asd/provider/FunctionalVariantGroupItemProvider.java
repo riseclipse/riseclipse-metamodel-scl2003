@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionalVariantGroup} object.
@@ -62,10 +63,10 @@ public class FunctionalVariantGroupItemProvider extends BaseExtensionElementWith
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -102,10 +103,10 @@ public class FunctionalVariantGroupItemProvider extends BaseExtensionElementWith
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionalVariantGroup_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description",
-                                "_UI_FunctionalVariantGroup_originUuid_feature", "_UI_FunctionalVariantGroup_type" ),
-                        AsdPackage.eINSTANCE.getFunctionalVariantGroup_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -124,10 +125,10 @@ public class FunctionalVariantGroupItemProvider extends BaseExtensionElementWith
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionalVariantGroup_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description",
-                                "_UI_FunctionalVariantGroup_templateUuid_feature", "_UI_FunctionalVariantGroup_type" ),
-                        AsdPackage.eINSTANCE.getFunctionalVariantGroup_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -146,10 +147,9 @@ public class FunctionalVariantGroupItemProvider extends BaseExtensionElementWith
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_FunctionalVariantGroup_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_FunctionalVariantGroup_uuid_feature",
-                                "_UI_FunctionalVariantGroup_type" ),
-                        AsdPackage.eINSTANCE.getFunctionalVariantGroup_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -224,10 +224,10 @@ public class FunctionalVariantGroupItemProvider extends BaseExtensionElementWith
         updateChildren( notification );
 
         switch( notification.getFeatureID( FunctionalVariantGroup.class ) ) {
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__NAME:
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
-        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__UUID:
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__TEMPLATE_UUID:
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__ORIGIN_UUID:
+        case AsdPackage.FUNCTIONAL_VARIANT_GROUP__NAME:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;
         case AsdPackage.FUNCTIONAL_VARIANT_GROUP__FUNCTIONAL_VARIANT:

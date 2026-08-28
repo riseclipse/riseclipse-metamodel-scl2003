@@ -31,10 +31,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelation;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelationRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelations;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,13 +48,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelations;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getSelector <em>Selector</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getOriginUuid <em>Origin Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getRelation <em>Relation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getRelationUuid <em>Relation Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getSelector <em>Selector</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getParentPowerSystemRelation <em>Parent Power System Relation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.PowerSystemRelationImpl#getReferredByPowerSystemRelationRef <em>Referred By Power System Relation Ref</em>}</li>
  * </ul>
@@ -59,24 +63,82 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.PowerSystemRelations;
  */
 public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl implements PowerSystemRelation {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The default value of the '{@link #getSelector() <em>Selector</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getSelector()
      * @generated
      * @ordered
      */
-    protected static final String NAME_EDEFAULT = null;
+    protected static final String SELECTOR_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The cached value of the '{@link #getSelector() <em>Selector</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getSelector()
      * @generated
      * @ordered
      */
-    protected String name = NAME_EDEFAULT;
+    protected String selector = SELECTOR_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getUuid()
+     * @generated
+     * @ordered
+     */
+    protected String uuid = UUID_EDEFAULT;
+
+    /**
+     * This is true if the Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
 
     /**
      * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
@@ -97,6 +159,35 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
      * @ordered
      */
     protected String originUuid = ORIGIN_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Origin Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean originUuidESet;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
 
     /**
      * The default value of the '{@link #getRelation() <em>Relation</em>}' attribute.
@@ -137,66 +228,6 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
      * @ordered
      */
     protected String relationUuid = RELATION_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getSelector() <em>Selector</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSelector()
-     * @generated
-     * @ordered
-     */
-    protected static final String SELECTOR_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getSelector() <em>Selector</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSelector()
-     * @generated
-     * @ordered
-     */
-    protected String selector = SELECTOR_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String TEMPLATE_UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTemplateUuid()
-     * @generated
-     * @ordered
-     */
-    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected static final String UUID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getUuid()
-     * @generated
-     * @ordered
-     */
-    protected String uuid = UUID_EDEFAULT;
 
     /**
      * The cached value of the '{@link #getReferredByPowerSystemRelationRef() <em>Referred By Power System Relation Ref</em>}' reference list.
@@ -271,10 +302,39 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     public void setOriginUuid( String newOriginUuid ) {
         String oldOriginUuid = originUuid;
         originUuid = newOriginUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID,
-                    oldOriginUuid, originUuid ) );
+                    oldOriginUuid, originUuid, !oldOriginUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetOriginUuid() {
+        String oldOriginUuid = originUuid;
+        boolean oldOriginUuidESet = originUuidESet;
+        originUuid = ORIGIN_UUID_EDEFAULT;
+        originUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID,
+                    oldOriginUuid, ORIGIN_UUID_EDEFAULT, oldOriginUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetOriginUuid() {
+        return originUuidESet;
     }
 
     /**
@@ -371,10 +431,39 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     public void setTemplateUuid( String newTemplateUuid ) {
         String oldTemplateUuid = templateUuid;
         templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID,
-                    oldTemplateUuid, templateUuid ) );
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -396,10 +485,39 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     public void setUuid( String newUuid ) {
         String oldUuid = uuid;
         uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
         if( eNotificationRequired() ) {
             eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.POWER_SYSTEM_RELATION__UUID, oldUuid,
-                    uuid ) );
+                    uuid, !oldUuidESet ) );
         }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.POWER_SYSTEM_RELATION__UUID, oldUuid,
+                    UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
     }
 
     /**
@@ -559,20 +677,20 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
-            return getName();
+        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
+            return getSelector();
+        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
+            return getUuid();
+        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
+            return getTemplateUuid();
         case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
             return getOriginUuid();
+        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
+            return getName();
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION:
             return getRelation();
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION_UUID:
             return getRelationUuid();
-        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
-            return getSelector();
-        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
-            return getTemplateUuid();
-        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
-            return getUuid();
         case AsdPackage.POWER_SYSTEM_RELATION__PARENT_POWER_SYSTEM_RELATION:
             return getParentPowerSystemRelation();
         case AsdPackage.POWER_SYSTEM_RELATION__REFERRED_BY_POWER_SYSTEM_RELATION_REF:
@@ -590,26 +708,26 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
-            setName( ( String ) newValue );
+        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
+            setSelector( ( String ) newValue );
+            return;
+        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
             setOriginUuid( ( String ) newValue );
+            return;
+        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
+            setName( ( String ) newValue );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION:
             setRelation( ( String ) newValue );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION_UUID:
             setRelationUuid( ( String ) newValue );
-            return;
-        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
-            setSelector( ( String ) newValue );
-            return;
-        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
-            setTemplateUuid( ( String ) newValue );
-            return;
-        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
-            setUuid( ( String ) newValue );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__PARENT_POWER_SYSTEM_RELATION:
             setParentPowerSystemRelation( ( PowerSystemRelations ) newValue );
@@ -630,26 +748,26 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
-            setName( NAME_EDEFAULT );
+        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
+            setSelector( SELECTOR_EDEFAULT );
+            return;
+        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
+            unsetUuid();
+            return;
+        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
+            unsetTemplateUuid();
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
-            setOriginUuid( ORIGIN_UUID_EDEFAULT );
+            unsetOriginUuid();
+            return;
+        case AsdPackage.POWER_SYSTEM_RELATION__NAME:
+            setName( NAME_EDEFAULT );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION:
             setRelation( RELATION_EDEFAULT );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION_UUID:
             setRelationUuid( RELATION_UUID_EDEFAULT );
-            return;
-        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
-            setSelector( SELECTOR_EDEFAULT );
-            return;
-        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
-            setTemplateUuid( TEMPLATE_UUID_EDEFAULT );
-            return;
-        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
-            setUuid( UUID_EDEFAULT );
             return;
         case AsdPackage.POWER_SYSTEM_RELATION__PARENT_POWER_SYSTEM_RELATION:
             setParentPowerSystemRelation( ( PowerSystemRelations ) null );
@@ -669,22 +787,21 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
+            return SELECTOR_EDEFAULT == null ? selector != null : !SELECTOR_EDEFAULT.equals( selector );
+        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
+            return isSetUuid();
+        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
+            return isSetTemplateUuid();
+        case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
+            return isSetOriginUuid();
         case AsdPackage.POWER_SYSTEM_RELATION__NAME:
             return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals( name );
-        case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
-            return ORIGIN_UUID_EDEFAULT == null ? originUuid != null : !ORIGIN_UUID_EDEFAULT.equals( originUuid );
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION:
             return RELATION_EDEFAULT == null ? relation != null : !RELATION_EDEFAULT.equals( relation );
         case AsdPackage.POWER_SYSTEM_RELATION__RELATION_UUID:
             return RELATION_UUID_EDEFAULT == null ? relationUuid != null
                     : !RELATION_UUID_EDEFAULT.equals( relationUuid );
-        case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
-            return SELECTOR_EDEFAULT == null ? selector != null : !SELECTOR_EDEFAULT.equals( selector );
-        case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
-            return TEMPLATE_UUID_EDEFAULT == null ? templateUuid != null
-                    : !TEMPLATE_UUID_EDEFAULT.equals( templateUuid );
-        case AsdPackage.POWER_SYSTEM_RELATION__UUID:
-            return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals( uuid );
         case AsdPackage.POWER_SYSTEM_RELATION__PARENT_POWER_SYSTEM_RELATION:
             return getParentPowerSystemRelation() != null;
         case AsdPackage.POWER_SYSTEM_RELATION__REFERRED_BY_POWER_SYSTEM_RELATION_REF:
@@ -699,26 +816,113 @@ public class PowerSystemRelationImpl extends BaseExtensionElementWithDescImpl im
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgSelector.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.POWER_SYSTEM_RELATION__SELECTOR:
+                return AsdPackage.AG_SELECTOR__SELECTOR;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.POWER_SYSTEM_RELATION__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID:
+                return AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgSelector.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_SELECTOR__SELECTOR:
+                return AsdPackage.POWER_SYSTEM_RELATION__SELECTOR;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return AsdPackage.POWER_SYSTEM_RELATION__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return AsdPackage.POWER_SYSTEM_RELATION__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+                return AsdPackage.POWER_SYSTEM_RELATION__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if( eIsProxy() ) {
             return super.toString();
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (name: " );
-        result.append( name );
+        result.append( " (selector: " );
+        result.append( selector );
+        result.append( ", uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
         result.append( ", originUuid: " );
-        result.append( originUuid );
+        if( originUuidESet ) {
+            result.append( originUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", name: " );
+        result.append( name );
         result.append( ", relation: " );
         result.append( relation );
         result.append( ", relationUuid: " );
         result.append( relationUuid );
-        result.append( ", selector: " );
-        result.append( selector );
-        result.append( ", templateUuid: " );
-        result.append( templateUuid );
-        result.append( ", uuid: " );
-        result.append( uuid );
         result.append( ')' );
         return result.toString();
     }

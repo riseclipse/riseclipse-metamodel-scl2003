@@ -34,9 +34,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getLNode <em>LNode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getOriginUuid <em>Origin Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getTemplateUuid <em>Template Uuid</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getUuid <em>Uuid</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAbstract6100LNodeContainer()
@@ -44,7 +41,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
  *        extendedMetaData="name='6-100LNodeContainer' kind='elementOnly'"
  * @generated
  */
-public interface Abstract6100LNodeContainer extends BaseExtensionElementWithDesc {
+public interface Abstract6100LNodeContainer extends BaseExtensionElementWithDesc, AgUuidWithOrigin {
     /**
      * Returns the value of the '<em><b>LNode</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
@@ -104,71 +101,5 @@ public interface Abstract6100LNodeContainer extends BaseExtensionElementWithDesc
      * @generated
      */
     void setName( String value );
-
-    /**
-     * Returns the value of the '<em><b>Origin Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Origin Uuid</em>' attribute.
-     * @see #setOriginUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAbstract6100LNodeContainer_OriginUuid()
-     * @model extendedMetaData="kind='attribute' name='originUuid'"
-     * @generated
-     */
-    String getOriginUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getOriginUuid <em>Origin Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Origin Uuid</em>' attribute.
-     * @see #getOriginUuid()
-     * @generated
-     */
-    void setOriginUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Template Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Template Uuid</em>' attribute.
-     * @see #setTemplateUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAbstract6100LNodeContainer_TemplateUuid()
-     * @model extendedMetaData="kind='attribute' name='templateUuid'"
-     * @generated
-     */
-    String getTemplateUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getTemplateUuid <em>Template Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Template Uuid</em>' attribute.
-     * @see #getTemplateUuid()
-     * @generated
-     */
-    void setTemplateUuid( String value );
-
-    /**
-     * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Uuid</em>' attribute.
-     * @see #setUuid(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage#getAbstract6100LNodeContainer_Uuid()
-     * @model extendedMetaData="kind='attribute' name='uuid'"
-     * @generated
-     */
-    String getUuid();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer#getUuid <em>Uuid</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Uuid</em>' attribute.
-     * @see #getUuid()
-     * @generated
-     */
-    void setUuid( String value );
 
 } // Abstract6100LNodeContainer

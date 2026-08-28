@@ -26,6 +26,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRoleRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParameters;
@@ -112,6 +116,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
@@ -603,6 +608,36 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
+        public Adapter caseAgUuidWithOrigin( AgUuidWithOrigin object ) {
+            return createAgUuidWithOriginAdapter();
+        }
+
+        @Override
+        public Adapter caseAgCardinality( AgCardinality object ) {
+            return createAgCardinalityAdapter();
+        }
+
+        @Override
+        public Adapter caseAgSelector( AgSelector object ) {
+            return createAgSelectorAdapter();
+        }
+
+        @Override
+        public Adapter caseAgCardinalityWithSelector( AgCardinalityWithSelector object ) {
+            return createAgCardinalityWithSelectorAdapter();
+        }
+
+        @Override
+        public Adapter caseAgDesc( AgDesc object ) {
+            return createAgDescAdapter();
+        }
+
+        @Override
+        public Adapter caseAgUuid( AgUuid object ) {
+            return createAgUuidAdapter();
+        }
+
+        @Override
         public Adapter caseSclObject( SclObject object ) {
             return createSclObjectAdapter();
         }
@@ -610,11 +645,6 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseBaseElement( BaseElement object ) {
             return createBaseElementAdapter();
-        }
-
-        @Override
-        public Adapter caseAgDesc( AgDesc object ) {
-            return createAgDescAdapter();
         }
 
         @Override
@@ -1851,6 +1881,62 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin <em>Ag Uuid With Origin</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin
+     * @generated
+     */
+    public Adapter createAgUuidWithOriginAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality <em>Ag Cardinality</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality
+     * @generated
+     */
+    public Adapter createAgCardinalityAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector <em>Ag Selector</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector
+     * @generated
+     */
+    public Adapter createAgSelectorAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector <em>Ag Cardinality With Selector</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector
+     * @generated
+     */
+    public Adapter createAgCardinalityWithSelectorAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject <em>Object</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -1889,6 +1975,20 @@ public class AsdAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createAgDescAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid <em>Ag Uuid</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid
+     * @generated
+     */
+    public Adapter createAgUuidAdapter() {
         return null;
     }
 

@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdFactory;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.asd.Variable} object.
@@ -62,10 +63,10 @@ public class VariableItemProvider extends BaseExtensionElementWithDescItemProvid
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
-            addNamePropertyDescriptor( object );
-            addOriginUuidPropertyDescriptor( object );
-            addTemplateUuidPropertyDescriptor( object );
             addUuidPropertyDescriptor( object );
+            addTemplateUuidPropertyDescriptor( object );
+            addOriginUuidPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
             addValuePropertyDescriptor( object );
             addReferredByVariableRefPropertyDescriptor( object );
         }
@@ -104,10 +105,10 @@ public class VariableItemProvider extends BaseExtensionElementWithDescItemProvid
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Variable_originUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Variable_originUuid_feature",
-                                "_UI_Variable_type" ),
-                        AsdPackage.eINSTANCE.getVariable_OriginUuid(),
+                        getString( "_UI_AgUuidWithOrigin_originUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuidWithOrigin_originUuid_feature",
+                                "_UI_AgUuidWithOrigin_type" ),
+                        AsdPackage.eINSTANCE.getAgUuidWithOrigin_OriginUuid(),
                         true,
                         false,
                         false,
@@ -126,10 +127,10 @@ public class VariableItemProvider extends BaseExtensionElementWithDescItemProvid
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Variable_templateUuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Variable_templateUuid_feature",
-                                "_UI_Variable_type" ),
-                        AsdPackage.eINSTANCE.getVariable_TemplateUuid(),
+                        getString( "_UI_AgUuid_templateUuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_templateUuid_feature",
+                                "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_TemplateUuid(),
                         true,
                         false,
                         false,
@@ -148,10 +149,9 @@ public class VariableItemProvider extends BaseExtensionElementWithDescItemProvid
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
                         getResourceLocator(),
-                        getString( "_UI_Variable_uuid_feature" ),
-                        getString( "_UI_PropertyDescriptor_description", "_UI_Variable_uuid_feature",
-                                "_UI_Variable_type" ),
-                        AsdPackage.eINSTANCE.getVariable_Uuid(),
+                        getString( "_UI_AgUuid_uuid_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgUuid_uuid_feature", "_UI_AgUuid_type" ),
+                        SclPackage.eINSTANCE.getAgUuid_Uuid(),
                         true,
                         false,
                         false,
@@ -270,10 +270,10 @@ public class VariableItemProvider extends BaseExtensionElementWithDescItemProvid
         updateChildren( notification );
 
         switch( notification.getFeatureID( Variable.class ) ) {
-        case AsdPackage.VARIABLE__NAME:
-        case AsdPackage.VARIABLE__ORIGIN_UUID:
-        case AsdPackage.VARIABLE__TEMPLATE_UUID:
         case AsdPackage.VARIABLE__UUID:
+        case AsdPackage.VARIABLE__TEMPLATE_UUID:
+        case AsdPackage.VARIABLE__ORIGIN_UUID:
+        case AsdPackage.VARIABLE__NAME:
         case AsdPackage.VARIABLE__VALUE:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
             return;

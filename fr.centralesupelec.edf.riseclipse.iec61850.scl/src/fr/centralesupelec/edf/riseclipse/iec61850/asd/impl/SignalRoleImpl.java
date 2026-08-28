@@ -31,12 +31,15 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AsdPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.FunctionRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeDataRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeInputRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.LNodeOutputRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,8 +49,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getTemplateUuid <em>Template Uuid</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getOriginUuid <em>Origin Uuid</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getParentFunctionRef <em>Parent Function Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getLNodeInputRef <em>LNode Input Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.asd.impl.SignalRoleImpl#getLNodeOutputRef <em>LNode Output Ref</em>}</li>
@@ -58,33 +63,62 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.SignalRole;
  */
 public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements SignalRole {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getUuid()
      * @generated
      * @ordered
      */
-    protected static final String NAME_EDEFAULT = null;
+    protected static final String UUID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getUuid()
      * @generated
      * @ordered
      */
-    protected String name = NAME_EDEFAULT;
+    protected String uuid = UUID_EDEFAULT;
 
     /**
-     * This is true if the Name attribute has been set.
+     * This is true if the Uuid attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean nameESet;
+    protected boolean uuidESet;
+
+    /**
+     * The default value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected static final String TEMPLATE_UUID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getTemplateUuid() <em>Template Uuid</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getTemplateUuid()
+     * @generated
+     * @ordered
+     */
+    protected String templateUuid = TEMPLATE_UUID_EDEFAULT;
+
+    /**
+     * This is true if the Template Uuid attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean templateUuidESet;
 
     /**
      * The default value of the '{@link #getOriginUuid() <em>Origin Uuid</em>}' attribute.
@@ -114,6 +148,35 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
      * @ordered
      */
     protected boolean originUuidESet;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
+
+    /**
+     * This is true if the Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nameESet;
 
     /**
      * The cached value of the '{@link #getLNodeInputRef() <em>LNode Input Ref</em>}' containment reference list.
@@ -162,6 +225,114 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     protected EClass eStaticClass() {
         return AsdPackage.eINSTANCE.getSignalRole();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getUuid() {
+        return uuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setUuid( String newUuid ) {
+        String oldUuid = uuid;
+        uuid = newUuid;
+        boolean oldUuidESet = uuidESet;
+        uuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SIGNAL_ROLE__UUID, oldUuid, uuid,
+                    !oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetUuid() {
+        String oldUuid = uuid;
+        boolean oldUuidESet = uuidESet;
+        uuid = UUID_EDEFAULT;
+        uuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.SIGNAL_ROLE__UUID, oldUuid,
+                    UUID_EDEFAULT, oldUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetUuid() {
+        return uuidESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getTemplateUuid() {
+        return templateUuid;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setTemplateUuid( String newTemplateUuid ) {
+        String oldTemplateUuid = templateUuid;
+        templateUuid = newTemplateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuidESet = true;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.SET, AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID,
+                    oldTemplateUuid, templateUuid, !oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetTemplateUuid() {
+        String oldTemplateUuid = templateUuid;
+        boolean oldTemplateUuidESet = templateUuidESet;
+        templateUuid = TEMPLATE_UUID_EDEFAULT;
+        templateUuidESet = false;
+        if( eNotificationRequired() ) {
+            eNotify( new ENotificationImpl( this, Notification.UNSET, AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID,
+                    oldTemplateUuid, TEMPLATE_UUID_EDEFAULT, oldTemplateUuidESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetTemplateUuid() {
+        return templateUuidESet;
     }
 
     /**
@@ -506,10 +677,14 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
-        case AsdPackage.SIGNAL_ROLE__NAME:
-            return getName();
+        case AsdPackage.SIGNAL_ROLE__UUID:
+            return getUuid();
+        case AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID:
+            return getTemplateUuid();
         case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             return getOriginUuid();
+        case AsdPackage.SIGNAL_ROLE__NAME:
+            return getName();
         case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             return getParentFunctionRef();
         case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
@@ -531,11 +706,17 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch( featureID ) {
-        case AsdPackage.SIGNAL_ROLE__NAME:
-            setName( ( String ) newValue );
+        case AsdPackage.SIGNAL_ROLE__UUID:
+            setUuid( ( String ) newValue );
+            return;
+        case AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID:
+            setTemplateUuid( ( String ) newValue );
             return;
         case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             setOriginUuid( ( String ) newValue );
+            return;
+        case AsdPackage.SIGNAL_ROLE__NAME:
+            setName( ( String ) newValue );
             return;
         case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             setParentFunctionRef( ( FunctionRef ) newValue );
@@ -564,11 +745,17 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public void eUnset( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.SIGNAL_ROLE__NAME:
-            unsetName();
+        case AsdPackage.SIGNAL_ROLE__UUID:
+            unsetUuid();
+            return;
+        case AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID:
+            unsetTemplateUuid();
             return;
         case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             unsetOriginUuid();
+            return;
+        case AsdPackage.SIGNAL_ROLE__NAME:
+            unsetName();
             return;
         case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             setParentFunctionRef( ( FunctionRef ) null );
@@ -594,10 +781,14 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
-        case AsdPackage.SIGNAL_ROLE__NAME:
-            return isSetName();
+        case AsdPackage.SIGNAL_ROLE__UUID:
+            return isSetUuid();
+        case AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID:
+            return isSetTemplateUuid();
         case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
             return isSetOriginUuid();
+        case AsdPackage.SIGNAL_ROLE__NAME:
+            return isSetName();
         case AsdPackage.SIGNAL_ROLE__PARENT_FUNCTION_REF:
             return getParentFunctionRef() != null;
         case AsdPackage.SIGNAL_ROLE__LNODE_INPUT_REF:
@@ -616,15 +807,78 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.SIGNAL_ROLE__UUID:
+                return SclPackage.AG_UUID__UUID;
+            case AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID:
+                return SclPackage.AG_UUID__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( derivedFeatureID ) {
+            case AsdPackage.SIGNAL_ROLE__ORIGIN_UUID:
+                return AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgUuid.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_UUID__UUID:
+                return AsdPackage.SIGNAL_ROLE__UUID;
+            case SclPackage.AG_UUID__TEMPLATE_UUID:
+                return AsdPackage.SIGNAL_ROLE__TEMPLATE_UUID;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgUuidWithOrigin.class ) {
+            switch( baseFeatureID ) {
+            case AsdPackage.AG_UUID_WITH_ORIGIN__ORIGIN_UUID:
+                return AsdPackage.SIGNAL_ROLE__ORIGIN_UUID;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if( eIsProxy() ) {
             return super.toString();
         }
 
         StringBuilder result = new StringBuilder( super.toString() );
-        result.append( " (name: " );
-        if( nameESet ) {
-            result.append( name );
+        result.append( " (uuid: " );
+        if( uuidESet ) {
+            result.append( uuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", templateUuid: " );
+        if( templateUuidESet ) {
+            result.append( templateUuid );
         }
         else {
             result.append( "<unset>" );
@@ -632,6 +886,13 @@ public class SignalRoleImpl extends FunctionalVariantRefContainerImpl implements
         result.append( ", originUuid: " );
         if( originUuidESet ) {
             result.append( originUuid );
+        }
+        else {
+            result.append( "<unset>" );
+        }
+        result.append( ", name: " );
+        if( nameESet ) {
+            result.append( name );
         }
         else {
             result.append( "<unset>" );

@@ -25,6 +25,10 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.Abstract6100LNodeContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AbstractFunctionalVariant;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinality;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgCardinalityWithSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgSelector;
+import fr.centralesupelec.edf.riseclipse.iec61850.asd.AgUuidWithOrigin;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRole;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AllocationRoleRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.AnalogueWiringParameters;
@@ -111,6 +115,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableApplyTo;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.VariableRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.asd.WiringParameters;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgUuid;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFileReference;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
@@ -180,7 +185,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( abstract6100LNodeContainer );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( abstract6100LNodeContainer );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( abstract6100LNodeContainer );
+            }
+            if( result == null ) {
+                result = caseAgDesc( abstract6100LNodeContainer );
+            }
+            if( result == null ) {
+                result = caseAgUuid( abstract6100LNodeContainer );
             }
             if( result == null ) {
                 result = caseAsdObject( abstract6100LNodeContainer );
@@ -197,7 +211,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( abstractFunctionalVariant );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( abstractFunctionalVariant );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( abstractFunctionalVariant );
+            }
+            if( result == null ) {
+                result = caseAgDesc( abstractFunctionalVariant );
+            }
+            if( result == null ) {
+                result = caseAgUuid( abstractFunctionalVariant );
             }
             if( result == null ) {
                 result = caseAsdObject( abstractFunctionalVariant );
@@ -214,7 +237,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( allocationRole );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( allocationRole );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( allocationRole );
+            }
+            if( result == null ) {
+                result = caseAgDesc( allocationRole );
+            }
+            if( result == null ) {
+                result = caseAgUuid( allocationRole );
             }
             if( result == null ) {
                 result = caseAsdObject( allocationRole );
@@ -237,6 +269,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( allocationRoleRef );
             }
             if( result == null ) {
+                result = caseAgDesc( allocationRoleRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( allocationRoleRef );
             }
             if( result == null ) {
@@ -251,7 +286,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( application );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( application );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( application );
+            }
+            if( result == null ) {
+                result = caseAgDesc( application );
+            }
+            if( result == null ) {
+                result = caseAgUuid( application );
             }
             if( result == null ) {
                 result = caseAsdObject( application );
@@ -277,6 +321,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( analogueWiringParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( analogueWiringParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( analogueWiringParameters );
             }
             if( result == null ) {
@@ -295,6 +342,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( analogueWiringParametersRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( analogueWiringParametersRef );
             }
             if( result == null ) {
                 result = caseAsdObject( analogueWiringParametersRef );
@@ -344,6 +394,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( baseExtensionElementWithDesc );
             }
             if( result == null ) {
+                result = caseAgDesc( baseExtensionElementWithDesc );
+            }
+            if( result == null ) {
                 result = caseAsdObject( baseExtensionElementWithDesc );
             }
             if( result == null ) {
@@ -369,7 +422,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( behaviorDescription );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( behaviorDescription );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( behaviorDescription );
+            }
+            if( result == null ) {
+                result = caseAgDesc( behaviorDescription );
+            }
+            if( result == null ) {
+                result = caseAgUuid( behaviorDescription );
             }
             if( result == null ) {
                 result = caseAsdObject( behaviorDescription );
@@ -392,6 +454,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( behaviorDescriptionRef );
             }
             if( result == null ) {
+                result = caseAgDesc( behaviorDescriptionRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( behaviorDescriptionRef );
             }
             if( result == null ) {
@@ -407,6 +472,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( behaviorReference );
+            }
+            if( result == null ) {
+                result = caseAgDesc( behaviorReference );
             }
             if( result == null ) {
                 result = caseAsdObject( behaviorReference );
@@ -432,6 +500,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( binaryWiringParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( binaryWiringParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( binaryWiringParameters );
             }
             if( result == null ) {
@@ -450,6 +521,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( binaryWiringParametersRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( binaryWiringParametersRef );
             }
             if( result == null ) {
                 result = caseAsdObject( binaryWiringParametersRef );
@@ -492,7 +566,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( controlRef );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( controlRef );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( controlRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( controlRef );
+            }
+            if( result == null ) {
+                result = caseAgUuid( controlRef );
             }
             if( result == null ) {
                 result = caseAsdObject( controlRef );
@@ -512,6 +595,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( commParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( commParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( commParameters );
             }
             if( result == null ) {
@@ -527,6 +613,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( commServiceSpecifications );
+            }
+            if( result == null ) {
+                result = caseAgDesc( commServiceSpecifications );
             }
             if( result == null ) {
                 result = caseAsdObject( commServiceSpecifications );
@@ -549,6 +638,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( controlBlockParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( controlBlockParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( controlBlockParameters );
             }
             if( result == null ) {
@@ -564,6 +656,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( controllingLNode );
+            }
+            if( result == null ) {
+                result = caseAgDesc( controllingLNode );
             }
             if( result == null ) {
                 result = caseAsdObject( controllingLNode );
@@ -583,6 +678,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( das );
             }
             if( result == null ) {
+                result = caseAgDesc( das );
+            }
+            if( result == null ) {
                 result = caseAsdObject( das );
             }
             if( result == null ) {
@@ -600,6 +698,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( dos );
             }
             if( result == null ) {
+                result = caseAgDesc( dos );
+            }
+            if( result == null ) {
                 result = caseAsdObject( dos );
             }
             if( result == null ) {
@@ -614,7 +715,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( functionCategory );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( functionCategory );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( functionCategory );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionCategory );
+            }
+            if( result == null ) {
+                result = caseAgUuid( functionCategory );
             }
             if( result == null ) {
                 result = caseAsdObject( functionCategory );
@@ -635,6 +745,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( functionCategoryRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionCategoryRef );
             }
             if( result == null ) {
                 result = caseAsdObject( functionCategoryRef );
@@ -671,6 +784,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( functionRef );
             }
             if( result == null ) {
+                result = caseAgDesc( functionRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( functionRef );
             }
             if( result == null ) {
@@ -685,10 +801,28 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseFunctionalVariantRefContainer( functionRole );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( functionRole );
+            }
+            if( result == null ) {
+                result = caseAgCardinalityWithSelector( functionRole );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElementWithDesc( functionRole );
             }
             if( result == null ) {
+                result = caseAgUuid( functionRole );
+            }
+            if( result == null ) {
+                result = caseAgSelector( functionRole );
+            }
+            if( result == null ) {
+                result = caseAgCardinality( functionRole );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( functionRole );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionRole );
             }
             if( result == null ) {
                 result = caseAsdObject( functionRole );
@@ -736,7 +870,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( functionTemplate );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( functionTemplate );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( functionTemplate );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionTemplate );
+            }
+            if( result == null ) {
+                result = caseAgUuid( functionTemplate );
             }
             if( result == null ) {
                 result = caseAsdObject( functionTemplate );
@@ -756,7 +899,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( functionalSubVariant );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( functionalSubVariant );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( functionalSubVariant );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionalSubVariant );
+            }
+            if( result == null ) {
+                result = caseAgUuid( functionalSubVariant );
             }
             if( result == null ) {
                 result = caseAsdObject( functionalSubVariant );
@@ -776,7 +928,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( functionalVariant );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( functionalVariant );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( functionalVariant );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionalVariant );
+            }
+            if( result == null ) {
+                result = caseAgUuid( functionalVariant );
             }
             if( result == null ) {
                 result = caseAsdObject( functionalVariant );
@@ -793,7 +954,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( functionalVariantGroup );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( functionalVariantGroup );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( functionalVariantGroup );
+            }
+            if( result == null ) {
+                result = caseAgDesc( functionalVariantGroup );
+            }
+            if( result == null ) {
+                result = caseAgUuid( functionalVariantGroup );
             }
             if( result == null ) {
                 result = caseAsdObject( functionalVariantGroup );
@@ -827,6 +997,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( functionalVariantRefContainer );
             }
             if( result == null ) {
+                result = caseAgDesc( functionalVariantRefContainer );
+            }
+            if( result == null ) {
                 result = caseAsdObject( functionalVariantRefContainer );
             }
             if( result == null ) {
@@ -850,6 +1023,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( gooseParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( gooseParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( gooseParameters );
             }
             if( result == null ) {
@@ -870,6 +1046,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( gooseParametersRef );
             }
             if( result == null ) {
+                result = caseAgDesc( gooseParametersRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( gooseParametersRef );
             }
             if( result == null ) {
@@ -888,6 +1067,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( inputVar );
+            }
+            if( result == null ) {
+                result = caseAgDesc( inputVar );
             }
             if( result == null ) {
                 result = caseAsdObject( inputVar );
@@ -913,6 +1095,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( inputVarRef );
             }
             if( result == null ) {
+                result = caseAgDesc( inputVarRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( inputVarRef );
             }
             if( result == null ) {
@@ -931,6 +1116,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( l2CommParameters );
+            }
+            if( result == null ) {
+                result = caseAgDesc( l2CommParameters );
             }
             if( result == null ) {
                 result = caseAsdObject( l2CommParameters );
@@ -953,6 +1141,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( l3IPv4CommParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( l3IPv4CommParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( l3IPv4CommParameters );
             }
             if( result == null ) {
@@ -973,6 +1164,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( l3IPv6CommParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( l3IPv6CommParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( l3IPv6CommParameters );
             }
             if( result == null ) {
@@ -990,7 +1184,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( linkFCDARef );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( linkFCDARef );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( linkFCDARef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( linkFCDARef );
+            }
+            if( result == null ) {
+                result = caseAgUuid( linkFCDARef );
             }
             if( result == null ) {
                 result = caseAsdObject( linkFCDARef );
@@ -1007,7 +1210,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( linkFCDRef );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( linkFCDRef );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( linkFCDRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( linkFCDRef );
+            }
+            if( result == null ) {
+                result = caseAgUuid( linkFCDRef );
             }
             if( result == null ) {
                 result = caseAsdObject( linkFCDRef );
@@ -1030,6 +1242,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( lNodeDataRef );
             }
             if( result == null ) {
+                result = caseAgDesc( lNodeDataRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( lNodeDataRef );
             }
             if( result == null ) {
@@ -1050,6 +1265,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( lNodeInputRef );
             }
             if( result == null ) {
+                result = caseAgDesc( lNodeInputRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( lNodeInputRef );
             }
             if( result == null ) {
@@ -1065,6 +1283,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( lNodeInputs );
+            }
+            if( result == null ) {
+                result = caseAgDesc( lNodeInputs );
             }
             if( result == null ) {
                 result = caseAsdObject( lNodeInputs );
@@ -1087,6 +1308,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( lNodeOutputRef );
             }
             if( result == null ) {
+                result = caseAgDesc( lNodeOutputRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( lNodeOutputRef );
             }
             if( result == null ) {
@@ -1102,6 +1326,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( lNodeOutputs );
+            }
+            if( result == null ) {
+                result = caseAgDesc( lNodeOutputs );
             }
             if( result == null ) {
                 result = caseAsdObject( lNodeOutputs );
@@ -1141,6 +1368,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( logParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( logParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( logParameters );
             }
             if( result == null ) {
@@ -1161,6 +1391,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( logParametersRef );
             }
             if( result == null ) {
+                result = caseAgDesc( logParametersRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( logParametersRef );
             }
             if( result == null ) {
@@ -1176,6 +1409,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( logicVarRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( logicVarRef );
             }
             if( result == null ) {
                 result = caseAsdObject( logicVarRef );
@@ -1196,6 +1432,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( outputVar );
+            }
+            if( result == null ) {
+                result = caseAgDesc( outputVar );
             }
             if( result == null ) {
                 result = caseAsdObject( outputVar );
@@ -1221,6 +1460,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( outputVarRef );
             }
             if( result == null ) {
+                result = caseAgDesc( outputVarRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( outputVarRef );
             }
             if( result == null ) {
@@ -1235,7 +1477,19 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( powerSystemRelation );
             }
             if( result == null ) {
+                result = caseAgSelector( powerSystemRelation );
+            }
+            if( result == null ) {
+                result = caseAgUuidWithOrigin( powerSystemRelation );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( powerSystemRelation );
+            }
+            if( result == null ) {
+                result = caseAgDesc( powerSystemRelation );
+            }
+            if( result == null ) {
+                result = caseAgUuid( powerSystemRelation );
             }
             if( result == null ) {
                 result = caseAsdObject( powerSystemRelation );
@@ -1258,6 +1512,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( powerSystemRelationRef );
             }
             if( result == null ) {
+                result = caseAgDesc( powerSystemRelationRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( powerSystemRelationRef );
             }
             if( result == null ) {
@@ -1273,6 +1530,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( powerSystemRelations );
+            }
+            if( result == null ) {
+                result = caseAgDesc( powerSystemRelations );
             }
             if( result == null ) {
                 result = caseAsdObject( powerSystemRelations );
@@ -1292,6 +1552,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( processEcho );
             }
             if( result == null ) {
+                result = caseAgDesc( processEcho );
+            }
+            if( result == null ) {
                 result = caseAsdObject( processEcho );
             }
             if( result == null ) {
@@ -1306,7 +1569,25 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( processResource );
             }
             if( result == null ) {
+                result = caseAgCardinalityWithSelector( processResource );
+            }
+            if( result == null ) {
+                result = caseAgUuidWithOrigin( processResource );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( processResource );
+            }
+            if( result == null ) {
+                result = caseAgDesc( processResource );
+            }
+            if( result == null ) {
+                result = caseAgSelector( processResource );
+            }
+            if( result == null ) {
+                result = caseAgCardinality( processResource );
+            }
+            if( result == null ) {
+                result = caseAgUuid( processResource );
             }
             if( result == null ) {
                 result = caseAsdObject( processResource );
@@ -1329,6 +1610,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( processResourceRef );
             }
             if( result == null ) {
+                result = caseAgDesc( processResourceRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( processResourceRef );
             }
             if( result == null ) {
@@ -1344,6 +1628,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( processResources );
+            }
+            if( result == null ) {
+                result = caseAgDesc( processResources );
             }
             if( result == null ) {
                 result = caseAsdObject( processResources );
@@ -1363,6 +1650,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( project );
             }
             if( result == null ) {
+                result = caseAgDesc( project );
+            }
+            if( result == null ) {
                 result = caseAsdObject( project );
             }
             if( result == null ) {
@@ -1378,6 +1668,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( projectProcessReference );
+            }
+            if( result == null ) {
+                result = caseAgDesc( projectProcessReference );
             }
             if( result == null ) {
                 result = caseAsdObject( projectProcessReference );
@@ -1403,6 +1696,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( reportParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( reportParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( reportParameters );
             }
             if( result == null ) {
@@ -1421,6 +1717,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( reportParametersRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( reportParametersRef );
             }
             if( result == null ) {
                 result = caseAsdObject( reportParametersRef );
@@ -1451,6 +1750,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( sds );
             }
             if( result == null ) {
+                result = caseAgDesc( sds );
+            }
+            if( result == null ) {
                 result = caseAsdObject( sds );
             }
             if( result == null ) {
@@ -1466,6 +1768,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( serviceParameters );
+            }
+            if( result == null ) {
+                result = caseAgDesc( serviceParameters );
             }
             if( result == null ) {
                 result = caseAsdObject( serviceParameters );
@@ -1485,6 +1790,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( serviceParametersRef );
             }
             if( result == null ) {
+                result = caseAgDesc( serviceParametersRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( serviceParametersRef );
             }
             if( result == null ) {
@@ -1502,6 +1810,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( serviceSpecifications );
             }
             if( result == null ) {
+                result = caseAgDesc( serviceSpecifications );
+            }
+            if( result == null ) {
                 result = caseAsdObject( serviceSpecifications );
             }
             if( result == null ) {
@@ -1516,10 +1827,19 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseFunctionalVariantRefContainer( signalRole );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( signalRole );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElementWithDesc( signalRole );
             }
             if( result == null ) {
+                result = caseAgUuid( signalRole );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( signalRole );
+            }
+            if( result == null ) {
+                result = caseAgDesc( signalRole );
             }
             if( result == null ) {
                 result = caseAsdObject( signalRole );
@@ -1542,7 +1862,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( sourceRef );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( sourceRef );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( sourceRef );
+            }
+            if( result == null ) {
+                result = caseAgDesc( sourceRef );
+            }
+            if( result == null ) {
+                result = caseAgUuid( sourceRef );
             }
             if( result == null ) {
                 result = caseAsdObject( sourceRef );
@@ -1562,7 +1891,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( subCategory );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( subCategory );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( subCategory );
+            }
+            if( result == null ) {
+                result = caseAgDesc( subCategory );
+            }
+            if( result == null ) {
+                result = caseAgUuid( subCategory );
             }
             if( result == null ) {
                 result = caseAsdObject( subCategory );
@@ -1608,7 +1946,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( subFunctionTemplate );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( subFunctionTemplate );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( subFunctionTemplate );
+            }
+            if( result == null ) {
+                result = caseAgDesc( subFunctionTemplate );
+            }
+            if( result == null ) {
+                result = caseAgUuid( subFunctionTemplate );
             }
             if( result == null ) {
                 result = caseAsdObject( subFunctionTemplate );
@@ -1634,6 +1981,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( smvParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( smvParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( smvParameters );
             }
             if( result == null ) {
@@ -1654,6 +2004,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( smvParametersRef );
             }
             if( result == null ) {
+                result = caseAgDesc( smvParametersRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( smvParametersRef );
             }
             if( result == null ) {
@@ -1671,6 +2024,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( subscriberLNode );
             }
             if( result == null ) {
+                result = caseAgDesc( subscriberLNode );
+            }
+            if( result == null ) {
                 result = caseAsdObject( subscriberLNode );
             }
             if( result == null ) {
@@ -1685,7 +2041,16 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElementWithDesc( variable );
             }
             if( result == null ) {
+                result = caseAgUuidWithOrigin( variable );
+            }
+            if( result == null ) {
                 result = caseBaseExtensionElement( variable );
+            }
+            if( result == null ) {
+                result = caseAgDesc( variable );
+            }
+            if( result == null ) {
+                result = caseAgUuid( variable );
             }
             if( result == null ) {
                 result = caseAsdObject( variable );
@@ -1703,6 +2068,9 @@ public class AsdSwitch< T > extends Switch< T > {
             }
             if( result == null ) {
                 result = caseBaseExtensionElement( variableApplyTo );
+            }
+            if( result == null ) {
+                result = caseAgDesc( variableApplyTo );
             }
             if( result == null ) {
                 result = caseAsdObject( variableApplyTo );
@@ -1725,6 +2093,9 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( variableRef );
             }
             if( result == null ) {
+                result = caseAgDesc( variableRef );
+            }
+            if( result == null ) {
                 result = caseAsdObject( variableRef );
             }
             if( result == null ) {
@@ -1745,7 +2116,51 @@ public class AsdSwitch< T > extends Switch< T > {
                 result = caseBaseExtensionElement( wiringParameters );
             }
             if( result == null ) {
+                result = caseAgDesc( wiringParameters );
+            }
+            if( result == null ) {
                 result = caseAsdObject( wiringParameters );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case AsdPackage.AG_UUID_WITH_ORIGIN: {
+            AgUuidWithOrigin agUuidWithOrigin = ( AgUuidWithOrigin ) theEObject;
+            T result = caseAgUuidWithOrigin( agUuidWithOrigin );
+            if( result == null ) {
+                result = caseAgUuid( agUuidWithOrigin );
+            }
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case AsdPackage.AG_CARDINALITY: {
+            AgCardinality agCardinality = ( AgCardinality ) theEObject;
+            T result = caseAgCardinality( agCardinality );
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case AsdPackage.AG_SELECTOR: {
+            AgSelector agSelector = ( AgSelector ) theEObject;
+            T result = caseAgSelector( agSelector );
+            if( result == null ) {
+                result = defaultCase( theEObject );
+            }
+            return result;
+        }
+        case AsdPackage.AG_CARDINALITY_WITH_SELECTOR: {
+            AgCardinalityWithSelector agCardinalityWithSelector = ( AgCardinalityWithSelector ) theEObject;
+            T result = caseAgCardinalityWithSelector( agCardinalityWithSelector );
+            if( result == null ) {
+                result = caseAgSelector( agCardinalityWithSelector );
+            }
+            if( result == null ) {
+                result = caseAgCardinality( agCardinalityWithSelector );
             }
             if( result == null ) {
                 result = defaultCase( theEObject );
@@ -3048,6 +3463,66 @@ public class AsdSwitch< T > extends Switch< T > {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Uuid With Origin</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Uuid With Origin</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgUuidWithOrigin( AgUuidWithOrigin object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Cardinality</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Cardinality</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgCardinality( AgCardinality object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Selector</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Selector</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgSelector( AgSelector object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Cardinality With Selector</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Cardinality With Selector</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgCardinalityWithSelector( AgCardinalityWithSelector object ) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Object</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
@@ -3089,6 +3564,21 @@ public class AsdSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseAgDesc( AgDesc object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Uuid</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Uuid</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgUuid( AgUuid object ) {
         return null;
     }
 
