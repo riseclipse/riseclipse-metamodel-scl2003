@@ -20,10 +20,11 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collection;
-import java.util.List;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.*;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -35,14 +36,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 
 /**
  * <!-- begin-user-doc -->
@@ -312,7 +306,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public EList< DA > getDA() {
@@ -320,6 +314,14 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             da = new EObjectContainmentWithInverseEList.Unsettable< >( DA.class, this, SclPackage.DO_TYPE__DA,
                     SclPackage.DA__PARENT_DO_TYPE );
         }
+        
+        if( da.size() > 1 ) {
+            Optional<DA> optionalDA = da.stream().filter(ada -> FCEnum.SE.equals(ada.getFc()) || FCEnum.SP.equals(ada.getFc()) || FCEnum.SG.equals(ada.getFc())).findFirst();
+            String strFC = optionalDA.isPresent() ? optionalDA.get().getName() : "";
+            List< String > cdcOrder = SclUtilities.getCdcOrder( getCdc(), strFC );
+            Collections.sort( da, Comparator.comparingInt( o -> cdcOrder.indexOf( o.getName() ) ) );
+        }
+
         return da;
     }
 

@@ -21,6 +21,10 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -35,11 +39,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 
 /**
  * <!-- begin-user-doc -->
@@ -214,7 +220,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public EList< BDA > getBDA() {
@@ -222,6 +228,44 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
             bda = new EObjectContainmentWithInverseEList.Unsettable< >( BDA.class, this, SclPackage.DA_TYPE__BDA,
                     SclPackage.BDA__PARENT_DA_TYPE );
         }
+
+        if( bda.size() > 1 ) {
+            
+            if( !getReferredByAbstractDataAttribute().isEmpty() ) {
+                
+                switch( getReferredByAbstractDataAttribute().get( 0 ) ) {
+                case DA da:
+                    String daName = da.getName();
+                    String cdc = da.getParentDOType().getCdc();
+                    
+                    List< String > constructedAttributeOrder = SclUtilities.getConstructedAttributeOrder( cdc, daName );
+                    Collections.sort( bda, Comparator.comparingInt( o -> constructedAttributeOrder.indexOf( o.getName() ) ) );
+                    break;
+                case BDA parentBda:
+                    String bdaName = parentBda.getName();
+                    DAType daType = parentBda.getParentDAType();
+                    
+                    Optional< AbstractDataAttribute > parentDA = daType.getReferredByAbstractDataAttribute()
+                            .stream().filter(da -> da instanceof DA)
+                            .findAny();
+                    
+                    if( parentDA.isPresent()  ) {
+                        
+                        String parentDAName = ( ( DA ) parentDA.get() ).getName();
+                        String parentCdc = ( ( DA ) parentDA.get() ).getParentDOType().getCdc();
+                        
+                        List< String > constructedAttributeOrder2 = SclUtilities.getConstructedAttributeOrder( parentCdc, parentDAName, bdaName );
+                        Collections.sort( bda, Comparator.comparingInt( o -> constructedAttributeOrder2.indexOf( o.getName() ) ) );
+                    }
+                    
+                    break;
+                default:
+                    break;
+                }
+                
+            }
+        }
+
         return bda;
     }
 
