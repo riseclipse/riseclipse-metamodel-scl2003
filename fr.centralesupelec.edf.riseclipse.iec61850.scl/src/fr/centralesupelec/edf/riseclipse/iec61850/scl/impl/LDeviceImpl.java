@@ -42,12 +42,14 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Labels;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
@@ -1778,55 +1780,151 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         super.doBuildExplicitLinks( console );
 
         // String messagePrefix = "while resolving link from LDevice: ";
+        
+        // Issue #43 re-opened on 2 September 2026
+        // If the DOI is not found, we have to look for a DO in the associated LNodeType
+        // Looking for parent lDevice, the following paths are possible:
+        // P1. LN0 -> DOI name="GrRef" -> DAI name="setSrcRef" -> Val
+        // P2. LN0 -> DOI name="GrRef" -> DAI name="setSrcRef" -> DA -> Val
+        // P3. LN0 -> DOI name="GrRef" -> DO -> DOType -> DA name="setSrcRef" -> Val
+        // P4. LN0 -> LNodeType -> DO name="GrRef" -> DOType -> DA name="setSrcRef" -> Val
 
-        // TODO: warning message ?
         if( getLN0() == null ) {
+            // TODO: warning message ?
             return;
         }
 
         // Look for DOI name="GrRef" in LN0
-        List< DOI > grRef =
+        List< DOI > grRefInDOI =
                  getLN0()
                 .getDOI()
                 .stream()
                 .filter( doi -> "GrRef".equals(  doi.getName() ))
                 .toList();
 
-        if( grRef.size() > 1 ) {
+        if( grRefInDOI.size() > 1 ) {
             // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
             //                  messagePrefix, "found several DOI named GrRef in LN0" );
             return;
         }
 
-        if( grRef.isEmpty() ) {
-            console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-                          "LDevice ", getInst(), " is a root LDevice" );
-            return;
-        }
-        // Look for DAI name="setSrcRef" in GrRef
-        // When we try to get
-        List< DAI > setSrcRef =
-                 grRef
-                .get( 0 )
-                .getDAI()
-                .stream()
-                .filter( dai -> "setSrcRef".equals( dai.getName() ))
-                .toList();
-
-        if( setSrcRef.isEmpty() || ( setSrcRef.size() > 1 ) ) {
-            // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
-            //                  messagePrefix, "found several DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
-            return;
-        }
-
-        EList< Val > val = setSrcRef.get( 0 ).getVal();
-        if( val.isEmpty() ) {
-            // We look for Val in DataTypeTemplates
-            // Therefore, the link from DAI to DA must exist
-            getLN0().buildExplicitLinks( console, false );
-            if( setSrcRef.get( 0 ).getRefersToAbstractDataAttribute() != null ) {
-                val = setSrcRef.get( 0 ).getRefersToAbstractDataAttribute().getVal();
+        EList< Val > val = null;
+        
+        if( grRefInDOI.size() == 1 ) {
+            // P1 or P2 or P3 - Not P4
+            // Look for DAI name="setSrcRef" in GrRef
+            List< DAI > setSrcRefInDAI =
+                     grRefInDOI
+                    .get( 0 )
+                    .getDAI()
+                    .stream()
+                    .filter( dai -> "setSrcRef".equals( dai.getName() ))
+                    .toList();
+    
+            if( setSrcRefInDAI.size() > 1 ) {
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //                  messagePrefix, "found several DAI named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
+                return;
             }
+            
+            if( setSrcRefInDAI.size() == 1 ) {
+                // P1 or P2 - Not P3 and not P4
+                val = setSrcRefInDAI.get( 0 ).getVal();
+                
+                if( val.isEmpty() ) {
+                    // P2
+                    // We look for Val in DataTypeTemplates
+                    // Therefore, the link from DAI to DA must exist
+                    getLN0().buildExplicitLinks( console, false );
+                    if( setSrcRefInDAI.get( 0 ).getRefersToAbstractDataAttribute() != null ) {
+                        val = setSrcRefInDAI.get( 0 ).getRefersToAbstractDataAttribute().getVal();
+                    }
+                }
+            }
+    
+            else {
+                // P3 - Not P1 and not P2 and not P4
+                // Look for a DA in the associated DO 
+                DO do_ = grRefInDOI.get( 0 ).getRefersToDO();
+                if( do_ == null ) {
+                    // TODO: warning message ?
+                    return;
+                }
+                do_.buildExplicitLinks( console, false );
+                if( do_.getRefersToDOType() == null ) {
+                    // TODO: warning message ?
+                    return;
+                }
+                List< DA > setSrcRefInDA =
+                         do_
+                        .getRefersToDOType()
+                        .getDA()
+                        .stream()
+                        .filter( da -> "setSrcRef".equals( da.getName() ))
+                        .toList();
+                if( setSrcRefInDA.size() == 1 ) {
+                    val = setSrcRefInDA.get( 0 ).getVal();
+                }
+                else if( setSrcRefInDA.size() > 1 ) {
+                    // TODO: warning message ?
+                    return;
+                }
+                else {
+                    console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                            "LDevice ", getInst(), " is a root LDevice" );
+                    return;
+                }
+            }
+        }
+        else {
+            // P4
+            getLN0().buildExplicitLinks( console, false );
+            LNodeType lNodeType = getLN0().getRefersToLNodeType();
+            if( lNodeType == null ) {
+                // TODO: warning message ?
+                return;
+            }
+            List< DO > grRefInDO =
+                 lNodeType
+                .getDO()
+                .stream()
+                .filter( do_ -> "GrRef".equals(  do_.getName() ))
+                .toList();
+            if( grRefInDO.isEmpty() ) {
+                console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                              "LDevice ", getInst(), " is a root LDevice" );
+                return;
+            }
+            if( grRefInDO.size() > 1 ) {
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //                  messagePrefix, "found several DO named GrRef in LNodeType" );
+                return;
+            }
+            grRefInDO.get( 0 ).buildExplicitLinks( console, false );
+            DOType doType = grRefInDO.get( 0 ).getRefersToDOType();
+            // TODO: warning message ?
+            if( doType == null ) {
+                return;
+            }
+            List< DA > setSrcRefInDA =
+                    doType
+                   .getDA()
+                   .stream()
+                   .filter( da -> "setSrcRef".equals( da.getName() ))
+                   .toList();
+
+            if( setSrcRefInDA.isEmpty() ) {
+                console.debug( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                              "LDevice ", getInst(), " is a root LDevice" );
+                return;
+            }
+            if( setSrcRefInDA.size() > 1 ) {
+                // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
+                //                  messagePrefix, "found several DA named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
+                return;
+            }
+
+            val = setSrcRefInDA.get( 0 ).getVal();
         }
 
         if( val.isEmpty() || ( val.size() > 1 ) ) {
