@@ -1783,7 +1783,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         
         // Issue #43 re-opened on 2 September 2026
         // If the DOI is not found, we have to look for a DO in the associated LNodeType
-        // Looking for parent lDdevice, the following paths are possible:
+        // Looking for parent lDevice, the following paths are possible:
         // P1. LN0 -> DOI name="GrRef" -> DAI name="setSrcRef" -> Val
         // P2. LN0 -> DOI name="GrRef" -> DAI name="setSrcRef" -> DA -> Val
         // P3. LN0 -> DOI name="GrRef" -> DO -> DOType -> DA name="setSrcRef" -> Val
@@ -1813,7 +1813,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( grRefInDOI.size() == 1 ) {
             // P1 or P2 or P3 - Not P4
             // Look for DAI name="setSrcRef" in GrRef
-            // When we try to get
             List< DAI > setSrcRefInDAI =
                      grRefInDOI
                     .get( 0 )
@@ -1848,6 +1847,11 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 // Look for a DA in the associated DO 
                 DO do_ = grRefInDOI.get( 0 ).getRefersToDO();
                 if( do_ == null ) {
+                    // TODO: warning message ?
+                    return;
+                }
+                do_.buildExplicitLinks( console, false );
+                if( do_.getRefersToDOType() == null ) {
                     // TODO: warning message ?
                     return;
                 }
@@ -1894,6 +1898,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             if( grRefInDO.size() > 1 ) {
                 // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 //                  messagePrefix, "found several DO named GrRef in LNodeType" );
+                return;
             }
             grRefInDO.get( 0 ).buildExplicitLinks( console, false );
             DOType doType = grRefInDO.get( 0 ).getRefersToDOType();
@@ -1905,7 +1910,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                     doType
                    .getDA()
                    .stream()
-                   .filter( dai -> "setSrcRef".equals( dai.getName() ))
+                   .filter( da -> "setSrcRef".equals( da.getName() ))
                    .toList();
 
             if( setSrcRefInDA.isEmpty() ) {
@@ -1916,6 +1921,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             if( setSrcRefInDA.size() > 1 ) {
                 // console.warning( EXPLICIT_LINK_CATEGORY, getFilename(), getLineNumber(),
                 //                  messagePrefix, "found several DA named setSrcRef in GrRef on line ", grRef.get( 0 ).getLineNumber() );
+                return;
             }
 
             val = setSrcRefInDA.get( 0 ).getVal();
